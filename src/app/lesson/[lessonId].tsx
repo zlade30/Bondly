@@ -114,24 +114,25 @@ function LessonPlayer({ course, lesson, close }: { course: Course; lesson: Lesso
   if (phase === 'done') {
     const next = course.lessons[course.lessons.indexOf(lesson) + 1];
     const nextPlayable = next && isPlayable(next.id) ? next : null;
+    const courseDone = course.lessons.every((l) => l.id === lesson.id || completedLessons.includes(l.id));
     return (
       <Screen
         footer={
           <>
-            {nextPlayable && (
+            {nextPlayable && !courseDone && (
               <PrimaryButton
                 label={`Next: ${nextPlayable.title}`}
                 onPress={() => router.replace(`/lesson/${nextPlayable.id}` as Href)}
               />
             )}
-            {nextPlayable ? (
-              <SecondaryButton label="Back to home" onPress={close} />
+            {nextPlayable && !courseDone ? (
+              <SecondaryButton label="Done" onPress={close} />
             ) : (
-              <PrimaryButton label="Back to home" onPress={close} />
+              <PrimaryButton label="Done" onPress={close} />
             )}
           </>
         }>
-        <Celebration course={course} lesson={lesson} graded={graded} />
+        <Celebration course={course} lesson={lesson} graded={graded} courseDone={courseDone} />
       </Screen>
     );
   }
@@ -176,14 +177,23 @@ function Celebration({
   course,
   lesson,
   graded,
+  courseDone,
 }: {
   course: Course;
   lesson: Lesson;
   graded: { total: number; firstTry: number };
+  courseDone: boolean;
 }) {
   return (
     <View style={styles.center}>
       <Animated.View entering={ZoomIn.springify().damping(12)} style={styles.party}>
+        {courseDone && (
+          <View style={styles.badge}>
+            <BText variant="overline" color={Palette.white}>
+              🏆 Course complete
+            </BText>
+          </View>
+        )}
         <Float distance={10}>
           <Bondling size={190} color={course.mascot.color} mood="happy" prop="sparkles" />
         </Float>
@@ -197,10 +207,12 @@ function Celebration({
 
       <Animated.View entering={FadeInDown.delay(200).duration(500)} style={styles.copy}>
         <BText variant="title" center>
-          Lesson complete!
+          {courseDone ? `You finished ${course.title}!` : 'Lesson complete!'}
         </BText>
         <BText variant="body" center>
-          You finished “{lesson.title}”. Small steps like this add up.
+          {courseDone
+            ? `All ${course.lessons.length} lessons done. That’s a real new skill in your toolkit.`
+            : `You finished “${lesson.title}”. Small steps like this add up.`}
         </BText>
       </Animated.View>
 
@@ -243,6 +255,14 @@ const styles = StyleSheet.create({
     ...Shadow.soft,
   },
   party: { alignSelf: 'center', alignItems: 'center', width: 280 },
+  badge: {
+    backgroundColor: Palette.primary,
+    borderRadius: Radius.pill,
+    paddingHorizontal: Space.lg,
+    paddingVertical: 6,
+    marginBottom: Space.md,
+    ...Shadow.button,
+  },
   heartA: { position: 'absolute', top: 0, right: 30 },
   heartB: { position: 'absolute', top: 40, left: 36 },
   stats: { flexDirection: 'row', gap: Space.md },

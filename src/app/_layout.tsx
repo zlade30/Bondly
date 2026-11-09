@@ -61,6 +61,7 @@ function RootStack() {
         </Stack.Protected>
         <Stack.Protected guard={completed}>
           <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="course/[courseId]" />
           <Stack.Screen name="lesson/[lessonId]" />
         </Stack.Protected>
       </Stack>

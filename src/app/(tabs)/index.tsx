@@ -194,7 +194,7 @@ function JourneyCard({ course, completed }: { course: Course; completed: string[
       accessibilityLabel={`${course.title}, ${done} of ${total} lessons done`}
       onPress={() => {
         tapFeedback();
-        router.navigate('/learn' as Href);
+        router.push(`/course/${course.id}` as Href);
       }}
       style={({ pressed }) => [
         styles.card,

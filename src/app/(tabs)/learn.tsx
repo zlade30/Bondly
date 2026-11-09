@@ -1,7 +1,10 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, View } from 'react-native';
+import { router, type Href } from 'expo-router';
+import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
+import { tapFeedback } from '@/components/bondly/buttons';
+import { ChevronRightIcon } from '@/components/bondly/icons';
 import { Bondling } from '@/components/bondly/mascot';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
@@ -10,22 +13,31 @@ import { courseProgress, orderedCourses } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { useOnboarding } from '@/features/onboarding/store';
 
-/** All courses for now; the journey map replaces this list in the Learn flow. */
+/** All courses, focus areas first. Each one opens its journey map. */
 export default function LearnScreen() {
   const { answers } = useOnboarding();
   const { completedLessons } = useProgress();
   const courses = orderedCourses(answers.focus);
 
   return (
-    <TabScreen title="Learn" subtitle="Your courses, with your focus areas first.">
+    <TabScreen title="Learn" subtitle="Pick a course to see its journey.">
       {courses.map((course, i) => {
         const { done, total, ratio } = courseProgress(course, completedLessons);
         const isFocus = answers.focus.includes(course.id);
         return (
-          <Animated.View
-            key={course.id}
-            entering={FadeInDown.delay(i * 60).duration(400)}
-            style={[styles.row, { backgroundColor: course.tint }]}>
+          <Animated.View key={course.id} entering={FadeInDown.delay(i * 60).duration(400)}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={`${course.title}, ${done} of ${total} lessons done`}
+              onPress={() => {
+                tapFeedback();
+                router.push(`/course/${course.id}` as Href);
+              }}
+              style={({ pressed }) => [
+                styles.row,
+                { backgroundColor: course.tint },
+                pressed && { transform: [{ scale: 0.98 }] },
+              ]}>
             <Bondling size={72} color={course.mascot.color} mood={course.mascot.mood} prop={course.mascot.prop} />
             <View style={styles.info}>
               {isFocus && (
@@ -50,6 +62,8 @@ export default function LearnScreen() {
                 )}
               </View>
             </View>
+            <ChevronRightIcon size={22} color={Palette.inkSoft} />
+            </Pressable>
           </Animated.View>
         );
       })}
