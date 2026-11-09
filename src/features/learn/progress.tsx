@@ -17,9 +17,11 @@ type ProgressState = {
   completedLessons: string[];
   /** Daily check-ins keyed by local date, YYYY-MM-DD. */
   checkIns: Record<string, Mood>;
+  /** Days (YYYY-MM-DD) on which a lesson was finished, including replays. */
+  lessonDays: string[];
 };
 
-const EMPTY: ProgressState = { completedLessons: [], checkIns: {} };
+const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [] };
 
 type ProgressContextValue = ProgressState & {
   ready: boolean;
@@ -63,11 +65,14 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, [ready, state]);
 
   const completeLesson = useCallback((lessonId: string) => {
-    setState((prev) =>
-      prev.completedLessons.includes(lessonId)
-        ? prev
-        : { ...prev, completedLessons: [...prev.completedLessons, lessonId] }
-    );
+    const day = todayKey();
+    setState((prev) => ({
+      ...prev,
+      completedLessons: prev.completedLessons.includes(lessonId)
+        ? prev.completedLessons
+        : [...prev.completedLessons, lessonId],
+      lessonDays: prev.lessonDays.includes(day) ? prev.lessonDays : [...prev.lessonDays, day],
+    }));
   }, []);
 
   const checkIn = useCallback((mood: Mood) => {

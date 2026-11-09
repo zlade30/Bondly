@@ -68,6 +68,7 @@ function RootStack() {
           <Stack.Screen name="course/[courseId]" />
           <Stack.Screen name="lesson/[lessonId]" />
           <Stack.Screen name="journal/[entryId]" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="settings" />
         </Stack.Protected>
       </Stack>
     </>

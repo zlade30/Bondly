@@ -71,6 +71,14 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  // After onboarding, keep saved answers in sync with edits from Settings.
+  useEffect(() => {
+    if (ready && completed) {
+      const stored: Stored = { completed: true, answers };
+      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(stored)).catch(() => {});
+    }
+  }, [ready, completed, answers]);
+
   const update = useCallback((patch: Partial<OnboardingAnswers>) => {
     setAnswers((prev) => ({ ...prev, ...patch }));
   }, []);

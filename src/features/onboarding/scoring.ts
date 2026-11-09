@@ -18,7 +18,7 @@ export function scoreSkills(answers: OnboardingAnswers): Record<SkillId, number>
     const v = answers.quiz[q.id];
     if (v === undefined) continue;
     // For "tension", the steady middle is healthiest; elsewhere, further right is.
-    const health = q.id === 'tension' ? 1 - Math.abs(v - 2.5) / 2.5 : v / 4;
+    const health = q.id === 'tension' ? 1 - Math.abs(v - 2) / 2 : v / 4;
     scores[q.skill] = 0.3 + health * 0.55;
   }
 

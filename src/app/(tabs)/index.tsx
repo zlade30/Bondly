@@ -16,6 +16,7 @@ import { courseProgress, orderedCourses, todaysLesson, type Course } from '@/fea
 import { useProgress } from '@/features/learn/progress';
 import { MOODS, type Mood } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
+import { useActivity } from '@/features/profile/use-activity';
 
 const CHECK_IN_REPLIES: Record<Mood, string> = {
   great: 'Love that! Keep the good stuff growing.',
@@ -30,6 +31,7 @@ export default function HomeScreen() {
   const { width } = useWindowDimensions();
   const { answers } = useOnboarding();
   const { completedLessons, todayCheckIn, checkIn } = useProgress();
+  const { streak } = useActivity();
 
   const today = useMemo(
     () => todaysLesson(answers.focus, completedLessons),
@@ -52,13 +54,30 @@ export default function HomeScreen() {
         {/* Header */}
         <View style={styles.header}>
           <Logo />
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Notifications"
-            onPress={() => Alert.alert('Notifications', 'You’re all caught up.')}
-            style={({ pressed }) => [styles.bell, pressed && { opacity: 0.7 }]}>
-            <BellIcon />
-          </Pressable>
+          <View style={styles.headerRight}>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={`${streak.current}-day streak. Opens your profile.`}
+              onPress={() => {
+                tapFeedback();
+                router.navigate('/profile' as Href);
+              }}
+              style={({ pressed }) => [
+                styles.streak,
+                !streak.activeToday && styles.streakIdle,
+                pressed && { opacity: 0.7 },
+              ]}>
+              <BText style={[styles.streakFlame, !streak.activeToday && { opacity: 0.45 }]}>🔥</BText>
+              <BText variant="bodyBold">{streak.current}</BText>
+            </Pressable>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Notifications"
+              onPress={() => Alert.alert('Notifications', 'You’re all caught up.')}
+              style={({ pressed }) => [styles.bell, pressed && { opacity: 0.7 }]}>
+              <BellIcon />
+            </Pressable>
+          </View>
         </View>
 
         {/* Hero */}
@@ -230,6 +249,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: Space.xl,
   },
+  headerRight: { flexDirection: 'row', alignItems: 'center', gap: Space.sm },
+  streak: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    height: 40,
+    paddingHorizontal: Space.md,
+    borderRadius: Radius.pill,
+    backgroundColor: '#FFE9D6',
+  },
+  streakIdle: { backgroundColor: Palette.white },
+  streakFlame: { fontSize: 18, lineHeight: 22 },
   bell: {
     width: 52,
     height: 52,
