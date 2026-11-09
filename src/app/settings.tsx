@@ -6,6 +6,7 @@ import { PrimaryButton, tapFeedback } from '@/components/bondly/buttons';
 import { Check } from '@/components/bondly/option';
 import { Screen } from '@/components/bondly/screen';
 import { ReminderSettings } from '@/components/reminders/reminder-settings';
+import { AboutSection } from '@/components/settings/about-section';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
@@ -138,6 +139,11 @@ export default function SettingsScreen() {
             Pick at least one focus area.
           </BText>
         )}
+
+        <BText variant="bodyBold" style={styles.label}>
+          About
+        </BText>
+        <AboutSection />
 
         <View style={styles.danger}>
           <BText variant="bodyBold">Start over</BText>

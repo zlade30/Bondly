@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bondly — Build healthier relationships</title>
+  <meta name="description" content="Bondly is a playful app with small lessons, a private journal and daily check-ins to help you communicate with care, build trust, set boundaries and feel closer." />
+  <meta property="og:title" content="Bondly — Build healthier relationships" />
+  <meta property="og:description" content="Small lessons for bigger, happier connections." />
+  <meta property="og:image" content="assets/icon.png" />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <!-- Shared mascot artwork: Bondlings in six colours, a few faces and props. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="g-pink" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#FFC1A8"/><stop offset="1" stop-color="#FF86B4"/></linearGradient>
+      <linearGradient id="g-lavender" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#D9CCFF"/><stop offset="1" stop-color="#9C86FF"/></linearGradient>
+      <linearGradient id="g-blue" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#CFE1FF"/><stop offset="1" stop-color="#8FA8FF"/></linearGradient>
+      <linearGradient id="g-yellow" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#FFF2B3"/><stop offset="1" stop-color="#FFCB5C"/></linearGradient>
+      <linearGradient id="g-mint" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#C9F7E6"/><stop offset="1" stop-color="#6FD6B1"/></linearGradient>
+      <linearGradient id="g-purple" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#E7D3FF"/><stop offset="1" stop-color="#B48AF0"/></linearGradient>
+      <linearGradient id="g-peach" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#FFD9B0"/><stop offset="1" stop-color="#FF9E9E"/></linearGradient>
+      <radialGradient id="g-hi" cx="0.36" cy="0.3" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity="0.75"/><stop offset="0.6" stop-color="#fff" stop-opacity="0.08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <radialGradient id="g-shadow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7C5CFC" stop-opacity="0.22"/><stop offset="1" stop-color="#7C5CFC" stop-opacity="0"/></radialGradient>
+      <linearGradient id="g-heart" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#FFB3D1"/><stop offset="1" stop-color="#FF5C98"/></linearGradient>
+      <linearGradient id="g-heart-peach" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#FFD1B8"/><stop offset="1" stop-color="#FF8A9E"/></linearGradient>
+      <path id="body" d="M60 14 C 90 14, 106 46, 108 76 C 110 102, 90 110, 60 110 C 30 110, 10 102, 12 76 C 14 46, 30 14, 60 14 Z"/>
+    </defs>
+
+    <symbol id="b-pink" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-pink)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#FF5C93" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#FF5C93" opacity=".28"/></symbol>
+    <symbol id="b-lavender" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-lavender)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#F48FC6" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#F48FC6" opacity=".28"/></symbol>
+    <symbol id="b-blue" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-blue)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#F79ACB" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#F79ACB" opacity=".28"/></symbol>
+    <symbol id="b-yellow" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-yellow)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#FF9D7A" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#FF9D7A" opacity=".28"/></symbol>
+    <symbol id="b-mint" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-mint)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#FF9DB8" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#FF9DB8" opacity=".28"/></symbol>
+    <symbol id="b-purple" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-purple)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#F48FC6" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#F48FC6" opacity=".28"/></symbol>
+    <symbol id="b-peach" viewBox="0 0 120 120"><ellipse cx="60" cy="111" rx="44" ry="7" fill="url(#g-shadow)"/><use href="#body" fill="url(#g-peach)"/><use href="#body" fill="url(#g-hi)"/><ellipse cx="36" cy="72" rx="8" ry="5" fill="#FF6F8C" opacity=".28"/><ellipse cx="84" cy="72" rx="8" ry="5" fill="#FF6F8C" opacity=".28"/></symbol>
+
+    <symbol id="f-happy" viewBox="0 0 120 120"><circle cx="47" cy="60" r="4.2" fill="#2B1760"/><circle cx="73" cy="60" r="4.2" fill="#2B1760"/><circle cx="48.4" cy="58.6" r="1.3" fill="#fff"/><circle cx="74.4" cy="58.6" r="1.3" fill="#fff"/><path d="M53 70 Q 60 78 67 70" stroke="#2B1760" stroke-width="3.4" stroke-linecap="round" fill="none"/></symbol>
+    <symbol id="f-content" viewBox="0 0 120 120"><g stroke="#2B1760" stroke-width="3.4" stroke-linecap="round" fill="none"><path d="M41 60 Q 47 66 53 60"/><path d="M67 60 Q 73 66 79 60"/><path d="M54 71 Q 60 76 66 71"/></g></symbol>
+    <symbol id="f-wink" viewBox="0 0 120 120"><circle cx="47" cy="60" r="4.2" fill="#2B1760"/><circle cx="48.4" cy="58.6" r="1.3" fill="#fff"/><g stroke="#2B1760" stroke-width="3.4" stroke-linecap="round" fill="none"><path d="M67 61 Q 73 66 79 61"/><path d="M52 70 Q 60 79 68 70"/></g></symbol>
+    <symbol id="f-curious" viewBox="0 0 120 120"><circle cx="47" cy="59" r="5.4" fill="#2B1760"/><circle cx="73" cy="59" r="5.4" fill="#2B1760"/><circle cx="49" cy="57" r="1.8" fill="#fff"/><circle cx="75" cy="57" r="1.8" fill="#fff"/><ellipse cx="60" cy="73" rx="3.4" ry="4" fill="#2B1760"/></symbol>
+    <symbol id="f-neutral" viewBox="0 0 120 120"><circle cx="47" cy="60" r="4.2" fill="#2B1760"/><circle cx="73" cy="60" r="4.2" fill="#2B1760"/><circle cx="48.4" cy="58.6" r="1.3" fill="#fff"/><circle cx="74.4" cy="58.6" r="1.3" fill="#fff"/><path d="M54 73 L 66 72" stroke="#2B1760" stroke-width="3.4" stroke-linecap="round"/></symbol>
+
+    <symbol id="p-heart" viewBox="0 0 120 120"><g transform="translate(45 77) scale(1.25)"><path d="M12 21.6 C 5 16.8, 1.5 13, 1.5 8.4 C 1.5 5.2, 4 2.7, 7.1 2.7 C 9.1 2.7, 10.9 3.8, 12 5.4 C 13.1 3.8, 14.9 2.7, 16.9 2.7 C 20 2.7, 22.5 5.2, 22.5 8.4 C 22.5 13, 19 16.8, 12 21.6 Z" fill="url(#g-heart)"/></g><ellipse cx="42" cy="92" rx="9" ry="7" fill="#FFFFFF" opacity=".35"/><ellipse cx="78" cy="92" rx="9" ry="7" fill="#FFFFFF" opacity=".35"/></symbol>
+    <symbol id="p-shield" viewBox="0 0 120 120"><path d="M60 76 L 76 82 C 76 96, 70 104, 60 108 C 50 104, 44 96, 44 82 Z" fill="#9C86FF"/><path d="M54 90 C 54 86, 60 86, 60 90 C 60 86, 66 86, 66 90 C 66 94, 60 98, 60 98 C 60 98, 54 94, 54 90 Z" fill="#fff"/></symbol>
+    <symbol id="p-flag" viewBox="0 0 120 120"><path d="M98 40 L 98 96" stroke="#C98B6B" stroke-width="3" stroke-linecap="round"/><path d="M98 40 L 118 46 L 98 54 Z" fill="#FF8FA3"/></symbol>
+    <symbol id="p-sparkles" viewBox="0 0 120 120"><g fill="#FFD66B"><path d="M14 18 Q 16 26 24 28 Q 16 30 14 38 Q 12 30 4 28 Q 12 26 14 18 Z"/><path d="M106 14 Q 107.6 20.4 114 22 Q 107.6 23.6 106 30 Q 104.4 23.6 98 22 Q 104.4 20.4 106 14 Z"/></g></symbol>
+
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21.6 C 5 16.8, 1.5 13, 1.5 8.4 C 1.5 5.2, 4 2.7, 7.1 2.7 C 9.1 2.7, 10.9 3.8, 12 5.4 C 13.1 3.8, 14.9 2.7, 16.9 2.7 C 20 2.7, 22.5 5.2, 22.5 8.4 C 22.5 13, 19 16.8, 12 21.6 Z" fill="url(#g-heart)"/><ellipse cx="7.2" cy="7.4" rx="2.4" ry="1.5" fill="#fff" opacity=".55"/></symbol>
+    <symbol id="heart-peach" viewBox="0 0 24 24"><path d="M12 21.6 C 5 16.8, 1.5 13, 1.5 8.4 C 1.5 5.2, 4 2.7, 7.1 2.7 C 9.1 2.7, 10.9 3.8, 12 5.4 C 13.1 3.8, 14.9 2.7, 16.9 2.7 C 20 2.7, 22.5 5.2, 22.5 8.4 C 22.5 13, 19 16.8, 12 21.6 Z" fill="url(#g-heart-peach)"/><ellipse cx="7.2" cy="7.4" rx="2.4" ry="1.5" fill="#fff" opacity=".55"/></symbol>
+  </svg>
+
+  <header class="wrap nav">
+    <a class="brand" href="./"><img src="assets/icon.png" alt="" width="40" height="40" />Bondly</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="privacy.html">Policy</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <div class="wrap hero">
+      <div>
+        <h1>Build healthier relationships</h1>
+        <p class="lead">Small, playful lessons for bigger, happier connections, with the people who matter most.</p>
+        <div class="hero-actions">
+          <span class="pill pill-primary pill-static">Coming soon to iPhone</span>
+          <a class="pill pill-soft" href="#features">See what’s inside</a>
+        </div>
+        <p class="hero-note">No account needed · Your data stays on your phone</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg class="float" viewBox="0 0 300 250">
+          <defs>
+            <linearGradient id="hp-big" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#D6CCFF"/><stop offset="1" stop-color="#8F9CFF"/></linearGradient>
+            <linearGradient id="hp-small" x1="0.2" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#FFC9A8"/><stop offset="1" stop-color="#FF7FB2"/></linearGradient>
+            <radialGradient id="hp-hi" cx="0.36" cy="0.28" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity="0.7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <radialGradient id="hp-cloud" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#F3ECFF" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="160" cy="226" rx="150" ry="26" fill="url(#hp-cloud)"/>
+          <path d="M196 30 C 246 30, 278 84, 280 140 C 282 196, 250 222, 196 222 C 142 222, 114 196, 116 140 C 118 84, 146 30, 196 30 Z" fill="url(#hp-big)"/>
+          <path d="M196 30 C 246 30, 278 84, 280 140 C 282 196, 250 222, 196 222 C 142 222, 114 196, 116 140 C 118 84, 146 30, 196 30 Z" fill="url(#hp-hi)"/>
+          <ellipse cx="176" cy="118" rx="12" ry="7" fill="#F48FC6" opacity=".3"/>
+          <ellipse cx="246" cy="118" rx="12" ry="7" fill="#F48FC6" opacity=".3"/>
+          <circle cx="186" cy="102" r="6" fill="#2B1760"/><circle cx="236" cy="104" r="6" fill="#2B1760"/>
+          <path d="M200 112 Q 211 122 222 112" stroke="#2B1760" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <path d="M140 176 C 160 168, 178 160, 190 152 C 200 146, 210 154, 204 164 C 196 176, 172 190, 150 196 Z" fill="#FF9EBF"/>
+          <path d="M104 88 C 142 88, 166 124, 168 164 C 170 206, 144 228, 104 228 C 64 228, 38 206, 40 164 C 42 124, 66 88, 104 88 Z" fill="url(#hp-small)"/>
+          <path d="M104 88 C 142 88, 166 124, 168 164 C 170 206, 144 228, 104 228 C 64 228, 38 206, 40 164 C 42 124, 66 88, 104 88 Z" fill="url(#hp-hi)"/>
+          <ellipse cx="80" cy="152" rx="11" ry="6.5" fill="#FF5C93" opacity=".28"/>
+          <ellipse cx="142" cy="146" rx="11" ry="6.5" fill="#FF5C93" opacity=".28"/>
+          <g stroke="#2B1760" stroke-width="4" stroke-linecap="round" fill="none"><path d="M84 138 Q 92 146 100 138"/><path d="M118 134 Q 126 142 134 134"/></g>
+          <path d="M104 152 Q 110 157 116 152" stroke="#E0457E" stroke-width="4" stroke-linecap="round" fill="none"/>
+          <ellipse cx="198" cy="156" rx="12" ry="11" fill="#FFA9C6"/>
+        </svg>
+        <svg class="heart heart-a" viewBox="0 0 24 24"><use href="#heart"/></svg>
+        <svg class="heart heart-b" viewBox="0 0 24 24"><use href="#heart-peach"/></svg>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <section id="features" class="wrap">
+      <p class="eyebrow">What’s inside</p>
+      <h2>A few minutes a day, a lot more connection</h2>
+      <p class="section-lead">Bondly turns relationship skills into short, friendly practice you can actually fit into your day.</p>
+
+      <div class="grid grid-3">
+        <article class="card tint-blush">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-pink"/><use href="#f-happy"/></svg>
+          <h3>25 bite-size lessons</h3>
+          <p>Six courses of 3 to 5 minute lessons: short stories, quick quizzes and real phrases you can use today.</p>
+        </article>
+        <article class="card tint-lilac">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-lavender"/><use href="#f-curious"/><use href="#p-sparkles"/></svg>
+          <h3>A journey for every course</h3>
+          <p>Follow a winding path one lesson at a time, and replay any lesson whenever you need a refresher.</p>
+        </article>
+        <article class="card tint-butter">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-yellow"/><use href="#f-content"/></svg>
+          <h3>Daily check-in</h3>
+          <p>Tap the Bondling that matches how things feel, then see your month at a glance.</p>
+        </article>
+        <article class="card tint-peach">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-purple"/><use href="#f-content"/><use href="#p-heart"/></svg>
+          <h3>A private journal</h3>
+          <p>Write about the moments that matter, tag who they were about, and spot simple patterns over time.</p>
+        </article>
+        <article class="card tint-mint">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-mint"/><use href="#f-wink"/><use href="#p-shield"/></svg>
+          <h3>Streaks and a connection map</h3>
+          <p>Watch five relationship skills grow as you practise, with a gentle streak that never guilt-trips you.</p>
+        </article>
+        <article class="card tint-sky">
+          <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-blue"/><use href="#f-wink"/><use href="#p-flag"/></svg>
+          <h3>Gentle reminders</h3>
+          <p>One friendly nudge a day at the time you choose, and none on days you’ve already practised.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section class="wrap">
+      <p class="eyebrow">Courses</p>
+      <h2>Pick what you want to grow</h2>
+      <p class="section-lead">Choose up to three focus areas and Bondly puts those lessons first.</p>
+      <div class="courses">
+        <span class="course tint-blush"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-pink"/><use href="#f-happy"/></svg>Communicate with Care</span>
+        <span class="course tint-mint"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-mint"/><use href="#f-content"/></svg>Build Trust</span>
+        <span class="course tint-sky"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-blue"/><use href="#f-wink"/></svg>Set Boundaries</span>
+        <span class="course tint-butter"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-yellow"/><use href="#f-neutral"/></svg>Resolve Conflict</span>
+        <span class="course tint-lilac"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-lavender"/><use href="#f-content"/></svg>Deepen Connection</span>
+        <span class="course tint-peach"><svg viewBox="0 0 120 120" aria-hidden="true"><use href="#b-peach"/><use href="#f-curious"/></svg>Listen to Understand</span>
+      </div>
+    </section>
+
+    <!-- How a lesson works -->
+    <section class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Every lesson takes just a few minutes</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="step-num">1</div>
+          <h3>Read a tiny story</h3>
+          <p>Each idea comes as a short card, like why “You never listen!” puts people on guard.</p>
+        </article>
+        <article class="card">
+          <div class="step-num">2</div>
+          <h3>Practise it</h3>
+          <p>Answer a quick quiz, fill in the blank, or reflect on your own relationships, with friendly feedback.</p>
+        </article>
+        <article class="card">
+          <div class="step-num">3</div>
+          <h3>Try it today</h3>
+          <p>Finish with one small, real-life step to try, like a kind, clear “no” or a two-minute repair.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="wrap">
+      <div class="band">
+        <svg class="mascot" viewBox="0 0 120 120" aria-hidden="true"><use href="#b-lavender"/><use href="#f-content"/><use href="#p-shield"/></svg>
+        <div>
+          <p class="eyebrow">Privacy</p>
+          <h2>Your relationships stay yours</h2>
+          <p class="section-lead" style="margin-bottom:0">What you share with Bondly is personal, so it never leaves your phone.</p>
+          <ul class="checks">
+            <li>No account, sign-up or email needed</li>
+            <li>Your answers, check-ins and journal are stored only on your device</li>
+            <li>No ads, no tracking and no analytics</li>
+            <li>Reminders are scheduled on your phone, not sent from a server</li>
+          </ul>
+          <p style="margin:16px 0 0"><a href="privacy.html">Read the full privacy policy</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="notice">
+        <strong>Bondly is for everyday relationship skills.</strong> It isn’t therapy, counselling or medical advice. If you are in danger or being hurt by someone, please contact your local emergency services or a support service in your area.
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="footer-row">
+      <span>© 2026 Bondly</span>
+      <span class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
