@@ -8,25 +8,32 @@ import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
 import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
+import { useJournal } from '@/features/reflect/journal';
 
 /** Basic profile; skill progress, streaks and settings arrive with the Profile flow. */
 export default function ProfileScreen() {
   const { answers, reset: resetOnboarding } = useOnboarding();
   const { completedLessons, checkIns, reset: resetProgress } = useProgress();
+  const { reset: resetJournal } = useJournal();
   const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
 
   const replay = () =>
-    Alert.alert('Start over?', 'This clears your answers and progress and replays onboarding.', [
+    Alert.alert(
+      'Start over?',
+      'This permanently clears your answers, lesson progress, check-ins and journal, then replays onboarding.',
+      [
       { text: 'Cancel', style: 'cancel' },
       {
         text: 'Start over',
         style: 'destructive',
         onPress: async () => {
+          await resetJournal();
           await resetProgress();
           await resetOnboarding();
         },
       },
-    ]);
+      ]
+    );
 
   return (
     <TabScreen title="Profile">

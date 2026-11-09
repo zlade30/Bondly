@@ -9,11 +9,19 @@ import { ClockIcon } from '@/components/bondly/icons';
 import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
-import { BlankStep, ChoiceStep, ReadStep, ReflectStep, WriteStep } from '@/components/lesson/steps';
+import {
+  BlankStep,
+  ChoiceStep,
+  ReadStep,
+  ReflectStep,
+  WriteStep,
+  type StepResult,
+} from '@/components/lesson/steps';
 import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { findLesson, type Course, type Lesson } from '@/features/learn/content';
 import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/lessons';
 import { useProgress } from '@/features/learn/progress';
+import { useJournal } from '@/features/reflect/journal';
 
 type Phase = 'intro' | 'play' | 'done';
 
@@ -41,10 +49,16 @@ function LessonPlayer({ course, lesson, close }: { course: Course; lesson: Lesso
   const [phase, setPhase] = useState<Phase>('intro');
   const [index, setIndex] = useState(0);
   const [graded, setGraded] = useState({ total: 0, firstTry: 0 });
+  const { add: addJournalEntry } = useJournal();
 
-  const finishStep = (result?: { firstTry: boolean }) => {
-    if (result) {
-      setGraded((g) => ({ total: g.total + 1, firstTry: g.firstTry + (result.firstTry ? 1 : 0) }));
+  const finishStep = (result?: StepResult) => {
+    if (result?.firstTry !== undefined) {
+      const right = result.firstTry;
+      setGraded((g) => ({ total: g.total + 1, firstTry: g.firstTry + (right ? 1 : 0) }));
+    }
+    const step = steps[index];
+    if (result?.note && step.kind === 'write') {
+      addJournalEntry({ text: result.note, lessonId: lesson.id, prompt: step.prompt });
     }
     if (index + 1 < steps.length) {
       setIndex(index + 1);
@@ -155,7 +169,7 @@ function StepView({
   course,
 }: {
   step: LessonStep;
-  onDone: (result?: { firstTry: boolean }) => void;
+  onDone: (result?: StepResult) => void;
   course: Course;
 }) {
   const shared = { onDone, color: course.mascot.color, tint: course.tint };

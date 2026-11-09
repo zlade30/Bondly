@@ -11,10 +11,12 @@ import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import type { LessonStep } from '@/features/learn/lessons';
 
+/** firstTry is set for steps with a right answer; note for a written answer. */
+export type StepResult = { firstTry?: boolean; note?: string };
+
 type StepProps<K extends LessonStep['kind']> = {
   step: Extract<LessonStep, { kind: K }>;
-  /** firstTry is set for steps with a right answer. */
-  onDone: (result?: { firstTry: boolean }) => void;
+  onDone: (result?: StepResult) => void;
   color: BondlingColor;
   tint: string;
 };
@@ -282,21 +284,21 @@ export function ReflectStep({ step, onDone, color }: StepProps<'reflect'>) {
   );
 }
 
-// ---------- Write (optional, kept on the device only as a moment of practice) ----------
+// ---------- Write (optional; saved to the journal on this phone) ----------
 
 export function WriteStep({ step, onDone, color }: StepProps<'write'>) {
   const [text, setText] = useState('');
-  const finish = () => {
+  const finish = (save: boolean) => {
     Keyboard.dismiss();
-    onDone();
+    onDone(save && text.trim() ? { note: text.trim() } : undefined);
   };
 
   return (
     <StepFrame
       footer={
         <>
-          <PrimaryButton label="Continue" onPress={finish} disabled={!text.trim()} />
-          <TextButton label="Skip for now" onPress={finish} />
+          <PrimaryButton label="Save & continue" onPress={() => finish(true)} disabled={!text.trim()} />
+          <TextButton label="Skip for now" onPress={() => finish(false)} />
         </>
       }>
       <View style={styles.askRow}>
@@ -315,7 +317,7 @@ export function WriteStep({ step, onDone, color }: StepProps<'write'>) {
         style={styles.input}
       />
       <BText variant="caption" style={styles.private}>
-        🔒 Just for you. This isn’t saved or shared.
+        🔒 Saved privately to your journal on this phone.
       </BText>
     </StepFrame>
   );

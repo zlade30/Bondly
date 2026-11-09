@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { Palette } from '@/constants/bondly';
 import { ProgressProvider, useProgress } from '@/features/learn/progress';
 import { OnboardingProvider, useOnboarding } from '@/features/onboarding/store';
+import { JournalProvider, useJournal } from '@/features/reflect/journal';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,7 +28,9 @@ export default function RootLayout() {
     <ThemeProvider value={theme}>
       <OnboardingProvider>
         <ProgressProvider>
-          <RootStack />
+          <JournalProvider>
+            <RootStack />
+          </JournalProvider>
         </ProgressProvider>
       </OnboardingProvider>
     </ThemeProvider>
@@ -44,7 +47,8 @@ function RootStack() {
   });
   const { ready, completed } = useOnboarding();
   const { ready: progressReady } = useProgress();
-  const loaded = (fontsLoaded || !!fontError) && ready && progressReady;
+  const { ready: journalReady } = useJournal();
+  const loaded = (fontsLoaded || !!fontError) && ready && progressReady && journalReady;
 
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();
@@ -63,6 +67,7 @@ function RootStack() {
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="course/[courseId]" />
           <Stack.Screen name="lesson/[lessonId]" />
+          <Stack.Screen name="journal/[entryId]" options={{ presentation: 'modal' }} />
         </Stack.Protected>
       </Stack>
     </>
