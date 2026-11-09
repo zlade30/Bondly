@@ -14,10 +14,12 @@ type OptionRowProps = {
   selected: boolean;
   onPress: () => void;
   multi?: boolean;
+  /** After an answer is checked: green for right, red for wrong. */
+  tone?: 'good' | 'bad';
 };
 
 /** A full-width answer row, as in the goal and daily-time lists. */
-export function OptionRow({ label, leading, trailing, selected, onPress, multi }: OptionRowProps) {
+export function OptionRow({ label, leading, trailing, selected, onPress, multi, tone }: OptionRowProps) {
   return (
     <Pressable
       accessibilityRole={multi ? 'checkbox' : 'radio'}
@@ -29,6 +31,8 @@ export function OptionRow({ label, leading, trailing, selected, onPress, multi }
       style={({ pressed }) => [
         styles.row,
         selected ? styles.rowSelected : Shadow.soft,
+        tone === 'good' && styles.rowGood,
+        tone === 'bad' && styles.rowBad,
         pressed && styles.pressed,
       ]}>
       {leading}
@@ -36,23 +40,25 @@ export function OptionRow({ label, leading, trailing, selected, onPress, multi }
         {label}
       </BText>
       {trailing}
-      <Check on={selected} round={!multi} />
+      <Check on={selected} round={!multi} tone={tone} />
     </Pressable>
   );
 }
 
-export function Check({ on, round = true }: { on: boolean; round?: boolean }) {
+export function Check({ on, round = true, tone }: { on: boolean; round?: boolean; tone?: 'good' | 'bad' }) {
   return (
     <View
       style={[
         styles.check,
         { borderRadius: round ? 12 : 7 },
         on ? styles.checkOn : styles.checkOff,
+        tone === 'good' && { backgroundColor: Palette.success },
+        tone === 'bad' && { backgroundColor: Palette.warning },
       ]}>
       {on && (
         <Svg width={14} height={14} viewBox="0 0 24 24">
           <Path
-            d="M5 12.5l4.5 4.5L19 7.5"
+            d={tone === 'bad' ? 'M7 7l10 10M17 7L7 17' : 'M5 12.5l4.5 4.5L19 7.5'}
             stroke={Palette.white}
             strokeWidth={3.4}
             strokeLinecap="round"
@@ -82,6 +88,8 @@ const styles = StyleSheet.create({
     borderColor: Palette.primary,
     backgroundColor: '#FBF8FF',
   },
+  rowGood: { borderColor: Palette.success, backgroundColor: '#F1FBF6' },
+  rowBad: { borderColor: Palette.warning, backgroundColor: '#FFF4F5' },
   pressed: { transform: [{ scale: 0.985 }] },
   label: { flex: 1 },
   check: {

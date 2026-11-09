@@ -7,16 +7,20 @@ import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Palette, Radius, Space } from '@/constants/bondly';
+import { useProgress } from '@/features/learn/progress';
 import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 
 export default function ReadyScreen() {
   const { answers, complete } = useOnboarding();
+  const { checkIn } = useProgress();
   const [saving, setSaving] = useState(false);
   const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
 
   const start = async () => {
     setSaving(true);
+    // The onboarding mood counts as today's first check-in.
+    if (answers.mood) checkIn(answers.mood);
     // Completing flips the root guard, which moves the app to the home tabs.
     await complete();
   };

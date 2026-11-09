@@ -12,6 +12,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 
 import { Palette } from '@/constants/bondly';
+import { ProgressProvider, useProgress } from '@/features/learn/progress';
 import { OnboardingProvider, useOnboarding } from '@/features/onboarding/store';
 
 SplashScreen.preventAutoHideAsync();
@@ -25,7 +26,9 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={theme}>
       <OnboardingProvider>
-        <RootStack />
+        <ProgressProvider>
+          <RootStack />
+        </ProgressProvider>
       </OnboardingProvider>
     </ThemeProvider>
   );
@@ -40,7 +43,8 @@ function RootStack() {
     Nunito_900Black,
   });
   const { ready, completed } = useOnboarding();
-  const loaded = (fontsLoaded || !!fontError) && ready;
+  const { ready: progressReady } = useProgress();
+  const loaded = (fontsLoaded || !!fontError) && ready && progressReady;
 
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();
@@ -57,6 +61,7 @@ function RootStack() {
         </Stack.Protected>
         <Stack.Protected guard={completed}>
           <Stack.Screen name="(tabs)" />
+          <Stack.Screen name="lesson/[lessonId]" />
         </Stack.Protected>
       </Stack>
     </>

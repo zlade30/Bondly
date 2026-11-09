@@ -150,6 +150,27 @@ export function BackButton({ onPress }: { onPress: () => void }) {
   );
 }
 
+export function CloseButton({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Close"
+      hitSlop={12}
+      onPress={onPress}
+      style={({ pressed }) => [styles.back, pressed && { opacity: 0.6 }]}>
+      <Svg width={20} height={20} viewBox="0 0 24 24">
+        <Path
+          d="M6 6l12 12M18 6L6 18"
+          stroke={Palette.ink}
+          strokeWidth={2.6}
+          strokeLinecap="round"
+          fill="none"
+        />
+      </Svg>
+    </Pressable>
+  );
+}
+
 const styles = StyleSheet.create({
   base: {
     height: 58,

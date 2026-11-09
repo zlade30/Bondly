@@ -14,7 +14,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Gradients, Palette, Radius, Space } from '@/constants/bondly';
 
-import { BackButton } from './buttons';
+import { BackButton, CloseButton } from './buttons';
 import { BText } from './text';
 
 type ScreenProps = {
@@ -22,6 +22,8 @@ type ScreenProps = {
   /** Pinned to the bottom, above the safe area (buttons). */
   footer?: ReactNode;
   onBack?: () => void;
+  /** Shows an X instead of a back arrow. */
+  onClose?: () => void;
   /** 0..1; omit to hide the progress bar. */
   progress?: number;
   headerLabel?: string;
@@ -33,13 +35,14 @@ export function Screen({
   children,
   footer,
   onBack,
+  onClose,
   progress,
   headerLabel,
   scroll,
   contentStyle,
 }: ScreenProps) {
   const insets = useSafeAreaInsets();
-  const showHeader = onBack || progress !== undefined || headerLabel;
+  const showHeader = onBack || onClose || progress !== undefined || headerLabel;
 
   const body = (
     <View style={[styles.content, contentStyle]}>{children}</View>
@@ -52,7 +55,9 @@ export function Screen({
 
       {showHeader && (
         <View style={styles.header}>
-          <View style={styles.headerSide}>{onBack && <BackButton onPress={onBack} />}</View>
+          <View style={styles.headerSide}>
+            {onClose ? <CloseButton onPress={onClose} /> : onBack && <BackButton onPress={onBack} />}
+          </View>
           <View style={styles.headerCenter}>
             {progress !== undefined ? (
               <ProgressBar value={progress} />
