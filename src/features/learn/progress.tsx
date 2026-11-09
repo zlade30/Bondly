@@ -13,7 +13,7 @@ import type { Mood } from '@/features/onboarding/content';
 
 const STORAGE_KEY = 'bondly.progress.v1';
 
-type ProgressState = {
+export type ProgressState = {
   completedLessons: string[];
   /** Daily check-ins keyed by local date, YYYY-MM-DD. */
   checkIns: Record<string, Mood>;
@@ -28,6 +28,10 @@ type ProgressContextValue = ProgressState & {
   completeLesson: (lessonId: string) => void;
   checkIn: (mood: Mood) => void;
   todayCheckIn: Mood | undefined;
+  /** The whole state, as saved and synced. */
+  snapshot: ProgressState;
+  /** Replace everything with a merged copy (used by sync). */
+  restore: (state: ProgressState) => void;
   reset: () => Promise<void>;
 };
 
@@ -84,11 +88,15 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setState(EMPTY);
   }, []);
 
+  const restore = useCallback((next: ProgressState) => {
+    setState({ ...EMPTY, ...next });
+  }, []);
+
   const todayCheckIn = state.checkIns[todayKey()];
 
   const value = useMemo(
-    () => ({ ...state, ready, completeLesson, checkIn, todayCheckIn, reset }),
-    [state, ready, completeLesson, checkIn, todayCheckIn, reset]
+    () => ({ ...state, snapshot: state, ready, completeLesson, checkIn, todayCheckIn, restore, reset }),
+    [state, ready, completeLesson, checkIn, todayCheckIn, restore, reset]
   );
 
   return <ProgressContext value={value}>{children}</ProgressContext>;

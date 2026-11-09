@@ -34,15 +34,24 @@ const EMPTY: OnboardingAnswers = {
   remindersWanted: false,
 };
 
-type Stored = { completed: boolean; answers: OnboardingAnswers };
+/** What's saved on the device, and what syncs to an account. */
+export type OnboardingSnapshot = {
+  completed: boolean;
+  answers: OnboardingAnswers;
+  /** ISO time of the last change, so the newer copy wins when syncing. */
+  updatedAt?: string;
+};
 
 type OnboardingContextValue = {
   /** False until the saved state has been read from storage. */
   ready: boolean;
   completed: boolean;
   answers: OnboardingAnswers;
+  snapshot: OnboardingSnapshot;
   update: (patch: Partial<OnboardingAnswers>) => void;
   complete: () => Promise<void>;
+  /** Replace everything with a copy from the account (used by sync). */
+  restore: (snapshot: OnboardingSnapshot) => void;
   reset: () => Promise<void>;
 };
 
@@ -52,15 +61,17 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [completed, setCompleted] = useState(false);
   const [answers, setAnswers] = useState<OnboardingAnswers>(EMPTY);
+  const [updatedAt, setUpdatedAt] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     let cancelled = false;
     AsyncStorage.getItem(STORAGE_KEY)
       .then((raw) => {
         if (cancelled || !raw) return;
-        const saved = JSON.parse(raw) as Stored;
+        const saved = JSON.parse(raw) as OnboardingSnapshot;
         setCompleted(saved.completed);
         setAnswers({ ...EMPTY, ...saved.answers });
+        setUpdatedAt(saved.updatedAt);
       })
       .catch(() => {})
       .finally(() => {
@@ -71,33 +82,47 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  // After onboarding, keep saved answers in sync with edits from Settings.
+  const snapshot = useMemo<OnboardingSnapshot>(
+    () => ({ completed, answers, updatedAt }),
+    [completed, answers, updatedAt]
+  );
+
+  // Once onboarding is finished, keep the saved copy in step with every change.
   useEffect(() => {
-    if (ready && completed) {
-      const stored: Stored = { completed: true, answers };
-      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(stored)).catch(() => {});
+    if (ready && snapshot.completed) {
+      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot)).catch(() => {});
     }
-  }, [ready, completed, answers]);
+  }, [ready, snapshot]);
 
   const update = useCallback((patch: Partial<OnboardingAnswers>) => {
     setAnswers((prev) => ({ ...prev, ...patch }));
+    setUpdatedAt(new Date().toISOString());
   }, []);
 
   const complete = useCallback(async () => {
-    const stored: Stored = { completed: true, answers };
+    const now = new Date().toISOString();
+    const stored: OnboardingSnapshot = { completed: true, answers, updatedAt: now };
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(stored)).catch(() => {});
+    setUpdatedAt(now);
     setCompleted(true);
   }, [answers]);
+
+  const restore = useCallback((next: OnboardingSnapshot) => {
+    setAnswers({ ...EMPTY, ...next.answers });
+    setUpdatedAt(next.updatedAt);
+    setCompleted(next.completed);
+  }, []);
 
   const reset = useCallback(async () => {
     await AsyncStorage.removeItem(STORAGE_KEY).catch(() => {});
     setAnswers(EMPTY);
+    setUpdatedAt(undefined);
     setCompleted(false);
   }, []);
 
   const value = useMemo(
-    () => ({ ready, completed, answers, update, complete, reset }),
-    [ready, completed, answers, update, complete, reset]
+    () => ({ ready, completed, answers, snapshot, update, complete, restore, reset }),
+    [ready, completed, answers, snapshot, update, complete, restore, reset]
   );
 
   return <OnboardingContext value={value}>{children}</OnboardingContext>;

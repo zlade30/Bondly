@@ -7,8 +7,10 @@ import { Check } from '@/components/bondly/option';
 import { Screen } from '@/components/bondly/screen';
 import { ReminderSettings } from '@/components/reminders/reminder-settings';
 import { AboutSection } from '@/components/settings/about-section';
+import { AccountCard } from '@/components/settings/account-card';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
+import { useAccount } from '@/features/account/account';
 import { useProgress } from '@/features/learn/progress';
 import { DAILY_OPTIONS, FOCUS_AREAS, type DailyMinutes, type FocusArea } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
@@ -20,6 +22,7 @@ export default function SettingsScreen() {
   const { answers, update, reset: resetOnboarding } = useOnboarding();
   const { reset: resetProgress } = useProgress();
   const { reset: resetJournal } = useJournal();
+  const { session, signOut } = useAccount();
 
   const [name, setName] = useState(answers.name);
   const [minutes, setMinutes] = useState<DailyMinutes>(answers.minutes ?? 5);
@@ -42,13 +45,17 @@ export default function SettingsScreen() {
   const startOver = () =>
     Alert.alert(
       'Start over?',
-      'This permanently clears your answers, lesson progress, check-ins and journal, then replays onboarding.',
+      session
+        ? 'This signs you out and permanently clears your answers, lesson progress, check-ins and journal on this phone, then replays onboarding. Your account backup is kept, so you can sign in again to restore it.'
+        : 'This permanently clears your answers, lesson progress, check-ins and journal, then replays onboarding.',
       [
         { text: 'Cancel', style: 'cancel' },
         {
           text: 'Start over',
           style: 'destructive',
           onPress: async () => {
+            // Sign out first, so the cleared phone isn't refilled from the account.
+            if (session) await signOut();
             await resetJournal();
             await resetProgress();
             await resetOnboarding();
@@ -66,6 +73,11 @@ export default function SettingsScreen() {
         <BText variant="title" style={styles.title}>
           Settings
         </BText>
+
+        <BText variant="bodyBold" style={styles.label}>
+          Account
+        </BText>
+        <AccountCard />
 
         <BText variant="bodyBold" style={styles.label}>
           Your name
@@ -135,7 +147,7 @@ export default function SettingsScreen() {
           })}
         </View>
         {focus.length === 0 && (
-          <BText variant="caption" color={Palette.warning} style={styles.hint}>
+          <BText variant="caption" color={Palette.danger} style={styles.hint}>
             Pick at least one focus area.
           </BText>
         )}
@@ -151,7 +163,7 @@ export default function SettingsScreen() {
             Clears everything on this phone and replays onboarding.
           </BText>
           <Pressable accessibilityRole="button" onPress={startOver} style={styles.dangerButton}>
-            <BText variant="bodyBold" color={Palette.warning}>
+            <BText variant="bodyBold" color={Palette.danger}>
               Replay onboarding
             </BText>
           </Pressable>

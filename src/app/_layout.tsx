@@ -12,6 +12,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 
 import { Palette } from '@/constants/bondly';
+import { AccountProvider } from '@/features/account/account';
 import { ProgressProvider, useProgress } from '@/features/learn/progress';
 import { OnboardingProvider, useOnboarding } from '@/features/onboarding/store';
 import { JournalProvider, useJournal } from '@/features/reflect/journal';
@@ -32,7 +33,9 @@ export default function RootLayout() {
         <ProgressProvider>
           <JournalProvider>
             <RemindersProvider>
-              <RootStack />
+              <AccountProvider>
+                <RootStack />
+              </AccountProvider>
             </RemindersProvider>
           </JournalProvider>
         </ProgressProvider>
@@ -77,6 +80,9 @@ function RootStack() {
           <Stack.Screen name="journal/[entryId]" options={{ presentation: 'modal' }} />
           <Stack.Screen name="settings" />
         </Stack.Protected>
+        {/* Reachable whether or not onboarding is done, so returning users can sign in first. */}
+        <Stack.Screen name="account" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="auth-callback" options={{ presentation: 'modal', gestureEnabled: false }} />
       </Stack>
     </>
   );

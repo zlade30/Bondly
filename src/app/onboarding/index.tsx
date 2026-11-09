@@ -1,7 +1,9 @@
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
-import { PrimaryButton } from '@/components/bondly/buttons';
+import { router, type Href } from 'expo-router';
+
+import { PrimaryButton, TextButton } from '@/components/bondly/buttons';
 import { Logo } from '@/components/bondly/logo';
 import { HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
@@ -19,8 +21,9 @@ export default function WelcomeScreen() {
       footer={
         <Animated.View entering={FadeInDown.delay(450).duration(500)} style={styles.footer}>
           <PrimaryButton label="Get started" onPress={next} />
+          <TextButton label="I already have an account" onPress={() => router.push('/account' as Href)} />
           <BText variant="caption" center>
-            🔒 Everything you share stays private on this phone.
+            🔒 Private by default. Nothing leaves this phone unless you sign in.
           </BText>
         </Animated.View>
       }>

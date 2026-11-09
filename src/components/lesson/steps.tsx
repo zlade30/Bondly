@@ -317,7 +317,7 @@ export function WriteStep({ step, onDone, color }: StepProps<'write'>) {
         style={styles.input}
       />
       <BText variant="caption" style={styles.private}>
-        🔒 Saved privately to your journal on this phone.
+        🔒 Saved privately to your journal.
       </BText>
     </StepFrame>
   );

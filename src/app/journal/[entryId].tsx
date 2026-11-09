@@ -167,7 +167,7 @@ export default function JournalEntryScreen() {
         </View>
 
         <BText variant="caption" style={styles.private}>
-          🔒 Your journal stays private on this phone.
+          🔒 Your journal is private. Only you can read it, here and in your backup if you sign in.
         </BText>
 
         {existing && (

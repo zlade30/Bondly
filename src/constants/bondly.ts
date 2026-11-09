@@ -18,6 +18,9 @@ export const Palette = {
   track: '#ECE6F7',
   success: '#3DBE8B',
   warning: '#FF6F7D',
+  /** Error and destructive text; passes AA contrast on white and on errorTint. */
+  danger: '#B3263A',
+  errorTint: '#FFE4E8',
 
   // Card tints (from the journey cards)
   blush: '#FDE6F1',

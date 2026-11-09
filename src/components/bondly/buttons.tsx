@@ -76,14 +76,24 @@ export function SecondaryButton({ label, onPress, style }: ButtonProps) {
   );
 }
 
-export function TextButton({ label, onPress }: { label: string; onPress: () => void }) {
+export function TextButton({
+  label,
+  onPress,
+  disabled,
+}: {
+  label: string;
+  onPress: () => void;
+  disabled?: boolean;
+}) {
   return (
     <Pressable
       accessibilityRole="button"
+      accessibilityState={{ disabled: !!disabled }}
+      disabled={disabled}
       hitSlop={12}
       onPress={onPress}
       style={({ pressed }) => [styles.textButton, pressed && { opacity: 0.6 }]}>
-      <BText variant="bodyBold" color={Palette.inkSoft}>
+      <BText variant="bodyBold" color={disabled ? Palette.inkMuted : Palette.inkSoft}>
         {label}
       </BText>
     </Pressable>
