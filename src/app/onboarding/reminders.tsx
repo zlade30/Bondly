@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
@@ -8,18 +9,28 @@ import { BText } from '@/components/bondly/text';
 import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useOnboardingFlow } from '@/features/onboarding/flow';
 import { useOnboarding } from '@/features/onboarding/store';
+import { formatTime, useReminders } from '@/features/reminders/reminders';
 
 /**
- * Explains reminders before any system prompt. The actual notification
- * permission request will be added with the reminders feature.
+ * Explains reminders before the system permission prompt, so the prompt
+ * only appears once the person has chosen to get them.
  */
 export default function RemindersScreen() {
   const { next, back } = useOnboardingFlow();
   const { answers, update } = useOnboarding();
+  const { enable, hour, minute } = useReminders();
+  const [asking, setAsking] = useState(false);
   const minutes = answers.minutes ?? 5;
 
-  const choose = (wanted: boolean) => {
-    update({ remindersWanted: wanted });
+  const choose = async (wanted: boolean) => {
+    if (wanted) {
+      setAsking(true);
+      const result = await enable();
+      setAsking(false);
+      update({ remindersWanted: result === 'granted' });
+    } else {
+      update({ remindersWanted: false });
+    }
     next();
   };
 
@@ -28,7 +39,7 @@ export default function RemindersScreen() {
       onBack={back}
       footer={
         <>
-          <PrimaryButton label="Remind me" onPress={() => choose(true)} />
+          <PrimaryButton label="Remind me" onPress={() => choose(true)} disabled={asking} />
           <TextButton label="Not now" onPress={() => choose(false)} />
         </>
       }>
@@ -42,8 +53,8 @@ export default function RemindersScreen() {
             A gentle nudge, once a day
           </BText>
           <BText variant="body" center>
-            People who get a daily reminder are far more likely to make it a habit. We’ll keep
-            it to one friendly ping.
+            One friendly ping at {formatTime(hour, minute)}, and none on days you’ve already
+            practised. Change the time or turn it off any time in Settings.
           </BText>
         </Animated.View>
 
@@ -56,7 +67,7 @@ export default function RemindersScreen() {
               Bondly
             </BText>
             <BText variant="caption" color={Palette.inkSoft}>
-              Your {minutes}-minute lesson is ready: “Say what you feel” 💌
+              Your {minutes}-minute lesson is ready: “Say What You Feel” 💌
             </BText>
           </View>
         </Animated.View>

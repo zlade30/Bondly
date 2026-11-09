@@ -17,6 +17,7 @@ import { useProgress } from '@/features/learn/progress';
 import { MOODS, type Mood } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
+import { formatTime, useReminders } from '@/features/reminders/reminders';
 
 const CHECK_IN_REPLIES: Record<Mood, string> = {
   great: 'Love that! Keep the good stuff growing.',
@@ -32,6 +33,24 @@ export default function HomeScreen() {
   const { answers } = useOnboarding();
   const { completedLessons, todayCheckIn, checkIn } = useProgress();
   const { streak } = useActivity();
+  const reminders = useReminders();
+
+  const openReminders = () => {
+    tapFeedback();
+    const goToSettings = { text: 'Settings', onPress: () => router.push('/settings' as Href) };
+    if (reminders.enabled) {
+      Alert.alert(
+        'Daily reminder is on',
+        `We’ll nudge you at ${formatTime(reminders.hour, reminders.minute)}, except on days you’ve already practised.`,
+        [{ text: 'OK', style: 'cancel' }, { ...goToSettings, text: 'Change' }]
+      );
+    } else {
+      Alert.alert('Reminders are off', 'Turn on a gentle daily reminder in Settings.', [
+        { text: 'Not now', style: 'cancel' },
+        goToSettings,
+      ]);
+    }
+  };
 
   const today = useMemo(
     () => todaysLesson(answers.focus, completedLessons),
@@ -72,10 +91,11 @@ export default function HomeScreen() {
             </Pressable>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Notifications"
-              onPress={() => Alert.alert('Notifications', 'You’re all caught up.')}
+              accessibilityLabel={reminders.enabled ? 'Reminders on' : 'Reminders off'}
+              onPress={openReminders}
               style={({ pressed }) => [styles.bell, pressed && { opacity: 0.7 }]}>
               <BellIcon />
+              {reminders.enabled && <View style={styles.bellDot} />}
             </Pressable>
           </View>
         </View>
@@ -250,6 +270,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: Space.xl,
   },
   headerRight: { flexDirection: 'row', alignItems: 'center', gap: Space.sm },
+  bellDot: {
+    position: 'absolute',
+    top: 11,
+    right: 12,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: Palette.pink,
+    borderWidth: 2,
+    borderColor: Palette.white,
+  },
   streak: {
     flexDirection: 'row',
     alignItems: 'center',

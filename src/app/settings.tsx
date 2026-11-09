@@ -5,6 +5,7 @@ import { Alert, KeyboardAvoidingView, Platform, Pressable, StyleSheet, TextInput
 import { PrimaryButton, tapFeedback } from '@/components/bondly/buttons';
 import { Check } from '@/components/bondly/option';
 import { Screen } from '@/components/bondly/screen';
+import { ReminderSettings } from '@/components/reminders/reminder-settings';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
@@ -101,6 +102,11 @@ export default function SettingsScreen() {
             );
           })}
         </View>
+
+        <BText variant="bodyBold" style={styles.label}>
+          Reminders
+        </BText>
+        <ReminderSettings />
 
         <BText variant="bodyBold" style={styles.label}>
           Focus areas

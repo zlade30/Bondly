@@ -15,6 +15,8 @@ import { Palette } from '@/constants/bondly';
 import { ProgressProvider, useProgress } from '@/features/learn/progress';
 import { OnboardingProvider, useOnboarding } from '@/features/onboarding/store';
 import { JournalProvider, useJournal } from '@/features/reflect/journal';
+import { ReminderSync } from '@/features/reminders/reminder-sync';
+import { RemindersProvider, useReminders } from '@/features/reminders/reminders';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -29,7 +31,9 @@ export default function RootLayout() {
       <OnboardingProvider>
         <ProgressProvider>
           <JournalProvider>
-            <RootStack />
+            <RemindersProvider>
+              <RootStack />
+            </RemindersProvider>
           </JournalProvider>
         </ProgressProvider>
       </OnboardingProvider>
@@ -48,7 +52,9 @@ function RootStack() {
   const { ready, completed } = useOnboarding();
   const { ready: progressReady } = useProgress();
   const { ready: journalReady } = useJournal();
-  const loaded = (fontsLoaded || !!fontError) && ready && progressReady && journalReady;
+  const { ready: remindersReady } = useReminders();
+  const loaded =
+    (fontsLoaded || !!fontError) && ready && progressReady && journalReady && remindersReady;
 
   useEffect(() => {
     if (loaded) SplashScreen.hideAsync();
@@ -59,6 +65,7 @@ function RootStack() {
   return (
     <>
       <StatusBar style="dark" />
+      {completed && <ReminderSync />}
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Protected guard={!completed}>
           <Stack.Screen name="onboarding" />
