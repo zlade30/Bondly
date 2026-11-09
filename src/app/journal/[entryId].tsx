@@ -134,7 +134,7 @@ export default function JournalEntryScreen() {
                 }}
                 style={[styles.mood, on && styles.moodOn]}>
                 <Bondling size={44} color={m.color} mood={m.mood} noShadow />
-                <BText variant="caption" color={on ? Palette.ink : Palette.inkMuted} style={styles.moodLabel}>
+                <BText variant="caption" color={on ? Palette.ink : Palette.inkSoft} style={styles.moodLabel}>
                   {m.label}
                 </BText>
               </Pressable>

@@ -62,7 +62,7 @@ export default function MoodScreen() {
                 }}
                 style={({ pressed }) => [styles.choice, on && styles.choiceOn, pressed && styles.pressed]}>
                 <Bondling size={50} color={m.color} mood={m.mood} noShadow />
-                <BText variant="caption" color={on ? Palette.ink : Palette.inkMuted} style={styles.choiceLabel}>
+                <BText variant="caption" color={on ? Palette.ink : Palette.inkSoft} style={styles.choiceLabel}>
                   {m.label}
                 </BText>
               </Pressable>

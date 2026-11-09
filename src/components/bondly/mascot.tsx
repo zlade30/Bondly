@@ -336,6 +336,12 @@ export function HuggingPair({ width = 300 }: { width?: number }) {
       <Circle cx={236} cy={104} r={6} fill={INK} />
       <Path d="M200 112 Q 211 122 222 112" {...stroke} />
 
+      {/* hugging arm, drawn first so it comes out from behind the pink body */}
+      <Path
+        d="M140 176 C 160 168, 178 160, 190 152 C 200 146, 210 154, 204 164 C 196 176, 172 190, 150 196 Z"
+        fill="#FF9EBF"
+      />
+
       {/* small pink Bondling */}
       <Path d={small} fill={`url(#small${uid})`} />
       <Path d={small} fill={`url(#hi${uid})`} />
@@ -345,11 +351,7 @@ export function HuggingPair({ width = 300 }: { width?: number }) {
       <Path d="M118 134 Q 126 142 134 134" {...stroke} />
       <Path d="M104 152 Q 110 157 116 152" {...stroke} stroke="#E0457E" />
 
-      {/* hugging arm across the lavender one */}
-      <Path
-        d="M140 176 C 160 168, 178 160, 190 152 C 200 146, 210 154, 204 164 C 196 176, 172 190, 150 196 Z"
-        fill="#FF9EBF"
-      />
+      {/* hand resting on the lavender one */}
       <Ellipse cx={198} cy={156} rx={12} ry={11} fill="#FFA9C6" />
     </Svg>
   );

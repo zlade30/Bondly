@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   },
   thumbFill: { flex: 1, borderRadius: THUMB / 2 },
   labels: { flexDirection: 'row', justifyContent: 'space-between', gap: Space.xl },
-  label: { flex: 1, color: Palette.inkMuted, fontSize: 15 },
+  label: { flex: 1, color: Palette.inkSoft, fontSize: 15 },
   labelRight: { textAlign: 'right' },
   labelOn: { color: Palette.ink },
 });

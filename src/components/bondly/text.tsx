@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     fontFamily: Font.semibold,
     fontSize: 13,
     lineHeight: 18,
-    color: Palette.inkMuted,
+    color: Palette.inkSoft,
   },
   overline: {
     fontFamily: Font.extrabold,

@@ -28,7 +28,7 @@ export function BondlyTabBar({ state, emitter, navigateToTab }: BottomTabBarProp
         const tab = TABS[route.name];
         if (!tab) return null;
         const focused = state.index === index;
-        const color = focused ? Palette.primary : Palette.inkMuted;
+        const color = focused ? Palette.primary : Palette.inkSoft;
 
         const onPress = () => {
           const event = emitter.emit({ type: 'tabPress', target: route.key, canPreventDefault: true });

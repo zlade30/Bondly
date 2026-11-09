@@ -1,7 +1,7 @@
-import { Alert, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
-import { PrimaryButton, SecondaryButton } from '@/components/bondly/buttons';
+import { PrimaryButton } from '@/components/bondly/buttons';
 import { Logo } from '@/components/bondly/logo';
 import { HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
@@ -19,12 +19,8 @@ export default function WelcomeScreen() {
       footer={
         <Animated.View entering={FadeInDown.delay(450).duration(500)} style={styles.footer}>
           <PrimaryButton label="Get started" onPress={next} />
-          <SecondaryButton
-            label="I already have an account"
-            onPress={() => Alert.alert('Coming soon', 'Signing in will arrive with Bondly accounts.')}
-          />
           <BText variant="caption" center>
-            By continuing you agree to Bondly’s Terms and Privacy Policy.
+            🔒 Everything you share stays private on this phone.
           </BText>
         </Animated.View>
       }>
