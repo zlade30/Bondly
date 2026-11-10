@@ -2,9 +2,62 @@
   "relationship": "self",
   "journeyTitle": "Know Your Patterns",
   "journeyIntro": "For understanding how you show up with others. Practise awareness, honest needs and steadier responses.",
+  "levels": [
+    {
+      "title": "Name Your Feelings",
+      "icon": "speech",
+      "color": "lavender"
+    },
+    {
+      "title": "Open Listening",
+      "icon": "ear",
+      "color": "blue"
+    },
+    {
+      "title": "Your Needs",
+      "icon": "shield",
+      "color": "mint"
+    },
+    {
+      "title": "Turning Toward",
+      "icon": "hug",
+      "color": "peach"
+    },
+    {
+      "title": "Trusting Yourself",
+      "icon": "calendar",
+      "color": "yellow"
+    },
+    {
+      "title": "Calm Responses",
+      "icon": "scales",
+      "color": "purple"
+    },
+    {
+      "title": "Owning It",
+      "icon": "bandage",
+      "color": "pink"
+    },
+    {
+      "title": "Kinder Thoughts",
+      "icon": "sprout",
+      "color": "lavender"
+    },
+    {
+      "title": "Asking for Support",
+      "icon": "envelope",
+      "color": "peach"
+    },
+    {
+      "title": "Your Next Chapter",
+      "icon": "party",
+      "color": "yellow"
+    }
+  ],
   "lessons": [
     {
       "id": "self-1",
+      "level": 1,
       "title": "Notice Your Signals",
       "minutes": 3,
       "focus": "communication",
@@ -89,7 +142,186 @@
       ]
     },
     {
+      "id": "self-1-2",
+      "level": 1,
+      "title": "Name the Feeling",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "More words for feelings means more choices.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "“Fine” hides a lot",
+          "body": "Many of us only use “fine”, “stressed” or “angry”. Finding a more precise word, like disappointed, left out or overwhelmed, helps you understand what you need, and calms the feeling too.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend cancelled plans and you feel “annoyed”. Which word might describe it more precisely?",
+          "options": [
+            {
+              "text": "“Fine.”",
+              "why": "It hides the feeling, which makes it harder to know what you need."
+            },
+            {
+              "text": "“Disappointed. I was really looking forward to it.”",
+              "correct": true,
+              "why": "A precise word points to what matters to you, so you can respond well."
+            },
+            {
+              "text": "“Furious.”",
+              "why": "Possibly, but it may be bigger than what you actually feel."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Be more precise.",
+          "before": "I’m not just stressed, I’m",
+          "after": "by how much is on my plate.",
+          "words": [
+            "overwhelmed",
+            "delighted",
+            "hungry"
+          ],
+          "answer": "overwhelmed",
+          "why": "The right word tells you what kind of help you need."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which feeling word do you use most?",
+          "options": [
+            "Fine",
+            "Stressed",
+            "Tired",
+            "Annoyed"
+          ],
+          "reply": "Next time, try asking yourself: what’s underneath that word?"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each general word with a more precise one.",
+          "pairs": [
+            {
+              "a": "Bad",
+              "b": "Left out"
+            },
+            {
+              "a": "Stressed",
+              "b": "Overwhelmed"
+            },
+            {
+              "a": "Angry",
+              "b": "Disrespected"
+            },
+            {
+              "a": "Sad",
+              "b": "Lonely"
+            }
+          ],
+          "why": "Precise feeling words make it easier to understand yourself and ask for what you need."
+        },
+        {
+          "kind": "try",
+          "body": "Three times today, pause and find a more precise word for how you feel."
+        }
+      ]
+    },
+    {
+      "id": "self-1-3",
+      "level": 1,
+      "title": "Feelings Have Messages",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Each feeling is telling you something.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Feelings are information",
+          "body": "Feelings aren’t good or bad. Anger often signals a crossed line, sadness a loss, anxiety something that matters. Asking “what is this telling me?” turns a feeling into useful information.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You feel anxious every Sunday evening before the work week. What might it be telling you?",
+          "options": [
+            {
+              "text": "Something about the week ahead needs attention or support.",
+              "correct": true,
+              "why": "Treating anxiety as a message helps you find what to change or plan."
+            },
+            {
+              "text": "You’re just a worrier.",
+              "why": "A label stops you looking at what the feeling is pointing to."
+            },
+            {
+              "text": "Nothing. Ignore it and it’ll go.",
+              "why": "Ignored feelings tend to come back louder."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask the feeling.",
+          "before": "What is this feeling",
+          "after": "me?",
+          "words": [
+            "telling",
+            "costing",
+            "hiding from"
+          ],
+          "answer": "telling",
+          "why": "Getting curious about a feeling helps you respond instead of react."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which feeling do you find hardest to sit with?",
+          "options": [
+            "Anger",
+            "Sadness",
+            "Anxiety",
+            "Shame"
+          ],
+          "reply": "Getting curious about it, gently, can make it feel less overwhelming."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Listening to a feeling, or pushing it away?",
+          "left": "Pushing away",
+          "right": "Listening",
+          "cards": [
+            {
+              "text": "“Why am I so on edge today?”",
+              "side": "right"
+            },
+            {
+              "text": "Scrolling until you feel numb",
+              "side": "left"
+            },
+            {
+              "text": "Writing down what’s bothering you",
+              "side": "right"
+            },
+            {
+              "text": "“I shouldn’t feel this way.”",
+              "side": "left"
+            },
+            {
+              "text": "Talking it through with a friend",
+              "side": "right"
+            }
+          ],
+          "why": "Listening to feelings helps you understand and meet your needs. Pushing them away usually makes them stronger."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a strong feeling shows up, ask: “What is this telling me?” and write the answer down."
+        }
+      ]
+    },
+    {
       "id": "self-2",
+      "level": 2,
       "title": "Listen to Understand",
       "minutes": 4,
       "focus": "listening",
@@ -186,7 +418,174 @@
       ]
     },
     {
+      "id": "self-2-2",
+      "level": 2,
+      "title": "Stay Present",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Listen to them, not your next reply.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Your mind races ahead",
+          "body": "While others talk, many of us are planning what to say next. Gently bringing your attention back to their words, again and again, is what real listening feels like.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend is telling you about their week, and you notice you’re planning your own story. What do you do?",
+          "options": [
+            {
+              "text": "Keep planning so you’re ready to share.",
+              "why": "You’ll miss what they’re saying, and they may notice."
+            },
+            {
+              "text": "Gently bring your attention back to their words.",
+              "correct": true,
+              "why": "Noticing and returning is the core skill of listening."
+            },
+            {
+              "text": "Interrupt with your story before you forget.",
+              "why": "It takes the moment away from them."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Come back to them.",
+          "before": "When my mind drifts, I gently",
+          "after": "to what they’re saying.",
+          "words": [
+            "return",
+            "escape",
+            "object"
+          ],
+          "answer": "return",
+          "why": "Returning, without judging yourself, gets easier the more you practise."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where does your mind go when others talk?",
+          "options": [
+            "My reply",
+            "My to-do list",
+            "My phone",
+            "Judging what they say"
+          ],
+          "reply": "Noticing where it goes is the first step to bringing it back."
+        },
+        {
+          "kind": "order",
+          "prompt": "Staying present. Put these in order.",
+          "items": [
+            "Notice your mind has drifted",
+            "Let the thought go",
+            "Return to their words",
+            "Ask a follow-up question"
+          ],
+          "why": "Noticing and returning keeps you present; a follow-up question shows you were truly listening."
+        },
+        {
+          "kind": "try",
+          "body": "In your next conversation, notice when your mind drifts and gently bring it back."
+        }
+      ]
+    },
+    {
+      "id": "self-2-3",
+      "level": 2,
+      "title": "Hear Your Inner Voice",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Notice how you talk to yourself.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You’re always listening to you",
+          "body": "We all have an inner voice running commentary. Often it’s far harsher than we’d ever be to a friend. Simply noticing what it says is the first step to changing it.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You forget a friend’s birthday. Your inner voice says, “You’re useless, you always mess up.” What’s the healthiest response?",
+          "options": [
+            {
+              "text": "Agree with it. You did mess up.",
+              "why": "One slip doesn’t make you useless. Harsh self-talk only adds hurt."
+            },
+            {
+              "text": "Notice it, then say: “I forgot, and I can make it right.”",
+              "correct": true,
+              "why": "You acknowledge the slip kindly and move to fixing it."
+            },
+            {
+              "text": "Ignore it and distract yourself.",
+              "why": "The voice tends to return. Answering it kindly works better."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Talk to yourself like a friend.",
+          "before": "What would I say to a",
+          "after": "in this situation?",
+          "words": [
+            "friend",
+            "rival",
+            "stranger I dislike"
+          ],
+          "answer": "friend",
+          "why": "Most of us are far kinder to friends. Turning that kindness inward helps."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you notice your inner critic most?",
+          "options": [
+            "After mistakes",
+            "Looking in the mirror",
+            "At work",
+            "Comparing myself"
+          ],
+          "reply": "Knowing when it shows up helps you get ready with a kinder reply."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Inner critic, or kind inner voice?",
+          "left": "Critic",
+          "right": "Kind",
+          "cards": [
+            {
+              "text": "“You always ruin things.”",
+              "side": "left"
+            },
+            {
+              "text": "“That was hard, and you did your best.”",
+              "side": "right"
+            },
+            {
+              "text": "“Everyone else is better than you.”",
+              "side": "left"
+            },
+            {
+              "text": "“It’s okay to still be learning.”",
+              "side": "right"
+            },
+            {
+              "text": "“Why can’t you just be normal?”",
+              "side": "left"
+            }
+          ],
+          "why": "A kind inner voice doesn’t ignore mistakes. It helps you learn from them without tearing you down."
+        },
+        {
+          "kind": "try",
+          "body": "Today, catch one harsh thought about yourself and rewrite it as you would for a friend."
+        }
+      ]
+    },
+    {
       "id": "self-3",
+      "level": 3,
       "title": "Know Your Needs",
       "minutes": 4,
       "focus": "boundaries",
@@ -253,7 +652,182 @@
       ]
     },
     {
+      "id": "self-3-2",
+      "level": 3,
+      "title": "Rest Without Guilt",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Rest isn’t lazy. It’s how you recharge.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Rest is productive",
+          "body": "Many people feel guilty resting while there’s still more to do. But there will always be more to do. Rest is what lets you show up well for yourself and others.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "It’s Saturday, you’re exhausted, and there’s still housework to do. What’s healthiest?",
+          "options": [
+            {
+              "text": "Push through it all, then crash.",
+              "why": "Running on empty tends to lead to burnout."
+            },
+            {
+              "text": "Rest guilt-free for the morning, then do the most important job.",
+              "correct": true,
+              "why": "Rest first, then a realistic task, helps you recover and still get things done."
+            },
+            {
+              "text": "Rest, but feel bad the whole time.",
+              "why": "Guilt stops rest from actually recharging you."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Give yourself permission.",
+          "before": "I’m allowed to",
+          "after": "even when there’s more to do.",
+          "words": [
+            "rest",
+            "worry",
+            "apologise"
+          ],
+          "answer": "rest",
+          "why": "Permission to rest is what turns downtime into real recovery."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What helps you truly rest?",
+          "options": [
+            "A nap",
+            "Being outside",
+            "Reading",
+            "Doing nothing"
+          ],
+          "reply": "Plan a little of that this week, and notice how it changes your energy."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each guilty thought with a kinder one.",
+          "pairs": [
+            {
+              "a": "“I should be working.”",
+              "b": "“Rest helps me work better.”"
+            },
+            {
+              "a": "“Others do more.”",
+              "b": "“My needs matter too.”"
+            },
+            {
+              "a": "“I haven’t earned it.”",
+              "b": "“Rest isn’t a reward, it’s a need.”"
+            }
+          ],
+          "why": "Kinder thoughts let you rest properly, so you come back with more energy."
+        },
+        {
+          "kind": "try",
+          "body": "Schedule thirty minutes of guilt-free rest this week and protect it."
+        }
+      ]
+    },
+    {
+      "id": "self-3-3",
+      "level": 3,
+      "title": "People-Pleasing",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "You can be kind without always saying yes.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Pleasing everyone costs you",
+          "body": "Saying yes to keep everyone happy can leave you drained and resentful. Noticing the urge to please, and pausing before you answer, helps you choose what you really want.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A neighbour asks you to water their plants for two weeks while you’re very busy. Your instinct is to say yes. What’s best?",
+          "options": [
+            {
+              "text": "Say yes. You don’t want them to think badly of you.",
+              "why": "Agreeing out of fear often leads to stress and resentment."
+            },
+            {
+              "text": "Avoid them until they ask someone else.",
+              "why": "Avoidance can feel awkward and leaves them waiting."
+            },
+            {
+              "text": "“Let me check my diary and get back to you tonight.”",
+              "correct": true,
+              "why": "A pause gives you time to decide what you can genuinely offer."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Buy yourself time.",
+          "before": "Can I",
+          "after": "and get back to you?",
+          "words": [
+            "think about it",
+            "say yes now",
+            "hide"
+          ],
+          "answer": "think about it",
+          "why": "A short pause breaks the automatic yes, so you can choose freely."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who do you find it hardest to say no to?",
+          "options": [
+            "Family",
+            "Friends",
+            "My boss",
+            "Strangers"
+          ],
+          "reply": "Practising a pause with that person first can make a big difference."
+        },
+        {
+          "kind": "sort",
+          "prompt": "People-pleasing, or healthy kindness?",
+          "left": "Pleasing",
+          "right": "Healthy",
+          "cards": [
+            {
+              "text": "Saying yes, then resenting it",
+              "side": "left"
+            },
+            {
+              "text": "Helping because you want to",
+              "side": "right"
+            },
+            {
+              "text": "Apologising for things that aren’t your fault",
+              "side": "left"
+            },
+            {
+              "text": "“I can’t this time, but good luck!”",
+              "side": "right"
+            },
+            {
+              "text": "Hiding your opinion to avoid conflict",
+              "side": "left"
+            }
+          ],
+          "why": "Healthy kindness comes from choice, not fear. You can care about others and still look after yourself."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone asks you for something, pause before answering, even for a moment."
+        }
+      ]
+    },
+    {
       "id": "self-4",
+      "level": 4,
       "title": "Notice Connection Bids",
       "minutes": 3,
       "focus": "connection",
@@ -349,7 +923,179 @@
       ]
     },
     {
+      "id": "self-4-2",
+      "level": 4,
+      "title": "Be the One Who Reaches Out",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Don’t wait to be invited.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Everyone is waiting for someone",
+          "body": "Many people feel lonely while waiting for others to make the first move. Reaching out first, a text, an invite, a call, often gets a warm response, because they were waiting too.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve been feeling a bit lonely lately. What’s a good first step?",
+          "options": [
+            {
+              "text": "Message a friend: “Fancy a walk this weekend?”",
+              "correct": true,
+              "why": "A simple, specific invite is an easy way to reconnect."
+            },
+            {
+              "text": "Wait for someone to notice and get in touch.",
+              "why": "Others may be busy or waiting for you too."
+            },
+            {
+              "text": "Post a sad status online.",
+              "why": "It may get likes, but a direct message brings real connection."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make it easy.",
+          "before": "Are you",
+          "after": "for a coffee this week?",
+          "words": [
+            "free",
+            "angry",
+            "rich"
+          ],
+          "answer": "free",
+          "why": "A light, specific invite is easy to say yes to."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who could you reach out to this week?",
+          "options": [
+            "An old friend",
+            "A colleague",
+            "A neighbour",
+            "A family member"
+          ],
+          "reply": "One message is all it takes to start."
+        },
+        {
+          "kind": "order",
+          "prompt": "Reaching out. Put these in order.",
+          "items": [
+            "Pick one person",
+            "Send a short, warm message",
+            "Suggest a simple plan",
+            "Follow up if they’re busy"
+          ],
+          "why": "One person and one small plan make reaching out feel manageable, and following up shows you mean it."
+        },
+        {
+          "kind": "try",
+          "body": "Reach out to one person today with a simple invitation."
+        }
+      ]
+    },
+    {
+      "id": "self-4-3",
+      "level": 4,
+      "title": "Make Time for People",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Relationships need a place in your week.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Busy weeks squeeze out people",
+          "body": "Work and chores fill every gap if you let them. Putting time with people in your diary, like any other appointment, makes sure connection doesn’t keep getting pushed back.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You keep saying you’ll see friends “when things calm down”. What’s most likely to help?",
+          "options": [
+            {
+              "text": "Wait until you’re less busy.",
+              "why": "Busy seasons often roll into each other, so “later” rarely comes."
+            },
+            {
+              "text": "Book one regular catch-up a week, like Thursday dinner.",
+              "correct": true,
+              "why": "A regular slot means connection happens, even in busy times."
+            },
+            {
+              "text": "Plan one big catch-up every few months.",
+              "why": "Nice, but small, regular contact keeps you closer."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Put it in the diary.",
+          "before": "Thursday evenings are for",
+          "after": ".",
+          "words": [
+            "friends",
+            "laundry",
+            "emails"
+          ],
+          "answer": "friends",
+          "why": "Protecting a regular time makes connection a habit, not an afterthought."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How much of your week goes to people you love?",
+          "options": [
+            "Plenty",
+            "Some",
+            "Not much",
+            "Hardly any"
+          ],
+          "reply": "Even one protected hour a week can change how connected you feel."
+        },
+        {
+          "kind": "scene",
+          "title": "A gentle nudge",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "We keep saying we’ll catch up 😅"
+            },
+            {
+              "from": "them",
+              "text": "Life is so busy right now!"
+            }
+          ],
+          "prompt": "Reply:",
+          "options": [
+            {
+              "text": "I know! Let’s do it when things calm down.",
+              "reaction": "Yeah, definitely 👍",
+              "why": "It sounds friendly, but “when things calm down” often never comes."
+            },
+            {
+              "text": "Let’s just book it! Thursday at 7, our usual spot?",
+              "correct": true,
+              "reaction": "Yes!! Finally 🙌",
+              "why": "Turning “we should” into a booked plan makes it actually happen."
+            },
+            {
+              "text": "Tell me about it, I’m swamped.",
+              "reaction": "Ugh, same.",
+              "why": "Agreeing about being busy keeps you stuck in the same pattern."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Book one regular time with someone you care about, and put it in your diary."
+        }
+      ]
+    },
+    {
       "id": "self-5",
+      "level": 5,
       "title": "Keep Promises to Yourself",
       "minutes": 4,
       "focus": "trust",
@@ -440,7 +1186,182 @@
       ]
     },
     {
+      "id": "self-5-2",
+      "level": 5,
+      "title": "Tiny Habits",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Start so small you can’t fail.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Small habits stick",
+          "body": "Big goals often fail because they need too much willpower. A tiny version, two minutes of stretching, one line in a journal, is easy to keep, and keeping it builds trust in yourself.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You want to read more but never seem to find time. Which plan is most likely to stick?",
+          "options": [
+            {
+              "text": "Read for an hour every night from tonight.",
+              "why": "Ambitious, but one busy evening can break the habit."
+            },
+            {
+              "text": "Read when you feel like it.",
+              "why": "Without a plan, it’s easy to keep putting off."
+            },
+            {
+              "text": "Read one page in bed every night.",
+              "correct": true,
+              "why": "So small it’s easy to keep, and it often grows naturally."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Link it to something.",
+          "before": "After I brush my teeth, I’ll",
+          "after": "one page.",
+          "words": [
+            "read",
+            "skip",
+            "forget"
+          ],
+          "answer": "read",
+          "why": "Linking a new habit to an existing one makes it much easier to remember."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which habit would you like to build?",
+          "options": [
+            "Exercise",
+            "Reading",
+            "Journalling",
+            "Sleep"
+          ],
+          "reply": "What’s the tiniest version of it you could start today?"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each big goal with a tiny first step.",
+          "pairs": [
+            {
+              "a": "Get fit",
+              "b": "Two minutes of stretching"
+            },
+            {
+              "a": "Journal daily",
+              "b": "Write one sentence"
+            },
+            {
+              "a": "Drink more water",
+              "b": "A glass after waking"
+            }
+          ],
+          "why": "Tiny steps you actually take build trust in yourself, and often grow into bigger habits."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one habit and start the tiniest possible version of it today."
+        }
+      ]
+    },
+    {
+      "id": "self-5-3",
+      "level": 5,
+      "title": "Kindness After Slips",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Missing a day doesn’t undo your progress.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Slips are part of change",
+          "body": "Everyone misses a day, breaks a streak or falls back into an old habit. What matters is how you respond. Kindness helps you get back on track; harshness makes you want to give up.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve kept up your morning walks for three weeks, then missed four days. What’s the best response?",
+          "options": [
+            {
+              "text": "“I’ve failed. There’s no point now.”",
+              "why": "All-or-nothing thinking throws away three weeks of progress."
+            },
+            {
+              "text": "“I missed a few days. Tomorrow I’ll walk again.”",
+              "correct": true,
+              "why": "Kind and practical, which helps you restart without drama."
+            },
+            {
+              "text": "Double the walks to make up for it.",
+              "why": "Punishing yourself makes the habit feel like a chore."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Start again.",
+          "before": "Missing a day is",
+          "after": ". I’ll start again tomorrow.",
+          "words": [
+            "normal",
+            "proof I’m lazy",
+            "the end"
+          ],
+          "answer": "normal",
+          "why": "Seeing slips as normal makes it much easier to keep going."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you slip up on a goal, you usually…",
+          "options": [
+            "Start again quickly",
+            "Give up for a while",
+            "Feel guilty",
+            "Try harder"
+          ],
+          "reply": "Starting again quickly, with kindness, is the habit that matters most."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Kind response, or harsh?",
+          "left": "Harsh",
+          "right": "Kind",
+          "cards": [
+            {
+              "text": "“I’ll pick it up again tomorrow.”",
+              "side": "right"
+            },
+            {
+              "text": "“I’m hopeless at this.”",
+              "side": "left"
+            },
+            {
+              "text": "“Three weeks is still progress.”",
+              "side": "right"
+            },
+            {
+              "text": "“Why do I even bother?”",
+              "side": "left"
+            },
+            {
+              "text": "“What made it hard this week?”",
+              "side": "right"
+            }
+          ],
+          "why": "Kind responses keep you moving. Harsh ones make you want to stop altogether."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you slip on a goal, say one kind sentence to yourself and restart the next day."
+        }
+      ]
+    },
+    {
       "id": "self-6",
+      "level": 6,
       "title": "Pause Before Reacting",
       "minutes": 4,
       "focus": "conflict",
@@ -508,7 +1429,164 @@
       ]
     },
     {
+      "id": "self-6-2",
+      "level": 6,
+      "title": "Name It to Tame It",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Saying what you feel helps it settle.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Naming calms the storm",
+          "body": "When a strong feeling hits, simply naming it, “I’m feeling really frustrated right now”, helps your brain settle. It creates a little space between the feeling and what you do next.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner forgets to pick up the shopping, again. You feel a surge of frustration. What helps first?",
+          "options": [
+            {
+              "text": "Say exactly what you’re thinking, straight away.",
+              "why": "In the heat of the moment, words often come out harsher than you mean."
+            },
+            {
+              "text": "Silently say to yourself, “I’m frustrated,” and take a breath.",
+              "correct": true,
+              "why": "Naming the feeling calms it, so you can respond rather than react."
+            },
+            {
+              "text": "Pretend it doesn’t bother you.",
+              "why": "Pushing feelings down tends to make them burst out later."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name it.",
+          "before": "Right now, I’m feeling",
+          "after": ".",
+          "words": [
+            "frustrated",
+            "nothing",
+            "perfect"
+          ],
+          "answer": "frustrated",
+          "why": "Putting a feeling into words gives you a moment of calm and choice."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which feeling most often makes you react quickly?",
+          "options": [
+            "Frustration",
+            "Hurt",
+            "Embarrassment",
+            "Fear"
+          ],
+          "reply": "Naming that one feeling when it shows up can change how you respond."
+        },
+        {
+          "kind": "order",
+          "prompt": "When a strong feeling hits. Put these in order.",
+          "items": [
+            "Notice the feeling in your body",
+            "Name it to yourself",
+            "Take a slow breath",
+            "Choose what to say"
+          ],
+          "why": "Noticing and naming come before choosing, which is what makes a calm response possible."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you feel a strong emotion, name it silently before you say anything."
+        }
+      ]
+    },
+    {
+      "id": "self-6-3",
+      "level": 6,
+      "title": "Handle Criticism Calmly",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Take what’s useful, leave the rest.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Criticism stings, but can help",
+          "body": "Hearing criticism can feel like an attack. Pausing, asking a question and taking what’s useful, while letting go of what isn’t, keeps you calm and helps you grow.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend tells you that you can come across as dismissive in group chats. It stings. What’s best?",
+          "options": [
+            {
+              "text": "“That’s not true, you’re being oversensitive.”",
+              "why": "Defending straight away means you miss what could be useful."
+            },
+            {
+              "text": "Go quiet and feel hurt for days.",
+              "why": "Stewing keeps the sting without the learning."
+            },
+            {
+              "text": "“That’s hard to hear, but thanks for telling me. Can you give me an example?”",
+              "correct": true,
+              "why": "Calm and curious, so you can understand and decide what to change."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Get curious.",
+          "before": "Can you give me an",
+          "after": "?",
+          "words": [
+            "example",
+            "apology",
+            "excuse"
+          ],
+          "answer": "example",
+          "why": "A concrete example helps you see what they mean, so you can respond fairly."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually react to criticism?",
+          "options": [
+            "Defend myself",
+            "Shut down",
+            "Over-apologise",
+            "Get curious"
+          ],
+          "reply": "Whatever your habit, a pause and one question can change how it goes."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each defensive reaction with a calmer one.",
+          "pairs": [
+            {
+              "a": "“That’s not fair!”",
+              "b": "“Tell me more.”"
+            },
+            {
+              "a": "“You do it too.”",
+              "b": "“I’ll think about that.”"
+            },
+            {
+              "a": "“I’m terrible then.”",
+              "b": "“That’s useful to know.”"
+            }
+          ],
+          "why": "Calm responses let you learn from criticism without losing your sense of self-worth."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you receive criticism, ask one curious question before you respond."
+        }
+      ]
+    },
+    {
       "id": "self-7",
+      "level": 7,
       "title": "Own Your Part",
       "minutes": 4,
       "focus": "conflict",
@@ -604,7 +1682,168 @@
       ]
     },
     {
+      "id": "self-7-2",
+      "level": 7,
+      "title": "Apologise Well",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "A clear apology heals faster than excuses.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A real apology has no “but”",
+          "body": "A good apology names what you did, acknowledges how it affected them and says what you’ll do differently. No excuses, and no “sorry if you were upset”.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You snapped at your flatmate after a stressful day. Which apology is best?",
+          "options": [
+            {
+              "text": "“I snapped at you, and that wasn’t fair. Sorry. Next time I’ll say I’m stressed.”",
+              "correct": true,
+              "why": "It owns the action, the impact and the change, without excuses."
+            },
+            {
+              "text": "“Sorry, but I’ve had a terrible day.”",
+              "why": "The “but” turns the apology into an excuse."
+            },
+            {
+              "text": "“Sorry if you were upset.”",
+              "why": "It puts the problem on their feelings, not your action."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Drop the excuse.",
+          "before": "I’m sorry. That wasn’t",
+          "after": "to you.",
+          "words": [
+            "fair",
+            "my fault",
+            "a big deal"
+          ],
+          "answer": "fair",
+          "why": "Saying it wasn’t fair shows you understand the impact on them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes apologising hardest for you?",
+          "options": [
+            "Pride",
+            "Feeling ashamed",
+            "Thinking I was right",
+            "Fear of their reaction"
+          ],
+          "reply": "Knowing what holds you back makes it easier to apologise sooner."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Real apology, or a non-apology?",
+          "left": "Non-apology",
+          "right": "Real",
+          "cards": [
+            {
+              "text": "“I was wrong to say that.”",
+              "side": "right"
+            },
+            {
+              "text": "“Sorry you feel that way.”",
+              "side": "left"
+            },
+            {
+              "text": "“I can see it hurt you.”",
+              "side": "right"
+            },
+            {
+              "text": "“Mistakes were made.”",
+              "side": "left"
+            },
+            {
+              "text": "“Next time I’ll check in first.”",
+              "side": "right"
+            }
+          ],
+          "why": "Real apologies take responsibility and look forward. Non-apologies quietly shift the blame."
+        },
+        {
+          "kind": "try",
+          "body": "If you owe someone an apology, give it this week, with no “but”."
+        }
+      ]
+    },
+    {
+      "id": "self-7-3",
+      "level": 7,
+      "title": "Forgive Yourself",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Learn from mistakes without carrying them forever.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Guilt can help, shame doesn’t",
+          "body": "Guilt says “I did something wrong”, and can help you make amends. Shame says “I am bad”, and just weighs you down. Forgiving yourself means learning the lesson and letting the weight go.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Months ago, you said something hurtful to a friend. You apologised and they forgave you, but you still feel awful. What helps?",
+          "options": [
+            {
+              "text": "Keep going over it so you never do it again.",
+              "why": "Replaying it doesn’t make you kinder, it just keeps you hurting."
+            },
+            {
+              "text": "“I made a mistake, I made amends, and I’ve learnt from it. I can let this go.”",
+              "correct": true,
+              "why": "You honour the lesson and release the shame."
+            },
+            {
+              "text": "Avoid the friend so you don’t feel bad.",
+              "why": "Avoidance can damage a friendship that’s already been repaired."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Let it go.",
+          "before": "I’ve learnt from it, and I can",
+          "after": "it go now.",
+          "words": [
+            "let",
+            "never let",
+            "hold"
+          ],
+          "answer": "let",
+          "why": "Letting go after making amends lets you move forward as a kinder person."
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there something you’re still holding against yourself? What did you learn from it?",
+          "placeholder": "e.g. I learnt to pause before I reply"
+        },
+        {
+          "kind": "order",
+          "prompt": "Forgiving yourself. Put these in order.",
+          "items": [
+            "Admit what happened",
+            "Make amends if you can",
+            "Name what you’ve learnt",
+            "Choose to let it go"
+          ],
+          "why": "Owning it and learning from it come first. Then letting go becomes possible, and healthy."
+        },
+        {
+          "kind": "try",
+          "body": "Write down one mistake you’ve learnt from, and one kind sentence to let it go."
+        }
+      ]
+    },
+    {
       "id": "self-8",
+      "level": 8,
       "title": "Question Your Story",
       "minutes": 4,
       "focus": "trust",
@@ -679,7 +1918,187 @@
       ]
     },
     {
+      "id": "self-8-2",
+      "level": 8,
+      "title": "The Comparison Trap",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Comparing your inside to their highlight reel.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Comparison steals joy",
+          "body": "Scrolling through others’ holidays, promotions and perfect homes, it’s easy to feel behind. But you’re comparing your whole life to their best moments. Your path is your own.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You see an old classmate’s post about buying a big house, and feel like a failure. What’s the healthiest thought?",
+          "options": [
+            {
+              "text": "“I’m so far behind everyone.”",
+              "why": "One post isn’t the full story, of their life or yours."
+            },
+            {
+              "text": "“Good for them. My life has its own good things and its own timing.”",
+              "correct": true,
+              "why": "You can be happy for them while staying grounded in your own path."
+            },
+            {
+              "text": "Unfollow everyone who seems successful.",
+              "why": "Sometimes helpful, but the comparison habit can follow you."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Compare with yourself.",
+          "before": "Compared to a year ago, I’ve",
+          "after": ".",
+          "words": [
+            "grown",
+            "failed",
+            "stopped"
+          ],
+          "answer": "grown",
+          "why": "Comparing with your past self shows real progress that others can’t see."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you compare yourself on most?",
+          "options": [
+            "Career",
+            "Looks",
+            "Relationships",
+            "Money"
+          ],
+          "reply": "Noticing your trigger helps you catch the comparison before it takes over."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each comparison with a grounding thought.",
+          "pairs": [
+            {
+              "a": "“They’re so successful.”",
+              "b": "“Success looks different for everyone.”"
+            },
+            {
+              "a": "“They look perfect.”",
+              "b": "“I only see their best moments.”"
+            },
+            {
+              "a": "“I should be further on.”",
+              "b": "“My timing is my own.”"
+            }
+          ],
+          "why": "Grounding thoughts bring you back to your own life, where your real progress is."
+        },
+        {
+          "kind": "try",
+          "body": "When you catch yourself comparing today, name one thing you’re proud of in your own life."
+        }
+      ]
+    },
+    {
+      "id": "self-8-3",
+      "level": 8,
+      "title": "Inner Critic, Inner Coach",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Turn harsh self-talk into encouragement.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Swap the critic for a coach",
+          "body": "A critic tears you down; a coach is honest but helps you improve. Asking “What would a good coach say here?” turns harsh self-talk into something useful.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You stumble over your words in a presentation. Your inner voice says, “You embarrassed yourself.” What would a coach say?",
+          "options": [
+            {
+              "text": "“You’re right, that was awful.”",
+              "why": "That’s the critic again, and it doesn’t help you improve."
+            },
+            {
+              "text": "“Who cares, it doesn’t matter.”",
+              "why": "Brushing it off skips a chance to learn."
+            },
+            {
+              "text": "“You recovered well. Next time, a bit more practice on the opening.”",
+              "correct": true,
+              "why": "Honest, kind and useful, which is exactly what a good coach does."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Coach yourself.",
+          "before": "Next time, I’ll",
+          "after": "the opening once more.",
+          "words": [
+            "practise",
+            "dread",
+            "skip"
+          ],
+          "answer": "practise",
+          "why": "A coach focuses on what to do next, not on what went wrong."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who has been a great coach or mentor in your life?",
+          "options": [
+            "A teacher",
+            "A parent",
+            "A friend",
+            "A manager"
+          ],
+          "reply": "Imagining what they’d say can help you talk to yourself more kindly."
+        },
+        {
+          "kind": "scene",
+          "title": "Your inner voice",
+          "them": "Your inner critic",
+          "lines": [
+            {
+              "from": "them",
+              "text": "You forgot to reply to Sam AGAIN."
+            },
+            {
+              "from": "them",
+              "text": "You’re such a terrible friend."
+            }
+          ],
+          "prompt": "Answer like a coach:",
+          "options": [
+            {
+              "text": "You’re right. I’m hopeless.",
+              "reaction": "(You feel worse, and still don’t reply.)",
+              "why": "Agreeing with the critic makes you feel worse and doesn’t fix anything."
+            },
+            {
+              "text": "I slipped up, but I care about Sam. I’ll reply now and set a reminder.",
+              "correct": true,
+              "reaction": "(You send the message and feel lighter.)",
+              "why": "Coach-style talk owns the slip and moves you to action."
+            },
+            {
+              "text": "It doesn’t matter, Sam won’t notice.",
+              "reaction": "(The guilt hangs around.)",
+              "why": "Brushing it off leaves the problem, and the feeling, unresolved."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "When your inner critic speaks today, answer it the way a kind coach would."
+        }
+      ]
+    },
+    {
       "id": "self-9",
+      "level": 9,
       "title": "Ask for What Helps",
       "minutes": 4,
       "focus": "communication",
@@ -770,7 +2189,176 @@
       ]
     },
     {
+      "id": "self-9-2",
+      "level": 9,
+      "title": "Accept Help",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Letting others help is a gift to them too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Receiving is a skill",
+          "body": "Many people are great at helping and terrible at being helped. Saying “Thank you, that would be great” instead of “No, I’m fine” lets others show they care, and lightens your load.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re recovering from flu. A friend offers to drop off soup. Your instinct is to say you’re fine. What’s best?",
+          "options": [
+            {
+              "text": "“Honestly, that would be lovely. Thank you!”",
+              "correct": true,
+              "why": "Accepting graciously lets them help and lets you rest."
+            },
+            {
+              "text": "“No, no, I don’t want to be a bother.”",
+              "why": "Refusing can leave them feeling shut out."
+            },
+            {
+              "text": "Accept, then apologise repeatedly.",
+              "why": "Over-apologising can make kindness feel like a burden."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Accept graciously.",
+          "before": "That would be really",
+          "after": ". Thank you!",
+          "words": [
+            "helpful",
+            "annoying",
+            "unnecessary"
+          ],
+          "answer": "helpful",
+          "why": "A simple, warm yes makes helping you feel good to them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes accepting help hard for you?",
+          "options": [
+            "Feeling like a burden",
+            "Wanting to be independent",
+            "Not wanting to owe anyone",
+            "It’s easy for me"
+          ],
+          "reply": "Remember how good it feels to help someone you care about. They feel the same."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Accepting help, or pushing it away?",
+          "left": "Pushing away",
+          "right": "Accepting",
+          "cards": [
+            {
+              "text": "“Thank you, that means a lot.”",
+              "side": "right"
+            },
+            {
+              "text": "“I can manage on my own.”",
+              "side": "left"
+            },
+            {
+              "text": "“Yes please, could you grab some milk?”",
+              "side": "right"
+            },
+            {
+              "text": "“You really don’t have to.”",
+              "side": "left"
+            },
+            {
+              "text": "Letting a friend cook for you",
+              "side": "right"
+            }
+          ],
+          "why": "Accepting help deepens relationships. It shows trust, and lets others care for you as you care for them."
+        },
+        {
+          "kind": "try",
+          "body": "The next time someone offers help, say yes and thank them."
+        }
+      ]
+    },
+    {
+      "id": "self-9-3",
+      "level": 9,
+      "title": "Your Support Circle",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Know who you can turn to, for what.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Different people, different support",
+          "body": "No one person can meet all your needs. One friend is great for practical help, another for a laugh, another for deep talks. Knowing your circle helps you reach the right person.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re worried about a big decision and want someone to talk it through with. What’s the best approach?",
+          "options": [
+            {
+              "text": "Keep it to yourself so you don’t burden anyone.",
+              "why": "Big decisions are easier with support, and people often want to help."
+            },
+            {
+              "text": "Ask the friend who’s thoughtful and a good listener.",
+              "correct": true,
+              "why": "Choosing the right person for the kind of support you need makes it far more helpful."
+            },
+            {
+              "text": "Ask everyone you know for their opinion.",
+              "why": "Too many views can make it more confusing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reach the right person.",
+          "before": "When I need a",
+          "after": ", I call Jess.",
+          "words": [
+            "laugh",
+            "lecture",
+            "loan"
+          ],
+          "answer": "laugh",
+          "why": "Knowing who’s good for what helps you get the right support quickly."
+        },
+        {
+          "kind": "write",
+          "prompt": "Who would you turn to for practical help, a laugh, or a deep talk?",
+          "placeholder": "e.g. practical: Dad, laugh: Jess, deep talk: Amir"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each need with the kind of person to ask.",
+          "pairs": [
+            {
+              "a": "A big decision",
+              "b": "A thoughtful listener"
+            },
+            {
+              "a": "Moving house",
+              "b": "A practical helper"
+            },
+            {
+              "a": "A bad day",
+              "b": "Someone who makes you laugh"
+            }
+          ],
+          "why": "Spreading your needs across a circle of people makes support easier to find and to give."
+        },
+        {
+          "kind": "try",
+          "body": "Write down your support circle, and reach out to one person in it this week."
+        }
+      ]
+    },
+    {
       "id": "self-10",
+      "level": 10,
       "title": "Choose Your Next Step",
       "minutes": 4,
       "focus": "connection",
@@ -849,6 +2437,172 @@
         {
           "kind": "try",
           "body": "Pick one small relationship habit to practise every day next week, and put a reminder somewhere you’ll see it."
+        }
+      ]
+    },
+    {
+      "id": "self-10-2",
+      "level": 10,
+      "title": "Celebrate Small Wins",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Notice your progress, however small.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Small wins add up",
+          "body": "It’s easy to only notice what’s still left to do. Pausing to notice small wins, a hard conversation handled, a habit kept, builds confidence and motivation to keep going.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "This week you finally told a friend how you really felt about something. What’s the best response?",
+          "options": [
+            {
+              "text": "Move straight on. It was nothing special.",
+              "why": "Skipping the win means missing a chance to build confidence."
+            },
+            {
+              "text": "Focus on what you could have said better.",
+              "why": "Reflection is useful, but first, notice what you did well."
+            },
+            {
+              "text": "Take a moment to feel proud, and tell someone close.",
+              "correct": true,
+              "why": "Celebrating helps the new habit stick, and shares the good moment."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Notice it.",
+          "before": "This week, I’m",
+          "after": "that I spoke up.",
+          "words": [
+            "proud",
+            "worried",
+            "sorry"
+          ],
+          "answer": "proud",
+          "why": "Naming your pride turns a small moment into lasting motivation."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s one small win from this week?",
+          "options": [
+            "A kept habit",
+            "A hard talk",
+            "Asking for help",
+            "Something else"
+          ],
+          "reply": "Whatever it is, it counts. Give yourself credit for it."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Celebrating a win, or brushing it off?",
+          "left": "Brushing off",
+          "right": "Celebrating",
+          "cards": [
+            {
+              "text": "“I did that. Nice one.”",
+              "side": "right"
+            },
+            {
+              "text": "“Anyone could have done it.”",
+              "side": "left"
+            },
+            {
+              "text": "Telling a friend about it",
+              "side": "right"
+            },
+            {
+              "text": "“It doesn’t count, it was small.”",
+              "side": "left"
+            },
+            {
+              "text": "Writing it in a wins list",
+              "side": "right"
+            }
+          ],
+          "why": "Celebrating small wins builds confidence. Brushing them off makes progress feel invisible."
+        },
+        {
+          "kind": "try",
+          "body": "Start a short wins list today, and add one thing to it."
+        }
+      ]
+    },
+    {
+      "id": "self-10-3",
+      "level": 10,
+      "title": "Keep Growing",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Growth is a practice, not a finish line.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You’ll keep learning",
+          "body": "Better relationships come from small skills, practised again and again. You won’t get it perfect, and you don’t need to. Choosing one thing to keep practising is what makes the change last.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve finished this journey. What’s the best way to keep growing?",
+          "options": [
+            {
+              "text": "Try to practise everything at once.",
+              "why": "Too much at once is hard to keep up."
+            },
+            {
+              "text": "Pick one skill to focus on this month.",
+              "correct": true,
+              "why": "One focused skill is easier to practise until it becomes natural."
+            },
+            {
+              "text": "Assume you’re done now.",
+              "why": "Skills fade without practice. Keeping one going keeps you growing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Choose your focus.",
+          "before": "This month, I’ll",
+          "after": "pausing before I react.",
+          "words": [
+            "practise",
+            "avoid",
+            "forget"
+          ],
+          "answer": "practise",
+          "why": "Naming one skill to practise turns learning into lasting change."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which skill do you most want to keep practising?",
+          "options": [
+            "Listening",
+            "Saying no kindly",
+            "Being kind to myself",
+            "Reaching out"
+          ],
+          "reply": "That’s a great choice. Small, steady practice is what makes it stick."
+        },
+        {
+          "kind": "order",
+          "prompt": "Keeping a skill going. Put these in order.",
+          "items": [
+            "Choose one skill",
+            "Practise it in small moments",
+            "Notice what changes",
+            "Choose the next skill"
+          ],
+          "why": "One skill at a time, practised often, is how lasting growth happens."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one skill from this journey to practise every day this month."
         }
       ]
     }

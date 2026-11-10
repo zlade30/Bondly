@@ -2,9 +2,62 @@
   "relationship": "work",
   "journeyTitle": "Work Better Together",
   "journeyIntro": "For colleagues, managers and teammates. Practise clear requests, feedback and respectful collaboration.",
+  "levels": [
+    {
+      "title": "Clear Messages",
+      "icon": "envelope",
+      "color": "blue"
+    },
+    {
+      "title": "Active Listening",
+      "icon": "ear",
+      "color": "lavender"
+    },
+    {
+      "title": "Team Connection",
+      "icon": "hug",
+      "color": "peach"
+    },
+    {
+      "title": "Healthy Boundaries",
+      "icon": "shield",
+      "color": "mint"
+    },
+    {
+      "title": "Being Dependable",
+      "icon": "calendar",
+      "color": "yellow"
+    },
+    {
+      "title": "Productive Disagreement",
+      "icon": "scales",
+      "color": "purple"
+    },
+    {
+      "title": "Useful Feedback",
+      "icon": "speech",
+      "color": "pink"
+    },
+    {
+      "title": "Growing From Feedback",
+      "icon": "sprout",
+      "color": "mint"
+    },
+    {
+      "title": "Team Repairs",
+      "icon": "bandage",
+      "color": "peach"
+    },
+    {
+      "title": "Strong Teams",
+      "icon": "party",
+      "color": "lavender"
+    }
+  ],
   "lessons": [
     {
       "id": "work-1",
+      "level": 1,
       "title": "Make Clear Requests",
       "minutes": 3,
       "focus": "communication",
@@ -95,7 +148,174 @@
       ]
     },
     {
+      "id": "work-1-2",
+      "level": 1,
+      "title": "Write Better Emails",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Lead with the point, then the detail.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Busy people skim",
+          "body": "Most people read the first two lines of an email. Put what you need, and by when, at the top. The background can follow for anyone who wants it.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You need your manager to approve a budget by Thursday. How should your email start?",
+          "options": [
+            {
+              "text": "“Could you approve the events budget by Thursday? Details below.”",
+              "correct": true,
+              "why": "The ask and deadline are right at the top, so it can’t be missed."
+            },
+            {
+              "text": "A long recap of the project so far, with the ask at the end.",
+              "why": "The request may never be read if they stop after a paragraph."
+            },
+            {
+              "text": "“Hi, hope you’re well! Just checking in.”",
+              "why": "Friendly, but it hides why you’re writing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Lead with the ask.",
+          "before": "Quick ask: could you",
+          "after": "the draft by Friday?",
+          "words": [
+            "review",
+            "forget",
+            "ignore"
+          ],
+          "answer": "review",
+          "why": "A clear verb and a deadline up front make your email easy to act on."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What slows your emails down most?",
+          "options": [
+            "Too much background",
+            "No clear ask",
+            "Too many people copied",
+            "Vague subject lines"
+          ],
+          "reply": "Fixing just that one habit can make your emails noticeably quicker to act on."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Clear email habit, or confusing one?",
+          "left": "Confusing",
+          "right": "Clear",
+          "cards": [
+            {
+              "text": "Subject: “Approval needed by Thu: events budget”",
+              "side": "right"
+            },
+            {
+              "text": "Subject: “Quick question”",
+              "side": "left"
+            },
+            {
+              "text": "One ask per email",
+              "side": "right"
+            },
+            {
+              "text": "Five questions buried in paragraphs",
+              "side": "left"
+            },
+            {
+              "text": "Bullet points for key details",
+              "side": "right"
+            }
+          ],
+          "why": "Clear emails put the ask first and make details easy to scan, so people can respond quickly."
+        },
+        {
+          "kind": "try",
+          "body": "Rewrite your next work email so the ask and deadline are in the first line."
+        }
+      ]
+    },
+    {
+      "id": "work-1-3",
+      "level": 1,
+      "title": "Speak Up in Meetings",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Your ideas count. Share them clearly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Good ideas need a voice",
+          "body": "Many people stay quiet in meetings, worried they’ll sound silly. A short, clear point, “I’d suggest X because Y”, is often exactly what the room needs.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "In a meeting, you have an idea that could save time, but you’re nervous to speak up. What’s best?",
+          "options": [
+            {
+              "text": "Stay quiet and email it to someone later.",
+              "why": "It might never get heard, or someone else may get the credit."
+            },
+            {
+              "text": "“Can I add something? We could reuse last year’s template, which would save a week.”",
+              "correct": true,
+              "why": "Short, clear and tied to a benefit, which makes it easy to consider."
+            },
+            {
+              "text": "Wait until the very end of the meeting.",
+              "why": "By then, decisions may already be made."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A clear way in.",
+          "before": "Could I",
+          "after": "a quick idea?",
+          "words": [
+            "add",
+            "hide",
+            "steal"
+          ],
+          "answer": "add",
+          "why": "A polite opener gives you the floor without interrupting."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What stops you speaking up in meetings?",
+          "options": [
+            "Nerves",
+            "Someone always talks over",
+            "Not sure it’s useful",
+            "I do speak up"
+          ],
+          "reply": "Preparing one point before the meeting makes it much easier to share."
+        },
+        {
+          "kind": "order",
+          "prompt": "Making a point in a meeting. Put these in order.",
+          "items": [
+            "Prepare one point beforehand",
+            "Wait for a natural pause",
+            "Say your idea and why",
+            "Ask for others’ thoughts"
+          ],
+          "why": "Preparation and good timing help you speak confidently; asking for thoughts makes it a team discussion."
+        },
+        {
+          "kind": "try",
+          "body": "Prepare one point before your next meeting and share it during the discussion."
+        }
+      ]
+    },
+    {
       "id": "work-2",
+      "level": 2,
       "title": "Listen in Meetings",
       "minutes": 4,
       "focus": "listening",
@@ -197,7 +417,182 @@
       ]
     },
     {
+      "id": "work-2-2",
+      "level": 2,
+      "title": "Clarify Before You Start",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "A few questions now save hours later.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Check you’ve understood",
+          "body": "It’s tempting to nod and get started. But a quick “So the goal is…, by…, for…?” catches misunderstandings before they cost you days of work.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your manager asks for “a quick report on sales” and walks off. What’s the best next step?",
+          "options": [
+            {
+              "text": "Start writing a full report straight away.",
+              "why": "You might spend days on something different from what they need."
+            },
+            {
+              "text": "Ask a colleague what they think it means.",
+              "why": "They’re guessing too."
+            },
+            {
+              "text": "“Quick check: which months, who’s it for, and when do you need it?”",
+              "correct": true,
+              "why": "Three quick questions make sure you build the right thing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Play it back.",
+          "before": "Just to",
+          "after": ", you need this by Friday for the board?",
+          "words": [
+            "confirm",
+            "complain",
+            "argue"
+          ],
+          "answer": "confirm",
+          "why": "Playing back the task in your words catches mix-ups early."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you ask questions before starting a task?",
+          "options": [
+            "Always",
+            "Sometimes",
+            "Rarely",
+            "Only when stuck"
+          ],
+          "reply": "Asking a little more upfront often saves a lot of rework later."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each vague ask with a clarifying question.",
+          "pairs": [
+            {
+              "a": "“Make it look better.”",
+              "b": "“Which part bothers you most?”"
+            },
+            {
+              "a": "“ASAP, please.”",
+              "b": "“Is end of day okay?”"
+            },
+            {
+              "a": "“Keep it short.”",
+              "b": "“One page, or a few slides?”"
+            }
+          ],
+          "why": "Clarifying questions turn vague requests into clear tasks, saving everyone time and frustration."
+        },
+        {
+          "kind": "try",
+          "body": "Before starting your next task, play back the goal and deadline to whoever asked."
+        }
+      ]
+    },
+    {
+      "id": "work-2-3",
+      "level": 2,
+      "title": "Hear the Quiet Voices",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "The best ideas aren’t always the loudest.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Quiet doesn’t mean empty",
+          "body": "In most meetings, a few people do most of the talking. Inviting quieter colleagues in, by name and kindly, often brings out the most thoughtful ideas.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "In your team meeting, Aisha hasn’t spoken but looks like she has thoughts. What’s best?",
+          "options": [
+            {
+              "text": "Let her be. She’ll speak if she wants to.",
+              "why": "Some people need an invitation before they feel able to speak."
+            },
+            {
+              "text": "“Aisha, you know this area well. What do you think?”",
+              "correct": true,
+              "why": "A warm, specific invite makes it easy for her to contribute."
+            },
+            {
+              "text": "“Aisha, why are you so quiet?”",
+              "why": "Pointing out quietness can make someone feel put on the spot."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Invite them in.",
+          "before": "I’d love to hear your",
+          "after": "on this.",
+          "words": [
+            "thoughts",
+            "silence",
+            "excuses"
+          ],
+          "answer": "thoughts",
+          "why": "A simple invitation shows their view is valued."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "In meetings, you’re usually…",
+          "options": [
+            "One of the talkers",
+            "One of the quiet ones",
+            "Somewhere in between",
+            "It depends"
+          ],
+          "reply": "Whichever you are, making room for others helps the whole team."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Includes quieter voices, or shuts them out?",
+          "left": "Shuts out",
+          "right": "Includes",
+          "cards": [
+            {
+              "text": "Going round the table for views",
+              "side": "right"
+            },
+            {
+              "text": "Talking over someone mid-sentence",
+              "side": "left"
+            },
+            {
+              "text": "Sharing the agenda in advance",
+              "side": "right"
+            },
+            {
+              "text": "Deciding before everyone has spoken",
+              "side": "left"
+            },
+            {
+              "text": "Inviting written ideas after the meeting",
+              "side": "right"
+            }
+          ],
+          "why": "Small habits like asking everyone and sharing agendas early help quieter colleagues contribute their best ideas."
+        },
+        {
+          "kind": "try",
+          "body": "In your next meeting, warmly invite one quieter person to share their view."
+        }
+      ]
+    },
+    {
       "id": "work-3",
+      "level": 3,
       "title": "Build Small Connections",
       "minutes": 3,
       "focus": "connection",
@@ -282,7 +677,187 @@
       ]
     },
     {
+      "id": "work-3-2",
+      "level": 3,
+      "title": "Remote Team Bonds",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Build connection when you rarely meet in person.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Remote work needs small moments",
+          "body": "Without the coffee machine chats, remote teams can feel lonely and transactional. A few minutes of non-work chat, a funny gif, or a virtual coffee keeps people connected.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your fully remote team only ever talks about tasks. What’s an easy way to build connection?",
+          "options": [
+            {
+              "text": "Start meetings with a two-minute “best thing this week” round.",
+              "correct": true,
+              "why": "Short, light and regular, so everyone gets to know each other a bit."
+            },
+            {
+              "text": "Plan a big in-person party once a year.",
+              "why": "Lovely, but rare. Small regular moments matter more."
+            },
+            {
+              "text": "Keep it all about work. That’s efficient.",
+              "why": "Efficient now, but teams without connection tend to struggle later."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A light opener.",
+          "before": "Before we start, what’s one",
+          "after": "thing from your week?",
+          "words": [
+            "good",
+            "stressful",
+            "late"
+          ],
+          "answer": "good",
+          "why": "A positive question warms up the meeting and helps people connect."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How connected do you feel to your colleagues?",
+          "options": [
+            "Very",
+            "Somewhat",
+            "Not much",
+            "I work alone"
+          ],
+          "reply": "One small habit can help, and you could be the one to start it."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each remote gap with a fix.",
+          "pairs": [
+            {
+              "a": "No casual chat",
+              "b": "A virtual coffee slot"
+            },
+            {
+              "a": "New starter feels lost",
+              "b": "A buddy for their first month"
+            },
+            {
+              "a": "Wins go unnoticed",
+              "b": "A kudos channel"
+            }
+          ],
+          "why": "Small, deliberate rituals replace the natural moments remote teams miss."
+        },
+        {
+          "kind": "try",
+          "body": "Invite a colleague you rarely talk to for a 15-minute virtual coffee this week."
+        }
+      ]
+    },
+    {
+      "id": "work-3-3",
+      "level": 3,
+      "title": "Recognise Good Work",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Specific thanks makes people feel valued.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Recognition is motivating",
+          "body": "People who feel their work is noticed are happier and work better together. Specific, timely thanks, “your summary made the meeting so much easier”, means far more than a generic “great job”.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague stayed late to fix a bug before your launch. What’s the best way to thank them?",
+          "options": [
+            {
+              "text": "“Thanks.”",
+              "why": "Polite, but it doesn’t show you noticed the effort."
+            },
+            {
+              "text": "Assume they know you’re grateful.",
+              "why": "They might not, and unspoken thanks doesn’t motivate anyone."
+            },
+            {
+              "text": "“Thank you for staying late on that bug. The launch went smoothly because of you.”",
+              "correct": true,
+              "why": "Specific and public-worthy, so they know exactly what difference they made."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the impact.",
+          "before": "Your work on the deck really",
+          "after": "the client.",
+          "words": [
+            "impressed",
+            "confused",
+            "bored"
+          ],
+          "answer": "impressed",
+          "why": "Naming the impact shows their work truly mattered."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you prefer to be recognised?",
+          "options": [
+            "Privately",
+            "In front of the team",
+            "In writing",
+            "I don’t mind"
+          ],
+          "reply": "Others have preferences too. Asking helps your thanks land well."
+        },
+        {
+          "kind": "scene",
+          "title": "Team chat",
+          "them": "Jordan (colleague)",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Finally finished the client report 😮‍💨"
+            },
+            {
+              "from": "them",
+              "text": "Took way longer than I thought."
+            }
+          ],
+          "prompt": "It was really good. Reply:",
+          "options": [
+            {
+              "text": "👍",
+              "reaction": "…",
+              "why": "A thumbs up acknowledges it but doesn’t show you valued the work."
+            },
+            {
+              "text": "It’s brilliant, Jordan. The summary page made it so easy to follow. Thank you!",
+              "correct": true,
+              "reaction": "Oh, that’s really nice to hear 😊",
+              "why": "Specific praise shows you read it and valued the effort."
+            },
+            {
+              "text": "Finally! We were waiting ages.",
+              "reaction": "Sorry… 😕",
+              "why": "It focuses on the delay instead of the good work."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Give one colleague specific, sincere thanks for something they did this week."
+        }
+      ]
+    },
+    {
       "id": "work-4",
+      "level": 4,
       "title": "Protect Focus Time",
       "minutes": 4,
       "focus": "boundaries",
@@ -350,7 +925,174 @@
       ]
     },
     {
+      "id": "work-4-2",
+      "level": 4,
+      "title": "Say No at Work",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "A good no protects your best work.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Every yes is a no to something",
+          "body": "Saying yes to every request means your most important work suffers. A helpful no explains your priorities and, where possible, offers an alternative.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague asks you to join their project committee. You’re already behind on your own deadlines. What’s best?",
+          "options": [
+            {
+              "text": "Say yes, then struggle to keep up.",
+              "why": "Overcommitting often means doing several things badly."
+            },
+            {
+              "text": "“I’d love to, but I need to focus on the launch this month. Could I join next quarter?”",
+              "correct": true,
+              "why": "Honest about priorities, friendly, and offers another option."
+            },
+            {
+              "text": "Ignore the message.",
+              "why": "Silence can seem rude and leaves them waiting."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Explain your priorities.",
+          "before": "I need to",
+          "after": "on the launch right now.",
+          "words": [
+            "focus",
+            "give up",
+            "nap"
+          ],
+          "answer": "focus",
+          "why": "Naming your priority makes your no about the work, not about them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes saying no at work hardest for you?",
+          "options": [
+            "Wanting to be liked",
+            "Fear for my job",
+            "Not wanting to let people down",
+            "It’s fine for me"
+          ],
+          "reply": "A clear, kind no is usually respected far more than an overstretched yes."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Helpful no, or unhelpful?",
+          "left": "Unhelpful",
+          "right": "Helpful",
+          "cards": [
+            {
+              "text": "“Not this week, but I could help next week.”",
+              "side": "right"
+            },
+            {
+              "text": "Saying yes and quietly missing the deadline",
+              "side": "left"
+            },
+            {
+              "text": "“Sam might be a better fit for this.”",
+              "side": "right"
+            },
+            {
+              "text": "“That’s not my job.”",
+              "side": "left"
+            },
+            {
+              "text": "“Which of my tasks should I drop to fit this in?”",
+              "side": "right"
+            }
+          ],
+          "why": "Helpful nos explain why and offer another route, which keeps relationships strong and work on track."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re stretched, say no to one request kindly and offer an alternative."
+        }
+      ]
+    },
+    {
+      "id": "work-4-3",
+      "level": 4,
+      "title": "Switch Off After Hours",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Rest makes you better at your job.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Always-on wears you out",
+          "body": "Answering messages late at night can feel helpful, but it sets expectations you’ll struggle to keep, and stops you recovering. Clear after-hours habits protect your energy.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your manager sometimes messages at 10pm. You’ve been replying straight away. What’s healthiest?",
+          "options": [
+            {
+              "text": "Keep replying instantly so they know you’re committed.",
+              "why": "It sets an always-available expectation that’s hard to undo."
+            },
+            {
+              "text": "Reply first thing next morning, unless it’s clearly urgent.",
+              "correct": true,
+              "why": "You stay responsive while protecting your evenings."
+            },
+            {
+              "text": "Turn off notifications and never mention it.",
+              "why": "Fine for evenings, but agreeing how to reach you in a real emergency helps."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Set a clear habit.",
+          "before": "I check messages until",
+          "after": "pm, then I switch off.",
+          "words": [
+            "6",
+            "midnight",
+            "never"
+          ],
+          "answer": "6",
+          "why": "A clear end time helps you rest and helps others know when you’re available."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you check work messages in the evening?",
+          "options": [
+            "Never",
+            "Sometimes",
+            "Most nights",
+            "Constantly"
+          ],
+          "reply": "Even one evening a week fully offline can help you recharge."
+        },
+        {
+          "kind": "order",
+          "prompt": "Switching off after work. Put these in order.",
+          "items": [
+            "Write tomorrow’s top three tasks",
+            "Close your laptop",
+            "Mute work notifications",
+            "Do something just for you"
+          ],
+          "why": "A short shutdown routine helps your brain let go of work, so you actually rest."
+        },
+        {
+          "kind": "try",
+          "body": "Pick an end time for work messages tonight and stick to it."
+        }
+      ]
+    },
+    {
       "id": "work-5",
+      "level": 5,
       "title": "Be Dependable",
       "minutes": 4,
       "focus": "trust",
@@ -446,7 +1188,182 @@
       ]
     },
     {
+      "id": "work-5-2",
+      "level": 5,
+      "title": "Own Your Mistakes",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Owning errors builds more trust than hiding them.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Mistakes are normal, hiding them isn’t",
+          "body": "Everyone gets things wrong at work. What people remember is whether you owned it quickly and helped fix it, or tried to hide it or blame others.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You sent a client the wrong price list. Nobody has noticed yet. What builds trust?",
+          "options": [
+            {
+              "text": "Quietly send the right one and hope nobody notices.",
+              "why": "If it’s spotted later, it looks like you hid it."
+            },
+            {
+              "text": "Tell your manager now, with the fix you’ve already sent.",
+              "correct": true,
+              "why": "Owning it early, with a solution, shows you’re reliable even when things go wrong."
+            },
+            {
+              "text": "Mention that the file names were confusing.",
+              "why": "Blaming the system skips taking responsibility."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Own it simply.",
+          "before": "That was my",
+          "after": ", and here’s how I’ve fixed it.",
+          "words": [
+            "mistake",
+            "manager",
+            "luck"
+          ],
+          "answer": "mistake",
+          "why": "Plain ownership plus a fix is the fastest way to rebuild confidence."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you make a mistake at work, you tend to…",
+          "options": [
+            "Own it fast",
+            "Fix it quietly",
+            "Feel awful for days",
+            "Explain why it happened"
+          ],
+          "reply": "Owning it quickly, then letting it go, is what builds a reputation for reliability."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each excuse with ownership.",
+          "pairs": [
+            {
+              "a": "“Nobody told me.”",
+              "b": "“I should have checked.”"
+            },
+            {
+              "a": "“The system’s confusing.”",
+              "b": "“I missed it. Here’s the fix.”"
+            },
+            {
+              "a": "“It wasn’t a big deal.”",
+              "b": "“Sorry, it won’t happen again.”"
+            }
+          ],
+          "why": "Ownership statements show maturity and make colleagues trust you more, not less."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you slip up at work, tell the right person quickly, with a fix ready."
+        }
+      ]
+    },
+    {
+      "id": "work-5-3",
+      "level": 5,
+      "title": "Realistic Deadlines",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Promise dates you can actually hit.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Optimistic promises backfire",
+          "body": "Saying “I’ll have it tomorrow” feels helpful in the moment. But missed deadlines chip away at trust. Adding a little buffer and hitting your date builds a reputation for reliability.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your manager asks how long a task will take. You think three days if all goes well. What do you say?",
+          "options": [
+            {
+              "text": "“Two days, I’ll push hard.”",
+              "why": "Over-promising often leads to late nights and missed deadlines."
+            },
+            {
+              "text": "“About four days, to allow for surprises. I’ll update you midweek.”",
+              "correct": true,
+              "why": "Realistic, with a buffer and a check-in, so there are no nasty surprises."
+            },
+            {
+              "text": "“Not sure, I’ll let you know.”",
+              "why": "Too vague for them to plan around."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Build in a buffer.",
+          "before": "I’ll aim for Thursday, with Friday as the",
+          "after": ".",
+          "words": [
+            "latest",
+            "earliest",
+            "joke"
+          ],
+          "answer": "latest",
+          "why": "Giving a realistic range helps you deliver on time, every time."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How accurate are your time estimates?",
+          "options": [
+            "Usually right",
+            "Often too short",
+            "Often too long",
+            "I avoid giving them"
+          ],
+          "reply": "Most people underestimate. Adding a small buffer is an easy habit to start."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Builds trust, or risks it?",
+          "left": "Risks it",
+          "right": "Builds",
+          "cards": [
+            {
+              "text": "Flagging a delay as soon as you see it",
+              "side": "right"
+            },
+            {
+              "text": "Promising the earliest possible date",
+              "side": "left"
+            },
+            {
+              "text": "Adding a buffer for surprises",
+              "side": "right"
+            },
+            {
+              "text": "Going silent when you’re running late",
+              "side": "left"
+            },
+            {
+              "text": "A midweek progress update",
+              "side": "right"
+            }
+          ],
+          "why": "Realistic dates and early warnings make you dependable, even when work is unpredictable."
+        },
+        {
+          "kind": "try",
+          "body": "For your next task, give a realistic deadline with a small buffer, and a midway update."
+        }
+      ]
+    },
+    {
       "id": "work-6",
+      "level": 6,
       "title": "Disagree Productively",
       "minutes": 5,
       "focus": "conflict",
@@ -537,7 +1454,174 @@
       ]
     },
     {
+      "id": "work-6-2",
+      "level": 6,
+      "title": "Disagree With Your Boss",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Push back respectfully, with reasons.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Good managers want honest input",
+          "body": "Disagreeing with your manager can feel risky. Done respectfully, in private, with facts and a suggested alternative, it usually earns respect rather than trouble.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your manager wants to launch next week. You think it needs two more weeks of testing. What’s best?",
+          "options": [
+            {
+              "text": "Say nothing. It’s their call.",
+              "why": "If problems happen, they may wish you’d spoken up."
+            },
+            {
+              "text": "Argue in the team meeting until they change their mind.",
+              "why": "Public pushback can make them defensive."
+            },
+            {
+              "text": "Ask for a quick chat: “I’m worried about bugs. Here’s what I found. Two more weeks?”",
+              "correct": true,
+              "why": "Private, specific and solution-focused, which makes it easy to consider."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Bring evidence.",
+          "before": "Here’s what I’ve",
+          "after": "that worries me.",
+          "words": [
+            "found",
+            "felt",
+            "heard"
+          ],
+          "answer": "found",
+          "why": "Facts make your concern about the work, not about who’s right."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How comfortable are you disagreeing with a manager?",
+          "options": [
+            "Comfortable",
+            "Nervous",
+            "I avoid it",
+            "Depends on the manager"
+          ],
+          "reply": "Preparing your facts and an alternative makes it much less daunting."
+        },
+        {
+          "kind": "order",
+          "prompt": "Disagreeing with your manager. Put these in order.",
+          "items": [
+            "Ask for a private chat",
+            "Share your concern and evidence",
+            "Suggest an alternative",
+            "Accept their final decision"
+          ],
+          "why": "Private, evidence-based pushback with a solution is heard best, and respecting the decision keeps trust intact."
+        },
+        {
+          "kind": "try",
+          "body": "If you disagree with a decision at work, raise it privately with one fact and one alternative."
+        }
+      ]
+    },
+    {
+      "id": "work-6-3",
+      "level": 6,
+      "title": "Decide and Commit",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Once it’s decided, back it fully.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Disagree, then commit",
+          "body": "Healthy teams argue openly before a decision. But once it’s made, everyone gets behind it, even those who disagreed. Quietly undermining a decision damages trust.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your team chose the plan you argued against. What’s the best next step?",
+          "options": [
+            {
+              "text": "Do the minimum and wait for it to fail.",
+              "why": "Half-hearted effort can make the plan fail, and hurts your reputation."
+            },
+            {
+              "text": "Keep telling colleagues it’s the wrong plan.",
+              "why": "It splits the team and undermines the decision."
+            },
+            {
+              "text": "“I had concerns, but I’m on board. Let’s make it work.”",
+              "correct": true,
+              "why": "You stay honest and fully commit, which builds team trust."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Commit clearly.",
+          "before": "I see it differently, but I’m fully",
+          "after": "board.",
+          "words": [
+            "on",
+            "off",
+            "bored of the"
+          ],
+          "answer": "on",
+          "why": "Committing out loud shows the team you can be relied on, even when you disagree."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a decision goes against you, you tend to…",
+          "options": [
+            "Commit fully",
+            "Commit but grumble",
+            "Keep pushing back",
+            "Disengage"
+          ],
+          "reply": "Committing fully, then reviewing results later, is what strong teams do."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Committing, or quietly undermining?",
+          "left": "Undermining",
+          "right": "Committing",
+          "cards": [
+            {
+              "text": "Giving the plan your best effort",
+              "side": "right"
+            },
+            {
+              "text": "“I told you so” when it wobbles",
+              "side": "left"
+            },
+            {
+              "text": "Suggesting a review date to check results",
+              "side": "right"
+            },
+            {
+              "text": "Complaining about it to other teams",
+              "side": "left"
+            },
+            {
+              "text": "Helping others understand the decision",
+              "side": "right"
+            }
+          ],
+          "why": "Teams succeed when everyone commits once a decision is made, and reviews it fairly afterwards."
+        },
+        {
+          "kind": "try",
+          "body": "If a team decision went against you, show your commitment with one helpful action this week."
+        }
+      ]
+    },
+    {
       "id": "work-7",
+      "level": 7,
       "title": "Give Useful Feedback",
       "minutes": 4,
       "focus": "communication",
@@ -605,7 +1689,187 @@
       ]
     },
     {
+      "id": "work-7-2",
+      "level": 7,
+      "title": "Praise That Lands",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Specific praise teaches and motivates.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Praise is feedback too",
+          "body": "Positive feedback works best when it’s specific: what they did, and why it worked. That way, people know what to keep doing, not just that you’re pleased.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A junior colleague handled a tough client call really well. Which praise helps most?",
+          "options": [
+            {
+              "text": "“Great job!”",
+              "why": "Nice, but they won’t know what exactly worked."
+            },
+            {
+              "text": "“You stayed calm and summarised their concerns. That’s why they relaxed.”",
+              "correct": true,
+              "why": "Specific praise tells them exactly what to repeat."
+            },
+            {
+              "text": "“Not bad for a beginner.”",
+              "why": "The backhanded part takes the shine off."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Say what worked.",
+          "before": "The way you",
+          "after": "the data made it so clear.",
+          "words": [
+            "presented",
+            "hid",
+            "lost"
+          ],
+          "answer": "presented",
+          "why": "Naming the action shows exactly what they did well."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you give colleagues positive feedback?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Only in reviews"
+          ],
+          "reply": "Specific praise is quick to give and has a big effect. Try it this week."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each vague praise with a specific version.",
+          "pairs": [
+            {
+              "a": "“Nice slides.”",
+              "b": "“The charts made it so clear.”"
+            },
+            {
+              "a": "“Good meeting.”",
+              "b": "“You kept us right on time.”"
+            },
+            {
+              "a": "“Thanks for helping.”",
+              "b": "“Your notes saved me an hour.”"
+            }
+          ],
+          "why": "Specific praise helps people grow, because they know exactly what to keep doing."
+        },
+        {
+          "kind": "try",
+          "body": "Give one colleague specific praise this week: what they did, and why it worked."
+        }
+      ]
+    },
+    {
+      "id": "work-7-3",
+      "level": 7,
+      "title": "Feedback to Your Manager",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Upward feedback can be kind and useful.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Managers need feedback too",
+          "body": "Most managers rarely hear honest feedback from their team. Sharing it kindly, about specific situations and how they affected your work, can help them lead better.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your manager often changes priorities at the last minute, and it’s causing stress. What’s the best way to raise it?",
+          "options": [
+            {
+              "text": "“Late priority changes make it hard to deliver. Could we plan the week on Mondays?”",
+              "correct": true,
+              "why": "Specific, focused on impact, and offers a solution."
+            },
+            {
+              "text": "Complain to colleagues instead.",
+              "why": "It won’t change anything and may get back to them."
+            },
+            {
+              "text": "“You’re so disorganised.”",
+              "why": "A personal label will make them defensive."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Focus on the effect.",
+          "before": "When that happens, it",
+          "after": "my ability to deliver well.",
+          "words": [
+            "affects",
+            "improves",
+            "excuses"
+          ],
+          "answer": "affects",
+          "why": "Describing the effect on your work keeps the feedback fair and useful."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Would you feel able to give your manager feedback?",
+          "options": [
+            "Yes",
+            "Maybe",
+            "Not really",
+            "I am the manager"
+          ],
+          "reply": "Starting with something small and specific is the easiest way in."
+        },
+        {
+          "kind": "scene",
+          "title": "Your one-to-one",
+          "them": "Your manager",
+          "lines": [
+            {
+              "from": "them",
+              "text": "So, how are things going?"
+            },
+            {
+              "from": "them",
+              "text": "Anything I could do differently to support you?"
+            }
+          ],
+          "prompt": "Last-minute changes are stressing you. Reply:",
+          "options": [
+            {
+              "text": "No, all good!",
+              "reaction": "Great, thanks.",
+              "why": "A missed chance. They asked, and nothing will change."
+            },
+            {
+              "text": "Honestly? Last-minute changes are tough. Could we agree priorities each Monday?",
+              "correct": true,
+              "reaction": "That’s really helpful, let’s try it.",
+              "why": "Specific, kind and practical, so it’s easy for them to act on."
+            },
+            {
+              "text": "Stop changing your mind all the time.",
+              "reaction": "Oh. Okay…",
+              "why": "True, perhaps, but the tone makes it hard to hear."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "In your next one-to-one, share one specific, kind piece of feedback with your manager."
+        }
+      ]
+    },
+    {
       "id": "work-8",
+      "level": 8,
       "title": "Receive Feedback Well",
       "minutes": 4,
       "focus": "listening",
@@ -686,7 +1950,174 @@
       ]
     },
     {
+      "id": "work-8-2",
+      "level": 8,
+      "title": "Ask for Feedback",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Don’t wait for your review to learn.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Ask small and often",
+          "body": "Waiting for an annual review means waiting a year to improve. Asking “What’s one thing I could do better?” after a project gets you useful, low-pressure feedback right away.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You just finished your first big presentation. How do you get useful feedback?",
+          "options": [
+            {
+              "text": "Wait to see if anyone says anything.",
+              "why": "Most people won’t offer feedback unless asked."
+            },
+            {
+              "text": "“Was that okay?”",
+              "why": "Too general. You’ll likely just get “yes, fine”."
+            },
+            {
+              "text": "Ask a colleague: “What’s one thing I could do better next time?”",
+              "correct": true,
+              "why": "A specific, small question makes it easy to give honest feedback."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for one thing.",
+          "before": "What’s one thing I could do",
+          "after": "?",
+          "words": [
+            "better",
+            "never",
+            "faster forever"
+          ],
+          "answer": "better",
+          "why": "Asking for just one thing makes honest feedback feel easy to give."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who could give you useful feedback right now?",
+          "options": [
+            "My manager",
+            "A peer",
+            "Someone I support",
+            "A client"
+          ],
+          "reply": "Ask them one small question this week. It’s a quick way to grow."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Gets useful feedback, or a vague answer?",
+          "left": "Vague",
+          "right": "Useful",
+          "cards": [
+            {
+              "text": "“What worked well, and what didn’t?”",
+              "side": "right"
+            },
+            {
+              "text": "“Was it good?”",
+              "side": "left"
+            },
+            {
+              "text": "“Was my opening clear enough?”",
+              "side": "right"
+            },
+            {
+              "text": "“Any thoughts?”",
+              "side": "left"
+            },
+            {
+              "text": "“What would you change if you did it?”",
+              "side": "right"
+            }
+          ],
+          "why": "Specific questions invite specific, honest answers, which are the ones you can actually use."
+        },
+        {
+          "kind": "try",
+          "body": "After your next piece of work, ask one person: “What’s one thing I could do better?”"
+        }
+      ]
+    },
+    {
+      "id": "work-8-3",
+      "level": 8,
+      "title": "Handle Unfair Criticism",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Stay calm, find what’s useful, and respond clearly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not all criticism is fair",
+          "body": "Sometimes feedback is unfair or badly delivered. Staying calm, finding any useful part, and then calmly sharing your side keeps your reputation strong.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague says in a meeting that your report “was full of mistakes”. You found one typo. What’s best?",
+          "options": [
+            {
+              "text": "“That’s not true!”",
+              "why": "Reacting defensively in public can make you look worse."
+            },
+            {
+              "text": "“Thanks, I’d like to fix any mistakes. Could you show me which ones after this?”",
+              "correct": true,
+              "why": "Calm and open, and it moves the details somewhere you can respond fairly."
+            },
+            {
+              "text": "Say nothing and stew about it.",
+              "why": "It may leave the wrong impression with others."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for specifics.",
+          "before": "Could you give me a specific",
+          "after": "?",
+          "words": [
+            "example",
+            "apology",
+            "excuse"
+          ],
+          "answer": "example",
+          "why": "Specifics turn vague criticism into something you can check and respond to."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When criticism feels unfair, your first reaction is…",
+          "options": [
+            "Defend myself",
+            "Shut down",
+            "Get upset later",
+            "Ask questions"
+          ],
+          "reply": "A calm question buys you time and usually shows what’s really going on."
+        },
+        {
+          "kind": "order",
+          "prompt": "Responding to unfair criticism. Put these in order.",
+          "items": [
+            "Take a breath",
+            "Ask for specific examples",
+            "Accept what’s fair",
+            "Calmly correct what isn’t"
+          ],
+          "why": "Calm questions and fair acknowledgement make your correction far more credible."
+        },
+        {
+          "kind": "try",
+          "body": "Next time feedback feels unfair, ask for a specific example before responding."
+        }
+      ]
+    },
+    {
       "id": "work-9",
+      "level": 9,
       "title": "Repair a Team Tension",
       "minutes": 3,
       "focus": "conflict",
@@ -782,7 +2213,187 @@
       ]
     },
     {
+      "id": "work-9-2",
+      "level": 9,
+      "title": "Difficult Colleagues",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Work well with people you find hard.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You don’t have to be friends",
+          "body": "Everyone works with someone they find difficult. You don’t need to like them, but staying professional, assuming good intent where you can, and keeping communication clear makes work easier.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague often replies to your messages abruptly, and it’s getting to you. What’s best?",
+          "options": [
+            {
+              "text": "Reply just as curtly.",
+              "why": "Matching it escalates the tension."
+            },
+            {
+              "text": "“I sometimes find our messages a bit tense. Would a quick call be easier?”",
+              "correct": true,
+              "why": "Calm and solution-focused, and it opens the door to better communication."
+            },
+            {
+              "text": "Avoid working with them entirely.",
+              "why": "Rarely possible, and it can slow everyone’s work."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Assume good intent.",
+          "before": "They might just be",
+          "after": "rather than rude.",
+          "words": [
+            "busy",
+            "evil",
+            "jealous"
+          ],
+          "answer": "busy",
+          "why": "A kinder explanation helps you stay calm and respond well."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes a colleague hardest to work with, for you?",
+          "options": [
+            "Rudeness",
+            "Unreliability",
+            "Taking credit",
+            "Negativity"
+          ],
+          "reply": "Naming it helps you plan a calm, professional response."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each difficult behaviour with a calm response.",
+          "pairs": [
+            {
+              "a": "Interrupts you",
+              "b": "“Let me just finish this point.”"
+            },
+            {
+              "a": "Misses deadlines",
+              "b": "Agree check-in dates in writing"
+            },
+            {
+              "a": "Always negative",
+              "b": "“What would make it work?”"
+            }
+          ],
+          "why": "Calm, specific responses keep work moving, whatever the other person brings."
+        },
+        {
+          "kind": "try",
+          "body": "With a colleague you find difficult, try one calm, solution-focused message this week."
+        }
+      ]
+    },
+    {
+      "id": "work-9-3",
+      "level": 9,
+      "title": "Clear the Air",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "After a tense moment, reach out first.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Tension grows in silence",
+          "body": "After a sharp exchange, it’s easy to avoid each other. A short, friendly message, or a quick chat, clears the air before it becomes a lasting problem.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and a teammate had a tense exchange in yesterday’s meeting. Today it feels awkward. What’s best?",
+          "options": [
+            {
+              "text": "“Hey, yesterday got a bit heated. Fancy a coffee and a reset?”",
+              "correct": true,
+              "why": "Light, friendly and direct, which makes it easy to move on."
+            },
+            {
+              "text": "Avoid them until it blows over.",
+              "why": "Avoidance often makes awkwardness last longer."
+            },
+            {
+              "text": "Tell your manager about it.",
+              "why": "Escalating before talking to them can damage trust."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A friendly reset.",
+          "before": "Can we hit",
+          "after": "on yesterday?",
+          "words": [
+            "reset",
+            "delete",
+            "pause forever"
+          ],
+          "answer": "reset",
+          "why": "Suggesting a reset shows you value the working relationship more than being right."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "After a tense moment at work, you usually…",
+          "options": [
+            "Reach out",
+            "Wait for them",
+            "Avoid them",
+            "Pretend it didn’t happen"
+          ],
+          "reply": "Reaching out first is often all it takes to get back on track."
+        },
+        {
+          "kind": "scene",
+          "title": "The morning after",
+          "them": "Mia (teammate)",
+          "lines": [
+            {
+              "from": "you",
+              "text": "Hey, yesterday’s meeting got a bit heated. Coffee and a reset?"
+            },
+            {
+              "from": "them",
+              "text": "Yeah… I was stressed and came across badly. Sorry."
+            }
+          ],
+          "prompt": "Reply:",
+          "options": [
+            {
+              "text": "Okay.",
+              "reaction": "Oh. Okay.",
+              "why": "A flat reply leaves things a bit cold."
+            },
+            {
+              "text": "You did, a bit.",
+              "reaction": "Right…",
+              "why": "Agreeing with the criticism can reopen the tension."
+            },
+            {
+              "text": "Me too, honestly. Let’s grab that coffee and figure out the plan together.",
+              "correct": true,
+              "reaction": "Deal ☕ Thanks for reaching out.",
+              "why": "You share responsibility and move straight to working together."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "If things feel awkward with a colleague after a tense moment, reach out first today."
+        }
+      ]
+    },
+    {
       "id": "work-10",
+      "level": 10,
       "title": "Collaborate With Trust",
       "minutes": 4,
       "focus": "trust",
@@ -856,6 +2467,180 @@
         {
           "kind": "try",
           "body": "Clarify the owner, next step and deadline for one shared task this week."
+        }
+      ]
+    },
+    {
+      "id": "work-10-2",
+      "level": 10,
+      "title": "Share the Credit",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Generous credit builds a trusting team.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Credit is a trust signal",
+          "body": "When something goes well, naming everyone who helped shows you’re fair and generous. People who share credit find others more willing to help them next time.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your director praises “your” project in a meeting. Two teammates did a lot of the work. What do you say?",
+          "options": [
+            {
+              "text": "“Thank you!” and leave it there.",
+              "why": "Your teammates may feel their work went unseen."
+            },
+            {
+              "text": "“Thanks! Ravi built the dashboard and Lena ran the research. Real team effort.”",
+              "correct": true,
+              "why": "Naming specific contributions is fair and builds trust in the team."
+            },
+            {
+              "text": "“It was mostly me, to be honest.”",
+              "why": "Taking credit others earned quickly erodes trust."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name who helped.",
+          "before": "This was a",
+          "after": "effort. Sam did the analysis.",
+          "words": [
+            "team",
+            "solo",
+            "lucky"
+          ],
+          "answer": "team",
+          "why": "Naming people specifically makes credit-sharing feel real, not just polite."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when someone credits your work?",
+          "options": [
+            "Valued",
+            "Motivated",
+            "Surprised",
+            "It rarely happens"
+          ],
+          "reply": "Others feel the same, so sharing credit is one of the easiest ways to build trust."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shares credit, or takes it?",
+          "left": "Takes",
+          "right": "Shares",
+          "cards": [
+            {
+              "text": "“Huge thanks to Priya for the data.”",
+              "side": "right"
+            },
+            {
+              "text": "Presenting a colleague’s idea as yours",
+              "side": "left"
+            },
+            {
+              "text": "Copying helpers into the thank-you email",
+              "side": "right"
+            },
+            {
+              "text": "“I did most of it anyway.”",
+              "side": "left"
+            },
+            {
+              "text": "Telling their manager what they did well",
+              "side": "right"
+            }
+          ],
+          "why": "Sharing credit costs nothing and builds a team where people want to help each other."
+        },
+        {
+          "kind": "try",
+          "body": "Next time your work is praised, name at least one person who helped."
+        }
+      ]
+    },
+    {
+      "id": "work-10-3",
+      "level": 10,
+      "title": "Celebrate Team Wins",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Mark milestones together, not just deadlines.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Wins deserve a moment",
+          "body": "Teams often rush from one deadline to the next. Pausing to celebrate a launch or a milestone, even with a quick shout-out or a coffee, keeps morale and connection high.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your team just hit a big quarterly goal. Everyone’s already onto the next thing. What’s best?",
+          "options": [
+            {
+              "text": "Move straight on. There’s a lot to do.",
+              "why": "Skipping celebrations can make hard work feel unrewarded."
+            },
+            {
+              "text": "Suggest a team lunch and a quick round of thanks.",
+              "correct": true,
+              "why": "A small celebration shows the effort mattered and brings the team together."
+            },
+            {
+              "text": "Wait for management to organise something.",
+              "why": "It may not happen. Anyone can start a celebration."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Mark the moment.",
+          "before": "Let’s take a moment to",
+          "after": "this win!",
+          "words": [
+            "celebrate",
+            "forget",
+            "audit"
+          ],
+          "answer": "celebrate",
+          "why": "Naming the win and pausing to enjoy it boosts the whole team."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How does your team celebrate wins?",
+          "options": [
+            "Team lunches",
+            "Shout-outs",
+            "Not really at all",
+            "Big events"
+          ],
+          "reply": "Even a five-minute shout-out can make a real difference."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each win with a way to celebrate.",
+          "pairs": [
+            {
+              "a": "A big launch",
+              "b": "A team lunch"
+            },
+            {
+              "a": "A tricky bug fixed",
+              "b": "A shout-out in chat"
+            },
+            {
+              "a": "A colleague’s first year",
+              "b": "A card from the team"
+            }
+          ],
+          "why": "Celebrations matched to the moment show that every kind of effort is noticed."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest a small way to celebrate your team’s next win, however small."
         }
       ]
     }

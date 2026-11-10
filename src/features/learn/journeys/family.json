@@ -2,9 +2,62 @@
   "relationship": "family",
   "journeyTitle": "Closer Family Ties",
   "journeyIntro": "For navigating parents, siblings and relatives. Build warmth, clarity and healthier family conversations.",
+  "levels": [
+    {
+      "title": "Calm Words",
+      "icon": "speech",
+      "color": "yellow"
+    },
+    {
+      "title": "Across Generations",
+      "icon": "ear",
+      "color": "blue"
+    },
+    {
+      "title": "Showing Up",
+      "icon": "hug",
+      "color": "peach"
+    },
+    {
+      "title": "Healthy Limits",
+      "icon": "shield",
+      "color": "mint"
+    },
+    {
+      "title": "Being Reliable",
+      "icon": "calendar",
+      "color": "lavender"
+    },
+    {
+      "title": "Different Views",
+      "icon": "scales",
+      "color": "purple"
+    },
+    {
+      "title": "Family Repairs",
+      "icon": "bandage",
+      "color": "pink"
+    },
+    {
+      "title": "Fair Roles",
+      "icon": "shield",
+      "color": "peach"
+    },
+    {
+      "title": "Checking In",
+      "icon": "envelope",
+      "color": "blue"
+    },
+    {
+      "title": "Growing Together",
+      "icon": "party",
+      "color": "yellow"
+    }
+  ],
   "lessons": [
     {
       "id": "family-1",
+      "level": 1,
       "title": "Speak Without Blame",
       "minutes": 4,
       "focus": "communication",
@@ -95,7 +148,182 @@
       ]
     },
     {
+      "id": "family-1-2",
+      "level": 1,
+      "title": "Sibling Squabbles",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Grown-up siblings can still fall into old roles.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Old roles die hard",
+          "body": "Around siblings, adults can slip back into being “the bossy one” or “the baby”. Noticing the old role, and choosing to speak as the adult you are now, changes how they respond.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your older sister corrects how you’re cooking at a family dinner, like she did when you were kids. What’s best?",
+          "options": [
+            {
+              "text": "“I’ve got this, thanks. Want to help set the table?”",
+              "correct": true,
+              "why": "Calm and adult, and it gives her a role without a fight."
+            },
+            {
+              "text": "“You always treat me like I’m ten!”",
+              "why": "True or not, it pulls you both straight back into the old dynamic."
+            },
+            {
+              "text": "Hand her the spoon and sulk.",
+              "why": "Giving in while seething keeps the old pattern going."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Speak as your adult self.",
+          "before": "I know you mean well, but I’d like to do it my",
+          "after": ".",
+          "words": [
+            "way",
+            "worst",
+            "mum’s way"
+          ],
+          "answer": "way",
+          "why": "A calm, adult tone helps everyone step out of childhood roles."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What role did you play growing up?",
+          "options": [
+            "The responsible one",
+            "The peacemaker",
+            "The rebel",
+            "The baby"
+          ],
+          "reply": "Knowing your old role helps you notice when you slip back into it."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Adult response, or old childhood role?",
+          "left": "Old role",
+          "right": "Adult",
+          "cards": [
+            {
+              "text": "“Mum, she started it!”",
+              "side": "left"
+            },
+            {
+              "text": "“Let’s sort this out between us.”",
+              "side": "right"
+            },
+            {
+              "text": "Slamming a door",
+              "side": "left"
+            },
+            {
+              "text": "“I see it differently. Can we talk?”",
+              "side": "right"
+            },
+            {
+              "text": "Bringing up who got more toys",
+              "side": "left"
+            }
+          ],
+          "why": "Responding as the adult you are now breaks old patterns and builds a better sibling relationship."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a sibling pushes an old button, pause and respond as the adult you are today."
+        }
+      ]
+    },
+    {
+      "id": "family-1-3",
+      "level": 1,
+      "title": "Family Group Chats",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Keep the family chat warm, not tense.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Group chats need care",
+          "body": "Family group chats are great for photos and plans, but tone is easy to misread and everyone sees every reply. Big feelings are usually better one-to-one.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "In the family chat, your brother posts that you never help with Mum’s shopping. You’re upset. What’s best?",
+          "options": [
+            {
+              "text": "Reply in the chat listing everything you do.",
+              "why": "A public defence can turn into a family-wide argument."
+            },
+            {
+              "text": "Leave the chat.",
+              "why": "It avoids the moment but leaves everyone confused."
+            },
+            {
+              "text": "Message him privately: “That stung. Can we talk about sharing Mum’s shopping?”",
+              "correct": true,
+              "why": "Taking it private lets you sort it out without an audience."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Take it private.",
+          "before": "Can we chat about this",
+          "after": "?",
+          "words": [
+            "privately",
+            "publicly",
+            "never"
+          ],
+          "answer": "privately",
+          "why": "Private chats lower defences and keep the family chat friendly."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s your family chat mostly used for?",
+          "options": [
+            "Photos and news",
+            "Planning",
+            "Jokes",
+            "Arguments, sadly"
+          ],
+          "reply": "Keeping it light and taking tough topics elsewhere helps it stay a happy place."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each moment with a better place for it.",
+          "pairs": [
+            {
+              "a": "Sharing baby photos",
+              "b": "The family chat"
+            },
+            {
+              "a": "A hurt with your brother",
+              "b": "A private call"
+            },
+            {
+              "a": "Planning Mum’s birthday",
+              "b": "A small planning chat"
+            }
+          ],
+          "why": "Choosing the right place for each kind of message prevents misunderstandings and public arguments."
+        },
+        {
+          "kind": "try",
+          "body": "If something in the family chat upsets you, reply privately rather than in the group."
+        }
+      ]
+    },
+    {
       "id": "family-2",
+      "level": 2,
       "title": "Listen Across Generations",
       "minutes": 4,
       "focus": "listening",
@@ -197,7 +425,197 @@
       ]
     },
     {
+      "id": "family-2-2",
+      "level": 2,
+      "title": "Ask About Their Stories",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Older relatives hold stories worth hearing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Stories connect generations",
+          "body": "Grandparents and parents often have stories nobody has asked about: their first job, how they met, hard times they got through. Asking shows respect and brings you closer.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re visiting your grandad, who often sits quietly. What’s a great way to connect?",
+          "options": [
+            {
+              "text": "Watch TV together in silence.",
+              "why": "Comfortable, but you miss the chance to really connect."
+            },
+            {
+              "text": "“What was your first job like, Grandad?”",
+              "correct": true,
+              "why": "An open question about his life invites stories he may love to share."
+            },
+            {
+              "text": "Tell him all about your week.",
+              "why": "Nice to share, but asking about him shows you’re interested in his life too."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Invite a story.",
+          "before": "What was it like when you were",
+          "after": "?",
+          "words": [
+            "young",
+            "wrong",
+            "late"
+          ],
+          "answer": "young",
+          "why": "Questions about their past often open up memories they rarely get to share."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which relative’s stories would you love to hear?",
+          "options": [
+            "A grandparent",
+            "A parent",
+            "An aunt or uncle",
+            "An older cousin"
+          ],
+          "reply": "Ask them one question next time you see them. You might be surprised."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Opens up a story, or closes it down?",
+          "left": "Closes",
+          "right": "Opens",
+          "cards": [
+            {
+              "text": "“How did you and Gran meet?”",
+              "side": "right"
+            },
+            {
+              "text": "“You’ve told me that before.”",
+              "side": "left"
+            },
+            {
+              "text": "“What was school like back then?”",
+              "side": "right"
+            },
+            {
+              "text": "Checking your phone as they talk",
+              "side": "left"
+            },
+            {
+              "text": "“Then what happened?”",
+              "side": "right"
+            }
+          ],
+          "why": "Curious questions and full attention make older relatives feel valued, and keep family stories alive."
+        },
+        {
+          "kind": "try",
+          "body": "Ask an older relative one question about their past this week, and listen to the whole answer."
+        }
+      ]
+    },
+    {
+      "id": "family-2-3",
+      "level": 2,
+      "title": "When Parents Give Advice",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Hear the care behind it, even if you disagree.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Advice is often love in disguise",
+          "body": "Parents’ advice can feel like criticism, but it often comes from worry or care. Hearing the care first makes it easier to respond calmly, even if you choose differently.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your dad keeps telling you to buy a house instead of renting. You’re happy renting. What’s best?",
+          "options": [
+            {
+              "text": "“Dad, I know you want me to be secure. I’ve thought about it, and renting suits me now.”",
+              "correct": true,
+              "why": "You name the care behind his advice and calmly explain your choice."
+            },
+            {
+              "text": "“Can you just stop?”",
+              "why": "It ends the conversation but may leave him hurt or worried."
+            },
+            {
+              "text": "Agree, then do nothing.",
+              "why": "Saying yes when you mean no often leads to the same advice again."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the care first.",
+          "before": "I know you’re saying this because you",
+          "after": ".",
+          "words": [
+            "care",
+            "nag",
+            "know best"
+          ],
+          "answer": "care",
+          "why": "Acknowledging their care helps them hear your view without feeling dismissed."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which topic do you get the most advice about?",
+          "options": [
+            "Money",
+            "Work",
+            "Relationships",
+            "Health"
+          ],
+          "reply": "Preparing a calm, kind answer for that topic makes it much easier next time."
+        },
+        {
+          "kind": "scene",
+          "title": "Mum’s advice",
+          "them": "Mum",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Are you still working those late shifts? You’ll wear yourself out."
+            },
+            {
+              "from": "them",
+              "text": "You should really look for something else 😟"
+            }
+          ],
+          "prompt": "You like your job. Reply:",
+          "options": [
+            {
+              "text": "Mum, stop worrying about me!",
+              "reaction": "I can’t help it, I’m your mum.",
+              "why": "It brushes off her care rather than easing it."
+            },
+            {
+              "text": "I know you worry, that’s lovely. I’m enjoying it and looking after myself. Call Sunday?",
+              "correct": true,
+              "reaction": "Okay, love. Sunday it is 💛",
+              "why": "You thank her care, reassure her and stay true to your choice."
+            },
+            {
+              "text": "Fine, I’ll look.",
+              "reaction": "Good! I’ll send you some ads.",
+              "why": "Agreeing to keep the peace often brings more of the same advice."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Next time a parent gives advice, thank them for caring before you share your view."
+        }
+      ]
+    },
+    {
       "id": "family-3",
+      "level": 3,
       "title": "Show Up in Small Ways",
       "minutes": 3,
       "focus": "connection",
@@ -282,7 +700,182 @@
       ]
     },
     {
+      "id": "family-3-2",
+      "level": 3,
+      "title": "Family Rituals",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Small traditions hold families together.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Rituals create belonging",
+          "body": "Sunday calls, pancake Saturdays, a yearly walk on Grandma’s birthday. Simple family rituals give everyone something to look forward to and a sense of belonging.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your family only gets together at Christmas, and you’d like to see each other more. What’s most likely to work?",
+          "options": [
+            {
+              "text": "Plan a big summer reunion with everyone.",
+              "why": "Lovely, but big events are hard to organise and easy to cancel."
+            },
+            {
+              "text": "A monthly video call on the first Sunday.",
+              "correct": true,
+              "why": "Simple and regular, so it’s easy to keep going."
+            },
+            {
+              "text": "Wait for someone else to organise something.",
+              "why": "If everyone waits, nothing happens."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make it regular.",
+          "before": "Let’s make it a",
+          "after": "thing.",
+          "words": [
+            "monthly",
+            "one-off",
+            "secret"
+          ],
+          "answer": "monthly",
+          "why": "Regular rituals become part of family life, rather than one-off events."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which family ritual do you love, or wish you had?",
+          "options": [
+            "Shared meals",
+            "Calls",
+            "Holidays",
+            "Birthday traditions"
+          ],
+          "reply": "Suggesting a small version this month could be the start of something special."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each family with a ritual that could fit.",
+          "pairs": [
+            {
+              "a": "Spread across countries",
+              "b": "Monthly video call"
+            },
+            {
+              "a": "Busy parents and kids",
+              "b": "Pizza Friday"
+            },
+            {
+              "a": "Grandparents nearby",
+              "b": "Sunday lunch rota"
+            }
+          ],
+          "why": "The best rituals fit how your family actually lives, so they’re easy to keep."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one small, regular ritual to your family this week."
+        }
+      ]
+    },
+    {
+      "id": "family-3-3",
+      "level": 3,
+      "title": "Long-Distance Family",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Stay close when you live far apart.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Distance needs a little planning",
+          "body": "When family lives far away, it’s easy to drift into only talking at birthdays. Small, regular touches, a voice note, a photo, a quick call, keep you part of each other’s lives.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your parents moved to another country. You feel guilty you rarely call. What helps most?",
+          "options": [
+            {
+              "text": "Wait until you have time for a long call.",
+              "why": "Long calls are hard to schedule, so they keep getting pushed back."
+            },
+            {
+              "text": "Send short voice notes or photos a few times a week.",
+              "correct": true,
+              "why": "Small, regular contact keeps you close without needing big chunks of time."
+            },
+            {
+              "text": "Feel bad, but do nothing.",
+              "why": "Guilt alone doesn’t bring you closer. A small step does."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A quick touch.",
+          "before": "Thought you’d like this",
+          "after": "of the kids!",
+          "words": [
+            "photo",
+            "bill",
+            "complaint"
+          ],
+          "answer": "photo",
+          "why": "Small everyday moments help faraway family feel included."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you stay in touch with faraway family?",
+          "options": [
+            "Calls",
+            "Messages",
+            "Photos",
+            "Not much, honestly"
+          ],
+          "reply": "Picking one easy habit and doing it weekly makes a real difference."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Keeps you close, or lets you drift?",
+          "left": "Drift",
+          "right": "Close",
+          "cards": [
+            {
+              "text": "A weekly voice note",
+              "side": "right"
+            },
+            {
+              "text": "Only calling on birthdays",
+              "side": "left"
+            },
+            {
+              "text": "A shared photo album",
+              "side": "right"
+            },
+            {
+              "text": "Waiting for them to call",
+              "side": "left"
+            },
+            {
+              "text": "Watching the same show and chatting about it",
+              "side": "right"
+            }
+          ],
+          "why": "Little, regular moments of contact matter more than rare long calls."
+        },
+        {
+          "kind": "try",
+          "body": "Send a faraway relative a quick photo or voice note today."
+        }
+      ]
+    },
+    {
       "id": "family-4",
+      "level": 4,
       "title": "You Can Say No",
       "minutes": 5,
       "focus": "boundaries",
@@ -356,7 +949,256 @@
       ]
     },
     {
+      "id": "family-4-2",
+      "level": 4,
+      "title": "Unwanted Advice",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Set a kind limit on comments you didn’t ask for.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You can close a topic kindly",
+          "body": "Relatives sometimes comment on your weight, relationships or parenting. You can set a limit warmly, without a fight: thank them, close the topic, and move on.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "At every visit, your aunt asks when you’re having a baby. It hurts. What’s a kind, firm response?",
+          "options": [
+            {
+              "text": "Laugh it off every time.",
+              "why": "It keeps the peace but the comments, and the hurt, keep coming."
+            },
+            {
+              "text": "“That’s private for us. Anyway, how’s your garden doing?”",
+              "correct": true,
+              "why": "Warm, clear and it moves the conversation on without drama."
+            },
+            {
+              "text": "Snap: “Mind your own business!”",
+              "why": "Understandable, but it may cause a bigger family rift."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Close the topic warmly.",
+          "before": "I’d rather not talk about that, but thanks for",
+          "after": ".",
+          "words": [
+            "caring",
+            "asking again",
+            "nothing"
+          ],
+          "answer": "caring",
+          "why": "Thanking them softens the limit, so it’s easier to hear."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which comment do you hear most from family?",
+          "options": [
+            "About my weight",
+            "About relationships",
+            "About work or money",
+            "About parenting"
+          ],
+          "reply": "Having one calm, ready-made reply makes it much easier to handle next time."
+        },
+        {
+          "kind": "order",
+          "prompt": "Handling an unwanted comment. Put these in order.",
+          "items": [
+            "Take a breath",
+            "Say it’s not up for discussion",
+            "Change the subject",
+            "Repeat calmly if it comes up again"
+          ],
+          "why": "A calm pause, a clear line and a new topic set the limit kindly. Repeating it gently helps it stick."
+        },
+        {
+          "kind": "try",
+          "body": "Prepare one kind, firm sentence for the family comment that bothers you most."
+        }
+      ]
+    },
+    {
+      "id": "family-4-3",
+      "level": 4,
+      "title": "Holidays Without Burnout",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Plan family holidays that leave room to breathe.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Holidays can be a lot",
+          "body": "Big family holidays mean travel, cooking and lots of people. Planning breaks, sharing jobs and knowing your limits helps you enjoy it instead of just getting through it.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re hosting Christmas again and already feel exhausted. What’s healthiest?",
+          "options": [
+            {
+              "text": "Do it all yourself. It’s easier.",
+              "why": "Doing everything alone often ends in burnout and resentment."
+            },
+            {
+              "text": "Cancel Christmas this year.",
+              "why": "Drastic. There’s usually a middle ground."
+            },
+            {
+              "text": "Ask everyone to bring a dish and help clear up.",
+              "correct": true,
+              "why": "Sharing the load lets you enjoy the day too."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Share the work.",
+          "before": "Could you bring the",
+          "after": "this year?",
+          "words": [
+            "dessert",
+            "drama",
+            "complaints"
+          ],
+          "answer": "dessert",
+          "why": "A specific ask makes it easy for family to help."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What drains you most at family holidays?",
+          "options": [
+            "Cooking",
+            "Travel",
+            "Too many people",
+            "Old tensions"
+          ],
+          "reply": "Planning around that one thing can make the whole holiday feel lighter."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Helps you cope, or leads to burnout?",
+          "left": "Burnout",
+          "right": "Helps",
+          "cards": [
+            {
+              "text": "Planning a quiet walk each day",
+              "side": "right"
+            },
+            {
+              "text": "Saying yes to every visit",
+              "side": "left"
+            },
+            {
+              "text": "Sharing the cooking",
+              "side": "right"
+            },
+            {
+              "text": "Hosting every single year",
+              "side": "left"
+            },
+            {
+              "text": "Setting a time to leave",
+              "side": "right"
+            }
+          ],
+          "why": "Breaks, shared jobs and clear plans let you enjoy family holidays instead of being worn out by them."
+        },
+        {
+          "kind": "try",
+          "body": "Before your next family gathering, plan one break for yourself and ask for help with one job."
+        }
+      ]
+    },
+    {
+      "id": "family-4-4",
+      "level": 4,
+      "title": "Money and Family",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Be generous within limits you can keep.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Money can strain family ties",
+          "body": "Lending to family can be kind, but unclear terms often cause resentment. Decide what you can afford, be clear about whether it’s a gift or a loan, and protect the relationship.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your cousin asks to borrow a large amount for a car. You could afford a smaller sum. What’s best?",
+          "options": [
+            {
+              "text": "Lend it all and hope they pay you back.",
+              "why": "If repayment is slow, it can sour things between you."
+            },
+            {
+              "text": "“I can’t lend that much, but I could give you a smaller amount as a gift.”",
+              "correct": true,
+              "why": "Generous within your limits, and a gift means no awkward debt between you."
+            },
+            {
+              "text": "Say you have no money at all.",
+              "why": "Untrue, and it could come out later."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Be clear about it.",
+          "before": "Is this a gift or a",
+          "after": "? Let’s be clear.",
+          "words": [
+            "loan",
+            "secret",
+            "joke"
+          ],
+          "answer": "loan",
+          "why": "Agreeing upfront avoids misunderstandings that can damage family ties."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel about lending money to family?",
+          "options": [
+            "Happy to help",
+            "Nervous",
+            "I avoid it",
+            "It’s caused problems before"
+          ],
+          "reply": "Deciding your own rule in advance makes these moments much easier."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each situation with a healthy approach.",
+          "pairs": [
+            {
+              "a": "A small, one-off need",
+              "b": "Give it as a gift"
+            },
+            {
+              "a": "A bigger loan",
+              "b": "Agree a repayment plan"
+            },
+            {
+              "a": "Repeated requests",
+              "b": "Kindly say no this time"
+            }
+          ],
+          "why": "Clear, kind limits let you support family without money damaging the relationship."
+        },
+        {
+          "kind": "try",
+          "body": "Decide your personal rule for lending to family, so you’re ready next time someone asks."
+        }
+      ]
+    },
+    {
       "id": "family-5",
+      "level": 5,
       "title": "Rebuild Reliability",
       "minutes": 4,
       "focus": "trust",
@@ -447,7 +1289,168 @@
       ]
     },
     {
+      "id": "family-5-2",
+      "level": 5,
+      "title": "Caring for Ageing Parents",
+      "minutes": 5,
+      "focus": "trust",
+      "summary": "Be someone they can count on, without losing yourself.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Steady support matters most",
+          "body": "As parents get older, small, reliable help, a weekly call, help with appointments, often means more than big gestures. Being steady also means being honest about what you can manage.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum needs more help since her fall, and you’re already stretched. What’s best?",
+          "options": [
+            {
+              "text": "Promise to visit every day, even if you can’t.",
+              "why": "Promises you can’t keep lead to letdowns and guilt."
+            },
+            {
+              "text": "Commit to two set visits a week, and ask siblings to share the rest.",
+              "correct": true,
+              "why": "Reliable and realistic, and it shares the care fairly."
+            },
+            {
+              "text": "Leave it to whoever lives closest.",
+              "why": "It can leave one person carrying everything."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Promise what you can keep.",
+          "before": "I can come every",
+          "after": "and Saturday.",
+          "words": [
+            "Wednesday",
+            "day",
+            "hour"
+          ],
+          "answer": "Wednesday",
+          "why": "Specific, realistic promises are the ones you can reliably keep."
+        },
+        {
+          "kind": "write",
+          "prompt": "What’s one small, steady way you could support an older relative?",
+          "placeholder": "e.g. a call every Sunday evening"
+        },
+        {
+          "kind": "order",
+          "prompt": "Sharing care for a parent. Put these in order.",
+          "items": [
+            "Ask what they need most",
+            "Be honest about your capacity",
+            "Share tasks with family",
+            "Check in and adjust"
+          ],
+          "why": "Starting with their needs and your real limits leads to care that lasts, without burnout."
+        },
+        {
+          "kind": "try",
+          "body": "Offer one specific, regular bit of help to an older relative this week."
+        }
+      ]
+    },
+    {
+      "id": "family-5-3",
+      "level": 5,
+      "title": "Keep Family Confidences",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "What’s shared in trust stays in trust.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Families talk",
+          "body": "News travels fast in families. If a relative tells you something privately and it spreads, they’ll stop confiding in you. Keeping confidences makes you the person they can rely on.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your brother tells you he’s struggling with debt. Your mum asks why he seems stressed. What do you say?",
+          "options": [
+            {
+              "text": "Tell her. She’s his mum and should know.",
+              "why": "Well-meant, but it breaks his trust in you."
+            },
+            {
+              "text": "“Maybe ask him gently? I think he’d appreciate it coming from you.”",
+              "correct": true,
+              "why": "You keep his confidence and encourage her to reach out herself."
+            },
+            {
+              "text": "“Nothing’s wrong, he’s fine.”",
+              "why": "Lying can backfire when the truth comes out."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Check before sharing.",
+          "before": "Are you okay with me telling",
+          "after": "about this?",
+          "words": [
+            "Mum",
+            "everyone",
+            "nobody"
+          ],
+          "answer": "Mum",
+          "why": "Asking first respects their choice about who knows."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who in your family confides in you most?",
+          "options": [
+            "A parent",
+            "A sibling",
+            "A cousin",
+            "Nobody yet"
+          ],
+          "reply": "Keeping their trust is one of the quietest, strongest ways to stay close."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Keeping a confidence, or breaking it?",
+          "left": "Breaking",
+          "right": "Keeping",
+          "cards": [
+            {
+              "text": "“That’s for her to tell you.”",
+              "side": "right"
+            },
+            {
+              "text": "“Don’t tell anyone I said, but…”",
+              "side": "left"
+            },
+            {
+              "text": "Asking before passing anything on",
+              "side": "right"
+            },
+            {
+              "text": "Sharing it “so we can all help”",
+              "side": "left"
+            },
+            {
+              "text": "Changing the subject kindly",
+              "side": "right"
+            }
+          ],
+          "why": "Even well-meant sharing breaks trust. Keeping confidences makes you someone family can turn to."
+        },
+        {
+          "kind": "try",
+          "body": "If a relative has told you something private, quietly decide it stays with you."
+        }
+      ]
+    },
+    {
       "id": "family-6",
+      "level": 6,
       "title": "Disagree Without Winning",
       "minutes": 4,
       "focus": "conflict",
@@ -549,7 +1552,187 @@
       ]
     },
     {
+      "id": "family-6-2",
+      "level": 6,
+      "title": "Values That Differ",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Love family members whose choices aren’t yours.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Different, not wrong",
+          "body": "Family members may choose different faiths, careers or ways of living. You don’t have to agree to stay close. Respecting their right to choose keeps the door open.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your parents are upset you’ve chosen not to marry your long-term partner. What’s the best response?",
+          "options": [
+            {
+              "text": "“I know it matters to you. It’s our choice, and we’re really happy.”",
+              "correct": true,
+              "why": "You respect their feelings while standing calmly by your choice."
+            },
+            {
+              "text": "“Your views are so old-fashioned.”",
+              "why": "Mocking their values pushes them away rather than helping them understand."
+            },
+            {
+              "text": "Avoid seeing them until they accept it.",
+              "why": "Distance may cool things, but it also keeps you apart."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Respect both sides.",
+          "before": "We see this",
+          "after": ", and I still love you.",
+          "words": [
+            "differently",
+            "the same",
+            "wrongly"
+          ],
+          "answer": "differently",
+          "why": "Naming the difference with love keeps the relationship stronger than the disagreement."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where do you and your family differ most?",
+          "options": [
+            "Faith",
+            "Politics",
+            "Lifestyle",
+            "Career"
+          ],
+          "reply": "Remembering what you share, beyond that one area, helps keep things warm."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each clash with a respectful response.",
+          "pairs": [
+            {
+              "a": "Different faith",
+              "b": "“I respect what it means to you.”"
+            },
+            {
+              "a": "Different politics",
+              "b": "“Let’s agree to differ on that.”"
+            },
+            {
+              "a": "Different career path",
+              "b": "“I’m proud you chose your way.”"
+            }
+          ],
+          "why": "Respectful words let family members disagree on big things and still feel loved."
+        },
+        {
+          "kind": "try",
+          "body": "Tell a relative you disagree with that you respect their right to choose, and mean it."
+        }
+      ]
+    },
+    {
+      "id": "family-6-3",
+      "level": 6,
+      "title": "Cool Down at Gatherings",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Step away before a family dinner boils over.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Gatherings can heat up fast",
+          "body": "Tiredness, old tensions and a few drinks can turn a family meal tense. Noticing the heat rising and stepping away for a few minutes can save the whole day.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "At Sunday lunch, your uncle starts a heated debate and you feel your temper rising. What do you do?",
+          "options": [
+            {
+              "text": "Argue back until he gives in.",
+              "why": "In front of everyone, it’s likely to escalate rather than end."
+            },
+            {
+              "text": "“I’m going to grab some air.” Then step outside for a few minutes.",
+              "correct": true,
+              "why": "A short break calms you down without making a scene."
+            },
+            {
+              "text": "Sit in silence and fume.",
+              "why": "Bottling it up can leak out later in a bigger way."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A calm exit line.",
+          "before": "I’m just going to get some",
+          "after": ".",
+          "words": [
+            "air",
+            "revenge",
+            "proof"
+          ],
+          "answer": "air",
+          "why": "A neutral reason lets you step away without adding fuel."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What usually sparks tension at your family gatherings?",
+          "options": [
+            "Politics",
+            "Old arguments",
+            "Comments about me",
+            "Too many people"
+          ],
+          "reply": "Planning your calm exit for that moment makes gatherings much easier."
+        },
+        {
+          "kind": "scene",
+          "title": "Heated dinner",
+          "them": "Uncle Rob",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Young people today don’t know what hard work is."
+            },
+            {
+              "from": "them",
+              "text": "Back in my day we didn’t complain."
+            }
+          ],
+          "prompt": "You feel annoyed. Reply:",
+          "options": [
+            {
+              "text": "That’s rubbish, Rob, and you know it.",
+              "reaction": "Here we go… 🙄",
+              "why": "It turns a passing comment into a full-blown argument."
+            },
+            {
+              "text": "Mm. Anyone want more potatoes?",
+              "correct": true,
+              "reaction": "Ooh, yes please!",
+              "why": "A light change of subject cools things without a fight."
+            },
+            {
+              "text": "(You storm off.)",
+              "reaction": "(Everyone goes quiet.)",
+              "why": "Leaving abruptly can create more tension than the comment did."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Before your next family gathering, plan one way to step away if things get tense."
+        }
+      ]
+    },
+    {
       "id": "family-7",
+      "level": 7,
       "title": "Repair a Family Hurt",
       "minutes": 4,
       "focus": "conflict",
@@ -617,7 +1800,173 @@
       ]
     },
     {
+      "id": "family-7-2",
+      "level": 7,
+      "title": "Old Childhood Hurts",
+      "minutes": 5,
+      "focus": "conflict",
+      "summary": "Some old wounds deserve a gentle conversation.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Old hurts can still sting",
+          "body": "Something a parent said or did years ago can still hurt. Raising it gently, focusing on how it felt rather than blame, can bring understanding, though it may take more than one talk.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You still feel hurt that your parents missed your school play for work. You’d like to talk about it. What’s best?",
+          "options": [
+            {
+              "text": "Bring it up in an argument about something else.",
+              "why": "It’ll feel like an attack, and the real hurt may get lost."
+            },
+            {
+              "text": "“Can I share something from when I was little? It still means a lot to me.”",
+              "correct": true,
+              "why": "A gentle opening invites them to listen rather than defend."
+            },
+            {
+              "text": "Keep it to yourself. It’s in the past.",
+              "why": "Sometimes fine, but if it still hurts, it may be worth sharing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Focus on feelings.",
+          "before": "When you missed my play, I felt",
+          "after": ".",
+          "words": [
+            "forgotten",
+            "lucky",
+            "nothing"
+          ],
+          "answer": "forgotten",
+          "why": "Sharing how it felt, rather than what they did wrong, makes it easier to hear."
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there an old family hurt you’d like to talk about? What would you want them to know?",
+          "placeholder": "e.g. how much it meant when…"
+        },
+        {
+          "kind": "order",
+          "prompt": "Talking about an old hurt. Put these in order.",
+          "items": [
+            "Pick a calm, private moment",
+            "Share how it felt",
+            "Listen to their side",
+            "Say what would help now"
+          ],
+          "why": "Calm timing and feelings-first sharing make understanding possible, even about something from long ago."
+        },
+        {
+          "kind": "try",
+          "body": "If an old hurt still weighs on you, write down what you’d want to say before deciding whether to share it."
+        }
+      ]
+    },
+    {
+      "id": "family-7-3",
+      "level": 7,
+      "title": "Reconnect After Distance",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Reach out after a long family silence.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Someone has to go first",
+          "body": "After a falling-out or years of drifting, getting back in touch can feel daunting. A short, warm message with no blame often opens the door more than a long explanation.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You haven’t spoken to your cousin in three years since a family argument. You miss her. What do you send?",
+          "options": [
+            {
+              "text": "A long message explaining who was right.",
+              "why": "Reopening the argument can close the door again."
+            },
+            {
+              "text": "Nothing. She should reach out first.",
+              "why": "If you both wait, the silence continues."
+            },
+            {
+              "text": "“I’ve been thinking of you and I miss you. Would you like to catch up?”",
+              "correct": true,
+              "why": "Warm, simple and blame-free, which makes it easy to say yes."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Lead with warmth.",
+          "before": "I’ve really",
+          "after": "you.",
+          "words": [
+            "missed",
+            "blamed",
+            "avoided"
+          ],
+          "answer": "missed",
+          "why": "Saying you miss them focuses on the relationship, not the old disagreement."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Is there a relative you’ve drifted from?",
+          "options": [
+            "Yes, after a falling-out",
+            "Yes, just drifted",
+            "Not really",
+            "I’m not sure"
+          ],
+          "reply": "A short, warm message is often all it takes to start again."
+        },
+        {
+          "kind": "scene",
+          "title": "First message in years",
+          "them": "Your cousin",
+          "lines": [
+            {
+              "from": "you",
+              "text": "Hi Sam, I’ve been thinking of you. I miss you. Would you like to catch up?"
+            },
+            {
+              "from": "them",
+              "text": "Wow, hi. I’ve missed you too. I’m sorry about how things went."
+            }
+          ],
+          "prompt": "Reply:",
+          "options": [
+            {
+              "text": "Me too. I’d love to put it behind us. Coffee next week?",
+              "correct": true,
+              "reaction": "I’d love that ☕💛",
+              "why": "You meet her apology with warmth and move towards reconnecting."
+            },
+            {
+              "text": "Well, you did say some hurtful things.",
+              "reaction": "…I know. Sorry.",
+              "why": "Going back over old wounds can stall a fresh start."
+            },
+            {
+              "text": "Okay.",
+              "reaction": "Oh. Okay.",
+              "why": "A flat reply can make her unsure you really want to reconnect."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "If there’s a relative you miss, send them a short, warm message this week."
+        }
+      ]
+    },
+    {
       "id": "family-8",
+      "level": 8,
       "title": "Respect Different Roles",
       "minutes": 4,
       "focus": "boundaries",
@@ -708,7 +2057,182 @@
       ]
     },
     {
+      "id": "family-8-2",
+      "level": 8,
+      "title": "Sharing Care Fairly",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Siblings can share family duties without resentment.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Fairness needs a conversation",
+          "body": "Often one sibling ends up doing most of the caring, hosting or organising. Instead of quietly resenting it, an honest talk about sharing the load protects both your energy and your relationships.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You do almost all the driving for your dad’s appointments, while your sister lives further away. What’s best?",
+          "options": [
+            {
+              "text": "Keep doing it and quietly resent her.",
+              "why": "Resentment grows and often bursts out later."
+            },
+            {
+              "text": "“I’m finding the driving a lot. Could you handle the phone calls and bookings?”",
+              "correct": true,
+              "why": "Honest and practical, and it gives her a fair way to help from afar."
+            },
+            {
+              "text": "Tell Dad she doesn’t care.",
+              "why": "It hurts both of them and doesn’t fix the load."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for a fair share.",
+          "before": "Could you take on the",
+          "after": "?",
+          "words": [
+            "bookings",
+            "blame",
+            "guilt"
+          ],
+          "answer": "bookings",
+          "why": "Naming a specific task makes it easy for them to help, wherever they live."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How fairly is family care shared in your family?",
+          "options": [
+            "Very fairly",
+            "Mostly on me",
+            "Mostly on others",
+            "Not discussed"
+          ],
+          "reply": "One honest conversation can make the load feel much lighter."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shares the load, or overloads one person?",
+          "left": "Overloads",
+          "right": "Shares",
+          "cards": [
+            {
+              "text": "A shared calendar of who does what",
+              "side": "right"
+            },
+            {
+              "text": "“You live closest, so you do it.”",
+              "side": "left"
+            },
+            {
+              "text": "Faraway siblings handling phone calls",
+              "side": "right"
+            },
+            {
+              "text": "Never asking for help",
+              "side": "left"
+            },
+            {
+              "text": "Taking turns hosting holidays",
+              "side": "right"
+            }
+          ],
+          "why": "Fair sharing looks different for everyone, but it always starts with an honest conversation."
+        },
+        {
+          "kind": "try",
+          "body": "If you carry most of a family task, ask a sibling to take on one specific part of it."
+        }
+      ]
+    },
+    {
+      "id": "family-8-3",
+      "level": 8,
+      "title": "Grown-Up Children",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Relate to grown children as the adults they are.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "From parent to friend",
+          "body": "When children grow up, the relationship has to change. Offering support instead of instructions, and asking before advising, helps adult children want to stay close.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your adult son is moving in with his girlfriend, and you have doubts. What’s best?",
+          "options": [
+            {
+              "text": "List all your concerns so he knows the risks.",
+              "why": "A list of worries can feel like disapproval of his choice."
+            },
+            {
+              "text": "“Congratulations! I’m here if you ever want to talk things through.”",
+              "correct": true,
+              "why": "You respect his choice and leave the door open for support."
+            },
+            {
+              "text": "Refuse to help him move.",
+              "why": "Withholding support often pushes adult children away."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask before advising.",
+          "before": "Would you like my",
+          "after": ", or just a listening ear?",
+          "words": [
+            "opinion",
+            "rules",
+            "money"
+          ],
+          "answer": "opinion",
+          "why": "Asking first treats them as an adult who chooses what help they want."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "In your family, which shift is hardest?",
+          "options": [
+            "Parents letting go",
+            "Kids being heard",
+            "Changing roles",
+            "Not relevant to me"
+          ],
+          "reply": "Noticing it is the first step to a more adult-to-adult relationship."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each controlling line with a supportive one.",
+          "pairs": [
+            {
+              "a": "“You should take that job.”",
+              "b": "“What feels right to you?”"
+            },
+            {
+              "a": "“That’s a mistake.”",
+              "b": "“I trust you to decide.”"
+            },
+            {
+              "a": "“Call me every day.”",
+              "b": "“I’d love to hear from you.”"
+            }
+          ],
+          "why": "Supportive words show trust, which makes grown children far more likely to share and stay close."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a grown family member shares a decision, ask if they want your view before giving it."
+        }
+      ]
+    },
+    {
       "id": "family-9",
+      "level": 9,
       "title": "Ask, Don’t Assume",
       "minutes": 3,
       "focus": "listening",
@@ -804,7 +2328,182 @@
       ]
     },
     {
+      "id": "family-9-2",
+      "level": 9,
+      "title": "Check In on Siblings",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Busy lives can hide what siblings are going through.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Siblings drift without noticing",
+          "body": "As adults, siblings get busy with work, partners and kids. A simple “How are you really?” every so often keeps you close, and lets them know you’re there.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your brother has gone quiet in the family chat for weeks. What’s best?",
+          "options": [
+            {
+              "text": "Assume he’s just busy.",
+              "why": "Maybe, but a quiet sibling might also be struggling."
+            },
+            {
+              "text": "“Haven’t heard from you in a while. How are you really doing?”",
+              "correct": true,
+              "why": "A gentle, personal check-in shows you care and makes it easy to open up."
+            },
+            {
+              "text": "Post in the group chat asking why he’s ignoring everyone.",
+              "why": "Calling him out publicly can make him pull back further."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for real.",
+          "before": "How are you",
+          "after": "doing?",
+          "words": [
+            "really",
+            "never",
+            "barely"
+          ],
+          "answer": "really",
+          "why": "Adding “really” shows you want the honest answer, not just “fine”."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When did you last properly catch up with a sibling?",
+          "options": [
+            "This week",
+            "This month",
+            "Months ago",
+            "I don’t have siblings"
+          ],
+          "reply": "If it’s been a while, a short, caring message is a great place to start."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Real check-in, or surface-level?",
+          "left": "Surface",
+          "right": "Real",
+          "cards": [
+            {
+              "text": "“What’s been on your mind lately?”",
+              "side": "right"
+            },
+            {
+              "text": "Liking their post",
+              "side": "left"
+            },
+            {
+              "text": "“How are things with work, honestly?”",
+              "side": "right"
+            },
+            {
+              "text": "“Happy birthday!” once a year",
+              "side": "left"
+            },
+            {
+              "text": "A call just to say hi",
+              "side": "right"
+            }
+          ],
+          "why": "Real check-ins invite honest answers. Surface contact is nice, but it rarely shows how someone is doing."
+        },
+        {
+          "kind": "try",
+          "body": "Send a sibling or close relative a “how are you really?” message today."
+        }
+      ]
+    },
+    {
+      "id": "family-9-3",
+      "level": 9,
+      "title": "Hear Kids Out",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Children open up when they feel heard, not judged.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listen before you lecture",
+          "body": "When children share a problem, adults often jump to advice or a telling-off. Listening first, and showing you understand, makes children far more likely to keep talking to you.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your 12-year-old niece says, “Everyone at school hates me.” What’s the best first response?",
+          "options": [
+            {
+              "text": "“That’s not true, don’t be silly.”",
+              "why": "It dismisses her feelings, so she may stop sharing."
+            },
+            {
+              "text": "“Just ignore them and make new friends.”",
+              "why": "Advice too soon can feel like you’re not really listening."
+            },
+            {
+              "text": "“That sounds really lonely. What happened?”",
+              "correct": true,
+              "why": "You name her feeling and invite her to tell you more."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name their feeling.",
+          "before": "That sounds really",
+          "after": ". Tell me more.",
+          "words": [
+            "hard",
+            "silly",
+            "boring"
+          ],
+          "answer": "hard",
+          "why": "Naming the feeling helps children feel understood, and calmer."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a child shares a worry, your instinct is to…",
+          "options": [
+            "Fix it",
+            "Reassure them",
+            "Ask questions",
+            "Tell them off"
+          ],
+          "reply": "Every instinct comes from care. Listening first makes the rest work better."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each worry with a listening response.",
+          "pairs": [
+            {
+              "a": "“Nobody played with me.”",
+              "b": "“That sounds lonely.”"
+            },
+            {
+              "a": "“I failed my test.”",
+              "b": "“You must feel disappointed.”"
+            },
+            {
+              "a": "“My friend was mean.”",
+              "b": "“What did they say?”"
+            }
+          ],
+          "why": "Listening responses help children feel safe to share, which keeps them coming to you as they grow."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a child in your family shares a worry, name their feeling before offering any advice."
+        }
+      ]
+    },
+    {
       "id": "family-10",
+      "level": 10,
       "title": "Make Room for Change",
       "minutes": 4,
       "focus": "connection",
@@ -860,6 +2559,174 @@
         {
           "kind": "try",
           "body": "Suggest one new, flexible way to stay connected with a family member whose life has changed."
+        }
+      ]
+    },
+    {
+      "id": "family-10-2",
+      "level": 10,
+      "title": "Welcome New Members",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "New partners and in-laws change the family shape.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Families grow and shift",
+          "body": "When someone marries in or a new partner arrives, the family’s rhythm changes. Making them feel welcome, and being patient as everyone adjusts, helps the whole family grow closer.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your brother’s new wife seems shy at family events and often sits apart. What’s a kind thing to do?",
+          "options": [
+            {
+              "text": "Leave her be. She’ll join in when she’s ready.",
+              "why": "Some space is fine, but a warm invitation helps her feel included."
+            },
+            {
+              "text": "Sit with her and ask about her family’s traditions.",
+              "correct": true,
+              "why": "A friendly, curious chat helps her feel welcome and valued."
+            },
+            {
+              "text": "Ask your brother why she isn’t more sociable.",
+              "why": "It can sound like criticism and put him in an awkward spot."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make them welcome.",
+          "before": "We’re so",
+          "after": "you’re part of the family.",
+          "words": [
+            "glad",
+            "worried",
+            "surprised"
+          ],
+          "answer": "glad",
+          "why": "Saying it out loud helps a newcomer feel truly accepted."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How does your family usually welcome newcomers?",
+          "options": [
+            "Warmly",
+            "Slowly",
+            "It’s mixed",
+            "Not very well"
+          ],
+          "reply": "One person’s warmth can set the tone for everyone else."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Welcoming, or leaves them on the outside?",
+          "left": "Outside",
+          "right": "Welcoming",
+          "cards": [
+            {
+              "text": "Asking about their family",
+              "side": "right"
+            },
+            {
+              "text": "Using in-jokes they don’t know",
+              "side": "left"
+            },
+            {
+              "text": "Adding them to the family chat",
+              "side": "right"
+            },
+            {
+              "text": "Talking about exes in front of them",
+              "side": "left"
+            },
+            {
+              "text": "Explaining a family tradition",
+              "side": "right"
+            }
+          ],
+          "why": "Small, thoughtful gestures help new family members feel they belong, which strengthens the whole family."
+        },
+        {
+          "kind": "try",
+          "body": "Do one small thing this week to make a newer family member feel welcome."
+        }
+      ]
+    },
+    {
+      "id": "family-10-3",
+      "level": 10,
+      "title": "Celebrate Your Family",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Notice and celebrate what’s good in your family.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Families need good moments too",
+          "body": "Families often only gather for problems or obligations. Celebrating wins, birthdays and little milestones together creates warm memories that carry you through harder times.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum just finished her first 5k at 62. What’s a lovely way to mark it?",
+          "options": [
+            {
+              "text": "A quick “well done” text.",
+              "why": "Kind, but this is a big moment that deserves more."
+            },
+            {
+              "text": "Rally the family for a celebration breakfast and a card everyone signs.",
+              "correct": true,
+              "why": "Making a fuss shows how proud you all are, and creates a memory."
+            },
+            {
+              "text": "Wait to see if she mentions it.",
+              "why": "She might not, and the moment could slip past."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make a fuss.",
+          "before": "We’re all so",
+          "after": "of you!",
+          "words": [
+            "proud",
+            "tired",
+            "jealous"
+          ],
+          "answer": "proud",
+          "why": "Saying you’re proud out loud makes family members feel truly seen."
+        },
+        {
+          "kind": "write",
+          "prompt": "Which family member has a win you could celebrate soon?",
+          "placeholder": "e.g. my brother’s new job"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each milestone with a way to celebrate.",
+          "pairs": [
+            {
+              "a": "A new job",
+              "b": "A congratulations dinner"
+            },
+            {
+              "a": "Passing an exam",
+              "b": "A card from everyone"
+            },
+            {
+              "a": "A big birthday",
+              "b": "A photo memory book"
+            }
+          ],
+          "why": "Celebrating together builds a store of good memories, and reminds everyone they belong."
+        },
+        {
+          "kind": "try",
+          "body": "Celebrate one family member’s win this week, however small."
         }
       ]
     }
