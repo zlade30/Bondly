@@ -5,52 +5,52 @@
   "levels": [
     {
       "title": "Gentle Starts",
-      "icon": "speech",
+      "icon": "feather",
       "color": "pink"
     },
     {
       "title": "Really Listening",
-      "icon": "ear",
+      "icon": "headphones",
       "color": "blue"
     },
     {
       "title": "Everyday Closeness",
-      "icon": "hug",
+      "icon": "mugs",
       "color": "peach"
     },
     {
       "title": "Needs and Limits",
-      "icon": "shield",
+      "icon": "door",
       "color": "mint"
     },
     {
       "title": "Everyday Trust",
-      "icon": "envelope",
+      "icon": "key",
       "color": "yellow"
     },
     {
       "title": "Calmer Conflicts",
-      "icon": "scales",
+      "icon": "cloud",
       "color": "purple"
     },
     {
       "title": "Making Up",
-      "icon": "bandage",
+      "icon": "puzzle",
       "color": "pink"
     },
     {
       "title": "Sharing the Load",
-      "icon": "calendar",
+      "icon": "basket",
       "color": "lavender"
     },
     {
       "title": "Staying Curious",
-      "icon": "sprout",
+      "icon": "magnifier",
       "color": "mint"
     },
     {
       "title": "Choosing Us",
-      "icon": "party",
+      "icon": "rings",
       "color": "yellow"
     }
   ],

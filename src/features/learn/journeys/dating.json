@@ -5,52 +5,52 @@
   "levels": [
     {
       "title": "Great First Chats",
-      "icon": "envelope",
+      "icon": "phone",
       "color": "peach"
     },
     {
       "title": "Truly Listening",
-      "icon": "ear",
+      "icon": "radio",
       "color": "blue"
     },
     {
       "title": "Your Own Pace",
-      "icon": "shield",
+      "icon": "snail",
       "color": "mint"
     },
     {
       "title": "Small Signs of Care",
-      "icon": "hug",
+      "icon": "gift",
       "color": "pink"
     },
     {
       "title": "Building Trust",
-      "icon": "calendar",
+      "icon": "bridge",
       "color": "yellow"
     },
     {
       "title": "Honest Talks",
-      "icon": "speech",
+      "icon": "bulb",
       "color": "lavender"
     },
     {
       "title": "Respectful Differences",
-      "icon": "scales",
+      "icon": "flowers",
       "color": "purple"
     },
     {
       "title": "Consent and Respect",
-      "icon": "shield",
+      "icon": "traffic",
       "color": "peach"
     },
     {
       "title": "Clear About the Future",
-      "icon": "sprout",
+      "icon": "compass",
       "color": "blue"
     },
     {
       "title": "Choosing Well",
-      "icon": "party",
+      "icon": "balloon",
       "color": "yellow"
     }
   ],

@@ -84,8 +84,11 @@ const expectedIds = [];
 if (leveled) {
   if (data.levels.length !== 10) say('levels', `expected 10 level titles, found ${data.levels.length}`);
   const COLORS = ['pink', 'lavender', 'blue', 'yellow', 'mint', 'purple', 'peach'];
-  // Keep in step with TopicIconName in src/components/bondly/topic-icons.tsx.
-  const ICONS = ['envelope', 'ear', 'speech', 'shield', 'calendar', 'scales', 'bandage', 'sprout', 'hug', 'party'];
+  // Every icon name the app can draw, read from the icon files so this list never goes stale.
+  const iconSource = ['topic-icons.tsx', 'topic-icons-more.tsx']
+    .map((f) => readFileSync(new URL(`../src/components/bondly/${f}`, import.meta.url), 'utf8'))
+    .join('\n');
+  const ICONS = [...iconSource.matchAll(/^\s+'([a-z]+)',$/gm)].map((m) => m[1]);
   data.levels.forEach((lv, i) => {
     const at = `level ${i + 1}`;
     max(`${at} title`, lv?.title, 28);

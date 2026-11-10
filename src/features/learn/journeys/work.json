@@ -5,52 +5,52 @@
   "levels": [
     {
       "title": "Clear Messages",
-      "icon": "envelope",
+      "icon": "plane",
       "color": "blue"
     },
     {
       "title": "Active Listening",
-      "icon": "ear",
+      "icon": "notepad",
       "color": "lavender"
     },
     {
       "title": "Team Connection",
-      "icon": "hug",
+      "icon": "cup",
       "color": "peach"
     },
     {
       "title": "Healthy Boundaries",
-      "icon": "shield",
+      "icon": "moon",
       "color": "mint"
     },
     {
       "title": "Being Dependable",
-      "icon": "calendar",
+      "icon": "clipboard",
       "color": "yellow"
     },
     {
       "title": "Productive Disagreement",
-      "icon": "scales",
+      "icon": "target",
       "color": "purple"
     },
     {
       "title": "Useful Feedback",
-      "icon": "speech",
+      "icon": "megaphone",
       "color": "pink"
     },
     {
       "title": "Growing From Feedback",
-      "icon": "sprout",
+      "icon": "chart",
       "color": "mint"
     },
     {
       "title": "Team Repairs",
-      "icon": "bandage",
+      "icon": "wrench",
       "color": "peach"
     },
     {
       "title": "Strong Teams",
-      "icon": "party",
+      "icon": "trophy",
       "color": "lavender"
     }
   ],

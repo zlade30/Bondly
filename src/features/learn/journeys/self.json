@@ -5,52 +5,52 @@
   "levels": [
     {
       "title": "Name Your Feelings",
-      "icon": "speech",
+      "icon": "rainbow",
       "color": "lavender"
     },
     {
       "title": "Open Listening",
-      "icon": "ear",
+      "icon": "stethoscope",
       "color": "blue"
     },
     {
       "title": "Your Needs",
-      "icon": "shield",
+      "icon": "battery",
       "color": "mint"
     },
     {
       "title": "Turning Toward",
-      "icon": "hug",
+      "icon": "sunflower",
       "color": "peach"
     },
     {
       "title": "Trusting Yourself",
-      "icon": "calendar",
+      "icon": "anchor",
       "color": "yellow"
     },
     {
       "title": "Calm Responses",
-      "icon": "scales",
+      "icon": "lotus",
       "color": "purple"
     },
     {
       "title": "Owning It",
-      "icon": "bandage",
+      "icon": "mirror",
       "color": "pink"
     },
     {
       "title": "Kinder Thoughts",
-      "icon": "sprout",
+      "icon": "thought",
       "color": "lavender"
     },
     {
       "title": "Asking for Support",
-      "icon": "envelope",
+      "icon": "lifebuoy",
       "color": "peach"
     },
     {
       "title": "Your Next Chapter",
-      "icon": "party",
+      "icon": "mountain",
       "color": "yellow"
     }
   ],

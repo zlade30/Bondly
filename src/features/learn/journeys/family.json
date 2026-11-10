@@ -5,52 +5,52 @@
   "levels": [
     {
       "title": "Calm Words",
-      "icon": "speech",
+      "icon": "teapot",
       "color": "yellow"
     },
     {
       "title": "Across Generations",
-      "icon": "ear",
+      "icon": "frame",
       "color": "blue"
     },
     {
       "title": "Showing Up",
-      "icon": "hug",
+      "icon": "house",
       "color": "peach"
     },
     {
       "title": "Healthy Limits",
-      "icon": "shield",
+      "icon": "umbrella",
       "color": "mint"
     },
     {
       "title": "Being Reliable",
-      "icon": "calendar",
+      "icon": "clock",
       "color": "lavender"
     },
     {
       "title": "Different Views",
-      "icon": "scales",
+      "icon": "glasses",
       "color": "purple"
     },
     {
       "title": "Family Repairs",
-      "icon": "bandage",
+      "icon": "stitched",
       "color": "pink"
     },
     {
       "title": "Fair Roles",
-      "icon": "shield",
+      "icon": "cake",
       "color": "peach"
     },
     {
       "title": "Checking In",
-      "icon": "envelope",
+      "icon": "telephone",
       "color": "blue"
     },
     {
       "title": "Growing Together",
-      "icon": "party",
+      "icon": "tree",
       "color": "yellow"
     }
   ],

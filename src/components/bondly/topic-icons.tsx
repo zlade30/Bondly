@@ -2,6 +2,7 @@ import { useId, type ReactNode } from 'react';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 
 import { INK, TONES, type BondlingColor } from './mascot';
+import { MORE_TOPIC_ICONS, moreArt, type MoreTopicIconName } from './topic-icons-more';
 
 /**
  * Topic icons for journey levels, drawn in the same soft-3D style as the
@@ -9,8 +10,11 @@ import { INK, TONES, type BondlingColor } from './mascot';
  * cheeks and a little face where the shape has room for one.
  */
 
-export type TopicIconName =
+type FriendsIconName =
   'envelope' | 'ear' | 'speech' | 'shield' | 'calendar' | 'scales' | 'bandage' | 'sprout' | 'hug' | 'party';
+
+/** Every topic icon: the friends journey's ten, then one per level for the other journeys. */
+export type TopicIconName = FriendsIconName | MoreTopicIconName;
 
 export const TOPIC_ICONS: TopicIconName[] = [
   'envelope',
@@ -23,6 +27,7 @@ export const TOPIC_ICONS: TopicIconName[] = [
   'sprout',
   'hug',
   'party',
+  ...MORE_TOPIC_ICONS,
 ];
 
 /** A rounded rectangle as a path, so it can take the same soft shading as any other shape. */
@@ -85,11 +90,33 @@ export function TopicIcon({
     </G>
   );
 
+  /** A shape in another gradient, with the same glossy highlight. */
+  const tinted = (d: string, fill: string, key?: string) => (
+    <G key={key}>
+      <Path d={d} fill={fill} />
+      <Path d={d} fill={`url(#hi${uid})`} />
+    </G>
+  );
+
   const line = { stroke: INK, strokeLinecap: 'round' as const, fill: 'none' };
   const PINK = { top: '#FFC1D6', bottom: '#FF6FA5' };
   const GREEN = { top: '#B8F0D8', bottom: '#3DBE8B' };
 
   const art: Record<TopicIconName, ReactNode> = {
+    ...moreArt({
+      soft,
+      tinted,
+      face,
+      body,
+      pink: `url(#pink${uid})`,
+      green: `url(#green${uid})`,
+      gold: `url(#gold${uid})`,
+      sky: `url(#sky${uid})`,
+      ink: INK,
+      cheek: tone.cheek,
+      rr,
+      heart,
+    }),
     // Reaching out: a happy letter on its way, with a little heart.
     envelope: (
       <>
@@ -253,6 +280,14 @@ export function TopicIcon({
         <LinearGradient id={`green${uid}`} x1="0.2" y1="0" x2="0.8" y2="1">
           <Stop offset="0" stopColor={GREEN.top} />
           <Stop offset="1" stopColor={GREEN.bottom} />
+        </LinearGradient>
+        <LinearGradient id={`gold${uid}`} x1="0.2" y1="0" x2="0.8" y2="1">
+          <Stop offset="0" stopColor="#FFE9A6" />
+          <Stop offset="1" stopColor="#FFC24D" />
+        </LinearGradient>
+        <LinearGradient id={`sky${uid}`} x1="0.2" y1="0" x2="0.8" y2="1">
+          <Stop offset="0" stopColor="#D6E4FF" />
+          <Stop offset="1" stopColor="#8FA8FF" />
         </LinearGradient>
         <RadialGradient id={`shadow${uid}`} cx="0.5" cy="0.5" r="0.5">
           <Stop offset="0" stopColor="#7C5CFC" stopOpacity={0.22} />
