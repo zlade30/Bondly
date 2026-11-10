@@ -1,4 +1,4 @@
-import { COURSES, courseProgress } from '@/features/learn/content';
+import { ALL_COURSES, courseProgress, journeyFor, type Course, type Lesson } from '@/features/learn/content';
 import { todayKey } from '@/features/learn/progress';
 import { SKILLS, type SkillId } from '@/features/onboarding/content';
 import { scoreSkills } from '@/features/onboarding/scoring';
@@ -53,14 +53,16 @@ export function lastSevenDays(activeDays: Set<string>, now = new Date()) {
   });
 }
 
-/** Which courses build each skill on the map. */
-const SKILL_COURSES: Record<SkillId, string[]> = {
-  communication: ['communication'],
-  trust: ['trust'],
-  boundaries: ['boundaries'],
-  conflict: ['conflict'],
-  connection: ['connection', 'listening'],
-};
+/**
+ * The skill on the map a lesson builds. Journey lessons carry their own
+ * focus; skill refresher lessons take their course's. Listening counts
+ * towards connection, which is how the map groups it.
+ */
+function skillOf(course: Course, lesson: Lesson): SkillId | null {
+  const focus = lesson.focus ?? course.id;
+  if (focus === 'listening') return 'connection';
+  return SKILLS.some((s) => s.id === focus) ? (focus as SkillId) : null;
+}
 
 export type SkillProgress = {
   id: SkillId;
@@ -72,30 +74,43 @@ export type SkillProgress = {
 };
 
 /**
- * Starts from the onboarding estimate and grows with finished lessons in the
- * matching courses, so the map fills out as the person practises.
+ * Starts from the onboarding estimate and grows with every finished lesson
+ * that practises each skill, journeys and skill refreshers alike, so the map
+ * fills out as the person practises.
+ *
+ * Totals cover the person's own journey and the skill refreshers, plus any
+ * other lessons they've chosen to do, so the bars measure the path they're on
+ * rather than every journey in the app.
  */
 export function skillProgress(answers: OnboardingAnswers, completed: string[]): SkillProgress[] {
   const base = scoreSkills(answers);
-  return SKILLS.map((s) => {
-    let done = 0;
-    let total = 0;
-    for (const courseId of SKILL_COURSES[s.id]) {
-      const course = COURSES.find((c) => c.id === courseId);
-      if (!course) continue;
-      const p = courseProgress(course, completed);
-      done += p.done;
-      total += p.total;
+  const own = journeyFor(answers.goal);
+  const done: Record<string, number> = {};
+  const total: Record<string, number> = {};
+  for (const course of ALL_COURSES) {
+    const onPath = course.kind !== 'journey' || course.id === own?.id;
+    for (const lesson of course.lessons) {
+      const skill = skillOf(course, lesson);
+      if (!skill) continue;
+      const finished = completed.includes(lesson.id);
+      if (!onPath && !finished) continue;
+      total[skill] = (total[skill] ?? 0) + 1;
+      if (finished) done[skill] = (done[skill] ?? 0) + 1;
     }
-    const ratio = total ? done / total : 0;
+  }
+  return SKILLS.map((s) => {
+    const d = done[s.id] ?? 0;
+    const t = total[s.id] ?? 0;
+    const ratio = t ? d / t : 0;
     const value = Math.min(1, base[s.id] + (1 - base[s.id]) * ratio * 0.9);
-    return { id: s.id, label: s.label, value, done, total };
+    return { id: s.id, label: s.label, value, done: d, total: t };
   });
 }
 
+/** Minutes across every finished lesson, journeys and skill refreshers alike. */
 export function minutesPractised(completed: string[]) {
   let minutes = 0;
-  for (const course of COURSES) {
+  for (const course of ALL_COURSES) {
     for (const lesson of course.lessons) {
       if (completed.includes(lesson.id)) minutes += lesson.minutes;
     }
@@ -103,6 +118,10 @@ export function minutesPractised(completed: string[]) {
   return minutes;
 }
 
+/** Journeys and skill refreshers finished, out of every one in the app. */
 export function coursesFinished(completed: string[]) {
-  return COURSES.filter((c) => courseProgress(c, completed).done === c.lessons.length).length;
+  return {
+    done: ALL_COURSES.filter((c) => courseProgress(c, completed).done === c.lessons.length).length,
+    total: ALL_COURSES.length,
+  };
 }

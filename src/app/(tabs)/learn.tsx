@@ -15,7 +15,7 @@ import { courseXp, journeyLevel } from '@/features/learn/xp';
 import { useOnboarding } from '@/features/onboarding/store';
 
 /**
- * Your relationship journey first, then the skill courses (focus areas
+ * Your relationship journey first, then the other journeys, then the skill refreshers (focus areas
  * first), then the journeys for other relationships. Each opens its map.
  */
 export default function LearnScreen() {
@@ -38,17 +38,8 @@ export default function LearnScreen() {
   );
 
   return (
-    <TabScreen title="Learn" subtitle="Pick a journey or course to see its map.">
+    <TabScreen title="Learn" subtitle="Pick a journey or skill refresher to see its map.">
       {journey && row(journey, 'Your journey')}
-
-      {journey && (
-        <BText variant="heading" style={styles.section}>
-          Skill courses
-        </BText>
-      )}
-      {skills.map((course) =>
-        row(course, (answers.focus as string[]).includes(course.id) ? 'Your focus' : undefined)
-      )}
 
       {others.length > 0 && (
         <BText variant="heading" style={styles.section}>
@@ -56,6 +47,14 @@ export default function LearnScreen() {
         </BText>
       )}
       {others.map((course) => row(course))}
+
+      {/* Short, general lessons on one skill each, for a quick brush-up. */}
+      <BText variant="heading" style={styles.section}>
+        Skill refreshers
+      </BText>
+      {skills.map((course) =>
+        row(course, (answers.focus as string[]).includes(course.id) ? 'Your focus' : undefined)
+      )}
     </TabScreen>
   );
 }

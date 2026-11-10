@@ -21,7 +21,7 @@ const LESSON_COUNT = ALL_COURSES.reduce((n, c) => n + c.lessons.filter((l) => is
 
 const BENEFITS = [
   JOURNEYS.length > 0
-    ? `${JOURNEYS.length} relationship ${JOURNEYS.length === 1 ? 'journey' : 'journeys'}, ${COURSES.length} skill courses and ${LESSON_COUNT} bite-size lessons`
+    ? `${JOURNEYS.length} relationship ${JOURNEYS.length === 1 ? 'journey' : 'journeys'} and ${LESSON_COUNT} bite-size lessons`
     : `All ${COURSES.length} courses and ${LESSON_COUNT} bite-size lessons`,
   'Daily check-ins and your private journal',
   'Streaks, reminders and your connection map',

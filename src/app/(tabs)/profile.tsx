@@ -11,7 +11,6 @@ import { RadarChart } from '@/components/bondly/radar-chart';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { COURSES } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
@@ -26,6 +25,7 @@ export default function ProfileScreen() {
   const { activeDays, streak } = useActivity();
 
   const skills = useMemo(() => skillProgress(answers, completedLessons), [answers, completedLessons]);
+  const finished = useMemo(() => coursesFinished(completedLessons), [completedLessons]);
   const week = lastSevenDays(activeDays);
   const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
 
@@ -140,7 +140,7 @@ export default function ProfileScreen() {
           { value: completedLessons.length, label: 'Lessons done', emoji: '📚', colors: ['#FDDDEC', '#FFF1F7'] },
           { value: minutesPractised(completedLessons), label: 'Minutes practised', emoji: '⏱️', colors: ['#DCE5FF', '#F1F4FF'] },
           {
-            value: `${coursesFinished(completedLessons)}/${COURSES.length}`,
+            value: `${finished.done}/${finished.total}`,
             label: 'Courses finished',
             emoji: '🏆',
             colors: ['#FFEDC2', '#FFF8E6'],

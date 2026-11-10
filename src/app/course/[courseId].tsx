@@ -149,7 +149,7 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
         <Animated.View entering={FadeInDown.duration(450)} style={[styles.header, { backgroundColor: course.tint }]}>
           <View style={styles.headerText}>
             <BText variant="overline" color={Palette.primaryDeep}>
-              {course.kind === 'journey' ? 'Journey' : 'Course'}
+              {course.kind === 'journey' ? 'Journey' : 'Skill refresher'}
             </BText>
             <BText variant="title" style={styles.headerTitle}>
               {course.title}
