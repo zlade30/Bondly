@@ -28,7 +28,7 @@ export type BondlingMood =
   | 'wink';
 export type BondlingProp = 'none' | 'heart' | 'shield' | 'flag' | 'hourglass' | 'sparkles';
 
-const TONES: Record<BondlingColor, { top: string; bottom: string; cheek: string; arm: string }> = {
+export const TONES: Record<BondlingColor, { top: string; bottom: string; cheek: string; arm: string }> = {
   pink: { top: '#FFC1A8', bottom: '#FF86B4', cheek: '#FF5C93', arm: '#FFA0BE' },
   peach: { top: '#FFD9B0', bottom: '#FF9E9E', cheek: '#FF6F8C', arm: '#FFB5A6' },
   lavender: { top: '#D9CCFF', bottom: '#9C86FF', cheek: '#F48FC6', arm: '#B6A2FF' },
@@ -38,7 +38,7 @@ const TONES: Record<BondlingColor, { top: string; bottom: string; cheek: string;
   purple: { top: '#E7D3FF', bottom: '#B48AF0', cheek: '#F48FC6', arm: '#C4A2F5' },
 };
 
-const INK = '#2B1760';
+export const INK = '#2B1760';
 const BODY =
   'M60 14 C 90 14, 106 46, 108 76 C 110 102, 90 110, 60 110 C 30 110, 10 102, 12 76 C 14 46, 30 14, 60 14 Z';
 

@@ -5,6 +5,7 @@ import { Alert, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-n
 import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 import { PrimaryButton, SecondaryButton } from '@/components/bondly/buttons';
+import { Confetti } from '@/components/bondly/confetti';
 import { ClockIcon } from '@/components/bondly/icons';
 import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
@@ -22,7 +23,7 @@ import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { findLesson, type Course, type Lesson } from '@/features/learn/content';
 import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/lessons';
 import { useProgress } from '@/features/learn/progress';
-import { journeyLevel, lessonXp, maxLessonXp } from '@/features/learn/xp';
+import { finishesLevel, journeyLevel, lessonXp, levelOfLesson, maxLessonXp } from '@/features/learn/xp';
 import { useJournal } from '@/features/reflect/journal';
 
 type Phase = 'intro' | 'play' | 'done';
@@ -165,32 +166,37 @@ function LessonPlayer({
     const next = course.lessons[course.lessons.indexOf(lesson) + 1];
     const nextPlayable = next && isPlayable(next.id) ? next : null;
     const courseDone = course.lessons.every((l) => l.id === lesson.id || completedLessons.includes(l.id));
+    // Confetti the first time a lesson completes its journey level.
+    const levelUp = !!result?.firstTime && finishesLevel(course, lesson.id, completedLessons);
     return (
-      <Screen
-        footer={
-          <>
-            {nextPlayable && !courseDone && (
-              <PrimaryButton
-                label={`Next: ${nextPlayable.title}`}
-                onPress={() => router.replace(`/lesson/${nextPlayable.id}` as Href)}
-              />
-            )}
-            {nextPlayable && !courseDone ? (
-              <SecondaryButton label="Done" onPress={close} />
-            ) : (
-              <PrimaryButton label="Done" onPress={close} />
-            )}
-          </>
-        }>
-        <Celebration
-          course={course}
-          lesson={lesson}
-          graded={graded}
-          courseDone={courseDone}
-          result={result}
-          completed={completedLessons}
-        />
-      </Screen>
+      <View style={styles.flex}>
+        <Screen
+          footer={
+            <>
+              {nextPlayable && !courseDone && (
+                <PrimaryButton
+                  label={`Next: ${nextPlayable.title}`}
+                  onPress={() => router.replace(`/lesson/${nextPlayable.id}` as Href)}
+                />
+              )}
+              {nextPlayable && !courseDone ? (
+                <SecondaryButton label="Done" onPress={close} />
+              ) : (
+                <PrimaryButton label="Done" onPress={close} />
+              )}
+            </>
+          }>
+          <Celebration
+            course={course}
+            lesson={lesson}
+            graded={graded}
+            courseDone={courseDone}
+            result={result}
+            completed={completedLessons}
+          />
+        </Screen>
+        {levelUp && <Confetti />}
+      </View>
     );
   }
 
@@ -254,16 +260,24 @@ function Celebration({
   completed: string[];
 }) {
   const isJourney = course.kind === 'journey';
-  const levelNumber = course.lessons.indexOf(lesson) + 1;
-  const { level, finished } = journeyLevel(course, completed);
-  const leveledUp = isJourney && !!result?.firstTime;
+  // Count this lesson as done even if the saved progress hasn't caught up yet.
+  const done = completed.includes(lesson.id) ? completed : [...completed, lesson.id];
+  const where = levelOfLesson(course, lesson.id);
+  const levelNumber = where?.level ?? course.lessons.indexOf(lesson) + 1;
+  const left = where ? where.lessons.filter((l) => !done.includes(l.id)).length : 0;
+  const { level, levels, finished } = journeyLevel(course, done);
+  const firstTime = !!result?.firstTime;
+  // A level only goes up once every lesson in it is finished.
+  const leveledUp = isJourney && firstTime && left === 0;
 
   const badge = isJourney
     ? finished && leveledUp
       ? `🏆 Level ${levelNumber} · Journey complete`
       : leveledUp
         ? `⬆️ Level ${level} unlocked`
-        : `Level ${levelNumber}`
+        : where && where.count > 1
+          ? `Level ${levelNumber} · Lesson ${where.index + 1} of ${where.count}`
+          : `Level ${levelNumber}`
     : courseDone
       ? '🏆 Course complete'
       : null;
@@ -280,19 +294,21 @@ function Celebration({
 
   const body = isJourney
     ? finished && leveledUp
-      ? `All ${course.lessons.length} levels done. You’ve built real skills for this relationship.`
+      ? `All ${levels} levels done. You’ve built real skills for this relationship.`
       : leveledUp
-        ? `You finished “${lesson.title}”. Level ${level} is ready when you are.`
-        : result?.newBest
-          ? 'New best score for this level. Nice practice!'
-          : 'Replays keep your skills fresh. Your best score is saved.'
+        ? `You finished every lesson in “${where?.title ?? lesson.title}”. Level ${level} is ready when you are.`
+        : firstTime && left > 0
+          ? `${left} more ${left === 1 ? 'lesson' : 'lessons'} to finish Level ${levelNumber}.`
+          : result?.newBest
+            ? 'New best score for this lesson. Nice practice!'
+            : 'Replays keep your skills fresh. Your best score is saved.'
     : courseDone
       ? `All ${course.lessons.length} lessons done. That’s a real new skill in your toolkit.`
       : `You finished “${lesson.title}”. Small steps like this add up.`;
 
   return (
     <View style={styles.center}>
-      <Animated.View entering={ZoomIn.springify().damping(12)} style={styles.party}>
+      <Animated.View entering={ZoomIn.springify().damping(20)} style={styles.party}>
         {badge && (
           <View style={styles.badge}>
             <BText variant="overline" color={Palette.white}>
@@ -300,7 +316,8 @@ function Celebration({
             </BText>
           </View>
         )}
-        <Float distance={10}>
+        {/* A gentle drift, so the mascot doesn't compete with the confetti. */}
+        <Float distance={3} duration={2600}>
           <Bondling size={190} color={course.mascot.color} mood="happy" prop="sparkles" />
         </Float>
         <Float style={styles.heartA} distance={12} duration={1300}>

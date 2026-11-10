@@ -1,4 +1,4 @@
-import type { Course } from './content';
+import type { Course, LevelInfo } from './content';
 import type { LessonStep } from './lesson-types';
 
 /**
@@ -45,13 +45,71 @@ export function courseXp(course: Course, xpByLesson: Record<string, number>, com
   return course.lessons.reduce((sum, l) => sum + bestXp(l.id, xpByLesson, completed), 0);
 }
 
+export type JourneyLevel = {
+  level: number;
+  title: string;
+  /** The level's emoji and mascot, when the journey defines them. */
+  info?: LevelInfo;
+  lessons: Course['lessons'];
+};
+
+/**
+ * A journey's levels, in order. Each level holds 3–5 lessons that all have to
+ * be finished before the next level opens. A journey without level data treats
+ * every lesson as its own level.
+ */
+export function courseLevels(course: Course): JourneyLevel[] {
+  const levels: JourneyLevel[] = [];
+  course.lessons.forEach((lesson, i) => {
+    const level = lesson.level ?? i + 1;
+    let group = levels.find((g) => g.level === level);
+    if (!group) {
+      const info = course.levels?.[level - 1];
+      group = { level, title: info?.title ?? lesson.title, info, lessons: [] };
+      levels.push(group);
+    }
+    group.lessons.push(lesson);
+  });
+  return levels.sort((a, b) => a.level - b.level);
+}
+
+/** The level a lesson belongs to, and where it sits within it. */
+export function levelOfLesson(course: Course, lessonId: string) {
+  const levels = courseLevels(course);
+  const group = levels.find((g) => g.lessons.some((l) => l.id === lessonId));
+  if (!group) return null;
+  return { ...group, index: group.lessons.findIndex((l) => l.id === lessonId), count: group.lessons.length };
+}
+
 /**
  * Where someone is in a journey. `level` is the level they're on now (the
- * next unfinished lesson), or MAX_LEVEL once everything is done.
+ * first one with an unfinished lesson), or the last level once everything is done.
  */
 export function journeyLevel(course: Course, completed: string[]) {
-  const levels = Math.min(course.lessons.length, MAX_LEVEL);
-  const done = course.lessons.slice(0, levels).filter((l) => completed.includes(l.id)).length;
-  const finished = done >= levels;
-  return { level: finished ? levels : done + 1, levels, finished, levelsDone: done };
+  const all = courseLevels(course).slice(0, MAX_LEVEL);
+  const isDone = (g: JourneyLevel) => g.lessons.every((l) => completed.includes(l.id));
+  const current = all.find((g) => !isDone(g));
+  const levelsDone = all.filter(isDone).length;
+  const levels = all.length;
+  return {
+    level: current ? current.level : levels,
+    levels,
+    finished: !current,
+    levelsDone,
+    /** Lessons finished in the current level, out of how many. */
+    inLevel: current
+      ? { done: current.lessons.filter((l) => completed.includes(l.id)).length, total: current.lessons.length }
+      : null,
+  };
+}
+
+/**
+ * True when finishing this lesson completes its journey level, given the
+ * lessons done before it. Used to celebrate a level-up.
+ */
+export function finishesLevel(course: Course, lessonId: string, completedBefore: string[]) {
+  if (course.kind !== 'journey') return false;
+  const where = levelOfLesson(course, lessonId);
+  if (!where) return false;
+  return where.lessons.every((l) => l.id === lessonId || completedBefore.includes(l.id));
 }

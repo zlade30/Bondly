@@ -1,7 +1,7 @@
 import type { BondlingColor, BondlingMood, BondlingProp } from '@/components/bondly/mascot';
 import type { FocusArea, RelationshipGoal } from '@/features/onboarding/content';
 
-import type { Course } from '../content';
+import type { Course, LevelInfo } from '../content';
 import { tryIt, type LessonStep } from '../lesson-types';
 
 import dating from './dating.json';
@@ -23,12 +23,16 @@ export type JourneyFile = {
   relationship: RelationshipGoal;
   journeyTitle: string;
   journeyIntro: string;
+  /** Optional: each level's name and look. Without it, every lesson is its own level. */
+  levels?: LevelInfo[];
   lessons: {
     id: string;
     title: string;
     minutes: number;
     focus: FocusArea;
     summary: string;
+    /** Which level (1–10) the lesson belongs to, when `levels` is set. */
+    level?: number;
     /** Same as LessonStep, plus a closing "try" step. */
     steps: (LessonStep | { kind: 'try'; body: string })[];
   }[];
@@ -41,12 +45,16 @@ const FILES = [partner, dating, family, friends, work, self] as JourneyFile[];
 /** Look and feel for each relationship's journey. */
 const STYLE: Record<
   RelationshipGoal,
-  { tint: string; mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp } }
+  { tint: string; background?: number; mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp } }
 > = {
   partner: { tint: '#FDE6F1', mascot: { color: 'pink', mood: 'happy', prop: 'heart' } },
   dating: { tint: '#FFE9E2', mascot: { color: 'peach', mood: 'wink', prop: 'sparkles' } },
   family: { tint: '#FFF4D6', mascot: { color: 'yellow', mood: 'content', prop: 'heart' } },
-  friends: { tint: '#DDF5EA', mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' } },
+  friends: {
+    tint: '#DDF5EA',
+    background: require('@/assets/images/journeys/friends.webp'),
+    mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' },
+  },
   work: { tint: '#E4E9FF', mascot: { color: 'blue', mood: 'curious', prop: 'flag' } },
   self: { tint: '#EFE7FF', mascot: { color: 'lavender', mood: 'content', prop: 'shield' } },
 };
@@ -61,8 +69,16 @@ export const JOURNEYS: Course[] = FILES.map((file) => ({
   relationship: file.relationship,
   title: file.journeyTitle,
   intro: file.journeyIntro,
+  levels: file.levels,
   ...STYLE[file.relationship],
-  lessons: file.lessons.map(({ id, title, minutes, summary, focus }) => ({ id, title, minutes, summary, focus })),
+  lessons: file.lessons.map(({ id, title, minutes, summary, focus, level }) => ({
+    id,
+    title,
+    minutes,
+    summary,
+    focus,
+    level,
+  })),
 }));
 
 /** Every journey lesson's steps, keyed by lesson id. */

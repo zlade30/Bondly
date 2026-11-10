@@ -1,3 +1,4 @@
+import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useLocalSearchParams, type Href } from 'expo-router';
 import { Alert, Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
@@ -7,16 +8,32 @@ import Svg, { Path } from 'react-native-svg';
 
 import { BackButton, tapFeedback } from '@/components/bondly/buttons';
 import { ClockIcon, LockIcon } from '@/components/bondly/icons';
-import { Bondling } from '@/components/bondly/mascot';
+import { Bondling, type BondlingColor } from '@/components/bondly/mascot';
+import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Float, ProgressBar } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, findCourse, type Course } from '@/features/learn/content';
+import { courseProgress, findCourse, type Course, type LevelInfo } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
-import { bestXp, courseXp, journeyLevel } from '@/features/learn/xp';
+import { bestXp, courseLevels, courseXp, journeyLevel } from '@/features/learn/xp';
 
 const STOP = 78;
 const ROW = 185;
+/** Space for a level card on the path, the card itself, and the gap below it. */
+const BANNER = 172;
+const BANNER_CARD = 104;
+const BANNER_GAP = 18;
+/** Soft card colour for each mascot colour. */
+const LEVEL_TINT: Record<BondlingColor, string> = {
+  pink: '#FDE6F1',
+  peach: '#FFE9E2',
+  lavender: '#EFE7FF',
+  blue: '#E4E9FF',
+  yellow: '#FFF4D6',
+  mint: '#DDF5EA',
+  purple: '#F1E6FF',
+};
+const GOOD_TEXT = '#1F8A60';
 /** Horizontal position of each stop, as a share of the path width, repeating. */
 const ZIGZAG = [0.5, 0.78, 0.5, 0.22];
 
@@ -54,26 +71,58 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
   // A lesson is open once the one before it is done; finished lessons stay replayable.
   const states: StopState[] = course.lessons.map((l, i) => {
     if (completedLessons.includes(l.id)) return 'done';
-    const prevDone = i === 0 || completedLessons.includes(course.lessons[i - 1].id);
+    // Journeys: every earlier lesson must be done, so a level can't be skipped.
+    const prevDone = isJourney
+      ? course.lessons.slice(0, i).every((p) => completedLessons.includes(p.id))
+      : i === 0 || completedLessons.includes(course.lessons[i - 1].id);
     return prevDone ? 'next' : 'locked';
   });
   const nextIndex = states.indexOf('next');
 
   const pathWidth = Math.min(width, 520) - Space.xl * 2;
-  const centers = course.lessons.map((_, i) => ({
-    x: ZIGZAG[i % ZIGZAG.length] * pathWidth,
-    y: ROW / 2 + i * ROW,
-  }));
-  const height = course.lessons.length * ROW;
+  // Journeys with level data show a banner before each level's lessons.
+  const grouped = isJourney && !!course.levels;
+  const groups = courseLevels(course);
+  const levelOf = (i: number) => course.lessons[i].level ?? i + 1;
+
+  const banners: (LevelCardProps & { y: number })[] = [];
+  const centers: { x: number; y: number }[] = [];
+  // Journeys with levels start the path right under the journey card, so it can lead into Level 1.
+  let y = grouped ? Space.xxl : 0;
+  course.lessons.forEach((lesson, i) => {
+    if (grouped && (i === 0 || levelOf(i) !== levelOf(i - 1))) {
+      const group = groups.find((g) => g.level === levelOf(i))!;
+      banners.push({
+        level: group.level,
+        title: group.title,
+        info: group.info,
+        y,
+        total: group.lessons.length,
+        done: group.lessons.filter((l) => completedLessons.includes(l.id)).length,
+        // Locked until every lesson in the earlier levels is done.
+        locked: !course.lessons.slice(0, i).every((p) => completedLessons.includes(p.id)),
+      });
+      y += BANNER;
+    }
+    centers.push({ x: ZIGZAG[i % ZIGZAG.length] * pathWidth, y: y + ROW / 2 });
+    y += ROW;
+  });
+  const height = y;
 
   const openLesson = (index: number) => {
     const lesson = course.lessons[index];
     if (states[index] === 'locked') {
+      const prev = course.lessons[index - 1];
+      const newLevel = levelOf(index) !== levelOf(index - 1);
       Alert.alert(
         'Not yet',
-        isJourney
-          ? `Finish Level ${index} (“${course.lessons[index - 1].title}”) to unlock Level ${index + 1}.`
-          : `Finish “${course.lessons[index - 1].title}” to unlock this lesson.`
+        !isJourney
+          ? `Finish “${prev.title}” to unlock this lesson.`
+          : grouped && !newLevel
+            ? `Finish “${prev.title}” first. It’s the lesson before this one in Level ${levelOf(index)}.`
+            : grouped
+              ? `Finish every lesson in Level ${levelOf(index - 1)} to unlock Level ${levelOf(index)}.`
+              : `Finish Level ${index} (“${prev.title}”) to unlock Level ${index + 1}.`
       );
       return;
     }
@@ -83,7 +132,12 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
 
   return (
     <View style={styles.root}>
-      <LinearGradient colors={Gradients.screen} style={StyleSheet.absoluteFill} />
+      {course.background ? (
+        // A fixed scene that stays put while the path scrolls over it.
+        <Image source={course.background} style={StyleSheet.absoluteFill} contentFit="cover" contentPosition="bottom" />
+      ) : (
+        <LinearGradient colors={Gradients.screen} style={StyleSheet.absoluteFill} />
+      )}
       <ScrollView
         contentContainerStyle={{ paddingTop: insets.top + Space.sm, paddingBottom: insets.bottom + Space.xxl }}
         showsVerticalScrollIndicator={false}>
@@ -125,8 +179,18 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
         </Animated.View>
 
         {/* Journey path */}
-        <View style={[styles.path, { width: pathWidth, height }]}>
+        <View style={[styles.path, grouped && styles.pathLinked, { width: pathWidth, height }]}>
           <Svg width={pathWidth} height={height} style={StyleSheet.absoluteFill}>
+            {grouped && banners[0] && centers[0] && (
+              // Journey card → Level 1 card → the first lesson.
+              <Path
+                d={`M${pathWidth / 2} 0 L${pathWidth / 2} ${banners[0].y + BANNER - BANNER_GAP - BANNER_CARD / 2} C ${pathWidth / 2} ${centers[0].y - ROW / 4}, ${centers[0].x} ${centers[0].y - ROW / 4}, ${centers[0].x} ${centers[0].y}`}
+                stroke={Palette.primary}
+                strokeWidth={6}
+                strokeLinecap="round"
+                fill="none"
+              />
+            )}
             {centers.slice(1).map((c, i) => {
               const p = centers[i];
               const midY = (p.y + c.y) / 2;
@@ -145,13 +209,23 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
             })}
           </Svg>
 
+          {banners.map((b) => (
+            <View
+              key={b.level}
+              pointerEvents="none"
+              style={[styles.bannerSlot, { top: b.y + BANNER - BANNER_CARD - BANNER_GAP, width: pathWidth }]}>
+              <LevelCard {...b} />
+            </View>
+          ))}
+
           {course.lessons.map((lesson, i) => (
             <Stop
               key={lesson.id}
               index={i}
+              number={grouped ? groups.find((g) => g.level === levelOf(i))!.lessons.indexOf(lesson) + 1 : i + 1}
               title={lesson.title}
               minutes={lesson.minutes}
-              levelLabel={isJourney ? `Level ${i + 1}` : undefined}
+              levelLabel={isJourney && !grouped ? `Level ${i + 1}` : undefined}
               xp={bestXp(lesson.id, lessonXp, completedLessons)}
               state={states[i]}
               x={centers[i].x}
@@ -182,8 +256,90 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
   );
 }
 
+type LevelCardProps = {
+  level: number;
+  title: string;
+  info?: LevelInfo;
+  total: number;
+  done: number;
+  locked: boolean;
+};
+
+/**
+ * The card that opens each level: a topic icon drawn in the mascot style, the
+ * level's name and progress. The icon fades with a lock while the level is
+ * locked, and sparkles with a tick once every lesson is done.
+ */
+function LevelCard({ level, title, info, total, done, locked }: LevelCardProps) {
+  const complete = done === total;
+  const color = info?.color ?? 'lavender';
+  const status = locked
+    ? `Locked. Finish Level ${level - 1} to unlock.`
+    : complete
+      ? 'All lessons done'
+      : `${done} of ${total} lessons done`;
+  return (
+    <View
+      accessible
+      accessibilityLabel={`Level ${level}: ${title}. ${status}`}
+      style={[styles.levelCard, { backgroundColor: locked ? '#F4F1F8' : LEVEL_TINT[color] }]}>
+      <View style={styles.levelArt}>
+        <View style={locked && styles.levelArtLocked}>
+          {info ? (
+            <TopicIcon name={info.icon} color={color} size={96} sparkles={complete} />
+          ) : (
+            <Bondling size={92} color={color} mood={locked ? 'sleepy' : 'happy'} noShadow />
+          )}
+        </View>
+        {(locked || complete) && (
+          <View style={[styles.levelBadge, complete && styles.levelBadgeDone]}>
+            {locked ? (
+              <LockIcon size={15} color={Palette.inkMuted} />
+            ) : (
+              <BText variant="bodyBold" color={Palette.white} style={styles.levelBadgeText}>
+                ✓
+              </BText>
+            )}
+          </View>
+        )}
+      </View>
+      <View style={styles.levelBody}>
+        <BText variant="overline" color={locked ? Palette.inkMuted : Palette.primaryDeep} style={styles.levelLabel}>
+          Level {level} · {total} lessons
+        </BText>
+        <BText
+          variant="heading"
+          numberOfLines={1}
+          color={locked ? Palette.inkMuted : Palette.ink}
+          style={styles.levelTitle}>
+          {title}
+        </BText>
+        {locked ? (
+          <BText variant="caption" color={Palette.inkMuted}>
+            Finish Level {level - 1} to unlock
+          </BText>
+        ) : complete ? (
+          <BText variant="caption" color={GOOD_TEXT} style={styles.levelDone}>
+            ✓ Level complete
+          </BText>
+        ) : (
+          <View style={styles.levelProgress}>
+            <View style={styles.levelTrack}>
+              <View style={[styles.levelFill, { width: `${Math.max(done / total, 0.04) * 100}%` }]} />
+            </View>
+            <BText variant="caption" color={Palette.inkSoft}>
+              {done}/{total}
+            </BText>
+          </View>
+        )}
+      </View>
+    </View>
+  );
+}
+
 function Stop({
   index,
+  number,
   title,
   minutes,
   levelLabel,
@@ -195,6 +351,8 @@ function Stop({
   onPress,
 }: {
   index: number;
+  /** The number shown on the stop (its place in the level, or in the course). */
+  number: number;
   title: string;
   minutes: number;
   /** Journeys: "Level 3". */
@@ -250,7 +408,7 @@ function Stop({
                 </Svg>
               ) : (
                 <BText variant="title" color={Palette.white}>
-                  {index + 1}
+                  {number}
                 </BText>
               )}
             </LinearGradient>
@@ -306,6 +464,7 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 24, lineHeight: 30 },
   headerBar: { marginTop: Space.sm },
   path: { alignSelf: 'center', marginTop: Space.xxl },
+  pathLinked: { marginTop: 0 },
   stopWrap: { position: 'absolute', width: STOP, height: STOP, alignItems: 'center' },
   stop: {
     width: STOP,
@@ -351,4 +510,41 @@ const styles = StyleSheet.create({
   levelLabel: { fontSize: 11 },
   labelMeta: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
   guide: { position: 'absolute' },
+  bannerSlot: { position: 'absolute', left: 0, zIndex: 1 },
+  levelCard: {
+    height: BANNER_CARD,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Space.sm,
+    paddingRight: Space.lg,
+    borderRadius: Radius.xl,
+    borderWidth: 3,
+    borderColor: Palette.white,
+    ...Shadow.soft,
+  },
+  // The mascot pops up over the top edge of the card.
+  levelArt: { width: 104, height: 104, marginTop: -34, marginLeft: 2, alignItems: 'center', justifyContent: 'center' },
+  levelArtLocked: { opacity: 0.55 },
+  levelBadge: {
+    position: 'absolute',
+    right: 2,
+    bottom: 10,
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: Palette.white,
+    borderWidth: 2,
+    borderColor: Palette.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...Shadow.soft,
+  },
+  levelBadgeDone: { backgroundColor: '#3DBE8B' },
+  levelBadgeText: { fontSize: 15, lineHeight: 19 },
+  levelBody: { flex: 1, gap: 2 },
+  levelTitle: { fontSize: 19, lineHeight: 24 },
+  levelDone: { fontFamily: 'Nunito_800ExtraBold' },
+  levelProgress: { flexDirection: 'row', alignItems: 'center', gap: Space.sm, marginTop: 4 },
+  levelTrack: { flex: 1, height: 8, borderRadius: 4, backgroundColor: 'rgba(255,255,255,0.85)', overflow: 'hidden' },
+  levelFill: { height: 8, borderRadius: 4, backgroundColor: Palette.primary },
 });

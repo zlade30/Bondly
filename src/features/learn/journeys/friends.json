@@ -2,9 +2,62 @@
   "relationship": "friends",
   "journeyTitle": "Friendships That Last",
   "journeyIntro": "For making and keeping meaningful friendships. Learn to listen, show up and navigate changing needs.",
+  "levels": [
+    {
+      "title": "Reaching Out",
+      "icon": "envelope",
+      "color": "peach"
+    },
+    {
+      "title": "Being Present",
+      "icon": "ear",
+      "color": "blue"
+    },
+    {
+      "title": "Honest Words",
+      "icon": "speech",
+      "color": "lavender"
+    },
+    {
+      "title": "Healthy Space",
+      "icon": "shield",
+      "color": "mint"
+    },
+    {
+      "title": "Being Reliable",
+      "icon": "calendar",
+      "color": "yellow"
+    },
+    {
+      "title": "Different Views",
+      "icon": "scales",
+      "color": "purple"
+    },
+    {
+      "title": "Making Repairs",
+      "icon": "bandage",
+      "color": "pink"
+    },
+    {
+      "title": "Life Changes",
+      "icon": "sprout",
+      "color": "peach"
+    },
+    {
+      "title": "Supporting Friends",
+      "icon": "hug",
+      "color": "lavender"
+    },
+    {
+      "title": "Shared Joy",
+      "icon": "party",
+      "color": "yellow"
+    }
+  ],
   "lessons": [
     {
       "id": "friends-1",
+      "level": 1,
       "title": "Reach Out First",
       "minutes": 3,
       "focus": "connection",
@@ -100,7 +153,174 @@
       ]
     },
     {
+      "id": "friends-1-2",
+      "level": 1,
+      "title": "Make Plans Happen",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Turn “we should hang out” into a real date.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "“Sometime” rarely comes",
+          "body": "“We should catch up sometime!” feels friendly, but without a day and a place it usually drifts away. The friend who names a time is the one who makes it happen.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You bump into a friend in the supermarket and you both say you should catch up. What makes it actually happen?",
+          "options": [
+            {
+              "text": "“Are you free Saturday morning? There’s a new café by the park.”",
+              "correct": true,
+              "why": "A specific day and place turns a nice idea into a plan they can say yes to."
+            },
+            {
+              "text": "“Let’s definitely do something soon!”",
+              "why": "It sounds keen, but “soon” has no date, so it easily slips."
+            },
+            {
+              "text": "Wait and see if they message you about it.",
+              "why": "If you both wait, the good intention fades away."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make it concrete.",
+          "before": "Shall we get lunch on",
+          "after": "at one?",
+          "words": [
+            "some day",
+            "whenever",
+            "Thursday"
+          ],
+          "answer": "Thursday",
+          "why": "Naming a real day gives the plan a place in both your diaries."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who have you said “we should catch up” to lately?",
+          "options": [
+            "An old school friend",
+            "A work friend",
+            "A neighbour",
+            "A friend who moved"
+          ],
+          "reply": "One quick message with a day in it could turn that into a real plan."
+        },
+        {
+          "kind": "sort",
+          "prompt": "A real plan or a vague one?",
+          "left": "Vague",
+          "right": "Real plan",
+          "cards": [
+            {
+              "text": "“Drinks at the Fox, Friday at seven?”",
+              "side": "right"
+            },
+            {
+              "text": "“We must do something soon!”",
+              "side": "left"
+            },
+            {
+              "text": "“Free for a walk Sunday afternoon?”",
+              "side": "right"
+            },
+            {
+              "text": "“Let me know when you’re around.”",
+              "side": "left"
+            },
+            {
+              "text": "Sending a calendar invite after you agree",
+              "side": "right"
+            }
+          ],
+          "why": "Real plans have a when and a where. Vague ones leave all the work to the other person, so they rarely happen."
+        },
+        {
+          "kind": "try",
+          "body": "Turn one “we should catch up” into a real plan today, with a day, a time and a place."
+        }
+      ]
+    },
+    {
+      "id": "friends-1-3",
+      "level": 1,
+      "title": "Make New Friends",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Grown-up friendships start with small, repeated hellos.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Friendship grows from repeat contact",
+          "body": "Most adult friendships start with someone you keep seeing: a colleague, a gym regular, a parent at the school gate. A little more chat each time is how strangers become friends.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve chatted with someone at your climbing class a few times and you get on well. What’s a natural next step?",
+          "options": [
+            {
+              "text": "Ask them to be your new best friend.",
+              "why": "Too much, too soon can feel like pressure, even if it’s meant kindly."
+            },
+            {
+              "text": "Keep chatting at class and hope it grows on its own.",
+              "why": "Friendly, but without an invite it may stay a class-only chat forever."
+            },
+            {
+              "text": "“A few of us get food after class on Thursday. Want to come?”",
+              "correct": true,
+              "why": "A light, low-stakes invite gives the friendship a chance to grow beyond class."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A low-pressure invite.",
+          "before": "We’re grabbing a coffee after this, you’re",
+          "after": "to join!",
+          "words": [
+            "welcome",
+            "expected",
+            "required"
+          ],
+          "answer": "welcome",
+          "why": "“Welcome” makes it an open door, not an obligation, so it’s easy to say yes or no."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where could you meet new friends right now?",
+          "options": [
+            "Work or study",
+            "A class or club",
+            "My neighbourhood",
+            "Through current friends"
+          ],
+          "reply": "Places you go regularly are the best soil for new friendships to grow."
+        },
+        {
+          "kind": "order",
+          "prompt": "From stranger to friend. Put these in order.",
+          "items": [
+            "Say hello and learn their name",
+            "Chat a little each time",
+            "Suggest something small together",
+            "Make it a regular thing"
+          ],
+          "why": "Friendships build in small steps. Each one makes the next feel natural rather than forced."
+        },
+        {
+          "kind": "try",
+          "body": "Learn the name of someone you see often, or take one chat a step further today."
+        }
+      ]
+    },
+    {
       "id": "friends-2",
+      "level": 2,
       "title": "Be Present",
       "minutes": 4,
       "focus": "listening",
@@ -197,7 +417,181 @@
       ]
     },
     {
+      "id": "friends-2-2",
+      "level": 2,
+      "title": "Ask Better Questions",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Good questions show you want the real answer.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Questions that open doors",
+          "body": "“How are you?” usually gets “fine”. Questions about something specific, like the trip they mentioned or the new job, invite a real story instead of a polite reply.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend has just started a new job. Which question is most likely to start a real conversation?",
+          "options": [
+            {
+              "text": "“Job going okay?”",
+              "why": "It’s easy to answer with one word, so the chat may stop there."
+            },
+            {
+              "text": "“What’s surprised you most in your first week?”",
+              "correct": true,
+              "why": "It’s specific and open, so they can share a real moment rather than a quick update."
+            },
+            {
+              "text": "“Is it better than your last place?”",
+              "why": "It invites a quick comparison rather than their actual experience."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Keep their story going.",
+          "before": "Wait, what happened",
+          "after": "?",
+          "words": [
+            "next",
+            "to me",
+            "before"
+          ],
+          "answer": "next",
+          "why": "A simple follow-up shows you’re with them and want to hear the rest."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which question do you rely on too often?",
+          "options": [
+            "“How are you?”",
+            "“How was work?”",
+            "“You okay?”",
+            "“Good weekend?”"
+          ],
+          "reply": "Swapping in one specific question can make the same catch-up feel much closer."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each quick question with a better one.",
+          "pairs": [
+            {
+              "a": "“Good holiday?”",
+              "b": "“What was the best day?”"
+            },
+            {
+              "a": "“How’s your mum?”",
+              "b": "“How did her check-up go?”"
+            },
+            {
+              "a": "“Busy at work?”",
+              "b": "“What’s on your plate this week?”"
+            }
+          ],
+          "why": "Better questions are specific and open. They show you remember their life and want more than a one-word answer."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you see a friend, swap “How are you?” for one specific question about their life."
+        }
+      ]
+    },
+    {
+      "id": "friends-2-3",
+      "level": 2,
+      "title": "Remember the Details",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Small follow-ups say “I was really listening”.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Details are a quiet kind of care",
+          "body": "When you remember their interview, their dog’s name or the date of their exam, it shows they matter to you. A quick “How did it go?” can mean more than a big gesture.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Last week a friend mentioned their driving test was on Tuesday. It’s now Wednesday. What do you do?",
+          "options": [
+            {
+              "text": "Wait for them to bring it up.",
+              "why": "They may not want to announce it, especially if it went badly."
+            },
+            {
+              "text": "Ask about it next time you happen to see them.",
+              "why": "Kind, but by then the moment may have passed."
+            },
+            {
+              "text": "“Thinking of you! How did the driving test go yesterday?”",
+              "correct": true,
+              "why": "A timely message shows you remembered and care how it went, pass or fail."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A simple memory trick.",
+          "before": "When a friend mentions a big day, put a",
+          "after": "in your phone.",
+          "words": [
+            "reminder",
+            "password",
+            "game"
+          ],
+          "answer": "reminder",
+          "why": "You don’t need a perfect memory. A quick reminder lets you show up at the right moment."
+        },
+        {
+          "kind": "write",
+          "prompt": "What’s coming up for a friend soon that you could check in about?",
+          "placeholder": "e.g. Sam’s interview on Monday"
+        },
+        {
+          "kind": "scene",
+          "title": "The day after",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "you",
+              "text": "How did the big presentation go yesterday? 🤞"
+            },
+            {
+              "from": "them",
+              "text": "Omg you remembered!! It went really well actually"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Nice 👍",
+              "reaction": "😊",
+              "why": "A quick reply is fine, but it closes the door just as they were about to share."
+            },
+            {
+              "text": "Yay!! Tell me everything, what was the best moment? 🎉",
+              "correct": true,
+              "reaction": "Okay so my boss actually clapped 😂",
+              "why": "You celebrate with them and invite the story, which makes the check-in feel special."
+            },
+            {
+              "text": "Told you it would be fine. Anyway, guess what happened to me…",
+              "reaction": "Oh. Ha, okay, go on…",
+              "why": "Switching to your news takes the moment away from them."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Set one reminder to check in on a friend’s upcoming big day, then send the message."
+        }
+      ]
+    },
+    {
       "id": "friends-3",
+      "level": 3,
       "title": "Say What Matters",
       "minutes": 4,
       "focus": "communication",
@@ -278,7 +672,279 @@
       ]
     },
     {
+      "id": "friends-3-2",
+      "level": 3,
+      "title": "Raise Things Early",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Small niggles are easier to fix while they’re small.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Niggles grow in the dark",
+          "body": "A friend who’s always late, or always picks the restaurant, can start to grate. Left unsaid, small things pile up until they burst out at the wrong moment.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend has been 30 minutes late to the last three meet-ups. It’s starting to bother you. What’s best?",
+          "options": [
+            {
+              "text": "Say nothing. It’s only a small thing.",
+              "why": "Small things that keep happening tend to grow into resentment."
+            },
+            {
+              "text": "“I love our catch-ups. Lately I’ve been waiting a while, could we aim for on time?”",
+              "correct": true,
+              "why": "Warm, early and specific. It names the pattern without making them the villain."
+            },
+            {
+              "text": "Start turning up late yourself so they see how it feels.",
+              "why": "Tit-for-tat makes things worse and they may not even notice why."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "The best time to raise it.",
+          "before": "It’s easiest to bring something up while it’s still",
+          "after": ".",
+          "words": [
+            "huge",
+            "small",
+            "secret"
+          ],
+          "answer": "small",
+          "why": "Early on, it’s a quick chat. Months later, it can feel like an accusation."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Is there a small thing you’ve been sitting on with a friend?",
+          "options": [
+            "Lateness",
+            "Who always plans",
+            "Money or splitting bills",
+            "Something they said"
+          ],
+          "reply": "Raising it gently now protects the friendship from a bigger blow-up later."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Raising it early, or letting it build?",
+          "left": "Building",
+          "right": "Early",
+          "cards": [
+            {
+              "text": "Mentioning it the first time it really bugs you",
+              "side": "right"
+            },
+            {
+              "text": "Keeping a mental list of every time",
+              "side": "left"
+            },
+            {
+              "text": "Venting to other friends instead",
+              "side": "left"
+            },
+            {
+              "text": "“Can I mention something small?”",
+              "side": "right"
+            },
+            {
+              "text": "Exploding about it a year later",
+              "side": "left"
+            }
+          ],
+          "why": "Raising things early keeps them small and fixable. Letting them build turns a niggle into a real rift."
+        },
+        {
+          "kind": "try",
+          "body": "If something small has been bugging you with a friend, mention it kindly this week while it’s still small."
+        }
+      ]
+    },
+    {
+      "id": "friends-3-3",
+      "level": 3,
+      "title": "Kind Honesty",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Be honest when asked, and kind in how you say it.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Honest and kind can go together",
+          "body": "When a friend asks what you really think, empty praise doesn’t help them, and blunt criticism hurts. Start with what’s good, be clear about your concern, and leave the choice with them.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend shows you a long, angry text they plan to send their landlord, and asks what you think. It could backfire. What do you say?",
+          "options": [
+            {
+              "text": "“Looks great, send it!”",
+              "why": "It avoids awkwardness now, but they may pay for it later."
+            },
+            {
+              "text": "“That’s a terrible idea.”",
+              "why": "Honest, but so blunt they may feel judged and stop listening."
+            },
+            {
+              "text": "“You’re right to be annoyed. I worry the tone could backfire. Tweak it together?”",
+              "correct": true,
+              "why": "You back their feelings, share an honest concern and offer help, while the choice stays theirs."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Leave the decision with them.",
+          "before": "That’s my honest view, but it’s",
+          "after": "call.",
+          "words": [
+            "your",
+            "my",
+            "nobody’s"
+          ],
+          "answer": "your",
+          "why": "Honesty lands better when they know you respect their right to decide."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a friend asks for your opinion, you tend to…",
+          "options": [
+            "Say what they want to hear",
+            "Be very blunt",
+            "Avoid answering",
+            "Find a kind, honest way"
+          ],
+          "reply": "Knowing your habit helps you aim for the sweet spot: kind and honest at once."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each blunt line with a kinder honest one.",
+          "pairs": [
+            {
+              "a": "“That outfit’s awful.”",
+              "b": "“The blue suits you more.”"
+            },
+            {
+              "a": "“He’s bad news.”",
+              "b": "“I worry about how he treats you.”"
+            },
+            {
+              "a": "“Your plan won’t work.”",
+              "b": "“Can I share one concern?”"
+            }
+          ],
+          "why": "Kind honesty says the true thing in a way the other person can actually hear and use."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a friend asks your opinion, start with something genuine you like, then share one honest concern."
+        }
+      ]
+    },
+    {
+      "id": "friends-3-4",
+      "level": 3,
+      "title": "Tone in Texts",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Messages lose your voice, so add it back in.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Texts lose your tone of voice",
+          "body": "Face to face, your smile softens “Fine.” In a text, it can read as cold. Short replies, missing emojis and late-night messages are easy to misread, both ways.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend asks if you mind them bringing their new partner to your birthday drinks. You don’t mind at all. What do you send?",
+          "options": [
+            {
+              "text": "“Fine.”",
+              "why": "You mean it kindly, but on screen it can read as annoyed."
+            },
+            {
+              "text": "“Of course! Can’t wait to meet them 😊”",
+              "correct": true,
+              "why": "Warm words and a little emoji make your real tone clear."
+            },
+            {
+              "text": "“k”",
+              "why": "Very easy to read as irritated or uninterested."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Check before you assume.",
+          "before": "If a message feels off, ask before you",
+          "after": ".",
+          "words": [
+            "react",
+            "reply kindly",
+            "check"
+          ],
+          "answer": "react",
+          "why": "Many “rude” texts were just rushed. A quick check saves a lot of hurt."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which texting habit causes you the most mix-ups?",
+          "options": [
+            "Very short replies",
+            "Replying late",
+            "No emojis",
+            "Reading too much in"
+          ],
+          "reply": "Small tweaks, like a warmer word or a quick check-in, prevent a lot of misunderstandings."
+        },
+        {
+          "kind": "scene",
+          "title": "A short reply",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "you",
+              "text": "So sorry, I have to cancel tonight 😩 Work disaster."
+            },
+            {
+              "from": "them",
+              "text": "ok."
+            }
+          ],
+          "prompt": "It feels cold. What do you do?",
+          "options": [
+            {
+              "text": "Assume they’re furious and stew on it.",
+              "reaction": "(You don’t sleep well.)",
+              "why": "Guessing the worst from one word can create a problem that isn’t there."
+            },
+            {
+              "text": "Reply “Wow, okay then.”",
+              "reaction": "?? I said ok",
+              "why": "Reacting to the tone you imagined can start a real argument."
+            },
+            {
+              "text": "“I hate cancelling on you. Are you okay? Can we do Saturday instead?”",
+              "correct": true,
+              "reaction": "Sorry, was just busy! Saturday’s great 💛",
+              "why": "You checked in warmly instead of assuming, and offered a new plan."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Before you send your next few texts, reread them once and ask: could this sound colder than I mean?"
+        }
+      ]
+    },
+    {
       "id": "friends-4",
+      "level": 4,
       "title": "Keep Healthy Space",
       "minutes": 4,
       "focus": "boundaries",
@@ -374,7 +1040,256 @@
       ]
     },
     {
+      "id": "friends-4-2",
+      "level": 4,
+      "title": "Say No to a Friend",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "A kind no keeps you a good friend, not a tired one.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Saying no can protect the friendship",
+          "body": "If you say yes to everything, you end up tired and quietly resentful. A warm, clear no lets your yeses be real, and good friends can handle hearing it.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend asks you to come to their cousin’s karaoke night. You’re exhausted and really don’t want to go. What’s best?",
+          "options": [
+            {
+              "text": "“Thanks for asking! I’m wiped this week, so I’ll pass, but have the best time 🎤”",
+              "correct": true,
+              "why": "Warm, honest and clear, with no need for a long excuse."
+            },
+            {
+              "text": "Say yes, then cancel at the last minute.",
+              "why": "A late cancel feels worse to them than an honest no up front."
+            },
+            {
+              "text": "Invent a family emergency.",
+              "why": "Made-up excuses can come back to bite and chip away at trust."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Keep the no short.",
+          "before": "Thanks for asking, but I’ll",
+          "after": "this time.",
+          "words": [
+            "explain why at length",
+            "sit this one out",
+            "maybe come later"
+          ],
+          "answer": "sit this one out",
+          "why": "A short, kind no is clearer and easier to accept than a pile of excuses."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes it hardest to say no to a friend?",
+          "options": [
+            "Guilt",
+            "Fear they’ll be upset",
+            "Missing out",
+            "Wanting to be liked"
+          ],
+          "reply": "Those feelings are normal. A kind no rarely costs a good friendship."
+        },
+        {
+          "kind": "sort",
+          "prompt": "A kind no, or an unkind one?",
+          "left": "Unkind",
+          "right": "Kind",
+          "cards": [
+            {
+              "text": "“I can’t this time, but thanks for thinking of me.”",
+              "side": "right"
+            },
+            {
+              "text": "Leaving their message on read",
+              "side": "left"
+            },
+            {
+              "text": "“Not for me, but I’d love to do dinner soon.”",
+              "side": "right"
+            },
+            {
+              "text": "“Ugh, why would I want to do that?”",
+              "side": "left"
+            },
+            {
+              "text": "A vague “maybe” you know is a no",
+              "side": "left"
+            }
+          ],
+          "why": "A kind no is clear and warm. Ignoring, mocking or a false maybe leaves them confused or hurt."
+        },
+        {
+          "kind": "try",
+          "body": "The next time you don’t want to do something, try a short, warm no without a long excuse."
+        }
+      ]
+    },
+    {
+      "id": "friends-4-3",
+      "level": 4,
+      "title": "Different Paces",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Friends can reply, plan and share at different speeds.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not everyone texts like you",
+          "body": "Some friends reply in seconds; others take days. Some want weekly plans; others are happy with monthly. Different paces aren’t a sign someone cares less.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend often takes two or three days to reply, while you reply quickly. What’s the healthiest view?",
+          "options": [
+            {
+              "text": "They clearly don’t value me.",
+              "why": "Slow replies usually reflect their habits, not how much they care."
+            },
+            {
+              "text": "Send follow-ups until they answer.",
+              "why": "Chasing can feel like pressure and make replying feel like a chore."
+            },
+            {
+              "text": "“That’s just their rhythm. If it matters, I’ll ask what works for us.”",
+              "correct": true,
+              "why": "You accept their pace and stay free to talk about it if it starts to bother you."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Talk about it openly.",
+          "before": "What’s the best way to",
+          "after": "you when something’s urgent?",
+          "words": [
+            "avoid",
+            "reach",
+            "ignore"
+          ],
+          "answer": "reach",
+          "why": "Agreeing how to reach each other for urgent things takes the pressure off everyday messages."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s your natural friendship pace?",
+          "options": [
+            "Daily chats",
+            "A few times a week",
+            "Every couple of weeks",
+            "When life allows"
+          ],
+          "reply": "Knowing your own pace helps you see that a friend’s different rhythm isn’t a rejection."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each difference with a fair middle ground.",
+          "pairs": [
+            {
+              "a": "They reply slowly",
+              "b": "Call for anything urgent"
+            },
+            {
+              "a": "They hate phone calls",
+              "b": "Voice notes instead"
+            },
+            {
+              "a": "They need lots of alone time",
+              "b": "Fewer, longer meet-ups"
+            }
+          ],
+          "why": "Different paces work when you find a rhythm that fits you both, rather than asking one person to change completely."
+        },
+        {
+          "kind": "try",
+          "body": "Think of a friend whose pace differs from yours, and let go of one story you’ve been telling about it."
+        }
+      ]
+    },
+    {
+      "id": "friends-4-4",
+      "level": 4,
+      "title": "Lending and Favours",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Help in ways you can give freely.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Give what you can give freely",
+          "body": "Money and big favours can strain friendships. A useful rule: only lend what you could afford to lose, and only offer help you won’t resent giving.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend asks to borrow a big sum until payday. You could lend a third of it without worry, but no more. What do you say?",
+          "options": [
+            {
+              "text": "Lend the full amount and hope it comes back.",
+              "why": "If it’s late, the worry could turn into resentment."
+            },
+            {
+              "text": "“I can’t lend all of it, but I could lend a third. Would that help?”",
+              "correct": true,
+              "why": "You help within your limit and are clear about it, which protects the friendship."
+            },
+            {
+              "text": "Tell them you’re broke when you’re not.",
+              "why": "A small lie can feel easier, but it adds distance and guilt."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A good lending rule.",
+          "before": "Only lend what you could afford to",
+          "after": ".",
+          "words": [
+            "lose",
+            "double",
+            "spend twice"
+          ],
+          "answer": "lose",
+          "why": "Then if it comes back late, or not at all, the friendship survives."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Has lending or a big favour ever strained a friendship of yours?",
+          "options": [
+            "Yes, money",
+            "Yes, a favour",
+            "Not yet",
+            "I’d rather not say"
+          ],
+          "reply": "Many people have been there. Clear, kind limits help stop it happening again."
+        },
+        {
+          "kind": "order",
+          "prompt": "Before saying yes to a big ask. Put these in order.",
+          "items": [
+            "Pause before you answer",
+            "Check what you can truly give",
+            "Say what you can offer",
+            "Agree the details clearly"
+          ],
+          "why": "A pause stops an automatic yes; being clear about limits and details keeps everyone on the same page."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a friend asks a big favour, take a moment to decide what you can truly give before answering."
+        }
+      ]
+    },
+    {
       "id": "friends-5",
+      "level": 5,
       "title": "Follow Through",
       "minutes": 3,
       "focus": "trust",
@@ -447,7 +1362,168 @@
       ]
     },
     {
+      "id": "friends-5-2",
+      "level": 5,
+      "title": "Keep Their Secrets",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "What they share with you stays with you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Trust lives in what you don’t say",
+          "body": "When a friend tells you something private, they hand you a bit of their trust. Passing it on, even casually or to “just one person”, can break it fast.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend told you they’re thinking of leaving their job. A mutual friend asks, “Is something up with Alex?” What do you say?",
+          "options": [
+            {
+              "text": "“That’s Alex’s news to share. You could ask them!”",
+              "correct": true,
+              "why": "You stay friendly with both, without passing on what you were trusted with."
+            },
+            {
+              "text": "“Don’t say I told you, but they’re quitting.”",
+              "why": "“Don’t say I told you” still breaks the trust."
+            },
+            {
+              "text": "“Nothing at all!”",
+              "why": "Lying outright can backfire when the news comes out."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "When unsure, ask.",
+          "before": "Is this okay to share, or should I keep it",
+          "after": "?",
+          "words": [
+            "loud",
+            "private",
+            "trending"
+          ],
+          "answer": "private",
+          "why": "If you’re not sure, a quick check shows care and avoids an accidental slip."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When is it hardest to keep something to yourself?",
+          "options": [
+            "When I’m worried",
+            "When others ask",
+            "When it’s juicy",
+            "When I’m venting"
+          ],
+          "reply": "Noticing your weak spot makes it much easier to pause before you share."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Keeping trust, or breaking it?",
+          "left": "Breaking",
+          "right": "Keeping",
+          "cards": [
+            {
+              "text": "“That’s theirs to share.”",
+              "side": "right"
+            },
+            {
+              "text": "Hinting “I know something…”",
+              "side": "left"
+            },
+            {
+              "text": "Screenshotting their message to someone",
+              "side": "left"
+            },
+            {
+              "text": "Asking before passing anything on",
+              "side": "right"
+            },
+            {
+              "text": "Telling your partner “in confidence”",
+              "side": "left"
+            }
+          ],
+          "why": "Even small hints or “in confidence” retellings pass on what wasn’t yours to share."
+        },
+        {
+          "kind": "try",
+          "body": "If a friend has shared something private with you, quietly decide now that it stays with you."
+        }
+      ]
+    },
+    {
+      "id": "friends-5-3",
+      "level": 5,
+      "title": "Show Up When It’s Hard",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Reliability matters most on a friend’s worst days.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Hard times show who’s there",
+          "body": "When a friend is ill, grieving or struggling, many people pull back because they don’t know what to say. Simply showing up, imperfectly, is what they remember.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend has been off work for weeks with depression and has gone quiet. What helps most?",
+          "options": [
+            {
+              "text": "Give them space until they’re better.",
+              "why": "Space can feel like being forgotten when someone is struggling."
+            },
+            {
+              "text": "Send a long message about how to feel better.",
+              "why": "Advice can feel like pressure when they have little energy."
+            },
+            {
+              "text": "“Thinking of you. No need to reply. Can I drop round some food Thursday?”",
+              "correct": true,
+              "why": "Low-pressure, specific care lets them feel supported without having to do anything."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Take the pressure off.",
+          "before": "Thinking of you. No need to",
+          "after": "!",
+          "words": [
+            "reply",
+            "worry, I’m fine",
+            "call me now"
+          ],
+          "answer": "reply",
+          "why": "Telling them they don’t have to respond makes your message a gift, not a task."
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there a friend going through something hard right now? What could you offer?",
+          "placeholder": "e.g. drop round dinner on Sunday"
+        },
+        {
+          "kind": "order",
+          "prompt": "Supporting a struggling friend. Put these in order.",
+          "items": [
+            "Reach out, even briefly",
+            "Say no reply is needed",
+            "Offer one specific thing",
+            "Check in again next week"
+          ],
+          "why": "Small, steady contact with a concrete offer is easier to accept than a one-off “let me know if you need anything”."
+        },
+        {
+          "kind": "try",
+          "body": "Send a no-reply-needed message to a friend who’s having a hard time."
+        }
+      ]
+    },
+    {
       "id": "friends-6",
+      "level": 6,
       "title": "Handle Different Opinions",
       "minutes": 4,
       "focus": "conflict",
@@ -533,7 +1609,279 @@
       ]
     },
     {
+      "id": "friends-6-2",
+      "level": 6,
+      "title": "Stay Curious",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Ask how they got there before you argue.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Curiosity cools things down",
+          "body": "When a friend says something you strongly disagree with, the urge is to correct them. Asking how they came to that view first keeps the talk friendly, and you may learn something.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Over dinner, a friend says they’ve stopped getting vaccines. You strongly disagree. What’s the best first response?",
+          "options": [
+            {
+              "text": "“That’s ridiculous.”",
+              "why": "Dismissing them shuts the conversation down and puts them on the defensive."
+            },
+            {
+              "text": "“Oh, that’s a big change. What made you decide that?”",
+              "correct": true,
+              "why": "Curiosity keeps them talking, and you can share your view once you understand theirs."
+            },
+            {
+              "text": "Quietly change the subject and avoid it forever.",
+              "why": "Sometimes fine, but always avoiding can leave a silent gap between you."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A curious opener.",
+          "before": "I see it differently, but I’m",
+          "after": "how you got there.",
+          "words": [
+            "sure",
+            "curious",
+            "tired of"
+          ],
+          "answer": "curious",
+          "why": "Being honest that you disagree while staying curious keeps respect on both sides."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which topics make you lose your curiosity fastest?",
+          "options": [
+            "Politics",
+            "Health",
+            "Money",
+            "Parenting"
+          ],
+          "reply": "Knowing your hot topics helps you take a breath before jumping in."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each argument starter with a curious one.",
+          "pairs": [
+            {
+              "a": "“You’re wrong.”",
+              "b": "“What makes you think that?”"
+            },
+            {
+              "a": "“That’s just dumb.”",
+              "b": "“How did you get to that view?”"
+            },
+            {
+              "a": "“Everyone knows that.”",
+              "b": "“Where did you read about it?”"
+            }
+          ],
+          "why": "Curious questions keep the door open, so a disagreement stays a conversation rather than a fight."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you disagree with a friend, ask one genuine question about their view before sharing yours."
+        }
+      ]
+    },
+    {
+      "id": "friends-6-3",
+      "level": 6,
+      "title": "Agree to Differ",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Some differences don’t need to be solved.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not every difference needs a winner",
+          "body": "Some disagreements, about politics, faith or how to raise kids, won’t be settled over coffee. Agreeing to differ, kindly, lets the friendship be bigger than the topic.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and a friend have debated the same political issue three times now, and it’s getting heated. What’s best?",
+          "options": [
+            {
+              "text": "Keep going until one of you admits they’re wrong.",
+              "why": "Some debates have no finish line, and pushing can cost the friendship."
+            },
+            {
+              "text": "“We see this one differently, and that’s okay. Shall we park it?”",
+              "correct": true,
+              "why": "You name the difference with respect and choose the friendship over winning."
+            },
+            {
+              "text": "Stop seeing them.",
+              "why": "One topic rarely needs to end a friendship that’s good in other ways."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Park it kindly.",
+          "before": "Let’s agree to",
+          "after": "on this one.",
+          "words": [
+            "differ",
+            "fight",
+            "forget it all"
+          ],
+          "answer": "differ",
+          "why": "Agreeing to differ respects both views and lets you move on together."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Is there a topic you and a friend should agree to differ on?",
+          "options": [
+            "Politics",
+            "Religion",
+            "Lifestyle choices",
+            "Not right now"
+          ],
+          "reply": "Parking a topic isn’t avoiding. It’s choosing what matters most to you both."
+        },
+        {
+          "kind": "scene",
+          "title": "Round four",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Okay, but did you see that article I sent? It proves my point 😤"
+            },
+            {
+              "from": "them",
+              "text": "You HAVE to admit it now."
+            }
+          ],
+          "prompt": "You still disagree. Reply:",
+          "options": [
+            {
+              "text": "I see why it convinces you, but we see it differently. Pub quiz Friday instead? 😄",
+              "correct": true,
+              "reaction": "Haha fine. Yes to the quiz!",
+              "why": "You acknowledge their view, hold yours and turn back to the friendship."
+            },
+            {
+              "text": "That article is complete rubbish.",
+              "reaction": "Wow. Here we go again.",
+              "why": "It restarts the fight and makes them dig in harder."
+            },
+            {
+              "text": "Fine, you’re right.",
+              "reaction": "Knew it 😏",
+              "why": "Giving in when you don’t agree can leave you quietly resentful."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "If one topic keeps causing friction with a friend, suggest kindly that you agree to differ on it."
+        }
+      ]
+    },
+    {
+      "id": "friends-6-4",
+      "level": 6,
+      "title": "Group Chat Tension",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Take tricky talks out of the group.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Group chats amplify tension",
+          "body": "In a group chat, everyone watches, nobody can see faces, and people take sides. A disagreement that would be a quick chat one-to-one can quickly turn public and messy.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "In the group chat, a friend makes a sarcastic dig about you always cancelling. Others go quiet. What do you do?",
+          "options": [
+            {
+              "text": "Fire back a sarcastic reply in the group.",
+              "why": "It escalates in front of everyone and makes others pick sides."
+            },
+            {
+              "text": "Leave the group without a word.",
+              "why": "Leaving raises questions and doesn’t sort out what’s really going on."
+            },
+            {
+              "text": "Message them privately: “Hey, that stung a bit. Have I been letting you down?”",
+              "correct": true,
+              "why": "Moving it to a private chat lets you both be honest without an audience."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Move it somewhere better.",
+          "before": "Can we chat about this",
+          "after": "?",
+          "words": [
+            "in the group",
+            "one-to-one",
+            "never"
+          ],
+          "answer": "one-to-one",
+          "why": "Private chats lower the stakes, so people can listen instead of saving face."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you usually do when the group chat gets tense?",
+          "options": [
+            "Go quiet",
+            "Jump in",
+            "Make a joke",
+            "Message someone privately"
+          ],
+          "reply": "There’s no single right move, but taking real issues private usually helps most."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Calms the group chat, or heats it up?",
+          "left": "Heats up",
+          "right": "Calms",
+          "cards": [
+            {
+              "text": "Messaging the person privately",
+              "side": "right"
+            },
+            {
+              "text": "Screenshotting it to another group",
+              "side": "left"
+            },
+            {
+              "text": "“Let’s talk about this in person”",
+              "side": "right"
+            },
+            {
+              "text": "Replying with a passive-aggressive 🙂",
+              "side": "left"
+            },
+            {
+              "text": "Taking sides in front of everyone",
+              "side": "left"
+            }
+          ],
+          "why": "Taking things private and in person calms them down; audiences, side-taking and sarcasm keep the fire going."
+        },
+        {
+          "kind": "try",
+          "body": "If a group chat gets tense this week, take the real conversation one-to-one."
+        }
+      ]
+    },
+    {
       "id": "friends-7",
+      "level": 7,
       "title": "Repair a Misstep",
       "minutes": 4,
       "focus": "conflict",
@@ -606,7 +1954,265 @@
       ]
     },
     {
+      "id": "friends-7-2",
+      "level": 7,
+      "title": "Raise a Hurt",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Tell a friend when something stung, gently.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Hurts left unsaid turn into distance",
+          "body": "When a friend hurts you and you say nothing, you often pull away without them knowing why. Telling them gently gives the friendship a chance to heal.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend made a joke about your weight in front of others. It really hurt. What’s the best way to raise it?",
+          "options": [
+            {
+              "text": "Laugh it off and quietly see them less.",
+              "why": "They never learn it hurt, and the friendship slowly fades."
+            },
+            {
+              "text": "“That joke about my weight hurt. I know you didn’t mean it, but please don’t again.”",
+              "correct": true,
+              "why": "Clear about the hurt, generous about their intent, and clear about what you need."
+            },
+            {
+              "text": "Make a joke about them next time to even it out.",
+              "why": "Payback adds a second hurt instead of fixing the first."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Assume good intent.",
+          "before": "I know you didn’t",
+          "after": "it, but it hurt.",
+          "words": [
+            "mean",
+            "notice",
+            "say"
+          ],
+          "answer": "mean",
+          "why": "Saying you trust their intentions makes it much easier for them to hear you."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What usually stops you telling a friend they hurt you?",
+          "options": [
+            "Not wanting drama",
+            "Feeling silly",
+            "Fear of losing them",
+            "Hoping it passes"
+          ],
+          "reply": "Good friends would rather know. A gentle word now saves a slow drift later."
+        },
+        {
+          "kind": "order",
+          "prompt": "Raising a hurt. Put these in order.",
+          "items": [
+            "Wait until you feel calm",
+            "Pick a private moment",
+            "Say what happened and how it felt",
+            "Ask for what you need next time"
+          ],
+          "why": "Calm and privacy help them listen; naming the feeling and a clear ask turn a hurt into a fix."
+        },
+        {
+          "kind": "try",
+          "body": "If a friend has hurt you recently, plan a calm, private moment to tell them how it felt."
+        }
+      ]
+    },
+    {
+      "id": "friends-7-3",
+      "level": 7,
+      "title": "Accept an Apology",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Letting a sorry land is part of repair too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Repair takes two people",
+          "body": "When a friend apologises, how you respond matters. Accepting it, even if you still feel a little sore, tells them it was worth saying sorry.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend sincerely apologises for missing your birthday. You’re still a bit hurt. What’s the best response?",
+          "options": [
+            {
+              "text": "“Fine, whatever.”",
+              "why": "A cold reply makes them feel the apology didn’t matter."
+            },
+            {
+              "text": "“Thank you for saying that. It did sting, but I really appreciate it.”",
+              "correct": true,
+              "why": "You accept the apology and stay honest that it hurt, which closes the loop kindly."
+            },
+            {
+              "text": "“Well, you should be sorry.”",
+              "why": "It turns the apology into a moment to punish rather than repair."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Let the apology land.",
+          "before": "Thank you for",
+          "after": "that. It means a lot.",
+          "words": [
+            "saying",
+            "denying",
+            "forgetting"
+          ],
+          "answer": "saying",
+          "why": "Thanking them for the apology encourages honesty between you in the future."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually react when a friend apologises?",
+          "options": [
+            "Accept straight away",
+            "Stay cold for a while",
+            "Brush it off",
+            "Bring up other things"
+          ],
+          "reply": "Noticing your reaction helps you make apologies feel safe to give."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each cold reply with a warmer one.",
+          "pairs": [
+            {
+              "a": "“Whatever.”",
+              "b": "“Thank you for saying sorry.”"
+            },
+            {
+              "a": "“It’s fine.” (it’s not)",
+              "b": "“It hurt, but I appreciate this.”"
+            },
+            {
+              "a": "“You always do this.”",
+              "b": "“Let’s put it behind us.”"
+            }
+          ],
+          "why": "Warm replies let an apology do its job, while cold ones make it harder for either of you to say sorry next time."
+        },
+        {
+          "kind": "try",
+          "body": "The next time a friend says sorry, thank them for it before saying anything else."
+        }
+      ]
+    },
+    {
+      "id": "friends-7-4",
+      "level": 7,
+      "title": "Break a Long Silence",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "It’s never too late to send the first message.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Awkwardness fades fast",
+          "body": "After months or years without contact, getting in touch can feel awkward. But most people are touched to hear from an old friend, and the awkwardness lasts about one message.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and a close friend drifted apart two years ago, with no falling-out. You miss them. What do you send?",
+          "options": [
+            {
+              "text": "“Saw a dog that looked just like Bruno and thought of you! How have you been? 💛”",
+              "correct": true,
+              "why": "A warm, light message with a shared memory makes it easy for them to reply."
+            },
+            {
+              "text": "A long message explaining why you drifted apart.",
+              "why": "Too heavy for a first message. They may not know how to respond."
+            },
+            {
+              "text": "Nothing. It’s been too long now.",
+              "why": "The longer the wait, the harder it feels, but it’s rarely too late."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Keep the first message light.",
+          "before": "I was just",
+          "after": "of you! How are you?",
+          "words": [
+            "thinking",
+            "angry",
+            "tired"
+          ],
+          "answer": "thinking",
+          "why": "“Thinking of you” is warm and asks nothing of them except a reply."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Is there an old friend you’d love to hear from?",
+          "options": [
+            "Yes, from school",
+            "Yes, from an old job",
+            "Yes, from a past city",
+            "Not right now"
+          ],
+          "reply": "You could be the person who goes first. It might make their week."
+        },
+        {
+          "kind": "scene",
+          "title": "Two years later",
+          "them": "Old friend",
+          "lines": [
+            {
+              "from": "you",
+              "text": "Saw a dog just like Bruno today and thought of you! How are you? 💛"
+            },
+            {
+              "from": "them",
+              "text": "Oh wow, hi!! I’ve thought about messaging you so many times"
+            },
+            {
+              "from": "them",
+              "text": "Sorry I was so rubbish at keeping in touch 😅"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Yeah, you really were.",
+              "reaction": "…oh. Sorry.",
+              "why": "Blame makes them feel worse and can end the conversation."
+            },
+            {
+              "text": "Ha, we both were! I’m just so happy to hear from you. Coffee soon?",
+              "correct": true,
+              "reaction": "YES. I’d love that 😊",
+              "why": "You share the responsibility lightly and move straight to reconnecting."
+            },
+            {
+              "text": "No worries. Anyway, bye!",
+              "reaction": "Oh, okay… bye.",
+              "why": "It closes the door just as they opened it."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Send a short, warm message to a friend you’ve lost touch with, mentioning a happy memory."
+        }
+      ]
+    },
+    {
       "id": "friends-8",
+      "level": 8,
       "title": "Make Space for Change",
       "minutes": 4,
       "focus": "connection",
@@ -678,7 +2284,250 @@
       ]
     },
     {
+      "id": "friends-8-2",
+      "level": 8,
+      "title": "Stay Close From Afar",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Distance changes the how, not the friendship.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Long-distance friendships need a rhythm",
+          "body": "When a friend moves away, you lose the easy, unplanned meet-ups. Friendships that survive distance usually have a simple rhythm: a regular call, a shared show, a yearly visit.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your best friend has moved abroad for work. What’s most likely to keep you close?",
+          "options": [
+            {
+              "text": "Message whenever you remember.",
+              "why": "Good intentions, but busy weeks can turn into months."
+            },
+            {
+              "text": "Agree to talk every day.",
+              "why": "Too ambitious for most lives, so it may fall apart and feel like failure."
+            },
+            {
+              "text": "Set up a video call on the first Sunday of every month.",
+              "correct": true,
+              "why": "A simple, regular rhythm is realistic and gives you both something to look forward to."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Small and regular wins.",
+          "before": "A short call every month beats a long call once a",
+          "after": ".",
+          "words": [
+            "week",
+            "day",
+            "year"
+          ],
+          "answer": "year",
+          "why": "Steady, small contact keeps you part of each other’s everyday lives."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which long-distance habit sounds most doable for you?",
+          "options": [
+            "Monthly video calls",
+            "Voice notes",
+            "Watching a show together",
+            "Sending post"
+          ],
+          "reply": "Pick one and try it for a couple of months. Small habits keep friendships alive."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Keeps you close, or lets you drift?",
+          "left": "Drift",
+          "right": "Close",
+          "cards": [
+            {
+              "text": "A standing monthly call",
+              "side": "right"
+            },
+            {
+              "text": "“We’ll catch up properly when you’re back”",
+              "side": "left"
+            },
+            {
+              "text": "Sending a photo that made you think of them",
+              "side": "right"
+            },
+            {
+              "text": "Only messaging on birthdays",
+              "side": "left"
+            },
+            {
+              "text": "Planning a visit for next year",
+              "side": "right"
+            }
+          ],
+          "why": "Regular small contact and a shared plan keep you close; waiting for the perfect catch-up lets the gap grow."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest a simple regular catch-up to a friend who lives far away."
+        }
+      ]
+    },
+    {
+      "id": "friends-8-3",
+      "level": 8,
+      "title": "When They Fall in Love",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Make room for their partner, and keep room for you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "New love can shift a friendship",
+          "body": "When a friend gets into a new relationship, you might see them less. It’s normal, and often temporary. Being happy for them, while gently saying you miss them, keeps you close.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Since your friend started dating someone, they’ve cancelled on you twice. What’s the best approach?",
+          "options": [
+            {
+              "text": "“Clearly you’ve replaced me.”",
+              "why": "It sounds like an accusation and makes them feel guilty, not closer."
+            },
+            {
+              "text": "“I’m so happy for you two! I miss our time though. Can we keep Thursday nights?”",
+              "correct": true,
+              "why": "You celebrate their happiness and ask for something specific to stay close."
+            },
+            {
+              "text": "Stop inviting them for a while.",
+              "why": "Pulling away can make the drift permanent when it didn’t need to be."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask, don’t accuse.",
+          "before": "I",
+          "after": "you! Can we plan something just us?",
+          "words": [
+            "blame",
+            "miss",
+            "warned"
+          ],
+          "answer": "miss",
+          "why": "“I miss you” invites them back; blame pushes them away."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when a friend gets into a new relationship?",
+          "options": [
+            "Happy for them",
+            "A bit left out",
+            "Worried I’ll lose them",
+            "Mixed feelings"
+          ],
+          "reply": "All of these are normal. Naming it kindly is better than hiding it or acting on it."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each worry with a helpful step.",
+          "pairs": [
+            {
+              "a": "“I never see them now.”",
+              "b": "Suggest a regular friend night"
+            },
+            {
+              "a": "“Their partner seems nice.”",
+              "b": "Invite them both along"
+            },
+            {
+              "a": "“I feel left out.”",
+              "b": "Tell them kindly you miss them"
+            }
+          ],
+          "why": "Each worry has a small, kind action that helps you adapt instead of drifting apart."
+        },
+        {
+          "kind": "try",
+          "body": "If a friend is in a new relationship, tell them you’re happy for them and suggest one plan, just you two."
+        }
+      ]
+    },
+    {
+      "id": "friends-8-4",
+      "level": 8,
+      "title": "Let Friendships Change",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Some friendships shrink, and that can be okay.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Friendships have seasons",
+          "body": "Not every friendship stays the same size forever. Some become occasional, some grow closer later, and some quietly end. Accepting this can free you from guilt and resentment.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "An old friend and you now have very different lives and see each other once a year. It feels a bit sad. What’s the healthiest view?",
+          "options": [
+            {
+              "text": "“We’ve failed as friends.”",
+              "why": "Friendships changing shape isn’t failure. It’s part of life."
+            },
+            {
+              "text": "“This friendship has a different shape now, and I can still value it.”",
+              "correct": true,
+              "why": "You accept the change while keeping the warmth, which leaves the door open."
+            },
+            {
+              "text": "Force weekly plans to get back to how it was.",
+              "why": "Pushing can create pressure that neither of you really wants."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "A kinder way to see it.",
+          "before": "Some friends are for a",
+          "after": ", and that’s okay.",
+          "words": [
+            "season",
+            "mistake",
+            "moment of weakness"
+          ],
+          "answer": "season",
+          "why": "Seeing friendships as having seasons lets you honour them, even when they change."
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there a friendship that’s changed shape? What do you still value about it?",
+          "placeholder": "e.g. We still laugh like old times when we meet"
+        },
+        {
+          "kind": "order",
+          "prompt": "Making peace with a changing friendship. Put these in order.",
+          "items": [
+            "Notice how it’s changed",
+            "Let yourself feel sad",
+            "Remember what it gave you",
+            "Choose what you want now"
+          ],
+          "why": "Naming the change and the feeling first makes room to choose your next step calmly, not out of guilt."
+        },
+        {
+          "kind": "try",
+          "body": "Think of a friendship that’s changed, and send a short message valuing what it still is."
+        }
+      ]
+    },
+    {
       "id": "friends-9",
+      "level": 9,
       "title": "Ask Before Advising",
       "minutes": 4,
       "focus": "listening",
@@ -774,7 +2623,357 @@
       ]
     },
     {
+      "id": "friends-9-2",
+      "level": 9,
+      "title": "Sit With Hard Feelings",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "You don’t have to fix it to help.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Presence before solutions",
+          "body": "When a friend is upset, the urge is to cheer them up or fix it. Often what helps most is letting them feel what they feel, with you beside them.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend says, crying, that they feel like a failure after not getting into their course. What’s the best response?",
+          "options": [
+            {
+              "text": "“That’s so painful after how hard you worked. I’m here.”",
+              "correct": true,
+              "why": "You name the feeling and stay with them, so they feel less alone in it."
+            },
+            {
+              "text": "“Don’t be silly, you’re not a failure!”",
+              "why": "Kindly meant, but it argues with their feeling instead of hearing it."
+            },
+            {
+              "text": "“There are loads of other courses. Apply again next year.”",
+              "why": "Solutions can wait. Right now they need to feel understood."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Just be there.",
+          "before": "You don’t have to say anything. I’m",
+          "after": "here.",
+          "words": [
+            "just",
+            "never",
+            "barely"
+          ],
+          "answer": "just",
+          "why": "Sometimes being there quietly says more than any advice could."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a friend is upset, what’s your instinct?",
+          "options": [
+            "Fix it",
+            "Cheer them up",
+            "Change the subject",
+            "Listen quietly"
+          ],
+          "reply": "Every instinct comes from care. Leading with listening usually helps most."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Sitting with it, or rushing past it?",
+          "left": "Rushing",
+          "right": "Sitting with",
+          "cards": [
+            {
+              "text": "“That sounds really hard.”",
+              "side": "right"
+            },
+            {
+              "text": "“Look on the bright side!”",
+              "side": "left"
+            },
+            {
+              "text": "Letting a silence be okay",
+              "side": "right"
+            },
+            {
+              "text": "“At least it’s not worse.”",
+              "side": "left"
+            },
+            {
+              "text": "“Do you want to talk, or just company?”",
+              "side": "right"
+            }
+          ],
+          "why": "Sitting with a feeling accepts it. Rushing to the bright side can make people feel their pain isn’t welcome."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a friend is upset, say “That sounds really hard” before offering any advice."
+        }
+      ]
+    },
+    {
+      "id": "friends-9-3",
+      "level": 9,
+      "title": "Offer Practical Help",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Swap “let me know” for something specific.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "“Let me know” puts the work on them",
+          "body": "“Let me know if you need anything” is kind, but people rarely ask. A specific offer, like dinner on Tuesday or walking the dog, is much easier to accept.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend has just had surgery and is stuck at home for two weeks. Which offer is most helpful?",
+          "options": [
+            {
+              "text": "“Let me know if you need anything!”",
+              "why": "Kind, but they have to think of something and ask, which is hard when you’re unwell."
+            },
+            {
+              "text": "“Shout if you’re bored.”",
+              "why": "Friendly, but it doesn’t offer real help with the hard parts."
+            },
+            {
+              "text": "“I’m doing a shop on Saturday. Send me your list and I’ll drop it round.”",
+              "correct": true,
+              "why": "Specific and easy to say yes to, with no extra effort needed from them."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make it specific.",
+          "before": "Can I",
+          "after": "on Wednesday?",
+          "words": [
+            "bring dinner round",
+            "help somehow",
+            "do something"
+          ],
+          "answer": "bring dinner round",
+          "why": "A clear offer with a day attached is much easier to accept than a general one."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which kind of help are you best at giving?",
+          "options": [
+            "Cooking",
+            "Errands",
+            "Company",
+            "Organising"
+          ],
+          "reply": "Offering the help you’re good at makes it easy for you to give and for them to accept."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each situation with a specific offer.",
+          "pairs": [
+            {
+              "a": "New baby at home",
+              "b": "Drop off a frozen meal"
+            },
+            {
+              "a": "Moving house",
+              "b": "Help pack on Sunday"
+            },
+            {
+              "a": "Big exam week",
+              "b": "Bring snacks to their desk"
+            },
+            {
+              "a": "Off sick",
+              "b": "Walk their dog"
+            }
+          ],
+          "why": "Specific help fits their situation and takes the effort of asking off their shoulders."
+        },
+        {
+          "kind": "try",
+          "body": "Replace one “let me know if you need anything” with a specific offer this week."
+        }
+      ]
+    },
+    {
+      "id": "friends-9-4",
+      "level": 9,
+      "title": "Support Through Grief",
+      "minutes": 5,
+      "focus": "listening",
+      "summary": "Keep showing up long after the funeral.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Grief doesn’t keep to a schedule",
+          "body": "Support often pours in around a death, then fades. But grief can be hardest weeks or months later. A friend who remembers then is a real gift.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend’s dad died three months ago. Everyone seems to have moved on. What helps?",
+          "options": [
+            {
+              "text": "Avoid mentioning him so you don’t upset them.",
+              "why": "Silence can make them feel their dad has been forgotten."
+            },
+            {
+              "text": "“I was thinking about your dad today. How are you doing with it all?”",
+              "correct": true,
+              "why": "Saying his name and asking openly shows you remember and are still there."
+            },
+            {
+              "text": "“Are you feeling better now?”",
+              "why": "It suggests grief should be over, which can make them feel rushed."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "It’s okay to say their name.",
+          "before": "Most grieving people are glad when you",
+          "after": "the person they lost.",
+          "words": [
+            "avoid",
+            "mention",
+            "forget"
+          ],
+          "answer": "mention",
+          "why": "Hearing their loved one’s name shows that person still matters to others too."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What feels hardest about supporting a grieving friend?",
+          "options": [
+            "Not knowing what to say",
+            "Fear of upsetting them",
+            "Their sadness",
+            "Knowing when to check in"
+          ],
+          "reply": "You don’t need perfect words. Showing up gently, again and again, is what counts."
+        },
+        {
+          "kind": "scene",
+          "title": "A hard anniversary",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Would’ve been Mum’s birthday today."
+            },
+            {
+              "from": "them",
+              "text": "Feels weird that life just carries on."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "At least she’s at peace now.",
+              "reaction": "Yeah… I guess.",
+              "why": "Comforting phrases can feel like they’re closing down the sadness."
+            },
+            {
+              "text": "Stay strong! 💪",
+              "reaction": "Trying.",
+              "why": "It can make them feel they have to hide how they really feel."
+            },
+            {
+              "text": "I’m so sorry. Today must be so hard. Want to tell me about her? I’d love to hear.",
+              "correct": true,
+              "reaction": "Honestly yes. She was hilarious…",
+              "why": "You acknowledge the day and invite memories, which is often what grieving people want most."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Put a reminder in your phone for a grieving friend’s hard dates, like birthdays and anniversaries."
+        }
+      ]
+    },
+    {
+      "id": "friends-9-5",
+      "level": 9,
+      "title": "Suggest More Help",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Know when a friend needs more than you can give.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Friends aren’t therapists",
+          "body": "You can be a great support, but some struggles need professional help. Gently suggesting it isn’t pushing them away. It shows you take what they’re going through seriously.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "For months, your friend has been struggling to sleep, eat or enjoy anything. What’s the kindest step?",
+          "options": [
+            {
+              "text": "Keep listening and say nothing about getting help.",
+              "why": "Your support matters, but they may need more than a friend can give."
+            },
+            {
+              "text": "“I care about you and I’m worried. Would you see your GP? I can help you book.”",
+              "correct": true,
+              "why": "You show care, name the worry and make the next step easier, without pressure."
+            },
+            {
+              "text": "“You need therapy.”",
+              "why": "True or not, said bluntly it can feel like a judgement rather than care."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer to help with the step.",
+          "before": "Want me to",
+          "after": "you make the call?",
+          "words": [
+            "help",
+            "force",
+            "stop"
+          ],
+          "answer": "help",
+          "why": "Practical support with the first step makes getting help much less daunting."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Would you know where to point a friend for support?",
+          "options": [
+            "Yes, a doctor",
+            "Yes, a helpline",
+            "Not sure",
+            "I’d look it up"
+          ],
+          "reply": "Knowing one place to suggest, like a GP or a local helpline, makes it easier to help."
+        },
+        {
+          "kind": "order",
+          "prompt": "Suggesting more help. Put these in order.",
+          "items": [
+            "Pick a calm, private moment",
+            "Say what you’ve noticed",
+            "Gently suggest a next step",
+            "Offer to help them take it"
+          ],
+          "why": "Calm timing and specific, caring words make the suggestion feel like support, not judgement."
+        },
+        {
+          "kind": "try",
+          "body": "Find one place to point a struggling friend to, like a GP or helpline. If anyone is in danger, call emergency services."
+        }
+      ]
+    },
+    {
       "id": "friends-10",
+      "level": 10,
       "title": "Celebrate Each Other",
       "minutes": 4,
       "focus": "trust",
@@ -856,6 +3055,271 @@
         {
           "kind": "try",
           "body": "Send one friend a specific message celebrating something they’ve done recently, big or small."
+        }
+      ]
+    },
+    {
+      "id": "friends-10-2",
+      "level": 10,
+      "title": "Handle Envy Kindly",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Feeling envious is human. What you do with it matters.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Envy is a normal feeling",
+          "body": "Feeling a twinge when a friend gets the promotion, partner or house you want is human. Noticing it, without letting it leak out as coldness, keeps the friendship safe.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend gets engaged while you’re going through a breakup. You feel happy and envious at once. What helps?",
+          "options": [
+            {
+              "text": "Act thrilled, then avoid them for weeks.",
+              "why": "Avoidance confuses them and quietly damages the friendship."
+            },
+            {
+              "text": "Hint that it’s all a bit fast.",
+              "why": "Little digs let envy leak out and spoil their happy moment."
+            },
+            {
+              "text": "Congratulate them warmly, and share your mixed feelings later with someone else you trust.",
+              "correct": true,
+              "why": "You celebrate them honestly and give your own feelings somewhere safe to go."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Two things can be true.",
+          "before": "I can feel envious and still be",
+          "after": "for them.",
+          "words": [
+            "sorry",
+            "happy",
+            "worried"
+          ],
+          "answer": "happy",
+          "why": "Mixed feelings are normal. You don’t have to choose one to be a good friend."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What tends to stir up envy for you?",
+          "options": [
+            "Careers",
+            "Relationships",
+            "Money or homes",
+            "Social life"
+          ],
+          "reply": "Knowing your triggers helps you notice envy early and handle it kindly."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Handling envy well, or letting it leak?",
+          "left": "Leaking",
+          "right": "Handling",
+          "cards": [
+            {
+              "text": "Saying “Congratulations!” and meaning it",
+              "side": "right"
+            },
+            {
+              "text": "“Must be nice for some people.”",
+              "side": "left"
+            },
+            {
+              "text": "Writing your feelings down privately",
+              "side": "right"
+            },
+            {
+              "text": "Changing the subject whenever it comes up",
+              "side": "left"
+            },
+            {
+              "text": "Asking yourself what you want for you",
+              "side": "right"
+            }
+          ],
+          "why": "Handled well, envy can even point you to your own goals. Leaked, it hurts the friend and the friendship."
+        },
+        {
+          "kind": "try",
+          "body": "If you notice envy towards a friend this week, write down what it tells you that you want."
+        }
+      ]
+    },
+    {
+      "id": "friends-10-3",
+      "level": 10,
+      "title": "Say Thank You",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Tell friends what they mean to you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Friends rarely hear it",
+          "body": "We thank partners and colleagues, but often assume friends just know they matter. Saying it out loud, specifically, is one of the most powerful things you can do.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend has supported you through a tough year. Which message will mean the most?",
+          "options": [
+            {
+              "text": "“You’re the best ❤️”",
+              "why": "Lovely, but general. They may not know what you really valued."
+            },
+            {
+              "text": "“Those Sunday walks when I was low kept me going. Thank you for being there.”",
+              "correct": true,
+              "why": "Specific thanks shows exactly what they did and why it mattered."
+            },
+            {
+              "text": "Nothing. They know.",
+              "why": "They might, but hearing it can still mean a great deal."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the specific thing.",
+          "before": "Thank you for",
+          "after": ". It really helped.",
+          "words": [
+            "checking in every week",
+            "everything ever",
+            "being you, I guess"
+          ],
+          "answer": "checking in every week",
+          "why": "Naming the exact thing makes thanks feel real and memorable."
+        },
+        {
+          "kind": "write",
+          "prompt": "Which friend would you like to thank, and for what exactly?",
+          "placeholder": "e.g. Jo, for driving me to the hospital"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each general thanks with a specific one.",
+          "pairs": [
+            {
+              "a": "“Thanks for everything.”",
+              "b": "“Thanks for the soup when I was ill.”"
+            },
+            {
+              "a": "“You’re a great friend.”",
+              "b": "“You always remember my big days.”"
+            },
+            {
+              "a": "“Love you!”",
+              "b": "“I love how you make me laugh.”"
+            }
+          ],
+          "why": "Specific appreciation tells your friend what they do that matters, so it lands much deeper."
+        },
+        {
+          "kind": "try",
+          "body": "Send one friend a specific thank-you message today for something they’ve done for you."
+        }
+      ]
+    },
+    {
+      "id": "friends-10-4",
+      "level": 10,
+      "title": "Build Your Traditions",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Shared rituals become the story of your friendship.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Traditions hold friendships together",
+          "body": "A yearly trip, a birthday breakfast, a silly film night. Traditions give you something to look forward to and become the memories you talk about for years.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and two friends always say you should do more together. What’s most likely to last?",
+          "options": [
+            {
+              "text": "A pancake breakfast on the first Saturday of every month.",
+              "correct": true,
+              "why": "Simple, regular and fun. Easy to keep going and something to look forward to."
+            },
+            {
+              "text": "An expensive holiday together every year.",
+              "why": "Lovely if it works, but cost and planning can make it fall apart."
+            },
+            {
+              "text": "Just doing things when you all happen to be free.",
+              "why": "With three busy diaries, “when we’re free” rarely comes."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "What makes a tradition stick.",
+          "before": "The best traditions are simple and",
+          "after": ".",
+          "words": [
+            "regular",
+            "expensive",
+            "secret"
+          ],
+          "answer": "regular",
+          "why": "Repetition is what turns a nice plan into a tradition."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which tradition would you love to start with friends?",
+          "options": [
+            "Monthly meals",
+            "A yearly trip",
+            "Film or game nights",
+            "Birthday rituals"
+          ],
+          "reply": "Suggest it this week. Someone has to go first, and friends are often waiting for it."
+        },
+        {
+          "kind": "scene",
+          "title": "Starting something",
+          "them": "The group chat",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Ugh, we haven’t all been together since March 😭"
+            },
+            {
+              "from": "them",
+              "text": "We need to be better at this"
+            }
+          ],
+          "prompt": "What do you send?",
+          "options": [
+            {
+              "text": "So true. We should!",
+              "reaction": "Yeah defo! 👍",
+              "why": "Everyone agrees, but nothing changes without a plan."
+            },
+            {
+              "text": "New tradition: pizza at mine, first Friday of every month. Who’s in? 🍕",
+              "correct": true,
+              "reaction": "IN. 🙋‍♀️🙋‍♂️🙋",
+              "why": "You turn a shared wish into a simple, regular plan that’s easy to say yes to."
+            },
+            {
+              "text": "Well, I’m always free, it’s you lot who aren’t.",
+              "reaction": "Okay, ouch 😅",
+              "why": "Blame makes people defensive instead of excited to meet up."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one small, regular tradition to a friend or group of friends this week."
         }
       ]
     }

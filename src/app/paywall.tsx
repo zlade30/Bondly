@@ -44,7 +44,22 @@ const NAME: Partial<Record<PACKAGE_TYPE, string>> = {
   [PACKAGE_TYPE.LIFETIME]: 'Lifetime',
 };
 
-/** The free trial on this plan, as "7-day" and "7 days", or null if it has none. */
+/**
+ * A zero price in the plan's own currency, e.g. "$0.00" or "₱0.00". The App
+ * Store's own string is used when it has one; otherwise the digits in the
+ * plan's price are swapped for zeros, keeping the symbol and decimals.
+ */
+function zeroPrice(pkg: PurchasesPackage) {
+  const fromStore = pkg.product.introPrice?.priceString;
+  if (fromStore) return fromStore;
+  // Keep the symbol and the decimal style ("49.99" → "0.00", "9,99" → "0,00", "1200" → "0").
+  return pkg.product.priceString.replace(/\d[\d.,\s\u00A0]*\d|\d/, (n) => {
+    const decimals = /([.,])(\d{2})$/.exec(n);
+    return decimals ? `0${decimals[1]}00` : '0';
+  });
+}
+
+/** The free trial on this plan, as "7-day" and "7 days" plus its "$0.00" price, or null if it has none. */
 function freeTrial(pkg: PurchasesPackage) {
   const intro = pkg.product.introPrice;
   if (!intro || intro.price !== 0) return null;
@@ -54,7 +69,7 @@ function freeTrial(pkg: PurchasesPackage) {
     count *= 7;
     unit = 'day';
   }
-  return { label: `${count}-${unit}`, length: `${count} ${unit}${count === 1 ? '' : 's'}` };
+  return { label: `${count}-${unit}`, length: `${count} ${unit}${count === 1 ? '' : 's'}`, price: zeroPrice(pkg) };
 }
 
 function sortPackages(packages: PurchasesPackage[]) {
@@ -119,7 +134,7 @@ export default function PaywallScreen() {
     : busy === 'buy'
       ? 'Just a moment…'
       : trial
-        ? `Start my ${trial.label} free trial`
+        ? `Start ${trial.price} for ${trial.length}`
         : selected.packageType === PACKAGE_TYPE.LIFETIME
           ? `Unlock forever for ${selected.product.priceString}`
           : 'Subscribe';
@@ -147,7 +162,11 @@ export default function PaywallScreen() {
       }>
       <View style={styles.topBar}>
         <TextButton label="Settings" onPress={() => router.push('/settings' as Href)} />
-        <TextButton label={busy === 'restore' ? 'Restoring…' : 'Restore'} onPress={restorePurchases} disabled={busy !== null} />
+        <TextButton
+          label={busy === 'restore' ? 'Restoring…' : 'Restore'}
+          onPress={restorePurchases}
+          disabled={busy !== null}
+        />
       </View>
 
       <View style={styles.hero}>
@@ -252,7 +271,12 @@ function PlanCard({
   const period = PERIOD[type];
   const perWeek = type === PACKAGE_TYPE.ANNUAL || type === PACKAGE_TYPE.MONTHLY ? pkg.product.pricePerWeekString : null;
   const badge = type === PACKAGE_TYPE.ANNUAL ? 'Best value' : type === PACKAGE_TYPE.LIFETIME ? 'Pay once' : null;
-  const detail = type === PACKAGE_TYPE.LIFETIME ? 'One-time purchase' : trial ? `${trial.label} free trial` : `Billed every ${period}`;
+  const detail =
+    type === PACKAGE_TYPE.LIFETIME
+      ? 'One-time purchase'
+      : trial
+        ? `${trial.label} free trial`
+        : `Billed every ${period}`;
 
   return (
     <Pressable

@@ -1,4 +1,5 @@
 import type { BondlingColor, BondlingMood, BondlingProp } from '@/components/bondly/mascot';
+import type { TopicIconName } from '@/components/bondly/topic-icons';
 import type { FocusArea, RelationshipGoal } from '@/features/onboarding/content';
 
 import { JOURNEYS } from './journeys';
@@ -11,6 +12,15 @@ export type Lesson = {
   summary: string;
   /** For journey lessons: the skill it practises. */
   focus?: FocusArea;
+  /** For journey lessons: the level (1–10) it belongs to. Defaults to its position. */
+  level?: number;
+};
+
+/** A journey level's name, plus the topic icon (and its colour) that sets its theme. */
+export type LevelInfo = {
+  title: string;
+  icon: TopicIconName;
+  color: BondlingColor;
 };
 
 export type Course = {
@@ -23,6 +33,10 @@ export type Course = {
   intro?: string;
   title: string;
   tint: string;
+  /** Journeys: each level's name and look, in order. */
+  levels?: LevelInfo[];
+  /** Optional full-screen scene behind the journey path (a bundled image, from require()). */
+  background?: number;
   mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp };
   lessons: Lesson[];
 };

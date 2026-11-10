@@ -75,13 +75,49 @@ quotes('journeyTitle', data.journeyTitle);
 quotes('journeyIntro', data.journeyIntro);
 
 const lessons = Array.isArray(data.lessons) ? data.lessons : [];
-if (lessons.length !== 10) say('lessons', `expected 10, found ${lessons.length}`);
+
+// With "levels", each of the 10 levels holds 3–5 lessons, in order. The first
+// lesson of level 3 is "<relationship>-3"; the others are "-3-2", "-3-3"…
+// Without it, the journey is 10 lessons, one per level.
+const leveled = Array.isArray(data.levels);
+const expectedIds = [];
+if (leveled) {
+  if (data.levels.length !== 10) say('levels', `expected 10 level titles, found ${data.levels.length}`);
+  const COLORS = ['pink', 'lavender', 'blue', 'yellow', 'mint', 'purple', 'peach'];
+  // Keep in step with TopicIconName in src/components/bondly/topic-icons.tsx.
+  const ICONS = ['envelope', 'ear', 'speech', 'shield', 'calendar', 'scales', 'bandage', 'sprout', 'hug', 'party'];
+  data.levels.forEach((lv, i) => {
+    const at = `level ${i + 1}`;
+    max(`${at} title`, lv?.title, 28);
+    quotes(`${at} title`, lv?.title);
+    if (!ICONS.includes(lv?.icon)) say(at, `icon must be one of ${ICONS.join(', ')}`);
+    if (!COLORS.includes(lv?.color)) say(at, `color must be one of ${COLORS.join(', ')}`);
+  });
+  let lastLevel = 0;
+  const perLevel = new Map();
+  for (const lesson of lessons) {
+    const lv = lesson.level;
+    if (!Number.isInteger(lv) || lv < 1 || lv > 10) say(lesson.id ?? '?', 'level must be 1–10');
+    else if (lv < lastLevel) say(lesson.id, 'lessons must be in level order');
+    lastLevel = Math.max(lastLevel, lv ?? 0);
+    const n = (perLevel.get(lv) ?? 0) + 1;
+    perLevel.set(lv, n);
+    expectedIds.push(n === 1 ? `${data.relationship}-${lv}` : `${data.relationship}-${lv}-${n}`);
+  }
+  for (let lv = 1; lv <= 10; lv++) {
+    const n = perLevel.get(lv) ?? 0;
+    if (n < 3 || n > 5) say(`level ${lv}`, `needs 3–5 lessons, found ${n}`);
+  }
+} else {
+  if (lessons.length !== 10) say('lessons', `expected 10, found ${lessons.length}`);
+  lessons.forEach((_, i) => expectedIds.push(`${data.relationship}-${i + 1}`));
+}
 
 const usedFocus = new Set();
 const seenIds = new Set();
 lessons.forEach((lesson, li) => {
   const at = `lesson ${li + 1}`;
-  const expectedId = `${data.relationship}-${li + 1}`;
+  const expectedId = expectedIds[li];
   if (lesson.id !== expectedId) say(at, `id should be "${expectedId}", found "${lesson.id}"`);
   if (seenIds.has(lesson.id)) say(at, `duplicate id "${lesson.id}"`);
   seenIds.add(lesson.id);
