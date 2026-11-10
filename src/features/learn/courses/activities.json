@@ -1,0 +1,414 @@
+{
+  "comm-1": {
+    "kind": "match",
+    "prompt": "Turn each blaming line into an “I feel” line.",
+    "pairs": [
+      { "a": "“You never listen to me.”", "b": "“I feel unheard right now.”" },
+      { "a": "“You’re always late.”", "b": "“I feel stressed when we rush.”" },
+      { "a": "“You don’t care.”", "b": "“I feel lonely lately.”" }
+    ],
+    "why": "Starting with your feeling, not their fault, lets the other person hear the problem instead of defending themselves."
+  },
+  "comm-2": {
+    "kind": "sort",
+    "prompt": "Assuming, or asking?",
+    "left": "Assuming",
+    "right": "Asking",
+    "cards": [
+      { "text": "“You clearly don’t want to see me.”", "side": "left" },
+      { "text": "“Is everything okay on your end?”", "side": "right" },
+      { "text": "Deciding they’re angry from a short text", "side": "left" },
+      { "text": "“I noticed you’ve been quiet. What’s up?”", "side": "right" },
+      { "text": "“I know exactly why you did that.”", "side": "left" }
+    ],
+    "why": "Assumptions fill the gaps with your worst guess; a gentle question gets you the real story instead."
+  },
+  "comm-3": {
+    "kind": "order",
+    "prompt": "Raising a tricky topic. Put these in order.",
+    "items": [
+      "Ask if now is a good time",
+      "Agree a time if it isn’t",
+      "Start gently, without blame",
+      "Stick to one concern"
+    ],
+    "why": "Checking the timing first means they can actually listen; one gentle point at a time keeps it from snowballing."
+  },
+  "comm-4": {
+    "kind": "scene",
+    "title": "Venting about home",
+    "them": "Your friend",
+    "lines": [
+      { "from": "them", "text": "My flatmate ate my leftovers AGAIN." },
+      { "from": "them", "text": "And I said nothing. I feel like such a pushover 😩" }
+    ],
+    "prompt": "What’s the best reply?",
+    "options": [
+      {
+        "text": "Just label your food, problem solved!",
+        "reaction": "Yeah… that’s not really the point though.",
+        "why": "Jumping to a fix skips the feeling they shared, so they don’t feel heard."
+      },
+      {
+        "text": "So it’s not just the food, it’s feeling like you can’t speak up?",
+        "correct": true,
+        "reaction": "Exactly that. I always just swallow it.",
+        "why": "Reflecting the deeper feeling shows you were listening and helps them open up more."
+      },
+      {
+        "text": "Ugh, my old flatmate was way worse.",
+        "reaction": "Oh… okay.",
+        "why": "Switching to your story takes the spotlight off them just when they needed it."
+      }
+    ]
+  },
+  "comm-5": {
+    "kind": "match",
+    "prompt": "Match each slip with a quick repair.",
+    "pairs": [
+      { "a": "You snapped at them", "b": "“Sorry, that came out sharp.”" },
+      { "a": "You interrupted them", "b": "“Sorry, go on. I cut you off.”" },
+      { "a": "You rolled your eyes", "b": "“That was rude of me. Sorry.”" },
+      { "a": "You went quiet and sulked", "b": "“I went quiet. Can we reset?”" }
+    ],
+    "why": "Repairs work best when they’re quick and small. Naming the slip lightly stops it from turning into a bigger fight."
+  },
+  "trust-1": {
+    "kind": "sort",
+    "prompt": "A promise you can keep, or a risky one?",
+    "left": "Risky",
+    "right": "Keepable",
+    "cards": [
+      { "text": "“I’ll text you when I land.”", "side": "right" },
+      { "text": "“I’ll never be late again.”", "side": "left" },
+      { "text": "“I’ll call you tonight at eight.”", "side": "right" },
+      { "text": "“I’ll be there for absolutely everything.”", "side": "left" },
+      { "text": "“I’ll check and let you know by Friday.”", "side": "right" }
+    ],
+    "why": "Small, specific promises are easy to keep, and every one you keep adds to trust; sweeping ones are bound to slip."
+  },
+  "trust-2": {
+    "kind": "match",
+    "prompt": "Match each non-apology with a real one.",
+    "pairs": [
+      { "a": "“Sorry if you were upset.”", "b": "“I’m sorry I upset you.”" },
+      { "a": "“Sorry, but I was tired.”", "b": "“I’m sorry. No excuses.”" },
+      { "a": "“Mistakes were made.”", "b": "“I made a mistake.”" }
+    ],
+    "why": "A real apology owns your action plainly; “if”, “but” and vague wording all quietly shift the blame away."
+  },
+  "trust-3": {
+    "kind": "scene",
+    "title": "An off morning",
+    "them": "Your partner",
+    "lines": [
+      { "from": "them", "text": "You okay? You seemed really off this morning." },
+      { "from": "them", "text": "Did I do something? 😕" }
+    ],
+    "prompt": "You were stressed about work. Reply:",
+    "options": [
+      {
+        "text": "Sorry! Just stressed about a deadline, nothing you did. I’ll be better company tonight 💛",
+        "correct": true,
+        "reaction": "Phew, okay. Good luck with it! 💛",
+        "why": "Explaining your mood means they don’t have to guess, which is exactly what makes you feel safe to be around."
+      },
+      {
+        "text": "I’m fine.",
+        "reaction": "Okay… you didn’t seem fine.",
+        "why": "A short “fine” leaves them guessing and often worrying it was about them."
+      },
+      {
+        "text": "Why does everything have to be about you?",
+        "reaction": "Wow, I was just checking in.",
+        "why": "Taking the stress out on them makes your moods feel unpredictable and unsafe."
+      }
+    ]
+  },
+  "trust-4": {
+    "kind": "order",
+    "prompt": "Rebuilding trust. Put these in order.",
+    "items": [
+      "Apologise fully",
+      "Answer questions openly",
+      "Let them set the pace",
+      "Keep showing the change"
+    ],
+    "why": "The apology opens the door, but it’s openness, patience and repeated proof over time that actually rebuild trust."
+  },
+  "bound-1": {
+    "kind": "sort",
+    "prompt": "Within your limits, or past them?",
+    "left": "Past them",
+    "right": "Within",
+    "cards": [
+      { "text": "Saying yes and feeling fine about it", "side": "right" },
+      { "text": "Agreeing, then resenting it all week", "side": "left" },
+      { "text": "Helping and still having energy left", "side": "right" },
+      { "text": "Cancelling your own plans yet again", "side": "left" },
+      { "text": "Dreading their name on your phone", "side": "left" }
+    ],
+    "why": "Resentment, dread and always putting yourself last are signs you’ve gone past a limit and need to set one."
+  },
+  "bound-2": {
+    "kind": "scene",
+    "title": "Can I borrow it?",
+    "them": "Your friend",
+    "lines": [
+      { "from": "them", "text": "Can I borrow your car this weekend? 🙏" },
+      { "from": "them", "text": "I’ll be super careful, promise!" }
+    ],
+    "prompt": "You don’t lend your car. Reply:",
+    "options": [
+      {
+        "text": "Umm, maybe? Let me think about it…",
+        "reaction": "Great, I’ll pick up the keys Friday! 😄",
+        "why": "A soft maybe often gets heard as a yes, and then saying no gets harder."
+      },
+      {
+        "text": "Sorry, I just can’t, I’ve got so much on and the insurance and…",
+        "reaction": "What if I paid for petrol?",
+        "why": "Long excuses invite bargaining, because they sound like problems to be solved."
+      },
+      {
+        "text": "I don’t lend my car, but I could drop you at the station on Saturday?",
+        "correct": true,
+        "reaction": "Fair enough! A lift would be great, thanks 😊",
+        "why": "A clear, warm no with something you can offer keeps both the boundary and the friendship."
+      }
+    ]
+  },
+  "bound-3": {
+    "kind": "scene",
+    "title": "A late-night message",
+    "them": "Your friend",
+    "lines": [
+      { "from": "them", "text": "You up? 😩" },
+      { "from": "them", "text": "I really need to vent about my boss" }
+    ],
+    "prompt": "It’s 1am, and you asked them not to call this late. Reply:",
+    "options": [
+      {
+        "text": "Sure, call me.",
+        "reaction": "📞 Incoming call…",
+        "why": "Giving in teaches them the boundary doesn’t really count, and you’ll be exhausted tomorrow."
+      },
+      {
+        "text": "I care, and I want to hear it. I’m off to sleep now though. Lunch tomorrow?",
+        "correct": true,
+        "reaction": "Sorry, forgot the time! Lunch is perfect 💛",
+        "why": "You repeat the boundary calmly and kindly, and offer a time that works, so they still feel cared for."
+      },
+      {
+        "text": "Seriously?! I literally told you not to do this.",
+        "reaction": "Wow. Sorry for needing you.",
+        "why": "Holding the line is right, but the sharp tone turns it into a fight."
+      }
+    ]
+  },
+  "bound-4": {
+    "kind": "sort",
+    "prompt": "Respecting their no, or pushing it?",
+    "left": "Pushing",
+    "right": "Respecting",
+    "cards": [
+      { "text": "“Okay, enjoy your night in.”", "side": "right" },
+      { "text": "“But we never do anything!”", "side": "left" },
+      { "text": "Asking “Are you sure?” three times", "side": "left" },
+      { "text": "Suggesting another night instead", "side": "right" },
+      { "text": "Texting them all evening anyway", "side": "left" }
+    ],
+    "why": "Respecting a no means taking it the first time, without guilt-tripping or trying to wear them down."
+  },
+  "conf-1": {
+    "kind": "match",
+    "prompt": "Match each heated line with a cooler one.",
+    "pairs": [
+      { "a": "“You ALWAYS do this!”", "b": "“This keeps happening. It’s hard.”" },
+      { "a": "“Whatever.”", "b": "“I need a minute to think.”" },
+      { "a": "“Calm down!”", "b": "“Let’s both take a breath.”" }
+    ],
+    "why": "Cooler words describe the problem or ask for a pause instead of attacking, which keeps the argument from boiling over."
+  },
+  "conf-2": {
+    "kind": "sort",
+    "prompt": "Same team, or against each other?",
+    "left": "Against",
+    "right": "Same team",
+    "cards": [
+      { "text": "“How could we make this easier?”", "side": "right" },
+      { "text": "“You’re the messy one, not me.”", "side": "left" },
+      { "text": "“What would work for both of us?”", "side": "right" },
+      { "text": "Keeping score of who did what", "side": "left" },
+      { "text": "“Shall we try a rota for a week?”", "side": "right" }
+    ],
+    "why": "When you tackle the problem together instead of each other, you find solutions much faster."
+  },
+  "conf-3": {
+    "kind": "sort",
+    "prompt": "Fighting fair, or foul?",
+    "left": "Foul",
+    "right": "Fair",
+    "cards": [
+      { "text": "Bringing up something from last year", "side": "left" },
+      { "text": "Sticking to the one issue", "side": "right" },
+      { "text": "Name-calling", "side": "left" },
+      { "text": "Taking turns to speak", "side": "right" },
+      { "text": "Days of silent treatment", "side": "left" }
+    ],
+    "why": "Fair fights stay on one issue and keep respect; foul moves win the moment but damage the relationship."
+  },
+  "conf-4": {
+    "kind": "order",
+    "prompt": "Finding a compromise. Put these in order.",
+    "items": [
+      "Say what matters most to you",
+      "Ask what matters most to them",
+      "Look for the overlap",
+      "Agree and try it out"
+    ],
+    "why": "Knowing what really matters to each of you shows where you can bend and where you can’t, so nobody loses."
+  },
+  "conn-1": {
+    "kind": "scene",
+    "title": "A small moment",
+    "them": "Your friend",
+    "lines": [
+      { "from": "them", "text": "omg the dog just stole an ENTIRE sandwich off my plate 😭" },
+      { "from": "them", "text": "I looked away for two seconds" }
+    ],
+    "prompt": "You’re busy, but you have ten seconds. Reply:",
+    "options": [
+      {
+        "text": "lol",
+        "reaction": "😅",
+        "why": "It’s a reply, but it doesn’t really turn towards the moment they wanted to share."
+      },
+      {
+        "text": "(You’ll reply later.)",
+        "reaction": "(Their message sits unread.)",
+        "why": "Small bids like this are easy to miss, but missing lots of them slowly builds distance."
+      },
+      {
+        "text": "NO 😂 the whole thing?? Send me a pic of the guilty face",
+        "correct": true,
+        "reaction": "[photo] zero regrets 😂",
+        "why": "Ten seconds of real interest turns a tiny bid into a shared moment, which is how closeness grows."
+      }
+    ]
+  },
+  "conn-2": {
+    "kind": "match",
+    "prompt": "Match each closed question with a deeper one.",
+    "pairs": [
+      { "a": "“Good day?”", "b": "“What was the best bit of today?”" },
+      { "a": "“Did you like the film?”", "b": "“What stuck with you from it?”" },
+      { "a": "“Are you okay?”", "b": "“How are you really feeling?”" },
+      { "a": "“Busy week?”", "b": "“What’s taking your energy lately?”" }
+    ],
+    "why": "Open, specific questions invite stories and feelings, not just a one-word answer, so the talk can go deeper."
+  },
+  "conn-3": {
+    "kind": "order",
+    "prompt": "Starting a ritual. Put these in order.",
+    "items": [
+      "Pick something small",
+      "Choose a regular time",
+      "Start this week",
+      "Keep it going when busy"
+    ],
+    "why": "Small rituals at a set time are easy to start and hard to drop, which is exactly what keeps people close."
+  },
+  "conn-4": {
+    "kind": "scene",
+    "title": "A favour at work",
+    "them": "Jess (colleague)",
+    "lines": [
+      { "from": "them", "text": "Btw I fixed the formulas in your spreadsheet 🙂" },
+      { "from": "them", "text": "They were all pointing at the old tab" }
+    ],
+    "prompt": "It saved you hours before a deadline. Reply:",
+    "options": [
+      {
+        "text": "thx",
+        "reaction": "np",
+        "why": "A quick thanks is polite, but it doesn’t show her what the help really meant."
+      },
+      {
+        "text": "You legend! That saved me hours before Friday’s deadline. Thank you 🙌",
+        "correct": true,
+        "reaction": "Aw, happy to help! 😊",
+        "why": "Specific thanks, naming what she did and why it mattered, is the kind people remember."
+      },
+      {
+        "text": "Oh, I was going to get round to that.",
+        "reaction": "Oh. Okay, sorry.",
+        "why": "Brushing it off can make kindness feel unwelcome, so it’s less likely to happen again."
+      }
+    ]
+  },
+  "list-1": {
+    "kind": "order",
+    "prompt": "Giving full attention. Put these in order.",
+    "items": [
+      "Put your phone face down",
+      "Turn to face them",
+      "Let them finish talking",
+      "Ask a follow-up question"
+    ],
+    "why": "Clearing distractions and facing them shows you’re there; letting them finish and following up proves it."
+  },
+  "list-2": {
+    "kind": "scene",
+    "title": "Feeling stuck",
+    "them": "Your friend",
+    "lines": [
+      { "from": "them", "text": "I don’t know. I just feel stuck in my job." },
+      { "from": "them", "text": "Everyone else seems to be moving on with their lives." }
+    ],
+    "prompt": "Reflect it back. Which reply?",
+    "options": [
+      {
+        "text": "Sounds like you’re feeling left behind while others move forward. Is that it?",
+        "correct": true,
+        "reaction": "Yeah… that’s exactly it. It’s been eating at me.",
+        "why": "You put their feeling into words and checked it, which helps them feel understood and say more."
+      },
+      {
+        "text": "You should update your CV this weekend!",
+        "reaction": "Maybe. I don’t know.",
+        "why": "Advice can wait. First they need to feel you’ve understood what they’re going through."
+      },
+      {
+        "text": "Everyone feels like that sometimes.",
+        "reaction": "I guess…",
+        "why": "It’s meant kindly, but it shrinks their feeling instead of reflecting it."
+      }
+    ]
+  },
+  "list-3": {
+    "kind": "match",
+    "prompt": "Match each feeling with a validating reply.",
+    "pairs": [
+      { "a": "“I’m so annoyed with her.”", "b": "“I’d be annoyed too.”" },
+      { "a": "“I feel silly for crying.”", "b": "“Crying makes total sense.”" },
+      { "a": "“I’m dreading Monday.”", "b": "“That sounds like a lot.”" },
+      { "a": "“I really miss home.”", "b": "“Of course you miss it.”" }
+    ],
+    "why": "Validating says the feeling makes sense. You don’t have to agree or fix anything for it to help."
+  },
+  "list-4": {
+    "kind": "sort",
+    "prompt": "Support, or fixing?",
+    "left": "Fixing",
+    "right": "Support",
+    "cards": [
+      { "text": "“Have you thought about just quitting?”", "side": "left" },
+      { "text": "“That sounds so frustrating.”", "side": "right" },
+      { "text": "“Do you want advice, or just to vent?”", "side": "right" },
+      { "text": "“Here’s what you should do…”", "side": "left" },
+      { "text": "Staying with them while they talk", "side": "right" }
+    ],
+    "why": "Often people need to feel supported before they want solutions, so asking what they need is a good start."
+  }
+}

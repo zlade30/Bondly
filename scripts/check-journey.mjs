@@ -27,7 +27,8 @@ const max = (where, value, limit) => {
   else if (value.length > limit) say(where, `too long (${value.length}/${limit} characters)`);
 };
 const quotes = (where, value) => {
-  if (typeof value === 'string' && /['"]/.test(value)) warnings.push(`${where}: straight quote or apostrophe (use ’ “ ”)`);
+  if (typeof value === 'string' && /['"]/.test(value))
+    warnings.push(`${where}: straight quote or apostrophe (use ’ “ ”)`);
 };
 
 let data;
@@ -36,6 +37,35 @@ try {
 } catch (e) {
   console.error(`Not valid JSON: ${e.message}`);
   process.exit(1);
+}
+
+// A skill-course activities file maps lesson id -> one mini-game step.
+if (!Array.isArray(data.lessons)) {
+  const ACTIVITY_KINDS = ['scene', 'sort', 'match', 'order'];
+  const seen = new Map();
+  const scenePositions = new Set();
+  for (const [id, step] of Object.entries(data)) {
+    if (!ACTIVITY_KINDS.includes(step?.kind)) {
+      say(id, `kind must be one of ${ACTIVITY_KINDS.join(', ')}`);
+      continue;
+    }
+    checkStep(step, `${id} (${step.kind})`, false);
+    for (const t of [step.why, ...(step.options ?? []).map((o) => o?.why)]) {
+      if (typeof t !== 'string' || t.length < 25) continue;
+      if (seen.has(t)) say(id, `repeats text from ${seen.get(t)}`);
+      else seen.set(t, id);
+    }
+    if (step.kind === 'scene') scenePositions.add(step.options.findIndex((o) => o?.correct));
+  }
+  if (scenePositions.size === 1) say('scenes', 'the correct reply is always in the same position; vary it');
+  for (const w of warnings) console.log(`⚠︎ ${w}`);
+  if (problems.length) {
+    console.log(`\n✗ ${problems.length} problem(s) in ${file}:`);
+    for (const p of problems) console.log(`  • ${p}`);
+    process.exit(1);
+  }
+  console.log(`✓ ${file} looks good: ${Object.keys(data).length} activities.`);
+  process.exit(0);
 }
 
 if (!RELATIONSHIPS.includes(data.relationship)) say('relationship', `must be one of ${RELATIONSHIPS.join(', ')}`);
@@ -68,115 +98,116 @@ lessons.forEach((lesson, li) => {
   if (steps.at(-1)?.kind !== 'try') say(at, 'must end with a "try" step');
   if (steps.filter((s) => s.kind === 'write').length > 1) say(at, 'at most one "write" step');
 
-  steps.forEach((step, si) => {
-    const where = `${at} step ${si + 1} (${step.kind})`;
-    for (const value of Object.values(step)) quotes(where, value);
-    switch (step.kind) {
-      case 'read':
-        max(`${where} title`, step.title, 45);
-        max(`${where} body`, step.body, 220);
-        if (!MOODS.includes(step.mood)) say(where, `mood must be one of ${MOODS.join(', ')}`);
-        break;
-      case 'choice': {
-        max(`${where} prompt`, step.prompt, 160);
-        const options = Array.isArray(step.options) ? step.options : [];
-        if (options.length !== 3) say(where, `needs 3 options, found ${options.length}`);
-        const correct = options.filter((o) => o.correct === true).length;
-        if (correct !== 1) say(where, `needs exactly one correct option, found ${correct}`);
-        options.forEach((o, oi) => {
-          max(`${where} option ${oi + 1} text`, o.text, 90);
-          max(`${where} option ${oi + 1} why`, o.why, 110);
-          quotes(`${where} option ${oi + 1}`, o.text);
-          quotes(`${where} option ${oi + 1}`, o.why);
-        });
-        break;
-      }
-      case 'blank':
-        max(`${where} prompt`, step.prompt, 40);
-        max(`${where} why`, step.why, 110);
-        if (typeof step.before !== 'string' || typeof step.after !== 'string') say(where, 'needs "before" and "after"');
-        if (!Array.isArray(step.words) || step.words.length !== 3) say(where, 'needs 3 words');
-        else if (!step.words.includes(step.answer)) say(where, '"answer" must be one of "words"');
-        break;
-      case 'reflect':
-        max(`${where} prompt`, step.prompt, 90);
-        max(`${where} reply`, step.reply, 110);
-        if (!Array.isArray(step.options) || step.options.length < 3 || step.options.length > 4)
-          say(where, 'needs 3 or 4 options');
-        else step.options.forEach((o, oi) => max(`${where} option ${oi + 1}`, o, 30));
-        break;
-      case 'write':
-        max(`${where} prompt`, step.prompt, 90);
-        max(`${where} placeholder`, step.placeholder, 60);
-        break;
-      case 'scene': {
-        max(`${where} title`, step.title, 40);
-        max(`${where} them`, step.them, 24);
-        max(`${where} prompt`, step.prompt, 60);
-        const lines = Array.isArray(step.lines) ? step.lines : [];
-        if (lines.length < 2 || lines.length > 5) say(where, `needs 2–5 chat lines, found ${lines.length}`);
-        lines.forEach((l, i) => {
-          if (l.from !== 'them' && l.from !== 'you') say(where, `line ${i + 1} "from" must be "them" or "you"`);
-          max(`${where} line ${i + 1}`, l.text, 120);
-          quotes(`${where} line ${i + 1}`, l.text);
-        });
-        const options = Array.isArray(step.options) ? step.options : [];
-        if (options.length !== 3) say(where, `needs 3 reply options, found ${options.length}`);
-        if (options.filter((o) => o.correct === true).length !== 1) say(where, 'needs exactly one correct reply');
-        options.forEach((o, oi) => {
-          max(`${where} option ${oi + 1} text`, o.text, 90);
-          max(`${where} option ${oi + 1} reaction`, o.reaction, 100);
-          max(`${where} option ${oi + 1} why`, o.why, 110);
-          for (const t of [o.text, o.reaction, o.why]) quotes(`${where} option ${oi + 1}`, t);
-        });
-        break;
-      }
-      case 'sort': {
-        max(`${where} prompt`, step.prompt, 60);
-        max(`${where} left`, step.left, 14);
-        max(`${where} right`, step.right, 14);
-        max(`${where} why`, step.why, 140);
-        const cards = Array.isArray(step.cards) ? step.cards : [];
-        if (cards.length < 4 || cards.length > 6) say(where, `needs 4–6 cards, found ${cards.length}`);
-        const sides = new Set(cards.map((c) => c.side));
-        if (!sides.has('left') || !sides.has('right')) say(where, 'cards must use both sides');
-        cards.forEach((c, i) => {
-          max(`${where} card ${i + 1}`, c.text, 70);
-          quotes(`${where} card ${i + 1}`, c.text);
-        });
-        break;
-      }
-      case 'match': {
-        max(`${where} prompt`, step.prompt, 60);
-        max(`${where} why`, step.why, 140);
-        const pairs = Array.isArray(step.pairs) ? step.pairs : [];
-        if (pairs.length < 3 || pairs.length > 4) say(where, `needs 3–4 pairs, found ${pairs.length}`);
-        pairs.forEach((p, i) => {
-          max(`${where} pair ${i + 1} a`, p.a, 40);
-          max(`${where} pair ${i + 1} b`, p.b, 40);
-          quotes(`${where} pair ${i + 1}`, p.a);
-          quotes(`${where} pair ${i + 1}`, p.b);
-        });
-        break;
-      }
-      case 'order': {
-        max(`${where} prompt`, step.prompt, 60);
-        max(`${where} why`, step.why, 140);
-        const items = Array.isArray(step.items) ? step.items : [];
-        if (items.length < 3 || items.length > 5) say(where, `needs 3–5 items, found ${items.length}`);
-        if (new Set(items).size !== items.length) say(where, 'items must all be different');
-        items.forEach((t, i) => max(`${where} item ${i + 1}`, t, 40));
-        break;
-      }
-      case 'try':
-        max(`${where} body`, step.body, 140);
-        if (si !== steps.length - 1) say(where, '"try" must be the last step');
-        break;
-      default:
-        say(where, `unknown step kind "${step.kind}"`);
-    }
-  });
+  steps.forEach((step, si) => checkStep(step, `${at} step ${si + 1} (${step.kind})`, si === steps.length - 1));
 });
+
+function checkStep(step, where, isLast) {
+  for (const value of Object.values(step)) quotes(where, value);
+  switch (step.kind) {
+    case 'read':
+      max(`${where} title`, step.title, 45);
+      max(`${where} body`, step.body, 220);
+      if (!MOODS.includes(step.mood)) say(where, `mood must be one of ${MOODS.join(', ')}`);
+      break;
+    case 'choice': {
+      max(`${where} prompt`, step.prompt, 160);
+      const options = Array.isArray(step.options) ? step.options : [];
+      if (options.length !== 3) say(where, `needs 3 options, found ${options.length}`);
+      const correct = options.filter((o) => o.correct === true).length;
+      if (correct !== 1) say(where, `needs exactly one correct option, found ${correct}`);
+      options.forEach((o, oi) => {
+        max(`${where} option ${oi + 1} text`, o.text, 90);
+        max(`${where} option ${oi + 1} why`, o.why, 110);
+        quotes(`${where} option ${oi + 1}`, o.text);
+        quotes(`${where} option ${oi + 1}`, o.why);
+      });
+      break;
+    }
+    case 'blank':
+      max(`${where} prompt`, step.prompt, 40);
+      max(`${where} why`, step.why, 110);
+      if (typeof step.before !== 'string' || typeof step.after !== 'string') say(where, 'needs "before" and "after"');
+      if (!Array.isArray(step.words) || step.words.length !== 3) say(where, 'needs 3 words');
+      else if (!step.words.includes(step.answer)) say(where, '"answer" must be one of "words"');
+      break;
+    case 'reflect':
+      max(`${where} prompt`, step.prompt, 90);
+      max(`${where} reply`, step.reply, 110);
+      if (!Array.isArray(step.options) || step.options.length < 3 || step.options.length > 4)
+        say(where, 'needs 3 or 4 options');
+      else step.options.forEach((o, oi) => max(`${where} option ${oi + 1}`, o, 30));
+      break;
+    case 'write':
+      max(`${where} prompt`, step.prompt, 90);
+      max(`${where} placeholder`, step.placeholder, 60);
+      break;
+    case 'scene': {
+      max(`${where} title`, step.title, 40);
+      max(`${where} them`, step.them, 24);
+      max(`${where} prompt`, step.prompt, 60);
+      const lines = Array.isArray(step.lines) ? step.lines : [];
+      if (lines.length < 2 || lines.length > 5) say(where, `needs 2–5 chat lines, found ${lines.length}`);
+      lines.forEach((l, i) => {
+        if (l.from !== 'them' && l.from !== 'you') say(where, `line ${i + 1} "from" must be "them" or "you"`);
+        max(`${where} line ${i + 1}`, l.text, 120);
+        quotes(`${where} line ${i + 1}`, l.text);
+      });
+      const options = Array.isArray(step.options) ? step.options : [];
+      if (options.length !== 3) say(where, `needs 3 reply options, found ${options.length}`);
+      if (options.filter((o) => o.correct === true).length !== 1) say(where, 'needs exactly one correct reply');
+      options.forEach((o, oi) => {
+        max(`${where} option ${oi + 1} text`, o.text, 90);
+        max(`${where} option ${oi + 1} reaction`, o.reaction, 100);
+        max(`${where} option ${oi + 1} why`, o.why, 110);
+        for (const t of [o.text, o.reaction, o.why]) quotes(`${where} option ${oi + 1}`, t);
+      });
+      break;
+    }
+    case 'sort': {
+      max(`${where} prompt`, step.prompt, 60);
+      max(`${where} left`, step.left, 14);
+      max(`${where} right`, step.right, 14);
+      max(`${where} why`, step.why, 140);
+      const cards = Array.isArray(step.cards) ? step.cards : [];
+      if (cards.length < 4 || cards.length > 6) say(where, `needs 4–6 cards, found ${cards.length}`);
+      const sides = new Set(cards.map((c) => c.side));
+      if (!sides.has('left') || !sides.has('right')) say(where, 'cards must use both sides');
+      cards.forEach((c, i) => {
+        max(`${where} card ${i + 1}`, c.text, 70);
+        quotes(`${where} card ${i + 1}`, c.text);
+      });
+      break;
+    }
+    case 'match': {
+      max(`${where} prompt`, step.prompt, 60);
+      max(`${where} why`, step.why, 140);
+      const pairs = Array.isArray(step.pairs) ? step.pairs : [];
+      if (pairs.length < 3 || pairs.length > 4) say(where, `needs 3–4 pairs, found ${pairs.length}`);
+      pairs.forEach((p, i) => {
+        max(`${where} pair ${i + 1} a`, p.a, 40);
+        max(`${where} pair ${i + 1} b`, p.b, 40);
+        quotes(`${where} pair ${i + 1}`, p.a);
+        quotes(`${where} pair ${i + 1}`, p.b);
+      });
+      break;
+    }
+    case 'order': {
+      max(`${where} prompt`, step.prompt, 60);
+      max(`${where} why`, step.why, 140);
+      const items = Array.isArray(step.items) ? step.items : [];
+      if (items.length < 3 || items.length > 5) say(where, `needs 3–5 items, found ${items.length}`);
+      if (new Set(items).size !== items.length) say(where, 'items must all be different');
+      items.forEach((t, i) => max(`${where} item ${i + 1}`, t, 40));
+      break;
+    }
+    case 'try':
+      max(`${where} body`, step.body, 140);
+      if (!isLast) say(where, '"try" must be the last step');
+      break;
+    default:
+      say(where, `unknown step kind "${step.kind}"`);
+  }
+}
 
 // Template filler: the same sentence reused across lessons, generic feedback,
 // or a scene-setting step that only repeats the question after it.
@@ -225,4 +256,6 @@ if (problems.length) {
   for (const p of problems) console.log(`  • ${p}`);
   process.exit(1);
 }
-console.log(`✓ ${file} looks good: ${lessons.length} lessons, ${usedFocus.size}/6 skills${warnings.length ? `, ${warnings.length} quote warning(s)` : ''}.`);
+console.log(
+  `✓ ${file} looks good: ${lessons.length} lessons, ${usedFocus.size}/6 skills${warnings.length ? `, ${warnings.length} quote warning(s)` : ''}.`
+);
