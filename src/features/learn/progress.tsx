@@ -19,13 +19,16 @@ export type ProgressState = {
   checkIns: Record<string, Mood>;
   /** Days (YYYY-MM-DD) on which a lesson was finished, including replays. */
   lessonDays: string[];
+  /** Best XP earned in each lesson, keyed by lesson id. Replays keep the best score. */
+  lessonXp: Record<string, number>;
 };
 
-const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [] };
+const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [], lessonXp: {} };
 
 type ProgressContextValue = ProgressState & {
   ready: boolean;
-  completeLesson: (lessonId: string) => void;
+  /** Marks a lesson done and keeps its best XP. */
+  completeLesson: (lessonId: string, xp?: number) => void;
   checkIn: (mood: Mood) => void;
   todayCheckIn: Mood | undefined;
   /** The whole state, as saved and synced. */
@@ -68,10 +71,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     if (ready) AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(state)).catch(() => {});
   }, [ready, state]);
 
-  const completeLesson = useCallback((lessonId: string) => {
+  const completeLesson = useCallback((lessonId: string, xp = 0) => {
     const day = todayKey();
     setState((prev) => ({
       ...prev,
+      lessonXp: { ...prev.lessonXp, [lessonId]: Math.max(prev.lessonXp[lessonId] ?? 0, xp) },
       completedLessons: prev.completedLessons.includes(lessonId)
         ? prev.completedLessons
         : [...prev.completedLessons, lessonId],

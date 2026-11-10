@@ -1,6 +1,7 @@
 import type { BondlingColor, BondlingMood, BondlingProp } from '@/components/bondly/mascot';
-import type { FocusArea } from '@/features/onboarding/content';
+import type { FocusArea, RelationshipGoal } from '@/features/onboarding/content';
 
+import { JOURNEYS } from './journeys';
 import { isPlayable } from './lessons';
 
 export type Lesson = {
@@ -8,10 +9,18 @@ export type Lesson = {
   title: string;
   minutes: number;
   summary: string;
+  /** For journey lessons: the skill it practises. */
+  focus?: FocusArea;
 };
 
 export type Course = {
-  id: FocusArea;
+  /** A focus area for skill courses, or "journey-<relationship>" for journeys. */
+  id: string;
+  /** Skill courses teach one skill; journeys follow one relationship. Defaults to skill. */
+  kind?: 'skill' | 'journey';
+  relationship?: RelationshipGoal;
+  /** Journeys only: who it's for and what they'll gain. */
+  intro?: string;
   title: string;
   tint: string;
   mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp };
@@ -98,28 +107,48 @@ export const COURSES: Course[] = [
   },
 ];
 
+/** Every course: relationship journeys first, then the skill courses. */
+export const ALL_COURSES: Course[] = [...JOURNEYS, ...COURSES];
+
+export function findCourse(courseId: string) {
+  return ALL_COURSES.find((c) => c.id === courseId) ?? null;
+}
+
+/** The journey for the relationship someone chose in onboarding, if it exists yet. */
+export function journeyFor(goal: RelationshipGoal | null) {
+  return goal ? (JOURNEYS.find((j) => j.relationship === goal) ?? null) : null;
+}
+
+/** Journeys for the other relationships, to explore. */
+export function otherJourneys(goal: RelationshipGoal | null) {
+  return JOURNEYS.filter((j) => j.relationship !== goal);
+}
+
 export function findLesson(lessonId: string) {
-  for (const course of COURSES) {
+  for (const course of ALL_COURSES) {
     const lesson = course.lessons.find((l) => l.id === lessonId);
     if (lesson) return { course, lesson };
   }
   return null;
 }
 
-/** Courses ordered with the person's chosen focus areas first. */
+/** Skill courses ordered with the person's chosen focus areas first. */
 export function orderedCourses(focus: FocusArea[]) {
   const chosen = focus
     .map((f) => COURSES.find((c) => c.id === f))
     .filter((c): c is Course => !!c);
-  return [...chosen, ...COURSES.filter((c) => !focus.includes(c.id))];
+  return [...chosen, ...COURSES.filter((c) => !(focus as string[]).includes(c.id))];
 }
 
 /**
- * The first unfinished lesson in the person's course order, preferring
- * lessons that already have content so "Today's lesson" is always playable.
+ * The next lesson to suggest: the person's relationship journey comes first,
+ * in order; once it's finished (or if it doesn't exist yet), the skill
+ * courses follow, focus areas first. Prefers lessons that have content, so
+ * "Today's lesson" is always playable.
  */
-export function todaysLesson(focus: FocusArea[], completed: string[]) {
-  const courses = orderedCourses(focus);
+export function todaysLesson(focus: FocusArea[], completed: string[], goal: RelationshipGoal | null = null) {
+  const journey = journeyFor(goal);
+  const courses = journey ? [journey, ...orderedCourses(focus)] : orderedCourses(focus);
   for (const playableOnly of [true, false]) {
     for (const course of courses) {
       const lesson = course.lessons.find(

@@ -1,0 +1,907 @@
+{
+  "relationship": "partner",
+  "journeyTitle": "Grow Closer Together",
+  "journeyIntro": "For people sharing love and everyday life. Practise speaking openly, handling disagreements and staying close.",
+  "lessons": [
+    {
+      "id": "partner-1",
+      "title": "A Softer Start",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Bring up the little things without blame.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The first line sets the tone",
+          "body": "How a conversation begins often decides how it ends. Open with blame and your partner is busy defending themselves before they’ve even heard the request.",
+          "mood": "curious"
+        },
+        {
+          "kind": "read",
+          "title": "Try a soft start-up",
+          "body": "Say what happened, how it left you feeling and what you’d like. “The sink’s full and I’m wiped out. Could you do the dishes tonight?”",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner has left the dinner dishes again and you’re exhausted. Which opening is most likely to get help?",
+          "options": [
+            {
+              "text": "“You never help with anything.”",
+              "why": "“Never” turns one evening into a verdict on them, so they defend themselves instead of helping."
+            },
+            {
+              "text": "“I’m wiped out and the sink’s full. Could you take the dishes tonight?”",
+              "correct": true,
+              "why": "It names the situation and your need, and gives them something easy to say yes to."
+            },
+            {
+              "text": "Wash everything in silence and stew about it.",
+              "why": "It keeps the peace tonight, but resentment builds and they have no idea anything’s wrong."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Swap blame for a feeling.",
+          "before": "I feel",
+          "after": "when the dishes pile up after dinner.",
+          "words": [
+            "like you don’t care",
+            "taken for granted by you",
+            "drained"
+          ],
+          "answer": "drained",
+          "why": "It describes your state without guessing at their motives, which keeps the door open."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When something small bugs you at home, what do you usually do first?",
+          "options": [
+            "Say it straight away",
+            "Drop hints",
+            "Let it build up",
+            "Keep it to myself"
+          ],
+          "reply": "Knowing your habit helps you catch it next time and reach for a softer opening."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Harsh start or soft start?",
+          "left": "Harsh",
+          "right": "Soft",
+          "cards": [
+            {
+              "text": "“You never think about anyone but yourself.”",
+              "side": "left"
+            },
+            {
+              "text": "“I’m feeling stretched. Could we split tonight’s jobs?”",
+              "side": "right"
+            },
+            {
+              "text": "“Typical. I knew you’d forget.”",
+              "side": "left"
+            },
+            {
+              "text": "“Can I ask for something small that would really help?”",
+              "side": "right"
+            },
+            {
+              "text": "Sighing loudly and slamming cupboards",
+              "side": "left"
+            }
+          ],
+          "why": "A soft start names your feeling and asks for something specific; a harsh one attacks, and the talk goes downhill from there."
+        },
+        {
+          "kind": "try",
+          "body": "Next time something small bothers you, start with what happened and what you’d like, not what they “always” do."
+        }
+      ]
+    },
+    {
+      "id": "partner-2",
+      "title": "Hear the Feeling",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Listen for what matters beneath the words.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Facts on top, feelings underneath",
+          "body": "When your partner vents about their day, the details matter less than how it left them feeling. That’s the part they most want you to catch.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner walks in and says, “Today was a nightmare.” What’s the best first response?",
+          "options": [
+            {
+              "text": "“That sounds exhausting. Want to tell me about it?”",
+              "correct": true,
+              "why": "It names the feeling and invites them in, without steering the conversation anywhere."
+            },
+            {
+              "text": "“Mine was worse, honestly.”",
+              "why": "Comparing days turns their moment into a contest, and they’re likely to stop sharing."
+            },
+            {
+              "text": "“Well, at least it’s over now.”",
+              "why": "Meant kindly, but it hurries past the feeling before they’ve had a chance to say it."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Name it, then wait",
+          "body": "Offer a feeling word: “frustrating”, “lonely”, “a lot”. If you guess wrong they’ll correct you, and that still helps them feel heard.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reflect the feeling back.",
+          "before": "It sounds like today was really",
+          "after": ". What happened?",
+          "words": [
+            "draining",
+            "your own fault",
+            "not that bad"
+          ],
+          "answer": "draining",
+          "why": "A guess at their feeling shows you’re tuned in; the other two judge it or shrink it."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When your partner is upset, what’s your first instinct?",
+          "options": [
+            "Fix the problem",
+            "Cheer them up",
+            "Share my own story",
+            "Just listen"
+          ],
+          "reply": "Every one of those comes from care. Leading with listening just helps the rest land better."
+        },
+        {
+          "kind": "scene",
+          "title": "A cancelled birthday",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "My sister just cancelled my birthday dinner. Again."
+            },
+            {
+              "from": "them",
+              "text": "Third year running 🙃"
+            }
+          ],
+          "prompt": "What do you send back?",
+          "options": [
+            {
+              "text": "Don’t let it get to you, she’s always been like that.",
+              "reaction": "Yeah… I guess.",
+              "why": "It brushes the hurt aside, so they’re left feeling it alone."
+            },
+            {
+              "text": "Oh love, that really stings, especially three years in a row. I’m sorry. 💛",
+              "correct": true,
+              "reaction": "It really does. Thank you for getting it.",
+              "why": "You named the feeling and why it makes sense, which is what helps someone feel heard."
+            },
+            {
+              "text": "Want me to book somewhere for just us two instead?",
+              "reaction": "Maybe… I’m still just annoyed though.",
+              "why": "A kind idea, but jumping to fix it skips the part where they feel understood."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Tonight, when your partner tells you about their day, name the feeling you hear before offering anything else."
+        }
+      ]
+    },
+    {
+      "id": "partner-3",
+      "title": "Tiny Moments Matter",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Notice everyday invitations to connect.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Small bids, big signals",
+          "body": "“Look at that!” “Guess what happened?” These little invitations are called bids. How you answer them, day after day, shapes how close you feel.",
+          "mood": "curious"
+        },
+        {
+          "kind": "read",
+          "title": "Three ways to answer",
+          "body": "You can turn towards a bid (respond), turn away (miss it) or turn against it (snap). Turning towards often takes just a few seconds.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "On a walk, your partner points out a ridiculous-looking bird. Which response turns towards the bid?",
+          "options": [
+            {
+              "text": "Keep scrolling and say, “Mm-hm.”",
+              "why": "One missed bid feels tiny, but lots of them add up to feeling alone together."
+            },
+            {
+              "text": "“Take a photo, I’ll look later.”",
+              "why": "It postpones the moment, and by later the shared fun of it has gone."
+            },
+            {
+              "text": "Stop, look and laugh: “It looks so grumpy!”",
+              "correct": true,
+              "why": "A few seconds of shared attention tells them their small moments matter to you."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which bids from your partner are easiest for you to miss?",
+          "options": [
+            "Small talk",
+            "Jokes or memes",
+            "Sighs or quiet moods",
+            "A touch or hug"
+          ],
+          "reply": "Spotting your blind spot makes those bids much easier to catch this week."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each bid with a way to turn towards it.",
+          "pairs": [
+            {
+              "a": "“Look at this sunset!”",
+              "b": "Stop and look with them"
+            },
+            {
+              "a": "“Ugh, my back aches.”",
+              "b": "Offer a quick shoulder rub"
+            },
+            {
+              "a": "A sigh while reading the news",
+              "b": "“What’s up? Bad news?”"
+            },
+            {
+              "a": "A funny meme sent at lunch",
+              "b": "A reply that shows you laughed"
+            }
+          ],
+          "why": "Bids are small reaches for attention. Turning towards them, even briefly, is what builds closeness over time."
+        },
+        {
+          "kind": "try",
+          "body": "Notice the small bids your partner makes today, and turn towards at least three of them."
+        }
+      ]
+    },
+    {
+      "id": "partner-4",
+      "title": "Say What You Need",
+      "minutes": 5,
+      "focus": "boundaries",
+      "summary": "Make room for closeness and personal space.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Needing space isn’t rejection",
+          "body": "Wanting quiet after a long day doesn’t mean you love your partner any less. Saying so clearly protects both your energy and your closeness.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re drained and need quiet, but your partner wants to talk the moment you get home. What helps most?",
+          "options": [
+            {
+              "text": "Push through the chat while getting more irritable.",
+              "why": "They’ll feel the irritation without knowing why, and the chat goes worse for you both."
+            },
+            {
+              "text": "Head to another room without a word.",
+              "why": "Silence leaves them guessing, and many people read it as you being upset with them."
+            },
+            {
+              "text": "“I want to hear it. Can I have 20 minutes to recharge first?”",
+              "correct": true,
+              "why": "It shows you care, names your need and gives a clear time, so it doesn’t feel like a brush-off."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Add a bridge back",
+          "body": "The kindest boundaries come with a plan to reconnect: “I need an hour to myself, then let’s cook together.” Space feels safer when it has an end.",
+          "mood": "curious"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Add the bridge back.",
+          "before": "I need some quiet time,",
+          "after": ".",
+          "words": [
+            "so leave me alone",
+            "then I’m all yours",
+            "because you’re a lot"
+          ],
+          "answer": "then I’m all yours",
+          "why": "It pairs your need with a promise to return, so your partner feels included, not shut out."
+        },
+        {
+          "kind": "write",
+          "prompt": "What do you need more of at home, and how could you ask for it?",
+          "placeholder": "I’d love a bit more…"
+        },
+        {
+          "kind": "order",
+          "prompt": "Asking for quiet time. Put these in order.",
+          "items": [
+            "Notice you’re running low",
+            "Say what you need, kindly",
+            "Say how long you need",
+            "Plan time together after"
+          ],
+          "why": "Spotting it early lets you ask calmly; a time limit and a plan to reconnect show it’s about rest, not distance."
+        },
+        {
+          "kind": "try",
+          "body": "Name one need to your partner today, and say when you’ll reconnect afterwards."
+        }
+      ]
+    },
+    {
+      "id": "partner-5",
+      "title": "Build Everyday Trust",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Let reliability grow through small promises.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Trust grows in small deposits",
+          "body": "Trust comes less from grand gestures and more from ordinary reliability: being where you said, doing what you said and owning it when you don’t.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You promised to book the dentist for you both, then forgot. Your partner asks about it. What builds trust?",
+          "options": [
+            {
+              "text": "“It’s not a big deal, it can wait.”",
+              "why": "It may feel small to you, but brushing it off tells them their reminders don’t count."
+            },
+            {
+              "text": "“I forgot, I’m sorry. I’ll book it on my lunch break today.”",
+              "correct": true,
+              "why": "Owning it and naming a specific fix shows you can be relied on, even when you slip."
+            },
+            {
+              "text": "“The booking site wasn’t working.”",
+              "why": "Small excuses feel harmless, but if they’re found out, trust takes a much bigger hit."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make a promise you can keep.",
+          "before": "I’ll",
+          "after": "by Friday.",
+          "words": [
+            "maybe try to look",
+            "sort the booking",
+            "fix everything"
+          ],
+          "answer": "sort the booking",
+          "why": "Specific and realistic beats vague or over-ambitious, and it’s easy to see you did it."
+        },
+        {
+          "kind": "read",
+          "title": "Trust is never about fear",
+          "body": "Healthy relationships never involve fear, control or harm. If something in yours feels unsafe, talking to someone you trust or a local support line can help.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which kind of promise do you find hardest to keep?",
+          "options": [
+            "Time and plans",
+            "Chores",
+            "Money",
+            "Replying to messages"
+          ],
+          "reply": "That’s a good place to start: one smaller, clearer promise in that area builds trust fastest."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Builds trust or chips away at it?",
+          "left": "Chips away",
+          "right": "Builds",
+          "cards": [
+            {
+              "text": "Doing what you said, even small things",
+              "side": "right"
+            },
+            {
+              "text": "“I’ll do it later” that never happens",
+              "side": "left"
+            },
+            {
+              "text": "Telling them early when plans change",
+              "side": "right"
+            },
+            {
+              "text": "Hiding a small purchase to avoid a talk",
+              "side": "left"
+            },
+            {
+              "text": "Owning it when you get it wrong",
+              "side": "right"
+            }
+          ],
+          "why": "Trust grows from many small moments of keeping your word and being honest, especially when it’s awkward."
+        },
+        {
+          "kind": "try",
+          "body": "Keep one small promise today exactly as you said, or give an honest update before it’s due."
+        }
+      ]
+    },
+    {
+      "id": "partner-6",
+      "title": "Pause the Argument",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Cool down without abandoning the conversation.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "When the heat takes over",
+          "body": "In a heated argument your heart races and listening gets harder. Pushing on rarely helps; a short, agreed pause usually does.",
+          "mood": "upset"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re arguing about money and your voices are rising. What’s the most helpful move?",
+          "options": [
+            {
+              "text": "“I’m getting worked up. Can we take 20 minutes and come back?”",
+              "correct": true,
+              "why": "It owns your state, sets a time and promises to return, so it’s a pause rather than an escape."
+            },
+            {
+              "text": "Walk out and say you’re done talking about it.",
+              "why": "Leaving with no return time can feel like abandonment, and the issue stays unsolved."
+            },
+            {
+              "text": "Keep arguing until one of you gives in.",
+              "why": "Someone may give in, but nobody feels understood, and the same fight tends to come back."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Use the break well",
+          "body": "Do something calming, like a walk or some music, rather than replaying the argument in your head. Then come back when you said you would.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the pause feel safe.",
+          "before": "Let’s take a break and",
+          "after": ".",
+          "words": [
+            "see how I feel",
+            "just drop it",
+            "come back to it at eight"
+          ],
+          "answer": "come back to it at eight",
+          "why": "A set time reassures your partner the conversation matters and isn’t being dodged."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When an argument heats up, what do you tend to do?",
+          "options": [
+            "Push harder",
+            "Go quiet",
+            "Leave the room",
+            "Give in to end it"
+          ],
+          "reply": "Each of those is a way of coping. An agreed pause gives you something better to reach for."
+        },
+        {
+          "kind": "order",
+          "prompt": "Taking a time-out in a fight. Put these in order.",
+          "items": [
+            "Notice your heart racing",
+            "Ask for a 20-minute pause",
+            "Do something calming alone",
+            "Come back and start again"
+          ],
+          "why": "A pause only helps if you ask for it kindly and return; calming your body first lets you actually hear each other."
+        },
+        {
+          "kind": "try",
+          "body": "While you’re both calm, agree a pause signal with your partner and how long a break should last."
+        }
+      ]
+    },
+    {
+      "id": "partner-7",
+      "title": "Repair After a Slip",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "An apology can open a door to repair.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Everyone snaps sometimes",
+          "body": "Strong couples aren’t the ones who never hurt each other. They’re the ones who notice it and repair it, quickly and sincerely.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You snapped at your partner after a stressful commute. A little later, what repairs it best?",
+          "options": [
+            {
+              "text": "“Sorry, but you were winding me up.”",
+              "why": "The “but” cancels the apology and hands the blame straight back to them."
+            },
+            {
+              "text": "Be extra nice all evening and never mention it.",
+              "why": "Kindness helps, but without words the hurt can linger, unspoken, between you."
+            },
+            {
+              "text": "“I was sharp with you earlier. I’m sorry, you didn’t deserve that.”",
+              "correct": true,
+              "why": "It names exactly what you did and takes responsibility, which makes it easy to accept."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "What makes an apology land",
+          "body": "Name what you did, own the impact and skip the excuses. You can add what you’ll try next time. Short and specific beats long and dramatic.",
+          "mood": "curious"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Own the impact.",
+          "before": "I’m sorry I snapped.",
+          "after": "I’ll try to pause next time.",
+          "words": [
+            "That wasn’t fair on you.",
+            "But you started it.",
+            "But I was so tired."
+          ],
+          "answer": "That wasn’t fair on you.",
+          "why": "It owns the effect on them. Excuses, even true ones, make an apology feel half-hearted."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes apologising hardest for you?",
+          "options": [
+            "Feeling embarrassed",
+            "Thinking I was right",
+            "Not knowing what to say",
+            "Fearing it’s not enough"
+          ],
+          "reply": "Completely human. A short, specific apology is enough, and it gets easier every time."
+        },
+        {
+          "kind": "scene",
+          "title": "The night out",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Can I say something? You were on your phone most of my friend’s dinner."
+            },
+            {
+              "from": "them",
+              "text": "I felt a bit on my own tonight."
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "I was only checking work stuff for a minute.",
+              "reaction": "It was more than a minute 😕",
+              "why": "Defending the detail misses how they felt, so the hurt stays open."
+            },
+            {
+              "text": "Well, your friends aren’t easy to talk to.",
+              "reaction": "Wow. Okay.",
+              "why": "Turning it back on them makes it a new argument instead of a repair."
+            },
+            {
+              "text": "You’re right, I was distracted. I’m sorry you felt alone. Can we try again next time?",
+              "correct": true,
+              "reaction": "Thanks for hearing me. Yes, let’s 💛",
+              "why": "You owned it, named their feeling and offered to do better, which is what makes a repair land."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Think of a recent sharp moment and offer your partner a short, specific apology, with no “but”."
+        }
+      ]
+    },
+    {
+      "id": "partner-8",
+      "title": "Share the Load",
+      "minutes": 5,
+      "focus": "communication",
+      "summary": "Talk fairly about invisible household work.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The work nobody sees",
+          "body": "Remembering birthdays, planning meals, noticing the milk’s running low: this “mental load” is real work, and carrying it alone breeds resentment.",
+          "mood": "sad"
+        },
+        {
+          "kind": "read",
+          "title": "Own it, don’t just help",
+          "body": "Helping when asked still leaves one person managing everything. Owning a task means you notice it, plan it and finish it, without reminders.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner seems stressed juggling meals, bills and appointments. What helps most?",
+          "options": [
+            {
+              "text": "Ask which jobs feel heaviest and take full ownership of one or two.",
+              "correct": true,
+              "why": "Owning a task from start to finish lifts the planning burden, not just the doing."
+            },
+            {
+              "text": "Ask them to give you a list of what to do.",
+              "why": "Kind, but they still have to notice, plan and hand out jobs, which is the tiring part."
+            },
+            {
+              "text": "Point out that you both work hard, so it’s even.",
+              "why": "It skips past how they actually feel, and they may stop raising it altogether."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer real ownership.",
+          "before": "From now on, I’ll",
+          "after": "every week.",
+          "words": [
+            "plan the food shop",
+            "help if you ask me",
+            "do bits when I can"
+          ],
+          "answer": "plan the food shop",
+          "why": "A clearly owned job takes the remembering off their plate, not just the errand."
+        },
+        {
+          "kind": "write",
+          "prompt": "Which household job could you fully own, from start to finish?",
+          "placeholder": "I could take over…"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each vague ask with a clear one.",
+          "pairs": [
+            {
+              "a": "“Help more around the house.”",
+              "b": "“Could you do the bins on Tuesdays?”"
+            },
+            {
+              "a": "“Be more organised.”",
+              "b": "“Can we plan meals on Sundays?”"
+            },
+            {
+              "a": "“Pull your weight.”",
+              "b": "“Could you do two school runs a week?”"
+            }
+          ],
+          "why": "Vague asks sound like criticism and are hard to act on; clear ones say exactly what would help."
+        },
+        {
+          "kind": "try",
+          "body": "Pick one recurring job and own it this week, from noticing it’s needed to getting it done, without a reminder."
+        }
+      ]
+    },
+    {
+      "id": "partner-9",
+      "title": "Stay Curious",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Replace assumptions with honest questions.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The stories we tell ourselves",
+          "body": "When a partner seems distant, our minds rush to explain it, often with the worst version. Curiosity checks the story before you believe it.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner has been quieter than usual all week. What’s the most trusting next step?",
+          "options": [
+            {
+              "text": "Decide they’re annoyed with you and go quiet too.",
+              "why": "Acting on a guess can create the very distance you were worried about."
+            },
+            {
+              "text": "“You’ve seemed quiet lately. How are you doing?”",
+              "correct": true,
+              "why": "It shares what you’ve noticed without blame and lets them tell you what’s really going on."
+            },
+            {
+              "text": "Look through their phone to find out why.",
+              "why": "Checking in secret damages trust far more than one quiet week ever could."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Notice, ask, then listen",
+          "body": "Share what you’ve seen, ask an open question, then really listen. If they’re not ready to talk, let them know you’re around when they are.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask, don’t accuse.",
+          "before": "I’ve noticed you seem",
+          "after": "lately. Want to talk?",
+          "words": [
+            "annoyed with me",
+            "off with me again",
+            "a bit far away"
+          ],
+          "answer": "a bit far away",
+          "why": "Describing what you see invites an answer; the others assume a reason and spark a defence."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When your partner seems off, what does your mind jump to first?",
+          "options": [
+            "They’re upset with me",
+            "Stress at work",
+            "They’re just tired",
+            "Something serious"
+          ],
+          "reply": "Whatever your mind jumps to, it’s only a guess until you ask them."
+        },
+        {
+          "kind": "scene",
+          "title": "Something on their mind",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Hey, can we talk tonight?"
+            },
+            {
+              "from": "them",
+              "text": "Nothing bad! Just something that’s been on my mind."
+            }
+          ],
+          "prompt": "What do you send?",
+          "options": [
+            {
+              "text": "Of course. Thanks for telling me. I’ll make tea and we can talk after dinner. ☕",
+              "correct": true,
+              "reaction": "Perfect, thank you 💛",
+              "why": "You stay calm, thank them and make space, which makes it easy for them to open up."
+            },
+            {
+              "text": "That sounds ominous… what did I do?",
+              "reaction": "Nothing! Honestly, it’s not about you.",
+              "why": "Jumping to the worst makes it about you and can make them wary of raising things."
+            },
+            {
+              "text": "Can’t you just tell me now?",
+              "reaction": "I’d rather talk properly, in person.",
+              "why": "Pushing for it now ignores the way they asked to have the talk."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Check in about one change you’ve noticed in your partner, describing what you saw rather than what you assumed."
+        }
+      ]
+    },
+    {
+      "id": "partner-10",
+      "title": "Choose Us Again",
+      "minutes": 5,
+      "focus": "connection",
+      "summary": "Create a small ritual that lasts.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Love needs regular tending",
+          "body": "Busy weeks can quietly turn partners into flatmates. Closeness rarely fixes itself; it grows back through small moments you choose on purpose.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Work and life have left you both feeling disconnected. What’s the best first step?",
+          "options": [
+            {
+              "text": "Wait for your next holiday to reconnect.",
+              "why": "Holidays help, but months of distance before then can make the gap feel wider."
+            },
+            {
+              "text": "Suggest ten phone-free minutes together every evening.",
+              "correct": true,
+              "why": "Small, regular rituals are easier to keep than big plans, and they add up quickly."
+            },
+            {
+              "text": "Assume real love shouldn’t take any effort.",
+              "why": "Every lasting relationship takes effort; needing it is a sign of care, not of trouble."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Make it a ritual",
+          "body": "Morning coffee together, a Sunday walk, a goodnight check-in. The best rituals are short, regular and something you both look forward to.",
+          "mood": "happy"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you feel most connected to your partner?",
+          "options": [
+            "Talking over food",
+            "Being outdoors together",
+            "Laughing together",
+            "Quiet time side by side"
+          ],
+          "reply": "That’s your starting point. Build a small ritual around it and protect it in your week."
+        },
+        {
+          "kind": "write",
+          "prompt": "What small ritual could you two start this week?",
+          "placeholder": "Every Sunday we could…"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Brings you closer or lets you drift?",
+          "left": "Drift",
+          "right": "Closer",
+          "cards": [
+            {
+              "text": "A phone-free dinner once a week",
+              "side": "right"
+            },
+            {
+              "text": "Talking only about chores and bills",
+              "side": "left"
+            },
+            {
+              "text": "Asking, “What’s been on your mind lately?”",
+              "side": "right"
+            },
+            {
+              "text": "Scrolling separately every evening",
+              "side": "left"
+            },
+            {
+              "text": "A six-second hug when you get home",
+              "side": "right"
+            }
+          ],
+          "why": "Closeness comes back through small, regular rituals of attention, not just big gestures or holidays."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one small weekly ritual to your partner and put the first one in both your diaries."
+        }
+      ]
+    }
+  ]
+}

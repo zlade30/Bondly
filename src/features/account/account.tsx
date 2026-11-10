@@ -31,7 +31,8 @@ type AccountContextValue = {
   syncStatus: SyncStatus;
   lastSyncedAt: Date | null;
   syncError: string | null;
-  syncNow: () => Promise<void>;
+  /** Returns whether the account is now up to date. */
+  syncNow: () => Promise<boolean>;
   signOut: () => Promise<void>;
   deleteAccount: () => Promise<void>;
 };
@@ -95,7 +96,12 @@ export function AccountProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const syncNow = useCallback(async () => {
-    if (!userId || syncingRef.current) return;
+    if (!userId) return false;
+    if (syncingRef.current) {
+      // A sync is already running; wait for it to finish.
+      while (syncingRef.current) await new Promise((resolve) => setTimeout(resolve, 100));
+      return syncedRef.current !== null && sameState(localRef.current, syncedRef.current);
+    }
     syncingRef.current = true;
     setSyncStatus('syncing');
     try {
@@ -127,9 +133,11 @@ export function AccountProvider({ children }: { children: ReactNode }) {
       setLastSyncedAt(new Date());
       setSyncError(null);
       setSyncStatus('idle');
+      return true;
     } catch (e) {
       setSyncError(e instanceof Error ? e.message : 'Sync failed');
       setSyncStatus('error');
+      return false;
     } finally {
       syncingRef.current = false;
     }

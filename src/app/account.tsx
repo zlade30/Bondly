@@ -23,6 +23,9 @@ import { BText } from '@/components/bondly/text';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { Links } from '@/constants/links';
 import { useAccount } from '@/features/account/account';
+import { useProgress } from '@/features/learn/progress';
+import { useOnboarding } from '@/features/onboarding/store';
+import { useJournal } from '@/features/reflect/journal';
 import {
   appleSignInAvailable,
   friendlyAuthError,
@@ -223,21 +226,61 @@ function SignIn({ onDone }: { onDone: () => void }) {
 
 function SignedIn({ onDone }: { onDone: () => void }) {
   const { email, session, syncStatus, lastSyncedAt, syncError, syncNow, signOut, deleteAccount } = useAccount();
+  const { reset: resetOnboarding } = useOnboarding();
+  const { reset: resetProgress } = useProgress();
+  const { reset: resetJournal } = useJournal();
   const [deleting, setDeleting] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
   const provider = session?.user.app_metadata?.provider;
   const via = provider === 'apple' ? 'Apple' : provider === 'google' ? 'Google' : 'email';
+
+  /**
+   * Signed out means a fresh app: the progress lives in the account, so it's
+   * cleared from this phone and Bondly returns to the welcome screen, where
+   * "I already have an account" brings everything back.
+   */
+  const signOutAndClear = async () => {
+    // Sign out first, so clearing the phone isn't uploaded to the account.
+    await signOut();
+    await resetJournal();
+    await resetProgress();
+    await resetOnboarding();
+    router.replace('/onboarding' as Href);
+  };
 
   const confirmSignOut = () =>
     Alert.alert(
       'Sign out?',
-      'Your progress stays on this phone, and your backup stays in your account. Sign in again any time to sync.',
+      'Your progress is backed up to your account and will be removed from this phone. Sign in again any time to bring it all back.',
       [
         { text: 'Cancel', style: 'cancel' },
         {
           text: 'Sign out',
+          style: 'destructive',
           onPress: async () => {
-            await signOut();
-            onDone();
+            setSigningOut(true);
+            // Back up anything recent before it's removed from this phone.
+            const synced = await syncNow();
+            if (synced) {
+              await signOutAndClear();
+              return;
+            }
+            setSigningOut(false);
+            Alert.alert(
+              'Couldn’t back up your latest progress',
+              'If you sign out now, anything since your last sync will be lost. Check your connection and try again, or sign out anyway.',
+              [
+                { text: 'Cancel', style: 'cancel' },
+                {
+                  text: 'Sign out anyway',
+                  style: 'destructive',
+                  onPress: async () => {
+                    setSigningOut(true);
+                    await signOutAndClear();
+                  },
+                },
+              ]
+            );
           },
         },
       ]
@@ -308,7 +351,11 @@ function SignedIn({ onDone }: { onDone: () => void }) {
         )}
       </View>
 
-      <SecondaryButton label="Sign out" onPress={confirmSignOut} style={styles.signOut} />
+      <SecondaryButton
+        label={signingOut ? 'Signing out…' : 'Sign out'}
+        onPress={signingOut ? () => {} : confirmSignOut}
+        style={styles.signOut}
+      />
 
       <Pressable accessibilityRole="button" disabled={deleting} onPress={confirmDelete} style={styles.delete}>
         <BText variant="bodyBold" color={Palette.danger}>

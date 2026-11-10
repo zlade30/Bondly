@@ -1,0 +1,867 @@
+{
+  "relationship": "family",
+  "journeyTitle": "Closer Family Ties",
+  "journeyIntro": "For navigating parents, siblings and relatives. Build warmth, clarity and healthier family conversations.",
+  "lessons": [
+    {
+      "id": "family-1",
+      "title": "Speak Without Blame",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Make requests without starting a family row.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Old roles, quick triggers",
+          "body": "With family we slip into roles we’ve played for years, and small annoyances can spark big rows. A calm, specific request breaks the old script.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your younger brother keeps taking your phone charger without asking, and it’s gone again. What do you say?",
+          "options": [
+            {
+              "text": "“You’re so selfish, you always do this.”",
+              "why": "Calling him selfish makes it about his character, so he’ll defend himself, not change."
+            },
+            {
+              "text": "Hide the charger and say nothing.",
+              "why": "It solves tonight, but he never learns it bothers you, and the habit carries on."
+            },
+            {
+              "text": "“Can you ask before borrowing my charger? I keep running out of battery.”",
+              "correct": true,
+              "why": "It’s specific about the action and why it matters, without labelling him as a person."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Describe the action, not the person.",
+          "before": "Please",
+          "after": "before you borrow my things.",
+          "words": [
+            "stop being selfish",
+            "ask me",
+            "grow up"
+          ],
+          "answer": "ask me",
+          "why": "A clear action is easy to do; a label just starts an argument about who they are."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which family member is hardest for you to ask things of?",
+          "options": [
+            "A parent",
+            "A sibling",
+            "An in-law",
+            "An older relative"
+          ],
+          "reply": "That’s often where the oldest patterns live. Short, specific requests help most there."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Blame, or an “I” statement?",
+          "left": "Blame",
+          "right": "“I” statement",
+          "cards": [
+            {
+              "text": "“You always take my stuff.”",
+              "side": "left"
+            },
+            {
+              "text": "“I get stressed when my charger goes missing.”",
+              "side": "right"
+            },
+            {
+              "text": "“What is wrong with you?”",
+              "side": "left"
+            },
+            {
+              "text": "“I’d like you to ask before borrowing things.”",
+              "side": "right"
+            },
+            {
+              "text": "“You’re so selfish.”",
+              "side": "left"
+            }
+          ],
+          "why": "“I” statements share how it affects you and what you’d like, so family can listen instead of defending themselves."
+        },
+        {
+          "kind": "try",
+          "body": "Make one specific, calm request to a family member today, describing the action rather than their character."
+        }
+      ]
+    },
+    {
+      "id": "family-2",
+      "title": "Listen Across Generations",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Understand a relative before responding.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Worry often sounds like criticism",
+          "body": "When a parent questions your choices, it can feel like judgement. Often underneath is worry, shaped by the world they grew up in.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum keeps questioning your decision to leave a stable job for a start-up. What’s the most helpful response?",
+          "options": [
+            {
+              "text": "“It sounds like you’re worried. What worries you most?”",
+              "correct": true,
+              "why": "Naming the worry and asking about it helps her feel heard, so she can soften too."
+            },
+            {
+              "text": "“You just don’t get how work is now.”",
+              "why": "It may feel true, but it shuts her out and turns her worry into an argument."
+            },
+            {
+              "text": "Agree you’ll rethink it, just to end the conversation.",
+              "why": "It buys quiet now, but the worry stays unspoken and the topic will come back."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Understanding isn’t giving in",
+          "body": "You can hear their concern fully and still make your own choice. “I see why that worries you. I’ve thought it through, and here’s why.”",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Show you understand.",
+          "before": "I can see why you’d be",
+          "after": "about it.",
+          "words": [
+            "so dramatic",
+            "out of touch",
+            "worried"
+          ],
+          "answer": "worried",
+          "why": "Naming their worry makes them feel understood, even if you still disagree."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a relative questions your choices, how do you usually react?",
+          "options": [
+            "Get defensive",
+            "Over-explain",
+            "Go quiet",
+            "Change the subject"
+          ],
+          "reply": "Very common. Asking what’s behind their concern can turn a lecture into a real conversation."
+        },
+        {
+          "kind": "scene",
+          "title": "A call with Gran",
+          "them": "Gran",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Your cousin says you’re seeing a therapist now?"
+            },
+            {
+              "from": "them",
+              "text": "In my day we just got on with things."
+            }
+          ],
+          "prompt": "What do you say?",
+          "options": [
+            {
+              "text": "Times have changed, Gran. It’s normal now.",
+              "reaction": "Hmph. If you say so.",
+              "why": "It’s true, but it shuts her view down rather than understanding it."
+            },
+            {
+              "text": "Please don’t start, Gran.",
+              "reaction": "I was only asking, dear.",
+              "why": "Ending the talk leaves her worry unspoken and the gap between you wider."
+            },
+            {
+              "text": "You did have to get on with a lot. What was that like for you?",
+              "correct": true,
+              "reaction": "Oh, it was hard, love. Nobody talked about feelings back then…",
+              "why": "Curiosity about her experience builds a bridge, and she may hear your side better after."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Next time a relative questions a choice of yours, ask what’s behind their concern before explaining yourself."
+        }
+      ]
+    },
+    {
+      "id": "family-3",
+      "title": "Show Up in Small Ways",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Little moments can soften distance.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Little and often",
+          "body": "Family closeness rarely comes from big reunions alone. A five-minute call or a funny photo sent their way keeps the thread between you warm.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your grandad calls while you’re in the middle of cooking. What’s the kindest response?",
+          "options": [
+            {
+              "text": "Answer and half-listen while you chop.",
+              "why": "He may well hear the distraction, and the call can leave you both feeling unsatisfied."
+            },
+            {
+              "text": "“Lovely to hear you! I’m cooking, can I ring you back at seven?”",
+              "correct": true,
+              "why": "It’s warm, honest and gives a time, so he gets your full attention instead of half of it."
+            },
+            {
+              "text": "Let it ring and plan to call at the weekend.",
+              "why": "Weekends have a way of slipping, and he may worry or feel forgotten in the meantime."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer your full attention later.",
+          "before": "Can I",
+          "after": "when I can really chat?",
+          "words": [
+            "try at some point",
+            "text you instead",
+            "call you back at seven"
+          ],
+          "answer": "call you back at seven",
+          "why": "A set time shows they matter and makes it far more likely the call actually happens."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which small gesture would mean most to someone in your family?",
+          "options": [
+            "A quick call",
+            "A photo or message",
+            "A visit",
+            "Remembering a date"
+          ],
+          "reply": "Lovely. Small, regular gestures like that keep family bonds warm between big moments."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each relative with a small way to show up.",
+          "pairs": [
+            {
+              "a": "Grandad who lives alone",
+              "b": "A weekly five-minute call"
+            },
+            {
+              "a": "Sister with a newborn",
+              "b": "Dropping off a meal"
+            },
+            {
+              "a": "Dad starting a new hobby",
+              "b": "Asking how it’s going"
+            },
+            {
+              "a": "Teen cousin with exams",
+              "b": "A good-luck message"
+            }
+          ],
+          "why": "Showing up doesn’t need grand gestures; small, well-matched moments add up to feeling cared for."
+        },
+        {
+          "kind": "try",
+          "body": "Send a relative a short message or call today, just to say you were thinking of them."
+        }
+      ]
+    },
+    {
+      "id": "family-4",
+      "title": "You Can Say No",
+      "minutes": 5,
+      "focus": "boundaries",
+      "summary": "Care does not mean unlimited availability.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Love and limits can coexist",
+          "body": "Family expectations can feel like duties you can’t refuse. But you can care deeply and still decide how much time and energy you can give.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your aunt expects you at every Sunday lunch, and you’re worn out. What’s the healthiest way to respond?",
+          "options": [
+            {
+              "text": "Keep going every week and quietly resent it.",
+              "why": "Resentment tends to leak out in other ways, and you’ll enjoy the lunches less."
+            },
+            {
+              "text": "“I’ll come this Sunday, but I can’t manage every week.”",
+              "correct": true,
+              "why": "It’s warm and clear: you show you care while being honest about what you can give."
+            },
+            {
+              "text": "Invent an illness each time to avoid saying no.",
+              "why": "Excuses pile up and are stressful to keep up; an honest limit is easier in the long run."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Short and kind is enough",
+          "body": "You don’t need a long defence. One clear sentence, said kindly, then let it be. Over-explaining invites debate about whether your reasons are good enough.",
+          "mood": "curious"
+        },
+        {
+          "kind": "read",
+          "title": "When family feels unsafe",
+          "body": "Healthy families never involve fear, control or harm. If someone in yours makes you feel unsafe, talk to someone you trust or a local support line.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Keep the limit short.",
+          "before": "I can’t make it this week,",
+          "after": ".",
+          "words": [
+            "but I’d love to next month",
+            "sorry, sorry, so sorry",
+            "because you’re exhausting"
+          ],
+          "answer": "but I’d love to next month",
+          "why": "It’s clear and warm, and offers what you can do rather than only what you can’t."
+        },
+        {
+          "kind": "order",
+          "prompt": "Saying no to a family plan. Put these in order.",
+          "items": [
+            "Thank them for asking",
+            "Say no clearly",
+            "Skip the long excuses",
+            "Offer what you can do"
+          ],
+          "why": "Warmth first, then a clear no, keeps it kind; offering an alternative shows you still care about them."
+        },
+        {
+          "kind": "try",
+          "body": "State one family limit this week in a single kind sentence, without a long explanation."
+        }
+      ]
+    },
+    {
+      "id": "family-5",
+      "title": "Rebuild Reliability",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Let trust return through consistent actions.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Family remembers",
+          "body": "In families, one missed promise can echo older ones. That makes small, steady follow-through especially powerful for rebuilding trust.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You promised to pick up your dad’s prescription and forgot. He’s now out of tablets. What helps most?",
+          "options": [
+            {
+              "text": "“My sister was supposed to remind me.”",
+              "why": "Shifting the blame dodges the moment and can stir up old sibling tensions too."
+            },
+            {
+              "text": "“I’m sorry, I forgot. I’ll collect it first thing tomorrow.”",
+              "correct": true,
+              "why": "It owns the slip and offers a concrete fix, which is how reliability gets rebuilt."
+            },
+            {
+              "text": "“Come on, it’s only family, it’s fine.”",
+              "why": "Family promises matter just as much; brushing it off tells him he’s not a priority."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer a realistic fix.",
+          "before": "I’m sorry I forgot. I’ll",
+          "after": "tomorrow morning.",
+          "words": [
+            "try to get round to it",
+            "collect it first thing",
+            "probably sort it"
+          ],
+          "answer": "collect it first thing",
+          "why": "A specific, doable plan shows you mean it; vague promises sound like the same slip again."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which family promise do you most often let slip?",
+          "options": [
+            "Calling back",
+            "Visiting",
+            "Errands and favours",
+            "Remembering dates"
+          ],
+          "reply": "Pick that one and make it small and specific. Steady follow-through rebuilds trust quickly."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Builds reliability or wears it down?",
+          "left": "Wears down",
+          "right": "Builds",
+          "cards": [
+            {
+              "text": "Setting a reminder the moment you agree",
+              "side": "right"
+            },
+            {
+              "text": "Saying yes to everything, then forgetting",
+              "side": "left"
+            },
+            {
+              "text": "Telling them early if you can’t make it",
+              "side": "right"
+            },
+            {
+              "text": "“I’ll try” when you mean “probably not”",
+              "side": "left"
+            },
+            {
+              "text": "Following up after a mistake",
+              "side": "right"
+            }
+          ],
+          "why": "Being reliable is less about never slipping and more about honest yeses, reminders and owning it when you do."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one small family commitment this week and follow through exactly as you said."
+        }
+      ]
+    },
+    {
+      "id": "family-6",
+      "title": "Disagree Without Winning",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Keep respect when family views differ.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not every debate needs a winner",
+          "body": "Family meals can turn into battlegrounds over politics or life choices. Often the goal isn’t to change minds, but to keep respect intact.",
+          "mood": "upset"
+        },
+        {
+          "kind": "choice",
+          "prompt": "At a family dinner, your uncle starts criticising your choices in front of everyone. What’s the best move?",
+          "options": [
+            {
+              "text": "“We see this differently, and I’d rather not debate it tonight.”",
+              "correct": true,
+              "why": "It’s calm and firm: you name the difference and step out without escalating."
+            },
+            {
+              "text": "Argue it out loudly until he backs down.",
+              "why": "Winning at the table rarely changes minds and usually ruins the meal for everyone."
+            },
+            {
+              "text": "Fire back with a dig about his own life.",
+              "why": "It may feel satisfying, but it escalates fast and becomes the story of the evening."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Have an exit line ready",
+          "body": "A go-to phrase helps when you’re put on the spot: “Let’s agree to differ,” or “Can we talk about something else?” Then change the subject.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Step out of the debate.",
+          "before": "Let’s",
+          "after": "on this one.",
+          "words": [
+            "fight it out",
+            "agree to differ",
+            "settle who’s right"
+          ],
+          "answer": "agree to differ",
+          "why": "It acknowledges the difference without either of you having to lose face."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which topics most often spark family arguments for you?",
+          "options": [
+            "Politics",
+            "Money",
+            "Life choices",
+            "Old family history"
+          ],
+          "reply": "Knowing your hot topics lets you plan your exit line before you even sit down."
+        },
+        {
+          "kind": "scene",
+          "title": "The family group chat",
+          "them": "Dad",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Read this article. It’ll set you straight 😉"
+            },
+            {
+              "from": "them",
+              "text": "Can’t believe you young people think otherwise."
+            }
+          ],
+          "prompt": "You see it very differently. Reply:",
+          "options": [
+            {
+              "text": "This article is nonsense and you know it.",
+              "reaction": "Here we go again… 🙄",
+              "why": "Attacking it turns the chat into a contest that nobody wins."
+            },
+            {
+              "text": "I see it differently, Dad, but I’d like to hear why it matters to you. Call later?",
+              "correct": true,
+              "reaction": "Alright, I’ll ring you after dinner.",
+              "why": "You stay honest and curious, and move it out of the group chat to a real talk."
+            },
+            {
+              "text": "*leaves the group chat*",
+              "reaction": "(Your mum messages: “Everything okay??”)",
+              "why": "Walking out avoids the moment but leaves everyone confused and tense."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Choose one calm exit line for heated family topics, and use it the next time a debate starts to boil."
+        }
+      ]
+    },
+    {
+      "id": "family-7",
+      "title": "Repair a Family Hurt",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Take responsibility for your part.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Small digs leave marks",
+          "body": "A throwaway comment between siblings can sting for years. Naming your part, even long after, can soften things more than you expect.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You made a dismissive comment about your sister’s new business, and she went quiet. What repairs it?",
+          "options": [
+            {
+              "text": "“Sorry you took it that way.”",
+              "why": "It sounds like an apology but puts the problem on her reaction, not your words."
+            },
+            {
+              "text": "Avoid her until it blows over.",
+              "why": "Family hurts rarely just blow over; they tend to resurface in the next argument."
+            },
+            {
+              "text": "“That comment was unfair. I’m sorry I dismissed something you care about.”",
+              "correct": true,
+              "why": "It names the specific hurt and its impact, without excuses, which makes it believable."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Then show interest",
+          "body": "After apologising, show the respect the comment lacked: ask about the business, celebrate a win. Actions help the words stick.",
+          "mood": "content"
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there a family hurt you’d like to repair? What would you say?",
+          "placeholder": "I’m sorry that I…"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each defensive line with a repair.",
+          "pairs": [
+            {
+              "a": "“You’re too sensitive.”",
+              "b": "“I can see that hurt you.”"
+            },
+            {
+              "a": "“I was only joking.”",
+              "b": "“That joke wasn’t fair to you.”"
+            },
+            {
+              "a": "“Let’s just forget it.”",
+              "b": "“Can we talk it through?”"
+            }
+          ],
+          "why": "Repairs take the hurt seriously instead of brushing it off, which is what lets family trust you again."
+        },
+        {
+          "kind": "try",
+          "body": "If it feels right, apologise to one family member for something specific, without adding “but”."
+        }
+      ]
+    },
+    {
+      "id": "family-8",
+      "title": "Respect Different Roles",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "You can help without fixing everyone.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Stuck in the middle",
+          "body": "Many people end up as the family go-between, passing messages and smoothing things over. It’s exhausting, and it rarely solves the real problem.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum and your brother aren’t speaking, and each keeps asking you to pass on messages. What helps most?",
+          "options": [
+            {
+              "text": "Pass on every message to keep the peace.",
+              "why": "Messages change as they travel, and you end up holding everyone’s frustration."
+            },
+            {
+              "text": "Pick the side you agree with and back them.",
+              "why": "Taking sides can damage your own relationship with the other person for a long time."
+            },
+            {
+              "text": "“I love you both, but I can’t be the messenger. Please talk to each other.”",
+              "correct": true,
+              "why": "It shows care for both while handing the conversation back to the people who need to have it."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Hand it back kindly.",
+          "before": "I care about you both, so please",
+          "after": "directly.",
+          "words": [
+            "let me fix it",
+            "tell me everything",
+            "talk to each other"
+          ],
+          "answer": "talk to each other",
+          "why": "It returns the conversation to them, which is where it can actually be resolved."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What role do you often play in your family?",
+          "options": [
+            "The peacemaker",
+            "The fixer",
+            "The quiet one",
+            "The organiser"
+          ],
+          "reply": "Roles can be loving and tiring at once. You’re allowed to step out of one now and then."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Your job, or not your job?",
+          "left": "Not mine",
+          "right": "Mine",
+          "cards": [
+            {
+              "text": "Passing messages between two relatives",
+              "side": "left"
+            },
+            {
+              "text": "Telling each how the rift affects you",
+              "side": "right"
+            },
+            {
+              "text": "Fixing their argument for them",
+              "side": "left"
+            },
+            {
+              "text": "Saying you love them both",
+              "side": "right"
+            },
+            {
+              "text": "Choosing a side to keep the peace",
+              "side": "left"
+            }
+          ],
+          "why": "You can care about both people and share your feelings without carrying their conflict for them."
+        },
+        {
+          "kind": "try",
+          "body": "This week, gently step out of one family conversation that isn’t yours to manage."
+        }
+      ]
+    },
+    {
+      "id": "family-9",
+      "title": "Ask, Don’t Assume",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Learn what support a relative wants.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Help that fits",
+          "body": "Family often show love by jumping in to help. But the help someone wants might be a listening ear, not a plan. Asking first makes it land.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your grown-up son seems stressed about moving house. What’s the most helpful thing to do?",
+          "options": [
+            {
+              "text": "Book a removal firm for him as a surprise.",
+              "why": "Kind, but taking over can make an adult child feel you don’t trust them to manage."
+            },
+            {
+              "text": "“Would it help more if I listened, or if I helped with the move?”",
+              "correct": true,
+              "why": "It lets him choose the support he needs, so your help is welcome rather than overwhelming."
+            },
+            {
+              "text": "Tell him how you handled moving at his age.",
+              "why": "Your experience may help later, but leading with it can feel like a lecture right now."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer a choice.",
+          "before": "Would you like me to",
+          "after": "or help sort things?",
+          "words": [
+            "just listen",
+            "take over",
+            "tell you what to do"
+          ],
+          "answer": "just listen",
+          "why": "Offering both options shows respect for how they want to handle their own situation."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When a relative is struggling, what do you tend to offer first?",
+          "options": [
+            "Advice",
+            "Practical help",
+            "A listening ear",
+            "Distraction"
+          ],
+          "reply": "All useful at the right time. Asking which they need now is the kindest first step."
+        },
+        {
+          "kind": "scene",
+          "title": "Big news",
+          "them": "Your daughter",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I don’t think I want to go to uni any more."
+            },
+            {
+              "from": "them",
+              "text": "Please don’t be mad."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "I’m not mad. Thanks for telling me. What’s making you feel that way?",
+              "correct": true,
+              "reaction": "It’s a lot… can we talk tonight? 💛",
+              "why": "You calm her fear first, then ask instead of assuming, so she feels safe to share."
+            },
+            {
+              "text": "Don’t be silly, of course you’re going.",
+              "reaction": "Okay. Forget I said anything.",
+              "why": "Deciding for her shuts the conversation down before you know what’s going on."
+            },
+            {
+              "text": "Is this because of that new friend of yours?",
+              "reaction": "No! Why do you always do that?",
+              "why": "Guessing the cause feels like blame and makes her less likely to open up."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "When a relative seems stressed, ask whether they’d like you to listen or help, before doing either."
+        }
+      ]
+    },
+    {
+      "id": "family-10",
+      "title": "Make Room for Change",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Let family bonds grow as people change.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Families keep changing shape",
+          "body": "New partners, children, jobs and cities change how families spend time together. Closeness lasts when we adapt instead of holding on to the old way.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Since having a baby, your sister rarely makes it to family visits. What’s the most helpful response?",
+          "options": [
+            {
+              "text": "“We miss you! What would make staying in touch easier right now?”",
+              "correct": true,
+              "why": "It shows she’s missed and invites her to shape a way of connecting that fits her life."
+            },
+            {
+              "text": "“You’ve forgotten about the rest of us.”",
+              "why": "Guilt adds pressure at an already demanding time and can push her further away."
+            },
+            {
+              "text": "Stop inviting her, since she won’t come anyway.",
+              "why": "She may feel left out, and it’s much harder to find your way back later."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "New ways to stay close",
+          "body": "A video call at bath time, visiting her instead, a family group chat. Flexible connection often beats the old traditions when life changes.",
+          "mood": "happy"
+        },
+        {
+          "kind": "write",
+          "prompt": "Which family member’s life has changed, and how could you stay close?",
+          "placeholder": "We could try…"
+        },
+        {
+          "kind": "order",
+          "prompt": "A relative’s life has changed. Put these in order.",
+          "items": [
+            "Notice what’s changed for them",
+            "Ask what would work now",
+            "Adjust the old routine",
+            "Keep the door open"
+          ],
+          "why": "Changing the plan to fit their new life, and keeping the invitation open, keeps you close through the shift."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one new, flexible way to stay connected with a family member whose life has changed."
+        }
+      ]
+    }
+  ]
+}

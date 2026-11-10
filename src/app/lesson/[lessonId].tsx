@@ -9,6 +9,7 @@ import { ClockIcon } from '@/components/bondly/icons';
 import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
+import { MatchStep, OrderStep, SceneStep, SortStep } from '@/components/lesson/activities';
 import {
   BlankStep,
   ChoiceStep,
@@ -21,12 +22,25 @@ import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { findLesson, type Course, type Lesson } from '@/features/learn/content';
 import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/lessons';
 import { useProgress } from '@/features/learn/progress';
+import { journeyLevel, lessonXp, maxLessonXp } from '@/features/learn/xp';
 import { useJournal } from '@/features/reflect/journal';
 
 type Phase = 'intro' | 'play' | 'done';
 
+/** How a play-through went, for the celebration screen. */
+type Result = {
+  xp: number;
+  maxXp: number;
+  /** First time finishing this lesson (in a journey, that's a level up). */
+  firstTime: boolean;
+  /** A replay that beat the previous best score. */
+  newBest: boolean;
+};
+
 export default function LessonScreen() {
-  const { lessonId } = useLocalSearchParams<{ lessonId: string }>();
+  const { lessonId, step } = useLocalSearchParams<{ lessonId: string; step?: string }>();
+  // Development only: bondly://lesson/<id>?step=6 opens straight at step 6, for checking content.
+  const startAt = __DEV__ && step ? Math.max(0, Number(step) - 1) : null;
   const found = findLesson(lessonId);
 
   const close = () => (router.canGoBack() ? router.back() : router.replace('/' as Href));
@@ -40,30 +54,52 @@ export default function LessonScreen() {
   }
 
   // Remount the player when moving to the next lesson so its state resets.
-  return <LessonPlayer key={lessonId} course={found.course} lesson={found.lesson} close={close} />;
+  return (
+    <LessonPlayer
+      key={`${lessonId}-${startAt ?? ''}`}
+      course={found.course}
+      lesson={found.lesson}
+      close={close}
+      startAt={startAt}
+    />
+  );
 }
 
-function LessonPlayer({ course, lesson, close }: { course: Course; lesson: Lesson; close: () => void }) {
+function LessonPlayer({
+  course,
+  lesson,
+  close,
+  startAt,
+}: {
+  course: Course;
+  lesson: Lesson;
+  close: () => void;
+  startAt: number | null;
+}) {
   const steps = LESSON_STEPS[lesson.id] ?? [];
-  const { completeLesson, completedLessons } = useProgress();
-  const [phase, setPhase] = useState<Phase>('intro');
-  const [index, setIndex] = useState(0);
+  const { completeLesson, completedLessons, lessonXp: bestXp } = useProgress();
+  const [phase, setPhase] = useState<Phase>(startAt !== null ? 'play' : 'intro');
+  const [index, setIndex] = useState(Math.min(startAt ?? 0, Math.max(steps.length - 1, 0)));
   const [graded, setGraded] = useState({ total: 0, firstTry: 0 });
+  const [result, setResult] = useState<Result | null>(null);
   const { add: addJournalEntry } = useJournal();
 
-  const finishStep = (result?: StepResult) => {
-    if (result?.firstTry !== undefined) {
-      const right = result.firstTry;
-      setGraded((g) => ({ total: g.total + 1, firstTry: g.firstTry + (right ? 1 : 0) }));
-    }
+  const finishStep = (stepResult?: StepResult) => {
+    // Count this answer now, so the final step is included in the score below.
+    const total = graded.total + (stepResult?.firstTry !== undefined ? 1 : 0);
+    const firstTry = graded.firstTry + (stepResult?.firstTry ? 1 : 0);
+    setGraded({ total, firstTry });
     const step = steps[index];
-    if (result?.note && step.kind === 'write') {
-      addJournalEntry({ text: result.note, lessonId: lesson.id, prompt: step.prompt });
+    if (stepResult?.note && step.kind === 'write') {
+      addJournalEntry({ text: stepResult.note, lessonId: lesson.id, prompt: step.prompt });
     }
     if (index + 1 < steps.length) {
       setIndex(index + 1);
     } else {
-      completeLesson(lesson.id);
+      const xp = lessonXp(firstTry);
+      const firstTime = !completedLessons.includes(lesson.id);
+      setResult({ xp, maxXp: maxLessonXp(steps), firstTime, newBest: !firstTime && xp > (bestXp[lesson.id] ?? 0) });
+      completeLesson(lesson.id, xp);
       if (Platform.OS !== 'web') {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
       }
@@ -146,7 +182,14 @@ function LessonPlayer({ course, lesson, close }: { course: Course; lesson: Lesso
             )}
           </>
         }>
-        <Celebration course={course} lesson={lesson} graded={graded} courseDone={courseDone} />
+        <Celebration
+          course={course}
+          lesson={lesson}
+          graded={graded}
+          courseDone={courseDone}
+          result={result}
+          completed={completedLessons}
+        />
       </Screen>
     );
   }
@@ -184,6 +227,14 @@ function StepView({
       return <ReflectStep step={step} {...shared} />;
     case 'write':
       return <WriteStep step={step} {...shared} />;
+    case 'scene':
+      return <SceneStep step={step} {...shared} />;
+    case 'sort':
+      return <SortStep step={step} {...shared} />;
+    case 'match':
+      return <MatchStep step={step} {...shared} />;
+    case 'order':
+      return <OrderStep step={step} {...shared} />;
   }
 }
 
@@ -192,19 +243,60 @@ function Celebration({
   lesson,
   graded,
   courseDone,
+  result,
+  completed,
 }: {
   course: Course;
   lesson: Lesson;
   graded: { total: number; firstTry: number };
   courseDone: boolean;
+  result: Result | null;
+  completed: string[];
 }) {
+  const isJourney = course.kind === 'journey';
+  const levelNumber = course.lessons.indexOf(lesson) + 1;
+  const { level, finished } = journeyLevel(course, completed);
+  const leveledUp = isJourney && !!result?.firstTime;
+
+  const badge = isJourney
+    ? finished && leveledUp
+      ? `🏆 Level ${levelNumber} · Journey complete`
+      : leveledUp
+        ? `⬆️ Level ${level} unlocked`
+        : `Level ${levelNumber}`
+    : courseDone
+      ? '🏆 Course complete'
+      : null;
+
+  const title = isJourney
+    ? finished && leveledUp
+      ? `You finished ${course.title}!`
+      : leveledUp
+        ? `Level ${levelNumber} complete!`
+        : 'Lesson complete!'
+    : courseDone
+      ? `You finished ${course.title}!`
+      : 'Lesson complete!';
+
+  const body = isJourney
+    ? finished && leveledUp
+      ? `All ${course.lessons.length} levels done. You’ve built real skills for this relationship.`
+      : leveledUp
+        ? `You finished “${lesson.title}”. Level ${level} is ready when you are.`
+        : result?.newBest
+          ? 'New best score for this level. Nice practice!'
+          : 'Replays keep your skills fresh. Your best score is saved.'
+    : courseDone
+      ? `All ${course.lessons.length} lessons done. That’s a real new skill in your toolkit.`
+      : `You finished “${lesson.title}”. Small steps like this add up.`;
+
   return (
     <View style={styles.center}>
       <Animated.View entering={ZoomIn.springify().damping(12)} style={styles.party}>
-        {courseDone && (
+        {badge && (
           <View style={styles.badge}>
             <BText variant="overline" color={Palette.white}>
-              🏆 Course complete
+              {badge}
             </BText>
           </View>
         )}
@@ -221,17 +313,19 @@ function Celebration({
 
       <Animated.View entering={FadeInDown.delay(200).duration(500)} style={styles.copy}>
         <BText variant="title" center>
-          {courseDone ? `You finished ${course.title}!` : 'Lesson complete!'}
+          {title}
         </BText>
         <BText variant="body" center>
-          {courseDone
-            ? `All ${course.lessons.length} lessons done. That’s a real new skill in your toolkit.`
-            : `You finished “${lesson.title}”. Small steps like this add up.`}
+          {body}
         </BText>
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(320).duration(500)} style={styles.stats}>
-        <Stat value={`${lesson.minutes} min`} label="Time" />
+        {result ? (
+          <Stat value={`+${result.xp} XP`} label={result.newBest ? 'New best!' : `of ${result.maxXp} possible`} />
+        ) : (
+          <Stat value={`${lesson.minutes} min`} label="Time" />
+        )}
         {graded.total > 0 && <Stat value={`${graded.firstTry}/${graded.total}`} label="Right first try" />}
       </Animated.View>
     </View>
@@ -277,7 +371,7 @@ const styles = StyleSheet.create({
     marginBottom: Space.md,
     ...Shadow.button,
   },
-  heartA: { position: 'absolute', top: 0, right: 30 },
+  heartA: { position: 'absolute', top: 64, right: 30 },
   heartB: { position: 'absolute', top: 40, left: 36 },
   stats: { flexDirection: 'row', gap: Space.md },
   stat: {

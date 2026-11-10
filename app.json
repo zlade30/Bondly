@@ -10,7 +10,8 @@
     "ios": {
       "icon": "./assets/images/icon.png",
       "bundleIdentifier": "com.zalstudio.bondly",
-      "usesAppleSignIn": true
+      "usesAppleSignIn": true,
+      "appleTeamId": "Y4BQ9LRMZB"
     },
     "android": {
       "package": "com.zalstudio.bondly",

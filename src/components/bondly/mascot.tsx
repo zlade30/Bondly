@@ -149,8 +149,9 @@ function Face({ mood }: { mood: BondlingMood }) {
     case 'sad':
       return (
         <G>
-          <Path d="M40 52 L 50 55" {...stroke} strokeWidth={3} />
-          <Path d="M80 52 L 70 55" {...stroke} strokeWidth={3} />
+          {/* Brows raised in the middle read as sad; lowered in the middle would read as angry. */}
+          <Path d="M40 54 L 50 50" {...stroke} strokeWidth={3} />
+          <Path d="M80 54 L 70 50" {...stroke} strokeWidth={3} />
           {dotEyes}
           <Path d="M53 75 Q 60 69 67 75" {...stroke} />
         </G>

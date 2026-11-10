@@ -1,0 +1,856 @@
+{
+  "relationship": "self",
+  "journeyTitle": "Know Your Patterns",
+  "journeyIntro": "For understanding how you show up with others. Practise awareness, honest needs and steadier responses.",
+  "lessons": [
+    {
+      "id": "self-1",
+      "title": "Notice Your Signals",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Spot what happens before you react.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Your body speaks first",
+          "body": "A tight jaw, a hot face, a sinking feeling. Your body often notices tension before your mind does, and those signals are useful early warnings.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague asks for a favour and you feel a flash of irritation. What’s the most helpful first move?",
+          "options": [
+            {
+              "text": "Pause and ask yourself: am I tired, rushed or just not willing?",
+              "correct": true,
+              "why": "Naming what’s behind the irritation helps you answer honestly instead of on autopilot."
+            },
+            {
+              "text": "Say yes straight away, then resent it.",
+              "why": "Ignoring the signal often turns into resentment that leaks out later."
+            },
+            {
+              "text": "Snap “I’m busy” before you’ve thought about it.",
+              "why": "The irritation is valid, but a reflex reply can sting more than you meant it to."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name it to yourself.",
+          "before": "Right now I feel",
+          "after": ", so I need a moment.",
+          "words": [
+            "that they’re wrong",
+            "nothing",
+            "stretched thin"
+          ],
+          "answer": "stretched thin",
+          "why": "Naming your own state, not their fault, is the first step to a calmer reply."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where do you first notice stress in your body?",
+          "options": [
+            "Jaw or shoulders",
+            "Chest or breathing",
+            "Stomach",
+            "I rarely notice"
+          ],
+          "reply": "That’s your early-warning signal. Spotting it gives you a second to choose your response."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each body signal with what it might mean.",
+          "pairs": [
+            {
+              "a": "A tight jaw",
+              "b": "Frustration building"
+            },
+            {
+              "a": "Quick, shallow breaths",
+              "b": "Anxiety rising"
+            },
+            {
+              "a": "Heavy arms and legs",
+              "b": "Running on empty"
+            },
+            {
+              "a": "A knot in your stomach",
+              "b": "Something feels wrong"
+            }
+          ],
+          "why": "Your body often notices feelings before your mind does. Spotting the signal gives you time to choose a response."
+        },
+        {
+          "kind": "try",
+          "body": "Before replying to your next request, notice and name one feeling to yourself first."
+        }
+      ]
+    },
+    {
+      "id": "self-2",
+      "title": "Listen to Understand",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Notice when your mind is preparing a defence.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The defence lawyer in your head",
+          "body": "When someone suggests you could do something differently, your mind may start building a case before they’ve finished. Noticing that is a skill.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Someone close to you suggests you’ve been a bit distant lately. What’s the most helpful response?",
+          "options": [
+            {
+              "text": "Build your rebuttal while they’re still talking.",
+              "why": "You’ll respond to what you feared they’d say, and miss what they actually meant."
+            },
+            {
+              "text": "Decide they’re attacking who you are.",
+              "why": "Treating one observation as a verdict on you makes it much harder to hear."
+            },
+            {
+              "text": "“Can you tell me more about what you’ve noticed?”",
+              "correct": true,
+              "why": "Curiosity helps you understand what they mean before deciding whether you agree."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Hearing isn’t agreeing",
+          "body": "You can fully understand someone’s view and still see it differently. Listening first just means your reply is to what they really said.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Get curious instead.",
+          "before": "Can you",
+          "after": "what you’ve noticed?",
+          "words": [
+            "tell me more about",
+            "prove",
+            "stop going on about"
+          ],
+          "answer": "tell me more about",
+          "why": "An open question slows things down and helps you hear the real point."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which kind of comment makes you most defensive?",
+          "options": [
+            "About my work",
+            "About my habits",
+            "About how I treat people",
+            "About my choices"
+          ],
+          "reply": "Knowing your sore spot helps you catch the defence early and stay curious."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Understanding or defending?",
+          "left": "Defending",
+          "right": "Understanding",
+          "cards": [
+            {
+              "text": "“Can you tell me more about that?”",
+              "side": "right"
+            },
+            {
+              "text": "“Well, you’re distant too.”",
+              "side": "left"
+            },
+            {
+              "text": "“When did it start to feel that way?”",
+              "side": "right"
+            },
+            {
+              "text": "“I’ve just been busy, okay?”",
+              "side": "left"
+            },
+            {
+              "text": "“That makes sense. Thanks for saying it.”",
+              "side": "right"
+            }
+          ],
+          "why": "Understanding means getting curious about their view first; defending can wait, and often isn’t needed at all."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you feel criticised, ask one clarifying question before defending yourself."
+        }
+      ]
+    },
+    {
+      "id": "self-3",
+      "title": "Know Your Needs",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Your needs deserve clear words.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You can’t ask for what you can’t name",
+          "body": "Many of us are better at sensing what others need than our own needs. Knowing yours, like rest, space or reassurance, makes them easier to ask for.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re exhausted after a long week, and a friend invites you to another party tonight. What’s healthiest?",
+          "options": [
+            {
+              "text": "Check your energy honestly, and kindly decline if you need rest.",
+              "correct": true,
+              "why": "Listening to your needs helps you show up better for friends when you do go."
+            },
+            {
+              "text": "Go anyway because you’d feel guilty saying no.",
+              "why": "Guilt-driven yeses can leave you drained, distracted and a little resentful."
+            },
+            {
+              "text": "Say yes, then cancel at the last minute.",
+              "why": "Last-minute cancellations hurt more than an honest no would have."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Say it kindly.",
+          "before": "I’d love to, but I need",
+          "after": "tonight. Next time?",
+          "words": [
+            "you to stop asking",
+            "a quiet night",
+            "an excuse"
+          ],
+          "answer": "a quiet night",
+          "why": "Naming your need simply and warmly makes a no easy for others to accept."
+        },
+        {
+          "kind": "write",
+          "prompt": "Which need of yours often goes unspoken?",
+          "placeholder": "I often need… but don’t say it."
+        },
+        {
+          "kind": "order",
+          "prompt": "Working out what you need. Put these in order.",
+          "items": [
+            "Notice how you feel",
+            "Name what you need",
+            "Decide what to say",
+            "Say it kindly"
+          ],
+          "why": "You can’t ask for a need you haven’t named. Feeling first, then need, then words makes asking much easier."
+        },
+        {
+          "kind": "try",
+          "body": "Name one need to yourself today, then act on it kindly, even in a small way."
+        }
+      ]
+    },
+    {
+      "id": "self-4",
+      "title": "Notice Connection Bids",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Your attention can build closeness.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Small moments, every day",
+          "body": "People reach for connection in small ways: sharing news, a joke, a sigh. How you usually respond shapes how close people feel to you.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Someone you care about texts you some small good news while you’re busy. What builds closeness?",
+          "options": [
+            {
+              "text": "Reply with a thumbs-up without really reading it.",
+              "why": "Quick reactions are fine sometimes, but often they can feel like you didn’t notice."
+            },
+            {
+              "text": "Take a moment to celebrate, and ask a question about it.",
+              "correct": true,
+              "why": "A few seconds of real interest tells them their good moments matter to you."
+            },
+            {
+              "text": "Reply with your own news instead.",
+              "why": "Sharing is good, but leading with yours can make their moment feel brushed aside."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Respond to the bid.",
+          "before": "That’s brilliant news!",
+          "after": "",
+          "words": [
+            "Anyway, guess what?",
+            "How did it happen?",
+            "Cool."
+          ],
+          "answer": "How did it happen?",
+          "why": "A follow-up question invites them to share more and enjoy the moment with you."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you most often miss people’s bids?",
+          "options": [
+            "When I’m busy",
+            "When I’m tired",
+            "On my phone",
+            "When I’m stressed"
+          ],
+          "reply": "That’s your moment to watch for. Even a short, warm reply makes a difference."
+        },
+        {
+          "kind": "scene",
+          "title": "An old photo",
+          "them": "Your brother",
+          "lines": [
+            {
+              "from": "them",
+              "text": "[photo] Remember this?? 😂"
+            },
+            {
+              "from": "them",
+              "text": "Found it clearing out Mum’s loft."
+            }
+          ],
+          "prompt": "It’s you both on a camping trip. Reply:",
+          "options": [
+            {
+              "text": "Haha yeah",
+              "reaction": "😅 ok",
+              "why": "A flat reply turns away from a bid, and they may stop reaching out."
+            },
+            {
+              "text": "No way, the tent that collapsed in the rain! 😂 We should go again this summer.",
+              "correct": true,
+              "reaction": "YES. Without the rain this time 😂",
+              "why": "You shared the memory and built on it, turning a small bid into a real moment together."
+            },
+            {
+              "text": "(You leave it on read and reply tomorrow.)",
+              "reaction": "(No reply.)",
+              "why": "Missing small bids is easy, but they’re how closeness grows or quietly fades."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Respond fully to one small moment of connection today, even if it only takes a minute."
+        }
+      ]
+    },
+    {
+      "id": "self-5",
+      "title": "Keep Promises to Yourself",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Build confidence through doable commitments.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Self-trust works like any trust",
+          "body": "Each time you break a promise to yourself, you trust yourself a little less. Each small promise kept rebuilds it, so start tiny.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You keep promising yourself an hour of journalling every day, and it never happens. What’s the best next step?",
+          "options": [
+            {
+              "text": "Promise two hours tomorrow to make up for it.",
+              "why": "Bigger promises after slips usually lead to more slips, and more self-criticism."
+            },
+            {
+              "text": "Swap it for five minutes a day, which you know you’ll manage.",
+              "correct": true,
+              "why": "A small promise you keep builds momentum and self-trust far better than a big one you don’t."
+            },
+            {
+              "text": "Decide you just can’t stick to anything.",
+              "why": "That story is unkind and untrue; the plan was too big, not you too weak."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make it small enough.",
+          "before": "Every evening, I’ll write for",
+          "after": ".",
+          "words": [
+            "two hours",
+            "as long as it takes",
+            "five minutes"
+          ],
+          "answer": "five minutes",
+          "why": "Small enough to do on a bad day is the secret to keeping it every day."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which promise to yourself do you break most often?",
+          "options": [
+            "Rest and sleep",
+            "Exercise",
+            "Time for me",
+            "Saying no to things"
+          ],
+          "reply": "Make that promise smaller, then keep it. Self-trust grows from there."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Realistic, or all-or-nothing?",
+          "left": "All or nothing",
+          "right": "Realistic",
+          "cards": [
+            {
+              "text": "“Five minutes of journalling after breakfast”",
+              "side": "right"
+            },
+            {
+              "text": "“An hour every day, starting today, forever”",
+              "side": "left"
+            },
+            {
+              "text": "“I missed a day, so I’ve failed”",
+              "side": "left"
+            },
+            {
+              "text": "“I missed a day, so I’ll start again tomorrow”",
+              "side": "right"
+            },
+            {
+              "text": "Linking it to something you already do",
+              "side": "right"
+            }
+          ],
+          "why": "Small, specific promises you can keep build self-trust; perfect plans tend to break and leave you feeling worse."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one tiny commitment to yourself today, and keep it exactly as planned."
+        }
+      ]
+    },
+    {
+      "id": "self-6",
+      "title": "Pause Before Reacting",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Give yourself room to choose a response.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The space between",
+          "body": "Between something happening and how you respond, there’s a small space. Widening it, even by a few breaths, gives you a choice.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A message from a friend reads as rude, and you’re itching to fire back. What’s the most helpful move?",
+          "options": [
+            {
+              "text": "Send the first sharp reply that comes to mind.",
+              "why": "Reactive replies are hard to take back and can start a row over a misunderstanding."
+            },
+            {
+              "text": "Wait a bit, reread it, and ask what they meant if it’s still unclear.",
+              "correct": true,
+              "why": "Messages lose tone; a pause and a question often reveal it wasn’t meant how it sounded."
+            },
+            {
+              "text": "Assume they meant to hurt you.",
+              "why": "Assuming the worst makes it harder to respond fairly, even if they were just rushed."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Three breaths is enough",
+          "body": "Breathe in slowly, breathe out longer, three times. It calms your body’s alarm so you can answer with the part of you that thinks clearly.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Check before reacting.",
+          "before": "Not sure how to read this.",
+          "after": "",
+          "words": [
+            "What did you mean?",
+            "How dare you.",
+            "Fine, whatever."
+          ],
+          "answer": "What did you mean?",
+          "why": "A simple question gives them a chance to clarify before anything escalates."
+        },
+        {
+          "kind": "order",
+          "prompt": "Pausing before you react. Put these in order.",
+          "items": [
+            "Notice the urge to react",
+            "Take a few slow breaths",
+            "Ask what else it could mean",
+            "Reply once you feel calm"
+          ],
+          "why": "A short pause gives your thinking brain time to catch up, so you respond the way you’d actually want to."
+        },
+        {
+          "kind": "try",
+          "body": "Before your next difficult reply, take three slow breaths and reread what they actually said."
+        }
+      ]
+    },
+    {
+      "id": "self-7",
+      "title": "Own Your Part",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Responsibility is different from self-blame.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Responsibility, not shame",
+          "body": "Owning your part means saying, “I did that, and I’ll do better.” Shame says, “I’m terrible.” The first helps relationships; the second just hurts you.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You realise you interrupted a friend several times while they were telling you something important. What now?",
+          "options": [
+            {
+              "text": "“I keep cutting you off, I’m sorry. Please finish.”",
+              "correct": true,
+              "why": "It owns the behaviour simply and gives the moment back to them."
+            },
+            {
+              "text": "Tell yourself you’re a terrible friend.",
+              "why": "Harsh self-talk doesn’t help them, and it makes it harder to change next time."
+            },
+            {
+              "text": "“You were taking ages to get to the point.”",
+              "why": "Explaining why they made you do it shifts blame and adds hurt to the moment."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Own it, kindly.",
+          "before": "I",
+          "after": "you. Please go on.",
+          "words": [
+            "kept interrupting",
+            "am the worst at listening to",
+            "had to interrupt"
+          ],
+          "answer": "kept interrupting",
+          "why": "Naming the action, not condemning yourself, keeps the repair simple and sincere."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you make a mistake with someone, what do you tend to do?",
+          "options": [
+            "Beat myself up",
+            "Explain or justify",
+            "Avoid it",
+            "Apologise quickly"
+          ],
+          "reply": "Whatever your pattern, aim for simple ownership: what you did, and what you’ll do next."
+        },
+        {
+          "kind": "scene",
+          "title": "A hard thing to hear",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Can I be honest? Sometimes it feels like our chats are all about you."
+            },
+            {
+              "from": "them",
+              "text": "I don’t want to fight about it."
+            }
+          ],
+          "prompt": "It stings. What do you say?",
+          "options": [
+            {
+              "text": "Ouch, but thank you for telling me. Can you tell me when it felt like that?",
+              "correct": true,
+              "reaction": "Thanks for taking it well. Like last week, at the café…",
+              "why": "You stayed open even though it hurt, which is how you learn your part and keep the friendship."
+            },
+            {
+              "text": "That’s not fair. I always ask about you!",
+              "reaction": "See, this is what I mean…",
+              "why": "Arguing the point proves theirs and makes it harder for them to be honest again."
+            },
+            {
+              "text": "Sorry. I’m a terrible friend.",
+              "reaction": "That’s not what I said…",
+              "why": "Putting yourself down shifts the focus to your feelings instead of what they shared."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Notice one small mistake with someone today and repair it in a sentence, without blaming you or them."
+        }
+      ]
+    },
+    {
+      "id": "self-8",
+      "title": "Question Your Story",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Separate what happened from what you assume.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Facts and stories",
+          "body": "“They haven’t replied” is a fact. “They’re angry with me” is a story. Our minds blend the two so quickly that the story feels like the fact.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend hasn’t replied to your message all day, and you’re starting to feel anxious. What’s most helpful?",
+          "options": [
+            {
+              "text": "Decide they’re upset with you.",
+              "why": "Treating the story as fact can lead you to act on something that isn’t true."
+            },
+            {
+              "text": "Send several messages asking why they’re ignoring you.",
+              "why": "If they’re simply busy, a flurry of messages can create the tension you feared."
+            },
+            {
+              "text": "Notice the fact, then think of a few other reasons they might not have replied.",
+              "correct": true,
+              "why": "Holding several explanations loosens the grip of the worst one and calms you down."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Separate fact from story.",
+          "before": "They haven’t replied yet. They might",
+          "after": ".",
+          "words": [
+            "hate me now",
+            "be ignoring me",
+            "just be busy"
+          ],
+          "answer": "just be busy",
+          "why": "A neutral explanation is often the most likely one, and the easiest to live with."
+        },
+        {
+          "kind": "write",
+          "prompt": "Think of a worry about someone. What’s the fact, and what’s the story?",
+          "placeholder": "Fact: … Story: …"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each anxious story with a kinder one.",
+          "pairs": [
+            {
+              "a": "“They’re ignoring me.”",
+              "b": "“They’re probably busy.”"
+            },
+            {
+              "a": "“I said something wrong.”",
+              "b": "“I can just ask if we’re okay.”"
+            },
+            {
+              "a": "“Nobody wants me there.”",
+              "b": "“I was invited for a reason.”"
+            }
+          ],
+          "why": "Anxious stories feel like facts but are guesses. A kinder, likely story calms you enough to check what’s true."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re worried about someone, write down one fact and two other possible explanations."
+        }
+      ]
+    },
+    {
+      "id": "self-9",
+      "title": "Ask for What Helps",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Make your requests clear and manageable.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "People can’t read minds",
+          "body": "Hoping others will notice you’re struggling often leads to feeling let down. A clear, small request gives people who care a way to help.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re overwhelmed and wish someone would help, but nobody seems to notice. What’s the best next step?",
+          "options": [
+            {
+              "text": "Wait and hope someone notices.",
+              "why": "Others may be busy or unsure; waiting can leave you struggling alone for longer."
+            },
+            {
+              "text": "Drop hints, then feel hurt when they miss them.",
+              "why": "Hints are easy to miss, and the hurt can come out sideways in other ways."
+            },
+            {
+              "text": "Ask someone you trust for one specific kind of help.",
+              "correct": true,
+              "why": "A specific ask is easy to say yes to, and you get the help you actually need."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make one specific ask.",
+          "before": "Could you",
+          "after": "on Thursday? It would really help.",
+          "words": [
+            "just sort my life out",
+            "pick up the kids",
+            "notice I’m struggling"
+          ],
+          "answer": "pick up the kids",
+          "why": "One clear, doable request is much easier to agree to than a vague cry for help."
+        },
+        {
+          "kind": "read",
+          "title": "Bigger support is okay too",
+          "body": "If you’ve been feeling low or overwhelmed for a while, talking to a doctor, counsellor or support line can help. Asking for that is a strength.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "Someone notices",
+          "them": "Your housemate",
+          "lines": [
+            {
+              "from": "them",
+              "text": "You okay? You’ve seemed really stressed this week."
+            },
+            {
+              "from": "them",
+              "text": "You’ve barely left your room 🫂"
+            }
+          ],
+          "prompt": "You are, and you could use help. Reply:",
+          "options": [
+            {
+              "text": "I’m fine, don’t worry about me!",
+              "reaction": "Okay, if you’re sure…",
+              "why": "Brushing off an offer of care means you stay overwhelmed and they can’t help."
+            },
+            {
+              "text": "Ugh, everything is just too much.",
+              "reaction": "Oh no. Anything I can do?",
+              "why": "Honest, but without a clear ask it’s hard for them to know how to help."
+            },
+            {
+              "text": "Thanks for asking. Honestly, I’m swamped. Could you cook tonight? I’ll do Friday.",
+              "correct": true,
+              "reaction": "Of course! Pasta sound good? 🍝",
+              "why": "You accepted the care and made a small, clear ask, which is easy for someone to say yes to."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Make one clear, small request for support this week from someone you trust."
+        }
+      ]
+    },
+    {
+      "id": "self-10",
+      "title": "Choose Your Next Step",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Turn insight into one sustainable habit.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "From noticing to doing",
+          "body": "You’ve learned a lot about your patterns. Real change rarely comes from big resolutions; it comes from one small habit, repeated.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve noticed you pull away from people when you’re stressed. What’s the most realistic next step?",
+          "options": [
+            {
+              "text": "Promise to always be there for everyone.",
+              "why": "It sounds generous, but it’s impossible to keep and sets you up to feel you’ve failed."
+            },
+            {
+              "text": "Pick one simple check-in, like a weekly call with a close friend.",
+              "correct": true,
+              "why": "A small, regular habit keeps you connected even on stressful weeks."
+            },
+            {
+              "text": "Wait until life calms down to reconnect.",
+              "why": "Life rarely calms down on its own, and connection helps you cope while it’s busy."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which pattern of yours would you most like to shift?",
+          "options": [
+            "Pulling away when stressed",
+            "Snapping when tired",
+            "Saying yes too often",
+            "Overthinking messages"
+          ],
+          "reply": "That’s a great focus. One small habit aimed at it, kept for a few weeks, can really change things."
+        },
+        {
+          "kind": "write",
+          "prompt": "What one small habit will you practise next week?",
+          "placeholder": "Next week I’ll…"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Pulling away, or reaching out?",
+          "left": "Pulling away",
+          "right": "Reaching out",
+          "cards": [
+            {
+              "text": "Muting the group chat for a week",
+              "side": "left"
+            },
+            {
+              "text": "“Rough week. Fancy a walk?”",
+              "side": "right"
+            },
+            {
+              "text": "Cancelling plans without saying why",
+              "side": "left"
+            },
+            {
+              "text": "Telling one person how you really are",
+              "side": "right"
+            },
+            {
+              "text": "Replying to a message you’ve been avoiding",
+              "side": "right"
+            }
+          ],
+          "why": "Stress pulls us inward; small steps towards people, even one message, help you feel less alone in it."
+        },
+        {
+          "kind": "try",
+          "body": "Pick one small relationship habit to practise every day next week, and put a reminder somewhere you’ll see it."
+        }
+      ]
+    }
+  ]
+}

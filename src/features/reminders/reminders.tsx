@@ -17,6 +17,10 @@ const STORAGE_KEY = 'bondly.reminders.v1';
 const DAYS_AHEAD = 14;
 const ANDROID_CHANNEL = 'daily-reminder';
 
+/** Scheduled notifications that aren't daily reminders, so rescheduling leaves them alone. */
+export const TRIAL_REMINDER_ID = 'bondly-trial-ending';
+const KEEP_IDENTIFIERS = [TRIAL_REMINDER_ID];
+
 // Show reminders even if they arrive while Bondly is open.
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -135,7 +139,13 @@ const MESSAGES = [
  * weeks, at the chosen time. Today's is skipped if the person already practised.
  */
 export async function scheduleReminders(plan: ReminderPlan) {
-  await Notifications.cancelAllScheduledNotificationsAsync();
+  // Clear only the daily reminders; other notifications (like the trial reminder) stay.
+  const scheduled = await Notifications.getAllScheduledNotificationsAsync();
+  await Promise.all(
+    scheduled
+      .filter((n) => !KEEP_IDENTIFIERS.includes(n.identifier))
+      .map((n) => Notifications.cancelScheduledNotificationAsync(n.identifier))
+  );
 
   if (Platform.OS === 'android') {
     await Notifications.setNotificationChannelAsync(ANDROID_CHANNEL, {

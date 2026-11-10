@@ -14,14 +14,14 @@ import type { LessonStep } from '@/features/learn/lessons';
 /** firstTry is set for steps with a right answer; note for a written answer. */
 export type StepResult = { firstTry?: boolean; note?: string };
 
-type StepProps<K extends LessonStep['kind']> = {
+export type StepProps<K extends LessonStep['kind']> = {
   step: Extract<LessonStep, { kind: K }>;
   onDone: (result?: StepResult) => void;
   color: BondlingColor;
   tint: string;
 };
 
-function notify(success: boolean) {
+export function notify(success: boolean) {
   if (Platform.OS === 'web') return;
   Haptics.notificationAsync(
     success ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Error
@@ -29,7 +29,7 @@ function notify(success: boolean) {
 }
 
 /** Lays out a step: content scrolls above, the action area sits at the bottom. */
-function StepFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
+export function StepFrame({ children, footer }: { children: ReactNode; footer: ReactNode }) {
   return (
     <View style={styles.frame}>
       <View style={styles.frameBody}>{children}</View>
@@ -64,7 +64,7 @@ export function ReadStep({ step, onDone, color, tint }: StepProps<'read'>) {
 
 // ---------- Feedback panel shared by choice and blank ----------
 
-function Feedback({
+export function Feedback({
   correct,
   why,
   onContinue,

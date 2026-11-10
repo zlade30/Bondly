@@ -35,13 +35,21 @@ export function mergeOnboarding(local: OnboardingSnapshot, remote?: Partial<Onbo
   return time(r.updatedAt) > time(local.updatedAt) ? r : local;
 }
 
-/** Lessons and active days are combined; for the same day's check-in, this phone wins. */
+/** Keeps the higher score for each key, so XP is never lost to an older copy. */
+function mergeBest(a: Record<string, number>, b: Record<string, number>) {
+  const out = { ...b };
+  for (const [k, v] of Object.entries(a)) out[k] = Math.max(v, out[k] ?? 0);
+  return out;
+}
+
+/** Lessons and active days are combined; best XP per lesson is kept; for the same day's check-in, this phone wins. */
 export function mergeProgress(local: ProgressState, remote?: Partial<ProgressState> | null): ProgressState {
   if (!remote) return local;
   return {
     completedLessons: union(local.completedLessons, remote.completedLessons ?? []),
     lessonDays: union(local.lessonDays, remote.lessonDays ?? []),
     checkIns: { ...(remote.checkIns ?? {}), ...local.checkIns },
+    lessonXp: mergeBest(local.lessonXp ?? {}, remote.lessonXp ?? {}),
   };
 }
 

@@ -11,8 +11,9 @@ import { Bondling } from '@/components/bondly/mascot';
 import { Float, ProgressBar } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { COURSES, courseProgress, type Course } from '@/features/learn/content';
+import { courseProgress, findCourse, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
+import { bestXp, courseXp, journeyLevel } from '@/features/learn/xp';
 
 const STOP = 78;
 const ROW = 185;
@@ -23,7 +24,7 @@ type StopState = 'done' | 'next' | 'locked';
 
 export default function CourseScreen() {
   const { courseId } = useLocalSearchParams<{ courseId: string }>();
-  const course = COURSES.find((c) => c.id === courseId);
+  const course = findCourse(courseId);
   const insets = useSafeAreaInsets();
   const back = () => (router.canGoBack() ? router.back() : router.replace('/learn' as Href));
 
@@ -44,8 +45,11 @@ export default function CourseScreen() {
 function Journey({ course, back }: { course: Course; back: () => void }) {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
-  const { completedLessons } = useProgress();
+  const { completedLessons, lessonXp } = useProgress();
   const { done, total, ratio } = courseProgress(course, completedLessons);
+  const isJourney = course.kind === 'journey';
+  const { level, levels, finished } = journeyLevel(course, completedLessons);
+  const xp = courseXp(course, lessonXp, completedLessons);
 
   // A lesson is open once the one before it is done; finished lessons stay replayable.
   const states: StopState[] = course.lessons.map((l, i) => {
@@ -65,7 +69,12 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
   const openLesson = (index: number) => {
     const lesson = course.lessons[index];
     if (states[index] === 'locked') {
-      Alert.alert('Not yet', `Finish “${course.lessons[index - 1].title}” to unlock this lesson.`);
+      Alert.alert(
+        'Not yet',
+        isJourney
+          ? `Finish Level ${index} (“${course.lessons[index - 1].title}”) to unlock Level ${index + 1}.`
+          : `Finish “${course.lessons[index - 1].title}” to unlock this lesson.`
+      );
       return;
     }
     tapFeedback();
@@ -86,13 +95,20 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
         <Animated.View entering={FadeInDown.duration(450)} style={[styles.header, { backgroundColor: course.tint }]}>
           <View style={styles.headerText}>
             <BText variant="overline" color={Palette.primaryDeep}>
-              Course
+              {course.kind === 'journey' ? 'Journey' : 'Course'}
             </BText>
             <BText variant="title" style={styles.headerTitle}>
               {course.title}
             </BText>
+            {course.intro && <BText variant="caption">{course.intro}</BText>}
             <BText variant="caption" color={Palette.inkSoft}>
-              {done === total ? 'Completed!' : `${done} of ${total} lessons done`}
+              {isJourney
+                ? finished
+                  ? `All ${levels} levels complete · ${xp} XP`
+                  : `Level ${level} of ${levels} · ${xp} XP`
+                : done === total
+                  ? 'Completed!'
+                  : `${done} of ${total} lessons done`}
             </BText>
             <View style={styles.headerBar}>
               <ProgressBar value={ratio} />
@@ -135,6 +151,8 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
               index={i}
               title={lesson.title}
               minutes={lesson.minutes}
+              levelLabel={isJourney ? `Level ${i + 1}` : undefined}
+              xp={bestXp(lesson.id, lessonXp, completedLessons)}
               state={states[i]}
               x={centers[i].x}
               y={centers[i].y}
@@ -168,6 +186,8 @@ function Stop({
   index,
   title,
   minutes,
+  levelLabel,
+  xp,
   state,
   x,
   y,
@@ -177,6 +197,10 @@ function Stop({
   index: number;
   title: string;
   minutes: number;
+  /** Journeys: "Level 3". */
+  levelLabel?: string;
+  /** Best XP earned, once done. */
+  xp?: number;
   state: StopState;
   x: number;
   y: number;
@@ -200,7 +224,7 @@ function Stop({
         )}
         <Pressable
           accessibilityRole="button"
-          accessibilityLabel={`Lesson ${index + 1}: ${title}${state === 'locked' ? ', locked' : state === 'done' ? ', done' : ''}`}
+          accessibilityLabel={`${levelLabel ?? `Lesson ${index + 1}`}: ${title}${state === 'locked' ? ', locked' : state === 'done' ? ', done' : ''}`}
           onPress={onPress}
           style={({ pressed }) => [pressed && { transform: [{ scale: 0.94 }] }]}>
           {state === 'locked' ? (
@@ -235,6 +259,11 @@ function Stop({
       </Animated.View>
 
       <View pointerEvents="none" style={[styles.label, { left, top: y + STOP / 2 + 6, width: labelWidth }]}>
+        {levelLabel && (
+          <BText variant="overline" center color={state === 'locked' ? Palette.inkMuted : Palette.primaryDeep} style={styles.levelLabel}>
+            {levelLabel}
+          </BText>
+        )}
         <BText
           variant="bodyBold"
           center
@@ -244,8 +273,16 @@ function Stop({
           {title}
         </BText>
         <View style={styles.labelMeta}>
-          <ClockIcon size={13} color={Palette.inkMuted} />
-          <BText variant="caption">{minutes} min</BText>
+          {state === 'done' && xp ? (
+            <BText variant="caption" color={Palette.primaryDeep}>
+              ⭐ {xp} XP
+            </BText>
+          ) : (
+            <>
+              <ClockIcon size={13} color={Palette.inkMuted} />
+              <BText variant="caption">{minutes} min</BText>
+            </>
+          )}
         </View>
       </View>
     </>
@@ -311,6 +348,7 @@ const styles = StyleSheet.create({
     ...Shadow.soft,
   },
   labelTitle: { fontSize: 14, lineHeight: 18 },
+  levelLabel: { fontSize: 11 },
   labelMeta: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 2 },
   guide: { position: 'absolute' },
 });

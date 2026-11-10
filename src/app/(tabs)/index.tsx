@@ -10,10 +10,12 @@ import { BellIcon, ChevronRightIcon, ClockIcon, PlayIcon } from '@/components/bo
 import { Logo } from '@/components/bondly/logo';
 import { Bondling, HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float } from '@/components/bondly/screen';
+import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, orderedCourses, todaysLesson, type Course } from '@/features/learn/content';
+import { courseProgress, journeyFor, orderedCourses, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
+import { journeyLevel } from '@/features/learn/xp';
 import { MOODS, type Mood } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
@@ -53,10 +55,15 @@ export default function HomeScreen() {
   };
 
   const today = useMemo(
-    () => todaysLesson(answers.focus, completedLessons),
-    [answers.focus, completedLessons]
+    () => todaysLesson(answers.focus, completedLessons, answers.goal),
+    [answers.focus, completedLessons, answers.goal]
   );
-  const courses = useMemo(() => orderedCourses(answers.focus), [answers.focus]);
+  // Your relationship journey first, then the skill courses.
+  const courses = useMemo(() => {
+    const journey = journeyFor(answers.goal);
+    const skills = orderedCourses(answers.focus);
+    return journey ? [journey, ...skills] : skills;
+  }, [answers.focus, answers.goal]);
   const heroArt = Math.min(width * 0.62, 280);
 
   const openLesson = () => {
@@ -121,6 +128,11 @@ export default function HomeScreen() {
               <HeartIcon size={24} colors={['#FFD1B8', '#FF8A9E']} />
             </Float>
           </View>
+        </View>
+
+        {/* Free trial: when it ends, what it costs, and a way to cancel */}
+        <View style={styles.padded}>
+          <TrialCard />
         </View>
 
         {/* Today's lesson */}
@@ -227,10 +239,13 @@ export default function HomeScreen() {
 
 function JourneyCard({ course, completed }: { course: Course; completed: string[] }) {
   const { done, total, ratio } = courseProgress(course, completed);
+  const isJourney = course.kind === 'journey';
+  const { level, levels, finished } = journeyLevel(course, completed);
+  const levelText = finished ? 'All levels done' : `Level ${level} of ${levels}`;
   return (
     <Pressable
       accessibilityRole="button"
-      accessibilityLabel={`${course.title}, ${done} of ${total} lessons done`}
+      accessibilityLabel={`${course.title}, ${isJourney ? levelText : `${done} of ${total} lessons done`}`}
       onPress={() => {
         tapFeedback();
         router.push(`/course/${course.id}` as Href);
@@ -243,6 +258,11 @@ function JourneyCard({ course, completed }: { course: Course; completed: string[
       <View style={styles.cardArt}>
         <Bondling size={92} color={course.mascot.color} mood={course.mascot.mood} prop={course.mascot.prop} />
       </View>
+      {isJourney && (
+        <BText variant="overline" color={Palette.primaryDeep} style={styles.cardLevel}>
+          {levelText}
+        </BText>
+      )}
       <BText variant="bodyBold" style={styles.cardTitle} numberOfLines={2}>
         {course.title}
       </BText>
@@ -350,6 +370,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.8)',
   },
   cardArt: { position: 'absolute', top: 6, left: 0, right: 0, alignItems: 'center' },
+  cardLevel: { fontSize: 11, marginBottom: 2 },
   cardTitle: { fontSize: 16, lineHeight: 20, marginBottom: Space.sm },
   cardTrack: {
     height: 8,

@@ -1,0 +1,885 @@
+{
+  "relationship": "dating",
+  "journeyTitle": "Date With Confidence",
+  "journeyIntro": "For new connections and early romance. Practise curiosity, honest signals and comfortable boundaries.",
+  "lessons": [
+    {
+      "id": "dating-1",
+      "title": "Start With Curiosity",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Get to know someone without performing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Interested beats interesting",
+          "body": "Early dates can feel like an audition. But people usually leave feeling closest to whoever was most curious about them, not most impressive.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your date mentions they’ve just taken up bouldering, which you’ve never tried. What keeps the conversation flowing?",
+          "options": [
+            {
+              "text": "Nod along as if you climb all the time.",
+              "why": "Pretending gets awkward fast, and you miss the chance to learn something real about them."
+            },
+            {
+              "text": "Steer it back to your own sporty achievements.",
+              "why": "It turns their moment into your highlight reel, and they’re likely to switch off."
+            },
+            {
+              "text": "“I’ve never tried it! What got you hooked?”",
+              "correct": true,
+              "why": "Being honest that it’s new to you, plus a real question, invites them to share what they love."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask the follow-up.",
+          "before": "What do you",
+          "after": "most about it?",
+          "words": [
+            "hate",
+            "regret",
+            "love"
+          ],
+          "answer": "love",
+          "why": "Asking what lights them up gets you the good stories, and shows you want to know them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "On a first date, what do you tend to do when you’re nervous?",
+          "options": [
+            "Talk too much",
+            "Go quiet",
+            "Crack lots of jokes",
+            "Ask lots of questions"
+          ],
+          "reply": "Nerves are normal. One curious follow-up question is often all it takes to settle in."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Opens the chat up or closes it down?",
+          "left": "Closes",
+          "right": "Opens",
+          "cards": [
+            {
+              "text": "“What got you into that?”",
+              "side": "right"
+            },
+            {
+              "text": "“Cool.”",
+              "side": "left"
+            },
+            {
+              "text": "“What’s the best part of your week usually?”",
+              "side": "right"
+            },
+            {
+              "text": "Turning every topic back to yourself",
+              "side": "left"
+            },
+            {
+              "text": "“Wait, tell me more about that!”",
+              "side": "right"
+            }
+          ],
+          "why": "Open questions and real interest give them room to share; short replies and self-focus leave nowhere to go."
+        },
+        {
+          "kind": "try",
+          "body": "On your next date or chat, ask at least two follow-up questions about something they mention, before sharing your own story."
+        }
+      ]
+    },
+    {
+      "id": "dating-2",
+      "title": "Listen Beyond Words",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Show interest without rushing ahead.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listening is attractive",
+          "body": "Feeling truly listened to is rare, so it stands out. Put your phone away, follow their thread and resist jumping in with your own version.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your date tells you, a little embarrassed, about a disastrous first day at a new job. What’s the best response?",
+          "options": [
+            {
+              "text": "Jump in with an even more disastrous story of your own.",
+              "why": "Topping their story can feel like competition, especially when they’ve just been vulnerable."
+            },
+            {
+              "text": "“Oh no, that sounds mortifying. What happened next?”",
+              "correct": true,
+              "why": "It names how it felt and keeps the spotlight on them, which makes it easier to open up."
+            },
+            {
+              "text": "“Honestly, you’re overthinking it.”",
+              "why": "Even if kindly meant, it dismisses the feeling they just trusted you with."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Your story can wait",
+          "body": "Sharing similar experiences builds connection, but timing matters. Let them finish, show you got it, then offer yours if it fits.",
+          "mood": "curious"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the feeling first.",
+          "before": "That sounds so",
+          "after": ". How did you get through it?",
+          "words": [
+            "stressful",
+            "funny, honestly",
+            "not a big deal"
+          ],
+          "answer": "stressful",
+          "why": "Naming the feeling shows you were listening to how it felt, not just what happened."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What pulls your attention away most on dates?",
+          "options": [
+            "My phone",
+            "Worrying how I come across",
+            "Planning my next line",
+            "Things around us"
+          ],
+          "reply": "Knowing what distracts you is half the battle. Gently bring your focus back when you notice it."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Listening or waiting to talk?",
+          "left": "Waiting",
+          "right": "Listening",
+          "cards": [
+            {
+              "text": "Asking a follow-up about what they just said",
+              "side": "right"
+            },
+            {
+              "text": "“That’s nothing, listen to what happened to me…”",
+              "side": "left"
+            },
+            {
+              "text": "Putting your phone away when they speak",
+              "side": "right"
+            },
+            {
+              "text": "Nodding while rehearsing your next story",
+              "side": "left"
+            },
+            {
+              "text": "Remembering a detail from earlier",
+              "side": "right"
+            }
+          ],
+          "why": "Real listening shows in follow-up questions and remembered details, not just in staying quiet."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone you’re dating shares a story, reflect one feeling you hear before telling a story of your own."
+        }
+      ]
+    },
+    {
+      "id": "dating-3",
+      "title": "Keep Your Own Pace",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "You can enjoy dating without rushing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Excitement isn’t urgency",
+          "body": "When someone’s keen it’s tempting to say yes to everything. But a pace that suits you makes dating more enjoyable, and shows what each of you is like.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "After a great date, they ask to meet again tomorrow. You like them but need a quiet night. What do you say?",
+          "options": [
+            {
+              "text": "“I’d love to! Tomorrow’s tricky, but how about Saturday?”",
+              "correct": true,
+              "why": "It shows clear interest and offers a real alternative, so your “not tomorrow” isn’t a “no”."
+            },
+            {
+              "text": "Say yes, then spend the evening tired and flat.",
+              "why": "You won’t be at your best, and they get a less true picture of who you are."
+            },
+            {
+              "text": "Leave the message unanswered until you feel like replying.",
+              "why": "Silence after a good date can feel like rejection and leave them anxious and guessing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer an alternative.",
+          "before": "Tomorrow doesn’t work, but",
+          "after": "would be great.",
+          "words": [
+            "Saturday afternoon",
+            "maybe never",
+            "whenever, I guess"
+          ],
+          "answer": "Saturday afternoon",
+          "why": "A specific alternative makes your interest obvious and keeps the plan moving."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What pace feels right for you early on?",
+          "options": [
+            "Once a week",
+            "A couple of times a week",
+            "It depends on the person",
+            "I’m still working it out"
+          ],
+          "reply": "Any of those is fine. What matters is noticing your pace and saying it out loud."
+        },
+        {
+          "kind": "scene",
+          "title": "A big invitation",
+          "them": "Your date",
+          "lines": [
+            {
+              "from": "them",
+              "text": "So my family’s having a barbecue on Sunday…"
+            },
+            {
+              "from": "them",
+              "text": "Want to come and meet everyone? 😊"
+            }
+          ],
+          "prompt": "It’s only date three and it feels fast. Reply:",
+          "options": [
+            {
+              "text": "Sure, sounds fun!",
+              "reaction": "Amazing! My mum will love you 😄",
+              "why": "Saying yes when you’re uneasy sets a pace that doesn’t feel right for you."
+            },
+            {
+              "text": "Haha, maybe!",
+              "reaction": "Is that a yes? 😅",
+              "why": "A vague answer leaves them guessing and puts off the honest bit."
+            },
+            {
+              "text": "That’s really sweet. It feels a bit soon for me, but I’d love to see you on Saturday?",
+              "correct": true,
+              "reaction": "Totally fair! Saturday it is 😊",
+              "why": "You’re warm, honest about your pace and offer another way to meet, so nobody feels rejected."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Next time a plan doesn’t suit you, say what does work instead, with a specific day or time."
+        }
+      ]
+    },
+    {
+      "id": "dating-4",
+      "title": "Notice the Small Signs",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Build connection through thoughtful attention.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Remembering is romantic",
+          "body": "Asking how their sister’s wedding went, or remembering how they take their coffee, quietly says, “I was paying attention to you.”",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "On your second date, they mention a big job interview next Thursday. What builds connection?",
+          "options": [
+            {
+              "text": "Text several times on the day asking for updates.",
+              "why": "Caring, but on a stressful day lots of messages can feel like pressure early on."
+            },
+            {
+              "text": "Say nothing; they’ll mention it if it matters.",
+              "why": "They may read the silence as you not having listened, even if you did."
+            },
+            {
+              "text": "Wish them luck, then ask how it went after Thursday.",
+              "correct": true,
+              "why": "Following up shows you remembered what mattered to them, without crowding them."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Follow up on a detail.",
+          "before": "Good luck on Thursday! I’d love to",
+          "after": "how it goes.",
+          "words": [
+            "be told hourly",
+            "guess",
+            "hear"
+          ],
+          "answer": "hear",
+          "why": "It shows you care about the outcome while leaving them space to share when they’re ready."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually show interest early in dating?",
+          "options": [
+            "Messaging often",
+            "Planning dates",
+            "Remembering details",
+            "Compliments"
+          ],
+          "reply": "All good signs. Remembering small details is one of the quietest and most powerful."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each detail they shared with a thoughtful follow-up.",
+          "pairs": [
+            {
+              "a": "Their cat was poorly",
+              "b": "“How’s Biscuit doing now?”"
+            },
+            {
+              "a": "A tough week at work",
+              "b": "“Did Friday’s meeting go okay?”"
+            },
+            {
+              "a": "Training for a 10k",
+              "b": "“How was the long run?”"
+            },
+            {
+              "a": "Missing their gran",
+              "b": "“Did you manage to call her?”"
+            }
+          ],
+          "why": "Following up on small things shows you were really listening, and that’s what makes someone feel seen."
+        },
+        {
+          "kind": "try",
+          "body": "Follow up on one detail someone you’re dating mentioned last time: an event, a worry or a plan."
+        }
+      ]
+    },
+    {
+      "id": "dating-5",
+      "title": "Trust Takes Time",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Let actions and words line up gradually.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Words are a start",
+          "body": "Early on, it’s easy to fall for lovely words and big plans. Trust is built when what someone says and what they do line up, again and again.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "After two dates, they talk about taking you to Paris this summer. What’s the healthiest way to take it?",
+          "options": [
+            {
+              "text": "Enjoy the sweetness, and watch whether their everyday actions match.",
+              "correct": true,
+              "why": "You can feel flattered and still let trust grow from consistency, not grand promises."
+            },
+            {
+              "text": "Take it as proof they’re serious about you.",
+              "why": "Big promises this early are easy to make; they don’t yet show how someone will treat you."
+            },
+            {
+              "text": "Set them a little test to see if they mean it.",
+              "why": "Tests tend to backfire and start the relationship on suspicion instead of honesty."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "What consistency looks like",
+          "body": "Turning up on time, replying in a steady way, doing what they said. Small, boring reliability tells you far more than an exciting promise.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Finish the thought.",
+          "before": "I trust what people",
+          "after": "more than what they promise.",
+          "words": [
+            "post online",
+            "actually do",
+            "say on day one"
+          ],
+          "answer": "actually do",
+          "why": "Actions over time are the most reliable guide to how someone will treat you."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Green flag, or one to watch?",
+          "left": "Watch",
+          "right": "Green flag",
+          "cards": [
+            {
+              "text": "Does what they said they’d do",
+              "side": "right"
+            },
+            {
+              "text": "Says “I love you” on the second date",
+              "side": "left"
+            },
+            {
+              "text": "Is kind to the waiter",
+              "side": "right"
+            },
+            {
+              "text": "Gets sulky when you see your friends",
+              "side": "left"
+            },
+            {
+              "text": "Asks what you’re comfortable with",
+              "side": "right"
+            }
+          ],
+          "why": "Trust is built on steady, respectful actions over time; intense promises or possessiveness early on are worth watching."
+        },
+        {
+          "kind": "try",
+          "body": "This week, notice one small action from someone you’re dating that matches (or doesn’t match) what they’ve said."
+        }
+      ]
+    },
+    {
+      "id": "dating-6",
+      "title": "Talk About Mixed Signals",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Ask instead of decoding every message.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Stop decoding, start asking",
+          "body": "Reading meaning into reply times and emoji is exhausting, and often wrong. One kind, direct question usually saves days of guessing.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Their messages are warm, but they never suggest meeting up. You’re not sure where you stand. What do you do?",
+          "options": [
+            {
+              "text": "Drop hints about free evenings and hope they notice.",
+              "why": "Hints are easy to miss, and you’ll end up decoding their silence all over again."
+            },
+            {
+              "text": "“I really enjoy chatting. Would you like to meet up again?”",
+              "correct": true,
+              "why": "It’s friendly, clear and easy to answer, so you get real information instead of guesses."
+            },
+            {
+              "text": "Decide they’re playing games and go cold.",
+              "why": "They might just be shy or busy; going cold can end something good on a guess."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the question clear.",
+          "before": "Would you like to",
+          "after": "this weekend?",
+          "words": [
+            "maybe chat or something",
+            "figure out what we are",
+            "grab a drink"
+          ],
+          "answer": "grab a drink",
+          "why": "A specific, light invitation is easy to say yes or no to, and either answer helps you."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When signals are mixed, what do you usually do?",
+          "options": [
+            "Overthink it",
+            "Ask a friend",
+            "Wait it out",
+            "Ask them directly"
+          ],
+          "reply": "It’s natural to want certainty. A short, kind question is often the quickest route to it."
+        },
+        {
+          "kind": "scene",
+          "title": "Back after a silence",
+          "them": "Your date",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Sorry I went quiet, work’s been mad this week 😩"
+            },
+            {
+              "from": "them",
+              "text": "How are you?"
+            }
+          ],
+          "prompt": "It’s been four days. What do you say?",
+          "options": [
+            {
+              "text": "Oh, I hadn’t even noticed 🙂",
+              "reaction": "Haha okay, fair enough!",
+              "why": "Playing it cool hides what you feel, so nothing gets clearer."
+            },
+            {
+              "text": "Good to hear from you! I’ll be honest, the silence left me unsure. I like regular chats.",
+              "correct": true,
+              "reaction": "Fair point. I’ll be better at saying when I’m busy 😊",
+              "why": "You’re warm and honest about what you need, which helps you both see if you’re a match."
+            },
+            {
+              "text": "Four days. Really?",
+              "reaction": "I did say sorry…",
+              "why": "Leading with blame makes them defensive before you’ve said what you want."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Next time you catch yourself decoding a message, ask one clear, friendly question instead."
+        }
+      ]
+    },
+    {
+      "id": "dating-7",
+      "title": "Disagree With Respect",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Different opinions need not end connection.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Differences are information",
+          "body": "Early disagreements are a preview of how you handle tension together. Kind curiosity, rather than winning, tells you whether you’re a good fit.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You love lazy weekends; they like packing weekends with plans. It comes up on your fourth date. What’s the best response?",
+          "options": [
+            {
+              "text": "Tease them that they must be exhausting to live with.",
+              "why": "Mocking a preference this early can sting and make them guarded with you."
+            },
+            {
+              "text": "“We’re pretty different there! What do you love about busy weekends?”",
+              "correct": true,
+              "why": "It names the difference lightly and gets curious, so you learn about each other."
+            },
+            {
+              "text": "Pretend you love busy weekends too.",
+              "why": "Hiding who you are avoids tension now but builds a relationship on a version that isn’t you."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Notice how they disagree",
+          "body": "Can you both differ without mocking, sulking or pressure? Respectful disagreement is a green flag; contempt or control is a red one.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you disagree with someone new, what do you tend to do?",
+          "options": [
+            "Go along with them",
+            "Debate it",
+            "Change the subject",
+            "Ask questions"
+          ],
+          "reply": "Noticing your pattern helps you stay yourself while staying kind."
+        },
+        {
+          "kind": "order",
+          "prompt": "You want different things. Put these in order.",
+          "items": [
+            "Hear their side first",
+            "Share yours without judging",
+            "Find what you both want",
+            "Try a mix of the two"
+          ],
+          "why": "Listening first lowers the guard; looking for shared goals turns a clash into a plan you can both enjoy."
+        },
+        {
+          "kind": "try",
+          "body": "When you notice a difference with someone you’re dating, ask one curious question about their view before sharing yours."
+        }
+      ]
+    },
+    {
+      "id": "dating-8",
+      "title": "Handle a No Kindly",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Respect another person’s limits and your own.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A no is trust, not rejection",
+          "body": "When someone tells you their limit, they’re trusting you with honesty. Responding warmly makes it safe for them to be honest again.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "At the end of a lovely evening, your date says they’d rather not kiss yet. What’s the best response?",
+          "options": [
+            {
+              "text": "Ask why not until they explain themselves.",
+              "why": "Pushing for reasons turns a clear no into pressure, which is never okay."
+            },
+            {
+              "text": "“Of course, thanks for telling me. I had a great time tonight.”",
+              "correct": true,
+              "why": "It respects their pace without fuss and keeps the warmth of the evening intact."
+            },
+            {
+              "text": "Go quiet and sulk for the rest of the night.",
+              "why": "Sulking punishes honesty, and they may feel they can’t tell you their limits again."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Your no counts too",
+          "body": "The same goes the other way. You never owe anyone an explanation for a limit, and anyone worth dating will accept it without pushing.",
+          "mood": "curious"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Respond to a boundary.",
+          "before": "No pressure at all,",
+          "after": ".",
+          "words": [
+            "but why not",
+            "if you say so",
+            "thanks for telling me"
+          ],
+          "answer": "thanks for telling me",
+          "why": "Thanking them shows their honesty was welcome, which builds real trust between you."
+        },
+        {
+          "kind": "write",
+          "prompt": "Is there a limit of your own you’d like to feel comfortable saying?",
+          "placeholder": "I’d like to be able to say…"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Respectful or pushy?",
+          "left": "Pushy",
+          "right": "Respectful",
+          "cards": [
+            {
+              "text": "“No problem, thanks for telling me.”",
+              "side": "right"
+            },
+            {
+              "text": "“Come on, just one?”",
+              "side": "left"
+            },
+            {
+              "text": "Acting cold for the rest of the night",
+              "side": "left"
+            },
+            {
+              "text": "Keeping the evening warm and easy",
+              "side": "right"
+            },
+            {
+              "text": "Asking again ten minutes later",
+              "side": "left"
+            }
+          ],
+          "why": "Accepting a no gracefully, without sulking or asking again, is what makes someone feel safe with you."
+        },
+        {
+          "kind": "try",
+          "body": "Practise one warm response to a no, and one way to say your own, so both feel easy when the moment comes."
+        }
+      ]
+    },
+    {
+      "id": "dating-9",
+      "title": "Be Clear About Hopes",
+      "minutes": 5,
+      "focus": "trust",
+      "summary": "Share intentions without demanding certainty.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Honesty about what you want",
+          "body": "Hiding what you’re looking for to seem easy-going often leads to months of mismatched hopes. Saying it kindly saves you both time.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve been on several dates and you’d like something committed, but you’ve never discussed it. What do you do?",
+          "options": [
+            {
+              "text": "Share what you’re hoping for and ask what they’re looking for.",
+              "correct": true,
+              "why": "It’s honest without demanding an answer on the spot, and invites them to be honest too."
+            },
+            {
+              "text": "Assume you’re exclusive after this many dates.",
+              "why": "People often have different assumptions; guessing can lead to real hurt later on."
+            },
+            {
+              "text": "Keep quiet so you don’t seem too keen.",
+              "why": "Playing it cool can leave you invested in something that may want something else."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "Share, don’t demand",
+          "body": "“I’m enjoying this and I’m looking for something serious eventually. What about you?” It’s clear, calm and leaves room for their honest answer.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Say what you hope for.",
+          "before": "I’m enjoying this, and I’m hoping for",
+          "after": "in time.",
+          "words": [
+            "something committed",
+            "a ring by June",
+            "whatever you want"
+          ],
+          "answer": "something committed",
+          "why": "It’s honest about your hopes without pressure or erasing what you want."
+        },
+        {
+          "kind": "write",
+          "prompt": "What are you hoping for from dating right now?",
+          "placeholder": "Right now I’m looking for…"
+        },
+        {
+          "kind": "scene",
+          "title": "The big question",
+          "them": "Your date",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Can I ask something? 🙈"
+            },
+            {
+              "from": "them",
+              "text": "What are you actually looking for right now?"
+            }
+          ],
+          "prompt": "You’d like something serious. Reply:",
+          "options": [
+            {
+              "text": "Honestly? Something serious, when it’s right. What about you?",
+              "correct": true,
+              "reaction": "Same, honestly. I’m glad you said it 😊",
+              "why": "You’re clear about your hopes without pressure, and you invite them to be honest too."
+            },
+            {
+              "text": "Oh, I’m just seeing where things go!",
+              "reaction": "Ah okay, cool 🙂",
+              "why": "Hiding what you want can lead you both down a path that doesn’t fit."
+            },
+            {
+              "text": "Why, what are YOU looking for?",
+              "reaction": "I asked first 😅",
+              "why": "Dodging the question makes it harder for either of you to be open."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Write down what you’re looking for, then share it with someone you’re dating when the moment feels right."
+        }
+      ]
+    },
+    {
+      "id": "dating-10",
+      "title": "Choose What Feels Healthy",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Check whether this connection fits your values.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Chemistry isn’t the whole story",
+          "body": "Butterflies are lovely, but they can’t tell you if a connection is good for you. How you feel around someone, over time, matters more.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A new relationship feels exciting, but you sometimes feel rushed into things. What’s the healthiest next step?",
+          "options": [
+            {
+              "text": "Ignore it; the chemistry is too good to risk.",
+              "why": "Strong chemistry can make it easy to overlook signs that matter for your wellbeing."
+            },
+            {
+              "text": "Let your friends decide whether to keep seeing them.",
+              "why": "Friends can help you think it through, but your own feelings deserve to lead."
+            },
+            {
+              "text": "Notice the pressure, say what pace suits you and see how they respond.",
+              "correct": true,
+              "why": "How someone reacts to your limits shows you a lot about whether this is healthy for you."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "If something feels wrong",
+          "body": "Healthy relationships never involve fear, control or harm. If you ever feel unsafe or pressured, talk to someone you trust or a local support line.",
+          "mood": "sad"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually feel after time with them?",
+          "options": [
+            "Energised",
+            "Calm and at ease",
+            "Anxious",
+            "It varies a lot"
+          ],
+          "reply": "Your feelings after time together are useful information. Keep listening to them."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each feeling with a healthy next step.",
+          "pairs": [
+            {
+              "a": "Feeling rushed",
+              "b": "Ask to slow things down"
+            },
+            {
+              "a": "Anxious when they’re quiet",
+              "b": "Check the story in your head"
+            },
+            {
+              "a": "Dropping your own plans",
+              "b": "Keep one night just for you"
+            }
+          ],
+          "why": "Feelings are useful signals. Noticing them and acting on them keeps a new relationship healthy for you."
+        },
+        {
+          "kind": "try",
+          "body": "After your next date, take a moment to notice how you feel: relaxed, anxious, energised or drained."
+        }
+      ]
+    }
+  ]
+}
