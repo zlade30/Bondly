@@ -2,7 +2,7 @@ This is an Expo/React Native mobile application. Prioritize mobile-first pattern
 
 ## Expo has changed — do not trust your training data
 
-Expo ships breaking changes every SDK release. APIs you remember are likely renamed, moved, or removed. Before writing any code that touches an Expo, EAS, or React Native API:
+Expo ships breaking changes every SDK release. APIs you remember are likely renamed, moved, or removed. Before writing any code that touches an Expo or React Native API:
 
 1. Read the major version of the `expo` package in `package.json`.
 2. Fetch the matching versioned docs: `https://docs.expo.dev/versions/v<major>.0.0/`
@@ -29,13 +29,14 @@ Run lint and typecheck before declaring any task done.
 - Import `Link`, `router`, and `useLocalSearchParams` from `expo-router`.
 - Docs: https://docs.expo.dev/router/introduction.md
 
-## Building with EAS
+## Building and releasing (no EAS)
 
-Use EAS to build, sign, and submit the app in the cloud (`eas build`, `eas submit`) and to ship over-the-air updates (`eas update`) — no local Xcode or Android Studio required. Run EAS CLI as `bunx eas-cli <command>` in Bun projects, or `npx eas-cli@latest <command>` otherwise; substitute that for bare `eas` in docs examples.
-Docs: https://docs.expo.dev/eas/index.md
+Bondly does **not** use EAS. Never run `eas build`, `eas submit` or `eas update`, and don't add `eas.json`, `expo-updates` or an EAS project ID. Builds are made locally with Xcode and Gradle and uploaded by hand; see `RELEASING.md`.
 
 ## Rules
 
-- If `ios/` and `android/` directories do not exist, they are generated (Continuous Native Generation). Never create or edit them by hand — configure native behavior in `app.json` and config plugins.
-- Expo Go only includes its bundled native modules. After adding a library with native code, the app needs a development build: `npx expo run:ios|android` locally, or `eas build --profile development`.
+- `ios/` and `android/` are committed and are the source of truth for native settings. Edit them directly (in Xcode / Android Studio or by hand). **Never run `npx expo prebuild`** (and especially not `--clean`): it would overwrite hand-made native changes.
+- Changes to `app.json` (name, icons, splash, permissions, plugins, version) no longer reach the native projects on their own. Make the same change in `ios/` and `android/` as well.
+- The app version and build number live in the native projects: `MARKETING_VERSION` / `CURRENT_PROJECT_VERSION` in Xcode, and `versionName` / `versionCode` in `android/app/build.gradle`.
+- After adding a library with native code, run `npx pod-install` (iOS) and rebuild with `npx expo run:ios|android`. Expo Go can't run this app.
 - Prefer recommended Expo modules over third-party libraries, and check your available skills before adding dependencies. Docs: https://docs.expo.dev/versions/latest/index.md

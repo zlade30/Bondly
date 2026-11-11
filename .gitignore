@@ -38,9 +38,18 @@ yarn-error.*
 
 example
 
-# generated native folders
-/ios
-/android
+# Native folders are committed and edited directly (no prebuild, no EAS).
+# Only their build output and local machine files are ignored here; ios/ and
+# android/ each have their own .gitignore for the rest.
+/ios/build
+/ios/Pods
+/android/.gradle
+/android/build
+/android/app/build
+/android/local.properties
+/android/app/release
+*.aab
+*.apk
 
 # Generated icon artwork
 scripts/brand/*.svg
