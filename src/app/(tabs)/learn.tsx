@@ -9,21 +9,21 @@ import { TopicIcon } from '@/components/bondly/topic-icons';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Space } from '@/constants/bondly';
-import { courseProgress, hasLevels, journeyFor, orderedCourses, otherJourneys, type Course } from '@/features/learn/content';
+import { COURSES, courseProgress, focusJourneys, hasLevels, otherJourneys, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { courseXp, journeyLevel } from '@/features/learn/xp';
 import { useOnboarding } from '@/features/onboarding/store';
 
 /**
- * Your relationship journey first, then the other journeys, then the skill refreshers (focus areas
- * first), then the journeys for other relationships. Each opens its map.
+ * Your focus first: the relationship journeys you picked (main journey on
+ * top), editable here. Then the other relationships, then the skill
+ * refreshers. Each opens its map.
  */
 export default function LearnScreen() {
   const { answers } = useOnboarding();
   const { completedLessons, lessonXp } = useProgress();
-  const journey = journeyFor(answers.goal);
-  const skills = orderedCourses(answers.focus);
-  const others = otherJourneys(answers.goal);
+  const focused = focusJourneys(answers.journeys);
+  const others = otherJourneys(answers.journeys);
 
   let i = 0;
   const row = (course: Course, label?: string) => (
@@ -39,7 +39,28 @@ export default function LearnScreen() {
 
   return (
     <TabScreen title="Learn" subtitle="Pick a journey or skill refresher to see its map.">
-      {journey && row(journey, 'Your journey')}
+      <View style={styles.groupHead}>
+        <BText variant="heading">Your focus</BText>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Edit your focus relationships"
+          hitSlop={10}
+          onPress={() => {
+            tapFeedback();
+            router.push('/focus' as Href);
+          }}>
+          <BText variant="bodyBold" color={Palette.primaryDeep}>
+            Edit
+          </BText>
+        </Pressable>
+      </View>
+      {focused.length > 0 ? (
+        focused.map((course, n) => row(course, n === 0 ? 'Main journey' : undefined))
+      ) : (
+        <BText variant="caption" color={Palette.inkSoft}>
+          No focus yet. Tap Edit to pick up to three relationships.
+        </BText>
+      )}
 
       {others.length > 0 && (
         <BText variant="heading" style={styles.section}>
@@ -52,9 +73,7 @@ export default function LearnScreen() {
       <BText variant="heading" style={styles.section}>
         Skill refreshers
       </BText>
-      {skills.map((course) =>
-        row(course, (answers.focus as string[]).includes(course.id) ? 'Your focus' : undefined)
-      )}
+      {COURSES.map((course) => row(course))}
     </TabScreen>
   );
 }
@@ -134,6 +153,7 @@ const styles = StyleSheet.create({
   },
   info: { flex: 1, gap: 2 },
   section: { marginTop: Space.lg },
+  groupHead: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   name: { fontSize: 17 },
   track: {
     height: 8,

@@ -19,7 +19,7 @@ export function ReminderSync() {
   const { completedLessons } = useProgress();
   const { streak } = useActivity();
 
-  const next = todaysLesson(answers.focus, completedLessons, answers.goal).lesson;
+  const next = todaysLesson(answers.journeys, completedLessons).lesson;
 
   useEffect(() => {
     if (!ready || !enabled) return;

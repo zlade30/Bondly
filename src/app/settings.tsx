@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, Pressable, StyleSheet, TextInput, View } from 'react-native';
 
 import { PrimaryButton, tapFeedback } from '@/components/bondly/buttons';
-import { Check } from '@/components/bondly/option';
 import { Screen } from '@/components/bondly/screen';
 import { ReminderSettings } from '@/components/reminders/reminder-settings';
 import { AboutSection } from '@/components/settings/about-section';
@@ -13,12 +12,10 @@ import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useAccount } from '@/features/account/account';
 import { useProgress } from '@/features/learn/progress';
-import { DAILY_OPTIONS, FOCUS_AREAS, type DailyMinutes, type FocusArea } from '@/features/onboarding/content';
+import { DAILY_OPTIONS, type DailyMinutes } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { resetRating } from '@/features/rating/rating';
 import { useJournal } from '@/features/reflect/journal';
-
-const MAX_FOCUS = 3;
 
 export default function SettingsScreen() {
   const { answers, update, reset: resetOnboarding } = useOnboarding();
@@ -28,20 +25,13 @@ export default function SettingsScreen() {
 
   const [name, setName] = useState(answers.name);
   const [minutes, setMinutes] = useState<DailyMinutes>(answers.minutes ?? 5);
-  const [focus, setFocus] = useState<FocusArea[]>(answers.focus);
 
   const back = () => (router.canGoBack() ? router.back() : router.replace('/profile' as Href));
-  const canSave = name.trim().length > 0 && focus.length > 0;
+  const canSave = name.trim().length > 0;
 
   const save = () => {
-    update({ name: name.trim(), minutes, focus });
+    update({ name: name.trim(), minutes });
     back();
-  };
-
-  const toggleFocus = (id: FocusArea) => {
-    tapFeedback();
-    if (focus.includes(id)) setFocus(focus.filter((f) => f !== id));
-    else if (focus.length < MAX_FOCUS) setFocus([...focus, id]);
   };
 
   const startOver = () =>
@@ -130,37 +120,6 @@ export default function SettingsScreen() {
         <SoundSettings />
 
         <BText variant="bodyBold" style={styles.label}>
-          Focus areas
-        </BText>
-        <BText variant="caption" style={styles.hint}>
-          Up to {MAX_FOCUS}. These come first in Today’s Lesson and your courses.
-        </BText>
-        <View style={styles.list}>
-          {FOCUS_AREAS.map((f) => {
-            const on = focus.includes(f.id);
-            const full = !on && focus.length >= MAX_FOCUS;
-            return (
-              <Pressable
-                key={f.id}
-                accessibilityRole="checkbox"
-                accessibilityState={{ checked: on, disabled: full }}
-                onPress={() => toggleFocus(f.id)}
-                style={[styles.row, { backgroundColor: f.tint }, on && styles.rowOn, full && { opacity: 0.5 }]}>
-                <BText variant="bodyBold" style={styles.rowLabel}>
-                  {f.label}
-                </BText>
-                <Check on={on} round={false} />
-              </Pressable>
-            );
-          })}
-        </View>
-        {focus.length === 0 && (
-          <BText variant="caption" color={Palette.danger} style={styles.hint}>
-            Pick at least one focus area.
-          </BText>
-        )}
-
-        <BText variant="bodyBold" style={styles.label}>
           About
         </BText>
         <AboutSection />
@@ -185,7 +144,6 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   title: { marginBottom: Space.md },
   label: { marginTop: Space.xl, marginBottom: Space.sm },
-  hint: { marginBottom: Space.sm },
   input: {
     height: 56,
     borderRadius: Radius.lg,
@@ -207,17 +165,6 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
   },
   pillOn: { borderColor: Palette.primary, backgroundColor: Palette.lilac },
-  list: { gap: Space.sm },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: Space.lg,
-    borderRadius: Radius.lg,
-    borderWidth: 2,
-    borderColor: 'transparent',
-  },
-  rowOn: { borderColor: Palette.primary },
-  rowLabel: { flex: 1 },
   danger: {
     marginTop: Space.xxl,
     backgroundColor: Palette.white,

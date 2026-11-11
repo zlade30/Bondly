@@ -13,8 +13,8 @@ import { TopicIcon, type TopicIconName } from '@/components/bondly/topic-icons';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
+import { focusJourneys } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
-import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { coursesFinished, thisWeek, minutesPractised, skillProgress } from '@/features/profile/stats';
 import { useActivity } from '@/features/profile/use-activity';
@@ -29,7 +29,10 @@ export default function ProfileScreen() {
   const skills = useMemo(() => skillProgress(answers, completedLessons), [answers, completedLessons]);
   const finished = useMemo(() => coursesFinished(completedLessons), [completedLessons]);
   const week = thisWeek(activeDays);
-  const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
+  // Days before someone first used Bondly aren't “skipped”, so only count from then.
+  const firstDay = useMemo(() => [...activeDays].sort()[0], [activeDays]);
+  // Your focus relationships, main journey first.
+  const focus = focusJourneys(answers.journeys).map((c) => ({ id: c.id, label: c.title, tint: c.tint }));
 
   const streakNote = streak.activeToday
     ? 'You’ve practised today. Nice work!'
@@ -94,7 +97,19 @@ export default function ProfileScreen() {
             {week.map((d) => (
               <View key={d.key} style={[styles.day, d.future && styles.dayFuture]}>
                 <View style={[styles.dayDot, d.active && styles.dayDotOn]}>
-                  {d.active && <TopicIcon name="flame" color="peach" size={26} noShadow />}
+                  {d.active ? (
+                    <TopicIcon name="flame" color="peach" size={26} noShadow />
+                  ) : (
+                    // A past day with nothing done: a sleepy flame. Today isn't skipped yet.
+                    !d.today &&
+                    !d.future &&
+                    !!firstDay &&
+                    d.key > firstDay && (
+                      <View style={styles.skipped} accessibilityLabel="Skipped">
+                        <TopicIcon name="flameout" color="lavender" size={25} noShadow />
+                      </View>
+                    )
+                  )}
                 </View>
                 <BText variant="caption" style={d.today && styles.dayToday}>
                   {d.label}
@@ -274,6 +289,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  skipped: { opacity: 0.9 },
   dayDotOn: { backgroundColor: Palette.white, borderWidth: 2, borderColor: '#FFB36B' },
   streakNote: { fontSize: 15 },
   mapCard: {

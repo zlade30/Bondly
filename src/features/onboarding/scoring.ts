@@ -22,13 +22,6 @@ export function scoreSkills(answers: OnboardingAnswers): Record<SkillId, number>
     scores[q.skill] = 0.3 + health * 0.55;
   }
 
-  // Areas the person wants to work on start a little lower, so they get lessons first.
-  for (const area of answers.focus) {
-    const skill: SkillId | null =
-      area === 'listening' ? 'connection' : area in scores ? (area as SkillId) : null;
-    if (skill) scores[skill] = Math.max(0.2, scores[skill] - 0.12);
-  }
-
   if (answers.mood === 'great' || answers.mood === 'calm') {
     scores.trust += 0.1;
     scores.connection += 0.1;

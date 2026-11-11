@@ -161,9 +161,14 @@ export function journeyFor(goal: RelationshipGoal | null) {
   return goal ? (JOURNEYS.find((j) => j.relationship === goal) ?? null) : null;
 }
 
+/** The journeys for your focus relationships, main journey first. */
+export function focusJourneys(journeys: RelationshipGoal[]) {
+  return journeys.map((g) => journeyFor(g)).filter((c): c is Course => !!c);
+}
+
 /** Journeys for the other relationships, to explore. */
-export function otherJourneys(goal: RelationshipGoal | null) {
-  return JOURNEYS.filter((j) => j.relationship !== goal);
+export function otherJourneys(journeys: RelationshipGoal[]) {
+  return JOURNEYS.filter((j) => !journeys.includes(j.relationship as RelationshipGoal));
 }
 
 export function findLesson(lessonId: string) {
@@ -174,23 +179,14 @@ export function findLesson(lessonId: string) {
   return null;
 }
 
-/** Skill courses ordered with the person's chosen focus areas first. */
-export function orderedCourses(focus: FocusArea[]) {
-  const chosen = focus
-    .map((f) => COURSES.find((c) => c.id === f))
-    .filter((c): c is Course => !!c);
-  return [...chosen, ...COURSES.filter((c) => !(focus as string[]).includes(c.id))];
-}
-
 /**
- * The next lesson to suggest: the person's relationship journey comes first,
- * in order; once it's finished (or if it doesn't exist yet), the skill
- * courses follow, focus areas first. Prefers lessons that have content, so
- * "Today's lesson" is always playable.
+ * The next lesson to suggest: your focus journeys in the order you picked
+ * them (main journey first), each in order; once they're all finished, the
+ * skill refreshers follow. Prefers lessons that have content, so "Today's
+ * lesson" is always playable.
  */
-export function todaysLesson(focus: FocusArea[], completed: string[], goal: RelationshipGoal | null = null) {
-  const journey = journeyFor(goal);
-  const courses = journey ? [journey, ...orderedCourses(focus)] : orderedCourses(focus);
+export function todaysLesson(journeys: RelationshipGoal[], completed: string[]) {
+  const courses = [...focusJourneys(journeys), ...COURSES];
   for (const playableOnly of [true, false]) {
     for (const course of courses) {
       const lesson = course.lessons.find(

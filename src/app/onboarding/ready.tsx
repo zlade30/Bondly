@@ -7,8 +7,8 @@ import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Palette, Radius, Space } from '@/constants/bondly';
+import { focusJourneys } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
-import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { playSoundAfter } from '@/features/sound/sound';
 
@@ -18,7 +18,8 @@ export default function ReadyScreen() {
   const { answers, complete } = useOnboarding();
   const { checkIn } = useProgress();
   const [saving, setSaving] = useState(false);
-  const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
+  // Your focus relationships, main journey first.
+  const focus = focusJourneys(answers.journeys).map((c) => ({ id: c.id, label: c.title, tint: c.tint }));
 
   const start = async () => {
     setSaving(true);

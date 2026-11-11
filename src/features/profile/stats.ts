@@ -1,4 +1,4 @@
-import { ALL_COURSES, courseProgress, journeyFor, type Course, type Lesson } from '@/features/learn/content';
+import { ALL_COURSES, courseProgress, type Course, type Lesson } from '@/features/learn/content';
 import { todayKey } from '@/features/learn/progress';
 import { SKILLS, type SkillId } from '@/features/onboarding/content';
 import { scoreSkills } from '@/features/onboarding/scoring';
@@ -91,15 +91,15 @@ export type SkillProgress = {
  * practise each skill are finished.
  *
  * Each skill has two equal halves, so neither drowns out the other:
- * - your journey's lessons for that skill (plus any lessons you've finished
- *   in other journeys, which count towards both done and total), and
+ * - your focus journeys' lessons for that skill (plus any lessons you've
+ *   finished in other journeys, which count towards both done and total), and
  * - the skill refresher for it. Connection has two refreshers, Deepen
  *   Connection and Listen to Understand, so that half is their average.
  * Finishing both halves fills the skill to the edge of the map.
  */
 export function skillProgress(answers: OnboardingAnswers, completed: string[]): SkillProgress[] {
   const base = scoreSkills(answers);
-  const own = journeyFor(answers.goal);
+  const own = new Set(answers.journeys.map((g) => `journey-${g}`));
   const done = new Set(completed);
 
   // Journey half: lessons on your own journey, plus finished ones from others.
@@ -109,7 +109,7 @@ export function skillProgress(answers: OnboardingAnswers, completed: string[]): 
 
   for (const course of ALL_COURSES) {
     if (course.kind === 'journey') {
-      const onPath = course.id === own?.id;
+      const onPath = own.has(course.id);
       for (const lesson of course.lessons) {
         const skill = skillOf(course, lesson);
         if (!skill || (!onPath && !done.has(lesson.id))) continue;

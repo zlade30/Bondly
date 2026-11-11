@@ -13,9 +13,22 @@ import type { RelationshipGoal, FocusArea, Mood, DailyMinutes } from './content'
 
 const STORAGE_KEY = 'bondly.onboarding.v1';
 
+/** The most relationship journeys someone can focus on at once. */
+export const MAX_JOURNEYS = 3;
+
+/** Fills in `journeys` for saves from before it existed: your main journey alone. */
+function withJourneys(answers: OnboardingAnswers): OnboardingAnswers {
+  if (answers.journeys?.length) return { ...answers, goal: answers.journeys[0] };
+  return { ...answers, journeys: answers.goal ? [answers.goal] : [] };
+}
+
 export type OnboardingAnswers = {
   name: string;
+  /** Your main relationship journey: the first of `journeys`. */
   goal: RelationshipGoal | null;
+  /** Your focus: 1–3 relationship journeys, in the order you picked them. */
+  journeys: RelationshipGoal[];
+  /** No longer asked in onboarding (skill focus areas); kept so older saves still load. */
   focus: FocusArea[];
   /** Quiz slider answers keyed by question id, 0..4. */
   quiz: Record<string, number>;
@@ -27,6 +40,7 @@ export type OnboardingAnswers = {
 const EMPTY: OnboardingAnswers = {
   name: '',
   goal: null,
+  journeys: [],
   focus: [],
   quiz: {},
   minutes: null,
@@ -70,7 +84,7 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
         if (cancelled || !raw) return;
         const saved = JSON.parse(raw) as OnboardingSnapshot;
         setCompleted(saved.completed);
-        setAnswers({ ...EMPTY, ...saved.answers });
+        setAnswers(withJourneys({ ...EMPTY, ...saved.answers }));
         setUpdatedAt(saved.updatedAt);
       })
       .catch(() => {})
@@ -108,7 +122,7 @@ export function OnboardingProvider({ children }: { children: ReactNode }) {
   }, [answers]);
 
   const restore = useCallback((next: OnboardingSnapshot) => {
-    setAnswers({ ...EMPTY, ...next.answers });
+    setAnswers(withJourneys({ ...EMPTY, ...next.answers }));
     setUpdatedAt(next.updatedAt);
     setCompleted(next.completed);
   }, []);

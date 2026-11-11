@@ -7,7 +7,6 @@ export const STEPS = [
   '/onboarding/personalize',
   '/onboarding/name',
   '/onboarding/goal',
-  '/onboarding/focus',
   '/onboarding/quiz/0',
   '/onboarding/quiz/1',
   '/onboarding/tip',

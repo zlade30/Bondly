@@ -14,7 +14,7 @@ import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
 import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, hasLevels, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
+import { courseProgress, focusJourneys, hasLevels, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { journeyLevel, levelOfLesson } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
@@ -49,15 +49,15 @@ export default function HomeScreen() {
   };
 
   const today = useMemo(
-    () => todaysLesson(answers.focus, completedLessons, answers.goal),
-    [answers.focus, completedLessons, answers.goal]
+    () => todaysLesson(answers.journeys, completedLessons),
+    [answers.journeys, completedLessons]
   );
-  // Journeys only: yours first, then the other relationships. Skill refreshers live on the Learn tab.
-  const courses = useMemo(() => {
-    const journey = journeyFor(answers.goal);
-    const others = otherJourneys(answers.goal);
-    return journey ? [journey, ...others] : others;
-  }, [answers.goal]);
+  // Journeys only: your focus journeys first (main one leading), then the others.
+  // Skill refreshers live on the Learn tab.
+  const courses = useMemo(
+    () => [...focusJourneys(answers.journeys), ...otherJourneys(answers.journeys)],
+    [answers.journeys]
+  );
   // Where today's lesson comes from, and its picture: the level's icon for a
   // journey lesson, or the skill refresher's own icon.
   const todayLevel = useMemo(() => levelOfLesson(today.course, today.lesson.id), [today]);

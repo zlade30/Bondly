@@ -104,6 +104,7 @@ function RootStack() {
           <Stack.Screen name="course/[courseId]" />
           <Stack.Screen name="lesson/[lessonId]" />
           <Stack.Screen name="journal/[entryId]" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="focus" options={{ presentation: 'modal' }} />
           <Stack.Screen name="check-in" options={{ presentation: 'fullScreenModal', gestureEnabled: false, animation: 'fade' }} />
         </Stack.Protected>
         {/* Settings stays reachable from the paywall, for restoring, signing in or deleting an account. */}

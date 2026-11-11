@@ -67,7 +67,7 @@ export const MORE_TOPIC_ICONS = [
 ] as const;
 
 /** Icons for the progress tiles on Profile, drawn in the same style. */
-export const STAT_ICONS = ['books', 'stopwatch', 'medal', 'sunny', 'journal', 'flame'] as const;
+export const STAT_ICONS = ['books', 'stopwatch', 'medal', 'sunny', 'journal', 'flame', 'flameout'] as const;
 
 export type MoreTopicIconName = (typeof MORE_TOPIC_ICONS)[number] | (typeof STAT_ICONS)[number];
 
@@ -804,6 +804,16 @@ export function moreArt(k: IconKit): Record<MoreTopicIconName, ReactNode> {
           pink
         )}
         {face(60, 88, 0.55)}
+      </>
+    ),
+    // A skipped day: the same flame, burnt low and dozing.
+    flameout: (
+      <>
+        {soft('M60 22 C 70 40, 92 54, 92 78 C 92 98, 78 110, 60 110 C 42 110, 28 98, 28 78 C 28 64, 38 56, 42 44 C 46 56, 50 58, 54 58 C 52 46, 54 34, 60 22 Z')}
+        <Path d="M60 62 C 68 72, 78 80, 78 92 C 78 102, 70 108, 60 108 C 50 108, 42 102, 42 92 C 42 84, 50 80, 52 72 C 55 78, 58 76, 60 62 Z" fill="#FFFFFF" opacity={0.35} />
+        {sleepyEyes(60, 86)}
+        <Path d="M56 98 H 64" {...stroke(ink, 3, 0.7)} />
+        <Path d="M82 14 H 94 L 82 26 H 94 M100 30 H 107 L 100 37 H 107" {...stroke(ink, 3.5, 0.55)} />
       </>
     ),
   };
