@@ -5,12 +5,13 @@ import { Alert, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-n
 import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 import { PrimaryButton, SecondaryButton } from '@/components/bondly/buttons';
-import { Confetti } from '@/components/bondly/confetti';
+import { Confetti, ConfettiAfter } from '@/components/bondly/confetti';
 import { ClockIcon } from '@/components/bondly/icons';
 import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { MatchStep, OrderStep, SceneStep, SortStep } from '@/components/lesson/activities';
+import { DailyGoalReached, GOAL_FILL_DELAY, GOAL_FILL_MS } from '@/components/lesson/daily-goal';
 import {
   BlankStep,
   ChoiceStep,
@@ -24,11 +25,18 @@ import { findLesson, hasLevels, type Course, type Lesson } from '@/features/lear
 import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/lessons';
 import { useProgress } from '@/features/learn/progress';
 import { finishesLevel, journeyLevel, lessonXp, levelOfLesson, maxLessonXp } from '@/features/learn/xp';
+import type { DailyMinutes } from '@/features/onboarding/content';
+import { DEFAULT_DAILY_MINUTES } from '@/features/onboarding/pace';
+import { useOnboarding } from '@/features/onboarding/store';
 import { useJournal } from '@/features/reflect/journal';
 import { maybeAskForRating } from '@/features/rating/rating';
 import { playSound } from '@/features/sound/sound';
 
-type Phase = 'intro' | 'play' | 'done';
+/** `goal` follows `done` when this lesson is the one that reaches today's daily goal. */
+type Phase = 'intro' | 'play' | 'done' | 'goal';
+
+/** Today's minutes either side of the lesson that reached the daily goal. */
+type GoalMoment = { goal: DailyMinutes; before: number; after: number };
 
 /** How a play-through went, for the celebration screen. */
 type Result = {
@@ -80,7 +88,9 @@ function LessonPlayer({
   startAt: number | null;
 }) {
   const steps = LESSON_STEPS[lesson.id] ?? [];
-  const { completeLesson, completedLessons, lessonXp: bestXp } = useProgress();
+  const { completeLesson, completedLessons, lessonXp: bestXp, todayMinutes } = useProgress();
+  const { answers } = useOnboarding();
+  const [goalMoment, setGoalMoment] = useState<GoalMoment | null>(null);
   const [phase, setPhase] = useState<Phase>(startAt !== null ? 'play' : 'intro');
   const [index, setIndex] = useState(Math.min(startAt ?? 0, Math.max(steps.length - 1, 0)));
   const [graded, setGraded] = useState({ total: 0, firstTry: 0 });
@@ -89,7 +99,8 @@ function LessonPlayer({
 
   const [rateMoment, setRateMoment] = useState<{ lessonsDone: number; levelUp: boolean } | null>(null);
   useEffect(() => {
-    if (phase !== 'done' || !rateMoment) return;
+    // Ask once the celebrations have played: after the lesson, or after the daily goal screen.
+    if ((phase !== 'done' && phase !== 'goal') || !rateMoment) return;
     const t = setTimeout(() => maybeAskForRating(rateMoment), 2200);
     return () => clearTimeout(t);
   }, [phase, rateMoment]);
@@ -109,7 +120,11 @@ function LessonPlayer({
       const xp = lessonXp(firstTry);
       const firstTime = !completedLessons.includes(lesson.id);
       setResult({ xp, maxXp: maxLessonXp(steps), firstTime, newBest: !firstTime && xp > (bestXp[lesson.id] ?? 0) });
-      completeLesson(lesson.id, xp);
+      // The lesson that takes today from under the daily goal to at least it gets its own celebration.
+      const goal = answers.minutes ?? DEFAULT_DAILY_MINUTES;
+      const after = todayMinutes + lesson.minutes;
+      setGoalMoment(todayMinutes < goal && after >= goal ? { goal, before: todayMinutes, after } : null);
+      completeLesson(lesson.id, xp, lesson.minutes);
       // A first finish is a good moment to (maybe) ask for a rating, once the celebration has played.
       if (firstTime) {
         setRateMoment({
@@ -179,29 +194,46 @@ function LessonPlayer({
     );
   }
 
-  if (phase === 'done') {
+  if (phase === 'done' || phase === 'goal') {
     const next = course.lessons[course.lessons.indexOf(lesson) + 1];
     const nextPlayable = next && isPlayable(next.id) ? next : null;
     const courseDone = course.lessons.every((l) => l.id === lesson.id || completedLessons.includes(l.id));
+    // Where to go from here: on to the next lesson, or done for now.
+    const exits = (
+      <>
+        {nextPlayable && !courseDone && (
+          <PrimaryButton
+            label={`Next: ${nextPlayable.title}`}
+            onPress={() => router.replace(`/lesson/${nextPlayable.id}` as Href)}
+          />
+        )}
+        {nextPlayable && !courseDone ? (
+          <SecondaryButton label="Done" onPress={close} />
+        ) : (
+          <PrimaryButton label="Done" onPress={close} />
+        )}
+      </>
+    );
+
+    if (phase === 'goal' && goalMoment) {
+      return (
+        <View style={styles.flex}>
+          <Screen footer={exits}>
+            <DailyGoalReached goal={goalMoment.goal} before={goalMoment.before} after={goalMoment.after} />
+          </Screen>
+          <ConfettiAfter delay={GOAL_FILL_DELAY + GOAL_FILL_MS} />
+        </View>
+      );
+    }
+
     // Confetti the first time a lesson completes its journey level.
     const levelUp = !!result?.firstTime && finishesLevel(course, lesson.id, completedLessons);
     return (
       <View style={styles.flex}>
         <Screen
           footer={
-            <>
-              {nextPlayable && !courseDone && (
-                <PrimaryButton
-                  label={`Next: ${nextPlayable.title}`}
-                  onPress={() => router.replace(`/lesson/${nextPlayable.id}` as Href)}
-                />
-              )}
-              {nextPlayable && !courseDone ? (
-                <SecondaryButton label="Done" onPress={close} />
-              ) : (
-                <PrimaryButton label="Done" onPress={close} />
-              )}
-            </>
+            // When this lesson reached the daily goal, that screen comes next and offers the way on.
+            goalMoment ? <PrimaryButton label="Continue" onPress={() => setPhase('goal')} /> : exits
           }>
           <Celebration
             course={course}

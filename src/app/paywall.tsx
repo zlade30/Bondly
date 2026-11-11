@@ -1,7 +1,7 @@
 import { router, type Href } from 'expo-router';
 import * as WebBrowser from 'expo-web-browser';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Pressable, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, Alert, Platform, Pressable, StyleSheet, View } from 'react-native';
 import { PACKAGE_TYPE, type PurchasesPackage } from 'react-native-purchases';
 
 import { PrimaryButton, TextButton, tapFeedback } from '@/components/bondly/buttons';
@@ -19,6 +19,12 @@ import { useSubscription } from '@/features/premium/subscription';
 
 const LESSON_COUNT = ALL_COURSES.reduce((n, c) => n + c.lessons.filter((l) => isPlayable(l.id)).length, 0);
 
+/** The store's own names, so Android never reads about an Apple Account or the App Store. */
+const STORE =
+  Platform.OS === 'android'
+    ? { account: 'Google account', settings: 'Google Play subscriptions' }
+    : { account: 'Apple Account', settings: 'App Store settings' };
+
 const BENEFITS = [
   JOURNEYS.length > 0
     ? `${JOURNEYS.length} relationship ${JOURNEYS.length === 1 ? 'journey' : 'journeys'} and ${LESSON_COUNT} bite-size lessons`
@@ -28,8 +34,11 @@ const BENEFITS = [
   'New lessons as they’re added',
 ];
 
-/** Display order: the best-value plan first. */
-const ORDER = [PACKAGE_TYPE.ANNUAL, PACKAGE_TYPE.MONTHLY, PACKAGE_TYPE.WEEKLY, PACKAGE_TYPE.LIFETIME];
+/** Display order: shortest commitment first, then longer ones. */
+const ORDER = [PACKAGE_TYPE.WEEKLY, PACKAGE_TYPE.MONTHLY, PACKAGE_TYPE.ANNUAL, PACKAGE_TYPE.LIFETIME];
+
+/** The plan picked before you choose: the yearly one (best value, and usually where the trial is). */
+const PRESELECTED = PACKAGE_TYPE.ANNUAL;
 
 const PERIOD: Partial<Record<PACKAGE_TYPE, string>> = {
   [PACKAGE_TYPE.WEEKLY]: 'week',
@@ -93,7 +102,11 @@ export default function PaywallScreen() {
   }, [loadOffering]);
 
   const packages = sortPackages(offering?.availablePackages ?? []);
-  const selected = packages.find((p) => p.identifier === selectedId) ?? packages[0] ?? null;
+  const selected =
+    packages.find((p) => p.identifier === selectedId) ??
+    packages.find((p) => p.packageType === PRESELECTED) ??
+    packages[0] ??
+    null;
   const trial = selected ? trialFor(selected) : null;
   // Only promise a free trial when the plans really include one.
   const anyTrial = packages.map(trialFor).find((t) => t !== null) ?? null;
@@ -119,7 +132,7 @@ export default function PaywallScreen() {
       if (!found) {
         Alert.alert(
           'Nothing to restore',
-          'We couldn’t find a Bondly purchase for this Apple Account. If you subscribed on another Apple Account, sign in to the Bondly account you used then, under Settings → Account.'
+          `We couldn’t find a Bondly purchase for this ${STORE.account}. If you subscribed on another ${STORE.account}, sign in to the Bondly account you used then, under Settings → Account.`
         );
       }
     } catch (e) {
@@ -144,8 +157,8 @@ export default function PaywallScreen() {
     : selected.packageType === PACKAGE_TYPE.LIFETIME
       ? `One payment of ${selected.product.priceString}. No subscription, yours to keep.`
       : trial
-        ? `Free for ${trial.length}, then ${selected.product.priceString} per ${period}. Cancel anytime in your App Store settings at least 24 hours before the trial ends and you won’t be charged.`
-        : `${selected.product.priceString} per ${period}. Renews automatically until you cancel in your App Store settings, at least 24 hours before the renewal date.`;
+        ? `Free for ${trial.length}, then ${selected.product.priceString} per ${period}. Cancel anytime in your ${STORE.settings} at least 24 hours before the trial ends and you won’t be charged.`
+        : `${selected.product.priceString} per ${period}. Renews automatically until you cancel in your ${STORE.settings}, at least 24 hours before the renewal date.`;
 
   return (
     <Screen
@@ -226,7 +239,7 @@ export default function PaywallScreen() {
       {/* After a reinstall, a new phone or switching Bondly accounts, this is the way back in. */}
       <View style={styles.restoreHint}>
         <BText variant="body" center>
-          Subscribed before? Bring back a purchase made with this Apple Account.
+          Subscribed before? Bring back a purchase made with this {STORE.account}.
         </BText>
         <TextButton
           label={busy === 'restore' ? 'Restoring…' : 'Restore purchase'}

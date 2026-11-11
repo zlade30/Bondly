@@ -36,7 +36,7 @@ export type Course = {
   tint: string;
   /** Journeys: each level's name and look, in order. */
   levels?: LevelInfo[];
-  /** Optional full-screen scene behind the journey path (a bundled image, from require()). */
+  /** Optional full-screen scene behind the course path (a bundled image, from require()). */
   background?: number;
   mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp };
   /** The figure on its card and map, coloured with the mascot colour. */
@@ -55,6 +55,7 @@ const BASE_COURSES: Course[] = [
     tint: '#FDE6F1',
     mascot: { color: 'pink', mood: 'happy', prop: 'none' },
     icon: 'chat',
+    background: require('@/assets/images/refreshers/communication.webp'),
     lessons: [
       { id: 'comm-1', title: 'Say What You Feel', minutes: 3, summary: 'Swap blame for “I feel…” and watch defences drop.' },
       { id: 'comm-2', title: 'Ask, Don’t Assume', minutes: 4, summary: 'Curious questions beat mind-reading every time.' },
@@ -69,6 +70,7 @@ const BASE_COURSES: Course[] = [
     tint: '#DDF5EA',
     mascot: { color: 'mint', mood: 'content', prop: 'shield' },
     icon: 'padlock',
+    background: require('@/assets/images/refreshers/trust.webp'),
     lessons: [
       { id: 'trust-1', title: 'Small Promises, Kept', minutes: 3, summary: 'Trust is built in tiny, reliable moments.' },
       { id: 'trust-2', title: 'Owning Mistakes', minutes: 4, summary: 'A real apology has three parts.' },
@@ -82,6 +84,7 @@ const BASE_COURSES: Course[] = [
     tint: '#E4E9FF',
     mascot: { color: 'blue', mood: 'wink', prop: 'flag' },
     icon: 'fence',
+    background: require('@/assets/images/refreshers/boundaries.webp'),
     lessons: [
       { id: 'bound-1', title: 'Know Your Limits', minutes: 3, summary: 'Notice the signs you’ve hit a limit.' },
       { id: 'bound-2', title: 'A Kind, Clear No', minutes: 4, summary: 'Saying no without the guilt spiral.' },
@@ -95,6 +98,7 @@ const BASE_COURSES: Course[] = [
     tint: '#FFF4D6',
     mascot: { color: 'yellow', mood: 'neutral', prop: 'none' },
     icon: 'thermometer',
+    background: require('@/assets/images/refreshers/conflict.webp'),
     lessons: [
       { id: 'conf-1', title: 'Pause Before You React', minutes: 3, summary: 'A ten-second pause changes the whole fight.' },
       { id: 'conf-2', title: 'Same Team, Shared Problem', minutes: 4, summary: 'It’s you two versus the issue.' },
@@ -108,6 +112,7 @@ const BASE_COURSES: Course[] = [
     tint: '#EFE7FF',
     mascot: { color: 'lavender', mood: 'content', prop: 'heart' },
     icon: 'links',
+    background: require('@/assets/images/refreshers/connection.webp'),
     lessons: [
       { id: 'conn-1', title: 'Turn Toward Bids', minutes: 3, summary: 'Notice the small reaches for connection.' },
       { id: 'conn-2', title: 'Questions That Go Deeper', minutes: 4, summary: 'Move past “how was your day?”.' },
@@ -121,6 +126,7 @@ const BASE_COURSES: Course[] = [
     tint: '#FFE9E2',
     mascot: { color: 'peach', mood: 'curious', prop: 'none' },
     icon: 'shell',
+    background: require('@/assets/images/refreshers/listening.webp'),
     lessons: [
       { id: 'list-1', title: 'Full Attention', minutes: 3, summary: 'Put the phone down and tune in.' },
       { id: 'list-2', title: 'Reflect It Back', minutes: 4, summary: '“So what I’m hearing is…”' },

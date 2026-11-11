@@ -53,16 +53,42 @@ const STYLE: Record<
     icon: TopicIconName;
   }
 > = {
-  partner: { tint: '#FDE6F1', mascot: { color: 'pink', mood: 'happy', prop: 'heart' }, icon: 'hearts' },
-  dating: { tint: '#FFE9E2', mascot: { color: 'peach', mood: 'wink', prop: 'sparkles' }, icon: 'tulip' },
-  family: { tint: '#FFF4D6', mascot: { color: 'yellow', mood: 'content', prop: 'heart' }, icon: 'trio' },
+  partner: {
+    tint: '#FDE6F1',
+    background: require('@/assets/images/journeys/partner.webp'),
+    mascot: { color: 'pink', mood: 'happy', prop: 'heart' },
+    icon: 'hearts',
+  },
+  dating: {
+    tint: '#FFE9E2',
+    background: require('@/assets/images/journeys/dating.webp'),
+    mascot: { color: 'peach', mood: 'wink', prop: 'sparkles' },
+    icon: 'tulip',
+  },
+  family: {
+    tint: '#FFF4D6',
+    background: require('@/assets/images/journeys/family.webp'),
+    mascot: { color: 'yellow', mood: 'content', prop: 'heart' },
+    icon: 'trio',
+  },
   friends: {
     tint: '#DDF5EA',
     background: require('@/assets/images/journeys/friends.webp'),
-    mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' }, icon: 'bracelet',
+    mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' },
+    icon: 'bracelet',
   },
-  work: { tint: '#E4E9FF', mascot: { color: 'blue', mood: 'curious', prop: 'flag' }, icon: 'briefcase' },
-  self: { tint: '#EFE7FF', mascot: { color: 'lavender', mood: 'content', prop: 'shield' }, icon: 'star' },
+  work: {
+    tint: '#E4E9FF',
+    background: require('@/assets/images/journeys/work.webp'),
+    mascot: { color: 'blue', mood: 'curious', prop: 'flag' },
+    icon: 'briefcase',
+  },
+  self: {
+    tint: '#EFE7FF',
+    background: require('@/assets/images/journeys/self.webp'),
+    mascot: { color: 'lavender', mood: 'content', prop: 'shield' },
+    icon: 'star',
+  },
 };
 
 function toSteps(steps: JourneyFile['lessons'][number]['steps']): LessonStep[] {

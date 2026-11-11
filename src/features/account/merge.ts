@@ -42,7 +42,10 @@ function mergeBest(a: Record<string, number>, b: Record<string, number>) {
   return out;
 }
 
-/** Lessons and active days are combined; best XP per lesson is kept; for the same day's check-in, this phone wins. */
+/**
+ * Lessons and active days are combined; best XP per lesson is kept; for the same day's check-in, this phone wins.
+ * Minutes per day keep the higher total: two phones can't be added up without counting a lesson twice.
+ */
 export function mergeProgress(local: ProgressState, remote?: Partial<ProgressState> | null): ProgressState {
   if (!remote) return local;
   return {
@@ -50,6 +53,7 @@ export function mergeProgress(local: ProgressState, remote?: Partial<ProgressSta
     lessonDays: union(local.lessonDays, remote.lessonDays ?? []),
     checkIns: { ...(remote.checkIns ?? {}), ...local.checkIns },
     lessonXp: mergeBest(local.lessonXp ?? {}, remote.lessonXp ?? {}),
+    dayMinutes: mergeBest(local.dayMinutes ?? {}, remote.dayMinutes ?? {}),
   };
 }
 

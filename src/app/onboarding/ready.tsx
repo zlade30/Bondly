@@ -3,6 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 
 import { PrimaryButton } from '@/components/bondly/buttons';
+import { ConfettiAfter } from '@/components/bondly/confetti';
 import { Bondling, HeartIcon } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
@@ -12,9 +13,13 @@ import { useProgress } from '@/features/learn/progress';
 import { useOnboarding } from '@/features/onboarding/store';
 import { playSoundAfter } from '@/features/sound/sound';
 
+/** The confetti bursts just after the pair has zoomed in. */
+const CONFETTI_DELAY = 350;
+
 export default function ReadyScreen() {
-  // A soft pop as the mascot zooms in.
+  // A soft pop as the mascot zooms in, then a cheer as the confetti bursts.
   useEffect(() => playSoundAfter('pop', 60), []);
+  useEffect(() => playSoundAfter('celebrate', CONFETTI_DELAY), []);
   const { answers, complete } = useOnboarding();
   const { checkIn } = useProgress();
   const [saving, setSaving] = useState(false);
@@ -30,49 +35,53 @@ export default function ReadyScreen() {
   };
 
   return (
-    <Screen footer={<PrimaryButton label="Start my journey" onPress={start} disabled={saving} />}>
-      <View style={styles.center}>
-        <Animated.View entering={ZoomIn.duration(320)} style={styles.art}>
-          <Float distance={10}>
-            <View style={styles.pair}>
-              <Bondling size={130} color="pink" mood="happy" />
-              <View style={styles.second}>
-                <Bondling size={150} color="lavender" mood="content" />
+    <View style={styles.root}>
+      <Screen footer={<PrimaryButton label="Start my journey" onPress={start} disabled={saving} />}>
+        <View style={styles.center}>
+          <Animated.View entering={ZoomIn.duration(320)} style={styles.art}>
+            <Float distance={10}>
+              <View style={styles.pair}>
+                <Bondling size={130} color="pink" mood="happy" />
+                <View style={styles.second}>
+                  <Bondling size={150} color="lavender" mood="content" />
+                </View>
               </View>
-            </View>
-          </Float>
-          <Float style={styles.heartA} distance={12} duration={1300}>
-            <HeartIcon size={38} />
-          </Float>
-          <Float style={styles.heartB} distance={9} duration={1600} delay={250}>
-            <HeartIcon size={24} colors={['#FFD1B8', '#FF8A9E']} />
-          </Float>
-        </Animated.View>
+            </Float>
+            <Float style={styles.heartA} distance={12} duration={1300}>
+              <HeartIcon size={38} />
+            </Float>
+            <Float style={styles.heartB} distance={9} duration={1600} delay={250}>
+              <HeartIcon size={24} colors={['#FFD1B8', '#FF8A9E']} />
+            </Float>
+          </Animated.View>
 
-        <Animated.View entering={FadeInDown.delay(200).duration(500)} style={styles.copy}>
-          <BText variant="title" center>
-            You’re all set{answers.name ? `, ${answers.name}` : ''}!
-          </BText>
-          <BText variant="body" center>
-            Your journey starts with {answers.minutes ?? 5} minutes a day. First stop:
-          </BText>
-        </Animated.View>
+          <Animated.View entering={FadeInDown.delay(200).duration(500)} style={styles.copy}>
+            <BText variant="title" center>
+              You’re all set{answers.name ? `, ${answers.name}` : ''}!
+            </BText>
+            <BText variant="body" center>
+              Your journey starts with {answers.minutes ?? 5} minutes a day. First stop:
+            </BText>
+          </Animated.View>
 
-        <Animated.View entering={FadeInDown.delay(320).duration(500)} style={styles.chips}>
-          {focus.map((f) => (
-            <View key={f.id} style={[styles.chip, { backgroundColor: f.tint }]}>
-              <BText variant="bodyBold" style={styles.chipText}>
-                {f.label}
-              </BText>
-            </View>
-          ))}
-        </Animated.View>
-      </View>
-    </Screen>
+          <Animated.View entering={FadeInDown.delay(320).duration(500)} style={styles.chips}>
+            {focus.map((f) => (
+              <View key={f.id} style={[styles.chip, { backgroundColor: f.tint }]}>
+                <BText variant="bodyBold" style={styles.chipText}>
+                  {f.label}
+                </BText>
+              </View>
+            ))}
+          </Animated.View>
+        </View>
+      </Screen>
+      <ConfettiAfter delay={CONFETTI_DELAY} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  root: { flex: 1 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: Space.lg },
   art: { alignItems: 'center', justifyContent: 'center', height: 220, width: 280 },
   pair: { flexDirection: 'row', alignItems: 'flex-end' },

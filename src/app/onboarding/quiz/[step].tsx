@@ -2,7 +2,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 
 import { NextFab } from '@/components/bondly/buttons';
-import { Bondling, type BondlingMood } from '@/components/bondly/mascot';
+import { Bondling, type BondlingColor, type BondlingMood } from '@/components/bondly/mascot';
 import { ScaleSlider } from '@/components/bondly/scale-slider';
 import { Float, Screen, SpeechBubble } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
@@ -11,7 +11,14 @@ import { QUIZ } from '@/features/onboarding/content';
 import { useOnboardingFlow } from '@/features/onboarding/flow';
 import { useOnboarding } from '@/features/onboarding/store';
 
-const MOOD_BY_VALUE: BondlingMood[] = ['sad', 'neutral', 'curious', 'content', 'happy'];
+/** The mascot's face and color for each slider step, matching the feelings on the mood screen. */
+const FEELING_BY_VALUE: { mood: BondlingMood; color: BondlingColor }[] = [
+  { mood: 'sad', color: 'purple' }, // like Low
+  { mood: 'neutral', color: 'yellow' }, // like Okay
+  { mood: 'curious', color: 'lavender' },
+  { mood: 'content', color: 'mint' }, // like Calm
+  { mood: 'happy', color: 'pink' }, // like Great
+];
 
 export default function QuizScreen() {
   const { step } = useLocalSearchParams<{ step: string }>();
@@ -32,8 +39,8 @@ export default function QuizScreen() {
         <Float distance={6}>
           <Bondling
             size={104}
-            color="lavender"
-            mood={value === null ? 'curious' : MOOD_BY_VALUE[value]}
+            color={value === null ? 'lavender' : FEELING_BY_VALUE[value].color}
+            mood={value === null ? 'curious' : FEELING_BY_VALUE[value].mood}
           />
         </Float>
         <SpeechBubble>

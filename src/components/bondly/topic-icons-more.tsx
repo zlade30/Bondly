@@ -69,7 +69,17 @@ export const MORE_TOPIC_ICONS = [
 /** Icons for the progress tiles on Profile, drawn in the same style. */
 export const STAT_ICONS = ['books', 'stopwatch', 'medal', 'sunny', 'journal', 'flame', 'flameout'] as const;
 
-export type MoreTopicIconName = (typeof MORE_TOPIC_ICONS)[number] | (typeof STAT_ICONS)[number];
+/** One per daily-time choice in onboarding: Gentle, Steady, Committed, All in. */
+export const PACE_ICONS = ['dandelion', 'tortoise', 'boot', 'rocket'] as const;
+
+/** One per reminder time in onboarding: Morning, Lunch, Evening. */
+export const DAYTIME_ICONS = ['sunrise', 'sandwich', 'nightmoon'] as const;
+
+export type MoreTopicIconName =
+  | (typeof MORE_TOPIC_ICONS)[number]
+  | (typeof STAT_ICONS)[number]
+  | (typeof PACE_ICONS)[number]
+  | (typeof DAYTIME_ICONS)[number];
 
 /** Everything an icon needs from the shared drawing kit. */
 export type IconKit = {
@@ -804,6 +814,92 @@ export function moreArt(k: IconKit): Record<MoreTopicIconName, ReactNode> {
           pink
         )}
         {face(60, 88, 0.55)}
+      </>
+    ),
+    // ---------- Daily pace ----------
+    // Gentle: a dandelion puff, soft and light.
+    dandelion: (
+      <>
+        <Path d="M60 110 C 58 96, 62 84, 60 72" {...stroke('#3DBE8B', 5)} />
+        <Path d="M60 96 C 48 96, 40 88, 38 78 C 50 78, 58 86, 60 96 Z" fill={green} />
+        {soft(circ(60, 44, 30))}
+        <Path
+          d="M60 44 L 60 16 M60 44 L 84 28 M60 44 L 88 52 M60 44 L 78 70 M60 44 L 40 70 M60 44 L 32 52 M60 44 L 36 28"
+          {...stroke('#FFFFFF', 2.5, 0.55)}
+        />
+        {face(60, 48, 0.55)}
+        <Path d="M96 20 L 104 12 M104 30 L 112 24" {...stroke(ink, 2.5, 0.3)} />
+        <Circle cx={105} cy={11} r={3} fill="#FFFFFF" />
+        <Circle cx={113} cy={23} r={2.5} fill="#FFFFFF" />
+      </>
+    ),
+    // Steady: a tortoise, slow and steady.
+    tortoise: (
+      <>
+        <Path d={rr(24, 82, 14, 18, 7)} fill={green} />
+        <Path d={rr(76, 82, 14, 18, 7)} fill={green} />
+        <Path d="M16 84 L 6 88 L 16 90 Z" fill={green} />
+        {tinted(circ(100, 70, 15), green)}
+        {face(102, 70, 0.4)}
+        {soft('M14 86 C 14 44, 92 44, 92 86 Z')}
+        <Path d="M34 84 L 42 62 L 64 62 L 72 84 M42 62 L 30 74 M64 62 L 78 72 M53 62 L 53 48" {...stroke('#FFFFFF', 3, 0.45)} />
+      </>
+    ),
+    // Committed: a hiking boot, ready for the trail.
+    boot: (
+      <>
+        {soft('M30 16 H62 V58 C 62 66, 66 70, 74 72 L 96 78 C 104 80, 108 86, 108 94 V100 H22 V28 C 22 22, 26 16, 30 16 Z')}
+        <Path d="M34 28 L 54 36 M54 28 L 34 36 M34 42 L 54 50 M54 42 L 34 50" {...stroke('#FFFFFF', 3, 0.7)} />
+        {tinted(rr(18, 96, 94, 14, 7), gold)}
+        <Path d="M30 110 V104 M46 110 V104 M62 110 V104 M78 110 V104 M94 110 V104" {...stroke(ink, 3, 0.25)} />
+        {face(50, 76, 0.55)}
+      </>
+    ),
+    // All in: a rocket, full speed ahead.
+    rocket: (
+      <>
+        {tinted('M48 84 C 48 98, 60 112, 60 112 C 60 112, 72 98, 72 84 Z', gold)}
+        {tinted('M40 60 L 20 88 L 40 84 Z', pink)}
+        {tinted('M80 60 L 100 88 L 80 84 Z', pink)}
+        {soft('M60 6 C 82 20, 88 50, 82 86 H38 C 32 50, 38 20, 60 6 Z')}
+        {tinted(circ(60, 44, 13), sky)}
+        {face(60, 46, 0.38)}
+        <Path d="M18 26 L 22 34 M102 20 L 98 28 M16 52 L 24 52" {...stroke(gold, 4)} />
+      </>
+    ),
+    // ---------- Reminder times ----------
+    // Morning: the sun peeking over a hill.
+    sunrise: (
+      <>
+        <Path d="M60 8 L60 18 M22 26 L30 34 M98 26 L90 34 M8 62 L18 62 M102 62 L112 62" {...stroke('#FFC24D', 4)} />
+        {soft(circ(60, 68, 34))}
+        {face(60, 62, 0.6)}
+        {tinted('M0 84 C 20 70, 44 70, 60 80 C 76 70, 100 70, 120 84 V112 H0 Z', green)}
+        <Path d="M14 96 C 30 88, 46 88, 60 96" {...stroke('#FFFFFF', 3, 0.5)} />
+      </>
+    ),
+    // Lunch: a sandwich, stacked and smiling.
+    sandwich: (
+      <>
+        {tinted('M14 54 C 14 30, 106 30, 106 54 Z', gold)}
+        <Path d="M10 60 C 22 52, 30 66, 42 58 C 54 50, 62 66, 74 58 C 86 50, 94 66, 110 58 L 110 66 L 10 66 Z" fill={green} />
+        {tinted(rr(12, 64, 96, 10, 5), pink)}
+        {soft(rr(10, 72, 100, 30, 13))}
+        {face(60, 86, 0.6)}
+        <Path d="M40 40 L 44 38 M60 36 L 64 36 M78 38 L 82 40" {...stroke('#FFFFFF', 3, 0.6)} />
+      </>
+    ),
+    // Evening: a full moon with a sleepy smile, and stars.
+    nightmoon: (
+      <>
+        {soft(circ(56, 64, 40))}
+        <Path d={circ(40, 46, 6)} fill={ink} opacity={0.06} />
+        <Path d={circ(78, 86, 8)} fill={ink} opacity={0.06} />
+        {sleepyEyes(56, 62)}
+        <Path d="M50 74 Q 56 80 62 74" {...stroke(ink, 2.6)} />
+        <Path d="M102 14 L104 21 L111 23 L104 25 L102 32 L100 25 L93 23 L100 21 Z" fill={gold} />
+        <Path d="M108 56 L109.5 60 L114 61.5 L109.5 63 L108 67 L106.5 63 L102 61.5 L106.5 60 Z" fill={gold} />
+        <Path d="M16 18 L17 21 L20 22 L17 23 L16 26 L15 23 L12 22 L15 21 Z" fill={gold} />
       </>
     ),
     // A skipped day: the same flame, burnt low and dozing.

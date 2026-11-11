@@ -17,7 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { PrimaryButton } from '@/components/bondly/buttons';
-import { Confetti } from '@/components/bondly/confetti';
+import { ConfettiAfter } from '@/components/bondly/confetti';
 import { Bondling } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
@@ -282,16 +282,6 @@ function StreakStep({ before, after, onNext }: { before: number; after: number; 
       {milestone && <ConfettiAfter delay={grows ? 1100 : 400} />}
     </View>
   );
-}
-
-/** Confetti that bursts once the new number has landed. */
-function ConfettiAfter({ delay }: { delay: number }) {
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setShow(true), delay);
-    return () => clearTimeout(t);
-  }, [delay]);
-  return show ? <Confetti /> : null;
 }
 
 const NUMBER_SIZE = 84;

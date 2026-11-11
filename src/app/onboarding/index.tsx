@@ -22,9 +22,6 @@ export default function WelcomeScreen() {
         <Animated.View entering={FadeInDown.delay(450).duration(500)} style={styles.footer}>
           <PrimaryButton label="Get started" onPress={next} />
           <TextButton label="I already have an account" onPress={() => router.push('/account' as Href)} />
-          <BText variant="caption" center>
-            🔒 Private by default. Nothing leaves this phone unless you sign in.
-          </BText>
         </Animated.View>
       }>
       <View style={styles.top}>

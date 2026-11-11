@@ -6,17 +6,18 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { tapFeedback } from '@/components/bondly/buttons';
-import { BellIcon, ChevronRightIcon, ClockIcon, PlayIcon } from '@/components/bondly/icons';
+import { BellIcon, ChevronRightIcon } from '@/components/bondly/icons';
 import { Logo } from '@/components/bondly/logo';
 import { Bondling, HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float } from '@/components/bondly/screen';
 import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
+import { TodayLessonCard } from '@/components/bondly/today-lesson-card';
 import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { courseProgress, focusJourneys, hasLevels, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
-import { journeyLevel, levelOfLesson } from '@/features/learn/xp';
+import { journeyLevel } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
@@ -58,16 +59,6 @@ export default function HomeScreen() {
     () => [...focusJourneys(answers.journeys), ...otherJourneys(answers.journeys)],
     [answers.journeys]
   );
-  // Where today's lesson comes from, and its picture: the level's icon for a
-  // journey lesson, or the skill refresher's own icon.
-  const todayLevel = useMemo(() => levelOfLesson(today.course, today.lesson.id), [today]);
-  const todayFrom =
-    hasLevels(today.course) && todayLevel
-      ? `${today.course.title} · Level ${todayLevel.level}`
-      : today.course.title;
-  const todayArt = todayLevel?.info
-    ? { icon: todayLevel.info.icon, color: todayLevel.info.color }
-    : { icon: today.course.icon, color: today.course.mascot.color };
   const heroArt = Math.min(width * 0.62, 280);
 
   const openLesson = () => {
@@ -143,37 +134,7 @@ export default function HomeScreen() {
 
         {/* Today's lesson */}
         <Animated.View entering={FadeInDown.delay(120).duration(500)} style={styles.padded}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Today’s lesson: ${today.lesson.title}, ${today.lesson.minutes} minutes`}
-            onPress={openLesson}
-            style={({ pressed }) => [pressed && { transform: [{ scale: 0.985 }] }]}>
-            <LinearGradient
-              colors={[today.course.tint, towardWhite(today.course.tint, 0.4), towardWhite(today.course.tint, 0.7)]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.lesson}>
-              <View style={styles.play}>
-                <PlayIcon size={30} />
-              </View>
-              <View style={styles.lessonText}>
-                <BText variant="overline">Today’s lesson</BText>
-                <BText variant="caption" color={Palette.primaryDeep} style={styles.lessonFrom} numberOfLines={1}>
-                  {todayFrom}
-                </BText>
-                <BText variant="heading" style={styles.lessonTitle} numberOfLines={2}>
-                  {today.lesson.title}
-                </BText>
-                <View style={styles.duration}>
-                  <ClockIcon />
-                  <BText variant="body">{today.lesson.minutes} min</BText>
-                </View>
-              </View>
-              <View style={styles.lessonArt} pointerEvents="none">
-                <TopicIcon name={todayArt.icon} color={todayArt.color} size={104} noShadow />
-              </View>
-            </LinearGradient>
-          </Pressable>
+          <TodayLessonCard course={today.course} lesson={today.lesson} onPress={openLesson} />
         </Animated.View>
 
         {/* Your journey */}
@@ -271,14 +232,6 @@ function useDailyCheckIn(ready: boolean, checkedIn: boolean, day: string) {
   }, [focused, ready, checkedIn, day]);
 }
 
-/** Mixes a #RRGGBB colour towards white by `amount` (0–1), for soft gradients. */
-function towardWhite(hex: string, amount: number) {
-  const n = parseInt(hex.slice(1), 16);
-  const mix = (c: number) => Math.round(c + (255 - c) * amount);
-  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(mix);
-  return `#${((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1)}`;
-}
-
 function JourneyCard({ course, completed }: { course: Course; completed: string[] }) {
   const { done, total, ratio } = courseProgress(course, completed);
   const isJourney = hasLevels(course);
@@ -369,31 +322,6 @@ const styles = StyleSheet.create({
   heroSub: { fontSize: 16, lineHeight: 22, width: 160 },
   heroArt: { position: 'absolute', right: -Space.lg, bottom: 0 },
   heart: { position: 'absolute' },
-  lesson: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 44,
-    paddingVertical: Space.lg,
-    paddingLeft: Space.lg,
-    minHeight: 120,
-    overflow: 'hidden',
-    gap: Space.md,
-  },
-  play: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
-    backgroundColor: Palette.white,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingLeft: 4,
-    ...Shadow.soft,
-  },
-  lessonText: { flex: 1, gap: 2, paddingRight: 96 },
-  lessonTitle: { fontSize: 21, lineHeight: 26 },
-  duration: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 },
-  lessonArt: { position: 'absolute', right: 6, top: 0, bottom: 0, justifyContent: 'center' },
-  lessonFrom: { fontFamily: Font.bold, marginTop: -2 },
   sectionHead: {
     flexDirection: 'row',
     alignItems: 'center',

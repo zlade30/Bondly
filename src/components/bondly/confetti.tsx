@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { StyleSheet, useWindowDimensions, View } from 'react-native';
 import Animated, {
   Easing,
@@ -136,6 +136,16 @@ export function Confetti({ origin }: { origin?: { x: number; y: number } }) {
       ))}
     </View>
   );
+}
+
+/** Confetti that bursts after `delay` ms, so it can land on a beat of the screen's own animation. */
+export function ConfettiAfter({ delay }: { delay: number }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+  return show ? <Confetti /> : null;
 }
 
 const styles = StyleSheet.create({

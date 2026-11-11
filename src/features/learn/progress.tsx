@@ -22,14 +22,18 @@ export type ProgressState = {
   lessonDays: string[];
   /** Best XP earned in each lesson, keyed by lesson id. Replays keep the best score. */
   lessonXp: Record<string, number>;
+  /** Minutes of lessons finished on each day (YYYY-MM-DD), replays included. Measures the daily goal. */
+  dayMinutes: Record<string, number>;
 };
 
-const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [], lessonXp: {} };
+const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [], lessonXp: {}, dayMinutes: {} };
 
 type ProgressContextValue = ProgressState & {
   ready: boolean;
-  /** Marks a lesson done and keeps its best XP. */
-  completeLesson: (lessonId: string, xp?: number) => void;
+  /** Marks a lesson done, keeps its best XP and adds its minutes to today's total. */
+  completeLesson: (lessonId: string, xp?: number, minutes?: number) => void;
+  /** Minutes of lessons finished today, for the daily goal. */
+  todayMinutes: number;
   checkIn: (mood: Mood) => void;
   todayCheckIn: Mood | undefined;
   /**
@@ -106,10 +110,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     if (ready) AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(state)).catch(() => {});
   }, [ready, state]);
 
-  const completeLesson = useCallback((lessonId: string, xp = 0) => {
+  const completeLesson = useCallback((lessonId: string, xp = 0, minutes = 0) => {
     const day = todayKey();
     setState((prev) => ({
       ...prev,
+      dayMinutes: { ...prev.dayMinutes, [day]: (prev.dayMinutes[day] ?? 0) + minutes },
       lessonXp: { ...prev.lessonXp, [lessonId]: Math.max(prev.lessonXp[lessonId] ?? 0, xp) },
       completedLessons: prev.completedLessons.includes(lessonId)
         ? prev.completedLessons
@@ -132,10 +137,22 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const todayCheckIn = state.checkIns[today];
+  const todayMinutes = state.dayMinutes[today] ?? 0;
 
   const value = useMemo(
-    () => ({ ...state, snapshot: state, ready, completeLesson, checkIn, todayCheckIn, today, restore, reset }),
-    [state, ready, completeLesson, checkIn, todayCheckIn, today, restore, reset]
+    () => ({
+      ...state,
+      snapshot: state,
+      ready,
+      completeLesson,
+      checkIn,
+      todayCheckIn,
+      todayMinutes,
+      today,
+      restore,
+      reset,
+    }),
+    [state, ready, completeLesson, checkIn, todayCheckIn, todayMinutes, today, restore, reset]
   );
 
   return <ProgressContext value={value}>{children}</ProgressContext>;
