@@ -24,9 +24,18 @@ export type ProgressState = {
   lessonXp: Record<string, number>;
   /** Minutes of lessons finished on each day (YYYY-MM-DD), replays included. Measures the daily goal. */
   dayMinutes: Record<string, number>;
+  /** Days (YYYY-MM-DD) whose daily goal has been celebrated, so it happens once a day. */
+  goalDays: string[];
 };
 
-const EMPTY: ProgressState = { completedLessons: [], checkIns: {}, lessonDays: [], lessonXp: {}, dayMinutes: {} };
+const EMPTY: ProgressState = {
+  completedLessons: [],
+  checkIns: {},
+  lessonDays: [],
+  lessonXp: {},
+  dayMinutes: {},
+  goalDays: [],
+};
 
 type ProgressContextValue = ProgressState & {
   ready: boolean;
@@ -34,6 +43,10 @@ type ProgressContextValue = ProgressState & {
   completeLesson: (lessonId: string, xp?: number, minutes?: number) => void;
   /** Minutes of lessons finished today, for the daily goal. */
   todayMinutes: number;
+  /** Whether today's daily goal has already been celebrated. */
+  goalCelebratedToday: boolean;
+  /** Records that today's daily goal has been celebrated. */
+  markGoalCelebrated: () => void;
   checkIn: (mood: Mood) => void;
   todayCheckIn: Mood | undefined;
   /**
@@ -123,6 +136,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
+  const markGoalCelebrated = useCallback(() => {
+    const day = todayKey();
+    setState((prev) => (prev.goalDays.includes(day) ? prev : { ...prev, goalDays: [...prev.goalDays, day] }));
+  }, []);
+
   const checkIn = useCallback((mood: Mood) => {
     setState((prev) => ({ ...prev, checkIns: { ...prev.checkIns, [todayKey()]: mood } }));
   }, []);
@@ -138,6 +156,7 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
 
   const todayCheckIn = state.checkIns[today];
   const todayMinutes = state.dayMinutes[today] ?? 0;
+  const goalCelebratedToday = state.goalDays.includes(today);
 
   const value = useMemo(
     () => ({
@@ -148,11 +167,25 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
       checkIn,
       todayCheckIn,
       todayMinutes,
+      goalCelebratedToday,
+      markGoalCelebrated,
       today,
       restore,
       reset,
     }),
-    [state, ready, completeLesson, checkIn, todayCheckIn, todayMinutes, today, restore, reset]
+    [
+      state,
+      ready,
+      completeLesson,
+      checkIn,
+      todayCheckIn,
+      todayMinutes,
+      goalCelebratedToday,
+      markGoalCelebrated,
+      today,
+      restore,
+      reset,
+    ]
   );
 
   return <ProgressContext value={value}>{children}</ProgressContext>;

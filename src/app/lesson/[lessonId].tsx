@@ -88,7 +88,8 @@ function LessonPlayer({
   startAt: number | null;
 }) {
   const steps = LESSON_STEPS[lesson.id] ?? [];
-  const { completeLesson, completedLessons, lessonXp: bestXp, todayMinutes } = useProgress();
+  const { completeLesson, completedLessons, lessonXp: bestXp, todayMinutes, goalCelebratedToday, markGoalCelebrated } =
+    useProgress();
   const { answers } = useOnboarding();
   const [goalMoment, setGoalMoment] = useState<GoalMoment | null>(null);
   const [phase, setPhase] = useState<Phase>(startAt !== null ? 'play' : 'intro');
@@ -99,11 +100,14 @@ function LessonPlayer({
 
   const [rateMoment, setRateMoment] = useState<{ lessonsDone: number; levelUp: boolean } | null>(null);
   useEffect(() => {
-    // Ask once the celebrations have played: after the lesson, or after the daily goal screen.
-    if ((phase !== 'done' && phase !== 'goal') || !rateMoment) return;
-    const t = setTimeout(() => maybeAskForRating(rateMoment), 2200);
+    // Ask once the celebrations have played. When the daily goal screen follows the lesson,
+    // wait for that one instead, until its ring has filled and the confetti has settled.
+    if (!rateMoment) return;
+    const delay = phase === 'goal' ? GOAL_FILL_DELAY + GOAL_FILL_MS + 2500 : phase === 'done' && !goalMoment ? 2200 : null;
+    if (delay === null) return;
+    const t = setTimeout(() => maybeAskForRating(rateMoment), delay);
     return () => clearTimeout(t);
-  }, [phase, rateMoment]);
+  }, [phase, rateMoment, goalMoment]);
 
   const finishStep = (stepResult?: StepResult) => {
     // Count this answer now, so the final step is included in the score below.
@@ -120,10 +124,14 @@ function LessonPlayer({
       const xp = lessonXp(firstTry);
       const firstTime = !completedLessons.includes(lesson.id);
       setResult({ xp, maxXp: maxLessonXp(steps), firstTime, newBest: !firstTime && xp > (bestXp[lesson.id] ?? 0) });
-      // The lesson that takes today from under the daily goal to at least it gets its own celebration.
+      // The first lesson each day that ends at or past the daily goal gets its own celebration:
+      // once a day, even if the goal is raised or lowered along the way.
       const goal = answers.minutes ?? DEFAULT_DAILY_MINUTES;
       const after = todayMinutes + lesson.minutes;
-      setGoalMoment(todayMinutes < goal && after >= goal ? { goal, before: todayMinutes, after } : null);
+      const reached = !goalCelebratedToday && after >= goal;
+      // The ring fills from where today stood; if the goal was lowered past that, it fills from empty.
+      setGoalMoment(reached ? { goal, before: todayMinutes < goal ? todayMinutes : 0, after } : null);
+      if (reached) markGoalCelebrated();
       completeLesson(lesson.id, xp, lesson.minutes);
       // A first finish is a good moment to (maybe) ask for a rating, once the celebration has played.
       if (firstTime) {

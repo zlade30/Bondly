@@ -54,6 +54,7 @@ export function mergeProgress(local: ProgressState, remote?: Partial<ProgressSta
     checkIns: { ...(remote.checkIns ?? {}), ...local.checkIns },
     lessonXp: mergeBest(local.lessonXp ?? {}, remote.lessonXp ?? {}),
     dayMinutes: mergeBest(local.dayMinutes ?? {}, remote.dayMinutes ?? {}),
+    goalDays: union(local.goalDays ?? [], remote.goalDays ?? []),
   };
 }
 

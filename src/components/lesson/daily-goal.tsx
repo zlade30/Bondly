@@ -12,9 +12,10 @@ import Animated, {
 } from 'react-native-reanimated';
 import Svg, { Circle } from 'react-native-svg';
 
+import { ProgressBar } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { TopicIcon } from '@/components/bondly/topic-icons';
-import { Palette, Radius, Space } from '@/constants/bondly';
+import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import type { DailyMinutes } from '@/features/onboarding/content';
 import { PACE_ART, paceName } from '@/features/onboarding/pace';
 import { playSoundAfter } from '@/features/sound/sound';
@@ -104,7 +105,47 @@ export function DailyGoalReached({
   );
 }
 
+/** A slim “2 of 3 min today” row, so the daily goal is visible before it's reached. Used on Home. */
+export function DailyGoalProgress({ goal, minutes }: { goal: DailyMinutes; minutes: number }) {
+  const art = PACE_ART[goal];
+  const done = minutes >= goal;
+  return (
+    <View
+      accessible
+      accessibilityLabel={
+        done ? `Daily goal reached: ${minutes} of ${goal} minutes today` : `Daily goal: ${minutes} of ${goal} minutes today`
+      }
+      style={styles.bar}>
+      <View style={[styles.barArt, { backgroundColor: art.tint }]}>
+        <TopicIcon name={art.icon} color={art.color} size={34} noShadow />
+      </View>
+      <View style={styles.barText}>
+        <View style={styles.barHead}>
+          <BText variant="bodyBold">{done ? 'Daily goal reached' : 'Daily goal'}</BText>
+          <BText variant="caption" color={done ? Palette.primaryDeep : Palette.inkSoft}>
+            {done ? `${minutes} min today` : `${minutes} of ${goal} min today`}
+          </BText>
+        </View>
+        <ProgressBar value={Math.min(minutes / goal, 1)} />
+      </View>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
+  bar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Space.md,
+    marginTop: Space.md,
+    padding: Space.md,
+    borderRadius: Radius.lg,
+    backgroundColor: Palette.white,
+    ...Shadow.soft,
+  },
+  barArt: { width: 44, height: 44, borderRadius: Radius.md, alignItems: 'center', justifyContent: 'center' },
+  barText: { flex: 1, gap: 6 },
+  barHead: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline' },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: Space.xl },
   ring: { width: SIZE, height: SIZE, alignItems: 'center', justifyContent: 'center' },
   art: {

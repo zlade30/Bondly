@@ -93,8 +93,6 @@ type SubscriptionContextValue = {
   trial: TrialStatus | null;
   /** Opens the App Store screen where people can cancel or change their plan. */
   manageSubscription: () => Promise<void>;
-  /** Development builds only: skip the paywall for this session. */
-  devSkip: () => void;
 };
 
 const SubscriptionContext = createContext<SubscriptionContextValue | null>(null);
@@ -114,7 +112,6 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
   const [offering, setOffering] = useState<PurchasesOffering | null>(null);
   const [offeringError, setOfferingError] = useState<string | null>(null);
   const [trialEligible, setTrialEligible] = useState<ReadonlySet<string>>(() => new Set());
-  const [devSkipped, setDevSkipped] = useState(false);
 
   // Follow purchase changes (renewals, expiries, purchases on another device).
   useEffect(() => {
@@ -231,15 +228,11 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
     }
   }, [info]);
 
-  const devSkip = useCallback(() => {
-    if (__DEV__) setDevSkipped(true);
-  }, []);
-
   const value = useMemo(
     () => ({
       ready,
       available,
-      isPremium: hasPremium(info) || (__DEV__ && devSkipped),
+      isPremium: hasPremium(info),
       offering,
       offeringError,
       trialEligible,
@@ -248,13 +241,11 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
       restore,
       trial,
       manageSubscription,
-      devSkip,
     }),
     [
       ready,
       available,
       info,
-      devSkipped,
       offering,
       offeringError,
       trialEligible,
@@ -263,7 +254,6 @@ export function SubscriptionProvider({ children }: { children: ReactNode }) {
       restore,
       trial,
       manageSubscription,
-      devSkip,
     ]
   );
 

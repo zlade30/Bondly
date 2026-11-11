@@ -25,10 +25,13 @@ const STORE =
     ? { account: 'Google account', settings: 'Google Play subscriptions' }
     : { account: 'Apple Account', settings: 'App Store settings' };
 
+/** A round "380+" rather than an exact "381", which reads like a stock count. */
+const LESSONS = LESSON_COUNT >= 20 ? `${Math.floor(LESSON_COUNT / 10) * 10}+` : `${LESSON_COUNT}`;
+
 const BENEFITS = [
   JOURNEYS.length > 0
-    ? `${JOURNEYS.length} relationship ${JOURNEYS.length === 1 ? 'journey' : 'journeys'} and ${LESSON_COUNT} bite-size lessons`
-    : `All ${COURSES.length} courses and ${LESSON_COUNT} bite-size lessons`,
+    ? `${LESSONS} bite-size lessons across ${JOURNEYS.length} ${JOURNEYS.length === 1 ? 'journey' : 'journeys'}`
+    : `${LESSONS} bite-size lessons across ${COURSES.length} courses`,
   'Daily check-ins and your private journal',
   'Streaks, reminders and your connection map',
   'New lessons as they’re added',
@@ -90,7 +93,7 @@ function sortPackages(packages: PurchasesPackage[]) {
 }
 
 export default function PaywallScreen() {
-  const { available, offering, offeringError, trialEligible, loadOffering, purchase, restore, devSkip } =
+  const { available, offering, offeringError, trialEligible, loadOffering, purchase, restore } =
     useSubscription();
   // Only offer a trial this person will actually get (one per subscription group).
   const trialFor = (pkg: PurchasesPackage) => (trialEligible.has(pkg.product.identifier) ? freeTrial(pkg) : null);
@@ -263,8 +266,6 @@ export default function PaywallScreen() {
           Privacy Policy
         </BText>
       </View>
-
-      {__DEV__ && <TextButton label="Skip for now (development only)" onPress={devSkip} />}
     </Screen>
   );
 }

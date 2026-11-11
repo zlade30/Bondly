@@ -13,12 +13,14 @@ import { Float } from '@/components/bondly/screen';
 import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
 import { TodayLessonCard } from '@/components/bondly/today-lesson-card';
+import { DailyGoalProgress } from '@/components/lesson/daily-goal';
 import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { courseProgress, focusJourneys, hasLevels, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { journeyLevel } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
+import { DEFAULT_DAILY_MINUTES } from '@/features/onboarding/pace';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
 import { formatTime, useReminders } from '@/features/reminders/reminders';
@@ -27,7 +29,7 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { answers } = useOnboarding();
-  const { completedLessons, todayCheckIn, ready, today: day } = useProgress();
+  const { completedLessons, todayCheckIn, ready, today: day, todayMinutes } = useProgress();
   const { streak } = useActivity();
   const reminders = useReminders();
   useDailyCheckIn(ready, !!todayCheckIn, day);
@@ -135,6 +137,7 @@ export default function HomeScreen() {
         {/* Today's lesson */}
         <Animated.View entering={FadeInDown.delay(120).duration(500)} style={styles.padded}>
           <TodayLessonCard course={today.course} lesson={today.lesson} onPress={openLesson} />
+          <DailyGoalProgress goal={answers.minutes ?? DEFAULT_DAILY_MINUTES} minutes={todayMinutes} />
         </Animated.View>
 
         {/* Your journey */}

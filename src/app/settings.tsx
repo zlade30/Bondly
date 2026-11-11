@@ -9,10 +9,12 @@ import { AboutSection } from '@/components/settings/about-section';
 import { AccountCard } from '@/components/settings/account-card';
 import { SoundSettings } from '@/components/settings/sound-settings';
 import { BText } from '@/components/bondly/text';
+import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useAccount } from '@/features/account/account';
 import { useProgress } from '@/features/learn/progress';
 import { DAILY_OPTIONS, type DailyMinutes } from '@/features/onboarding/content';
+import { PACE_ART } from '@/features/onboarding/pace';
 import { useOnboarding } from '@/features/onboarding/store';
 import { resetRating } from '@/features/rating/rating';
 import { useJournal } from '@/features/reflect/journal';
@@ -100,9 +102,14 @@ export default function SettingsScreen() {
                   tapFeedback();
                   setMinutes(o.minutes);
                 }}
+                accessibilityLabel={`${o.minutes} minutes a day, ${o.note}`}
                 style={[styles.pill, on && styles.pillOn]}>
+                <TopicIcon name={PACE_ART[o.minutes].icon} color={PACE_ART[o.minutes].color} size={40} noShadow />
                 <BText variant="bodyBold" color={on ? Palette.primaryDeep : Palette.ink}>
                   {o.minutes} min
+                </BText>
+                <BText variant="caption" color={on ? Palette.primaryDeep : Palette.inkSoft}>
+                  {o.note}
                 </BText>
               </Pressable>
             );
@@ -158,6 +165,7 @@ const styles = StyleSheet.create({
   pill: {
     flex: 1,
     alignItems: 'center',
+    gap: 2,
     paddingVertical: Space.md,
     borderRadius: Radius.lg,
     backgroundColor: Palette.white,
