@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Bondly store banners</title>
+<!--
+  Landscape App Store art, matching the screenshots in frames.html.
+  Rendered by ./render.sh: banner.html?k=<header|search>. Phone screens come from ./raw.
+-->
+<style>
+  @font-face { font-family: Nunito; font-weight: 700; src: url('../node_modules/@expo-google-fonts/nunito/700Bold/Nunito_700Bold.ttf'); }
+  @font-face { font-family: Nunito; font-weight: 900; src: url('../node_modules/@expo-google-fonts/nunito/900Black/Nunito_900Black.ttf'); }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: var(--w); height: var(--h); overflow: hidden; }
+  body {
+    font-family: Nunito, sans-serif;
+    color: #fff;
+    position: relative;
+    background:
+      radial-gradient(circle at 70% 0%, rgba(255, 143, 192, 0.5), rgba(255, 143, 192, 0) 40%),
+      radial-gradient(circle at 0% 100%, rgba(155, 107, 255, 0.6), rgba(155, 107, 255, 0) 45%),
+      linear-gradient(160deg, #8C6BFF 0%, #6E4BF2 50%, #4E2FC7 100%);
+  }
+  .spark { position: absolute; background: #fff; border-radius: 50%; opacity: 0.55; }
+
+  .copy { position: absolute; z-index: 4; }
+  .brand { display: inline-flex; align-items: center; gap: calc(var(--u) * 2.2); margin-bottom: calc(var(--u) * 4); }
+  .brand .dots { position: relative; width: calc(var(--u) * 10.4); height: calc(var(--u) * 7); }
+  .brand .dots i { position: absolute; top: 0; width: calc(var(--u) * 7); height: calc(var(--u) * 7); border-radius: 50%; }
+  .brand .dots i:first-child { left: calc(var(--u) * 3.4); background: linear-gradient(135deg, #E3DAFF, #A994FF); }
+  .brand .dots i:last-child { left: 0; background: linear-gradient(135deg, #FFC9A8, #FF7FB2); }
+  .brand span { font-weight: 900; font-size: calc(var(--u) * 8); letter-spacing: -0.02em; }
+  h1 { text-wrap: balance; font-weight: 900; font-size: var(--title); line-height: 1.03; letter-spacing: -0.025em; }
+  h1 em { font-style: normal; color: #FFC6E0; }
+  .sub { text-wrap: balance; margin-top: calc(var(--u) * 3.6); font-weight: 700; font-size: var(--sub); line-height: 1.3; color: rgba(255, 255, 255, 0.86); }
+
+  .phone {
+    position: absolute;
+    width: var(--pw);
+    aspect-ratio: 1206 / 2622;
+    padding: calc(var(--pw) * 0.03);
+    border-radius: calc(var(--pw) * 0.16);
+    background: linear-gradient(145deg, #3A2A6B, #1A1033 60%);
+    box-shadow: 0 calc(var(--u) * 4) calc(var(--u) * 10) rgba(20, 8, 70, 0.45), inset 0 0 0 calc(var(--pw) * 0.006) rgba(255, 255, 255, 0.18);
+    box-sizing: content-box;
+    transform-origin: 50% 100%;
+  }
+  .screen { position: relative; width: 100%; height: 100%; border-radius: calc(var(--pw) * 0.13); overflow: hidden; background: #F7F2FF; }
+  .screen img { display: block; width: 100%; height: 100%; }
+  .island { position: absolute; left: 50%; top: calc(var(--pw) * 0.027); transform: translateX(-50%); width: calc(var(--pw) * 0.31); height: calc(var(--pw) * 0.092); border-radius: 999px; background: #0B0618; }
+
+  .cloud { position: absolute; left: 0; right: 0; bottom: 0; height: var(--cloud); z-index: 1; }
+  .cloud i { position: absolute; border-radius: 50%; background: #FBF8FF; }
+  .cloud::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: #FBF8FF; }
+  .mascot { position: absolute; z-index: 5; }
+  .mascot svg { width: 100%; height: auto; display: block; overflow: visible; filter: drop-shadow(0 calc(var(--u) * 1.2) calc(var(--u) * 1.6) rgba(40, 10, 110, 0.28)); }
+</style>
+</head>
+<body>
+<script>
+  const kind = new URLSearchParams(location.search).get('k') || 'header';
+  // Header 3840×1646 (wide); search result 3840×2560 (3:2).
+  const [W, H] = kind === 'header' ? [3840, 1646] : [3840, 2560];
+  // One unit is a hundredth of the height, so both banners scale with their height.
+  const u = H / 100;
+  const L = kind === 'header'
+    ? { copyLeft: 0.07 * W, copyWidth: 0.4 * W, title: 9.6 * u, sub: 4.2 * u, pw: 0.37 * H, phoneTop: 0.1 * H, phoneX: [0.63, 0.77, 0.91], cloud: 0.26 * H, mascotW: 0.3 * H, mascotX: 0.43, mascotBottom: 0.1 }
+    : { copyLeft: 0.07 * W, copyWidth: 0.4 * W, title: 7.2 * u, sub: 3.1 * u, pw: 0.36 * H, phoneTop: 0.14 * H, phoneX: [0.62, 0.765, 0.91], cloud: 0.24 * H, mascotW: 0.24 * H, mascotX: 0.3, mascotBottom: 0.07 };
+
+  const root = document.documentElement.style;
+  root.setProperty('--w', W + 'px');
+  root.setProperty('--h', H + 'px');
+  root.setProperty('--u', u + 'px');
+  root.setProperty('--title', L.title + 'px');
+  root.setProperty('--sub', L.sub + 'px');
+  root.setProperty('--pw', L.pw + 'px');
+  root.setProperty('--cloud', L.cloud + 'px');
+
+  const INK = '#2B1760';
+  // The hugging pair from the app icon and Home hero.
+  function pair() {
+    const big = 'M196 30 C 246 30, 278 84, 280 140 C 282 196, 250 222, 196 222 C 142 222, 114 196, 116 140 C 118 84, 146 30, 196 30 Z';
+    const small = 'M104 88 C 142 88, 166 124, 168 164 C 170 206, 144 228, 104 228 C 64 228, 38 206, 40 164 C 42 124, 66 88, 104 88 Z';
+    const arm = 'M140 176 C 160 168, 178 160, 190 152 C 200 146, 210 154, 204 164 C 196 176, 172 190, 150 196 Z';
+    const s = `stroke="${INK}" stroke-width="7" stroke-linecap="round" fill="none"`;
+    const heart = (x, y, k) => `<g transform="translate(${x} ${y}) scale(${k})"><path d="M12 21.6 C 5 16.8, 1.5 13, 1.5 8.4 C 1.5 5.2, 4 2.7, 7.1 2.7 C 9.1 2.7, 10.9 3.8, 12 5.4 C 13.1 3.8, 14.9 2.7, 16.9 2.7 C 20 2.7, 22.5 5.2, 22.5 8.4 C 22.5 13, 19 16.8, 12 21.6 Z" fill="url(#hh)"/><ellipse cx="7.2" cy="7.4" rx="2.4" ry="1.5" fill="#fff" opacity="0.55"/></g>`;
+    return `<svg viewBox="30 -30 260 266" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pb" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#D6CCFF"/><stop offset="1" stop-color="#8F9CFF"/></linearGradient>
+        <linearGradient id="ps" x1="0.2" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#FFC9A8"/><stop offset="1" stop-color="#FF7FB2"/></linearGradient>
+        <radialGradient id="ph" cx="0.36" cy="0.28" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity="0.7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="hh" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#FFB3D1"/><stop offset="1" stop-color="#FF5C98"/></linearGradient>
+      </defs>
+      ${heart(150, -26, 2.2)}${heart(108, 14, 1.3)}
+      <path d="${big}" fill="url(#pb)"/><path d="${big}" fill="url(#ph)"/>
+      <path d="${arm}" fill="#FF9EBF"/><path d="${small}" fill="url(#ps)"/><path d="${small}" fill="url(#ph)"/>
+      <ellipse cx="176" cy="118" rx="12" ry="7" fill="#F48FC6" opacity="0.35"/><ellipse cx="246" cy="118" rx="12" ry="7" fill="#F48FC6" opacity="0.35"/>
+      <circle cx="186" cy="102" r="8" fill="${INK}"/><circle cx="236" cy="104" r="8" fill="${INK}"/>
+      <path d="M200 114 Q 211 126 222 114" ${s}/>
+      <ellipse cx="80" cy="152" rx="11" ry="6.5" fill="#FF5C93" opacity="0.32"/><ellipse cx="142" cy="146" rx="11" ry="6.5" fill="#FF5C93" opacity="0.32"/>
+      <path d="M84 138 Q 92 146 100 138" ${s}/><path d="M118 134 Q 126 142 134 134" ${s}/>
+      <path d="M104 154 Q 110 160 116 154" stroke="#E0457E" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <ellipse cx="198" cy="156" rx="12" ry="11" fill="#FFA9C6"/>
+    </svg>`;
+  }
+
+  for (const [x, y, r] of [[4, 8, 0.9], [46, 6, 0.7], [52, 30, 0.5], [3, 70, 0.6], [57, 62, 0.7], [98, 10, 0.8], [40, 88, 0.5]]) {
+    const d = document.createElement('i');
+    d.className = 'spark';
+    d.style.cssText = `left:${x}%;top:${y}%;width:${r * u}px;height:${r * u}px`;
+    document.body.appendChild(d);
+  }
+
+  const copy = document.createElement('div');
+  copy.className = 'copy';
+  copy.style.left = L.copyLeft + 'px';
+  copy.style.width = L.copyWidth + 'px';
+  copy.innerHTML = `<div class="brand"><div class="dots"><i></i><i></i></div><span>Bondly</span></div>
+    <h1>Grow <em>closer</em> to the people you love</h1>
+    <p class="sub">Bite-size relationship lessons, 5 minutes a day</p>`;
+  document.body.appendChild(copy);
+  // Centre the copy vertically, a little above the middle.
+  requestAnimationFrame(() => { copy.style.top = (H - copy.offsetHeight) / 2 - 0.06 * H + 'px'; });
+
+  // Three phones, fanned: Learn, Home (in front) and the Partner journey.
+  const phones = [
+    { screen: 'learn', x: L.phoneX[0], tilt: -7, scale: 0.9, z: 2, drop: 0.08 },
+    { screen: 'home', x: L.phoneX[1], tilt: 0, scale: 1, z: 3, drop: 0 },
+    { screen: 'journey', x: L.phoneX[2], tilt: 7, scale: 0.9, z: 2, drop: 0.08 },
+  ];
+  for (const p of phones) {
+    const el = document.createElement('div');
+    el.className = 'phone';
+    const pw = L.pw * p.scale;
+    el.style.setProperty('--pw', pw + 'px');
+    el.style.left = p.x * W - pw / 2 + 'px';
+    el.style.top = L.phoneTop + p.drop * H + 'px';
+    el.style.zIndex = p.z;
+    el.style.transform = `rotate(${p.tilt}deg)`;
+    el.innerHTML = `<div class="screen"><img src="raw/${p.screen}.png" alt=""><div class="island"></div></div>`;
+    document.body.appendChild(el);
+  }
+
+  const cloud = document.createElement('div');
+  cloud.className = 'cloud';
+  for (const [x, y, r] of [[-2, 34, 13], [9, 18, 12], [20, 40, 11], [31, 28, 12], [43, 44, 11], [55, 30, 12], [67, 42, 11], [79, 24, 12], [91, 38, 12], [101, 26, 12]]) {
+    const p = document.createElement('i');
+    const size = (r / 100) * W;
+    p.style.cssText = `width:${size}px;height:${size}px;left:${(x / 100) * W - size / 2}px;top:${(y / 100) * L.cloud}px`;
+    cloud.appendChild(p);
+  }
+  document.body.appendChild(cloud);
+
+  const m = document.createElement('div');
+  m.className = 'mascot';
+  m.style.width = L.mascotW * 1.25 + 'px';
+  m.style.left = L.mascotX * W + 'px';
+  m.style.bottom = L.mascotBottom * H + 'px';
+  m.innerHTML = pair();
+  document.body.appendChild(m);
+</script>
+</body>
+</html>

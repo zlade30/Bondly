@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Bondly store screenshots</title>
+<!--
+  Store screenshot frames. Rendered by ./render.sh with headless Chrome:
+  frames.html?s=<slide 1-7>&p=<ios|android>. The phone screens come from ./raw.
+-->
+<style>
+  @font-face { font-family: Nunito; font-weight: 700; src: url('../node_modules/@expo-google-fonts/nunito/700Bold/Nunito_700Bold.ttf'); }
+  @font-face { font-family: Nunito; font-weight: 800; src: url('../node_modules/@expo-google-fonts/nunito/800ExtraBold/Nunito_800ExtraBold.ttf'); }
+  @font-face { font-family: Nunito; font-weight: 900; src: url('../node_modules/@expo-google-fonts/nunito/900Black/Nunito_900Black.ttf'); }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: var(--w); height: var(--h); overflow: hidden; }
+  body {
+    font-family: Nunito, sans-serif;
+    color: #fff;
+    position: relative;
+    background:
+      radial-gradient(circle at 85% 8%, rgba(255, 143, 192, 0.55), rgba(255, 143, 192, 0) 42%),
+      radial-gradient(circle at 5% 55%, rgba(155, 107, 255, 0.55), rgba(155, 107, 255, 0) 40%),
+      linear-gradient(172deg, #8C6BFF 0%, #6E4BF2 48%, #4E2FC7 100%);
+  }
+  /* Soft sparkles in the sky. */
+  .spark { position: absolute; background: #fff; border-radius: 50%; opacity: 0.55; }
+
+  .head { position: absolute; left: 0; right: 0; text-align: center; padding: 0 calc(var(--u) * 7); }
+  .brand { display: inline-flex; align-items: center; gap: calc(var(--u) * 1.6); margin-bottom: calc(var(--u) * 3.2); }
+  .brand .dots { position: relative; width: calc(var(--u) * 7.4); height: calc(var(--u) * 5); }
+  .brand .dots i { position: absolute; top: 0; width: calc(var(--u) * 5); height: calc(var(--u) * 5); border-radius: 50%; }
+  .brand .dots i:first-child { left: calc(var(--u) * 2.4); background: linear-gradient(135deg, #E3DAFF, #A994FF); }
+  .brand .dots i:last-child { left: 0; background: linear-gradient(135deg, #FFC9A8, #FF7FB2); }
+  .brand span { font-weight: 900; font-size: calc(var(--u) * 5.6); letter-spacing: -0.02em; }
+  h1 { text-wrap: balance; font-weight: 900; font-size: var(--title); line-height: 1.04; letter-spacing: -0.025em; }
+  h1 em { font-style: normal; color: #FFC6E0; }
+  .sub { text-wrap: balance; margin-top: calc(var(--u) * 2.6); font-weight: 700; font-size: var(--sub); line-height: 1.3; color: rgba(255, 255, 255, 0.86); }
+
+  .phone {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    width: var(--pw);
+    aspect-ratio: 1206 / 2622;
+    transform: translateX(-50%) rotate(var(--tilt, 0deg));
+    transform-origin: 50% 0;
+    padding: calc(var(--pw) * 0.03);
+    border-radius: calc(var(--pw) * 0.16);
+    background: linear-gradient(145deg, #3A2A6B, #1A1033 60%);
+    box-shadow:
+      0 calc(var(--u) * 4) calc(var(--u) * 10) rgba(20, 8, 70, 0.45),
+      inset 0 0 0 calc(var(--pw) * 0.006) rgba(255, 255, 255, 0.18);
+    box-sizing: content-box;
+  }
+  .screen { position: relative; width: 100%; height: 100%; border-radius: calc(var(--pw) * 0.13); overflow: hidden; background: #F7F2FF; }
+  .screen img { display: block; width: 100%; height: 100%; }
+  .island {
+    position: absolute; left: 50%; top: calc(var(--pw) * 0.027); transform: translateX(-50%);
+    width: calc(var(--pw) * 0.31); height: calc(var(--pw) * 0.092); border-radius: 999px; background: #0B0618;
+  }
+
+  /* A soft cloud bank behind the phone, which runs off the bottom edge. */
+  .cloud { position: absolute; left: 0; right: 0; bottom: 0; height: var(--cloud); pointer-events: none; z-index: 1; }
+  .cloud i { position: absolute; border-radius: 50%; background: #FBF8FF; }
+  .cloud::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; background: #FBF8FF; }
+
+  .mascot { position: absolute; width: var(--mw); z-index: 3; }
+  .mascot svg { width: 100%; height: auto; display: block; overflow: visible; filter: drop-shadow(0 calc(var(--u) * 1.2) calc(var(--u) * 1.6) rgba(40, 10, 110, 0.28)); }
+</style>
+</head>
+<body>
+<script>
+  const q = new URLSearchParams(location.search);
+  const slideNo = Number(q.get('s') || 1);
+  const platform = q.get('p') || 'ios';
+
+  // Store canvas sizes: App Store 6.9" (1320×2868), App Store 6.3" (1206×2622) and Google Play phone (1080×1920).
+  const SIZES = { ios: [1320, 2868], 'ios-6.3': [1206, 2622], android: [1080, 1920] };
+  const [W, H] = SIZES[platform];
+  const u = W / 100;
+  // Layout per platform: Play's canvas is much shorter, so its phone is smaller.
+  const L = platform !== 'android'
+    ? { headTop: 0.07 * H, title: 8.6 * u, sub: 4.1 * u, pw: 0.74 * W, phoneTop: 0.29 * H, cloud: 0.17 * H, mw: 26 * u }
+    : { headTop: 0.055 * H, title: 7.6 * u, sub: 3.7 * u, pw: 0.6 * W, phoneTop: 0.3 * H, cloud: 0.15 * H, mw: 24 * u };
+
+  const root = document.documentElement.style;
+  root.setProperty('--w', W + 'px');
+  root.setProperty('--h', H + 'px');
+  root.setProperty('--u', u + 'px');
+  root.setProperty('--title', L.title + 'px');
+  root.setProperty('--sub', L.sub + 'px');
+  root.setProperty('--pw', L.pw + 'px');
+  root.setProperty('--cloud', L.cloud + 'px');
+  root.setProperty('--mw', L.mw + 'px');
+
+  const INK = '#2B1760';
+  const TONES = {
+    pink: ['#FFC1A8', '#FF86B4', '#FF5C93'],
+    peach: ['#FFD9B0', '#FF9E9E', '#FF6F8C'],
+    lavender: ['#D9CCFF', '#9C86FF', '#F48FC6'],
+    blue: ['#CFE1FF', '#8FA8FF', '#F79ACB'],
+    yellow: ['#FFF2B3', '#FFCB5C', '#FF9D7A'],
+    mint: ['#C9F7E6', '#6FD6B1', '#FF9DB8'],
+  };
+
+  // A single Bondling: the soft blob from the app, with a face.
+  function bondling(tone, mood, id, heart) {
+    const [top, bottom, cheek] = TONES[tone];
+    const body = 'M104 88 C 142 88, 166 124, 168 164 C 170 206, 144 228, 104 228 C 64 228, 38 206, 40 164 C 42 124, 66 88, 104 88 Z';
+    const s = `stroke="${INK}" stroke-width="6" stroke-linecap="round" fill="none"`;
+    const eyes = {
+      happy: `<circle cx="86" cy="150" r="7" fill="${INK}"/><circle cx="122" cy="150" r="7" fill="${INK}"/>`,
+      wink: `<circle cx="86" cy="150" r="7" fill="${INK}"/><path d="M114 150 Q 122 143 130 150" ${s}/>`,
+      content: `<path d="M78 148 Q 86 156 94 148" ${s}/><path d="M114 148 Q 122 156 130 148" ${s}/>`,
+    }[mood];
+    return `<svg viewBox="30 ${heart ? 40 : 80} 150 ${heart ? 196 : 156}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="${id}g" x1="0.2" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient>
+        <radialGradient id="${id}h" cx="0.36" cy="0.28" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity="0.75"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="${id}hg" x1="0" y1="0" x2="0.6" y2="1"><stop offset="0" stop-color="#FFB3D1"/><stop offset="1" stop-color="#FF5C98"/></linearGradient>
+      </defs>
+      <path d="${body}" fill="url(#${id}g)"/><path d="${body}" fill="url(#${id}h)"/>
+      <ellipse cx="74" cy="168" rx="11" ry="6.5" fill="${cheek}" opacity="0.32"/>
+      <ellipse cx="134" cy="168" rx="11" ry="6.5" fill="${cheek}" opacity="0.32"/>
+      ${eyes}
+      <path d="M96 166 Q 104 174 112 166" ${s}/>
+      ${heart ? `<g transform="translate(118 44) scale(1.9)"><path d="M12 21.6 C 5 16.8, 1.5 13, 1.5 8.4 C 1.5 5.2, 4 2.7, 7.1 2.7 C 9.1 2.7, 10.9 3.8, 12 5.4 C 13.1 3.8, 14.9 2.7, 16.9 2.7 C 20 2.7, 22.5 5.2, 22.5 8.4 C 22.5 13, 19 16.8, 12 21.6 Z" fill="url(#${id}hg)"/><ellipse cx="7.2" cy="7.4" rx="2.4" ry="1.5" fill="#fff" opacity="0.55"/></g>` : ''}
+    </svg>`;
+  }
+
+  // The hugging pair from the app icon and Home hero.
+  function pair() {
+    const big = 'M196 30 C 246 30, 278 84, 280 140 C 282 196, 250 222, 196 222 C 142 222, 114 196, 116 140 C 118 84, 146 30, 196 30 Z';
+    const small = 'M104 88 C 142 88, 166 124, 168 164 C 170 206, 144 228, 104 228 C 64 228, 38 206, 40 164 C 42 124, 66 88, 104 88 Z';
+    const arm = 'M140 176 C 160 168, 178 160, 190 152 C 200 146, 210 154, 204 164 C 196 176, 172 190, 150 196 Z';
+    const s = `stroke="${INK}" stroke-width="7" stroke-linecap="round" fill="none"`;
+    return `<svg viewBox="30 20 260 216" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pb" x1="0.2" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#D6CCFF"/><stop offset="1" stop-color="#8F9CFF"/></linearGradient>
+        <linearGradient id="ps" x1="0.2" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#FFC9A8"/><stop offset="1" stop-color="#FF7FB2"/></linearGradient>
+        <radialGradient id="ph" cx="0.36" cy="0.28" r="0.55"><stop offset="0" stop-color="#fff" stop-opacity="0.7"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <path d="${big}" fill="url(#pb)"/><path d="${big}" fill="url(#ph)"/>
+      <path d="${arm}" fill="#FF9EBF"/><path d="${small}" fill="url(#ps)"/><path d="${small}" fill="url(#ph)"/>
+      <ellipse cx="176" cy="118" rx="12" ry="7" fill="#F48FC6" opacity="0.35"/><ellipse cx="246" cy="118" rx="12" ry="7" fill="#F48FC6" opacity="0.35"/>
+      <circle cx="186" cy="102" r="8" fill="${INK}"/><circle cx="236" cy="104" r="8" fill="${INK}"/>
+      <path d="M200 114 Q 211 126 222 114" ${s}/>
+      <ellipse cx="80" cy="152" rx="11" ry="6.5" fill="#FF5C93" opacity="0.32"/><ellipse cx="142" cy="146" rx="11" ry="6.5" fill="#FF5C93" opacity="0.32"/>
+      <path d="M84 138 Q 92 146 100 138" ${s}/><path d="M118 134 Q 126 142 134 134" ${s}/>
+      <path d="M104 154 Q 110 160 116 154" stroke="#E0457E" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <ellipse cx="198" cy="156" rx="12" ry="11" fill="#FFA9C6"/>
+    </svg>`;
+  }
+
+  // The slides, in store order. `side` is where the mascot sits on the cloud.
+  const SLIDES = [
+    { screen: 'home', brand: true, title: 'Grow <em>closer</em> to the people you love', sub: 'Bite-size relationship lessons, 5 minutes a day', mascot: ['lavender', 'wink', true], side: 'left', tilt: -3 },
+    { screen: 'learn', title: 'A journey for <em>every</em> relationship', sub: 'Partner, dating, friends, family, work and you', mascot: ['pink', 'happy', true], side: 'right' },
+    { screen: 'lesson', title: 'Practise <em>real moments</em>, not theory', sub: 'Quick questions with kind, instant feedback', mascot: ['mint', 'wink'], side: 'right' },
+    { screen: 'journey', title: 'Grow one <em>small step</em> at a time', sub: 'Ten levels in every journey', mascot: ['peach', 'happy'], side: 'left' },
+    { screen: 'goal', title: 'Celebrate every <em>daily win</em>', sub: 'Pick a gentle daily goal and keep your streak', mascot: ['yellow', 'happy', true], side: 'left' },
+    { screen: 'profile', title: 'Watch your <em>connection</em> grow', sub: 'Your streak, skills and progress in one place', mascot: ['lavender', 'content'], side: 'right' },
+    { screen: 'reflect', title: 'Check in and <em>reflect</em>', sub: 'A private journal for how you really feel', mascot: ['blue', 'content', true], side: 'left' },
+  ];
+  const slide = SLIDES[slideNo - 1];
+  // A slide can raise its cloud, e.g. to tuck away part of the screen cleanly.
+  if (slide.cloud) {
+    L.cloud = slide.cloud * H;
+    root.setProperty('--cloud', L.cloud + 'px');
+  }
+
+  // Sparkles.
+  const sparks = [[8, 4, 0.9], [92, 15, 0.7], [14, 22, 0.55], [88, 31, 1], [6, 40, 0.6], [95, 52, 0.5], [10, 63, 0.8]];
+  for (const [x, y, r] of sparks) {
+    const d = document.createElement('i');
+    d.className = 'spark';
+    d.style.cssText = `left:${x}%;top:${y}%;width:${r * u}px;height:${r * u}px`;
+    document.body.appendChild(d);
+  }
+
+  const head = document.createElement('div');
+  head.className = 'head';
+  head.style.top = L.headTop + 'px';
+  head.innerHTML = `${slide.brand ? `<div class="brand"><div class="dots"><i></i><i></i></div><span>Bondly</span></div>` : ''}
+    <h1>${slide.title}</h1><p class="sub">${slide.sub}</p>`;
+  document.body.appendChild(head);
+
+  const phone = document.createElement('div');
+  phone.className = 'phone';
+  phone.style.top = (L.phoneTop + (slide.brand ? (platform !== 'android' ? 0.025 * H : 0.03 * H) : 0)) + 'px';
+  if (slide.tilt) phone.style.setProperty('--tilt', slide.tilt + 'deg');
+  phone.innerHTML = `<div class="screen"><img src="raw/${slide.screen}.png" alt=""><div class="island"></div></div>`;
+  document.body.appendChild(phone);
+
+  // Cloud bank: overlapping soft circles along the bottom.
+  const cloud = document.createElement('div');
+  cloud.className = 'cloud';
+  const puffs = [[-8, 30, 34], [14, 18, 30], [34, 40, 26], [54, 26, 30], [76, 14, 34], [96, 32, 30], [20, 62, 40], [64, 60, 44]];
+  for (const [x, y, r] of puffs) {
+    const p = document.createElement('i');
+    const size = r * u;
+    p.style.cssText = `width:${size}px;height:${size}px;left:${x * u - size / 2 + size / 2}px;top:${(y / 100) * L.cloud}px`;
+    cloud.appendChild(p);
+  }
+  document.body.appendChild(cloud);
+
+  const m = document.createElement('div');
+  m.className = 'mascot';
+  const isPair = slide.mascot === 'pair';
+  const mw = isPair ? L.mw * 1.55 : L.mw;
+  m.style.width = mw + 'px';
+  m.style.bottom = (L.cloud * (isPair ? 0.3 : 0.36)) + 'px';
+  m.style[slide.side] = (isPair ? 2 : 3) * u + 'px';
+  m.innerHTML = isPair ? pair() : bondling(slide.mascot[0], slide.mascot[1], 'm', slide.mascot[2]);
+  document.body.appendChild(m);
+</script>
+</body>
+</html>
