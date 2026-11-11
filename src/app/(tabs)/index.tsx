@@ -16,7 +16,7 @@ import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { courseProgress, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
-import { journeyLevel } from '@/features/learn/xp';
+import { journeyLevel, levelOfLesson } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
@@ -58,6 +58,16 @@ export default function HomeScreen() {
     const others = otherJourneys(answers.goal);
     return journey ? [journey, ...others] : others;
   }, [answers.goal]);
+  // Where today's lesson comes from, and its picture: the level's icon for a
+  // journey lesson, or the skill refresher's own icon.
+  const todayLevel = useMemo(() => levelOfLesson(today.course, today.lesson.id), [today]);
+  const todayFrom =
+    today.course.kind === 'journey' && todayLevel
+      ? `${today.course.title} · Level ${todayLevel.level}`
+      : today.course.title;
+  const todayArt = todayLevel?.info
+    ? { icon: todayLevel.info.icon, color: todayLevel.info.color }
+    : { icon: today.course.icon, color: today.course.mascot.color };
   const heroArt = Math.min(width * 0.62, 280);
 
   const openLesson = () => {
@@ -148,6 +158,9 @@ export default function HomeScreen() {
               </View>
               <View style={styles.lessonText}>
                 <BText variant="overline">Today’s lesson</BText>
+                <BText variant="caption" color={Palette.primaryDeep} style={styles.lessonFrom} numberOfLines={1}>
+                  {todayFrom}
+                </BText>
                 <BText variant="heading" style={styles.lessonTitle} numberOfLines={2}>
                   {today.lesson.title}
                 </BText>
@@ -157,7 +170,7 @@ export default function HomeScreen() {
                 </View>
               </View>
               <View style={styles.lessonArt} pointerEvents="none">
-                <Bondling size={118} color="yellow" mood="content" prop="heart" noShadow />
+                <TopicIcon name={todayArt.icon} color={todayArt.color} size={104} noShadow />
               </View>
             </LinearGradient>
           </Pressable>
@@ -371,7 +384,8 @@ const styles = StyleSheet.create({
   lessonText: { flex: 1, gap: 2, paddingRight: 96 },
   lessonTitle: { fontSize: 21, lineHeight: 26 },
   duration: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 2 },
-  lessonArt: { position: 'absolute', right: -6, bottom: -14 },
+  lessonArt: { position: 'absolute', right: 6, top: 0, bottom: 0, justifyContent: 'center' },
+  lessonFrom: { fontFamily: Font.bold, marginTop: -2 },
   sectionHead: {
     flexDirection: 'row',
     alignItems: 'center',

@@ -1,6 +1,6 @@
 import * as Haptics from 'expo-haptics';
 import { router, useLocalSearchParams, type Href } from 'expo-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert, KeyboardAvoidingView, Platform, StyleSheet, View } from 'react-native';
 import Animated, { FadeIn, FadeInDown, ZoomIn } from 'react-native-reanimated';
 
@@ -25,6 +25,7 @@ import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/less
 import { useProgress } from '@/features/learn/progress';
 import { finishesLevel, journeyLevel, lessonXp, levelOfLesson, maxLessonXp } from '@/features/learn/xp';
 import { useJournal } from '@/features/reflect/journal';
+import { maybeAskForRating } from '@/features/rating/rating';
 import { playSound } from '@/features/sound/sound';
 
 type Phase = 'intro' | 'play' | 'done';
@@ -86,6 +87,13 @@ function LessonPlayer({
   const [result, setResult] = useState<Result | null>(null);
   const { add: addJournalEntry } = useJournal();
 
+  const [rateMoment, setRateMoment] = useState<{ lessonsDone: number; levelUp: boolean } | null>(null);
+  useEffect(() => {
+    if (phase !== 'done' || !rateMoment) return;
+    const t = setTimeout(() => maybeAskForRating(rateMoment), 2200);
+    return () => clearTimeout(t);
+  }, [phase, rateMoment]);
+
   const finishStep = (stepResult?: StepResult) => {
     // Count this answer now, so the final step is included in the score below.
     const total = graded.total + (stepResult?.firstTry !== undefined ? 1 : 0);
@@ -102,6 +110,13 @@ function LessonPlayer({
       const firstTime = !completedLessons.includes(lesson.id);
       setResult({ xp, maxXp: maxLessonXp(steps), firstTime, newBest: !firstTime && xp > (bestXp[lesson.id] ?? 0) });
       completeLesson(lesson.id, xp);
+      // A first finish is a good moment to (maybe) ask for a rating, once the celebration has played.
+      if (firstTime) {
+        setRateMoment({
+          lessonsDone: completedLessons.length + 1,
+          levelUp: finishesLevel(course, lesson.id, completedLessons),
+        });
+      }
       playSound('celebrate');
       if (Platform.OS !== 'web') {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});

@@ -1,5 +1,5 @@
 import * as WebBrowser from 'expo-web-browser';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Linking, Platform, Pressable, StyleSheet, View } from 'react-native';
 
 import { tapFeedback } from '@/components/bondly/buttons';
 import { ChevronRightIcon } from '@/components/bondly/icons';
@@ -8,6 +8,8 @@ import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { Links } from '@/constants/links';
 
 const ROWS = [
+  // Shown once the App Store ID is set; opens the App Store's "Write a Review" page.
+  ...(Links.writeReview ? [{ label: 'Rate Bondly', url: Links.writeReview, external: true }] : []),
   { label: 'Privacy Policy', url: Links.privacy },
   { label: 'Terms of Use', url: Links.terms },
   { label: 'Bondly website', url: Links.site },
@@ -23,7 +25,12 @@ export function AboutSection() {
           accessibilityRole="link"
           onPress={() => {
             tapFeedback();
-            WebBrowser.openBrowserAsync(row.url).catch(() => {});
+            // The store apps open from their own links; on Android, fall back to the Play website if needed.
+            if ('external' in row)
+              Linking.openURL(row.url).catch(() => {
+                if (Platform.OS === 'android') Linking.openURL(Links.playStoreWeb).catch(() => {});
+              });
+            else WebBrowser.openBrowserAsync(row.url).catch(() => {});
           }}
           style={({ pressed }) => [styles.row, i > 0 && styles.divider, pressed && { opacity: 0.6 }]}>
           <BText variant="bodyBold" style={styles.label}>

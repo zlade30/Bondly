@@ -15,6 +15,7 @@ import { useAccount } from '@/features/account/account';
 import { useProgress } from '@/features/learn/progress';
 import { DAILY_OPTIONS, FOCUS_AREAS, type DailyMinutes, type FocusArea } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
+import { resetRating } from '@/features/rating/rating';
 import { useJournal } from '@/features/reflect/journal';
 
 const MAX_FOCUS = 3;
@@ -59,6 +60,7 @@ export default function SettingsScreen() {
             if (session) await signOut();
             await resetJournal();
             await resetProgress();
+            await resetRating();
             await resetOnboarding();
           },
         },
