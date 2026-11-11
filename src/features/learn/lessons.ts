@@ -5,6 +5,7 @@ import { CONFLICT } from './courses/conflict';
 import { CONNECTION } from './courses/connection';
 import { LISTENING } from './courses/listening';
 import { TRUST } from './courses/trust';
+import { REFRESHER_STEPS } from './courses/levels';
 import { JOURNEY_STEPS } from './journeys';
 import type { LessonStep } from './lesson-types';
 
@@ -27,6 +28,7 @@ function withActivities(course: Record<string, LessonStep[]>) {
 /** Every lesson's steps, keyed by lesson id. Each course lives in ./courses. */
 export const LESSON_STEPS: Record<string, LessonStep[]> = {
   ...withActivities({ ...COMMUNICATION, ...TRUST, ...BOUNDARIES, ...CONFLICT, ...CONNECTION, ...LISTENING }),
+  ...REFRESHER_STEPS,
   ...JOURNEY_STEPS,
 };
 

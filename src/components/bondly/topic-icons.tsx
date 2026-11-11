@@ -4,6 +4,7 @@ import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, St
 import { INK, TONES, type BondlingColor } from './mascot';
 import { courseArt, type CourseIconName } from './topic-icons-courses';
 import { MORE_TOPIC_ICONS, moreArt, type MoreTopicIconName } from './topic-icons-more';
+import { REFRESHER_ICONS, refresherArt, type RefresherIconName } from './topic-icons-refreshers';
 
 /**
  * Topic icons for journey levels, drawn in the same soft-3D style as the
@@ -15,7 +16,7 @@ type FriendsIconName =
   'envelope' | 'ear' | 'speech' | 'shield' | 'calendar' | 'scales' | 'bandage' | 'sprout' | 'hug' | 'party';
 
 /** Every topic icon: the friends journey's ten, then one per level for the other journeys. */
-export type TopicIconName = FriendsIconName | MoreTopicIconName | CourseIconName;
+export type TopicIconName = FriendsIconName | MoreTopicIconName | CourseIconName | RefresherIconName;
 
 export const TOPIC_ICONS: TopicIconName[] = [
   'envelope',
@@ -29,6 +30,7 @@ export const TOPIC_ICONS: TopicIconName[] = [
   'hug',
   'party',
   ...MORE_TOPIC_ICONS,
+  ...REFRESHER_ICONS,
 ];
 
 /** A rounded rectangle as a path, so it can take the same soft shading as any other shape. */
@@ -120,6 +122,7 @@ export function TopicIcon({
 
   const art: Record<TopicIconName, ReactNode> = {
     ...courseArt(kit),
+    ...refresherArt(kit),
     ...moreArt(kit),
     // Reaching out: a happy letter on its way, with a little heart.
     envelope: (

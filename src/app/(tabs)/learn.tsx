@@ -9,7 +9,7 @@ import { TopicIcon } from '@/components/bondly/topic-icons';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Space } from '@/constants/bondly';
-import { courseProgress, journeyFor, orderedCourses, otherJourneys, type Course } from '@/features/learn/content';
+import { courseProgress, hasLevels, journeyFor, orderedCourses, otherJourneys, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { courseXp, journeyLevel } from '@/features/learn/xp';
 import { useOnboarding } from '@/features/onboarding/store';
@@ -75,7 +75,7 @@ function CourseRow({
   const { done, total, ratio } = courseProgress(course, completed);
   const { level, levels, finished } = journeyLevel(course, completed);
   const detail =
-    course.kind === 'journey'
+    hasLevels(course)
       ? `${finished ? `All ${levels} levels done` : `Level ${level} of ${levels}`} · ${courseXp(course, xpByLesson, completed)} XP`
       : `${done} of ${total} lessons`;
   return (

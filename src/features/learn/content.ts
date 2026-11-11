@@ -2,6 +2,7 @@ import type { BondlingColor, BondlingMood, BondlingProp } from '@/components/bon
 import type { TopicIconName } from '@/components/bondly/topic-icons';
 import type { FocusArea, RelationshipGoal } from '@/features/onboarding/content';
 
+import { REFRESHER_LEVELS } from './courses/levels';
 import { JOURNEYS } from './journeys';
 import { isPlayable } from './lessons';
 
@@ -44,10 +45,10 @@ export type Course = {
 };
 
 /**
- * Starter catalogue. Every course lists its lessons so progress and
- * "today's lesson" work now; full lesson bodies arrive with the lesson player.
+ * The skill refreshers' original lessons, which make up each one's Level 1.
+ * Levels 2–10 come from ./courses/<id>-levels.json (see withLevels below).
  */
-export const COURSES: Course[] = [
+const BASE_COURSES: Course[] = [
   {
     id: 'communication',
     title: 'Communicate with Care',
@@ -128,6 +129,25 @@ export const COURSES: Course[] = [
     ],
   },
 ];
+
+/** Gives a refresher its ten levels: the original lessons as Level 1, then levels 2–10. */
+function withLevels(course: Course): Course {
+  const extra = REFRESHER_LEVELS[course.id as FocusArea];
+  if (!extra) return course;
+  return {
+    ...course,
+    levels: extra.levels,
+    lessons: [...course.lessons.map((l) => ({ ...l, level: 1 })), ...extra.lessons],
+  };
+}
+
+/** The skill refreshers, each in ten levels like the journeys. */
+export const COURSES: Course[] = BASE_COURSES.map(withLevels);
+
+/** True for courses split into levels: every journey and every refresher with level data. */
+export function hasLevels(course: Course) {
+  return !!course.levels?.length;
+}
 
 /** Every course: relationship journeys first, then the skill courses. */
 export const ALL_COURSES: Course[] = [...JOURNEYS, ...COURSES];

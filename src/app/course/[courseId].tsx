@@ -14,7 +14,7 @@ import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Float, ProgressBar } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, findCourse, type Course, type LevelInfo } from '@/features/learn/content';
+import { courseProgress, findCourse, hasLevels, type Course, type LevelInfo } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { bestXp, courseLevels, courseXp, journeyLevel } from '@/features/learn/xp';
 import { playSoundAfter } from '@/features/sound/sound';
@@ -68,7 +68,8 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
   const { width } = useWindowDimensions();
   const { completedLessons, lessonXp } = useProgress();
   const { done, total, ratio } = courseProgress(course, completedLessons);
-  const isJourney = course.kind === 'journey';
+  // Journeys and refreshers alike are split into levels.
+  const isJourney = hasLevels(course);
   const { level, levels, finished } = journeyLevel(course, completedLessons);
   const xp = courseXp(course, lessonXp, completedLessons);
 

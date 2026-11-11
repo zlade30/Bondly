@@ -20,7 +20,7 @@ import {
   type StepResult,
 } from '@/components/lesson/steps';
 import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { findLesson, type Course, type Lesson } from '@/features/learn/content';
+import { findLesson, hasLevels, type Course, type Lesson } from '@/features/learn/content';
 import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/lessons';
 import { useProgress } from '@/features/learn/progress';
 import { finishesLevel, journeyLevel, lessonXp, levelOfLesson, maxLessonXp } from '@/features/learn/xp';
@@ -276,7 +276,8 @@ function Celebration({
   result: Result | null;
   completed: string[];
 }) {
-  const isJourney = course.kind === 'journey';
+  const isJourney = hasLevels(course);
+  const relationship = course.kind === 'journey';
   // Count this lesson as done even if the saved progress hasn't caught up yet.
   const done = completed.includes(lesson.id) ? completed : [...completed, lesson.id];
   const where = levelOfLesson(course, lesson.id);
@@ -289,7 +290,7 @@ function Celebration({
 
   const badge = isJourney
     ? finished && leveledUp
-      ? `🏆 Level ${levelNumber} · Journey complete`
+      ? `🏆 Level ${levelNumber} · ${relationship ? 'Journey' : 'Refresher'} complete`
       : leveledUp
         ? `⬆️ Level ${level} unlocked`
         : where && where.count > 1
@@ -301,7 +302,9 @@ function Celebration({
 
   const title = isJourney
     ? finished && leveledUp
-      ? `You finished the ${course.title} journey!`
+      ? relationship
+        ? `You finished the ${course.title} journey!`
+        : `You finished ${course.title}!`
       : leveledUp
         ? `Level ${levelNumber} complete!`
         : 'Lesson complete!'
@@ -311,7 +314,9 @@ function Celebration({
 
   const body = isJourney
     ? finished && leveledUp
-      ? `All ${levels} levels done. You’ve built real skills for this relationship.`
+      ? relationship
+        ? `All ${levels} levels done. You’ve built real skills for this relationship.`
+        : `All ${levels} levels done. That’s a real new skill in your toolkit.`
       : leveledUp
         ? `You finished every lesson in “${where?.title ?? lesson.title}”. Level ${level} is ready when you are.`
         : firstTime && left > 0

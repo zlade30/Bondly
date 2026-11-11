@@ -108,7 +108,7 @@ export function journeyLevel(course: Course, completed: string[]) {
  * lessons done before it. Used to celebrate a level-up.
  */
 export function finishesLevel(course: Course, lessonId: string, completedBefore: string[]) {
-  if (course.kind !== 'journey') return false;
+  if (!course.levels?.length) return false;
   const where = levelOfLesson(course, lessonId);
   if (!where) return false;
   return where.lessons.every((l) => l.id === lessonId || completedBefore.includes(l.id));

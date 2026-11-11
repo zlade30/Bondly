@@ -14,7 +14,7 @@ import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
 import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
+import { courseProgress, hasLevels, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { journeyLevel, levelOfLesson } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
@@ -62,7 +62,7 @@ export default function HomeScreen() {
   // journey lesson, or the skill refresher's own icon.
   const todayLevel = useMemo(() => levelOfLesson(today.course, today.lesson.id), [today]);
   const todayFrom =
-    today.course.kind === 'journey' && todayLevel
+    hasLevels(today.course) && todayLevel
       ? `${today.course.title} · Level ${todayLevel.level}`
       : today.course.title;
   const todayArt = todayLevel?.info
@@ -273,7 +273,7 @@ function useDailyCheckIn(ready: boolean, checkedIn: boolean, day: string) {
 
 function JourneyCard({ course, completed }: { course: Course; completed: string[] }) {
   const { done, total, ratio } = courseProgress(course, completed);
-  const isJourney = course.kind === 'journey';
+  const isJourney = hasLevels(course);
   const { level, levels, finished } = journeyLevel(course, completed);
   const levelText = finished ? 'All levels done' : `Level ${level} of ${levels}`;
   return (

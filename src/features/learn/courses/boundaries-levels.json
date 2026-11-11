@@ -1,0 +1,2032 @@
+{
+  "course": "boundaries",
+  "levels": [
+    {
+      "title": "Boundary Basics",
+      "icon": "gate",
+      "color": "blue"
+    },
+    {
+      "title": "Saying No Kindly",
+      "icon": "palm",
+      "color": "pink"
+    },
+    {
+      "title": "Time and Energy",
+      "icon": "candle",
+      "color": "yellow"
+    },
+    {
+      "title": "Digital Boundaries",
+      "icon": "laptop",
+      "color": "lavender"
+    },
+    {
+      "title": "Emotional Limits",
+      "icon": "raincoat",
+      "color": "mint"
+    },
+    {
+      "title": "Staying Steady",
+      "icon": "kite",
+      "color": "peach"
+    },
+    {
+      "title": "Changing Your Mind",
+      "icon": "toggle",
+      "color": "purple"
+    },
+    {
+      "title": "Asking for Space",
+      "icon": "tent",
+      "color": "mint"
+    },
+    {
+      "title": "Hearing Their No",
+      "icon": "bench",
+      "color": "yellow"
+    },
+    {
+      "title": "Living Your Limits",
+      "icon": "wateringcan",
+      "color": "pink"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-boundaries-2",
+      "level": 2,
+      "title": "A Warm No",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "You can turn something down and still sound caring.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Warmth plus a clear no",
+          "body": "A kind no has two parts: something warm about the person, and a clear answer. “I’m so glad you asked me, and I can’t make it” respects both of you.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend invites you to a party on the one night you’d planned to rest. What’s a warm, clear no?",
+          "options": [
+            {
+              "text": "“Maybe! I’ll see how I feel.”",
+              "why": "A vague maybe keeps them waiting and leaves you feeling obliged."
+            },
+            {
+              "text": "“Thank you for inviting me! I need a quiet night, but have a brilliant time.”",
+              "correct": true,
+              "why": "It thanks them, gives a clear answer and wishes them well."
+            },
+            {
+              "text": "“Parties aren’t really my thing.”",
+              "why": "It’s honest, but it can sound like you’re dismissing them and their plans."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Add warmth to your no.",
+          "before": "I really appreciate you thinking of me,",
+          "after": "this time.",
+          "words": [
+            "and I’ll pass",
+            "but ugh,",
+            "so I guess I’ll come"
+          ],
+          "answer": "and I’ll pass",
+          "why": "“And I’ll pass” keeps the warmth and the no together, without sounding grudging."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who do you find it hardest to say no to?",
+          "options": [
+            "Family",
+            "Friends",
+            "My partner",
+            "People at work"
+          ],
+          "reply": "Good to know. Practising a warm no with them could make a big difference to your energy."
+        },
+        {
+          "kind": "try",
+          "body": "The next time you need to say no, start with one warm sentence, then give your clear answer."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-2-2",
+      "level": 2,
+      "title": "No Without the Essay",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "You don’t owe a long list of reasons for every no.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Over-explaining invites debate",
+          "body": "Long excuses can make a no sound negotiable: people start solving your reasons. A short, kind answer is often clearer and easier for everyone.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Short and clear, or an essay?",
+          "left": "Short and kind",
+          "right": "Essay",
+          "cards": [
+            {
+              "text": "“I can’t this weekend, sorry!”",
+              "side": "left"
+            },
+            {
+              "text": "“I would, but my cousin might visit and I’ve got washing and…”",
+              "side": "right"
+            },
+            {
+              "text": "“That doesn’t work for me.”",
+              "side": "left"
+            },
+            {
+              "text": "“Well, I could maybe move things if you really needed…”",
+              "side": "right"
+            }
+          ],
+          "why": "Short answers are clear and final. Essays give people things to argue with, which makes your no feel shaky."
+        },
+        {
+          "kind": "scene",
+          "title": "A favour you can’t do",
+          "them": "Your neighbour",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Could you feed my cats all next week? 🐱"
+            },
+            {
+              "from": "them",
+              "text": "It’s just twice a day!"
+            }
+          ],
+          "prompt": "You can’t this time. What do you send?",
+          "options": [
+            {
+              "text": "I can’t next week, sorry! Hope you find someone 🐾",
+              "correct": true,
+              "reaction": "No worries, I’ll ask upstairs!",
+              "why": "Kind, clear and short, with no reasons for them to try and work around."
+            },
+            {
+              "text": "Well, I’ve got a busy week and maybe a trip and work stuff, so possibly not…",
+              "reaction": "So… is that a yes on the quiet days?",
+              "why": "The long list makes it sound like a maybe they can negotiate."
+            },
+            {
+              "text": "Ignore it and hope they ask someone else.",
+              "reaction": "Hello? 😅",
+              "why": "Silence leaves them stuck and makes things awkward later."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Why do you explain your no so much?",
+          "options": [
+            "So they won’t be cross",
+            "So I don’t seem rude",
+            "Habit",
+            "I don’t, usually"
+          ],
+          "reply": "Those are kind reasons. A warm tone does the job just as well as a long explanation."
+        },
+        {
+          "kind": "try",
+          "body": "Say your next no in one or two sentences, with no more than one short reason."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-2-3",
+      "level": 2,
+      "title": "Offer What You Can",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "A “no, but” can protect your limits and still help.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The middle option",
+          "body": "Sometimes the answer isn’t yes or no but “not that, but this”. Offering what you can genuinely give keeps your limit and shows you still care.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the request to a “no, but” offer.",
+          "pairs": [
+            {
+              "a": "“Can you help me move all day?”",
+              "b": "“I can do two hours in the morning.”"
+            },
+            {
+              "a": "“Lend me £200?”",
+              "b": "“I can’t, but I’ll help you budget.”"
+            },
+            {
+              "a": "“Host the family Christmas?”",
+              "b": "“Not this year, but I’ll bring dessert.”"
+            }
+          ],
+          "why": "Each offer is honest about your limit and still gives something real, so the relationship feels supported."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend asks you to babysit every Friday. You can’t commit to that. What’s best?",
+          "options": [
+            {
+              "text": "Say yes and hope you can keep it up.",
+              "why": "Agreeing to more than you can give often ends in resentment or letting them down."
+            },
+            {
+              "text": "Say no and leave it there.",
+              "why": "That’s okay, but you may be missing a chance to help in a way that suits you."
+            },
+            {
+              "text": "“Every week is too much for me, but I could do one Friday a month.”",
+              "correct": true,
+              "why": "It’s honest about your limit and offers real, sustainable help."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer the middle option.",
+          "before": "I can’t do the whole day,",
+          "after": "",
+          "words": [
+            "sorry, bye.",
+            "but I could do the afternoon.",
+            "unless you beg."
+          ],
+          "answer": "but I could do the afternoon.",
+          "why": "It keeps your limit clear while still offering something genuinely helpful."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re asked for more than you can give, offer a smaller version that genuinely works for you."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-3",
+      "level": 3,
+      "title": "Protect Your Rest",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Rest is a real plan, not just empty time.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Rest counts as a plan",
+          "body": "If your quiet evening is easy to give away, it will be. Treating rest as a real commitment, like any other plan, helps you protect it without guilt.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve kept Sunday free to recharge. A friend asks you to help with a car-boot sale. What’s best?",
+          "options": [
+            {
+              "text": "“Sunday’s my rest day, but I could help price things on Saturday evening.”",
+              "correct": true,
+              "why": "You protect your rest and still offer help at a time that works."
+            },
+            {
+              "text": "Say yes because resting isn’t a real reason.",
+              "why": "Rest is a real need. Giving it up often leaves you worn out all week."
+            },
+            {
+              "text": "“I’ve got plans.” and feel guilty all day.",
+              "why": "Fine to say, but rest doesn’t need guilt attached."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Protects rest, or chips away at it?",
+          "left": "Protects",
+          "right": "Chips away",
+          "cards": [
+            {
+              "text": "Putting “rest” in your calendar",
+              "side": "left"
+            },
+            {
+              "text": "Saying yes to every weekend plan",
+              "side": "right"
+            },
+            {
+              "text": "“That evening’s already booked for me.”",
+              "side": "left"
+            },
+            {
+              "text": "Answering work emails on holiday",
+              "side": "right"
+            }
+          ],
+          "why": "Protected rest refills your energy for the people you love. Without it, you have less to give everyone."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What usually steals your rest time?",
+          "options": [
+            "Last-minute plans",
+            "Work",
+            "Family requests",
+            "Scrolling"
+          ],
+          "reply": "Naming the thief is the first step to guarding your rest from it."
+        },
+        {
+          "kind": "try",
+          "body": "Block out one rest slot in your calendar this week and treat it like any other plan."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-3-2",
+      "level": 3,
+      "title": "Spot the Overbooking",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Check your energy before saying yes, not after.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Yes now, regret later",
+          "body": "Saying yes is easy in the moment. The cost arrives later, when the week is full and you’re exhausted. A quick pause to check your diary and energy prevents that.",
+          "mood": "upset"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a healthy yes-or-no check in order.",
+          "items": [
+            "Pause before answering",
+            "Check your diary",
+            "Check your energy",
+            "Then give your answer"
+          ],
+          "why": "Pausing gives you room to think. Checking both time and energy helps you only agree to what you can truly enjoy."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Buy yourself a moment.",
+          "before": "Sounds lovely!",
+          "after": "and let you know tomorrow?",
+          "words": [
+            "Can I check my week",
+            "Obviously yes,",
+            "I never can,"
+          ],
+          "answer": "Can I check my week",
+          "why": "It’s friendly and gives you time to check if you really have the room."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your week already has four evening plans. Someone invites you to a fifth. What’s wise?",
+          "options": [
+            {
+              "text": "Squeeze it in; you can sleep at the weekend.",
+              "why": "Running on empty all week usually catches up with you."
+            },
+            {
+              "text": "“I’d love to, but this week is full. Next week?”",
+              "correct": true,
+              "why": "You protect your energy and keep the door open."
+            },
+            {
+              "text": "Say yes, then cancel on the day.",
+              "why": "Late cancelling can hurt more than an honest no up front."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Before agreeing to anything new this week, check both your diary and your energy first."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-3-3",
+      "level": 3,
+      "title": "Ask for Help Sooner",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Saying “I can’t do it all” is a boundary too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Doing it all isn’t a badge",
+          "body": "Carrying everything alone often looks strong but leads to burnout. Saying “I need some help with this” is a healthy limit, not a failure.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "Too much on your plate",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "You okay? You seem really frazzled."
+            },
+            {
+              "from": "them",
+              "text": "Is there anything I can do?"
+            }
+          ],
+          "prompt": "You’re overwhelmed. What do you say?",
+          "options": [
+            {
+              "text": "I’m fine, I’ll manage.",
+              "reaction": "Okay… if you’re sure.",
+              "why": "Turning down a genuine offer leaves you carrying everything alone."
+            },
+            {
+              "text": "Yes please! Could you take over dinner tonight?",
+              "correct": true,
+              "reaction": "Of course, consider it done 🍝",
+              "why": "Accepting with a specific ask lightens your load and lets them help in a clear way."
+            },
+            {
+              "text": "You never help anyway.",
+              "reaction": "That’s not fair, I’m offering now…",
+              "why": "Old frustration shuts down the help being offered right now."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the overload to a clear ask.",
+          "pairs": [
+            {
+              "a": "Too many chores",
+              "b": "“Could you do the laundry?”"
+            },
+            {
+              "a": "Too much at work",
+              "b": "“Which task can wait?”"
+            },
+            {
+              "a": "Caring for a parent",
+              "b": "“Can you visit on Tuesdays?”"
+            }
+          ],
+          "why": "Specific asks are easy to say yes to, and they share the load before you burn out."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What stops you asking for help?",
+          "options": [
+            "Not wanting to burden anyone",
+            "Wanting it done my way",
+            "Feeling I should cope",
+            "Not knowing who to ask"
+          ],
+          "reply": "All understandable. Most people feel glad to be asked for something specific."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone for help with one specific task this week, before you reach the point of feeling overwhelmed."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-4",
+      "level": 4,
+      "title": "Reply When You Can",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "You don’t have to answer every message straight away.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Instant replies aren’t a rule",
+          "body": "Phones make it feel like every message needs an answer right now. It doesn’t. Replying when you have the time and energy is a healthy, normal limit.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend sends a long message while you’re at dinner with family. What’s healthy?",
+          "options": [
+            {
+              "text": "Reply properly later when you have time.",
+              "correct": true,
+              "why": "They get a thoughtful answer, and you stay present with your family."
+            },
+            {
+              "text": "Stop eating and reply in full straight away.",
+              "why": "You lose the moment you’re in, and a rushed reply may not be your best."
+            },
+            {
+              "text": "Leave it for a week without saying anything.",
+              "why": "A very long silence can leave them worried or hurt."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Set a kind expectation.",
+          "before": "Just seen this!",
+          "after": "",
+          "words": [
+            "Will reply properly tonight 😊",
+            "Stop messaging me.",
+            "Why so long?"
+          ],
+          "answer": "Will reply properly tonight 😊",
+          "why": "A quick holding reply lets them know you care and when to expect more."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when you haven’t replied to a message?",
+          "options": [
+            "Guilty",
+            "Anxious",
+            "Fine",
+            "I forget about it"
+          ],
+          "reply": "If guilt creeps in, a quick “Will reply later!” can ease it without losing your time."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you get a message at a busy moment, send a short holding reply and answer properly later."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-4-2",
+      "level": 4,
+      "title": "Phone-Free Moments",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Agree on times when screens go away.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Screens steal moments",
+          "body": "Meals, walks and bedtime are some of the best chances to connect. Agreeing together on a few phone-free times can make them feel special again.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Good phone-free moment, or not needed?",
+          "left": "Phone-free",
+          "right": "Phone is fine",
+          "cards": [
+            {
+              "text": "Family dinner",
+              "side": "left"
+            },
+            {
+              "text": "Looking up directions together",
+              "side": "right"
+            },
+            {
+              "text": "The first ten minutes after getting home",
+              "side": "left"
+            },
+            {
+              "text": "Sharing holiday photos",
+              "side": "right"
+            },
+            {
+              "text": "Bedtime chats",
+              "side": "left"
+            }
+          ],
+          "why": "Phone-free moments protect time for each other. Phones aren’t the enemy, they just shouldn’t crowd out connection."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’d like dinners to be phone-free at home. What’s the best way to suggest it?",
+          "options": [
+            {
+              "text": "Take everyone’s phones away at the table.",
+              "why": "Enforcing it suddenly can feel controlling and cause a backlash."
+            },
+            {
+              "text": "“Could we try phone-free dinners this week and see how it feels?”",
+              "correct": true,
+              "why": "A friendly trial invites everyone in rather than imposing a rule."
+            },
+            {
+              "text": "Sigh loudly whenever someone looks at their phone.",
+              "why": "Hinting by sighing tends to annoy people without changing anything."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When would a phone-free moment help you most?",
+          "options": [
+            "Meals",
+            "Bedtime",
+            "Mornings",
+            "Weekends"
+          ],
+          "reply": "Great pick. Start there for a week and see what changes."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one phone-free moment to the people you live with, and try it together for a week."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-4-3",
+      "level": 4,
+      "title": "Agree on Sharing Online",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Talk about what’s okay to post about each other.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Everyone’s comfort differs",
+          "body": "Some people love sharing their life online; others prefer to keep things private. Agreeing what’s okay to post about each other avoids hurt and surprises.",
+          "mood": "curious"
+        },
+        {
+          "kind": "scene",
+          "title": "A photo dilemma",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Just posted the pics from last night! 📸"
+            },
+            {
+              "from": "them",
+              "text": "You look amazing in them!"
+            }
+          ],
+          "prompt": "You’d rather not be in public posts. What do you say?",
+          "options": [
+            {
+              "text": "Delete them now!!",
+              "reaction": "Whoa, okay… sorry?",
+              "why": "Your limit is fair, but a sharp demand can feel like an attack."
+            },
+            {
+              "text": "Say nothing and feel uncomfortable.",
+              "reaction": "(Posts more photos next week)",
+              "why": "Without telling them, they can’t know your preference."
+            },
+            {
+              "text": "Thank you! I’m quite private online though. Could you take down the ones with me in?",
+              "correct": true,
+              "reaction": "Oh, of course! Didn’t know, done now 😊",
+              "why": "Kind and clear, it explains your preference and asks for one simple change."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the situation to a clear agreement.",
+          "pairs": [
+            {
+              "a": "Photos of each other",
+              "b": "“Ask before posting.”"
+            },
+            {
+              "a": "Your relationship status",
+              "b": "“Decide together when to share.”"
+            },
+            {
+              "a": "Disagreements",
+              "b": "“Never vent about us online.”"
+            }
+          ],
+          "why": "Agreements made calmly in advance save hurt feelings later and help everyone feel respected."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How private are you online?",
+          "options": [
+            "Very private",
+            "Somewhere in the middle",
+            "Pretty open",
+            "I’ve never thought about it"
+          ],
+          "reply": "Knowing your own comfort level makes it much easier to explain it to others."
+        },
+        {
+          "kind": "try",
+          "body": "Have a quick, relaxed chat with someone close about what you’re both happy to share about each other online."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-5",
+      "level": 5,
+      "title": "Care Without Carrying",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "You can support someone without taking on all their feelings.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Support isn’t absorbing",
+          "body": "Caring deeply can mean carrying someone’s worries as if they were your own. You can listen and support them while still remembering their feelings belong to them.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Healthy support, or carrying too much?",
+          "left": "Healthy",
+          "right": "Too much",
+          "cards": [
+            {
+              "text": "Listening, then going to bed on time",
+              "side": "left"
+            },
+            {
+              "text": "Lying awake worrying about their problem every night",
+              "side": "right"
+            },
+            {
+              "text": "“I’m here for you.”",
+              "side": "left"
+            },
+            {
+              "text": "Feeling it’s your job to make them happy",
+              "side": "right"
+            }
+          ],
+          "why": "Healthy support stays kind without draining you. Carrying too much can leave you exhausted and less able to help."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend calls every night to talk through the same worry. You’re wiped out. What’s healthy?",
+          "options": [
+            {
+              "text": "Keep taking every call, however late.",
+              "why": "Running on empty helps neither of you in the long run."
+            },
+            {
+              "text": "Stop answering without explaining.",
+              "why": "Disappearing suddenly can feel like abandonment."
+            },
+            {
+              "text": "“I care about you. Could we talk on Sundays, and could you lean on others too?”",
+              "correct": true,
+              "why": "It keeps your support while setting a limit and pointing them to more help."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Whose feelings do you tend to carry most?",
+          "options": [
+            "My partner’s",
+            "A parent’s",
+            "A friend’s",
+            "My children’s"
+          ],
+          "reply": "That shows how much you care. Remember, you can care deeply without carrying it all."
+        },
+        {
+          "kind": "try",
+          "body": "After supporting someone today, do one small thing to set their worry down and look after yourself."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-5-2",
+      "level": 5,
+      "title": "Not Your Job to Fix",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Some problems aren’t yours to solve, and that’s okay.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Fixing can overstep",
+          "body": "Jumping in to fix someone’s problems can feel loving. But some problems belong to them. Trying to solve everything can leave you drained and them less confident.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the urge to fix with a supportive alternative.",
+          "pairs": [
+            {
+              "a": "Call their boss for them",
+              "b": "Help them plan what to say"
+            },
+            {
+              "a": "Pay off their debts",
+              "b": "Help them find advice"
+            },
+            {
+              "a": "Sort out their row with a friend",
+              "b": "Listen and ask what they’ll do"
+            }
+          ],
+          "why": "Supporting someone to handle their own problem helps them grow and keeps you from taking on too much."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Support without taking over.",
+          "before": "That sounds really hard.",
+          "after": "",
+          "words": [
+            "What do you think you’ll do?",
+            "Leave it to me.",
+            "Just do what I say."
+          ],
+          "answer": "What do you think you’ll do?",
+          "why": "Asking keeps them in charge of their own problem while you stand alongside them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where do you most want to jump in and fix things?",
+          "options": [
+            "Family arguments",
+            "Friends’ love lives",
+            "Money problems",
+            "Work drama"
+          ],
+          "reply": "Noticing that urge lets you choose a gentler kind of support next time."
+        },
+        {
+          "kind": "try",
+          "body": "When someone shares a problem this week, ask what they think they’ll do before offering any solutions."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-5-3",
+      "level": 5,
+      "title": "Pause Heavy Talks",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "It’s okay to say “Can we pick this up later?”",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not every talk needs to happen now",
+          "body": "Heavy conversations at midnight or when you’re exhausted rarely go well. Asking to pause, and naming when you’ll come back, protects both of you.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "At 11pm, your partner wants to talk about money worries. You’re shattered. What’s best?",
+          "options": [
+            {
+              "text": "Push through even though you can barely think.",
+              "why": "Tired talks tend to get tense and solve less."
+            },
+            {
+              "text": "“This matters, and I’m too tired to do it justice. Breakfast tomorrow?”",
+              "correct": true,
+              "why": "It values the topic, explains why you’re pausing and sets a clear time."
+            },
+            {
+              "text": "“Not now.” and roll over.",
+              "why": "A curt brush-off can make them feel their worry doesn’t matter."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a kind pause in order.",
+          "items": [
+            "Say the topic matters",
+            "Explain you need a pause",
+            "Suggest a time to return",
+            "Keep that time"
+          ],
+          "why": "Showing it matters and offering a real time makes the pause feel caring, not like avoidance."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do heavy talks usually happen for you?",
+          "options": [
+            "Late at night",
+            "When I’m rushing out",
+            "During meals",
+            "At good times"
+          ],
+          "reply": "If it’s often at a hard time, suggesting a better slot can make those talks go much more smoothly."
+        },
+        {
+          "kind": "try",
+          "body": "If a heavy talk starts at a bad time, ask to pause and name a specific time to return to it."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-6",
+      "level": 6,
+      "title": "When They Push Back",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "People may test a new limit. Stay calm and kind.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Pushback is normal",
+          "body": "When you set a new boundary, people may push, sulk or try to persuade you. That doesn’t mean the boundary is wrong. It often just means it’s new.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Testing a new limit",
+          "them": "Your brother",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Come on, just lend me the car this weekend. You always used to."
+            },
+            {
+              "from": "them",
+              "text": "Don’t be like that 🙄"
+            }
+          ],
+          "prompt": "You’ve decided not to lend your car any more. Reply?",
+          "options": [
+            {
+              "text": "Ugh, fine. Just this once.",
+              "reaction": "Knew you’d cave 😏",
+              "why": "Giving in teaches him that pushing harder works."
+            },
+            {
+              "text": "I know I used to, but I’m not lending it any more. Happy to help find a hire car.",
+              "correct": true,
+              "reaction": "…Fine. A hire car could work.",
+              "why": "Calm and kind, you held the limit and offered another way to help."
+            },
+            {
+              "text": "You’re so selfish for even asking.",
+              "reaction": "Wow, okay.",
+              "why": "Attacking him turns a clear limit into a fight."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Holding steady, or giving way?",
+          "left": "Holding steady",
+          "right": "Giving way",
+          "cards": [
+            {
+              "text": "“My answer’s still no, but thanks for understanding.”",
+              "side": "left"
+            },
+            {
+              "text": "“Okay, okay, maybe just this time.”",
+              "side": "right"
+            },
+            {
+              "text": "Repeating your limit calmly",
+              "side": "left"
+            },
+            {
+              "text": "Adding more and more reasons",
+              "side": "right"
+            }
+          ],
+          "why": "Calm repetition holds a limit without a fight. Caving or over-explaining tells people the limit can move."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually respond to pushback?",
+          "options": [
+            "I give in",
+            "I get defensive",
+            "I stay calm",
+            "I avoid the person"
+          ],
+          "reply": "Knowing your pattern helps. Calm and kind repetition gets easier with practice."
+        },
+        {
+          "kind": "try",
+          "body": "If someone pushes back on a limit this week, repeat it calmly once, without adding new reasons."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-6-2",
+      "level": 6,
+      "title": "Guilt Isn’t a Verdict",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Feeling guilty doesn’t mean you’ve done something wrong.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Guilt can be a habit",
+          "body": "If you’re used to always saying yes, setting a limit can feel guilty, even when it’s fair. That feeling is often just change, not proof you’re being unkind.",
+          "mood": "sad"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the guilty thought to a kinder one.",
+          "pairs": [
+            {
+              "a": "“I’m letting them down.”",
+              "b": "“I’m being honest about my limits.”"
+            },
+            {
+              "a": "“I’m being selfish.”",
+              "b": "“Looking after me helps us both.”"
+            },
+            {
+              "a": "“They’ll be upset.”",
+              "b": "“They can be upset, and I can be kind.”"
+            }
+          ],
+          "why": "Kinder thoughts don’t ignore the feeling. They remind you that a fair limit can coexist with care."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You said no to helping your aunt this weekend and feel guilty. What’s the healthiest step?",
+          "options": [
+            {
+              "text": "Remind yourself why you said no, and let the feeling pass.",
+              "correct": true,
+              "why": "Guilt fades when you trust your reasons rather than acting on it."
+            },
+            {
+              "text": "Call her back and say yes after all.",
+              "why": "Acting on guilt teaches you that limits are only temporary."
+            },
+            {
+              "text": "Avoid her for weeks so you don’t feel it.",
+              "why": "Avoiding her keeps the guilt alive and hurts the relationship."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "When guilt is used against you",
+          "body": "Some people use guilt to control others. If someone often makes you feel bad for having any limits at all, or you feel afraid, talk to someone you trust or a support service.",
+          "mood": "content"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When does guilt hit you hardest?",
+          "options": [
+            "Saying no to family",
+            "Resting",
+            "Spending on myself",
+            "Disappointing friends"
+          ],
+          "reply": "That’s worth knowing. Next time it hits, try one of those kinder thoughts."
+        },
+        {
+          "kind": "try",
+          "body": "When you feel guilty about a limit this week, say a kinder thought to yourself and let the feeling pass."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-6-3",
+      "level": 6,
+      "title": "Repeat, Calmly",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "You don’t need new arguments. Just repeat your limit kindly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The broken record",
+          "body": "When someone keeps pushing, you don’t have to win the debate. Calmly repeating the same kind sentence, like “I understand, and my answer is still no”, is enough.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Repeat it kindly.",
+          "before": "I hear you,",
+          "after": "",
+          "words": [
+            "and my answer is still no.",
+            "so fine, okay.",
+            "and you’re wrong."
+          ],
+          "answer": "and my answer is still no.",
+          "why": "It acknowledges them and holds your limit, without starting a fresh argument."
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a calm repeat when someone pushes.",
+          "items": [
+            "Breathe and stay calm",
+            "Acknowledge their view",
+            "Repeat your limit",
+            "End the topic kindly"
+          ],
+          "why": "Staying calm and acknowledging them keeps it friendly. Repeating, then moving on, shows the limit isn’t up for debate."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A salesperson keeps pressing you to sign up today. What works best?",
+          "options": [
+            {
+              "text": "Explain your whole budget in detail.",
+              "why": "More detail gives them more to argue with."
+            },
+            {
+              "text": "“Thanks, I’m not signing up today.” Repeat as needed.",
+              "correct": true,
+              "why": "Short, polite repetition makes your answer clear and final."
+            },
+            {
+              "text": "Sign up just to end the conversation.",
+              "why": "Giving in under pressure often leads to regret."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s your go-to calm sentence for holding a limit?",
+          "options": [
+            "“My answer’s still no”",
+            "“That doesn’t work for me”",
+            "“I’ve decided”",
+            "I need to find one"
+          ],
+          "reply": "Having one ready makes holding limits much easier in the moment."
+        },
+        {
+          "kind": "try",
+          "body": "Choose your own calm repeat sentence and practise saying it out loud a few times today."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-7",
+      "level": 7,
+      "title": "It’s Okay to Change",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Your limits can change as your life changes.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Limits aren’t carved in stone",
+          "body": "What felt fine last year might not now. New jobs, babies, health or simply growing can change what you need. Updating a boundary is healthy, not inconsistent.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You used to host Sunday lunch every week. With a new baby, it’s too much. What’s best?",
+          "options": [
+            {
+              "text": "Keep hosting so nobody’s disappointed.",
+              "why": "Pushing on when life has changed usually ends in burnout."
+            },
+            {
+              "text": "Quietly stop inviting people.",
+              "why": "Stopping without explanation can leave people confused and hurt."
+            },
+            {
+              "text": "“With the baby, I can’t host weekly any more. Could we take turns?”",
+              "correct": true,
+              "why": "Honest about the change, and it offers a fair new way to keep the tradition."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "A healthy update, or a reason to feel bad?",
+          "left": "Healthy update",
+          "right": "Too harsh",
+          "cards": [
+            {
+              "text": "Needing more sleep since starting a new job",
+              "side": "left"
+            },
+            {
+              "text": "“I should be able to do what I always did.”",
+              "side": "right"
+            },
+            {
+              "text": "Wanting quieter weekends now",
+              "side": "left"
+            },
+            {
+              "text": "“Changing my mind makes me flaky.”",
+              "side": "right"
+            }
+          ],
+          "why": "Life changes, and so do your needs. Updating your limits is a sign of self-awareness, not weakness."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which old limit might need updating?",
+          "options": [
+            "Time with family",
+            "Work hours",
+            "Social plans",
+            "Money"
+          ],
+          "reply": "If one stood out, it might be time for a gentle conversation about it."
+        },
+        {
+          "kind": "try",
+          "body": "Think of one limit that no longer fits your life. Write down what you’d like it to be now."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-7-2",
+      "level": 7,
+      "title": "Say It Early",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Tell people about a change before it becomes a problem.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Early beats explosive",
+          "body": "If you wait until you’re at breaking point, a changed boundary comes out as a snap. Mentioning it early, while you’re calm, makes it much easier for others to hear.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Less time for calls",
+          "them": "Your best friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Call tonight? Usual hour-long natter? ☎️"
+            },
+            {
+              "from": "them",
+              "text": "So much to tell you!"
+            }
+          ],
+          "prompt": "Work’s busier and you need shorter calls. Reply?",
+          "options": [
+            {
+              "text": "Can’t tonight.",
+              "reaction": "Oh. Okay.",
+              "why": "It’s a no without explaining the change, so they may feel brushed off."
+            },
+            {
+              "text": "Can’t wait to hear! Work’s busy, so 20 mins tonight and a longer chat on Sunday?",
+              "correct": true,
+              "reaction": "Perfect, Sunday it is! 🥰",
+              "why": "You shared the change early and kindly, with a plan that still keeps you close."
+            },
+            {
+              "text": "Say yes, then get snappy halfway through.",
+              "reaction": "Is everything okay?",
+              "why": "Waiting until you’re frazzled means the change comes out as irritation."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Flag the change early.",
+          "before": "Just so you know,",
+          "after": "on weeknights now.",
+          "words": [
+            "I’ll be less available",
+            "you’re too much",
+            "go away"
+          ],
+          "answer": "I’ll be less available",
+          "why": "A calm, early heads-up explains the change before it causes any hurt."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you usually mention changes early or late?",
+          "options": [
+            "Early",
+            "Too late",
+            "Only when I snap",
+            "I don’t mention them"
+          ],
+          "reply": "Early heads-ups take courage, but they save a lot of hurt later."
+        },
+        {
+          "kind": "try",
+          "body": "If a limit of yours has changed, mention it to the people affected this week, while you’re feeling calm."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-7-3",
+      "level": 7,
+      "title": "Update, Don’t Vanish",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Pulling away silently hurts more than an honest update.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Ghosting isn’t a boundary",
+          "body": "Disappearing, ignoring messages or quietly stepping back can feel easier than explaining. But it leaves people confused and hurt. A short, honest update is kinder.",
+          "mood": "sad"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Honest update, or vanishing act?",
+          "left": "Honest update",
+          "right": "Vanishing",
+          "cards": [
+            {
+              "text": "“I need to step back from the group chat for a bit.”",
+              "side": "left"
+            },
+            {
+              "text": "Muting everyone without a word",
+              "side": "right"
+            },
+            {
+              "text": "“I can’t do Fridays any more, but let’s meet up monthly.”",
+              "side": "left"
+            },
+            {
+              "text": "Just not showing up any more",
+              "side": "right"
+            }
+          ],
+          "why": "A few honest words let people understand the change. Vanishing leaves them to imagine the worst."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You want to leave a weekly running club that’s become too much. What’s kindest?",
+          "options": [
+            {
+              "text": "Stop going and stop replying to messages.",
+              "why": "Silence leaves the group wondering if they did something wrong."
+            },
+            {
+              "text": "“I’m stepping back from the club for now. Thanks for all the fun runs!”",
+              "correct": true,
+              "why": "Short, honest and warm, it closes things kindly."
+            },
+            {
+              "text": "Make up an injury so nobody asks.",
+              "why": "A made-up excuse can be hard to keep up and dents trust if found out."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Have you ever been ghosted? How did it feel?",
+          "options": [
+            "Confusing",
+            "Hurtful",
+            "I didn’t mind",
+            "It hasn’t happened"
+          ],
+          "reply": "Remembering that feeling can help you choose an honest update instead."
+        },
+        {
+          "kind": "try",
+          "body": "If you’ve been quietly pulling away from something, send a short, honest update to the people involved."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-8",
+      "level": 8,
+      "title": "Ask for Alone Time",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Needing time alone is normal. Ask for it clearly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Everyone needs space",
+          "body": "Even in close, happy relationships, people need time to themselves. Asking for it clearly, and kindly, stops the other person wondering if something’s wrong.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You need an evening to yourself, but your partner wants to watch a film together. What’s best?",
+          "options": [
+            {
+              "text": "“I need a quiet night to recharge. Film tomorrow?”",
+              "correct": true,
+              "why": "Clear, kind and it offers another time, so they don’t feel rejected."
+            },
+            {
+              "text": "Watch it but sigh and scroll your phone the whole time.",
+              "why": "Being there unwillingly can feel worse than an honest request for space."
+            },
+            {
+              "text": "Go to bed early without saying why.",
+              "why": "Disappearing without a word can leave them worried."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for space kindly.",
+          "before": "I love spending time with you,",
+          "after": "this evening.",
+          "words": [
+            "and I need a bit of alone time",
+            "but you’re annoying",
+            "so whatever"
+          ],
+          "answer": "and I need a bit of alone time",
+          "why": "It makes clear the space is about your needs, not about not wanting them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you recharge best?",
+          "options": [
+            "Time alone",
+            "A walk",
+            "A hobby",
+            "Sleep"
+          ],
+          "reply": "Lovely. Knowing what recharges you makes it easier to ask for it."
+        },
+        {
+          "kind": "try",
+          "body": "Ask for one small slot of alone time this week, and explain kindly that it helps you recharge."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-8-2",
+      "level": 8,
+      "title": "Space Isn’t Rejection",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "When someone needs space, it’s usually not about you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Their space, not your fault",
+          "body": "When someone asks for time alone, it’s easy to feel rejected. Usually, it’s simply what they need to feel their best, which helps them show up better for you too.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "They need a quiet weekend",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Would you mind if I had a quiet weekend at home on my own?"
+            },
+            {
+              "from": "them",
+              "text": "I’m just really drained."
+            }
+          ],
+          "prompt": "You’d hoped to see them. What do you say?",
+          "options": [
+            {
+              "text": "Did I do something wrong?",
+              "reaction": "No! I’m just tired…",
+              "why": "Taking it personally can make them feel guilty for having a need."
+            },
+            {
+              "text": "Of course. Rest up, and let’s plan something fun next week 💛",
+              "correct": true,
+              "reaction": "Thank you, that means a lot!",
+              "why": "You respected their need and kept warmth and a plan for later."
+            },
+            {
+              "text": "Fine, I’ll find someone else to hang out with then.",
+              "reaction": "Oh… okay.",
+              "why": "Sounding hurt and pointed turns their request into a problem."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Respects their space, or takes it personally?",
+          "left": "Respects",
+          "right": "Takes it badly",
+          "cards": [
+            {
+              "text": "“Enjoy your quiet time!”",
+              "side": "left"
+            },
+            {
+              "text": "Texting every hour to check in",
+              "side": "right"
+            },
+            {
+              "text": "Making your own plans for the day",
+              "side": "left"
+            },
+            {
+              "text": "Sulking when they come back",
+              "side": "right"
+            }
+          ],
+          "why": "Respecting space shows trust and security. Taking it personally puts pressure on them for having a normal need."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when someone close needs space?",
+          "options": [
+            "Worried",
+            "Rejected",
+            "Relaxed",
+            "Relieved"
+          ],
+          "reply": "All normal feelings. Reminding yourself it’s about their needs, not your worth, can help."
+        },
+        {
+          "kind": "try",
+          "body": "The next time someone asks for space, reply warmly and make your own plans for that time."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-8-3",
+      "level": 8,
+      "title": "Come Back as Promised",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Taking space works best when you return when you said.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Space with a return date",
+          "body": "“I need some space” can sound scary if it has no end. Saying when you’ll be back, and keeping to it, makes asking for space feel safe for everyone.",
+          "mood": "happy"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put healthy space-taking in order.",
+          "items": [
+            "Ask for space kindly",
+            "Say when you’ll be back",
+            "Take the time you need",
+            "Return when promised"
+          ],
+          "why": "A clear ask and a return time make space feel safe. Coming back when promised builds trust for next time."
+        },
+        {
+          "kind": "choice",
+          "prompt": "After an argument, you need time to cool off. What’s the best way to ask?",
+          "options": [
+            {
+              "text": "Storm out and say nothing.",
+              "why": "Leaving without a word can feel like abandonment in the middle of a row."
+            },
+            {
+              "text": "“I need an hour to calm down. Let’s talk again at 8.”",
+              "correct": true,
+              "why": "Clear, time-limited space lets you both calm down and know the talk will continue."
+            },
+            {
+              "text": "“I need space” and not return for days.",
+              "why": "Open-ended space can leave the other person anxious and unsure."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Give your space a time.",
+          "before": "I need a little time to think.",
+          "after": "",
+          "words": [
+            "Can we talk tomorrow evening?",
+            "Don’t wait up.",
+            "Maybe never."
+          ],
+          "answer": "Can we talk tomorrow evening?",
+          "why": "A clear return time reassures them the conversation isn’t over, just paused."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you need space, say when you’ll be back, then make sure you return at that time."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-9",
+      "level": 9,
+      "title": "Take No Gracefully",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "When someone says no to you, thank them and move on.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Boundaries go both ways",
+          "body": "We want people to respect our limits. That means respecting theirs too. Taking a no gracefully shows people it’s safe to be honest with you.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "A friend says no",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "you",
+              "text": "Fancy coming to my birthday drinks on Saturday? 🎉"
+            },
+            {
+              "from": "them",
+              "text": "I’d love to, but I need a quiet weekend. Sorry!"
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "Totally get it! Let’s do lunch next week instead? 😊",
+              "correct": true,
+              "reaction": "Yes please! Happy early birthday!",
+              "why": "You took the no warmly and kept the friendship close."
+            },
+            {
+              "text": "Seriously? It’s my birthday though…",
+              "reaction": "I know, I feel bad…",
+              "why": "Guilt-tripping can push them into a yes they don’t want to give."
+            },
+            {
+              "text": "Fine.",
+              "reaction": "Are you upset?",
+              "why": "A short, cold reply can feel like punishment for being honest."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Accept a no kindly.",
+          "before": "No problem at all,",
+          "after": "",
+          "words": [
+            "thanks for being honest!",
+            "I’ll remember this.",
+            "you always do this."
+          ],
+          "answer": "thanks for being honest!",
+          "why": "Thanking them for honesty makes it easier for them to be truthful with you again."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually feel when someone says no to you?",
+          "options": [
+            "Disappointed",
+            "Rejected",
+            "Fine",
+            "Annoyed"
+          ],
+          "reply": "All fair feelings. You can feel them and still reply kindly."
+        },
+        {
+          "kind": "try",
+          "body": "The next time someone says no to you, reply with a warm “No problem, thanks for being honest.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-9-2",
+      "level": 9,
+      "title": "Don’t Push Twice",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Asking again and again after a no wears down trust.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Once is enough",
+          "body": "Asking someone again after they’ve said no, or trying to talk them round, can make them feel pressured. Respecting their first answer makes them trust you more.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Respectful, or pushing?",
+          "left": "Respectful",
+          "right": "Pushing",
+          "cards": [
+            {
+              "text": "Accepting their first answer",
+              "side": "left"
+            },
+            {
+              "text": "“Are you sure? It’ll be really fun!”",
+              "side": "right"
+            },
+            {
+              "text": "“Maybe another time then!”",
+              "side": "left"
+            },
+            {
+              "text": "Asking their friends to persuade them",
+              "side": "right"
+            }
+          ],
+          "why": "Respecting a no keeps it safe for people to be honest. Pushing can make them say yes just to avoid conflict."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner says they don’t want to go to your work do. What’s respectful?",
+          "options": [
+            {
+              "text": "Keep bringing it up all week until they agree.",
+              "why": "Repeated asking wears them down rather than respecting their choice."
+            },
+            {
+              "text": "“Okay, I’ll miss you there, but that’s fine.”",
+              "correct": true,
+              "why": "You share your feeling honestly and accept their answer."
+            },
+            {
+              "text": "Tell them everyone will think they’re rude.",
+              "why": "Using guilt or worry to change their mind is a form of pressure."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you ever ask twice after a no?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ],
+          "reply": "Noticing it is great. Accepting the first answer is a quiet but powerful kindness."
+        },
+        {
+          "kind": "try",
+          "body": "This week, when someone says no, accept their first answer without asking again."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-9-3",
+      "level": 9,
+      "title": "Respect Their Limits",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Their limits may differ from yours, and that’s okay.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Different, not wrong",
+          "body": "Someone might need more sleep, less noise or fewer hugs than you. Their limits don’t have to make sense to you to deserve respect.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match their limit to a respectful response.",
+          "pairs": [
+            {
+              "a": "They don’t like surprise visits",
+              "b": "Text before dropping by"
+            },
+            {
+              "a": "They don’t drink alcohol",
+              "b": "Suggest a café instead of a pub"
+            },
+            {
+              "a": "They need quiet after work",
+              "b": "Save big chats for later"
+            }
+          ],
+          "why": "Small adjustments show you care about their comfort, even when their needs differ from yours."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your new friend says they’re not a hugger. What’s the respectful response?",
+          "options": [
+            {
+              "text": "“Oh, come on, everyone loves a hug!”",
+              "why": "Pushing past a stated limit can make them feel unsafe around you."
+            },
+            {
+              "text": "Hug them anyway as a joke.",
+              "why": "Ignoring a physical limit, even jokingly, isn’t okay."
+            },
+            {
+              "text": "“No problem! High five instead?”",
+              "correct": true,
+              "why": "You accept their limit warmly and find another friendly way to connect."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Whose limits do you find hardest to understand?",
+          "options": [
+            "My partner’s",
+            "A parent’s",
+            "A friend’s",
+            "A colleague’s"
+          ],
+          "reply": "That’s okay. Respecting a limit doesn’t require fully understanding it."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close if there’s anything you do that they’d prefer you didn’t, and listen without defending."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-10",
+      "level": 10,
+      "title": "Check Your Limits",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "A regular check-in shows which limits need attention.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Your body keeps score",
+          "body": "Tiredness, resentment and dread are useful signals. They often point to a limit that’s being crossed. A quick weekly check helps you notice before it builds up.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the feeling to what it might be telling you.",
+          "pairs": [
+            {
+              "a": "Dread before a regular plan",
+              "b": "This may be too much now"
+            },
+            {
+              "a": "Resentment after helping",
+              "b": "I gave more than I wanted"
+            },
+            {
+              "a": "Exhaustion all week",
+              "b": "I need more rest time"
+            }
+          ],
+          "why": "Feelings like these are clues, not failures. They show where a limit might need setting or updating."
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a weekly limits check in order.",
+          "items": [
+            "Notice how the week felt",
+            "Spot what drained you",
+            "Pick one limit to adjust",
+            "Plan how to say it"
+          ],
+          "why": "Reflecting first, then choosing just one thing to change, keeps it gentle and doable."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What drained you most this week?",
+          "options": [
+            "Work",
+            "Social plans",
+            "Family",
+            "Chores"
+          ],
+          "reply": "That’s a great place to look for a small limit to adjust."
+        },
+        {
+          "kind": "try",
+          "body": "At the end of this week, spend five minutes noticing what drained you and choose one limit to adjust."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-10-2",
+      "level": 10,
+      "title": "Boundaries with Kindness",
+      "minutes": 4,
+      "focus": "boundaries",
+      "summary": "Limits are about caring for yourself, not shutting people out.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Gates, not walls",
+          "body": "A healthy boundary is like a garden gate: it keeps what matters safe, but still lets people in. Kind limits help relationships last because they stop resentment from growing.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "A kind gate, or a cold wall?",
+          "left": "Kind gate",
+          "right": "Cold wall",
+          "cards": [
+            {
+              "text": "“I can’t talk now, but I’d love to later.”",
+              "side": "left"
+            },
+            {
+              "text": "Refusing to discuss anything difficult",
+              "side": "right"
+            },
+            {
+              "text": "“I need weekends for rest, but weeknights work.”",
+              "side": "left"
+            },
+            {
+              "text": "Cutting people off without a word",
+              "side": "right"
+            }
+          ],
+          "why": "Kind gates protect you while keeping connection. Cold walls protect you too, but often cost the relationship."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend often calls during your work hours. What’s a kind gate?",
+          "options": [
+            {
+              "text": "Block their number during the day.",
+              "why": "Blocking without a word can feel hurtful and confusing."
+            },
+            {
+              "text": "Answer every call even when it’s stressful.",
+              "why": "Ignoring your own needs builds quiet resentment."
+            },
+            {
+              "text": "“I can’t chat during work, but I’d love a call after 6!”",
+              "correct": true,
+              "why": "It sets the limit and invites them in at a better time."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do your boundaries tend to be gates or walls?",
+          "options": [
+            "Mostly gates",
+            "Mostly walls",
+            "A mix",
+            "I don’t set many"
+          ],
+          "reply": "Whatever you find, kind gates are always something you can build towards."
+        },
+        {
+          "kind": "try",
+          "body": "Turn one “no” this week into a kind gate by adding when or how you can say yes."
+        }
+      ]
+    },
+    {
+      "id": "rf-boundaries-10-3",
+      "level": 10,
+      "title": "Keep Them Up",
+      "minutes": 3,
+      "focus": "boundaries",
+      "summary": "Limits need gentle, regular care to keep working.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Boundaries need watering",
+          "body": "Like a garden, boundaries need regular attention. Old habits creep back and life changes. Small, steady care keeps your limits healthy without big confrontations.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You set a limit on weekend work emails, but you’ve started checking them again. What helps?",
+          "options": [
+            {
+              "text": "Give up, it’s too hard to keep.",
+              "why": "Slipping is normal. It doesn’t mean the limit was wrong."
+            },
+            {
+              "text": "Gently reset it, maybe by turning off notifications.",
+              "correct": true,
+              "why": "A small practical step helps you get back on track without guilt."
+            },
+            {
+              "text": "Be strict and harsh with yourself about it.",
+              "why": "Self-criticism rarely helps habits stick; gentle resets work better."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reset kindly.",
+          "before": "I’ve slipped a bit lately, so",
+          "after": "",
+          "words": [
+            "I’ll gently start again.",
+            "I’ve failed.",
+            "why bother?"
+          ],
+          "answer": "I’ll gently start again.",
+          "why": "Kind restarts make it easy to keep going. Slips are part of building any habit."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most about boundaries in these lessons?",
+          "options": [
+            "Saying no kindly",
+            "Asking for space",
+            "Respecting others’ limits",
+            "Handling guilt"
+          ],
+          "reply": "Wonderful. Keep tending your limits gently, and they’ll keep looking after you."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one limit that’s slipped lately and take one small, practical step to reset it this week."
+        }
+      ]
+    }
+  ]
+}

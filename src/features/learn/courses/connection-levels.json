@@ -1,0 +1,2095 @@
+{
+  "course": "connection",
+  "levels": [
+    {
+      "title": "Small Moments",
+      "icon": "cookie",
+      "color": "lavender"
+    },
+    {
+      "title": "Curious Questions",
+      "icon": "question",
+      "color": "pink"
+    },
+    {
+      "title": "Showing Interest",
+      "icon": "camera",
+      "color": "blue"
+    },
+    {
+      "title": "Shared Rituals",
+      "icon": "popcorn",
+      "color": "yellow"
+    },
+    {
+      "title": "Saying Thank You",
+      "icon": "honey",
+      "color": "peach"
+    },
+    {
+      "title": "Fun Together",
+      "icon": "dice",
+      "color": "mint"
+    },
+    {
+      "title": "There in Hard Times",
+      "icon": "blanket",
+      "color": "pink"
+    },
+    {
+      "title": "Close When Apart",
+      "icon": "postcard",
+      "color": "blue"
+    },
+    {
+      "title": "Deep Conversations",
+      "icon": "submarine",
+      "color": "purple"
+    },
+    {
+      "title": "Growing Together",
+      "icon": "bonsai",
+      "color": "mint"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-connection-2",
+      "level": 2,
+      "title": "Ask Better Questions",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Open questions invite stories, not one-word answers.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Open beats closed",
+          "body": "“Did you have a good day?” gets “Yeah.” “What was the best bit of your day?” gets a story. Open questions start with what, how or tell me about.",
+          "mood": "curious"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Open question, or closed?",
+          "left": "Open",
+          "right": "Closed",
+          "cards": [
+            {
+              "text": "“How did the interview feel?”",
+              "side": "left"
+            },
+            {
+              "text": "“Was it okay?”",
+              "side": "right"
+            },
+            {
+              "text": "“Tell me about your new team.”",
+              "side": "left"
+            },
+            {
+              "text": "“Busy day?”",
+              "side": "right"
+            },
+            {
+              "text": "“What surprised you this week?”",
+              "side": "left"
+            }
+          ],
+          "why": "Open questions give people room to share. Closed ones are easy to answer with a single word."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Open up the question.",
+          "before": "",
+          "after": "was the trip like?",
+          "words": [
+            "Was",
+            "What",
+            "Did"
+          ],
+          "answer": "What",
+          "why": "Starting with “What” invites a description rather than a simple yes or no."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which question do you ask most often?",
+          "options": [
+            "“How are you?”",
+            "“Good day?”",
+            "“You okay?”",
+            "I ask open ones already"
+          ],
+          "reply": "Swapping just that one for something more open can spark much better chats."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone an open question today, starting with “What” or “Tell me about”, and listen to the story."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-2-2",
+      "level": 2,
+      "title": "Follow Up Later",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Asking how something went shows you remembered.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Remembering is caring",
+          "body": "If someone mentions a hospital appointment or a big meeting, asking “How did it go?” afterwards shows you were really listening. It’s one of the simplest ways to feel close.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "A follow-up message",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "you",
+              "text": "How did your driving test go today?! 🚗"
+            },
+            {
+              "from": "them",
+              "text": "You remembered!! I PASSED 🎉"
+            }
+          ],
+          "prompt": "What’s the best reply?",
+          "options": [
+            {
+              "text": "Nice.",
+              "reaction": "Haha, thanks…",
+              "why": "A flat reply misses the chance to celebrate the moment with them."
+            },
+            {
+              "text": "AMAZING!! So proud of you. How does it feel?",
+              "correct": true,
+              "reaction": "Honestly still shaking 😆 Thank you!!",
+              "why": "You celebrated with them and invited them to share more."
+            },
+            {
+              "text": "I passed first time too, it’s easy.",
+              "reaction": "Oh… right.",
+              "why": "Turning it to yourself takes away from their big moment."
+            }
+          ]
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your colleague mentioned their mum was having an operation on Tuesday. It’s Wednesday. What’s best?",
+          "options": [
+            {
+              "text": "Say nothing in case it’s awkward.",
+              "why": "Silence can feel like you didn’t care or forgot."
+            },
+            {
+              "text": "“I hope your mum’s op went well. How is she?”",
+              "correct": true,
+              "why": "A gentle follow-up shows you remembered and care."
+            },
+            {
+              "text": "Ask everyone else how it went.",
+              "why": "Asking others can feel like gossip rather than care."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What helps you remember to follow up?",
+          "options": [
+            "Phone reminders",
+            "Writing it down",
+            "I just remember",
+            "I often forget"
+          ],
+          "reply": "A quick note in your phone can turn good intentions into lovely follow-ups."
+        },
+        {
+          "kind": "try",
+          "body": "When someone mentions something coming up, set a reminder to ask how it went."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-2-3",
+      "level": 2,
+      "title": "Ask About Dreams",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Questions about hopes reveal who someone really is.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Beyond the to-do list",
+          "body": "Busy lives make conversations about logistics: dinner, bills, pick-ups. Asking about hopes and dreams, “If you could learn anything, what would it be?”, brings people closer.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the everyday chat to a dream question.",
+          "pairs": [
+            {
+              "a": "“What’s for dinner?”",
+              "b": "“What’s your dream holiday?”"
+            },
+            {
+              "a": "“Did you pay the bill?”",
+              "b": "“What would you do with a free year?”"
+            },
+            {
+              "a": "“Who’s picking up the kids?”",
+              "b": "“What are you proud of lately?”"
+            }
+          ],
+          "why": "Logistics keep life running. Dream questions keep you curious about each other."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re on a long car journey with your dad. What could deepen the chat?",
+          "options": [
+            {
+              "text": "Put the radio on and stay quiet.",
+              "why": "Easy, but it misses a rare chance for a real talk."
+            },
+            {
+              "text": "Ask about the traffic.",
+              "why": "Logistics chat keeps things surface level."
+            },
+            {
+              "text": "“What did you dream of doing when you were my age?”",
+              "correct": true,
+              "why": "It invites a story you may never have heard before."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who would you love to hear the dreams of?",
+          "options": [
+            "A parent",
+            "My partner",
+            "A friend",
+            "My children"
+          ],
+          "reply": "Lovely. You might be surprised by what you learn."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close one dream question this week, like “What would you do with a free year?”"
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-3",
+      "level": 3,
+      "title": "Remember the Details",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Small remembered details make people feel truly known.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Details say “I see you”",
+          "body": "Remembering someone’s favourite biscuit, their pet’s name or their tricky colleague tells them you pay attention. These tiny details build a sense of being known.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend once mentioned they love lemon cake. You’re popping round. What’s a lovely touch?",
+          "options": [
+            {
+              "text": "Bring whatever cake is on offer.",
+              "why": "Kind, but it misses the chance to show you remembered."
+            },
+            {
+              "text": "Bring a lemon cake.",
+              "correct": true,
+              "why": "Remembering a small detail shows you really listen."
+            },
+            {
+              "text": "Ask them what their favourite cake is again.",
+              "why": "Not bad, but remembering it already feels more special."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shows you remembered, or forgot?",
+          "left": "Remembered",
+          "right": "Forgot",
+          "cards": [
+            {
+              "text": "“How’s Biscuit? Still stealing socks?”",
+              "side": "left"
+            },
+            {
+              "text": "“Sorry, what does your partner do again?”",
+              "side": "right"
+            },
+            {
+              "text": "“Good luck with your exam on Friday!”",
+              "side": "left"
+            },
+            {
+              "text": "Offering coffee to someone who never drinks it",
+              "side": "right"
+            }
+          ],
+          "why": "Remembered details make people feel valued. Forgetting is human, but noting details helps."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which details do you find easiest to remember?",
+          "options": [
+            "Names",
+            "Dates",
+            "Likes and dislikes",
+            "Stories"
+          ],
+          "reply": "Lean on that strength, and jot down the rest in your phone if it helps."
+        },
+        {
+          "kind": "try",
+          "body": "Note down three small details about someone close, and use one of them this week."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-3-2",
+      "level": 3,
+      "title": "Celebrate Their Wins",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "How you react to good news matters as much as bad news.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Joy shared is joy doubled",
+          "body": "When someone shares good news, an excited, curious response, “That’s brilliant! Tell me everything!”, makes them feel closer to you than a quick “Nice.”",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "Good news",
+          "them": "Your sister",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Guess what? I got the promotion!!"
+            },
+            {
+              "from": "them",
+              "text": "I can’t believe it 😭"
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "Wow, more stress though?",
+              "reaction": "Oh… I hadn’t thought of that.",
+              "why": "Pointing out downsides dampens her happy moment."
+            },
+            {
+              "text": "Cool.",
+              "reaction": "Haha, yeah.",
+              "why": "A flat reply makes big news feel small."
+            },
+            {
+              "text": "No way!! That’s amazing, you totally deserve it. How did you find out?",
+              "correct": true,
+              "reaction": "Thank you!! My boss called me in and…",
+              "why": "Excitement plus a question lets her relive the joy with you."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Celebrate properly.",
+          "before": "That’s brilliant news!",
+          "after": "",
+          "words": [
+            "Tell me everything!",
+            "Anyway…",
+            "Lucky you."
+          ],
+          "answer": "Tell me everything!",
+          "why": "Inviting more detail shows you genuinely want to share their happiness."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually respond to others’ good news?",
+          "options": [
+            "With excitement",
+            "With a quick “nice”",
+            "I worry about downsides",
+            "I share my own news"
+          ],
+          "reply": "A little extra enthusiasm and a question can make their good news feel even better."
+        },
+        {
+          "kind": "try",
+          "body": "When someone shares good news this week, respond with excitement and ask a question about it."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-3-3",
+      "level": 3,
+      "title": "Join Their World",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Show interest in what they love, even if it’s not your thing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Visit their interests",
+          "body": "You don’t have to love fishing, gaming or gardening. But asking about it, or joining in once, shows you care about what makes them light up.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match their interest to a way to join in.",
+          "pairs": [
+            {
+              "a": "They love football",
+              "b": "Ask who they’re rooting for"
+            },
+            {
+              "a": "They’re into baking",
+              "b": "Help with one recipe"
+            },
+            {
+              "a": "They play video games",
+              "b": "Ask them to show you a level"
+            }
+          ],
+          "why": "A little curiosity about their world says “what matters to you matters to me”."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner is excited about a new board game. You’re not a games person. What’s best?",
+          "options": [
+            {
+              "text": "“Games are boring, but you go ahead.”",
+              "why": "Dismissing it can make them feel their interest doesn’t matter."
+            },
+            {
+              "text": "“I’m not a gamer, but I’ll try one round with you!”",
+              "correct": true,
+              "why": "Joining in, even once, shows real interest in their joy."
+            },
+            {
+              "text": "Say nothing and leave the room.",
+              "why": "Disappearing can feel like a lack of interest in them."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Whose interests could you learn more about?",
+          "options": [
+            "My partner’s",
+            "A friend’s",
+            "My child’s",
+            "A parent’s"
+          ],
+          "reply": "Even one question about it could mean more to them than you’d expect."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close to show or tell you about something they love, and give it your full attention."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-4",
+      "level": 4,
+      "title": "Make a Weekly Ritual",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "A small regular ritual gives you something to look forward to.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Rituals anchor us",
+          "body": "Friday pizza, a Sunday walk or a weekly phone call are small rituals that build closeness. They don’t need to be fancy, just regular and shared.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Good ritual idea, or just a chore?",
+          "left": "Ritual",
+          "right": "Chore",
+          "cards": [
+            {
+              "text": "Saturday pancakes together",
+              "side": "left"
+            },
+            {
+              "text": "Paying bills",
+              "side": "right"
+            },
+            {
+              "text": "A walk after Sunday lunch",
+              "side": "left"
+            },
+            {
+              "text": "A weekly film night",
+              "side": "left"
+            },
+            {
+              "text": "Taking the bins out",
+              "side": "right"
+            }
+          ],
+          "why": "Rituals are about enjoying time together. Chores keep life running but rarely feel connecting."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’d love more time with your grown-up brother, but you’re both busy. What’s a good idea?",
+          "options": [
+            {
+              "text": "Wait until a big family event.",
+              "why": "Waiting for rare events means long gaps between catch-ups."
+            },
+            {
+              "text": "Suggest a 15-minute call every Sunday evening.",
+              "correct": true,
+              "why": "Short and regular is easier to keep than long and rare."
+            },
+            {
+              "text": "Plan an expensive weekend away once a year.",
+              "why": "Lovely, but a yearly treat doesn’t build everyday closeness."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What ritual would you love to start?",
+          "options": [
+            "A weekly meal",
+            "A regular call",
+            "A walk",
+            "A film or games night"
+          ],
+          "reply": "Great choice. Suggest it this week and see who joins in."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one small weekly ritual to someone close and agree on a day to start."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-4-2",
+      "level": 4,
+      "title": "Hello and Goodbye",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "How you greet and part from people matters.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The bookends of the day",
+          "body": "A proper hello when someone comes home, and a warm goodbye when they leave, take seconds but make people feel valued. Looking up from your phone is a great start.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner comes home while you’re reading the news. What’s the most connecting response?",
+          "options": [
+            {
+              "text": "Keep reading and say “hi” without looking up.",
+              "why": "A distracted hello can feel like they barely registered."
+            },
+            {
+              "text": "Put the phone down, smile and ask how their day was.",
+              "correct": true,
+              "why": "A few seconds of full attention makes them feel genuinely welcomed."
+            },
+            {
+              "text": "Start telling them about the news straight away.",
+              "why": "Diving into your own topic skips over greeting them."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the moment to a warm bookend.",
+          "pairs": [
+            {
+              "a": "Leaving for work",
+              "b": "“Have a great day, see you tonight!”"
+            },
+            {
+              "a": "Arriving home",
+              "b": "A hug and “How was it?”"
+            },
+            {
+              "a": "Ending a phone call",
+              "b": "“Lovely to hear your voice.”"
+            }
+          ],
+          "why": "Warm hellos and goodbyes frame the day with care. They’re tiny moments with big effects."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually greet people at home?",
+          "options": [
+            "Warmly",
+            "Distracted",
+            "It depends on my day",
+            "We don’t really greet"
+          ],
+          "reply": "Trying a warmer hello for a week could quietly change the feel of your home."
+        },
+        {
+          "kind": "try",
+          "body": "This week, put your phone down and give a proper hello and goodbye to the people you live with."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-4-3",
+      "level": 4,
+      "title": "Traditions That Fit",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Create traditions that suit who you are now.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Make them your own",
+          "body": "Traditions don’t have to come from your family or match anyone else’s. A yearly picnic, an annual photo or a silly birthday song can become your own special thing.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "Planning something new",
+          "them": "Your best friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Can you believe we’ve been friends for ten years?!"
+            },
+            {
+              "from": "them",
+              "text": "We should do something to mark it 🥳"
+            }
+          ],
+          "prompt": "What do you suggest?",
+          "options": [
+            {
+              "text": "Let’s do it every year: same café, same day, one photo together!",
+              "correct": true,
+              "reaction": "YES. Our friendiversary tradition 😂",
+              "why": "A simple yearly tradition gives your friendship a special ritual to look forward to."
+            },
+            {
+              "text": "Eh, it’s just a number.",
+              "reaction": "Oh… okay.",
+              "why": "Brushing it off misses a lovely chance to celebrate together."
+            },
+            {
+              "text": "Maybe one day.",
+              "reaction": "Sure…",
+              "why": "A vague maybe rarely turns into a real plan."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Suggest a tradition.",
+          "before": "What if every year we",
+          "after": "on the first day of spring?",
+          "words": [
+            "went for a picnic",
+            "argued",
+            "forgot"
+          ],
+          "answer": "went for a picnic",
+          "why": "A simple, enjoyable activity is easy to repeat, which is what makes it a tradition."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which tradition would you love to start?",
+          "options": [
+            "A yearly trip",
+            "A special meal",
+            "A shared photo",
+            "A silly ritual"
+          ],
+          "reply": "Lovely. Suggest it to someone and make this year the first one."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one small tradition to someone you love and put the date in your calendar."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-5",
+      "level": 5,
+      "title": "Thank the Everyday",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Thank people for the ordinary things they do.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The unseen jobs",
+          "body": "Cooking dinner, sorting the bins or texting to check you got home are easy to overlook. Thanking people for the everyday things helps them feel seen and appreciated.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Often overlooked, or usually thanked?",
+          "left": "Overlooked",
+          "right": "Often thanked",
+          "cards": [
+            {
+              "text": "Emptying the dishwasher",
+              "side": "left"
+            },
+            {
+              "text": "A birthday present",
+              "side": "right"
+            },
+            {
+              "text": "Remembering to buy milk",
+              "side": "left"
+            },
+            {
+              "text": "A surprise party",
+              "side": "right"
+            },
+            {
+              "text": "Topping up the car with fuel",
+              "side": "left"
+            }
+          ],
+          "why": "Big gestures get thanks naturally. Everyday jobs deserve it too, and thanking them builds real warmth."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Thank an everyday job.",
+          "before": "Thanks for",
+          "after": "this morning. It really helped.",
+          "words": [
+            "making the packed lunches",
+            "existing",
+            "nothing much"
+          ],
+          "answer": "making the packed lunches",
+          "why": "Naming the specific job shows you noticed something that often goes unseen."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which everyday job does someone do for you that you rarely thank?",
+          "options": [
+            "Cooking",
+            "Cleaning",
+            "Driving",
+            "Organising"
+          ],
+          "reply": "A quick thank-you for that today could brighten their week."
+        },
+        {
+          "kind": "try",
+          "body": "Thank someone today for an ordinary task they do, naming exactly what it was."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-5-2",
+      "level": 5,
+      "title": "Say It in Writing",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "A written thank-you can be kept and reread.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Words they can keep",
+          "body": "A note in a lunchbox, a card or even a heartfelt message can be read again and again. Written thanks often means more because it can be kept.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your grandma knitted you a jumper. What would mean the most to her?",
+          "options": [
+            {
+              "text": "A quick “thanks” next time you see her.",
+              "why": "Kind, but it might pass quickly and be forgotten."
+            },
+            {
+              "text": "A handwritten card about how cosy it is and when you wear it.",
+              "correct": true,
+              "why": "A specific, written thank-you is something she can keep and reread."
+            },
+            {
+              "text": "A thumbs-up emoji.",
+              "why": "An emoji is easy to miss and doesn’t match the effort she put in."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a heartfelt thank-you note.",
+          "items": [
+            "Say what they did",
+            "Explain how it helped you",
+            "Share a feeling",
+            "End with warmth"
+          ],
+          "why": "Naming the action and its impact makes the note specific. Ending warmly makes it feel personal."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When did you last write someone a thank-you?",
+          "options": [
+            "This week",
+            "This month",
+            "Ages ago",
+            "I can’t remember"
+          ],
+          "reply": "However long it’s been, a short note this week would be a lovely surprise."
+        },
+        {
+          "kind": "try",
+          "body": "Write a short thank-you note or message to someone today, saying what they did and how it helped."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-5-3",
+      "level": 5,
+      "title": "Thank Them in Public",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Praise in front of others can make people feel valued.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Public appreciation",
+          "body": "Mentioning someone’s kindness in front of others, “Jo cooked this amazing meal”, lets them feel proud and appreciated. Just check they’re comfortable with attention first.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the moment to some public appreciation.",
+          "pairs": [
+            {
+              "a": "Family dinner",
+              "b": "“Dad’s roast is the best!”"
+            },
+            {
+              "a": "Team meeting",
+              "b": "“Sam saved this project.”"
+            },
+            {
+              "a": "With friends",
+              "b": "“My partner planned this trip.”"
+            }
+          ],
+          "why": "Sharing appreciation in front of others makes it feel even more meaningful to them."
+        },
+        {
+          "kind": "scene",
+          "title": "At a family gathering",
+          "them": "Your aunt",
+          "lines": [
+            {
+              "from": "them",
+              "text": "This garden looks wonderful! Who did all this?"
+            },
+            {
+              "from": "them",
+              "text": "It must have taken ages."
+            }
+          ],
+          "prompt": "Your partner did most of it. What do you say?",
+          "options": [
+            {
+              "text": "Oh, we both did it.",
+              "reaction": "Well done both of you!",
+              "why": "Sharing the credit misses the chance to celebrate your partner’s work."
+            },
+            {
+              "text": "Thanks! (and change the subject)",
+              "reaction": "Lovely!",
+              "why": "Taking the compliment quietly overlooks who really did the work."
+            },
+            {
+              "text": "That was all Alex! They spent every weekend on it.",
+              "correct": true,
+              "reaction": "Wow, Alex, it’s stunning!",
+              "why": "Giving them public credit makes them feel seen and appreciated."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel about being praised in front of others?",
+          "options": [
+            "I love it",
+            "It’s a bit awkward",
+            "I prefer private praise",
+            "It depends"
+          ],
+          "reply": "Good to know. Others may differ, so a quick check on what they prefer helps."
+        },
+        {
+          "kind": "try",
+          "body": "This week, mention something kind or impressive someone did while others are around, if they’re comfortable with it."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-6",
+      "level": 6,
+      "title": "Play Together",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Play and fun are serious glue for relationships.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Fun bonds people",
+          "body": "Laughing, playing games or being silly together releases tension and builds warm memories. Relationships need fun, not just serious talks and chores.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Life has felt heavy lately with your family. What could help?",
+          "options": [
+            {
+              "text": "Wait until things calm down before having fun.",
+              "why": "Waiting for a perfect moment can mean fun never happens."
+            },
+            {
+              "text": "Suggest a silly board game night this weekend.",
+              "correct": true,
+              "why": "A bit of play can lift the mood and bring everyone closer."
+            },
+            {
+              "text": "Plan a serious family meeting.",
+              "why": "Talks have their place, but fun can reconnect you in a different way."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Playful, or just routine?",
+          "left": "Playful",
+          "right": "Routine",
+          "cards": [
+            {
+              "text": "A kitchen dance-off",
+              "side": "left"
+            },
+            {
+              "text": "The weekly food shop",
+              "side": "right"
+            },
+            {
+              "text": "A water fight in the garden",
+              "side": "left"
+            },
+            {
+              "text": "Filling in forms",
+              "side": "right"
+            }
+          ],
+          "why": "Playful moments create shared joy. Routine keeps life going, but play keeps it light."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When did you last properly laugh with someone close?",
+          "options": [
+            "Today",
+            "This week",
+            "This month",
+            "Too long ago"
+          ],
+          "reply": "If it’s been a while, a small dose of fun could be just what you both need."
+        },
+        {
+          "kind": "try",
+          "body": "Plan one silly or playful thing to do with someone close this week, just for fun."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-6-2",
+      "level": 6,
+      "title": "Try Something New",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "New experiences together create fresh connection.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Newness brings closeness",
+          "body": "Trying something new together, like a class, a new walk or a different recipe, creates excitement and shared memories. It reminds you how fun the other person can be.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the usual plan to something new.",
+          "pairs": [
+            {
+              "a": "Same restaurant again",
+              "b": "A cuisine you’ve never tried"
+            },
+            {
+              "a": "The usual walk",
+              "b": "A new trail nearby"
+            },
+            {
+              "a": "Sofa and TV",
+              "b": "A free local event"
+            }
+          ],
+          "why": "Small changes to your usual plans can make time together feel fresh and exciting."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Suggest something new.",
+          "before": "Fancy trying",
+          "after": "this weekend?",
+          "words": [
+            "the same thing",
+            "a pottery class",
+            "nothing"
+          ],
+          "answer": "a pottery class",
+          "why": "A new activity gives you something fun to learn and laugh about together."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friendship has felt a bit samey lately. What’s a good idea?",
+          "options": [
+            {
+              "text": "Assume it’s just how friendships get.",
+              "why": "Accepting it as normal means missing the chance to refresh things."
+            },
+            {
+              "text": "Suggest learning something new together, like climbing.",
+              "correct": true,
+              "why": "A shared new experience can add fresh energy to the friendship."
+            },
+            {
+              "text": "See each other less often.",
+              "why": "Pulling back usually makes things feel even more distant."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Suggest one new activity to try with someone close, and pick a date to do it."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-6-3",
+      "level": 6,
+      "title": "Laugh It Off",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Gentle humour can ease tension and bring you closer.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Laughter softens things",
+          "body": "Laughing together when things go wrong, like a burnt dinner or a missed train, can turn a stressful moment into a shared story. Just keep the humour kind, never at their expense.",
+          "mood": "wink"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Kind humour, or unkind?",
+          "left": "Kind",
+          "right": "Unkind",
+          "cards": [
+            {
+              "text": "Laughing together at a burnt cake",
+              "side": "left"
+            },
+            {
+              "text": "Mocking their accent",
+              "side": "right"
+            },
+            {
+              "text": "Joking about your own clumsiness",
+              "side": "left"
+            },
+            {
+              "text": "Teasing them about their weight",
+              "side": "right"
+            }
+          ],
+          "why": "Kind humour brings people together. Jokes at someone’s expense, even “just banter”, can hurt."
+        },
+        {
+          "kind": "scene",
+          "title": "A small disaster",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Soooo I may have set off the smoke alarm making toast 😅"
+            },
+            {
+              "from": "them",
+              "text": "The neighbours are staring."
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "Seriously? You can’t even make toast?",
+              "reaction": "Wow. Okay.",
+              "why": "Mocking them turns a funny mishap into a put-down."
+            },
+            {
+              "text": "Chef of the year 😂 Shall I bring home some ready-made toast?",
+              "correct": true,
+              "reaction": "Haha, yes please, I’m banned from the toaster.",
+              "why": "Gentle teasing that you both laugh at turns it into a shared joke."
+            },
+            {
+              "text": "Did you damage anything?",
+              "reaction": "No, just my pride…",
+              "why": "Practical, but it misses the chance to share a laugh."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who makes you laugh the most?",
+          "options": [
+            "My partner",
+            "A friend",
+            "A family member",
+            "A colleague"
+          ],
+          "reply": "Tell them! Knowing they make you laugh is a lovely thing to hear."
+        },
+        {
+          "kind": "try",
+          "body": "Find something to laugh about together with someone close today, keeping the humour kind."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-7",
+      "level": 7,
+      "title": "Just Be There",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "In hard times, your presence matters more than perfect words.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Presence over perfection",
+          "body": "When someone is struggling, we often worry about saying the right thing. Usually, simply being there, sitting with them or saying “I’m here”, matters most.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend’s pet has just died. You don’t know what to say. What’s best?",
+          "options": [
+            {
+              "text": "Stay away until you think of the right words.",
+              "why": "Waiting for perfect words can leave them feeling alone."
+            },
+            {
+              "text": "“I’m so sorry. I don’t know what to say, but I’m here.”",
+              "correct": true,
+              "why": "Honest and warm, it shows you care without needing the right words."
+            },
+            {
+              "text": "“At least you can get a new one.”",
+              "why": "Trying to fix it quickly can make their grief feel dismissed."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer your presence.",
+          "before": "I don’t have the answers,",
+          "after": "",
+          "words": [
+            "but I’m here for you.",
+            "so good luck.",
+            "but cheer up."
+          ],
+          "answer": "but I’m here for you.",
+          "why": "It’s honest and reassuring, without pretending you can fix their pain."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes it hard to be there for someone struggling?",
+          "options": [
+            "Not knowing what to say",
+            "Feeling awkward",
+            "My own busy life",
+            "Worrying I’ll upset them"
+          ],
+          "reply": "All understandable. Remember, being there matters more than the perfect words."
+        },
+        {
+          "kind": "try",
+          "body": "If someone you know is struggling, send a simple “Thinking of you, I’m here” message today."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-7-2",
+      "level": 7,
+      "title": "Ask What Helps",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Different people need different support. Ask.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Support isn’t one-size-fits-all",
+          "body": "Some people want to talk, some want distraction and some want practical help. Asking “What would help most right now?” lets you give the support they actually need.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the need to a helpful offer.",
+          "pairs": [
+            {
+              "a": "Needs to talk",
+              "b": "“Want to call tonight?”"
+            },
+            {
+              "a": "Needs a distraction",
+              "b": "“Fancy a film night?”"
+            },
+            {
+              "a": "Needs practical help",
+              "b": "“Can I do your shopping?”"
+            }
+          ],
+          "why": "Matching support to their need makes it feel truly helpful rather than generic."
+        },
+        {
+          "kind": "scene",
+          "title": "A tough week",
+          "them": "Your colleague",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Sorry I’ve been quiet. My dad’s in hospital."
+            },
+            {
+              "from": "them",
+              "text": "Everything’s a bit much right now."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "I’m so sorry. Would it help if I covered your Thursday meeting?",
+              "correct": true,
+              "reaction": "That would honestly be amazing. Thank you.",
+              "why": "A specific, practical offer lightens their load in a real way."
+            },
+            {
+              "text": "Let me know if you need anything!",
+              "reaction": "Thanks.",
+              "why": "Kind, but vague offers are often hard for people to take up."
+            },
+            {
+              "text": "Hospitals are awful, my gran was in for weeks…",
+              "reaction": "Oh… yeah.",
+              "why": "Sharing your story turns the focus away from them."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you’re struggling, what helps you most?",
+          "options": [
+            "Talking",
+            "Distraction",
+            "Practical help",
+            "Time alone"
+          ],
+          "reply": "Knowing that about yourself makes it easier to ask others what they need too."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone’s struggling, ask “What would help most right now?” before offering anything."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-7-3",
+      "level": 7,
+      "title": "Keep Showing Up",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Support matters most after the first few days.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The quiet after the storm",
+          "body": "When something hard happens, support pours in at first, then fades. Checking in weeks later, when others have moved on, can mean the most.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend’s divorce was finalised two months ago. What’s a caring move?",
+          "options": [
+            {
+              "text": "Assume they’re over it by now.",
+              "why": "Big changes take time, and support often fades too soon."
+            },
+            {
+              "text": "“Thinking of you. How are you doing these days?”",
+              "correct": true,
+              "why": "A gentle check-in later shows you haven’t forgotten what they’re going through."
+            },
+            {
+              "text": "Avoid mentioning it so you don’t upset them.",
+              "why": "Avoiding it can feel like nobody cares any more."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order long-term support.",
+          "items": [
+            "Reach out when it happens",
+            "Check in a week later",
+            "Check in again after a month",
+            "Remember key dates"
+          ],
+          "why": "Support spread out over time catches people when others have stopped asking."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who might need a later check-in from you?",
+          "options": [
+            "Someone grieving",
+            "Someone after a break-up",
+            "Someone who’s been ill",
+            "Nobody right now"
+          ],
+          "reply": "If someone came to mind, a short message today could mean a great deal."
+        },
+        {
+          "kind": "try",
+          "body": "Think of someone who went through something hard a while ago, and check in on them today."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-8",
+      "level": 8,
+      "title": "Small Daily Contact",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Little messages keep you close when you’re apart.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Tiny threads of connection",
+          "body": "When you live apart or are busy, small daily messages, like a photo of your lunch or a quick “thinking of you”, keep a sense of togetherness alive.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "A small connecting message, or not?",
+          "left": "Connecting",
+          "right": "Not really",
+          "cards": [
+            {
+              "text": "A photo of a dog that looks like theirs",
+              "side": "left"
+            },
+            {
+              "text": "Forwarding a chain message",
+              "side": "right"
+            },
+            {
+              "text": "“This song made me think of you.”",
+              "side": "left"
+            },
+            {
+              "text": "A one-word reply days later",
+              "side": "right"
+            },
+            {
+              "text": "“Good luck today!”",
+              "side": "left"
+            }
+          ],
+          "why": "Personal little messages say “you’re on my mind”. Generic or delayed ones don’t carry the same warmth."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Send a little thread.",
+          "before": "Saw this and",
+          "after": "",
+          "words": [
+            "thought of you! 💛",
+            "whatever.",
+            "deleted it."
+          ],
+          "answer": "thought of you! 💛",
+          "why": "A simple “thought of you” makes people feel remembered, even from far away."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who would love a little message from you?",
+          "options": [
+            "A grandparent",
+            "A faraway friend",
+            "A sibling",
+            "My partner"
+          ],
+          "reply": "Lovely. It only takes a moment, and it could make their day."
+        },
+        {
+          "kind": "try",
+          "body": "Send a small, personal “thought of you” message to someone you don’t see often."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-8-2",
+      "level": 8,
+      "title": "Share Your Day",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Telling each other the little things keeps you close.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The little stuff matters",
+          "body": "Closeness grows from sharing ordinary moments: the funny thing on the bus, a tricky email, a lovely lunch. When apart, sharing these keeps you part of each other’s lives.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "Evening catch-up call",
+          "them": "Your faraway friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "How was your day? 😊"
+            },
+            {
+              "from": "them",
+              "text": "Tell me something good!"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Fine, nothing much.",
+              "reaction": "Oh, okay. Mine was fine too.",
+              "why": "A flat answer gives them nothing to connect with."
+            },
+            {
+              "text": "A pigeon stole someone’s sandwich on my lunch break 😂 How was yours?",
+              "correct": true,
+              "reaction": "HAHA no way! Okay, mine was…",
+              "why": "Sharing a small, funny moment invites them to share theirs too."
+            },
+            {
+              "text": "Busy. Gotta go.",
+              "reaction": "Oh. Bye then.",
+              "why": "Rushing off misses a chance to feel close."
+            }
+          ]
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and your partner are in different cities this week. What keeps you close?",
+          "options": [
+            {
+              "text": "Only message if something big happens.",
+              "why": "Waiting for big news means missing the everyday moments that bond you."
+            },
+            {
+              "text": "Share a small highlight from each day.",
+              "correct": true,
+              "why": "Little daily highlights keep you part of each other’s lives."
+            },
+            {
+              "text": "Save everything for when you’re back.",
+              "why": "By then, many moments will be forgotten or feel old."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you usually share the little things?",
+          "options": [
+            "Yes, always",
+            "Sometimes",
+            "Only big news",
+            "Rarely"
+          ],
+          "reply": "The small things often matter most. Try sharing one a day."
+        },
+        {
+          "kind": "try",
+          "body": "Share one small highlight from your day with someone you love, even if it seems trivial."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-8-3",
+      "level": 8,
+      "title": "Plan the Reunion",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Something to look forward to keeps distance bearable.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Anticipation helps",
+          "body": "Being apart is easier when you have a date to look forward to. Planning your next meeting, even months ahead, gives you both something happy to count down to.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You miss your friend who moved abroad. What’s a good step?",
+          "options": [
+            {
+              "text": "Say “we should visit sometime!” and leave it there.",
+              "why": "“Sometime” often never comes without a real plan."
+            },
+            {
+              "text": "Pick a month together and start looking at flights.",
+              "correct": true,
+              "why": "A real date turns missing them into something to look forward to."
+            },
+            {
+              "text": "Accept you’ll rarely see each other now.",
+              "why": "Giving up can let a good friendship slowly fade."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make a real plan.",
+          "before": "Shall we",
+          "after": "for the bank holiday weekend?",
+          "words": [
+            "book a visit",
+            "maybe think",
+            "never meet"
+          ],
+          "answer": "book a visit",
+          "why": "Booking makes it real, which gives you both something definite to look forward to."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the distance to a way to count down.",
+          "pairs": [
+            {
+              "a": "Weeks apart",
+              "b": "A shared countdown in your chat"
+            },
+            {
+              "a": "Months apart",
+              "b": "Planning activities together"
+            },
+            {
+              "a": "A year apart",
+              "b": "Booking the trip early"
+            }
+          ],
+          "why": "Counting down together keeps the excitement alive and the connection strong."
+        },
+        {
+          "kind": "try",
+          "body": "Pick a date to see someone you miss, and send them a message to start planning it."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-9",
+      "level": 9,
+      "title": "Go a Layer Deeper",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Ask a follow-up question to go beyond the surface.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The second question",
+          "body": "The first answer is often on the surface. A gentle follow-up, “What made you choose that?” or “How did that feel?”, invites people to share more of themselves.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the first answer to a deeper follow-up.",
+          "pairs": [
+            {
+              "a": "“I’m thinking of changing jobs.”",
+              "b": "“What’s pulling you towards it?”"
+            },
+            {
+              "a": "“Work was hard today.”",
+              "b": "“What was the hardest part?”"
+            },
+            {
+              "a": "“I’ve started painting.”",
+              "b": "“What do you love about it?”"
+            }
+          ],
+          "why": "Follow-up questions show real interest and help people open up more fully."
+        },
+        {
+          "kind": "scene",
+          "title": "A thoughtful chat",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I’ve been thinking about moving back to my hometown."
+            },
+            {
+              "from": "them",
+              "text": "Not sure yet though."
+            }
+          ],
+          "prompt": "What’s the best reply?",
+          "options": [
+            {
+              "text": "Ooh, what’s drawing you back there?",
+              "correct": true,
+              "reaction": "Honestly, I miss my family a lot lately…",
+              "why": "A curious follow-up opened the door to what really matters to them."
+            },
+            {
+              "text": "Don’t, it’s so boring there.",
+              "reaction": "Oh… okay.",
+              "why": "Shutting it down stops them sharing their real feelings."
+            },
+            {
+              "text": "Cool.",
+              "reaction": "Yeah.",
+              "why": "A one-word reply misses the chance to go deeper."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who would you love to know on a deeper level?",
+          "options": [
+            "A parent",
+            "A friend",
+            "My partner",
+            "A sibling"
+          ],
+          "reply": "A few gentle follow-up questions could take you there."
+        },
+        {
+          "kind": "try",
+          "body": "In your next conversation, ask at least one follow-up question to go a little deeper."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-9-2",
+      "level": 9,
+      "title": "Share Something Real",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Opening up a little invites others to open up too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Openness is catching",
+          "body": "When you share something real, a worry, a hope or something you find hard, people often feel safe to share too. Closeness grows when both people let their guard down a little.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A new friend asks how you’re finding life lately. What helps you connect?",
+          "options": [
+            {
+              "text": "“All good, thanks!”",
+              "why": "Fine for small talk, but it keeps things on the surface."
+            },
+            {
+              "text": "“Honestly, I’ve been a bit lonely since moving. How about you?”",
+              "correct": true,
+              "why": "Sharing something real, then asking back, invites a deeper conversation."
+            },
+            {
+              "text": "Tell them every detail of your hardest year.",
+              "why": "Sharing too much too soon can feel overwhelming for a new friend."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Real but right-sized, or too much too soon?",
+          "left": "Right-sized",
+          "right": "Too much",
+          "cards": [
+            {
+              "text": "“I get nervous at parties.”",
+              "side": "left"
+            },
+            {
+              "text": "Your full family history on a first coffee",
+              "side": "right"
+            },
+            {
+              "text": "“I’m trying to be braver lately.”",
+              "side": "left"
+            },
+            {
+              "text": "Every detail of your last break-up straight away",
+              "side": "right"
+            }
+          ],
+          "why": "Right-sized openness invites closeness. Too much too soon can overwhelm, so share in layers."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you find hardest to share?",
+          "options": [
+            "Worries",
+            "Hopes",
+            "Mistakes",
+            "Feelings about people"
+          ],
+          "reply": "That’s worth knowing. Sharing just a little of it with someone safe can feel freeing."
+        },
+        {
+          "kind": "try",
+          "body": "Share one small, real thing about yourself with someone you trust, then ask about them."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-9-3",
+      "level": 9,
+      "title": "Make It Safe to Open Up",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "How you react decides whether they’ll share again.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Handle it with care",
+          "body": "When someone shares something personal, your response matters. Thanking them, listening without judging and keeping it private makes them feel safe to share again.",
+          "mood": "content"
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a caring response to someone opening up.",
+          "items": [
+            "Thank them for telling you",
+            "Listen without judging",
+            "Ask what they need",
+            "Keep it private"
+          ],
+          "why": "Thanks and listening make them feel safe. Asking what they need and keeping it private build lasting trust."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend admits they’re struggling with anxiety. What’s the most caring response?",
+          "options": [
+            {
+              "text": "“Thank you for telling me. That sounds really hard. How can I support you?”",
+              "correct": true,
+              "why": "It honours their honesty and asks what support they’d like."
+            },
+            {
+              "text": "“Everyone gets anxious, you’ll be fine.”",
+              "why": "Brushing it off can make them regret opening up."
+            },
+            {
+              "text": "“You should see a doctor.” and change the subject.",
+              "why": "Advice can be useful, but jumping to it and moving on can feel dismissive."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Honour their honesty.",
+          "before": "I really appreciate you",
+          "after": "",
+          "words": [
+            "trusting me with this.",
+            "being dramatic.",
+            "telling me, I guess."
+          ],
+          "answer": "trusting me with this.",
+          "why": "It shows you value their openness, which makes them more likely to share again."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you react when someone opens up?",
+          "options": [
+            "I listen",
+            "I give advice",
+            "I feel awkward",
+            "I share my own story"
+          ],
+          "reply": "All natural responses. Starting with “thank you for telling me” is always a good first step."
+        },
+        {
+          "kind": "try",
+          "body": "When someone opens up to you this week, start your response with “Thank you for telling me.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-10",
+      "level": 10,
+      "title": "Notice How They’ve Grown",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Tell people the ways you’ve seen them change and grow.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Seeing their growth",
+          "body": "People change over time. Noticing and naming it, “You’re so much calmer than you used to be”, shows you’re still paying attention and celebrating who they’re becoming.",
+          "mood": "happy"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name their growth.",
+          "before": "I’ve noticed how much more",
+          "after": "you are these days.",
+          "words": [
+            "confident",
+            "annoying",
+            "same"
+          ],
+          "answer": "confident",
+          "why": "Naming positive growth shows you see the effort they’ve put into changing."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the change you’ve noticed to a warm comment.",
+          "pairs": [
+            {
+              "a": "They speak up more",
+              "b": "“You’ve found your voice!”"
+            },
+            {
+              "a": "They’re calmer under stress",
+              "b": "“You handled that so well.”"
+            },
+            {
+              "a": "They’ve learned a new skill",
+              "b": "“I’m so impressed by you.”"
+            }
+          ],
+          "why": "Noticing growth helps people feel seen as they are now, not just as they used to be."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your sister used to hate public speaking and just gave a great speech. What do you say?",
+          "options": [
+            {
+              "text": "“Remember when you used to panic?”",
+              "why": "Bringing up the old fear can take the shine off her achievement."
+            },
+            {
+              "text": "“Nice speech.”",
+              "why": "Kind, but it misses how far she’s come."
+            },
+            {
+              "text": "“You were brilliant! You’ve grown so much.”",
+              "correct": true,
+              "why": "It celebrates her now and acknowledges the journey she’s made."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Tell someone close one way you’ve seen them grow, and how proud it makes you feel."
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-10-2",
+      "level": 10,
+      "title": "Dream Together",
+      "minutes": 4,
+      "focus": "connection",
+      "summary": "Shared hopes for the future bond people together.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A shared horizon",
+          "body": "Talking about things you’d love to do together, a trip, a project or a future plan, gives your relationship a sense of direction and excitement.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "A lazy Sunday",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "If we could do anything next year, what would it be?"
+            },
+            {
+              "from": "them",
+              "text": "Dream big! ✨"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Don’t know, we can’t afford much anyway.",
+              "reaction": "Oh… yeah, fair.",
+              "why": "Shutting down the dream misses a chance to plan something exciting."
+            },
+            {
+              "text": "Ooh, learn to surf somewhere sunny! What about you?",
+              "correct": true,
+              "reaction": "Yes!! And I want to grow our own veg 🥕",
+              "why": "Sharing a dream and asking back starts a fun conversation about your future."
+            },
+            {
+              "text": "Whatever you want.",
+              "reaction": "But what do YOU want?",
+              "why": "Leaving it all to them means you miss dreaming together."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "A shared dream, or just a to-do?",
+          "left": "Shared dream",
+          "right": "Just a to-do",
+          "cards": [
+            {
+              "text": "Road trip through Scotland",
+              "side": "left"
+            },
+            {
+              "text": "Fix the leaky tap",
+              "side": "right"
+            },
+            {
+              "text": "Learn to dance together",
+              "side": "left"
+            },
+            {
+              "text": "Renew the car insurance",
+              "side": "right"
+            }
+          ],
+          "why": "Dreams bring excitement and closeness. To-dos keep life running but don’t inspire in the same way."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s one thing you’d love to do with someone special?",
+          "options": [
+            "Travel somewhere",
+            "Learn something",
+            "Build something",
+            "Celebrate something"
+          ],
+          "reply": "Share it with them! It might become your next adventure."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close: “If we could do anything together next year, what would it be?”"
+        }
+      ]
+    },
+    {
+      "id": "rf-connection-10-3",
+      "level": 10,
+      "title": "Keep Choosing Them",
+      "minutes": 3,
+      "focus": "connection",
+      "summary": "Lasting closeness comes from choosing each other, again and again.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Connection is a choice",
+          "body": "The closest relationships aren’t built by luck. They’re built by choosing each other in small ways every day: a question, a thank-you, a laugh, a kind message.",
+          "mood": "content"
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a day full of small connection.",
+          "items": [
+            "A warm good morning",
+            "A message during the day",
+            "A real question at dinner",
+            "A thank-you before bed"
+          ],
+          "why": "Small, steady moments of connection through the day keep relationships close and warm."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Life is busy and you feel a bit distant from a close friend. What’s the best first step?",
+          "options": [
+            {
+              "text": "Wait until life calms down.",
+              "why": "Life rarely calms down on its own, and distance can grow."
+            },
+            {
+              "text": "Send a message suggesting a short catch-up this week.",
+              "correct": true,
+              "why": "One small step towards them rebuilds closeness quickly."
+            },
+            {
+              "text": "Assume the friendship is fading.",
+              "why": "Assuming the worst can make you stop reaching out."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the skill to a daily way to use it.",
+          "pairs": [
+            {
+              "a": "Curious questions",
+              "b": "Ask one open question"
+            },
+            {
+              "a": "Appreciation",
+              "b": "Say one specific thank-you"
+            },
+            {
+              "a": "Fun together",
+              "b": "Share one laugh"
+            }
+          ],
+          "why": "Small daily habits turn these skills into a closer, warmer relationship over time."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most about connection in these lessons?",
+          "options": [
+            "Asking better questions",
+            "Saying thank you",
+            "Being there",
+            "Having fun"
+          ],
+          "reply": "Wonderful. Keep choosing your people in small ways, and the closeness will keep growing."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one small way to connect with someone you love today, and do it before bedtime."
+        }
+      ]
+    }
+  ]
+}

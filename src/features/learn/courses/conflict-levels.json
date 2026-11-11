@@ -1,0 +1,2072 @@
+{
+  "course": "conflict",
+  "levels": [
+    {
+      "title": "Calm First Steps",
+      "icon": "icecube",
+      "color": "yellow"
+    },
+    {
+      "title": "Spotting Triggers",
+      "icon": "matchstick",
+      "color": "peach"
+    },
+    {
+      "title": "Starting Softly",
+      "icon": "pillow",
+      "color": "pink"
+    },
+    {
+      "title": "One Issue at a Time",
+      "icon": "ladder",
+      "color": "blue"
+    },
+    {
+      "title": "Taking Breaks",
+      "icon": "hammock",
+      "color": "mint"
+    },
+    {
+      "title": "Hearing the Other Side",
+      "icon": "binoculars",
+      "color": "lavender"
+    },
+    {
+      "title": "Owning Your Part",
+      "icon": "flashlight",
+      "color": "yellow"
+    },
+    {
+      "title": "Making a Plan",
+      "icon": "map",
+      "color": "purple"
+    },
+    {
+      "title": "Repair After a Fight",
+      "icon": "glue",
+      "color": "pink"
+    },
+    {
+      "title": "Breaking Old Loops",
+      "icon": "yarn",
+      "color": "peach"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-conflict-2",
+      "level": 2,
+      "title": "Know Your Hot Buttons",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Some topics light you up fast. Knowing them helps.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Everyone has hot buttons",
+          "body": "A certain tone, being interrupted, or comments about money or family can set us off quickly. Knowing your own hot buttons means you can catch the spark before it spreads.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You notice you always snap when someone comments on your cooking. What’s most helpful?",
+          "options": [
+            {
+              "text": "Tell people never to mention your cooking again.",
+              "why": "Banning the topic avoids it but doesn’t help you handle the feeling."
+            },
+            {
+              "text": "Notice the spark and take a breath before replying.",
+              "correct": true,
+              "why": "Spotting your hot button gives you a moment to choose a calmer reply."
+            },
+            {
+              "text": "Snap first; they should know it bothers you.",
+              "why": "Expecting people to guess your triggers often ends in arguments."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Common hot button, or usually calm topic?",
+          "left": "Hot button",
+          "right": "Usually calm",
+          "cards": [
+            {
+              "text": "Feeling criticised in front of others",
+              "side": "left"
+            },
+            {
+              "text": "Choosing a film",
+              "side": "right"
+            },
+            {
+              "text": "Being told to “calm down”",
+              "side": "left"
+            },
+            {
+              "text": "Being interrupted again and again",
+              "side": "left"
+            },
+            {
+              "text": "Planning a picnic",
+              "side": "right"
+            }
+          ],
+          "why": "Hot buttons often touch on respect, fairness or feeling heard. Knowing yours helps you prepare."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s your biggest hot button?",
+          "options": [
+            "Feeling criticised",
+            "Being interrupted",
+            "Money",
+            "Family comments"
+          ],
+          "reply": "Knowing it gives you power. Next time it’s pressed, you’ll recognise the spark sooner."
+        },
+        {
+          "kind": "try",
+          "body": "Write down your top two hot buttons. When one gets pressed this week, take a breath before you reply."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-2-2",
+      "level": 2,
+      "title": "Hungry, Tired, Rushed",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Many arguments start when we’re running on empty.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Low fuel, short fuse",
+          "body": "Hunger, tiredness and rushing make us far more likely to snap. Lots of arguments aren’t really about the topic. They’re about the state we were in when it came up.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "scene",
+          "title": "A tense evening",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Did you remember to book the dentist? 🦷"
+            },
+            {
+              "from": "them",
+              "text": "You said you would…"
+            }
+          ],
+          "prompt": "You’re starving and exhausted. What do you reply?",
+          "options": [
+            {
+              "text": "Can you stop nagging me for once?!",
+              "reaction": "Wow, I only asked.",
+              "why": "Tiredness turned a simple question into a sharp attack."
+            },
+            {
+              "text": "Not yet, sorry! I’m running on empty. Can I do it after dinner?",
+              "correct": true,
+              "reaction": "Sure, food first! 🍕",
+              "why": "Naming how you feel stops a small question from turning into a row."
+            },
+            {
+              "text": "Ignore it until you’ve eaten.",
+              "reaction": "Hello?",
+              "why": "Silence can feel like a snub and leave them guessing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name your state.",
+          "before": "I’m really",
+          "after": "right now, so can we talk after I’ve eaten?",
+          "words": [
+            "hangry",
+            "fine",
+            "perfect"
+          ],
+          "answer": "hangry",
+          "why": "Naming it with a bit of humour explains your mood and buys time for the real conversation."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When are you most likely to snap?",
+          "options": [
+            "When hungry",
+            "When tired",
+            "When rushed",
+            "When stressed at work"
+          ],
+          "reply": "Good to know. Saving tricky talks for better moments can prevent a lot of arguments."
+        },
+        {
+          "kind": "try",
+          "body": "When a tricky topic comes up while you’re hungry or tired, ask to talk about it once you’ve eaten or rested."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-2-3",
+      "level": 2,
+      "title": "Spot Their Triggers",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Knowing what sets them off helps you avoid needless sparks.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Their sparks matter too",
+          "body": "The people you’re close to have hot buttons too. Learning what upsets them isn’t about walking on eggshells. It’s about choosing your words with care.",
+          "mood": "content"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match their trigger to a gentler approach.",
+          "pairs": [
+            {
+              "a": "Hates being told what to do",
+              "b": "Ask instead of instruct"
+            },
+            {
+              "a": "Sensitive about their job",
+              "b": "Lead with curiosity, not advice"
+            },
+            {
+              "a": "Gets anxious about lateness",
+              "b": "Text early if you’re delayed"
+            }
+          ],
+          "why": "Small changes in how you approach things can prevent sparks, without either of you hiding who you are."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your dad bristles whenever you give him advice about his health. What’s a better approach?",
+          "options": [
+            {
+              "text": "Keep giving advice until he listens.",
+              "why": "Pushing on a known trigger usually leads to the same argument again."
+            },
+            {
+              "text": "Stop caring about his health.",
+              "why": "Giving up isn’t the only alternative to pushing."
+            },
+            {
+              "text": "“How are you feeling about your health lately?”",
+              "correct": true,
+              "why": "A curious question respects him and opens the topic without triggering defences."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you know the hot buttons of the people closest to you?",
+          "options": [
+            "Yes, very well",
+            "Some of them",
+            "Not really",
+            "I’ve never thought about it"
+          ],
+          "reply": "Learning them, perhaps by simply asking, can make your conversations much calmer."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close: “Is there anything I say or do that really winds you up?” Listen with curiosity."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-3",
+      "level": 3,
+      "title": "Start Gently",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "How a disagreement begins often decides how it ends.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A soft start",
+          "body": "Starting a disagreement with blame or sarcasm makes people defensive straight away. Starting with calm words and a focus on the problem gives you a real chance to solve it.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Soft start, or harsh start?",
+          "left": "Soft start",
+          "right": "Harsh start",
+          "cards": [
+            {
+              "text": "“Can we talk about the bills?”",
+              "side": "left"
+            },
+            {
+              "text": "“You’ve messed up the bills again.”",
+              "side": "right"
+            },
+            {
+              "text": "“I’m feeling stressed about money.”",
+              "side": "left"
+            },
+            {
+              "text": "“Typical, I have to sort everything.”",
+              "side": "right"
+            }
+          ],
+          "why": "Soft starts invite teamwork. Harsh starts put people on the defensive before the real problem is even discussed."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your flatmate keeps leaving dishes in the sink. Which is the gentlest way to start?",
+          "options": [
+            {
+              "text": "“Are you ever going to wash up?”",
+              "why": "Sarcasm puts them on the back foot immediately."
+            },
+            {
+              "text": "“Could we chat about the dishes? It’s been bugging me a bit.”",
+              "correct": true,
+              "why": "Calm and honest, it names the issue without attacking them."
+            },
+            {
+              "text": "Pile the dishes on their bed.",
+              "why": "A silent protest can feel hostile and escalate things."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do your disagreements usually start?",
+          "options": [
+            "Gently",
+            "With a sharp comment",
+            "With silence",
+            "With a big build-up"
+          ],
+          "reply": "Knowing your usual start gives you a chance to try a softer one next time."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you need to raise a problem, start with “Can we talk about…?” and a calm tone."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-3-2",
+      "level": 3,
+      "title": "Complain, Don’t Criticise",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Talk about the problem, not what’s wrong with them.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Complaint vs criticism",
+          "body": "A complaint is about a specific event: “You didn’t call when you said.” Criticism is about the person: “You’re so unreliable.” Complaints can be solved; criticism wounds.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each criticism to a fair complaint.",
+          "pairs": [
+            {
+              "a": "“You’re so selfish.”",
+              "b": "“You didn’t ask before taking the car.”"
+            },
+            {
+              "a": "“You never listen.”",
+              "b": "“You were on your phone when I talked.”"
+            },
+            {
+              "a": "“You’re hopeless.”",
+              "b": "“The bill was paid late this month.”"
+            }
+          ],
+          "why": "Complaints describe what happened, so they can be fixed. Criticism attacks who someone is, which makes them defensive."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Turn criticism into a complaint.",
+          "before": "I was upset that you",
+          "after": "without asking me first.",
+          "words": [
+            "are so rude",
+            "invited people round",
+            "always do this"
+          ],
+          "answer": "invited people round",
+          "why": "Naming the specific action keeps it fair and gives them something they can change."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner forgot your anniversary dinner booking. Which is a fair complaint?",
+          "options": [
+            {
+              "text": "“You clearly don’t care about us.”",
+              "why": "This turns one mistake into a judgement about their feelings."
+            },
+            {
+              "text": "“You’re useless at remembering anything.”",
+              "why": "A sweeping insult makes them defend themselves rather than fix things."
+            },
+            {
+              "text": "“I was really disappointed the booking was forgotten.”",
+              "correct": true,
+              "why": "It names the event and your feeling, so you can talk about putting it right."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re annoyed with someone, describe the specific thing they did instead of what you think they are."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-3-3",
+      "level": 3,
+      "title": "Ask for What You Want",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "End a complaint with a clear, positive request.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Point to the solution",
+          "body": "It’s easy to say what’s wrong and stop there. Adding what you’d like instead, such as “Could you text if you’ll be late?”, turns a complaint into a path forward.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "Late again",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Sorry I’m late, traffic was mad 🚗"
+            },
+            {
+              "from": "them",
+              "text": "Hope you weren’t waiting long!"
+            }
+          ],
+          "prompt": "You waited 40 minutes. What do you say?",
+          "options": [
+            {
+              "text": "It’s fine.",
+              "reaction": "Great! Let’s go 😊",
+              "why": "Hiding your feelings means nothing changes next time."
+            },
+            {
+              "text": "You’re always late. It’s so disrespectful.",
+              "reaction": "Wow, sorry I bothered coming.",
+              "why": "Criticism makes them defensive instead of helping fix it."
+            },
+            {
+              "text": "I did wait a while. Next time could you text when you’re running late?",
+              "correct": true,
+              "reaction": "Yes, of course. Sorry!",
+              "why": "Honest about the impact, with a clear, easy request for next time."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Add the positive request.",
+          "before": "It upset me when plans changed last minute.",
+          "after": "",
+          "words": [
+            "Next time, could we decide together?",
+            "You ruin everything.",
+            "Never mind."
+          ],
+          "answer": "Next time, could we decide together?",
+          "why": "A clear request shows what would help, turning the complaint into teamwork."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you usually say what you’d like instead?",
+          "options": [
+            "Yes, usually",
+            "Sometimes",
+            "I just complain",
+            "I say nothing"
+          ],
+          "reply": "Adding one clear request is a small habit that makes a big difference."
+        },
+        {
+          "kind": "try",
+          "body": "When you next raise a problem, finish with “Next time, could you…?” and a specific request."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-4",
+      "level": 4,
+      "title": "Stick to One Topic",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Piling on issues turns a small disagreement into a big fight.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The kitchen-sink fight",
+          "body": "An argument about the dishes can quickly become about holidays, in-laws and money. Throwing everything in makes it impossible to solve anything. Keep to one topic.",
+          "mood": "upset"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re discussing who does the school run, and you feel like bringing up their messy desk. What’s best?",
+          "options": [
+            {
+              "text": "Mention it now while you’re already talking.",
+              "why": "Adding a new issue mid-argument makes both harder to solve."
+            },
+            {
+              "text": "Stay on the school run and save the desk for another time.",
+              "correct": true,
+              "why": "One topic at a time means you can actually reach an agreement."
+            },
+            {
+              "text": "List every other thing that bothers you too.",
+              "why": "A long list turns a practical chat into a character trial."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "On topic, or kitchen-sinking?",
+          "left": "On topic",
+          "right": "Kitchen sink",
+          "cards": [
+            {
+              "text": "“So, who’s doing Tuesday’s run?”",
+              "side": "left"
+            },
+            {
+              "text": "“And you forgot my birthday last year!”",
+              "side": "right"
+            },
+            {
+              "text": "“Could we swap Thursdays?”",
+              "side": "left"
+            },
+            {
+              "text": "“And while we’re at it, your mum…”",
+              "side": "right"
+            }
+          ],
+          "why": "Staying on topic keeps things solvable. Every added issue makes the argument bigger and harder to finish."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do your arguments tend to snowball?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ],
+          "reply": "If they do, gently saying “Let’s stick to this one thing” can stop the snowball."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, if new topics creep in, say “Let’s sort this one first.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-4-2",
+      "level": 4,
+      "title": "Leave the Past Out",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Old hurts brought into new arguments rarely help.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Today’s issue, today",
+          "body": "“You did this last Christmas too!” can feel justified, but dragging up the past usually makes people defensive. Focus on what’s happening now.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the past-digging line to a present-focused one.",
+          "pairs": [
+            {
+              "a": "“Just like last time!”",
+              "b": "“This time, I felt let down.”"
+            },
+            {
+              "a": "“You’ve always been like this.”",
+              "b": "“Today, this was hard for me.”"
+            },
+            {
+              "a": "“Remember when you…”",
+              "b": "“Right now, I need…”"
+            }
+          ],
+          "why": "Present-focused lines keep things fair and solvable. Past-digging makes it feel like a list of charges."
+        },
+        {
+          "kind": "scene",
+          "title": "An old wound comes up",
+          "them": "Your sister",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Sorry I couldn’t make your party tonight 😞"
+            },
+            {
+              "from": "them",
+              "text": "Work stuff came up at the last minute."
+            }
+          ],
+          "prompt": "You’re disappointed. What do you reply?",
+          "options": [
+            {
+              "text": "Just like my wedding, when you left early.",
+              "reaction": "Seriously? That was years ago!",
+              "why": "Bringing up old hurts turns one missed party into a long history."
+            },
+            {
+              "text": "I was sad you couldn’t come. Can we catch up this weekend?",
+              "correct": true,
+              "reaction": "Yes, I’d love that. Sorry again 💛",
+              "why": "You stayed in the present and kept the door open to reconnect."
+            },
+            {
+              "text": "Whatever, not like you care.",
+              "reaction": "That’s not fair…",
+              "why": "An unfair verdict makes it harder for her to make amends."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which old hurt do you tend to bring up?",
+          "options": [
+            "A past argument",
+            "A forgotten date",
+            "Something said years ago",
+            "None, usually"
+          ],
+          "reply": "If one keeps coming back, it may need its own calm talk, separate from today’s issues."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, notice if you’re about to mention the past, and bring it back to today instead."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-4-3",
+      "level": 4,
+      "title": "Name the Real Issue",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "The argument about socks might really be about feeling unseen.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Look beneath the surface",
+          "body": "Arguments about chores, phones or plans are often about something deeper: feeling unappreciated, lonely or unheard. Naming that real issue can end a repeating fight.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the surface fight to what it might really be about.",
+          "pairs": [
+            {
+              "a": "Socks on the floor",
+              "b": "Feeling taken for granted"
+            },
+            {
+              "a": "Always on their phone",
+              "b": "Feeling lonely"
+            },
+            {
+              "a": "Arguing about plans",
+              "b": "Wanting a say"
+            },
+            {
+              "a": "Fighting about money",
+              "b": "Worrying about the future"
+            }
+          ],
+          "why": "When you address the deeper need, the surface fights often fade on their own."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You keep arguing with your partner about them working late. What might help most?",
+          "options": [
+            {
+              "text": "“I think I’m really missing time with you.”",
+              "correct": true,
+              "why": "Naming the deeper feeling invites them to help solve it together."
+            },
+            {
+              "text": "“Your job is ruining us.”",
+              "why": "Blaming the job makes them defend it instead of hearing your need."
+            },
+            {
+              "text": "Keep arguing about the hours.",
+              "why": "The surface fight will repeat until the real need is named."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the real issue.",
+          "before": "I don’t think it’s really about the dishes.",
+          "after": "",
+          "words": [
+            "I think I’m feeling unappreciated.",
+            "You’re just lazy.",
+            "Forget it."
+          ],
+          "answer": "I think I’m feeling unappreciated.",
+          "why": "Naming the feeling underneath gets to what really needs fixing."
+        },
+        {
+          "kind": "try",
+          "body": "Think of an argument that keeps repeating. Ask yourself: what’s it really about for me?"
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-5",
+      "level": 5,
+      "title": "Call a Time-out",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "When it gets too heated, pausing is wise, not weak.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Flooded brains can’t talk",
+          "body": "When we’re very angry, our heart races and it gets hard to think clearly. Calling a short time-out lets you both calm down, so you can talk properly later.",
+          "mood": "upset"
+        },
+        {
+          "kind": "choice",
+          "prompt": "An argument is getting louder and you feel your heart pounding. What’s best?",
+          "options": [
+            {
+              "text": "Keep going until someone wins.",
+              "why": "Pushing on while flooded usually leads to words you regret."
+            },
+            {
+              "text": "“I’m getting too heated. Can we pause for 20 minutes?”",
+              "correct": true,
+              "why": "A named, time-limited pause lets you both calm down safely."
+            },
+            {
+              "text": "Walk out without saying anything.",
+              "why": "Leaving without a word can feel like abandonment mid-row."
+            }
+          ]
+        },
+        {
+          "kind": "read",
+          "title": "If you ever feel unsafe",
+          "body": "Time-outs are for ordinary arguments. If anyone becomes threatening, frightening or violent, leave if you can and contact someone you trust or emergency services.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Call the time-out kindly.",
+          "before": "I want to sort this out,",
+          "after": "and come back in half an hour?",
+          "words": [
+            "so can we pause",
+            "so shut up",
+            "but whatever"
+          ],
+          "answer": "so can we pause",
+          "why": "It shows you still care about solving it, and the pause is a step towards that."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What tells you an argument is getting too heated?",
+          "options": [
+            "My heart racing",
+            "Raised voices",
+            "Wanting to say hurtful things",
+            "Feeling shaky"
+          ],
+          "reply": "That’s your signal. When you notice it, it’s time to call a pause."
+        },
+        {
+          "kind": "try",
+          "body": "Agree with someone close on a time-out phrase you can both use when arguments get too heated."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-5-2",
+      "level": 5,
+      "title": "Calm Your Body",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "A calm body makes it easier to have a calm conversation.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Use the pause well",
+          "body": "A time-out works best when you actually calm down, rather than rehearsing your argument. Slow breathing, a walk or some fresh air help your body reset.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Calming, or keeps you wound up?",
+          "left": "Calming",
+          "right": "Winds you up",
+          "cards": [
+            {
+              "text": "A slow walk around the block",
+              "side": "left"
+            },
+            {
+              "text": "Replaying the argument in your head",
+              "side": "right"
+            },
+            {
+              "text": "Breathing slowly for a few minutes",
+              "side": "left"
+            },
+            {
+              "text": "Texting a friend about how awful they are",
+              "side": "right"
+            },
+            {
+              "text": "A glass of water and some fresh air",
+              "side": "left"
+            }
+          ],
+          "why": "Calming activities help your body settle. Rehearsing or venting keeps the anger fresh."
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a simple calming breath.",
+          "items": [
+            "Breathe in slowly for four",
+            "Hold gently for a moment",
+            "Breathe out slowly for six",
+            "Repeat a few times"
+          ],
+          "why": "Longer out-breaths help your body switch out of fight mode, so you can think more clearly."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What helps you calm down fastest?",
+          "options": [
+            "Moving my body",
+            "Breathing",
+            "Being alone",
+            "Music"
+          ],
+          "reply": "Great. Make that your go-to during a time-out."
+        },
+        {
+          "kind": "try",
+          "body": "Practise the slow breathing pattern for one minute today, so it’s familiar when you need it."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-5-3",
+      "level": 5,
+      "title": "Come Back to It",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "A pause only works if you return to finish the talk.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Pausing isn’t dodging",
+          "body": "If a time-out becomes a way to avoid the topic forever, the problem stays unsolved and trust drops. Coming back when you said shows the pause was about care, not escape.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "After the break",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Feeling a bit calmer now."
+            },
+            {
+              "from": "them",
+              "text": "Are we going to finish talking about the holiday?"
+            }
+          ],
+          "prompt": "You’d rather just drop it. What do you say?",
+          "options": [
+            {
+              "text": "Let’s just forget it.",
+              "reaction": "But nothing’s sorted…",
+              "why": "Dropping it leaves the issue to come back, often worse."
+            },
+            {
+              "text": "Yes, thanks for waiting. Shall we start with what we both want from the trip?",
+              "correct": true,
+              "reaction": "Good idea. I’d love somewhere warm!",
+              "why": "You returned as agreed and opened with something positive and shared."
+            },
+            {
+              "text": "Only if you admit you were wrong first.",
+              "reaction": "Here we go again…",
+              "why": "Setting conditions restarts the fight instead of solving it."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Restart gently.",
+          "before": "I’m calmer now.",
+          "after": "",
+          "words": [
+            "Can we try again?",
+            "You started it.",
+            "I’m still right."
+          ],
+          "answer": "Can we try again?",
+          "why": "A gentle invitation restarts the talk in a better spirit."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "After a time-out, what tends to happen?",
+          "options": [
+            "We talk it through",
+            "We avoid it",
+            "It flares up again",
+            "We’re not sure"
+          ],
+          "reply": "Returning with a gentle opener makes it much more likely you’ll actually sort it."
+        },
+        {
+          "kind": "try",
+          "body": "If you pause a disagreement this week, return to it at the agreed time with a gentle opening line."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-6",
+      "level": 6,
+      "title": "Repeat Their View",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Say their side back before you argue yours.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Show you heard",
+          "body": "Before making your point, try repeating theirs: “So you feel I made the decision without you?” It shows you’re listening and often calms things instantly.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend says, “You always pick where we go.” What’s the best first response?",
+          "options": [
+            {
+              "text": "“That’s not true, you chose last time!”",
+              "why": "Jumping to defend yourself skips over how they feel."
+            },
+            {
+              "text": "“So it feels like your choices don’t count much?”",
+              "correct": true,
+              "why": "Reflecting their view shows you heard them before you explain your side."
+            },
+            {
+              "text": "“Fine, you choose everything from now on.”",
+              "why": "A sulky reply shuts down the conversation instead of understanding it."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reflect their view.",
+          "before": "So what I’m hearing is that you feel",
+          "after": "when I work late?",
+          "words": [
+            "lonely",
+            "wrong",
+            "silly"
+          ],
+          "answer": "lonely",
+          "why": "Naming their feeling shows you’re trying to understand, not to win."
+        },
+        {
+          "kind": "order",
+          "prompt": "Put these steps for disagreeing well in order.",
+          "items": [
+            "Listen to their side",
+            "Repeat it back",
+            "Check you got it right",
+            "Then share your view"
+          ],
+          "why": "When people feel heard first, they’re much more ready to hear you."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, repeat the other person’s view back before you share your own."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-6-2",
+      "level": 6,
+      "title": "Find What’s Fair",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Look for the bit of their point that makes sense.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Find the grain of truth",
+          "body": "Even when you disagree, there’s usually something fair in what the other person says. Acknowledging it, “You’re right that I’ve been busy”, lowers defences on both sides.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match their complaint to the fair bit you could agree with.",
+          "pairs": [
+            {
+              "a": "“You’re never home!”",
+              "b": "“I have been out a lot lately.”"
+            },
+            {
+              "a": "“You spend too much!”",
+              "b": "“That last purchase was big.”"
+            },
+            {
+              "a": "“You don’t help!”",
+              "b": "“I could do more on weekdays.”"
+            }
+          ],
+          "why": "Agreeing with the fair part doesn’t mean agreeing with everything. It shows good faith and calms things down."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum says, “You never visit any more.” You visit monthly. What’s best?",
+          "options": [
+            {
+              "text": "“That’s ridiculous, I came last month!”",
+              "why": "Correcting her bluntly ignores the feeling behind her words."
+            },
+            {
+              "text": "Say nothing and feel annoyed.",
+              "why": "Staying silent leaves both of you feeling unheard."
+            },
+            {
+              "text": "“I know it’s been less than before. Shall we plan some regular visits?”",
+              "correct": true,
+              "why": "You acknowledged what’s fair and offered a positive way forward."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How easy is it for you to admit someone has a fair point?",
+          "options": [
+            "Easy",
+            "Hard in the moment",
+            "Very hard",
+            "Depends who it is"
+          ],
+          "reply": "It gets easier with practice, and it often softens the whole conversation."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, find one thing the other person said that’s fair, and say so out loud."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-6-3",
+      "level": 6,
+      "title": "Curious, Not Certain",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Ask questions before deciding what they meant.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "We often guess wrong",
+          "body": "In a disagreement, we tend to assume we know why the other person did something. Asking “What was going on for you?” often reveals a reason we never expected.",
+          "mood": "curious"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Curious question, or certain accusation?",
+          "left": "Curious",
+          "right": "Certain",
+          "cards": [
+            {
+              "text": "“What made you decide that?”",
+              "side": "left"
+            },
+            {
+              "text": "“You did that to annoy me.”",
+              "side": "right"
+            },
+            {
+              "text": "“Help me understand what happened.”",
+              "side": "left"
+            },
+            {
+              "text": "“I know exactly why you did it.”",
+              "side": "right"
+            }
+          ],
+          "why": "Curiosity opens the conversation. Certainty closes it, and often turns out to be wrong."
+        },
+        {
+          "kind": "scene",
+          "title": "A missed call",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Sorry I didn’t call back yesterday."
+            },
+            {
+              "from": "them",
+              "text": "It was a bit of a day."
+            }
+          ],
+          "prompt": "You’d assumed they were avoiding you. Reply?",
+          "options": [
+            {
+              "text": "No worries. Is everything okay? Want to talk?",
+              "correct": true,
+              "reaction": "Actually… yeah, my nan’s not well 😔",
+              "why": "Curiosity opened the door to what was really going on."
+            },
+            {
+              "text": "I figured you were ignoring me.",
+              "reaction": "Oh… no, not at all.",
+              "why": "Sharing your assumption made them defend themselves instead of open up."
+            },
+            {
+              "text": "Fine.",
+              "reaction": "Okay…",
+              "why": "A cold reply shuts down any chance of hearing what happened."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you jump to conclusions most?",
+          "options": [
+            "When I’m tired",
+            "With certain people",
+            "Over text",
+            "When I feel hurt"
+          ],
+          "reply": "Knowing that helps. Those are the moments to swap certainty for a question."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you feel sure about why someone did something, ask them a curious question instead."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-7",
+      "level": 7,
+      "title": "Own Your Part",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Even if it’s only a small part, owning it helps.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Find your ten per cent",
+          "body": "In most disagreements, both people play a part, even if one seems bigger. Owning your piece, “I did raise my voice”, often makes it easier for the other person to own theirs.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and your brother had a row about a family plan. You think he was mostly wrong. What helps?",
+          "options": [
+            {
+              "text": "Wait for him to apologise first.",
+              "why": "Waiting can leave you both stuck, each hoping the other moves."
+            },
+            {
+              "text": "Tell him exactly how wrong he was.",
+              "why": "Focusing only on his part makes him defend himself."
+            },
+            {
+              "text": "“I could’ve said things more calmly. Can we try again?”",
+              "correct": true,
+              "why": "Owning your small part often invites him to own his too."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Own your part.",
+          "before": "I know I",
+          "after": "and I’m sorry for that.",
+          "words": [
+            "was perfect",
+            "cut you off",
+            "never do anything"
+          ],
+          "answer": "cut you off",
+          "why": "Naming one specific thing you did shows honesty and invites repair."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How easy is it for you to own your part?",
+          "options": [
+            "Easy",
+            "Only after cooling off",
+            "Hard",
+            "Very hard"
+          ],
+          "reply": "That’s honest. Even a small “I could have done better” goes a long way."
+        },
+        {
+          "kind": "try",
+          "body": "After your next disagreement, name one thing you could have done differently, and share it with them."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-7-2",
+      "level": 7,
+      "title": "Skip the Excuse",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Explaining why you did it can sound like you don’t mean sorry.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Reasons can wait",
+          "body": "When owning your part, it’s tempting to add why it happened. But reasons straight away can sound like excuses. Own it first; explanations can come later if they’re wanted.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Owning it, or excusing it?",
+          "left": "Owning it",
+          "right": "Excusing it",
+          "cards": [
+            {
+              "text": "“I snapped at you. That wasn’t fair.”",
+              "side": "left"
+            },
+            {
+              "text": "“I snapped because work was awful.”",
+              "side": "right"
+            },
+            {
+              "text": "“I forgot. I’m sorry.”",
+              "side": "left"
+            },
+            {
+              "text": "“I forgot, but you didn’t remind me.”",
+              "side": "right"
+            }
+          ],
+          "why": "Owning it focuses on the impact on them. Excuses shift the focus to you and your reasons."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You missed your friend’s big presentation. Which response owns it best?",
+          "options": [
+            {
+              "text": "“I’m so sorry I missed it. I know how much it mattered.”",
+              "correct": true,
+              "why": "It owns the miss and acknowledges what it meant to them."
+            },
+            {
+              "text": "“Sorry, the bus was late and my phone died and…”",
+              "why": "A list of reasons can feel like you’re defending yourself."
+            },
+            {
+              "text": "“You’ll have other presentations.”",
+              "why": "Brushing it off makes their disappointment feel unimportant."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What excuse do you reach for most?",
+          "options": [
+            "Being busy",
+            "Being tired",
+            "Someone else’s fault",
+            "Forgetting"
+          ],
+          "reply": "Noticing it is half the battle. Try leaving it out next time."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you own a mistake, stop after the apology. Only explain if they ask."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-7-3",
+      "level": 7,
+      "title": "Show You’ve Learned",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Owning your part matters most when you change next time.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Change says the most",
+          "body": "Owning a mistake is powerful, but doing it differently next time is what people remember. Small, visible changes show your apology was real.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the mistake to a visible change.",
+          "pairs": [
+            {
+              "a": "Raised your voice",
+              "b": "Calling a pause next time"
+            },
+            {
+              "a": "Forgot an important date",
+              "b": "Putting dates in your phone"
+            },
+            {
+              "a": "Made plans without asking",
+              "b": "Checking before saying yes"
+            }
+          ],
+          "why": "Visible changes show you took the lesson to heart. They rebuild trust more than words alone."
+        },
+        {
+          "kind": "scene",
+          "title": "A second chance",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "My mum’s invited us for Sunday lunch."
+            },
+            {
+              "from": "them",
+              "text": "Last time you said yes without checking with me…"
+            }
+          ],
+          "prompt": "You’ve learned from last time. Reply?",
+          "options": [
+            {
+              "text": "Let’s check our plans first. Do you want to go?",
+              "correct": true,
+              "reaction": "Thank you for asking 💛 Yes, let’s go!",
+              "why": "You showed the lesson in action by checking with them first."
+            },
+            {
+              "text": "I already told her yes, sorry!",
+              "reaction": "Again?",
+              "why": "Repeating the same mistake undoes the earlier apology."
+            },
+            {
+              "text": "Ugh, do we have to talk about last time?",
+              "reaction": "I was just saying…",
+              "why": "Getting defensive misses the chance to show you’ve changed."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s one change you’ve made after a past disagreement?",
+          "options": [
+            "Listening more",
+            "Checking first",
+            "Staying calmer",
+            "Still working on it"
+          ],
+          "reply": "That’s worth being proud of. Each change makes future disagreements easier."
+        },
+        {
+          "kind": "try",
+          "body": "Pick one lesson from a recent disagreement and show it in action this week."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-8",
+      "level": 8,
+      "title": "Brainstorm Together",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "List ideas together before choosing a solution.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "More ideas, better fixes",
+          "body": "When you’re stuck, it helps to list lots of possible solutions together, even silly ones, before picking. It turns a battle into a joint project.",
+          "mood": "happy"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a joint brainstorm in order.",
+          "items": [
+            "Agree on the problem",
+            "List ideas without judging",
+            "Pick a few you both like",
+            "Choose one to try"
+          ],
+          "why": "Agreeing on the problem keeps you aligned. Listing ideas freely before judging helps you find options you both like."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You disagree about where to spend Christmas. What’s a good brainstorming move?",
+          "options": [
+            {
+              "text": "“Let’s list every option, even unusual ones, then pick together.”",
+              "correct": true,
+              "why": "Listing freely opens up ideas neither of you had thought of."
+            },
+            {
+              "text": "“We’re going to my parents’. That’s final.”",
+              "why": "Deciding alone turns a shared problem into a power struggle."
+            },
+            {
+              "text": "“Let’s just not do Christmas.”",
+              "why": "Giving up avoids the conflict but leaves both of you unhappy."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Invite brainstorming.",
+          "before": "We both want a fair answer.",
+          "after": "",
+          "words": [
+            "What ideas can we come up with?",
+            "I’ve already decided.",
+            "You figure it out."
+          ],
+          "answer": "What ideas can we come up with?",
+          "why": "It invites teamwork and makes the solution something you build together."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re stuck on a disagreement, write down at least five possible solutions together before choosing."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-8-2",
+      "level": 8,
+      "title": "Try It for a Week",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Treat a solution as an experiment, not a forever rule.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Experiments feel easier",
+          "body": "Agreeing to something forever feels huge. Agreeing to try it for a week feels doable. Afterwards, you can check in and adjust together.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "Sharing the chores",
+          "them": "Your housemate",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I don’t think a chore rota will work for us."
+            },
+            {
+              "from": "them",
+              "text": "It’s just going to cause more arguments 😕"
+            }
+          ],
+          "prompt": "What do you suggest?",
+          "options": [
+            {
+              "text": "Fine, then you do all the cleaning.",
+              "reaction": "That’s not fair!",
+              "why": "An ultimatum makes the disagreement bigger, not smaller."
+            },
+            {
+              "text": "Forget it then.",
+              "reaction": "Okay…",
+              "why": "Giving up means the problem stays as it is."
+            },
+            {
+              "text": "Shall we try it for just one week, then see how it went?",
+              "correct": true,
+              "reaction": "Okay, a week sounds fair 👍",
+              "why": "A short trial lowers the stakes and makes it easier to say yes."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a trial solution.",
+          "items": [
+            "Agree on what to try",
+            "Set a time to check in",
+            "Try it honestly",
+            "Review and adjust together"
+          ],
+          "why": "A set check-in time makes the trial feel safe. Reviewing together lets you tweak it fairly."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which ongoing disagreement could use a trial solution?",
+          "options": [
+            "Chores",
+            "Screen time",
+            "Money",
+            "Plans"
+          ],
+          "reply": "Great pick. A one-week experiment there could break the deadlock."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest a one-week trial for something you’ve been disagreeing about, and set a time to review it."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-8-3",
+      "level": 8,
+      "title": "Agree to Differ",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Some disagreements don’t need solving. Respect is enough.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not every gap needs closing",
+          "body": "Some differences, like politics, taste or habits, may never be resolved. That’s okay. Agreeing to differ respectfully can be healthier than fighting the same fight forever.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Needs solving, or fine to agree to differ?",
+          "left": "Needs solving",
+          "right": "Let it be",
+          "cards": [
+            {
+              "text": "Who pays the rent",
+              "side": "left"
+            },
+            {
+              "text": "Favourite football team",
+              "side": "right"
+            },
+            {
+              "text": "Whether to have children",
+              "side": "left"
+            },
+            {
+              "text": "Taste in music",
+              "side": "right"
+            },
+            {
+              "text": "Views on a TV show",
+              "side": "right"
+            }
+          ],
+          "why": "Practical, shared decisions need solving. Matters of taste and opinion can usually live side by side."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and your uncle always argue about politics at family dinners. What’s a healthy step?",
+          "options": [
+            {
+              "text": "Keep debating until one of you changes their mind.",
+              "why": "Deeply held views rarely change over dinner, so it repeats."
+            },
+            {
+              "text": "“We see this differently, and that’s okay. How’s the garden?”",
+              "correct": true,
+              "why": "It respects you both and moves the conversation somewhere warmer."
+            },
+            {
+              "text": "Stop going to family dinners.",
+              "why": "Avoiding the whole family costs much more than the disagreement."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which disagreement could you let rest?",
+          "options": [
+            "Politics",
+            "Taste in things",
+            "Old arguments",
+            "Small habits"
+          ],
+          "reply": "Letting it rest can bring a lot of peace back into that relationship."
+        },
+        {
+          "kind": "try",
+          "body": "Think of one difference you keep arguing about. Next time it comes up, try saying, “We see this differently, and that’s okay.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-9",
+      "level": 9,
+      "title": "Reach Out First",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Going first after a fight is strength, not weakness.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Someone has to go first",
+          "body": "After a row, people often wait for the other to make the first move. A simple “I don’t like us being like this” can end a stand-off and start healing.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and a friend haven’t spoken for three days since a disagreement. What helps most?",
+          "options": [
+            {
+              "text": "Wait. They should message first.",
+              "why": "Waiting can stretch the silence into weeks."
+            },
+            {
+              "text": "Post something pointed on social media.",
+              "why": "Indirect jabs make the rift bigger and more public."
+            },
+            {
+              "text": "“I’ve missed you. Can we talk about the other day?”",
+              "correct": true,
+              "why": "Going first with warmth shows the friendship matters more than being right."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reach out warmly.",
+          "before": "I don’t like us being at odds.",
+          "after": "",
+          "words": [
+            "Can we talk?",
+            "You owe me.",
+            "Your move."
+          ],
+          "answer": "Can we talk?",
+          "why": "A short, warm invitation opens the door without blaming anyone."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "After a disagreement, who usually reaches out first?",
+          "options": [
+            "Me",
+            "Them",
+            "Neither, it fades",
+            "Whoever cools off first"
+          ],
+          "reply": "Whoever it is, being willing to go first is a real gift to any relationship."
+        },
+        {
+          "kind": "try",
+          "body": "If you’re in a stand-off with someone, send a short, warm message to reach out first."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-9-2",
+      "level": 9,
+      "title": "Repair Attempts",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "A joke, a touch or a kind word can calm a row midway.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Little bids to reconnect",
+          "body": "During a disagreement, small gestures like a gentle joke, “Can I try again?” or a soft touch are bids to reconnect. Noticing and accepting them can stop a fight spiralling.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the repair attempt to a good way to accept it.",
+          "pairs": [
+            {
+              "a": "“Can I say that again, nicer?”",
+              "b": "“Yes please.”"
+            },
+            {
+              "a": "A small joke to ease tension",
+              "b": "A smile back"
+            },
+            {
+              "a": "“I’m sorry, I’m just stressed.”",
+              "b": "“Thanks, me too.”"
+            }
+          ],
+          "why": "Accepting a repair attempt lowers the temperature for both of you. Rejecting it can make things worse."
+        },
+        {
+          "kind": "scene",
+          "title": "Mid-argument",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Okay, this is getting silly."
+            },
+            {
+              "from": "them",
+              "text": "Truce? I’ll make the tea ☕"
+            }
+          ],
+          "prompt": "You’re still a bit cross. What do you reply?",
+          "options": [
+            {
+              "text": "Tea won’t fix this.",
+              "reaction": "Right. Okay.",
+              "why": "Rejecting the olive branch keeps the argument going."
+            },
+            {
+              "text": "Truce. And yes please, two sugars 😅",
+              "correct": true,
+              "reaction": "Coming right up. Let’s talk calmly after?",
+              "why": "Accepting their repair lets you both reset and talk better."
+            },
+            {
+              "text": "Ignore the message.",
+              "reaction": "…",
+              "why": "Silence can feel like a rejected apology."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What repair attempts do you use?",
+          "options": [
+            "A joke",
+            "A hug",
+            "Saying sorry",
+            "Changing the subject"
+          ],
+          "reply": "Knowing your own helps you notice theirs too."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, notice if they try to repair it, and accept the gesture warmly."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-9-3",
+      "level": 9,
+      "title": "Talk About the Fight",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Once calm, chat about what happened and what helped.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Learn from the row",
+          "body": "When things are calm again, a short chat about what happened can stop it repeating. What set it off? What made it worse? What helped? Treat it like a team review, not a trial.",
+          "mood": "curious"
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a calm after-fight chat.",
+          "items": [
+            "Wait until you’re both calm",
+            "Share how it felt",
+            "Spot what made it worse",
+            "Agree on one thing to try next time"
+          ],
+          "why": "Waiting for calm keeps it kind. Ending with one shared plan makes the next disagreement easier."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A day after a row about money, you’re both calm. What’s a good way to start the review?",
+          "options": [
+            {
+              "text": "“Let’s talk about why you were so unreasonable.”",
+              "why": "Starting with blame reopens the fight."
+            },
+            {
+              "text": "“Can we chat about yesterday, so it goes better next time?”",
+              "correct": true,
+              "why": "It frames the talk as teamwork for the future."
+            },
+            {
+              "text": "Never mention it again.",
+              "why": "Avoiding it means the same row may happen again."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Focus on next time.",
+          "before": "Next time, it might help if we",
+          "after": "",
+          "words": [
+            "took a break sooner.",
+            "never spoke again.",
+            "just did it my way."
+          ],
+          "answer": "took a break sooner.",
+          "why": "A specific, shared idea helps you both handle the next disagreement better."
+        },
+        {
+          "kind": "try",
+          "body": "After your next disagreement, once calm, ask: “What could we do differently next time?”"
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-10",
+      "level": 10,
+      "title": "Spot Your Loop",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "Many couples and families have the same fight on repeat.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The same old dance",
+          "body": "Often, the same argument plays out in the same way: one person pushes, the other withdraws, round and round. Spotting your loop is the first step to stepping out of it.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the loop to how it keeps going.",
+          "pairs": [
+            {
+              "a": "One nags, one goes quiet",
+              "b": "More nagging, more silence"
+            },
+            {
+              "a": "One criticises, one defends",
+              "b": "Both feel unheard"
+            },
+            {
+              "a": "One raises it, one jokes",
+              "b": "The issue never gets solved"
+            }
+          ],
+          "why": "Each person’s move makes sense, but together they keep the loop spinning. Seeing it makes it easier to change."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You notice: when you raise money worries, your partner changes the subject, and you push harder. What helps?",
+          "options": [
+            {
+              "text": "Push even harder so they have to listen.",
+              "why": "Pushing harder usually makes them pull back further."
+            },
+            {
+              "text": "“I think we have a pattern. Can we look at it together?”",
+              "correct": true,
+              "why": "Naming the loop as a shared problem helps you both step out of it."
+            },
+            {
+              "text": "Stop raising money altogether.",
+              "why": "Avoiding the topic leaves the worry unsolved."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which loop shows up most in your relationships?",
+          "options": [
+            "Push and withdraw",
+            "Criticise and defend",
+            "Joke and deflect",
+            "I’m not sure yet"
+          ],
+          "reply": "Even noticing it is a big step. The next lesson looks at changing one move."
+        },
+        {
+          "kind": "try",
+          "body": "Think of an argument that repeats. Write down who usually does what, and look for your loop."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-10-2",
+      "level": 10,
+      "title": "Change One Step",
+      "minutes": 4,
+      "focus": "conflict",
+      "summary": "Changing your own move can break the whole loop.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You only need to change you",
+          "body": "You can’t control the other person’s part of the loop. But changing your own move, like asking calmly instead of pushing, often shifts the whole pattern.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Breaks the loop, or keeps it going?",
+          "left": "Breaks it",
+          "right": "Keeps it going",
+          "cards": [
+            {
+              "text": "Asking a calm question instead of pushing",
+              "side": "left"
+            },
+            {
+              "text": "Repeating the same complaint louder",
+              "side": "right"
+            },
+            {
+              "text": "Staying in the room instead of walking off",
+              "side": "left"
+            },
+            {
+              "text": "Going quiet like always",
+              "side": "right"
+            }
+          ],
+          "why": "A small change in your move gives the other person room to respond differently too."
+        },
+        {
+          "kind": "scene",
+          "title": "The usual argument",
+          "them": "Your teenager",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I KNOW, I’ll tidy my room later."
+            },
+            {
+              "from": "them",
+              "text": "Stop going on about it!!"
+            }
+          ],
+          "prompt": "Usually you’d nag more. Try a new move?",
+          "options": [
+            {
+              "text": "I’ve asked a hundred times!",
+              "reaction": "Ugh, whatever!",
+              "why": "The same old move gets the same old response."
+            },
+            {
+              "text": "Okay. When would suit you? Before dinner?",
+              "correct": true,
+              "reaction": "…Fine. Before dinner.",
+              "why": "A calm question instead of nagging changed the dance."
+            },
+            {
+              "text": "Tidy it yourself and sulk.",
+              "reaction": "(Silence)",
+              "why": "Silent resentment keeps a different version of the loop going."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s one move you could change in your loop?",
+          "options": [
+            "Push less",
+            "Stay instead of leave",
+            "Ask instead of tell",
+            "Say how I feel"
+          ],
+          "reply": "Brilliant. Try it once and notice what changes."
+        },
+        {
+          "kind": "try",
+          "body": "Next time your usual argument starts, change just your own first move and see what happens."
+        }
+      ]
+    },
+    {
+      "id": "rf-conflict-10-3",
+      "level": 10,
+      "title": "Fight for the Team",
+      "minutes": 3,
+      "focus": "conflict",
+      "summary": "It’s you two against the problem, not against each other.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Same side of the table",
+          "body": "Healthy disagreements feel like two people solving a puzzle together, not two opponents. Reminding yourselves you’re on the same team changes how every argument feels.",
+          "mood": "happy"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Bring it back to the team.",
+          "before": "We’re on the same side here.",
+          "after": "",
+          "words": [
+            "How do we fix this together?",
+            "So admit you’re wrong.",
+            "I win."
+          ],
+          "answer": "How do we fix this together?",
+          "why": "It turns the argument into a shared problem you can solve side by side."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You and your partner disagree about a big purchase. What keeps it a team effort?",
+          "options": [
+            {
+              "text": "“What matters most to each of us here?”",
+              "correct": true,
+              "why": "It looks for what you both need, so the answer works for the team."
+            },
+            {
+              "text": "“I earn more, so I decide.”",
+              "why": "Pulling rank turns a shared decision into a contest."
+            },
+            {
+              "text": "Buy it anyway and deal with it later.",
+              "why": "Acting alone damages trust and the sense of being a team."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the opponent line to a team line.",
+          "pairs": [
+            {
+              "a": "“You’re the problem.”",
+              "b": "“This is our problem.”"
+            },
+            {
+              "a": "“I’m right.”",
+              "b": "“Let’s find what works.”"
+            },
+            {
+              "a": "“You always…”",
+              "b": "“How can we…?”"
+            }
+          ],
+          "why": "Team language reminds you both that the relationship matters more than winning."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most about conflict in these lessons?",
+          "options": [
+            "Starting gently",
+            "Taking breaks",
+            "Owning my part",
+            "Breaking loops"
+          ],
+          "reply": "Wonderful. Disagreements will still happen, and now you have tools to handle them well."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, say out loud: “We’re on the same team. How do we fix this together?”"
+        }
+      ]
+    }
+  ]
+}

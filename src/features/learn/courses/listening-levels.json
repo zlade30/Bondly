@@ -1,0 +1,2049 @@
+{
+  "course": "listening",
+  "levels": [
+    {
+      "title": "Listening Basics",
+      "icon": "bunny",
+      "color": "peach"
+    },
+    {
+      "title": "A Quiet Mind",
+      "icon": "cairn",
+      "color": "blue"
+    },
+    {
+      "title": "Open Questions",
+      "icon": "parachute",
+      "color": "pink"
+    },
+    {
+      "title": "Body Language",
+      "icon": "eye",
+      "color": "mint"
+    },
+    {
+      "title": "Hearing Emotions",
+      "icon": "guitar",
+      "color": "yellow"
+    },
+    {
+      "title": "Listening in Conflict",
+      "icon": "truce",
+      "color": "lavender"
+    },
+    {
+      "title": "Listening in Messages",
+      "icon": "bottle",
+      "color": "blue"
+    },
+    {
+      "title": "Holding Silence",
+      "icon": "snowglobe",
+      "color": "purple"
+    },
+    {
+      "title": "Remember What Matters",
+      "icon": "sticky",
+      "color": "peach"
+    },
+    {
+      "title": "Listening for Needs",
+      "icon": "treasure",
+      "color": "mint"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-listening-2",
+      "level": 2,
+      "title": "Put the Phone Away",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "A phone in your hand says “I’m only half here”.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Phones split attention",
+          "body": "Even a phone face-down on the table can make conversations feel less close. Putting it away completely tells the other person they have your full attention.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend starts telling you about a worry while you’re scrolling. What’s best?",
+          "options": [
+            {
+              "text": "Keep scrolling and nod along.",
+              "why": "Half-listening can make them feel their worry isn’t important to you."
+            },
+            {
+              "text": "Put the phone in your pocket and turn towards them.",
+              "correct": true,
+              "why": "Clearing away distractions shows they have your full attention."
+            },
+            {
+              "text": "“One sec, just finishing this.” and keep going for ages.",
+              "why": "A long “one sec” tells them your screen comes first."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Full attention, or half attention?",
+          "left": "Full",
+          "right": "Half",
+          "cards": [
+            {
+              "text": "Phone in your bag",
+              "side": "left"
+            },
+            {
+              "text": "Glancing at notifications",
+              "side": "right"
+            },
+            {
+              "text": "Turning the TV off to talk",
+              "side": "left"
+            },
+            {
+              "text": "Answering “mm” while typing",
+              "side": "right"
+            }
+          ],
+          "why": "Small signs of attention or distraction are very noticeable to the person talking."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When is your phone most likely to steal your attention?",
+          "options": [
+            "At meals",
+            "During chats at home",
+            "On calls",
+            "When I’m bored"
+          ],
+          "reply": "Those are perfect moments to try putting it out of reach."
+        },
+        {
+          "kind": "try",
+          "body": "In your next real conversation, put your phone completely out of sight until it’s finished."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-2-2",
+      "level": 2,
+      "title": "Quiet Your Reply",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Stop planning your answer while they’re still talking.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listening, not loading",
+          "body": "Many of us listen while busily preparing our reply. That means we miss half of what’s said. Letting your reply wait until they’ve finished helps you hear everything.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the habit to a better listening move.",
+          "pairs": [
+            {
+              "a": "Planning your answer",
+              "b": "Focus on their next word"
+            },
+            {
+              "a": "Waiting to jump in",
+              "b": "Let them finish fully"
+            },
+            {
+              "a": "Thinking of your story",
+              "b": "Stay with their story"
+            }
+          ],
+          "why": "Quieting your own reply frees your attention to really take in what they’re saying."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Give them space to finish.",
+          "before": "Sorry, I think I jumped in.",
+          "after": "",
+          "words": [
+            "Please carry on.",
+            "Anyway, me…",
+            "Hurry up."
+          ],
+          "answer": "Please carry on.",
+          "why": "Inviting them back shows you value what they were saying more than your own point."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you catch yourself planning your reply?",
+          "options": [
+            "All the time",
+            "Often",
+            "Sometimes",
+            "Rarely"
+          ],
+          "reply": "Just noticing it is a big step. Each time you catch it, gently bring your focus back."
+        },
+        {
+          "kind": "try",
+          "body": "In your next chat, notice when you start planning your reply, and gently return your focus to them."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-2-3",
+      "level": 2,
+      "title": "Notice When You Drift",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Minds wander. Notice it and come back kindly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Drifting is normal",
+          "body": "Everyone’s mind wanders while listening: to dinner, work or a noise. The skill isn’t never drifting. It’s noticing and bringing yourself back without guilt.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You realise you’ve missed what your partner just said. What’s best?",
+          "options": [
+            {
+              "text": "Nod and hope it wasn’t important.",
+              "why": "Pretending can lead to confusion or them feeling unheard later."
+            },
+            {
+              "text": "“Sorry, I drifted for a second. Could you say that again?”",
+              "correct": true,
+              "why": "Honest and caring, it shows you genuinely want to hear them."
+            },
+            {
+              "text": "Change the subject so they don’t notice.",
+              "why": "Moving on leaves them feeling cut off mid-story."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a gentle way back from drifting.",
+          "items": [
+            "Notice your mind wandered",
+            "Don’t scold yourself",
+            "Return to their words",
+            "Ask them to repeat if needed"
+          ],
+          "why": "Noticing without guilt makes it easier to refocus. Asking again is far better than pretending."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where does your mind usually drift?",
+          "options": [
+            "To my to-do list",
+            "To my phone",
+            "To my own worries",
+            "To what I’ll say next"
+          ],
+          "reply": "Knowing your usual drift spot makes it quicker to notice and come back."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you drift while someone’s talking, honestly ask them to repeat the last bit."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-3",
+      "level": 3,
+      "title": "Tell Me More",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Three simple words that invite people to keep going.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The magic invitation",
+          "body": "“Tell me more” is one of the most powerful listening phrases. It’s open, curious and lets the other person decide what’s important to share next.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "A half-told story",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Work has been… interesting lately 😬"
+            },
+            {
+              "from": "them",
+              "text": "Long story."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Ha, work’s always rubbish. Anyway…",
+              "reaction": "Yeah… anyway.",
+              "why": "Moving on misses a clear hint they want to talk."
+            },
+            {
+              "text": "I’ve got time. Tell me more?",
+              "correct": true,
+              "reaction": "Okay, so basically my manager…",
+              "why": "A simple invitation gives them permission to share the whole story."
+            },
+            {
+              "text": "Just quit then!",
+              "reaction": "It’s not that simple 😅",
+              "why": "Jumping to advice skips the listening they might need first."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Invite them to continue.",
+          "before": "That sounds like a lot.",
+          "after": "",
+          "words": [
+            "Tell me more?",
+            "Moving on.",
+            "Same here."
+          ],
+          "answer": "Tell me more?",
+          "why": "It shows you’re interested and leaves space for them to go on."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who might be waiting for you to say “tell me more”?",
+          "options": [
+            "My partner",
+            "A friend",
+            "My child",
+            "A parent"
+          ],
+          "reply": "Try it with them today. You may hear something you never would have otherwise."
+        },
+        {
+          "kind": "try",
+          "body": "Use the phrase “Tell me more” at least once today when someone shares something."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-3-2",
+      "level": 3,
+      "title": "Ask, Don’t Push",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Good questions invite sharing. Pushy ones shut it down.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Curious, not interrogating",
+          "body": "Rapid-fire questions can feel like an interview or an interrogation. Gentle, spaced-out questions, with time to answer, help people feel safe to open up.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Gentle question, or pushy?",
+          "left": "Gentle",
+          "right": "Pushy",
+          "cards": [
+            {
+              "text": "“How are you feeling about it?”",
+              "side": "left"
+            },
+            {
+              "text": "“Why? Who? When? What did they say?”",
+              "side": "right"
+            },
+            {
+              "text": "“Would you like to talk about it?”",
+              "side": "left"
+            },
+            {
+              "text": "“You have to tell me everything.”",
+              "side": "right"
+            }
+          ],
+          "why": "Gentle questions give people choice and room. Pushy ones can make them close up."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your teenager comes home quiet and upset. What’s the best approach?",
+          "options": [
+            {
+              "text": "“What happened? Who upset you? Tell me now.”",
+              "why": "A barrage of questions can make them shut down."
+            },
+            {
+              "text": "“You seem a bit down. I’m here if you want to talk.”",
+              "correct": true,
+              "why": "It notices gently and lets them choose when to share."
+            },
+            {
+              "text": "Ignore it so they don’t feel pressured.",
+              "why": "Saying nothing can feel like you didn’t notice or care."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do your questions ever feel like an interview?",
+          "options": [
+            "Yes, sometimes",
+            "Only when I’m worried",
+            "Rarely",
+            "Not that I know of"
+          ],
+          "reply": "When you’re worried it’s natural to ask lots. One gentle question with a pause often works better."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you’re curious about something sensitive, ask one gentle question and then wait."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-3-3",
+      "level": 3,
+      "title": "Gentler Than Why",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "“Why did you…?” can sound like blame. Try “what” or “how”.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The tricky little word",
+          "body": "“Why did you do that?” often sounds like criticism, even when you’re just curious. Questions starting with “what” or “how” feel gentler and invite real answers.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each “why” to a gentler version.",
+          "pairs": [
+            {
+              "a": "“Why did you quit?”",
+              "b": "“What led you to leave?”"
+            },
+            {
+              "a": "“Why are you upset?”",
+              "b": "“What’s on your mind?”"
+            },
+            {
+              "a": "“Why did you say that?”",
+              "b": "“How did you mean that?”"
+            }
+          ],
+          "why": "“What” and “how” focus on understanding, while “why” can feel like a demand to justify yourself."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Soften the question.",
+          "before": "",
+          "after": "made you choose that course?",
+          "words": [
+            "Why on earth",
+            "What",
+            "Seriously, why"
+          ],
+          "answer": "What",
+          "why": "“What made you choose…” sounds curious, not like you doubt their decision."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when someone asks you “why”?",
+          "options": [
+            "Defensive",
+            "Fine",
+            "Judged",
+            "Depends on the tone"
+          ],
+          "reply": "Remembering that feeling can help you choose gentler words with others."
+        },
+        {
+          "kind": "try",
+          "body": "Today, catch yourself before asking “why” and swap it for “what” or “how”."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-4",
+      "level": 4,
+      "title": "Face Them",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Your body shows whether you’re really listening.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Bodies talk too",
+          "body": "Turning towards someone, relaxed shoulders and gentle eye contact all say “I’m listening”. Arms crossed, looking away or facing a screen can say the opposite, even if you’re hearing every word.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shows you’re listening, or doesn’t?",
+          "left": "Listening",
+          "right": "Not listening",
+          "cards": [
+            {
+              "text": "Turning your chair towards them",
+              "side": "left"
+            },
+            {
+              "text": "Looking over their shoulder",
+              "side": "right"
+            },
+            {
+              "text": "Nodding now and then",
+              "side": "left"
+            },
+            {
+              "text": "Tapping your foot impatiently",
+              "side": "right"
+            },
+            {
+              "text": "Relaxed, open posture",
+              "side": "left"
+            }
+          ],
+          "why": "Body language is often louder than words. Small changes can make people feel truly heard."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your child is telling you about their day while you’re cooking. What helps most?",
+          "options": [
+            {
+              "text": "Keep cooking with your back to them.",
+              "why": "They may feel you’re not really interested."
+            },
+            {
+              "text": "Turn round, make eye contact and say “I’m listening”.",
+              "correct": true,
+              "why": "Even a moment of facing them shows they matter."
+            },
+            {
+              "text": "Tell them to wait until dinner.",
+              "why": "Sometimes fine, but the moment to share might pass."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What does your body tend to do when you listen?",
+          "options": [
+            "Face the person",
+            "Keep doing other things",
+            "Look at my phone",
+            "Not sure"
+          ],
+          "reply": "Noticing it is the first step. Turning towards them is an easy change to try."
+        },
+        {
+          "kind": "try",
+          "body": "In your next conversation, turn your whole body towards the person who’s talking."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-4-2",
+      "level": 4,
+      "title": "Read the Signals",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Notice what their face and body are telling you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listen with your eyes",
+          "body": "People say a lot without words: a tight jaw, a sigh, a shrug or a smile that doesn’t reach their eyes. Noticing these signals helps you understand what’s really going on.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the signal to what it might mean.",
+          "pairs": [
+            {
+              "a": "A big sigh",
+              "b": "Tired or fed up"
+            },
+            {
+              "a": "Avoiding eye contact",
+              "b": "Uncomfortable or sad"
+            },
+            {
+              "a": "Fidgeting hands",
+              "b": "Nervous or restless"
+            },
+            {
+              "a": "Leaning in, smiling",
+              "b": "Interested and happy"
+            }
+          ],
+          "why": "Signals are clues, not certainties. They help you know when to gently ask more."
+        },
+        {
+          "kind": "scene",
+          "title": "Says fine, looks sad",
+          "them": "Your flatmate",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Yeah, I’m fine."
+            },
+            {
+              "from": "them",
+              "text": "(says it quietly, staring at the floor)"
+            }
+          ],
+          "prompt": "What do you say?",
+          "options": [
+            {
+              "text": "Great! Want to watch something?",
+              "reaction": "Sure… whatever.",
+              "why": "Taking “fine” at face value misses the clear signals."
+            },
+            {
+              "text": "You don’t sound fine. Want to talk, or would you rather not?",
+              "correct": true,
+              "reaction": "…Actually, yeah. It’s been a rough week.",
+              "why": "Gently naming what you noticed gives them permission to open up."
+            },
+            {
+              "text": "Why are you lying?",
+              "reaction": "I’m not! Leave it.",
+              "why": "An accusation makes them defend themselves rather than share."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which signals do you notice most easily?",
+          "options": [
+            "Faces",
+            "Tone of voice",
+            "Posture",
+            "I often miss them"
+          ],
+          "reply": "Everyone has strengths here. Practising noticing will sharpen the rest."
+        },
+        {
+          "kind": "try",
+          "body": "Today, notice one person’s body language while they talk, and gently ask if it seems different from their words."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-4-3",
+      "level": 4,
+      "title": "Check What You See",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Ask instead of assuming what their signals mean.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Signals can mislead",
+          "body": "A frown might mean worry, concentration or just a headache. Instead of guessing, gently check: “You look a bit tense. Is everything okay?”",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner seems quiet at dinner. What’s the best response?",
+          "options": [
+            {
+              "text": "Assume they’re annoyed with you.",
+              "why": "Assuming the worst can lead to an argument about something that isn’t there."
+            },
+            {
+              "text": "Ignore it; they’ll say if something’s wrong.",
+              "why": "They might be waiting for someone to notice."
+            },
+            {
+              "text": "“You seem quiet tonight. Everything okay?”",
+              "correct": true,
+              "why": "A gentle check lets them explain instead of you guessing."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Check gently.",
+          "before": "You seem a bit",
+          "after": "today. Want to chat?",
+          "words": [
+            "far away",
+            "rude",
+            "boring"
+          ],
+          "answer": "far away",
+          "why": "A soft, neutral description invites them to share without feeling judged."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Checking, or assuming?",
+          "left": "Checking",
+          "right": "Assuming",
+          "cards": [
+            {
+              "text": "“Are you okay? You seem tired.”",
+              "side": "left"
+            },
+            {
+              "text": "“You’re clearly in a mood.”",
+              "side": "right"
+            },
+            {
+              "text": "“Is something on your mind?”",
+              "side": "left"
+            },
+            {
+              "text": "“I know you’re cross with me.”",
+              "side": "right"
+            }
+          ],
+          "why": "Checking invites the truth. Assuming puts words in their mouth and can start a row."
+        },
+        {
+          "kind": "try",
+          "body": "If someone seems off today, describe what you notice gently and ask if they’re okay."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-5",
+      "level": 5,
+      "title": "Name What They Feel",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Putting a feeling into words helps people feel understood.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Name it to calm it",
+          "body": "When you gently name the feeling you hear, “That sounds really frustrating”, people often feel calmer. It shows you understand not just the facts, but how it felt.",
+          "mood": "content"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the story to the feeling you might name.",
+          "pairs": [
+            {
+              "a": "“My flight got cancelled again.”",
+              "b": "“That sounds so frustrating.”"
+            },
+            {
+              "a": "“I start my new job Monday.”",
+              "b": "“Exciting, and maybe nerve-racking?”"
+            },
+            {
+              "a": "“My best friend is moving away.”",
+              "b": "“That must feel really sad.”"
+            }
+          ],
+          "why": "Naming a likely feeling, with a gentle question, helps people feel seen and understood."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name the feeling.",
+          "before": "Being left out of the trip sounds really",
+          "after": "",
+          "words": [
+            "hurtful.",
+            "fine.",
+            "silly."
+          ],
+          "answer": "hurtful.",
+          "why": "Naming the hurt shows you understand how it landed, which helps them feel less alone."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How comfortable are you naming other people’s feelings?",
+          "options": [
+            "Very",
+            "A bit unsure",
+            "I worry I’ll get it wrong",
+            "I’ve never tried"
+          ],
+          "reply": "It’s okay to guess wrong. “Does that feel frustrating?” lets them correct you."
+        },
+        {
+          "kind": "try",
+          "body": "When someone shares something today, try naming the feeling you hear, like “That sounds tough.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-5-2",
+      "level": 5,
+      "title": "Hear the Feeling Underneath",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Anger often hides hurt. Listen for what’s beneath.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Feelings come in layers",
+          "body": "Anger is often the top layer, with hurt, fear or disappointment underneath. Listening for that deeper feeling helps you respond to what really matters.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the surface feeling to what might be underneath.",
+          "pairs": [
+            {
+              "a": "Angry about being late",
+              "b": "Worried something happened"
+            },
+            {
+              "a": "Irritated about chores",
+              "b": "Feeling unappreciated"
+            },
+            {
+              "a": "Snappy about plans",
+              "b": "Anxious about the event"
+            }
+          ],
+          "why": "Responding to the deeper feeling often calms the surface one quickly."
+        },
+        {
+          "kind": "scene",
+          "title": "Angry on arrival",
+          "them": "Your mum",
+          "lines": [
+            {
+              "from": "them",
+              "text": "You said you’d be here at six! It’s nearly eight!"
+            },
+            {
+              "from": "them",
+              "text": "I’ve been sat here waiting!"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Calm down, it’s not a big deal.",
+              "reaction": "Not a big deal?!",
+              "why": "Dismissing the anger misses the worry underneath it."
+            },
+            {
+              "text": "Traffic was awful, it wasn’t my fault.",
+              "reaction": "You could have called!",
+              "why": "Defending yourself skips over how she felt while waiting."
+            },
+            {
+              "text": "I’m so sorry. Were you worried something had happened?",
+              "correct": true,
+              "reaction": "…Yes. I was really worried.",
+              "why": "You heard the fear beneath her anger, which helped her soften."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which feeling do you most often hide under anger?",
+          "options": [
+            "Hurt",
+            "Worry",
+            "Embarrassment",
+            "Disappointment"
+          ],
+          "reply": "Knowing your own layers makes it easier to spot them in others."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone is angry with you, ask yourself: what might they be feeling underneath this?"
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-5-3",
+      "level": 5,
+      "title": "Don’t Rush to Cheer",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Cheering someone up too fast can feel like being hushed.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Sit with it first",
+          "body": "When someone is sad, it’s tempting to jump to “Look on the bright side!” But rushing to cheer them up can feel like their sadness isn’t allowed. Sit with them first.",
+          "mood": "sad"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Sitting with it, or rushing to cheer?",
+          "left": "Sits with it",
+          "right": "Rushing",
+          "cards": [
+            {
+              "text": "“That sounds really hard.”",
+              "side": "left"
+            },
+            {
+              "text": "“Cheer up, it could be worse!”",
+              "side": "right"
+            },
+            {
+              "text": "“I’m sorry you’re going through this.”",
+              "side": "left"
+            },
+            {
+              "text": "“Everything happens for a reason.”",
+              "side": "right"
+            }
+          ],
+          "why": "Acknowledging sadness helps it pass more naturally. Rushing to cheer can make people feel unheard."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend is sad their relationship ended. What’s the most supportive first response?",
+          "options": [
+            {
+              "text": "“Plenty more fish in the sea!”",
+              "why": "Jumping ahead can feel like you’re dismissing their loss."
+            },
+            {
+              "text": "“You’re better off without them anyway.”",
+              "why": "Judging the ex can feel awkward if they still care about them."
+            },
+            {
+              "text": "“I’m so sorry. That must really hurt.”",
+              "correct": true,
+              "why": "It honours their sadness before anything else."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you usually do when someone’s sad?",
+          "options": [
+            "Try to fix it",
+            "Try to cheer them up",
+            "Sit with them",
+            "Feel awkward"
+          ],
+          "reply": "All come from caring. Sitting with them first is often the kindest start."
+        },
+        {
+          "kind": "try",
+          "body": "When someone shares sadness this week, acknowledge it before offering any cheer or advice."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-6",
+      "level": 6,
+      "title": "Listen First, Reply Later",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "In a disagreement, hear them out before you respond.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The hardest time to listen",
+          "body": "In an argument, we tend to listen only to find holes in what they say. Truly listening first, even when you disagree, often calms things and leads to better solutions.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner is explaining why they’re upset with you. You disagree. What’s best?",
+          "options": [
+            {
+              "text": "Interrupt to correct their facts.",
+              "why": "Interrupting makes them feel unheard and usually escalates things."
+            },
+            {
+              "text": "Let them finish, then reflect back what you heard.",
+              "correct": true,
+              "why": "Hearing them fully first makes them more ready to hear your side."
+            },
+            {
+              "text": "Stay silent, then walk away.",
+              "why": "Silence and leaving can feel like dismissal."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order listening well in a disagreement.",
+          "items": [
+            "Let them finish",
+            "Reflect back what you heard",
+            "Ask if you got it right",
+            "Then share your view"
+          ],
+          "why": "When people feel fully heard, they’re far more open to hearing you in return."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "In disagreements, how well do you listen?",
+          "options": [
+            "Very well",
+            "Better when calm",
+            "I tend to interrupt",
+            "I shut down"
+          ],
+          "reply": "Most people find it hard. Even small improvements make a real difference."
+        },
+        {
+          "kind": "try",
+          "body": "In your next disagreement, let the other person finish completely before you say anything."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-6-2",
+      "level": 6,
+      "title": "Sum It Up First",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "A quick summary proves you heard before you respond.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Show you got it",
+          "body": "Before replying in a tense moment, try summing up their point: “So you feel I don’t help enough at weekends?” It proves you heard and gives them a chance to correct you.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Sum up their point.",
+          "before": "So, if I’ve got this right, you feel",
+          "after": "when I make plans without you?",
+          "words": [
+            "left out",
+            "silly",
+            "wrong"
+          ],
+          "answer": "left out",
+          "why": "A fair summary of their feeling shows you listened, which calms the conversation."
+        },
+        {
+          "kind": "scene",
+          "title": "A frustrated friend",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I feel like I always have to organise everything."
+            },
+            {
+              "from": "them",
+              "text": "It’s exhausting."
+            }
+          ],
+          "prompt": "What’s the best reply?",
+          "options": [
+            {
+              "text": "So it feels like the planning always falls on you, and it’s wearing you out?",
+              "correct": true,
+              "reaction": "Yes! Exactly that.",
+              "why": "Your summary showed you understood, so they feel heard."
+            },
+            {
+              "text": "That’s not true, I planned that dinner in May.",
+              "reaction": "One dinner…",
+              "why": "Correcting them ignores how they feel right now."
+            },
+            {
+              "text": "Then stop organising things.",
+              "reaction": "That’s not the point.",
+              "why": "A quick fix misses their need to be understood."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you check you’ve understood before replying?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ],
+          "reply": "A quick summary is a simple habit that prevents many misunderstandings."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone shares a frustration, sum up what you heard before giving your response."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-6-3",
+      "level": 6,
+      "title": "Hear Criticism Calmly",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Listen to criticism fully before you decide what to do with it.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listen, then decide",
+          "body": "When criticised, we often stop listening and start defending. Hearing the whole point first, calmly, lets you decide what’s fair and what isn’t.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Listening to criticism, or blocking it?",
+          "left": "Listening",
+          "right": "Blocking",
+          "cards": [
+            {
+              "text": "“Go on, I’m listening.”",
+              "side": "left"
+            },
+            {
+              "text": "“That’s rubbish!”",
+              "side": "right"
+            },
+            {
+              "text": "“Can you give me an example?”",
+              "side": "left"
+            },
+            {
+              "text": "Rolling your eyes",
+              "side": "right"
+            }
+          ],
+          "why": "Listening lets you find what’s useful. Blocking means you miss it, and the other person feels dismissed."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your housemate says you’re always loud late at night. What’s the best first response?",
+          "options": [
+            {
+              "text": "“You’re loud too!”",
+              "why": "Hitting back shuts down the conversation."
+            },
+            {
+              "text": "“Can you tell me which nights it’s been a problem?”",
+              "correct": true,
+              "why": "Asking for detail shows you’re listening and want to understand."
+            },
+            {
+              "text": "“I’m not loud.” and walk off.",
+              "why": "Denial and leaving leave the problem unsolved."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What helps you stay calm when criticised?",
+          "options": [
+            "Breathing",
+            "Asking questions",
+            "It’s just one point",
+            "Still working on it"
+          ],
+          "reply": "Whatever helps, practise it in small moments so it’s ready for bigger ones."
+        },
+        {
+          "kind": "try",
+          "body": "When you hear criticism this week, ask for one example before you respond."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-7",
+      "level": 7,
+      "title": "Read It Twice",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Listening in messages means reading slowly and fully.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Skimming misses things",
+          "body": "We often skim messages and reply to the first line. Reading the whole message, twice if it matters, helps you catch the question, worry or feeling inside it.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend sends a long message about their week, ending with “Anyway, how are you?” What’s best?",
+          "options": [
+            {
+              "text": "Reply “Good thanks!” and nothing else.",
+              "why": "Answering only the last line can make them feel their news wasn’t read."
+            },
+            {
+              "text": "Respond to what they shared, then answer their question.",
+              "correct": true,
+              "why": "Replying to their news first shows you really read it."
+            },
+            {
+              "text": "Send a funny meme.",
+              "why": "A meme alone can feel like you skipped their message."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match what’s hidden in the message to a good reply.",
+          "pairs": [
+            {
+              "a": "A worry at the end",
+              "b": "“You mentioned feeling nervous…”"
+            },
+            {
+              "a": "Good news buried in the middle",
+              "b": "“Wait, you got the flat?!”"
+            },
+            {
+              "a": "A small question",
+              "b": "“To answer your question…”"
+            }
+          ],
+          "why": "Careful reading catches the bits that matter most, which makes your reply feel personal."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you skim messages?",
+          "options": [
+            "Usually",
+            "When busy",
+            "Sometimes",
+            "Rarely"
+          ],
+          "reply": "When a message really matters, reading it twice is a small habit with a big effect."
+        },
+        {
+          "kind": "try",
+          "body": "Before replying to an important message today, read the whole thing twice."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-7-2",
+      "level": 7,
+      "title": "Reply to the Feeling",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "In texts, respond to the emotion, not just the facts.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Feelings hide in texts",
+          "body": "“Just failed my driving test again lol” has a fact and a feeling. Responding only to the fact, “When’s the next one?”, can miss the disappointment behind the “lol”.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Bad news with a lol",
+          "them": "Your cousin",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Didn’t get into the uni I wanted lol"
+            },
+            {
+              "from": "them",
+              "text": "Oh well 🤷"
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Oh no 😔 I know how much you wanted that one. How are you feeling?",
+              "correct": true,
+              "reaction": "Honestly pretty gutted. Thanks for asking.",
+              "why": "You looked past the “lol” and replied to the feeling underneath."
+            },
+            {
+              "text": "Which ones did you get into?",
+              "reaction": "A couple.",
+              "why": "Jumping to logistics skips the disappointment they’re hiding."
+            },
+            {
+              "text": "Lol, unis are overrated anyway.",
+              "reaction": "Yeah… I guess.",
+              "why": "Matching the joke can leave their real feelings unspoken."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Reply to the feeling.",
+          "before": "That sounds",
+          "after": "Want to talk about it?",
+          "words": [
+            "really disappointing.",
+            "fine.",
+            "funny."
+          ],
+          "answer": "really disappointing.",
+          "why": "Naming the likely feeling shows you read between the lines."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do people around you hide feelings in jokes or emojis?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "I do it myself"
+          ],
+          "reply": "Noticing it is a gift. A gentle check-in can let them know it’s okay to be real."
+        },
+        {
+          "kind": "try",
+          "body": "When a message seems to hide a feeling behind a joke, gently ask how they’re really doing."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-7-3",
+      "level": 7,
+      "title": "Reply When You Can Focus",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Important messages deserve a reply when you can think.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Rushed replies miss things",
+          "body": "Replying to a heartfelt message while rushing can lead to a short, careless answer. It’s okay to say “I want to reply properly later” and come back when you can focus.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Reply now, or reply properly later?",
+          "left": "Reply now",
+          "right": "Properly later",
+          "cards": [
+            {
+              "text": "“What time are we meeting?”",
+              "side": "left"
+            },
+            {
+              "text": "A long message about a break-up",
+              "side": "right"
+            },
+            {
+              "text": "“Can you grab milk?”",
+              "side": "left"
+            },
+            {
+              "text": "A friend sharing a big worry",
+              "side": "right"
+            }
+          ],
+          "why": "Quick questions suit quick replies. Heartfelt messages deserve your full attention."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You get a long, emotional message from your brother while on the bus. What’s best?",
+          "options": [
+            {
+              "text": "Fire off a quick “That sucks” reply.",
+              "why": "A rushed reply can feel like you didn’t take it seriously."
+            },
+            {
+              "text": "Ignore it until tomorrow without a word.",
+              "why": "Silence after something emotional can leave him anxious."
+            },
+            {
+              "text": "“Just read this. I want to reply properly. Can I call you tonight?”",
+              "correct": true,
+              "why": "It shows you care and promises the attention his message deserves."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you usually reply to important messages?",
+          "options": [
+            "Straight away",
+            "When I’m free",
+            "Much later",
+            "I often forget"
+          ],
+          "reply": "A quick “I’ll reply properly later” can bridge the gap until you can focus."
+        },
+        {
+          "kind": "try",
+          "body": "If you get an important message at a busy moment, send a short holding reply and respond properly later."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-8",
+      "level": 8,
+      "title": "Let Pauses Breathe",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "A pause often comes just before the important part.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Don’t rush the silence",
+          "body": "When someone pauses, they’re often finding the words for something important. Jumping in too quickly can stop them sharing what matters most.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend is talking about their family, then goes quiet for a moment. What’s best?",
+          "options": [
+            {
+              "text": "Change the subject to fill the silence.",
+              "why": "Filling the gap might stop them saying something important."
+            },
+            {
+              "text": "Wait gently, with a warm look.",
+              "correct": true,
+              "why": "A patient pause gives them space to continue when ready."
+            },
+            {
+              "text": "Start telling your own family story.",
+              "why": "Taking over the moment can mean they never finish theirs."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a calm way to handle a pause.",
+          "items": [
+            "Notice the pause",
+            "Stay quiet and relaxed",
+            "Keep a warm expression",
+            "Let them continue"
+          ],
+          "why": "Staying calm and warm in the silence shows them there’s no rush to speak."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel during silences in conversation?",
+          "options": [
+            "Comfortable",
+            "A bit awkward",
+            "Very uncomfortable",
+            "Depends who I’m with"
+          ],
+          "reply": "Silence gets easier with practice, and it can lead to the most meaningful moments."
+        },
+        {
+          "kind": "try",
+          "body": "Next time there’s a pause in a conversation, count to five in your head before speaking."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-8-2",
+      "level": 8,
+      "title": "Comfortable Quiet",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Being together in silence can be deeply connecting.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Silence isn’t empty",
+          "body": "With close people, you don’t always need to talk. Sitting together quietly, on a walk or a sofa, can feel just as connecting as a long chat.",
+          "mood": "sleepy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Comfortable quiet, or awkward?",
+          "left": "Comfortable",
+          "right": "Awkward",
+          "cards": [
+            {
+              "text": "Watching a sunset together",
+              "side": "left"
+            },
+            {
+              "text": "Silent treatment after a row",
+              "side": "right"
+            },
+            {
+              "text": "Reading side by side",
+              "side": "left"
+            },
+            {
+              "text": "Ignoring each other on purpose",
+              "side": "right"
+            }
+          ],
+          "why": "Comfortable quiet is shared and relaxed. Silence used to punish feels very different."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re on a long walk with your grandad and neither of you is talking. What’s best?",
+          "options": [
+            {
+              "text": "Enjoy the quiet; chat when something comes up.",
+              "correct": true,
+              "why": "Comfortable quiet is a sign of an easy, close relationship."
+            },
+            {
+              "text": "Fill every moment with questions.",
+              "why": "Constant questions can make a peaceful walk feel tiring."
+            },
+            {
+              "text": "Put your headphones in.",
+              "why": "Headphones can feel like you’ve left the shared moment."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who can you be comfortably quiet with?",
+          "options": [
+            "My partner",
+            "A parent",
+            "A close friend",
+            "Nobody yet"
+          ],
+          "reply": "That kind of ease is precious. Enjoy it when you’re with them."
+        },
+        {
+          "kind": "try",
+          "body": "Spend a few minutes in relaxed, comfortable quiet with someone close today, without filling it."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-8-3",
+      "level": 8,
+      "title": "Don’t Fill Every Gap",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Holding back your words gives theirs more room.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Less talking, more hearing",
+          "body": "Some of us fill every gap with words, advice or stories. Talking a little less creates space for the other person to say more of what’s really on their mind.",
+          "mood": "curious"
+        },
+        {
+          "kind": "scene",
+          "title": "A hesitant friend",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I’ve been thinking a lot about… stuff."
+            },
+            {
+              "from": "them",
+              "text": "I don’t know."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Stuff like work? Love life? Family? Money?",
+              "reaction": "Um… I don’t know. Never mind.",
+              "why": "Rapid guesses can overwhelm them before they’re ready."
+            },
+            {
+              "text": "Take your time. I’m listening.",
+              "correct": true,
+              "reaction": "Thanks… okay, so…",
+              "why": "Giving space without filling it lets them find their words."
+            },
+            {
+              "text": "Same! I’ve been thinking about loads too…",
+              "reaction": "Oh. Yeah.",
+              "why": "Turning it to yourself takes over the space they needed."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make space for them.",
+          "before": "No rush at all.",
+          "after": "",
+          "words": [
+            "I’m here.",
+            "Spit it out.",
+            "Me too, actually…"
+          ],
+          "answer": "I’m here.",
+          "why": "It reassures them and leaves the space open for them to continue."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you tend to fill silences?",
+          "options": [
+            "Yes, a lot",
+            "Sometimes",
+            "Rarely",
+            "I prefer quiet"
+          ],
+          "reply": "Talking a little less can help others share a little more."
+        },
+        {
+          "kind": "try",
+          "body": "In your next conversation, aim to speak a little less and leave more room for the other person."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-9",
+      "level": 9,
+      "title": "Remember Names",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Remembering names shows people they matter to you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Names matter",
+          "body": "Remembering the names of someone’s partner, child or pet shows you listened. A simple trick is to repeat the name back when you first hear it.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your colleague mentions their daughter, Maya, is starting school. A week later, what’s best?",
+          "options": [
+            {
+              "text": "“How’s your kid getting on?”",
+              "why": "Kind, but forgetting the name makes it feel less personal."
+            },
+            {
+              "text": "“How’s Maya finding school?”",
+              "correct": true,
+              "why": "Using her name shows you really listened and remembered."
+            },
+            {
+              "text": "Avoid asking in case you get it wrong.",
+              "why": "Not asking at all misses a chance to show you care."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a simple trick for remembering names.",
+          "items": [
+            "Hear the name",
+            "Repeat it back once",
+            "Use it in the chat",
+            "Note it down later"
+          ],
+          "why": "Repeating and using a name helps it stick. A quick note makes sure you remember next time."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which names do you find hardest to remember?",
+          "options": [
+            "New people",
+            "Partners of friends",
+            "Children’s names",
+            "Pets’ names"
+          ],
+          "reply": "Try the repeat-back trick next time you hear one. It really helps."
+        },
+        {
+          "kind": "try",
+          "body": "When you hear a new name today, repeat it back once and use it later in the chat."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-9-2",
+      "level": 9,
+      "title": "Recall Their Stories",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Bringing up something they told you shows you care.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Stories are gifts",
+          "body": "When someone tells you about their trip, their worries or their plans, they’re sharing a piece of their life. Remembering and mentioning it later shows you value them.",
+          "mood": "content"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match what they told you to a thoughtful follow-up.",
+          "pairs": [
+            {
+              "a": "They were nervous about a speech",
+              "b": "“How did the speech go?”"
+            },
+            {
+              "a": "They were planning a trip",
+              "b": "“Did you book Portugal?”"
+            },
+            {
+              "a": "They had a falling-out",
+              "b": "“Have things settled with Sam?”"
+            }
+          ],
+          "why": "Specific follow-ups show you listened closely and kept them in mind."
+        },
+        {
+          "kind": "scene",
+          "title": "You remembered",
+          "them": "Your neighbour",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Morning!"
+            },
+            {
+              "from": "them",
+              "text": "Lovely day, isn’t it?"
+            }
+          ],
+          "prompt": "Last week they said their garden was struggling. Reply?",
+          "options": [
+            {
+              "text": "Morning! Lovely, yes.",
+              "reaction": "Have a good one!",
+              "why": "Polite, but it misses a chance to show you remembered."
+            },
+            {
+              "text": "Morning! Has your garden perked up with the sun?",
+              "correct": true,
+              "reaction": "You remembered! Yes, the roses are back 🌹",
+              "why": "Recalling their story made a simple greeting feel personal."
+            },
+            {
+              "text": "Morning. Busy, sorry!",
+              "reaction": "Oh, okay!",
+              "why": "Rushing off misses a small chance for connection."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How good are you at recalling people’s stories?",
+          "options": [
+            "Very good",
+            "Okay",
+            "I forget easily",
+            "Only with close people"
+          ],
+          "reply": "A few quick notes in your phone can make you surprisingly good at this."
+        },
+        {
+          "kind": "try",
+          "body": "Bring up something someone told you last week and ask how it turned out."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-9-3",
+      "level": 9,
+      "title": "Bring It Back Later",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Returning to an earlier talk shows it stayed with you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Listening continues after",
+          "body": "Saying “I’ve been thinking about what you said yesterday” shows that their words stayed with you. It deepens trust and makes people feel truly heard.",
+          "mood": "happy"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Bring it back.",
+          "before": "I’ve been",
+          "after": "about what you said about your job.",
+          "words": [
+            "thinking",
+            "forgetting",
+            "laughing"
+          ],
+          "answer": "thinking",
+          "why": "Saying you’ve been thinking about it shows their words mattered to you."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Yesterday your partner mentioned feeling stuck in a rut. What could you do today?",
+          "options": [
+            {
+              "text": "Wait for them to bring it up again.",
+              "why": "They may not, especially if they’re unsure you were listening."
+            },
+            {
+              "text": "“I’ve been thinking about what you said. Fancy trying something new this weekend?”",
+              "correct": true,
+              "why": "Bringing it back shows it stayed with you and offers support."
+            },
+            {
+              "text": "Tell them everyone feels stuck sometimes.",
+              "why": "It may be true, but it can sound like you’re brushing it aside."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shows it stayed with you, or not?",
+          "left": "Stayed with me",
+          "right": "Didn’t",
+          "cards": [
+            {
+              "text": "“I keep thinking about your idea.”",
+              "side": "left"
+            },
+            {
+              "text": "“Wait, what were we talking about?”",
+              "side": "right"
+            },
+            {
+              "text": "“How are you feeling about it now?”",
+              "side": "left"
+            },
+            {
+              "text": "Never mentioning it again",
+              "side": "right"
+            }
+          ],
+          "why": "Coming back to a conversation shows care long after the moment has passed."
+        },
+        {
+          "kind": "try",
+          "body": "Bring up something meaningful someone said to you recently, and tell them you’ve been thinking about it."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-10",
+      "level": 10,
+      "title": "Hear the Ask",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "People often hint at what they need. Listen for it.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Hidden requests",
+          "body": "“I’m so tired lately” might mean “Could you help more?” “Nobody ever asks about my day” might mean “Please ask about my day.” Listening for the hidden ask helps you respond to what they need.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the comment to the hidden ask.",
+          "pairs": [
+            {
+              "a": "“I never get any time to myself.”",
+              "b": "“Could I have a quiet evening?”"
+            },
+            {
+              "a": "“We never go out any more.”",
+              "b": "“Can we plan a date?”"
+            },
+            {
+              "a": "“I’m swamped with all this.”",
+              "b": "“Could you help me?”"
+            }
+          ],
+          "why": "Hearing the need behind the comment lets you offer the help they’re quietly hoping for."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your mum says, “I haven’t seen the grandkids in ages.” What’s the best response?",
+          "options": [
+            {
+              "text": "“Yeah, we’ve been so busy.”",
+              "why": "True, but it misses the clear wish underneath."
+            },
+            {
+              "text": "“Would you like to come over on Sunday to see them?”",
+              "correct": true,
+              "why": "You heard the hidden ask and offered exactly what she wanted."
+            },
+            {
+              "text": "“You saw them at Christmas.”",
+              "why": "Correcting her can make her feel her feelings are wrong."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you tend to hint rather than ask?",
+          "options": [
+            "Often",
+            "Sometimes",
+            "Rarely",
+            "Never"
+          ],
+          "reply": "Knowing your own hinting can help you spot it in others, and ask more directly yourself."
+        },
+        {
+          "kind": "try",
+          "body": "Listen today for one comment that might hide a request, and gently offer what they might need."
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-10-2",
+      "level": 10,
+      "title": "Needs Behind Words",
+      "minutes": 4,
+      "focus": "listening",
+      "summary": "Ask what someone needs from you: advice, help or a listener.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Three kinds of support",
+          "body": "When someone shares a problem, they might want advice, practical help or simply to be heard. Asking which they’d like means you give the right kind of support.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "What might they want most?",
+          "left": "To be heard",
+          "right": "Practical help",
+          "cards": [
+            {
+              "text": "“I just need to vent.”",
+              "side": "left"
+            },
+            {
+              "text": "“I can’t lift this sofa alone.”",
+              "side": "right"
+            },
+            {
+              "text": "“Today was so hard.”",
+              "side": "left"
+            },
+            {
+              "text": "“I don’t know how to fill in this form.”",
+              "side": "right"
+            }
+          ],
+          "why": "Different moments need different support. Matching it to their need makes it feel just right."
+        },
+        {
+          "kind": "scene",
+          "title": "A tough day",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Today was the worst. My presentation went badly."
+            },
+            {
+              "from": "them",
+              "text": "Ugh."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Next time just practise more.",
+              "reaction": "Thanks, very helpful 🙄",
+              "why": "Advice too soon can feel like criticism when they need comfort."
+            },
+            {
+              "text": "Oh no 😔 Do you want to talk it through, or shall I just bring snacks and hugs?",
+              "correct": true,
+              "reaction": "Snacks and hugs please 🥹",
+              "why": "Asking what they need meant you could give exactly the right support."
+            },
+            {
+              "text": "My day was rubbish too.",
+              "reaction": "Oh. Right.",
+              "why": "Switching to your day misses their need to be heard."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When you share a problem, what do you usually want?",
+          "options": [
+            "Advice",
+            "Practical help",
+            "To be heard",
+            "It changes"
+          ],
+          "reply": "Knowing your own needs makes it easier to ask others what they’d like too."
+        },
+        {
+          "kind": "try",
+          "body": "Next time someone shares a problem, ask: “Do you want advice, help, or just someone to listen?”"
+        }
+      ]
+    },
+    {
+      "id": "rf-listening-10-3",
+      "level": 10,
+      "title": "Keep Listening",
+      "minutes": 3,
+      "focus": "listening",
+      "summary": "Great listening is a habit you can keep growing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A lifelong skill",
+          "body": "Listening well is never finished. Each conversation is a chance to practise: putting the phone away, asking “tell me more”, naming feelings and remembering what matters.",
+          "mood": "happy"
+        },
+        {
+          "kind": "order",
+          "prompt": "Order a great listening moment.",
+          "items": [
+            "Put distractions away",
+            "Listen fully without planning",
+            "Name the feeling you hear",
+            "Ask what they need"
+          ],
+          "why": "Each step builds on the last, from full attention to understanding to the right kind of support."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve got better at listening, but slip back into old habits when busy. What helps?",
+          "options": [
+            {
+              "text": "Accept you’re just not a good listener.",
+              "why": "Slipping is normal; it doesn’t erase your progress."
+            },
+            {
+              "text": "Pick one listening habit to focus on each week.",
+              "correct": true,
+              "why": "One small focus at a time keeps the skill growing, even in busy weeks."
+            },
+            {
+              "text": "Only listen properly on special occasions.",
+              "why": "Everyday moments are where listening matters most."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the habit to the lesson it came from.",
+          "pairs": [
+            {
+              "a": "Phone out of sight",
+              "b": "Full attention"
+            },
+            {
+              "a": "“Tell me more”",
+              "b": "Open questions"
+            },
+            {
+              "a": "“That sounds hard”",
+              "b": "Hearing emotions"
+            }
+          ],
+          "why": "Remembering where each habit came from helps you reach for the right one in the moment."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most about listening in these lessons?",
+          "options": [
+            "Full attention",
+            "Asking better questions",
+            "Hearing feelings",
+            "Holding silence"
+          ],
+          "reply": "Wonderful. Keep practising in small moments, and people will feel truly heard by you."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one listening habit from these lessons and use it in every conversation today."
+        }
+      ]
+    }
+  ]
+}

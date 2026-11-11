@@ -2,12 +2,16 @@
 /**
  * Checks a relationship journey JSON file against the rules in
  * content-prompts/relationship-journeys.md before it goes into the app.
+ * Also checks a skill refresher's levels file (levels 2–10; level 1 is the
+ * refresher's original lessons in ./courses/<id>.ts).
  *
  *   node scripts/check-journey.mjs src/features/learn/journeys/partner.json
+ *   node scripts/check-journey.mjs src/features/learn/courses/trust-levels.json
  *
  * Exits with code 1 and lists every problem if anything is wrong.
  */
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 const RELATIONSHIPS = ['partner', 'dating', 'family', 'friends', 'work', 'self'];
 const FOCUS = ['communication', 'trust', 'boundaries', 'conflict', 'connection', 'listening'];
@@ -68,11 +72,18 @@ if (!Array.isArray(data.lessons)) {
   process.exit(0);
 }
 
-if (!RELATIONSHIPS.includes(data.relationship)) say('relationship', `must be one of ${RELATIONSHIPS.join(', ')}`);
-max('journeyTitle', data.journeyTitle, 28);
-max('journeyIntro', data.journeyIntro, 140);
-quotes('journeyTitle', data.journeyTitle);
-quotes('journeyIntro', data.journeyIntro);
+// A skill refresher's levels file: { course, levels, lessons } with lessons for levels 2–10 only.
+const refresher = typeof data.course === 'string';
+if (refresher) {
+  if (!FOCUS.includes(data.course)) say('course', `must be one of ${FOCUS.join(', ')}`);
+} else {
+  if (!RELATIONSHIPS.includes(data.relationship)) say('relationship', `must be one of ${RELATIONSHIPS.join(', ')}`);
+  max('journeyTitle', data.journeyTitle, 28);
+  max('journeyIntro', data.journeyIntro, 140);
+  quotes('journeyTitle', data.journeyTitle);
+  quotes('journeyIntro', data.journeyIntro);
+}
+const idPrefix = refresher ? `rf-${data.course}` : data.relationship;
 
 const lessons = Array.isArray(data.lessons) ? data.lessons : [];
 
@@ -85,7 +96,7 @@ if (leveled) {
   if (data.levels.length !== 10) say('levels', `expected 10 level titles, found ${data.levels.length}`);
   const COLORS = ['pink', 'lavender', 'blue', 'yellow', 'mint', 'purple', 'peach'];
   // Every icon name the app can draw, read from the icon files so this list never goes stale.
-  const iconSource = ['topic-icons.tsx', 'topic-icons-more.tsx']
+  const iconSource = ['topic-icons.tsx', 'topic-icons-more.tsx', 'topic-icons-refreshers.tsx']
     .map((f) => readFileSync(new URL(`../src/components/bondly/${f}`, import.meta.url), 'utf8'))
     .join('\n');
   const ICONS = [...iconSource.matchAll(/^\s+'([a-z]+)',$/gm)].map((m) => m[1]);
@@ -96,18 +107,40 @@ if (leveled) {
     if (!ICONS.includes(lv?.icon)) say(at, `icon must be one of ${ICONS.join(', ')}`);
     if (!COLORS.includes(lv?.color)) say(at, `color must be one of ${COLORS.join(', ')}`);
   });
+  // Every level in the app has its own picture: no repeats here or in any other journey or refresher.
+  const mine = data.levels.map((lv) => lv?.icon);
+  mine.forEach((icon, i) => {
+    if (mine.indexOf(icon) !== i) say(`level ${i + 1}`, `icon "${icon}" is already used by level ${mine.indexOf(icon) + 1}`);
+  });
+  for (const dir of ['journeys', 'courses']) {
+    const folder = new URL(`../src/features/learn/${dir}/`, import.meta.url);
+    for (const name of readdirSync(folder)) {
+      if (!name.endsWith('.json') || new URL(name, folder).pathname === resolve(file)) continue;
+      let other;
+      try {
+        other = JSON.parse(readFileSync(new URL(name, folder), 'utf8'));
+      } catch {
+        continue;
+      }
+      for (const lv of Array.isArray(other.levels) ? other.levels : []) {
+        const i = mine.indexOf(lv?.icon);
+        if (i >= 0) say(`level ${i + 1}`, `icon "${lv.icon}" is already used in ${dir}/${name}`);
+      }
+    }
+  }
   let lastLevel = 0;
   const perLevel = new Map();
   for (const lesson of lessons) {
     const lv = lesson.level;
-    if (!Number.isInteger(lv) || lv < 1 || lv > 10) say(lesson.id ?? '?', 'level must be 1–10');
+    if (!Number.isInteger(lv) || lv < (refresher ? 2 : 1) || lv > 10)
+      say(lesson.id ?? '?', refresher ? 'level must be 2–10 (level 1 is the original lessons)' : 'level must be 1–10');
     else if (lv < lastLevel) say(lesson.id, 'lessons must be in level order');
     lastLevel = Math.max(lastLevel, lv ?? 0);
     const n = (perLevel.get(lv) ?? 0) + 1;
     perLevel.set(lv, n);
-    expectedIds.push(n === 1 ? `${data.relationship}-${lv}` : `${data.relationship}-${lv}-${n}`);
+    expectedIds.push(n === 1 ? `${idPrefix}-${lv}` : `${idPrefix}-${lv}-${n}`);
   }
-  for (let lv = 1; lv <= 10; lv++) {
+  for (let lv = refresher ? 2 : 1; lv <= 10; lv++) {
     const n = perLevel.get(lv) ?? 0;
     if (n < 3 || n > 5) say(`level ${lv}`, `needs 3–5 lessons, found ${n}`);
   }
@@ -129,7 +162,8 @@ lessons.forEach((lesson, li) => {
   quotes(`${at} title`, lesson.title);
   quotes(`${at} summary`, lesson.summary);
   if (![3, 4, 5].includes(lesson.minutes)) say(at, 'minutes must be 3, 4 or 5');
-  if (!FOCUS.includes(lesson.focus)) say(at, `focus must be one of ${FOCUS.join(', ')}`);
+  if (refresher && lesson.focus !== data.course) say(at, `focus must be "${data.course}"`);
+  else if (!FOCUS.includes(lesson.focus)) say(at, `focus must be one of ${FOCUS.join(', ')}`);
   else usedFocus.add(lesson.focus);
 
   const steps = Array.isArray(lesson.steps) ? lesson.steps : [];
@@ -286,7 +320,8 @@ if (lessons.length > 3 && answerPositions.size === 1) {
   say('blanks', 'the answer is always in the same place in the word bank; vary it');
 }
 
-const missingFocus = FOCUS.filter((f) => !usedFocus.has(f));
+// Journeys cover all six skills; a refresher practises just its own.
+const missingFocus = refresher ? [] : FOCUS.filter((f) => !usedFocus.has(f));
 if (missingFocus.length) say('focus areas', `not used: ${missingFocus.join(', ')}`);
 
 for (const w of warnings) console.log(`⚠︎ ${w}`);
@@ -296,5 +331,5 @@ if (problems.length) {
   process.exit(1);
 }
 console.log(
-  `✓ ${file} looks good: ${lessons.length} lessons, ${usedFocus.size}/6 skills${warnings.length ? `, ${warnings.length} quote warning(s)` : ''}.`
+  `✓ ${file} looks good: ${lessons.length} lessons, ${refresher ? data.course : `${usedFocus.size}/6 skills`}${warnings.length ? `, ${warnings.length} quote warning(s)` : ''}.`
 );

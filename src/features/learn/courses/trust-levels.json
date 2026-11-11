@@ -1,0 +1,1994 @@
+{
+  "course": "trust",
+  "levels": [
+    {
+      "title": "Trust Basics",
+      "icon": "acorn",
+      "color": "mint"
+    },
+    {
+      "title": "Keeping Your Word",
+      "icon": "ribbon",
+      "color": "pink"
+    },
+    {
+      "title": "Honest Answers",
+      "icon": "window",
+      "color": "blue"
+    },
+    {
+      "title": "Steady Under Stress",
+      "icon": "lighthouse",
+      "color": "yellow"
+    },
+    {
+      "title": "Privacy and Respect",
+      "icon": "vault",
+      "color": "lavender"
+    },
+    {
+      "title": "When You Don’t Know",
+      "icon": "owl",
+      "color": "peach"
+    },
+    {
+      "title": "Trusting Wisely",
+      "icon": "hourglass",
+      "color": "mint"
+    },
+    {
+      "title": "Small Letdowns",
+      "icon": "egg",
+      "color": "purple"
+    },
+    {
+      "title": "Rebuilding Slowly",
+      "icon": "bricks",
+      "color": "pink"
+    },
+    {
+      "title": "Trust That Lasts",
+      "icon": "nest",
+      "color": "blue"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-trust-2",
+      "level": 2,
+      "title": "Say What You’ll Do",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Clear promises are easier to keep than vague ones.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Vague promises slip",
+          "body": "“I’ll sort it soon” sounds kind, but nobody knows what “soon” means. A clear promise, like “I’ll call the landlord by Wednesday”, is easier to keep and easier to trust.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner asks you to fix the wobbly shelf. Which reply builds the most trust?",
+          "options": [
+            {
+              "text": "“Yeah, yeah, I’ll get to it.”",
+              "why": "It sounds like a brush-off, and there’s no way to tell when it will happen."
+            },
+            {
+              "text": "“I’ll do it on Saturday morning.”",
+              "correct": true,
+              "why": "A specific time turns a vague intention into a promise they can count on."
+            },
+            {
+              "text": "“Why does it always have to be me?”",
+              "why": "Complaining makes the request feel like a burden rather than something you’ll gladly do."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the promise clear.",
+          "before": "I’ll send you the photos",
+          "after": "",
+          "words": [
+            "at some point.",
+            "by tonight.",
+            "eventually."
+          ],
+          "answer": "by tonight.",
+          "why": "“By tonight” gives a clear finish line, so they know exactly when to expect them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which of your promises tend to stay vague?",
+          "options": [
+            "Chores",
+            "Calling people back",
+            "Paying people back",
+            "Making plans"
+          ],
+          "reply": "Good spot. Adding a day or time to just those will make a real difference."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you promise something, add a clear time or day to it, then write it down so you remember."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-2-2",
+      "level": 2,
+      "title": "When Plans Change",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Life happens. Telling people early keeps their trust intact.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Early warning beats silence",
+          "body": "Sometimes you can’t keep a promise. That’s human. What damages trust is the silence. Letting people know early, with a new plan, shows you still take them seriously.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Running late for lunch",
+          "them": "Your mum",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I’ve got us a table by the window! 😊"
+            },
+            {
+              "from": "them",
+              "text": "See you at 1?"
+            }
+          ],
+          "prompt": "You won’t make it until 1:30. What do you send?",
+          "options": [
+            {
+              "text": "Nothing yet. You’ll explain when you get there.",
+              "reaction": "…Where are you? 😟",
+              "why": "Leaving her waiting and wondering is what really chips away at trust."
+            },
+            {
+              "text": "Running 30 mins late, so sorry! Order a drink on me and I’ll be there by 1:30 💛",
+              "correct": true,
+              "reaction": "No problem, see you soon!",
+              "why": "Telling her early, with a new time and a kind gesture, keeps her trust and goodwill."
+            },
+            {
+              "text": "Might be a bit late, will see.",
+              "reaction": "Oh… how late?",
+              "why": "A vague warning leaves her unsure whether to wait or order."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a good change-of-plan message in order.",
+          "items": [
+            "Tell them as soon as you know",
+            "Say sorry briefly",
+            "Offer a new plan",
+            "Then stick to it"
+          ],
+          "why": "Speed matters most, then a short apology and a concrete new plan. Keeping the new plan is what rebuilds the trust."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When plans change, what do you usually do?",
+          "options": [
+            "Tell them straight away",
+            "Wait until the last minute",
+            "Hope they don’t notice",
+            "Over-explain"
+          ],
+          "reply": "Whatever your habit, “early and clear” is the version that keeps trust safest."
+        },
+        {
+          "kind": "try",
+          "body": "The next time a plan changes, message the person straight away with a short sorry and a clear new plan."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-2-3",
+      "level": 2,
+      "title": "Close the Loop",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Tell people when you’ve done what you said.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Finish out loud",
+          "body": "Doing what you promised is great. Letting the other person know it’s done is even better. A quick “Booked the restaurant!” saves them wondering and quietly builds trust.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Closes the loop, or leaves it open?",
+          "left": "Closes it",
+          "right": "Leaves it open",
+          "cards": [
+            {
+              "text": "“Paid you back, check your account!”",
+              "side": "left"
+            },
+            {
+              "text": "Quietly doing it and saying nothing",
+              "side": "right"
+            },
+            {
+              "text": "“Spoke to the vet, all sorted.”",
+              "side": "left"
+            },
+            {
+              "text": "“I think I did that… maybe?”",
+              "side": "right"
+            }
+          ],
+          "why": "A short update means they never have to chase. Silence or uncertainty makes them wonder whether to trust it’s done."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You promised to email your friend a recipe. You’ve now sent it. What’s best?",
+          "options": [
+            {
+              "text": "Assume they’ll see it eventually.",
+              "why": "If it lands in spam, they may think you forgot."
+            },
+            {
+              "text": "Wait for them to ask about it.",
+              "why": "Making them chase undoes some of the good of keeping your word."
+            },
+            {
+              "text": "Send a quick “Just emailed it!” message.",
+              "correct": true,
+              "why": "A tiny nudge confirms you followed through and saves them checking."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who have you done something for but not told yet?",
+          "options": [
+            "My partner",
+            "A friend",
+            "Family",
+            "A colleague"
+          ],
+          "reply": "A two-second “Done!” message will finish the job nicely."
+        },
+        {
+          "kind": "try",
+          "body": "When you finish something you promised today, send a short “Done!” message to the person who was waiting."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-3",
+      "level": 3,
+      "title": "Tell the Small Truths",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Little white lies add up. Small honesty builds big trust.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Tiny lies, big cracks",
+          "body": "“I’m five minutes away” when you haven’t left yet seems harmless. But when people catch small fibs, they start to wonder what else isn’t true.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each white lie to an honest swap.",
+          "pairs": [
+            {
+              "a": "“Nearly there!”",
+              "b": "“Just leaving, 20 minutes.”"
+            },
+            {
+              "a": "“I loved it!”",
+              "b": "“It’s not my style, but thank you.”"
+            },
+            {
+              "a": "“My phone died.”",
+              "b": "“I needed a quiet evening.”"
+            }
+          ],
+          "why": "Honest swaps can still be kind. They protect your word, so people believe you when it really matters."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend asks if you watched the film they recommended. You haven’t. What’s best?",
+          "options": [
+            {
+              "text": "“Not yet! Is it worth a weekend watch?”",
+              "correct": true,
+              "why": "Honest and interested, it keeps the chat going without pretending."
+            },
+            {
+              "text": "“Yes, loved it!” and hope they don’t ask more.",
+              "why": "One follow-up question and the fib falls apart, which feels worse."
+            },
+            {
+              "text": "“I don’t really watch films you like.”",
+              "why": "Honest, but needlessly unkind about their taste."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which small fib do you tell most often?",
+          "options": [
+            "Running late",
+            "Being busy",
+            "Liking a gift",
+            "Being fine"
+          ],
+          "reply": "Knowing your go-to fib is useful. Try the honest version once and see how it feels."
+        },
+        {
+          "kind": "try",
+          "body": "Catch one small white lie today and replace it with a kind, honest version instead."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-3-2",
+      "level": 3,
+      "title": "Honest but Kind",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Honesty doesn’t need to be harsh to be true.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Truth with warmth",
+          "body": "Being honest isn’t the same as being blunt. You can tell the truth and still choose gentle words, good timing and a caring tone.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "The new haircut",
+          "them": "Your sister",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Be honest. Does this fringe suit me? 😬"
+            },
+            {
+              "from": "them",
+              "text": "I’m not sure about it…"
+            }
+          ],
+          "prompt": "You think it’s not her best look. What do you say?",
+          "options": [
+            {
+              "text": "It looks awful, sorry.",
+              "reaction": "Wow. Thanks.",
+              "why": "Honest, but the harsh word hurts more than it helps."
+            },
+            {
+              "text": "It’s a change! I loved your old style more, but it’ll grow on you.",
+              "correct": true,
+              "reaction": "Ha, fair. It’ll grow out anyway 😅",
+              "why": "You were truthful about your preference and kind about how you said it."
+            },
+            {
+              "text": "OMG it’s perfect!!",
+              "reaction": "Really? I don’t believe you 😂",
+              "why": "Over-the-top praise can make your compliments harder to trust later."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Add warmth to the truth.",
+          "before": "I can see how much work went into it, and",
+          "after": "the second half could be shorter.",
+          "words": [
+            "I think",
+            "obviously",
+            "everyone knows"
+          ],
+          "answer": "I think",
+          "why": "“I think” owns it as your view, which feels gentler than presenting it as an obvious fact."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Are you more likely to be too blunt or too vague?",
+          "options": [
+            "Too blunt",
+            "Too vague",
+            "It depends who it is",
+            "I get it about right"
+          ],
+          "reply": "Either way, aiming for “true and kind” gives you a good middle path."
+        },
+        {
+          "kind": "try",
+          "body": "When you’re next asked for an honest opinion, start with something genuinely positive, then share your view gently."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-3-3",
+      "level": 3,
+      "title": "No Hidden Agendas",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Say what you really want instead of steering people.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Steering feels sneaky",
+          "body": "Asking “Are you hungry?” when you really want to stop for food, or fishing for a compliment, can feel like being steered. Saying what you want openly builds trust.",
+          "mood": "curious"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Open request, or a hidden agenda?",
+          "left": "Open",
+          "right": "Hidden",
+          "cards": [
+            {
+              "text": "“I’d love to go to the beach this weekend.”",
+              "side": "left"
+            },
+            {
+              "text": "“Wouldn’t it be a shame to waste the sunshine?”",
+              "side": "right"
+            },
+            {
+              "text": "“Could I borrow your car on Friday?”",
+              "side": "left"
+            },
+            {
+              "text": "“So, are you using your car much this week?”",
+              "side": "right"
+            }
+          ],
+          "why": "Open requests let people say yes or no freely. Hidden agendas can leave them feeling cornered or tricked."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’d like your friend to come to your work party, but you’re nervous to ask. What’s best?",
+          "options": [
+            {
+              "text": "Keep mentioning how fun it’ll be until they offer.",
+              "why": "Hinting puts pressure on them while hiding your real ask."
+            },
+            {
+              "text": "Say you don’t mind either way, then sulk if they don’t come.",
+              "why": "Pretending not to care, then being hurt, confuses them and dents trust."
+            },
+            {
+              "text": "“Would you come with me? I’d feel more relaxed with you there.”",
+              "correct": true,
+              "why": "Clear, honest and shows why it matters, so they can give a real answer."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you find it hard to ask openly?",
+          "options": [
+            "When I might be turned down",
+            "When it feels selfish",
+            "With people I don’t know well",
+            "When it’s about feelings"
+          ],
+          "reply": "That’s really common. An open ask is often less awkward than the hinting that comes before it."
+        },
+        {
+          "kind": "try",
+          "body": "Make one request today completely openly: say what you want and why, with no hints or hooks."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-4",
+      "level": 4,
+      "title": "Be the Same on Bad Days",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "People trust you more when your mood doesn’t change the rules.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Predictable kindness",
+          "body": "If you’re warm one day and snappy the next, people start tiptoeing around you. Being roughly the same person on good and bad days makes you feel safe to be around.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve had an awful day and your flatmate asks a simple question. What keeps trust strong?",
+          "options": [
+            {
+              "text": "Snap, then apologise much later.",
+              "why": "Snapping teaches them to tread carefully, even if you say sorry eventually."
+            },
+            {
+              "text": "“Rough day, so I’m a bit quiet. Not about you!”",
+              "correct": true,
+              "why": "Naming your mood stops them guessing and protects the relationship."
+            },
+            {
+              "text": "Ignore them until you feel better.",
+              "why": "Silence can feel like a punishment when they’ve done nothing wrong."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name your mood kindly.",
+          "before": "I’m feeling a bit",
+          "after": "today, so bear with me.",
+          "words": [
+            "fine",
+            "frazzled",
+            "whatever"
+          ],
+          "answer": "frazzled",
+          "why": "Naming the real feeling helps them understand your mood isn’t about them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What tends to change most about you on bad days?",
+          "options": [
+            "My tone",
+            "My patience",
+            "How much I talk",
+            "How I reply to messages"
+          ],
+          "reply": "Good to know. A quick heads-up on bad days can stop that change from causing worry."
+        },
+        {
+          "kind": "try",
+          "body": "On your next tough day, tell someone close, “I’m having a hard day, it’s not about you.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-4-2",
+      "level": 4,
+      "title": "Show Up When It’s Hard",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Being there in tough moments builds the deepest trust.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Hard times are tests",
+          "body": "Anyone can be there for the fun bits. Trust deepens when you turn up for the difficult ones: the hospital visit, the moving day, the awful week.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "A friend’s bad news",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I didn’t get the job. I really thought I had it."
+            },
+            {
+              "from": "them",
+              "text": "Feeling pretty rubbish tbh 😔"
+            }
+          ],
+          "prompt": "You’re busy tonight. What do you send?",
+          "options": [
+            {
+              "text": "Oh no, I’m so sorry. Can I call you on my break in an hour?",
+              "correct": true,
+              "reaction": "That would really help, thank you 💛",
+              "why": "You showed up within your limits and gave a clear time they can count on."
+            },
+            {
+              "text": "Their loss! Anyway, gotta run.",
+              "reaction": "Oh. Okay.",
+              "why": "Rushing off makes them feel their bad news doesn’t matter much."
+            },
+            {
+              "text": "Leave it for now and reply tomorrow.",
+              "reaction": "…",
+              "why": "Silence in a hard moment can feel like being left alone."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shows up, or steps back?",
+          "left": "Shows up",
+          "right": "Steps back",
+          "cards": [
+            {
+              "text": "Dropping round with dinner",
+              "side": "left"
+            },
+            {
+              "text": "“Let me know if you need anything” and nothing more",
+              "side": "right"
+            },
+            {
+              "text": "Offering a specific day to help",
+              "side": "left"
+            },
+            {
+              "text": "Changing the subject when they’re upset",
+              "side": "right"
+            }
+          ],
+          "why": "Specific, practical support shows you mean it. General offers often leave people too shy to ask."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When someone you love has a hard time, what do you tend to do?",
+          "options": [
+            "Offer practical help",
+            "Send a kind message",
+            "Wait to be asked",
+            "Feel unsure what to do"
+          ],
+          "reply": "Any of these can be a start. A specific offer is often the easiest one for them to accept."
+        },
+        {
+          "kind": "try",
+          "body": "Think of someone going through a hard time. Offer them one specific bit of help, with a day or time."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-4-3",
+      "level": 4,
+      "title": "Keep Calm, Keep Trust",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "How you react to bad news decides if people bring it to you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Safe to tell you",
+          "body": "If people fear your reaction, they hide mistakes from you. Staying calm when someone shares bad news makes you the person they come to first.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your teenager admits they dented the car. What reaction builds the most trust?",
+          "options": [
+            {
+              "text": "“You did WHAT?!” and ban them from driving.",
+              "why": "A big blow-up teaches them to hide the next mistake."
+            },
+            {
+              "text": "Say nothing and stay cold for days.",
+              "why": "Silent punishment makes them anxious and less likely to be honest next time."
+            },
+            {
+              "text": "“Thanks for telling me. Are you okay? Let’s look at it together.”",
+              "correct": true,
+              "why": "Thanking them for honesty, then sorting it calmly, makes truth-telling feel safe."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a calm reaction to bad news in order.",
+          "items": [
+            "Breathe before you speak",
+            "Thank them for telling you",
+            "Check they’re okay",
+            "Then work out next steps"
+          ],
+          "why": "Calming yourself and thanking them first keeps honesty safe. Checking on them before the problem shows they matter most."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually react when someone confesses a mistake?",
+          "options": [
+            "I get cross",
+            "I go quiet",
+            "I stay calm",
+            "I make a joke"
+          ],
+          "reply": "Your reaction is a big part of whether they’ll be honest next time. That’s worth knowing."
+        },
+        {
+          "kind": "try",
+          "body": "When someone shares bad news with you this week, start your reply with “Thanks for telling me.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-5",
+      "level": 5,
+      "title": "Keep Their Secrets",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "What’s shared with you stays with you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Private means private",
+          "body": "When someone shares something personal, they’re trusting you with it. Passing it on, even to “just one person”, can undo years of trust in a moment.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "A tempting bit of gossip",
+          "them": "A mutual friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Have you heard anything about Sam and Jo? 👀"
+            },
+            {
+              "from": "them",
+              "text": "Something’s definitely going on!"
+            }
+          ],
+          "prompt": "Sam told you privately they’re splitting up. Reply?",
+          "options": [
+            {
+              "text": "Can’t say much but… yeah, it’s not good.",
+              "reaction": "Ooh, so something IS up!",
+              "why": "Hinting still gives the secret away, just more slowly."
+            },
+            {
+              "text": "That’s really theirs to share, so I’ll leave it with them.",
+              "correct": true,
+              "reaction": "Fair enough, you’re right.",
+              "why": "You kept Sam’s trust without lying or making a fuss."
+            },
+            {
+              "text": "Tell them everything, but ask them not to repeat it.",
+              "reaction": "Wow, poor Sam!",
+              "why": "Once it’s out, you can’t control where it goes next."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Protect a confidence.",
+          "before": "That’s not mine to share, so",
+          "after": "",
+          "words": [
+            "I’ll let them tell you.",
+            "promise you won’t say?",
+            "here’s the short version."
+          ],
+          "answer": "I’ll let them tell you.",
+          "why": "It’s honest and polite, and it keeps the secret firmly with its owner."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes keeping secrets hard?",
+          "options": [
+            "Being asked directly",
+            "Wanting to connect",
+            "Feeling worried for them",
+            "It’s easy for me"
+          ],
+          "reply": "All understandable. A ready-made line like “That’s theirs to share” makes it much easier."
+        },
+        {
+          "kind": "try",
+          "body": "Decide on your own short line for protecting secrets, like “That’s theirs to share”, so it’s ready when you need it."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-5-2",
+      "level": 5,
+      "title": "Ask Before Sharing",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Check before you post, forward or pass on someone’s news.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Their news, their choice",
+          "body": "Posting a photo, forwarding a message or sharing someone’s good news can feel harmless. But they may not be ready. A quick “Okay to share?” shows respect.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Fine to share, or ask first?",
+          "left": "Fine to share",
+          "right": "Ask first",
+          "cards": [
+            {
+              "text": "A group photo they’re in",
+              "side": "right"
+            },
+            {
+              "text": "Your own holiday photos",
+              "side": "left"
+            },
+            {
+              "text": "Their pregnancy news",
+              "side": "right"
+            },
+            {
+              "text": "A screenshot of their message",
+              "side": "right"
+            },
+            {
+              "text": "Your own exam results",
+              "side": "left"
+            }
+          ],
+          "why": "Your own news is yours to share. Anything involving someone else deserves a quick check first."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your best friend just got engaged and told you first. What’s the trustworthy move?",
+          "options": [
+            {
+              "text": "Post congratulations on social media straight away.",
+              "why": "They may want to tell family before the world finds out."
+            },
+            {
+              "text": "“So happy for you! Who else knows? I’ll keep it quiet until you share.”",
+              "correct": true,
+              "why": "You celebrate with them and let them decide when the news goes public."
+            },
+            {
+              "text": "Tell your other friends to start planning the party.",
+              "why": "Spreading it, even with good intentions, takes their big moment out of their hands."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you most often share without asking?",
+          "options": [
+            "Photos",
+            "Screenshots",
+            "Other people’s news",
+            "Nothing, I always ask"
+          ],
+          "reply": "A quick check before sharing those will protect a lot of trust."
+        },
+        {
+          "kind": "try",
+          "body": "Before you post or forward anything involving someone else today, ask them first."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-5-3",
+      "level": 5,
+      "title": "Respect Their Space",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Trust means not checking, snooping or tracking.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Checking erodes trust",
+          "body": "Reading someone’s messages or tracking where they are might feel reassuring for a moment. But it quietly says “I don’t trust you” and usually makes worries grow.",
+          "mood": "sad"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the urge to a respectful alternative.",
+          "pairs": [
+            {
+              "a": "Urge to read their phone",
+              "b": "Share your worry openly"
+            },
+            {
+              "a": "Urge to track their location",
+              "b": "Agree on check-in texts together"
+            },
+            {
+              "a": "Urge to quiz their friends",
+              "b": "Ask them directly"
+            }
+          ],
+          "why": "Talking openly addresses the real worry. Secret checking damages trust on both sides."
+        },
+        {
+          "kind": "read",
+          "title": "If something feels wrong",
+          "body": "Respecting privacy goes both ways. If someone is checking your phone, controlling who you see or making you feel afraid, that isn’t okay. Reach out to someone you trust or local support services.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You feel anxious when your partner goes out without you. What’s the healthiest step?",
+          "options": [
+            {
+              "text": "Text them every half hour to check.",
+              "why": "Constant checking can feel controlling and rarely calms the worry."
+            },
+            {
+              "text": "“I sometimes feel anxious when you’re out. Can we talk about it?”",
+              "correct": true,
+              "why": "Sharing the feeling invites support without trying to control them."
+            },
+            {
+              "text": "Look through their messages when they get home.",
+              "why": "Snooping breaks trust and can make you both feel worse."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "If you feel an urge to check on someone, try naming the worry to yourself first, then talking about it openly."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-6",
+      "level": 6,
+      "title": "It’s Okay Not to Know",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Admitting you’re unsure makes your answers more believable.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Bluffing backfires",
+          "body": "Pretending to know something feels safer in the moment. But when people find out you were guessing, they start doubting everything else you’ve said.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend asks if the train station has step-free access. You’re not sure. What’s best?",
+          "options": [
+            {
+              "text": "“Yeah, it’ll be fine.”",
+              "why": "Guessing could leave them stuck if they really need step-free access."
+            },
+            {
+              "text": "“I’m not sure. Let me check the website for you.”",
+              "correct": true,
+              "why": "Honest and helpful, it shows they can rely on what you tell them."
+            },
+            {
+              "text": "“No idea, sorry.” and leave it there.",
+              "why": "Honest, but offering to help find out would show more care."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Admit it, then help.",
+          "before": "Good question,",
+          "after": "but I can find out.",
+          "words": [
+            "I’m not totally sure,",
+            "obviously yes,",
+            "everyone knows that,"
+          ],
+          "answer": "I’m not totally sure,",
+          "why": "Saying you’re unsure, then offering to check, is both honest and useful."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you feel pressure to have all the answers?",
+          "options": [
+            "At work",
+            "With my kids",
+            "With my partner",
+            "With friends"
+          ],
+          "reply": "That pressure is real, but “I’m not sure” often earns more respect than a confident guess."
+        },
+        {
+          "kind": "try",
+          "body": "The next time you don’t know something, say so plainly, then offer to find out."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-6-2",
+      "level": 6,
+      "title": "Admit When You Got It Wrong",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Correcting yourself shows people you’re honest.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Correct the record",
+          "body": "If you realise something you said was wrong, go back and say so. “I told you the party was Saturday, but it’s actually Friday” makes people trust you more, not less.",
+          "mood": "content"
+        },
+        {
+          "kind": "scene",
+          "title": "Wrong advice",
+          "them": "Your cousin",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Thanks for the tip! I booked the 9am train like you said."
+            },
+            {
+              "from": "them",
+              "text": "Should get me there in plenty of time 🙌"
+            }
+          ],
+          "prompt": "It actually starts at 9, not 11 as you said. Now what?",
+          "options": [
+            {
+              "text": "Say nothing and hope it works out.",
+              "reaction": "(Later) I missed the start!! 😩",
+              "why": "Staying quiet to save face leaves them to pay for your mistake."
+            },
+            {
+              "text": "Oh no, I got the time wrong! It starts at 9. So sorry, can you get an earlier train?",
+              "correct": true,
+              "reaction": "Ah, good catch! Changing it now.",
+              "why": "Owning it quickly gives them time to fix it and shows you’re reliable."
+            },
+            {
+              "text": "Hmm, you might want to double-check the times 🤔",
+              "reaction": "Why, what’s wrong?",
+              "why": "A vague hint avoids owning the mistake and adds confusion."
+            }
+          ]
+        },
+        {
+          "kind": "sort",
+          "prompt": "Builds trust, or chips at it?",
+          "left": "Builds trust",
+          "right": "Chips at it",
+          "cards": [
+            {
+              "text": "“I was wrong about that, sorry.”",
+              "side": "left"
+            },
+            {
+              "text": "Quietly hoping nobody notices",
+              "side": "right"
+            },
+            {
+              "text": "“Actually, I need to correct myself.”",
+              "side": "left"
+            },
+            {
+              "text": "Blaming the website",
+              "side": "right"
+            }
+          ],
+          "why": "Owning mistakes shows honesty. Hiding or blaming others makes people wonder what else you might cover up."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel when you realise you got something wrong?",
+          "options": [
+            "Embarrassed",
+            "Defensive",
+            "Keen to fix it",
+            "I try not to think about it"
+          ],
+          "reply": "Totally normal. A quick, plain correction usually feels much better than you expect."
+        },
+        {
+          "kind": "try",
+          "body": "If you notice something you got wrong this week, go back and correct it, even if nobody else noticed."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-6-3",
+      "level": 6,
+      "title": "Learn Out Loud",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Saying “I’m still learning” makes it safe for others too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Nobody has it all sorted",
+          "body": "When you say “I’m still working on that” or “I used to get this wrong too”, people relax. It shows you’re real, and makes it easier for them to be honest about their own struggles.",
+          "mood": "happy"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend feels embarrassed about struggling with money. What builds the most trust?",
+          "options": [
+            {
+              "text": "“Honestly, budgeting took me ages to learn too.”",
+              "correct": true,
+              "why": "Sharing your own learning makes them feel less alone and more able to open up."
+            },
+            {
+              "text": "“It’s easy, you just need a spreadsheet.”",
+              "why": "Making it sound simple can make them feel even more embarrassed."
+            },
+            {
+              "text": "Change the subject to spare their feelings.",
+              "why": "Moving on can feel like you’re uncomfortable with their honesty."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the moment to an honest “still learning” line.",
+          "pairs": [
+            {
+              "a": "Your child makes a mistake",
+              "b": "“I get that wrong sometimes too.”"
+            },
+            {
+              "a": "A friend asks for advice",
+              "b": "“Here’s what I’m trying lately.”"
+            },
+            {
+              "a": "A colleague is new",
+              "b": "“I had loads of questions at first.”"
+            }
+          ],
+          "why": "Admitting you’re still learning invites honesty back. It turns you from a judge into a teammate."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What are you still learning that you could admit more openly?",
+          "options": [
+            "Managing stress",
+            "Saying no",
+            "Cooking",
+            "Staying patient"
+          ],
+          "reply": "Sharing that, even in passing, can make someone else feel much less alone."
+        },
+        {
+          "kind": "try",
+          "body": "Share one thing you’re still learning with someone today, in a light, honest way."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-7",
+      "level": 7,
+      "title": "Trust in Small Steps",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Give trust gradually, as people show they can hold it.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Trust grows in layers",
+          "body": "You don’t have to trust someone completely or not at all. Start small, like sharing a minor worry, and notice how they handle it before sharing more.",
+          "mood": "curious"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put these steps of growing trust in order.",
+          "items": [
+            "Share something small",
+            "See how they handle it",
+            "Share a bit more",
+            "Trust deepens over time"
+          ],
+          "why": "Each small step gives you real evidence. That way, your trust is based on how they act, not just hope."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve met a new friend who seems lovely. What’s a wise way to build trust?",
+          "options": [
+            {
+              "text": "Tell them everything about your past on day one.",
+              "why": "Sharing everything at once leaves you exposed before you know how they’ll handle it."
+            },
+            {
+              "text": "Share a little at a time and see how they respond.",
+              "correct": true,
+              "why": "Gradual sharing lets trust grow on solid ground."
+            },
+            {
+              "text": "Keep everything private until you’ve known them for years.",
+              "why": "Total caution can stop a good friendship from ever getting close."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually give trust?",
+          "options": [
+            "All at once",
+            "Very slowly",
+            "Step by step",
+            "It depends on the person"
+          ],
+          "reply": "There’s no perfect pace. Step by step simply gives you more chances to see who’s safe."
+        },
+        {
+          "kind": "try",
+          "body": "With someone new in your life, share one small, personal thing and notice how they respond."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-7-2",
+      "level": 7,
+      "title": "Notice Patterns",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "One slip is a moment. A pattern tells you more.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Look at the trend",
+          "body": "Everyone forgets or messes up sometimes. When deciding how much to trust someone, look at their pattern over time, not just one good or bad moment.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "One-off slip, or a pattern?",
+          "left": "One-off",
+          "right": "Pattern",
+          "cards": [
+            {
+              "text": "They were late once because of a train strike",
+              "side": "left"
+            },
+            {
+              "text": "They cancel most plans at the last minute",
+              "side": "right"
+            },
+            {
+              "text": "They forgot your birthday the year their dad was ill",
+              "side": "left"
+            },
+            {
+              "text": "They often share things you told them privately",
+              "side": "right"
+            }
+          ],
+          "why": "One-offs usually have reasons. Patterns show you how someone tends to treat your trust."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A usually reliable friend forgets to meet you. What’s the fairest response?",
+          "options": [
+            {
+              "text": "Decide they can’t be trusted any more.",
+              "why": "One slip from a reliable friend doesn’t outweigh years of showing up."
+            },
+            {
+              "text": "“That’s not like you. Is everything okay?”",
+              "correct": true,
+              "why": "It’s fair to their track record and opens the door if something’s wrong."
+            },
+            {
+              "text": "Forget them next time to even the score.",
+              "why": "Getting even turns a small slip into a growing problem."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Do you tend to judge people on one moment?",
+          "options": [
+            "Yes, quite often",
+            "Sometimes",
+            "Rarely",
+            "I look at patterns"
+          ],
+          "reply": "Good to notice. Patterns usually tell a truer story than single moments."
+        },
+        {
+          "kind": "try",
+          "body": "Think of someone you’re unsure about. List three times they did or didn’t keep their word, then look for the pattern."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-7-3",
+      "level": 7,
+      "title": "Listen to Your Gut",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Your instincts are worth hearing, then checking.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Gut feelings are clues",
+          "body": "Sometimes something feels off before you can say why. Your gut is picking up on small signals. Take it seriously, then look for facts to confirm or settle the feeling.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the gut feeling to a helpful next step.",
+          "pairs": [
+            {
+              "a": "“Something feels off.”",
+              "b": "Notice what exactly triggered it"
+            },
+            {
+              "a": "“I feel pressured.”",
+              "b": "Slow down before saying yes"
+            },
+            {
+              "a": "“I feel unsafe.”",
+              "b": "Leave and contact someone you trust"
+            }
+          ],
+          "why": "Gut feelings deserve attention. Some need gentle checking; feeling unsafe always means putting your safety first."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Someone you’ve just met keeps pushing you to lend them money. Your gut says no. What’s wise?",
+          "options": [
+            {
+              "text": "Ignore the feeling so you don’t seem rude.",
+              "why": "Overriding a strong gut feeling to be polite can cost you."
+            },
+            {
+              "text": "Lend a small amount to test them.",
+              "why": "Giving in to pressure can encourage more of it."
+            },
+            {
+              "text": "“I don’t lend money, sorry.” and leave it there.",
+              "correct": true,
+              "why": "A calm, clear no respects your instinct without a long debate."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How often do you act on your gut feelings?",
+          "options": [
+            "Almost always",
+            "Sometimes",
+            "I second-guess them",
+            "Rarely"
+          ],
+          "reply": "Your gut won’t always be right, but it’s always worth a pause and a closer look."
+        },
+        {
+          "kind": "try",
+          "body": "Next time something feels off, pause and ask yourself: what exactly am I noticing?"
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-8",
+      "level": 8,
+      "title": "Name the Letdown",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Small disappointments shrink when you talk about them.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Unspoken hurts grow",
+          "body": "A forgotten favour or a missed call can sting. If you say nothing, it can quietly grow into resentment. Mentioning it gently, early, keeps trust healthy.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend forgot to save you a seat at the gig like they promised. What’s best?",
+          "options": [
+            {
+              "text": "Pretend it’s fine but feel annoyed all night.",
+              "why": "Hiding it lets the hurt grow and quietly changes how you see them."
+            },
+            {
+              "text": "“I was a bit disappointed about the seat. Can we plan better next time?”",
+              "correct": true,
+              "why": "It’s honest, light and focused on doing better together."
+            },
+            {
+              "text": "Remind them of every time they’ve let you down.",
+              "why": "Bringing up old history makes a small letdown feel like a trial."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Name it lightly.",
+          "before": "No big deal, but I felt a bit",
+          "after": "when you didn’t text back.",
+          "words": [
+            "furious",
+            "left hanging",
+            "betrayed"
+          ],
+          "answer": "left hanging",
+          "why": "“Left hanging” fits a small letdown. Bigger words make it sound more serious than it is."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What do you usually do with small disappointments?",
+          "options": [
+            "Bottle them up",
+            "Mention them straight away",
+            "Joke about them",
+            "Let them go"
+          ],
+          "reply": "Letting go is fine if it’s truly gone. If it keeps coming back, it’s worth a gentle chat."
+        },
+        {
+          "kind": "try",
+          "body": "If a small letdown is still on your mind, mention it lightly to the person this week."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-8-2",
+      "level": 8,
+      "title": "One Slip, Not a Story",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Don’t turn one mistake into a story about who they are.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Watch the story you tell",
+          "body": "After a letdown, our minds race ahead: “They don’t care. They’re always like this.” Catching that story before it sticks keeps one slip from damaging the whole relationship.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Fair thought, or an unfair story?",
+          "left": "Fair",
+          "right": "Unfair story",
+          "cards": [
+            {
+              "text": "“They forgot this time.”",
+              "side": "left"
+            },
+            {
+              "text": "“They never think about me.”",
+              "side": "right"
+            },
+            {
+              "text": "“I felt let down.”",
+              "side": "left"
+            },
+            {
+              "text": "“I can’t rely on anyone.”",
+              "side": "right"
+            },
+            {
+              "text": "“I’ll mention it to them.”",
+              "side": "left"
+            }
+          ],
+          "why": "Fair thoughts stick to what happened. Unfair stories turn a slip into a judgement on the whole person."
+        },
+        {
+          "kind": "scene",
+          "title": "A forgotten favour",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Oh no, I forgot to pick up your prescription 😣"
+            },
+            {
+              "from": "them",
+              "text": "I’m so sorry, it completely slipped my mind."
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "Typical. You never remember anything for me.",
+              "reaction": "That’s not fair…",
+              "why": "Turning one slip into “never” hurts more than the mistake itself."
+            },
+            {
+              "text": "Ah, annoying! Could you grab it first thing tomorrow?",
+              "correct": true,
+              "reaction": "Absolutely, I’ll set an alarm!",
+              "why": "You were honest it’s a pain, but kept it about this one slip and the fix."
+            },
+            {
+              "text": "Fine. Whatever.",
+              "reaction": "Are you angry?",
+              "why": "A cold reply leaves them guessing and doesn’t sort the problem."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which “always” or “never” story do you catch yourself telling?",
+          "options": [
+            "“They never listen”",
+            "“They always forget”",
+            "“Nobody helps me”",
+            "I’m not sure yet"
+          ],
+          "reply": "Spotting it is the hard part. Try swapping it for what happened this one time."
+        },
+        {
+          "kind": "try",
+          "body": "When someone lets you down this week, notice any “always” or “never” thoughts and swap them for what actually happened."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-8-3",
+      "level": 8,
+      "title": "Talk Before Resenting",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Resentment grows in silence. Talk while it’s still small.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The resentment jar",
+          "body": "Each unspoken letdown is like a coin in a jar. One coin is nothing, but a full jar comes out all at once in a big row. Talking regularly keeps the jar nearly empty.",
+          "mood": "curious"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put these steps for clearing resentment in order.",
+          "items": [
+            "Notice the feeling",
+            "Pick a calm moment",
+            "Share one specific thing",
+            "Agree on what would help"
+          ],
+          "why": "Noticing early and choosing a calm time sets you up well. Sharing one thing and agreeing a fix keeps it small and doable."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve felt underappreciated at home for weeks. What’s the best first step?",
+          "options": [
+            {
+              "text": "Wait until it all comes out in an argument.",
+              "why": "By then, the hurt comes out sharply and is harder to talk through."
+            },
+            {
+              "text": "“I’ve been feeling a bit unnoticed lately. Can we chat about it?”",
+              "correct": true,
+              "why": "Raising it calmly, before it boils over, makes a real conversation possible."
+            },
+            {
+              "text": "Do less around the house so they notice.",
+              "why": "A silent protest can cause confusion and more resentment on both sides."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How full is your resentment jar with someone right now?",
+          "options": [
+            "Empty",
+            "A few coins",
+            "Getting full",
+            "Overflowing"
+          ],
+          "reply": "Whatever the level, a calm chat about one coin is a good place to start."
+        },
+        {
+          "kind": "try",
+          "body": "If you’ve been holding onto a small resentment, raise one specific thing calmly this week."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-9",
+      "level": 9,
+      "title": "Small Proof, Often",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "After trust is hurt, steady small actions rebuild it.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Actions over speeches",
+          "body": "After you’ve broken someone’s trust, big promises often fall flat. What rebuilds it is lots of small, reliable actions over time, each one quiet proof that you mean it.",
+          "mood": "content"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Rebuilds trust, or just talk?",
+          "left": "Rebuilds",
+          "right": "Just talk",
+          "cards": [
+            {
+              "text": "Texting when you said you would, every time",
+              "side": "left"
+            },
+            {
+              "text": "“I promise I’ll never do it again!”",
+              "side": "right"
+            },
+            {
+              "text": "Being on time for weeks in a row",
+              "side": "left"
+            },
+            {
+              "text": "A long speech about how much you’ve changed",
+              "side": "right"
+            }
+          ],
+          "why": "Steady actions give real evidence. Big words without follow-through can feel empty after trust is hurt."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You let your friend down badly last month. What will rebuild trust best?",
+          "options": [
+            {
+              "text": "Keep apologising every time you see them.",
+              "why": "Endless apologies can make them feel they have to keep reassuring you."
+            },
+            {
+              "text": "Give them a big gift to make up for it.",
+              "why": "Gifts can be lovely, but they don’t prove you’ll be reliable."
+            },
+            {
+              "text": "Keep every small promise, steadily, for the coming months.",
+              "correct": true,
+              "why": "Consistent follow-through is the clearest proof that you can be trusted again."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who might need some small proof from you?",
+          "options": [
+            "My partner",
+            "A friend",
+            "Family",
+            "Nobody right now"
+          ],
+          "reply": "If someone came to mind, choose one small promise you can keep for them this week."
+        },
+        {
+          "kind": "try",
+          "body": "Pick one small, reliable action you can repeat this week for someone whose trust you want to strengthen."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-9-2",
+      "level": 9,
+      "title": "Be Patient with Repair",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Trust takes longer to rebuild than to break. That’s normal.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Repair has its own pace",
+          "body": "When trust is hurt, the other person may stay wary for a while, even after you’ve changed. Pushing them to “get over it” slows things down. Patience shows you understand.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Still a bit wary",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Will you be home by 10 tonight?"
+            },
+            {
+              "from": "them",
+              "text": "Sorry, I know I keep asking. I’m still a bit wobbly after last time."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Yes, home by 10, and I’ll text when I leave. Ask as often as you need 💛",
+              "correct": true,
+              "reaction": "Thank you. That really helps.",
+              "why": "You reassured them warmly and accepted that rebuilding takes time."
+            },
+            {
+              "text": "Seriously? How long are you going to hold that against me?",
+              "reaction": "Wow. Okay.",
+              "why": "Pushing them to move on makes them feel their worry isn’t allowed."
+            },
+            {
+              "text": "Probably.",
+              "reaction": "…Probably?",
+              "why": "A vague answer feeds the very worry they’re trying to settle."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Show patience.",
+          "before": "I know trust takes time to rebuild, and",
+          "after": "",
+          "words": [
+            "I’m in no rush.",
+            "hurry up.",
+            "it’s been ages."
+          ],
+          "answer": "I’m in no rush.",
+          "why": "It tells them they can heal at their own pace, which helps them relax."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s hardest about waiting for trust to return?",
+          "options": [
+            "Feeling judged",
+            "Feeling impatient",
+            "Worrying it won’t",
+            "Being reminded of it"
+          ],
+          "reply": "That’s very understandable. Every steady day you show up is quietly moving things forward."
+        },
+        {
+          "kind": "try",
+          "body": "If you’re rebuilding trust with someone, answer their checks warmly this week, without sighing or rushing them."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-9-3",
+      "level": 9,
+      "title": "Check In on Trust",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Ask how things feel, rather than assuming it’s all fine.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Ask, don’t assume",
+          "body": "After a rough patch, it’s easy to assume everything is back to normal. A gentle “How are we doing?” shows you still care and gives them space to share any lingering worries.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the moment to a gentle check-in.",
+          "pairs": [
+            {
+              "a": "A few weeks after an apology",
+              "b": "“How are you feeling about us?”"
+            },
+            {
+              "a": "They seem quieter than usual",
+              "b": "“Anything on your mind?”"
+            },
+            {
+              "a": "Things feel good again",
+              "b": "“I really appreciate your patience.”"
+            }
+          ],
+          "why": "Check-ins keep repair moving. They show you’re paying attention, not just hoping it’s all blown over."
+        },
+        {
+          "kind": "choice",
+          "prompt": "It’s been a month since you hurt a friend’s trust. Things seem okay. What’s a good step?",
+          "options": [
+            {
+              "text": "Never mention it again so you don’t spoil the mood.",
+              "why": "Avoiding it can leave unspoken worries sitting under the surface."
+            },
+            {
+              "text": "Bring it up every time you meet.",
+              "why": "Raising it constantly can keep the hurt fresh for both of you."
+            },
+            {
+              "text": "Ask once, gently, if there’s anything still on their mind.",
+              "correct": true,
+              "why": "One caring check gives them space to share without making it heavy."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel about asking “How are we doing?”",
+          "options": [
+            "Nervous",
+            "Fine",
+            "A bit awkward",
+            "I already do"
+          ],
+          "reply": "It can feel awkward at first, but it usually brings people closer."
+        },
+        {
+          "kind": "try",
+          "body": "Ask someone close to you, gently, how they feel things are going between you."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-10",
+      "level": 10,
+      "title": "Celebrate Reliability",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Notice and thank the people who are there for you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Thank the steady ones",
+          "body": "Reliable people are easy to take for granted. Telling them “I always know I can count on you” shows them their steady effort is noticed and valued.",
+          "mood": "happy"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Thank their reliability.",
+          "before": "I know I can always",
+          "after": "on you. Thank you.",
+          "words": [
+            "count",
+            "lean, sort of,",
+            "maybe rely"
+          ],
+          "answer": "count",
+          "why": "A clear, confident “count on you” tells them their reliability truly matters to you."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Shows appreciation, or takes it for granted?",
+          "left": "Appreciates",
+          "right": "Overlooks",
+          "cards": [
+            {
+              "text": "“Thanks for always picking up when I call.”",
+              "side": "left"
+            },
+            {
+              "text": "Only getting in touch when you need something",
+              "side": "right"
+            },
+            {
+              "text": "Noticing when they keep a promise",
+              "side": "left"
+            },
+            {
+              "text": "Expecting them to always say yes",
+              "side": "right"
+            }
+          ],
+          "why": "Appreciation keeps reliable people feeling valued. Taking them for granted can slowly wear down their goodwill."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who is the most reliable person in your life?",
+          "options": [
+            "A parent",
+            "My partner",
+            "A friend",
+            "A colleague"
+          ],
+          "reply": "They deserve to know. A short message today could mean a lot to them."
+        },
+        {
+          "kind": "try",
+          "body": "Send the most reliable person in your life a short message thanking them for being someone you can count on."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-10-2",
+      "level": 10,
+      "title": "Trust Them Back",
+      "minutes": 4,
+      "focus": "trust",
+      "summary": "Trust grows when you show you believe in people too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Trust is a two-way street",
+          "body": "Being trustworthy is half of it. The other half is showing trust: letting people do things their way, believing their word and not checking up on them.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner offers to plan your anniversary trip. What shows trust?",
+          "options": [
+            {
+              "text": "“Lovely! Surprise me.”",
+              "correct": true,
+              "why": "Handing it over warmly shows you believe in them and their choices."
+            },
+            {
+              "text": "“Okay, but send me every booking to check.”",
+              "why": "Checking everything can feel like you don’t trust them to do it well."
+            },
+            {
+              "text": "“I’d better do it, you’ll forget something.”",
+              "why": "It suggests they can’t be relied on, which can sting."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the urge to a trusting response.",
+          "pairs": [
+            {
+              "a": "Urge to redo their work",
+              "b": "Let their way be good enough"
+            },
+            {
+              "a": "Urge to check their story",
+              "b": "Believe them unless there’s cause"
+            },
+            {
+              "a": "Urge to give lots of tips",
+              "b": "Ask if they’d like any ideas"
+            }
+          ],
+          "why": "Trusting responses show respect. They help people grow into the trust you give them."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where could you show a little more trust?",
+          "options": [
+            "Letting others lead",
+            "Not checking up",
+            "Accepting their way",
+            "Believing their word"
+          ],
+          "reply": "A small step there could mean more to them than you might think."
+        },
+        {
+          "kind": "try",
+          "body": "Let someone do a task their way this week, without checking or correcting it."
+        }
+      ]
+    },
+    {
+      "id": "rf-trust-10-3",
+      "level": 10,
+      "title": "Keep Building",
+      "minutes": 3,
+      "focus": "trust",
+      "summary": "Trust is never finished. Keep adding small bricks.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "A nest, built twig by twig",
+          "body": "Strong trust isn’t built once and left alone. It’s kept strong by everyday moments: keeping small promises, being honest and showing up, again and again.",
+          "mood": "happy"
+        },
+        {
+          "kind": "order",
+          "prompt": "Order these from first to last in a trusting day.",
+          "items": [
+            "Make a clear promise",
+            "Keep it",
+            "Let them know it’s done",
+            "Thank them for trusting you"
+          ],
+          "why": "A clear promise, kept and confirmed, is one more brick in the wall. Thanking them makes trust feel shared."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’ve built great trust with a friend over years. What keeps it strong?",
+          "options": [
+            {
+              "text": "Relax, it’s solid now, so effort isn’t needed.",
+              "why": "Even strong trust can fade if small kindnesses stop."
+            },
+            {
+              "text": "Keep showing up in the same small, reliable ways.",
+              "correct": true,
+              "why": "Everyday reliability keeps old trust fresh and strong."
+            },
+            {
+              "text": "Test them now and then to make sure.",
+              "why": "Testing people quietly undermines the trust you’ve built together."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most about trust in these lessons?",
+          "options": [
+            "Keeping my word",
+            "Being honest",
+            "Respecting privacy",
+            "Rebuilding gently"
+          ],
+          "reply": "Wonderful. Keep it going in small ways, and the trust around you will keep growing."
+        },
+        {
+          "kind": "try",
+          "body": "Choose one small trust-building habit from these lessons and do it every day this week."
+        }
+      ]
+    }
+  ]
+}

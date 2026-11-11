@@ -1,0 +1,1994 @@
+{
+  "course": "communication",
+  "levels": [
+    {
+      "title": "Speaking with Care",
+      "icon": "microphone",
+      "color": "pink"
+    },
+    {
+      "title": "Clear Requests",
+      "icon": "signpost",
+      "color": "blue"
+    },
+    {
+      "title": "Hard Conversations",
+      "icon": "lantern",
+      "color": "yellow"
+    },
+    {
+      "title": "Tone and Texting",
+      "icon": "keyboard",
+      "color": "lavender"
+    },
+    {
+      "title": "Saying Sorry Well",
+      "icon": "olive",
+      "color": "mint"
+    },
+    {
+      "title": "Giving Feedback",
+      "icon": "pencil",
+      "color": "peach"
+    },
+    {
+      "title": "Taking Feedback",
+      "icon": "mailbox",
+      "color": "blue"
+    },
+    {
+      "title": "Sharing Feelings",
+      "icon": "paintbrush",
+      "color": "pink"
+    },
+    {
+      "title": "Talking Under Pressure",
+      "icon": "kettle",
+      "color": "purple"
+    },
+    {
+      "title": "Everyday Check-ins",
+      "icon": "bell",
+      "color": "yellow"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "rf-communication-2",
+      "level": 2,
+      "title": "Ask for What You Need",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "People can’t read minds. A clear ask gives them a chance.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Hints rarely land",
+          "body": "Sighing at the dishes or saying “I’m so tired” hopes the other person will guess. Often they don’t, and resentment quietly builds. Saying what you’d like is kinder to you both.",
+          "mood": "curious"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’d love some help with the weekly shop. Which way of saying it is most likely to work?",
+          "options": [
+            {
+              "text": "“It would be nice if someone helped for once.”",
+              "why": "“Someone” and “for once” sound like blame, and nobody knows what you’re actually asking."
+            },
+            {
+              "text": "Do it all again and hope they notice how much you do.",
+              "why": "Hoping to be noticed keeps the need hidden, so nothing changes."
+            },
+            {
+              "text": "“Could you do the shop this Saturday? I’ll make the list.”",
+              "correct": true,
+              "why": "It names the task, the day and your part, so saying yes is easy."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Turn the hint into an ask.",
+          "before": "I’m wiped out tonight.",
+          "after": "you cook while I put my feet up?",
+          "words": [
+            "Could",
+            "Shouldn’t",
+            "Why don’t"
+          ],
+          "answer": "Could",
+          "why": "“Could you…” is a real question they can say yes to, without any hint of a telling-off."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What usually stops you asking directly?",
+          "options": [
+            "Not wanting to be a bother",
+            "Worry they’ll say no",
+            "Feeling I shouldn’t need to",
+            "I’m not sure what I want"
+          ],
+          "reply": "All very human. A clear ask isn’t a demand; it simply lets people know how to help."
+        },
+        {
+          "kind": "try",
+          "body": "Spot one hint you’d normally drop today and turn it into a short, clear “Could you…?” question instead."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-2-2",
+      "level": 2,
+      "title": "One Request at a Time",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "A long list of asks overwhelms. One clear ask gets done.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The pile-up problem",
+          "body": "When we finally speak up, it’s tempting to unload everything at once. Five requests in one breath feel like criticism, and usually none of them stick.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "One clear ask, or a pile-up?",
+          "left": "One clear ask",
+          "right": "Pile-up",
+          "cards": [
+            {
+              "text": "“Could you text me when you’re running late?”",
+              "side": "left"
+            },
+            {
+              "text": "“You’re late, you’re messy and you never call.”",
+              "side": "right"
+            },
+            {
+              "text": "“Can we keep Sunday mornings phone-free?”",
+              "side": "left"
+            },
+            {
+              "text": "“And another thing, while we’re at it…”",
+              "side": "right"
+            },
+            {
+              "text": "“Would you take the bins out on Thursdays?”",
+              "side": "left"
+            }
+          ],
+          "why": "A single, specific ask feels doable. A list of complaints feels like a verdict on the whole person."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You have three things bothering you with a housemate. What’s the best way in?",
+          "options": [
+            {
+              "text": "Pick the one that matters most and ask about that first.",
+              "correct": true,
+              "why": "Starting small gives you both a quick win and makes the next talk easier."
+            },
+            {
+              "text": "Write them all down and go through the list together.",
+              "why": "A formal list can feel like an inspection, which puts them on the back foot."
+            },
+            {
+              "text": "Wait until all three get bad enough to mention.",
+              "why": "Waiting lets frustration grow, so the eventual talk is far more heated."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which small request have you been sitting on?",
+          "options": [
+            "Something about chores",
+            "Something about time",
+            "Something about plans",
+            "Something about money"
+          ],
+          "reply": "That one is a great place to start. Small and specific is how bigger changes begin."
+        },
+        {
+          "kind": "try",
+          "body": "Choose just one request you’ve been saving up and ask it on its own, without adding anything else."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-2-3",
+      "level": 2,
+      "title": "Make It Doable",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "“Be more supportive” is vague. Say what support looks like.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Swap labels for actions",
+          "body": "Words like “supportive” or “considerate” mean different things to different people. Describe the action instead, such as “ask how my interview went”, and people know exactly what to do.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each vague wish to a doable ask.",
+          "pairs": [
+            {
+              "a": "“Be more supportive.”",
+              "b": "“Ask how my day went.”"
+            },
+            {
+              "a": "“Help out more.”",
+              "b": "“Do the school run on Mondays.”"
+            },
+            {
+              "a": "“Keep in touch.”",
+              "b": "“Call me on Sunday evenings.”"
+            },
+            {
+              "a": "“Be more romantic.”",
+              "b": "“Plan a date night this month.”"
+            }
+          ],
+          "why": "Each doable ask is something you could see happen. That makes it easy to agree to and easy to notice when it’s done."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the ask concrete.",
+          "before": "It would mean a lot if you",
+          "after": "before big meetings.",
+          "words": [
+            "were nicer",
+            "cared more",
+            "sent a good-luck text"
+          ],
+          "answer": "sent a good-luck text",
+          "why": "A good-luck text is a clear, small action. “Nicer” or “cared more” leaves them guessing."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend says, “You’re never there for me.” What’s the most helpful reply?",
+          "options": [
+            {
+              "text": "“That’s not fair, I’m always there!”",
+              "why": "Defending yourself skips the chance to learn what they actually need."
+            },
+            {
+              "text": "“I want to be. What would help most right now?”",
+              "correct": true,
+              "why": "It invites them to turn a big label into something specific you can do."
+            },
+            {
+              "text": "“Fine, I’ll try harder.”",
+              "why": "“Try harder” is as vague as the complaint, so it’s unlikely to change much."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Think of one vague wish you have for someone. Rewrite it as an action they could do this week, then ask for it."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-3",
+      "level": 3,
+      "title": "Choose Your Opening",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "The first sentence sets the tone for the whole talk.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Openings shape endings",
+          "body": "Hard conversations tend to end the way they begin. A calm, caring first line makes it far more likely the other person stays open to what comes next.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You need to talk to your sister about her always cancelling plans. Which opening is gentlest and clearest?",
+          "options": [
+            {
+              "text": "“We need to talk about your flakiness.”",
+              "why": "“Flakiness” is a label, and “we need to talk” sets off alarm bells straight away."
+            },
+            {
+              "text": "“Can I share something that’s been on my mind? It’s about our plans.”",
+              "correct": true,
+              "why": "Asking permission and naming the topic helps her feel prepared rather than ambushed."
+            },
+            {
+              "text": "“Funny how you’re always busy when I make plans.”",
+              "why": "Sarcasm makes her defensive before you’ve said what you need."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a calm opening in order.",
+          "items": [
+            "Ask if now is a good time",
+            "Say why it matters to you",
+            "Name the topic simply",
+            "Invite their side"
+          ],
+          "why": "Checking timing, then naming the topic and why you care, gives them context. Inviting their view keeps it a talk, not a lecture."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually start difficult talks?",
+          "options": [
+            "I blurt it out",
+            "I hint until it explodes",
+            "I avoid them",
+            "I plan what to say"
+          ],
+          "reply": "Knowing your habit is the first step. A planned, gentle opening is a skill anyone can learn."
+        },
+        {
+          "kind": "try",
+          "body": "Write down a gentle first line for a conversation you’ve been putting off. Keep it short, kind and clear."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-3-2",
+      "level": 3,
+      "title": "Say the Hard Part",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Kindness isn’t hiding the point. Say it clearly and warmly.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Clear is kind",
+          "body": "We often soften hard news so much that the message disappears. The other person leaves confused. You can be warm and still say the true thing plainly.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "Telling a friend no",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "So are you in for the group holiday? We need to book by Friday! ✈️"
+            },
+            {
+              "from": "them",
+              "text": "Everyone’s counting on you 😄"
+            }
+          ],
+          "prompt": "You can’t afford it this year. What do you say?",
+          "options": [
+            {
+              "text": "Ooh maybe! Let me see how things go.",
+              "reaction": "Okay… we kind of need to know though?",
+              "why": "A vague maybe keeps them waiting and makes Friday harder for everyone."
+            },
+            {
+              "text": "I’d love to, but it’s not in my budget this year. Have the best time!",
+              "correct": true,
+              "reaction": "Aw, we’ll miss you! Totally get it 💛",
+              "why": "It’s honest, warm and gives a clear answer they can plan around."
+            },
+            {
+              "text": "Holidays are such a waste of money anyway.",
+              "reaction": "Oh. Right then.",
+              "why": "Knocking their plans hides your real reason and can sting."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Say it warmly but clearly.",
+          "before": "I care about you, and",
+          "after": "I can’t lend money right now.",
+          "words": [
+            "maybe",
+            "honestly,",
+            "I guess"
+          ],
+          "answer": "honestly,",
+          "why": "“Honestly” signals a clear answer is coming. “Maybe” or “I guess” blur the message."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where do you tend to blur the message?",
+          "options": [
+            "Saying no",
+            "Bad news",
+            "Disagreeing",
+            "Asking for change"
+          ],
+          "reply": "Good to know. Next time, try saying the key sentence first, then add the warmth around it."
+        },
+        {
+          "kind": "try",
+          "body": "When you next have something hard to say, say the main point in one plain sentence before you explain or soften it."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-3-3",
+      "level": 3,
+      "title": "Stay Kind When It Stings",
+      "minutes": 5,
+      "focus": "communication",
+      "summary": "When they get upset, stay steady instead of matching them.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Upset isn’t failure",
+          "body": "If someone gets upset during a hard talk, it doesn’t mean you said it wrong. Feelings often come first. Staying calm and kind gives them room to settle.",
+          "mood": "sad"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You raise a worry and your partner snaps, “So it’s all my fault?” What helps most?",
+          "options": [
+            {
+              "text": "“Well, mostly, yes.”",
+              "why": "Agreeing in the heat of the moment turns the talk into a blame contest."
+            },
+            {
+              "text": "“Forget it, I shouldn’t have said anything.”",
+              "why": "Backing off means the worry stays unsaid and will come back later."
+            },
+            {
+              "text": "“Not at all. I just want us to sort it out together.”",
+              "correct": true,
+              "why": "It calms the fear of blame and brings you back to the shared goal."
+            }
+          ]
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each heated moment to a steady reply.",
+          "pairs": [
+            {
+              "a": "They raise their voice",
+              "b": "Lower yours a little"
+            },
+            {
+              "a": "They say “always” or “never”",
+              "b": "Stick to this one time"
+            },
+            {
+              "a": "They go quiet",
+              "b": "“Take your time, I’m here.”"
+            }
+          ],
+          "why": "Steady replies stop things escalating. They show you’re not there to win, just to understand each other."
+        },
+        {
+          "kind": "read",
+          "title": "Safety comes first",
+          "body": "Staying calm is for ordinary disagreements. If anyone ever makes you feel unsafe or threatened, step away and reach out to someone you trust or local support services.",
+          "mood": "content"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What helps you stay steady when someone’s upset?",
+          "options": [
+            "Slow breathing",
+            "Remembering I care",
+            "A short pause",
+            "I’m still learning"
+          ],
+          "reply": "Whatever helps you is worth practising in calm moments, so it’s ready when you need it."
+        },
+        {
+          "kind": "try",
+          "body": "Next time a conversation heats up, lower your voice slightly and repeat the shared goal: “I want us to sort this out.”"
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-4",
+      "level": 4,
+      "title": "Read Before You Send",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "A quick reread catches messages that sound harsher than meant.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Text loses your voice",
+          "body": "In person, your smile and tone soften your words. In a message, none of that comes through. “Fine.” can read as annoyed even when you’re perfectly happy.",
+          "mood": "curious"
+        },
+        {
+          "kind": "sort",
+          "prompt": "How might this message land?",
+          "left": "Warm",
+          "right": "Could sting",
+          "cards": [
+            {
+              "text": "“Sounds good, see you at 7! 😊”",
+              "side": "left"
+            },
+            {
+              "text": "“K.”",
+              "side": "right"
+            },
+            {
+              "text": "“We need to talk.”",
+              "side": "right"
+            },
+            {
+              "text": "“Thanks for sorting that, really helpful.”",
+              "side": "left"
+            },
+            {
+              "text": "“Whatever you think is best.”",
+              "side": "right"
+            }
+          ],
+          "why": "Short or vague messages leave room for worry. A few extra friendly words make your meaning clear."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Warm up a short reply.",
+          "before": "Can’t make tonight, sorry!",
+          "after": "",
+          "words": [
+            "Whatever.",
+            "How about Thursday instead?",
+            "Busy."
+          ],
+          "answer": "How about Thursday instead?",
+          "why": "Offering another time shows you still want to see them, so the no doesn’t feel like a brush-off."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do your messages come out sharper than you meant?",
+          "options": [
+            "When I’m rushed",
+            "When I’m tired",
+            "When I’m annoyed",
+            "Hardly ever"
+          ],
+          "reply": "Those are exactly the moments when a three-second reread pays off."
+        },
+        {
+          "kind": "try",
+          "body": "Before sending your next few messages, reread each one once and ask: could this sound colder than I mean it?"
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-4-2",
+      "level": 4,
+      "title": "When Tone Gets Lost",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Ask before assuming the worst about a message.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Our minds fill the gaps",
+          "body": "When a message is unclear, we tend to imagine the worst: they’re cross, bored or upset with us. Usually they were just busy. Checking beats guessing.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "A short reply",
+          "them": "Your colleague",
+          "lines": [
+            {
+              "from": "you",
+              "text": "Here’s my draft of the report, let me know what you think!"
+            },
+            {
+              "from": "them",
+              "text": "Ok. Some changes needed."
+            }
+          ],
+          "prompt": "You feel a bit stung. What do you send?",
+          "options": [
+            {
+              "text": "Thanks! Happy to go through them together if that’s easier.",
+              "correct": true,
+              "reaction": "That’d be great, it’s just a few small bits 🙂",
+              "why": "You stayed friendly and invited detail instead of assuming they were unhappy."
+            },
+            {
+              "text": "Wow, okay. Sorry it wasn’t good enough.",
+              "reaction": "Oh! No, it’s really good, just tweaks.",
+              "why": "Reading criticism into a short reply creates awkwardness that wasn’t there."
+            },
+            {
+              "text": "Don’t reply and stew about it.",
+              "reaction": "…",
+              "why": "Silence leaves the worry growing and the changes undiscussed."
+            }
+          ]
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend replies “lol ok” to a long, heartfelt message. What’s the fairest first thought?",
+          "options": [
+            {
+              "text": "“They clearly don’t care.”",
+              "why": "One short reply isn’t enough to judge how someone feels."
+            },
+            {
+              "text": "“Maybe they’re busy. I’ll check in later.”",
+              "correct": true,
+              "why": "Giving the benefit of the doubt keeps things calm and leaves room to talk."
+            },
+            {
+              "text": "“I’ll send an equally short reply next time.”",
+              "why": "Matching coldness can start a chilly back-and-forth neither of you wants."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you usually react to a short, unclear message?",
+          "options": [
+            "I assume they’re cross",
+            "I ask what they meant",
+            "I ignore it",
+            "I reply coldly"
+          ],
+          "reply": "Worth noticing. A friendly question usually clears things up faster than a guess."
+        },
+        {
+          "kind": "try",
+          "body": "If a message worries you today, ask a gentle question like “All okay?” before deciding what it meant."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-4-3",
+      "level": 4,
+      "title": "Move It to a Call",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Some talks are too big for texting. Know when to switch.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Pick the right channel",
+          "body": "Messages are great for plans and quick news. Feelings, misunderstandings and big decisions usually go better with a voice, where tone and warmth can come through.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Text, or talk it through?",
+          "left": "Text is fine",
+          "right": "Talk it out",
+          "cards": [
+            {
+              "text": "Confirming dinner at 7",
+              "side": "left"
+            },
+            {
+              "text": "A hurtful misunderstanding",
+              "side": "right"
+            },
+            {
+              "text": "Sharing a funny photo",
+              "side": "left"
+            },
+            {
+              "text": "Deciding whether to move in together",
+              "side": "right"
+            },
+            {
+              "text": "An argument getting heated",
+              "side": "right"
+            }
+          ],
+          "why": "Quick logistics suit text. Anything emotional or high-stakes is easier when you can hear each other."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Suggest switching, kindly.",
+          "before": "This feels too important for texts.",
+          "after": "later?",
+          "words": [
+            "Shall we call",
+            "You should call",
+            "Stop texting"
+          ],
+          "answer": "Shall we call",
+          "why": "“Shall we” is an invitation. It suggests a better way to talk without blaming anyone."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which talk have you been having over text that might need a call?",
+          "options": [
+            "A disagreement",
+            "A big decision",
+            "Something emotional",
+            "None right now"
+          ],
+          "reply": "If one came to mind, a quick “Can we chat properly?” might save a lot of back-and-forth."
+        },
+        {
+          "kind": "try",
+          "body": "The next time a text conversation starts to feel tense, suggest a quick call or chat in person instead."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-5",
+      "level": 5,
+      "title": "Sorry Without a But",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "“Sorry, but…” cancels the apology. Let it stand alone.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The word that undoes it",
+          "body": "“I’m sorry, but you were rude too” turns an apology into an argument. Everything after “but” is what people hear. A real apology stands on its own.",
+          "mood": "sad"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Real apology, or a sneaky excuse?",
+          "left": "Real apology",
+          "right": "Excuse",
+          "cards": [
+            {
+              "text": "“I’m sorry I snapped at you.”",
+              "side": "left"
+            },
+            {
+              "text": "“Sorry, but you made me angry.”",
+              "side": "right"
+            },
+            {
+              "text": "“Sorry if you were offended.”",
+              "side": "right"
+            },
+            {
+              "text": "“I’m sorry I forgot. That wasn’t fair on you.”",
+              "side": "left"
+            }
+          ],
+          "why": "Real apologies own what you did. Excuses shift the blame or question whether they should be hurt at all."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You were short with your dad on the phone. Which apology works best?",
+          "options": [
+            {
+              "text": "“Sorry, but I was really stressed.”",
+              "why": "The “but” makes your stress the headline instead of how he felt."
+            },
+            {
+              "text": "“I’m sorry I was short with you earlier. You didn’t deserve that.”",
+              "correct": true,
+              "why": "It names what you did and acknowledges him, with no excuses attached."
+            },
+            {
+              "text": "“Sorry if I came across badly.”",
+              "why": "“If” suggests it might be his misunderstanding rather than your behaviour."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which word slips into your apologies most?",
+          "options": [
+            "“But”",
+            "“If”",
+            "“Just”",
+            "None of them"
+          ],
+          "reply": "Spotting it is half the work. Next time, notice the word and leave it out."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you apologise, stop after the apology. Leave out the “but”, even if there’s more context you could add."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-5-2",
+      "level": 5,
+      "title": "Name What You Did",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "A specific apology shows you really understand.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Vague sorries feel hollow",
+          "body": "“Sorry for everything” can sound like you just want the moment over. Naming exactly what you did shows you’ve thought about it and understand how it landed.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the apology specific.",
+          "before": "I’m sorry I",
+          "after": "in front of your friends.",
+          "words": [
+            "was a bit off",
+            "teased you about your job",
+            "did stuff"
+          ],
+          "answer": "teased you about your job",
+          "why": "Naming the exact thing shows you know what hurt, which makes the apology believable."
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the vague sorry to a specific one.",
+          "pairs": [
+            {
+              "a": "“Sorry about the other day.”",
+              "b": "“Sorry I missed your birthday.”"
+            },
+            {
+              "a": "“Sorry for being me.”",
+              "b": "“Sorry I interrupted you.”"
+            },
+            {
+              "a": "“My bad.”",
+              "b": "“Sorry I didn’t call when I said.”"
+            }
+          ],
+          "why": "Specific apologies point to an action, not your whole personality. That makes them easier to accept and to learn from."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes specific apologies hard for you?",
+          "options": [
+            "Feeling embarrassed",
+            "Not wanting to relive it",
+            "Worry it’ll make it bigger",
+            "They come easily to me"
+          ],
+          "reply": "Being specific can feel exposing, but it usually shrinks the hurt rather than growing it."
+        },
+        {
+          "kind": "try",
+          "body": "Think of a small thing you could apologise for. Write the apology using the words “I’m sorry I…” and one specific action."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-5-3",
+      "level": 5,
+      "title": "Make It Right",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "The best apologies end with a plan to do better.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Words, then action",
+          "body": "An apology repairs the moment. A small promise about the future repairs trust. Saying what you’ll do differently next time shows you mean it.",
+          "mood": "content"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a full apology in order.",
+          "items": [
+            "Say sorry for the specific thing",
+            "Acknowledge how it affected them",
+            "Say what you’ll do next time",
+            "Then follow through"
+          ],
+          "why": "Owning it, showing you understand the impact, and offering a plan makes an apology feel complete. Following through is what makes it last."
+        },
+        {
+          "kind": "scene",
+          "title": "Forgot to pick them up",
+          "them": "Your flatmate",
+          "lines": [
+            {
+              "from": "them",
+              "text": "I waited at the station for 40 minutes. In the rain. 🌧️"
+            },
+            {
+              "from": "them",
+              "text": "You said you’d be there."
+            }
+          ],
+          "prompt": "What do you reply?",
+          "options": [
+            {
+              "text": "Sorry! My phone died, it wasn’t my fault really.",
+              "reaction": "Right…",
+              "why": "Jumping to excuses skips over the long, wet wait they just had."
+            },
+            {
+              "text": "Oh no, sorry!! Want me to make it up to you somehow?",
+              "reaction": "I mean… yeah, maybe.",
+              "why": "Kind, but vague. It doesn’t show you understand or have a plan."
+            },
+            {
+              "text": "I’m so sorry you waited in the rain. I’ll set a reminder so it never happens again.",
+              "correct": true,
+              "reaction": "Thanks. That actually helps.",
+              "why": "It names the impact and offers a real fix, which rebuilds their trust."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What makes following through on an apology hard?",
+          "options": [
+            "I forget",
+            "Old habits creep back",
+            "Life gets busy",
+            "It’s usually fine"
+          ],
+          "reply": "A reminder, a note or a small routine can turn a good intention into a kept promise."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you apologise, add one sentence that starts with “Next time, I’ll…” and then make sure you do it."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-6",
+      "level": 6,
+      "title": "Kind and Specific",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Good feedback points to one thing they can actually change.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Behaviour, not character",
+          "body": "“You’re so disorganised” attacks who someone is. “The bills were paid late twice this month” describes something that happened. People can change actions far more easily than labels.",
+          "mood": "curious"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Describes a behaviour, or labels a person?",
+          "left": "Behaviour",
+          "right": "Label",
+          "cards": [
+            {
+              "text": "“You’re lazy.”",
+              "side": "right"
+            },
+            {
+              "text": "“The washing-up was left overnight again.”",
+              "side": "left"
+            },
+            {
+              "text": "“You’re selfish with money.”",
+              "side": "right"
+            },
+            {
+              "text": "“You booked the trip without asking me.”",
+              "side": "left"
+            },
+            {
+              "text": "“You’re hopeless at planning.”",
+              "side": "right"
+            }
+          ],
+          "why": "Behaviours can be talked about and changed. Labels feel like a judgement of the whole person and make people defensive."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A friend keeps arriving very late to your dinners. Which feedback is kind and specific?",
+          "options": [
+            {
+              "text": "“The last two dinners started an hour late, and the food went cold. Could we aim for 7?”",
+              "correct": true,
+              "why": "It sticks to facts, explains the impact and offers a clear way forward."
+            },
+            {
+              "text": "“You’re always so inconsiderate about time.”",
+              "why": "“Always” and “inconsiderate” are sweeping labels that invite an argument."
+            },
+            {
+              "text": "Say nothing, but invite them less.",
+              "why": "Quietly pulling away hurts the friendship without giving them a chance to change."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do you feel before giving someone feedback?",
+          "options": [
+            "Nervous",
+            "Frustrated",
+            "Calm",
+            "I avoid it"
+          ],
+          "reply": "Those feelings are normal. Sticking to one specific example makes it feel much less scary."
+        },
+        {
+          "kind": "try",
+          "body": "If you need to give feedback this week, describe one specific thing that happened instead of a general label."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-6-2",
+      "level": 6,
+      "title": "Praise in Detail",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Specific praise means more than a quick “well done”.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Feedback is also good news",
+          "body": "We often save feedback for problems. But detailed praise, like “the way you calmed everyone down in that meeting was brilliant”, tells people what to keep doing.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match quick praise to detailed praise.",
+          "pairs": [
+            {
+              "a": "“Nice dinner.”",
+              "b": "“The spices in that curry were perfect.”"
+            },
+            {
+              "a": "“Good job.”",
+              "b": "“Your slides made it really clear.”"
+            },
+            {
+              "a": "“Thanks for today.”",
+              "b": "“Driving me there calmed my nerves.”"
+            },
+            {
+              "a": "“You’re great.”",
+              "b": "“You always remember my big days.”"
+            }
+          ],
+          "why": "Detailed praise shows you noticed something real. It feels personal and encourages more of the same."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Add the detail.",
+          "before": "Thank you for",
+          "after": "while I was ill. It meant a lot.",
+          "words": [
+            "stuff",
+            "dropping off soup",
+            "being there I guess"
+          ],
+          "answer": "dropping off soup",
+          "why": "Naming the soup shows exactly what made a difference, which feels far warmer than a general thanks."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who deserves some detailed praise from you this week?",
+          "options": [
+            "My partner",
+            "A friend",
+            "A family member",
+            "Someone at work"
+          ],
+          "reply": "Lovely. It only takes one sentence, and they may remember it for a long time."
+        },
+        {
+          "kind": "try",
+          "body": "Give one person specific praise today. Mention exactly what they did and why it mattered to you."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-6-3",
+      "level": 6,
+      "title": "Ask Before Advice",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Unasked-for advice can feel like criticism. Check first.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Advice needs an invitation",
+          "body": "Even good advice can sting if nobody asked for it. A quick “Do you want ideas, or would you rather just vent?” helps people feel respected, not managed.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "scene",
+          "title": "A friend’s work woes",
+          "them": "Your friend",
+          "lines": [
+            {
+              "from": "them",
+              "text": "My manager moved my deadline forward AGAIN. I’m so done 😩"
+            },
+            {
+              "from": "them",
+              "text": "I just don’t know how I’ll get it all finished."
+            }
+          ],
+          "prompt": "What’s the best reply?",
+          "options": [
+            {
+              "text": "You should just tell your manager no.",
+              "reaction": "It’s not that simple…",
+              "why": "Jumping in with advice can feel dismissive of how stuck they feel."
+            },
+            {
+              "text": "That sounds so stressful. Do you want to brainstorm, or just need to rant?",
+              "correct": true,
+              "reaction": "Honestly, a rant first 😅 then maybe ideas!",
+              "why": "You showed you heard them and let them choose what kind of help they want."
+            },
+            {
+              "text": "Ugh, my manager’s even worse, listen to this…",
+              "reaction": "Oh. Right.",
+              "why": "Switching to your own story takes the focus away when they needed it."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Offer, don’t impose.",
+          "before": "I’ve got an idea that might help.",
+          "after": "",
+          "words": [
+            "Want to hear it?",
+            "Listen to me.",
+            "You’re doing it wrong."
+          ],
+          "answer": "Want to hear it?",
+          "why": "Asking first lets them say yes, which makes them far more open to the idea."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When someone shares a problem, what do you usually do?",
+          "options": [
+            "Jump in with fixes",
+            "Share my own story",
+            "Listen quietly",
+            "Ask what they need"
+          ],
+          "reply": "Asking what they need is a small habit that makes people feel truly supported."
+        },
+        {
+          "kind": "try",
+          "body": "The next time someone shares a problem, ask whether they’d like ideas or just a listening ear before offering advice."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-7",
+      "level": 7,
+      "title": "Breathe, Then Listen",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Criticism stings. A pause stops you firing back.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "The sting is normal",
+          "body": "Even fair feedback can feel like a punch. Your body may want to defend or hit back. One slow breath gives your thinking brain time to catch up.",
+          "mood": "upset"
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your partner says, “You were on your phone all through dinner.” What’s the best first response?",
+          "options": [
+            {
+              "text": "“You’re on yours all the time too!”",
+              "why": "Firing back turns their point into a contest and shuts down the talk."
+            },
+            {
+              "text": "Take a breath. “You’re right, I was. What was that like for you?”",
+              "correct": true,
+              "why": "Pausing lets you hear the point, and asking shows you care how they felt."
+            },
+            {
+              "text": "“I was replying to something important.”",
+              "why": "Explaining straight away can sound like the feeling doesn’t matter."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a calm response to criticism in order.",
+          "items": [
+            "Take one slow breath",
+            "Listen to the whole point",
+            "Ask a question to understand",
+            "Then share your side"
+          ],
+          "why": "Breathing and listening first keep you calm. Understanding before explaining helps them feel heard, so they hear you too."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What’s your first reaction to criticism?",
+          "options": [
+            "I defend myself",
+            "I go quiet",
+            "I criticise back",
+            "I over-apologise"
+          ],
+          "reply": "Noticing your reflex gives you a choice. The breath is where that choice happens."
+        },
+        {
+          "kind": "try",
+          "body": "When you hear any criticism today, take one slow breath before you say anything at all."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-7-2",
+      "level": 7,
+      "title": "Find the Useful Bit",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Even clumsy feedback often hides something worth hearing.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Look past the delivery",
+          "body": "Not everyone gives feedback kindly. But underneath a grumpy “You never listen!” there’s often a real need, like wanting more attention. Look for the message inside.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match the clumsy feedback to the need underneath.",
+          "pairs": [
+            {
+              "a": "“You never listen!”",
+              "b": "I want to feel heard."
+            },
+            {
+              "a": "“You’re always out!”",
+              "b": "I miss time with you."
+            },
+            {
+              "a": "“You don’t care about money!”",
+              "b": "I’m worried about bills."
+            },
+            {
+              "a": "“Your music is so loud!”",
+              "b": "I need some quiet."
+            }
+          ],
+          "why": "Responding to the need, not the harsh words, helps you fix the real problem and calms things down."
+        },
+        {
+          "kind": "choice",
+          "prompt": "A colleague says, “Your emails are a nightmare to read.” What’s the most useful response?",
+          "options": [
+            {
+              "text": "“Fair. What would make them easier?”",
+              "correct": true,
+              "why": "You skip past the sting and ask for the practical detail you can use."
+            },
+            {
+              "text": "“Nobody else has complained.”",
+              "why": "Dismissing it means you miss what might be a genuinely helpful tip."
+            },
+            {
+              "text": "“Well, yours are worse.”",
+              "why": "Hitting back turns useful feedback into a petty fight."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which kind of feedback is hardest for you to take?",
+          "options": [
+            "About my work",
+            "About my habits",
+            "About my tone",
+            "About my choices"
+          ],
+          "reply": "Knowing your sore spot helps. That’s where looking for the useful bit matters most."
+        },
+        {
+          "kind": "try",
+          "body": "Think of a recent criticism that stung. Ask yourself: what need or useful point was hiding in it?"
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-7-3",
+      "level": 7,
+      "title": "Say Thanks and Follow Up",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Thanking people for feedback makes honesty easier next time.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Make honesty safe",
+          "body": "If giving you feedback always leads to a row, people stop telling you things. A simple “Thanks for telling me” makes them more likely to be honest again.",
+          "mood": "content"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Close the conversation well.",
+          "before": "That wasn’t easy to hear, but",
+          "after": "",
+          "words": [
+            "whatever.",
+            "thanks for telling me.",
+            "you’re wrong."
+          ],
+          "answer": "thanks for telling me.",
+          "why": "Thanking them shows you value their honesty, even when it’s uncomfortable."
+        },
+        {
+          "kind": "sort",
+          "prompt": "Encourages honesty, or discourages it?",
+          "left": "Encourages",
+          "right": "Discourages",
+          "cards": [
+            {
+              "text": "“Thanks for being straight with me.”",
+              "side": "left"
+            },
+            {
+              "text": "Sulking for the rest of the day",
+              "side": "right"
+            },
+            {
+              "text": "“I’ve tried what you said. Better?”",
+              "side": "left"
+            },
+            {
+              "text": "Bringing it up later to score a point",
+              "side": "right"
+            }
+          ],
+          "why": "Thanks and follow-up show feedback was worth giving. Sulking or point-scoring teaches people to stay quiet."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "How do people usually feel after giving you feedback?",
+          "options": [
+            "Relieved",
+            "Nervous",
+            "Like it was a waste",
+            "I’m not sure"
+          ],
+          "reply": "Worth thinking about. A thank-you and a quick follow-up can change that over time."
+        },
+        {
+          "kind": "try",
+          "body": "After the next piece of feedback you get, say thanks. A few days later, mention how you’ve acted on it."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-8",
+      "level": 8,
+      "title": "Find the Feeling Word",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "“Fine” and “bad” hide a lot. Name the real feeling.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Bigger feeling vocabulary",
+          "body": "“I’m stressed” could mean overwhelmed, worried, rushed or let down. The more precisely you name a feeling, the easier it is for others to understand and help.",
+          "mood": "curious"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each vague word to a more precise one.",
+          "pairs": [
+            {
+              "a": "“I feel bad.”",
+              "b": "I feel guilty."
+            },
+            {
+              "a": "“I’m stressed.”",
+              "b": "I feel overwhelmed."
+            },
+            {
+              "a": "“I’m annoyed.”",
+              "b": "I feel overlooked."
+            },
+            {
+              "a": "“I’m fine.”",
+              "b": "I feel a bit flat."
+            }
+          ],
+          "why": "Precise words point to what’s really going on. “Overlooked” suggests a very different fix from “annoyed”."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Pick the clearest feeling.",
+          "before": "When you cancelled last minute, I felt",
+          "after": "",
+          "words": [
+            "bad.",
+            "let down.",
+            "whatever."
+          ],
+          "answer": "let down.",
+          "why": "“Let down” tells them exactly how it landed, so they can understand why it mattered."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which feeling do you find hardest to name out loud?",
+          "options": [
+            "Hurt",
+            "Lonely",
+            "Jealous",
+            "Scared"
+          ],
+          "reply": "That’s a brave thing to notice. Naming it, even just to yourself, is the first step."
+        },
+        {
+          "kind": "try",
+          "body": "Today, when you notice a feeling, try to name it more precisely than “good”, “bad” or “fine”."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-8-2",
+      "level": 8,
+      "title": "Feelings, Not Verdicts",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "“I feel you don’t care” is a verdict, not a feeling.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Spot the hidden judgement",
+          "body": "Sentences like “I feel you’re ignoring me” sound like feelings but are really judgements of the other person. Try “I feel lonely” instead: it shares your experience without accusing.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "sort",
+          "prompt": "A real feeling, or a verdict in disguise?",
+          "left": "Real feeling",
+          "right": "Verdict",
+          "cards": [
+            {
+              "text": "“I feel lonely.”",
+              "side": "left"
+            },
+            {
+              "text": "“I feel you don’t respect me.”",
+              "side": "right"
+            },
+            {
+              "text": "“I feel worried.”",
+              "side": "left"
+            },
+            {
+              "text": "“I feel you’re being selfish.”",
+              "side": "right"
+            },
+            {
+              "text": "“I feel embarrassed.”",
+              "side": "left"
+            }
+          ],
+          "why": "Real feelings describe you. Verdicts describe what you think the other person is doing, which invites them to argue."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your friend forgot your important news. Which sentence shares your feeling without a verdict?",
+          "options": [
+            {
+              "text": "“I feel like you don’t care about my life.”",
+              "why": "It sounds like a feeling, but it’s really a judgement they’ll want to deny."
+            },
+            {
+              "text": "“I felt a bit hurt when it slipped your mind.”",
+              "correct": true,
+              "why": "It’s honest about your feeling and gentle about what happened."
+            },
+            {
+              "text": "“Typical. You never remember anything.”",
+              "why": "Sweeping blame makes them defensive rather than sorry."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which verdict sneaks into your “I feel” sentences?",
+          "options": [
+            "“…you don’t care”",
+            "“…you’re ignoring me”",
+            "“…you’re unfair”",
+            "I’m not sure yet"
+          ],
+          "reply": "Catching it is great. Swap it for the feeling underneath, like hurt or lonely."
+        },
+        {
+          "kind": "try",
+          "body": "Next time you start a sentence with “I feel”, check that the next word is a feeling, like sad or worried, not “you”."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-8-3",
+      "level": 8,
+      "title": "Share the Good Stuff",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Sharing happy feelings brings people closer too.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Not just the hard feelings",
+          "body": "We often only share feelings when something is wrong. Saying “I felt so proud of you today” or “I loved our walk” builds warmth and makes hard talks easier later.",
+          "mood": "happy"
+        },
+        {
+          "kind": "scene",
+          "title": "After a lovely day",
+          "them": "Your partner",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Home safe! Thanks for today ☺️"
+            },
+            {
+              "from": "them",
+              "text": "The sunset walk was my favourite bit 🌅"
+            }
+          ],
+          "prompt": "How do you reply?",
+          "options": [
+            {
+              "text": "Np! Night.",
+              "reaction": "Night!",
+              "why": "Polite, but it misses a lovely chance to share how good the day felt."
+            },
+            {
+              "text": "Today was so lovely. I felt really relaxed with you 💛",
+              "correct": true,
+              "reaction": "Aw, me too. Let’s do it again soon!",
+              "why": "Sharing a warm feeling makes them feel valued and closer to you."
+            },
+            {
+              "text": "Yeah, the café was a bit pricey though.",
+              "reaction": "Oh, yeah I suppose…",
+              "why": "Leading with a gripe takes the shine off a good day."
+            }
+          ]
+        },
+        {
+          "kind": "blank",
+          "prompt": "Share a happy feeling.",
+          "before": "When you surprised me with breakfast, I felt",
+          "after": "",
+          "words": [
+            "so cared for.",
+            "okay.",
+            "confused."
+          ],
+          "answer": "so cared for.",
+          "why": "Naming the warm feeling tells them their kindness really landed."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who could hear a happy feeling from you this week?",
+          "options": [
+            "My partner",
+            "A friend",
+            "A parent",
+            "A colleague"
+          ],
+          "reply": "Lovely. One warm sentence can brighten their whole day."
+        },
+        {
+          "kind": "try",
+          "body": "Tell someone one happy feeling they gave you recently, using “I felt…” and a warm feeling word."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-9",
+      "level": 9,
+      "title": "Notice the Rush",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Stress speeds up our words. Notice it before it spills.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Stress changes how we talk",
+          "body": "Under pressure we talk faster, interrupt more and choose sharper words. Noticing the signs, like a tight jaw or racing thoughts, lets you catch yourself early.",
+          "mood": "upset"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Sign of rushing, or a calm sign?",
+          "left": "Rushing",
+          "right": "Calm",
+          "cards": [
+            {
+              "text": "Finishing their sentences for them",
+              "side": "left"
+            },
+            {
+              "text": "Taking a breath before replying",
+              "side": "right"
+            },
+            {
+              "text": "Talking louder and faster",
+              "side": "left"
+            },
+            {
+              "text": "Asking a question to check",
+              "side": "right"
+            }
+          ],
+          "why": "Rushing signs are your cue to slow down. Calm habits keep you clear even when the pressure is on."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Where do you first notice stress in your body?",
+          "options": [
+            "Tight shoulders",
+            "Fast breathing",
+            "Racing thoughts",
+            "A clenched jaw"
+          ],
+          "reply": "That’s your early warning light. When you feel it, it’s time to slow your words down."
+        },
+        {
+          "kind": "choice",
+          "prompt": "You notice you’re talking fast and interrupting during a tense call. What’s the best next move?",
+          "options": [
+            {
+              "text": "Keep going so you get your point across.",
+              "why": "Pushing on while rushed usually means more interruptions and sharper words."
+            },
+            {
+              "text": "Hang up without saying anything.",
+              "why": "Leaving suddenly can feel like a slammed door to the other person."
+            },
+            {
+              "text": "“Sorry, I’m rushing. Let me slow down and listen.”",
+              "correct": true,
+              "why": "Naming it out loud resets the pace and shows you care about hearing them."
+            }
+          ]
+        },
+        {
+          "kind": "try",
+          "body": "Today, when you feel your early stress sign, pause and drop your shoulders before you speak."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-9-2",
+      "level": 9,
+      "title": "Slow Your Words",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "Fewer, slower words carry more weight when stakes are high.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Short and slow",
+          "body": "When things are tense, long explanations get lost. Short sentences, said slowly, are easier to hear. They also help your own body calm down.",
+          "mood": "content"
+        },
+        {
+          "kind": "choice",
+          "prompt": "You’re late, your partner is upset and the kids are shouting. Which reply works best?",
+          "options": [
+            {
+              "text": "A long explanation of everything that went wrong today.",
+              "why": "In a noisy, tense moment, a long story gets lost and sounds like excuses."
+            },
+            {
+              "text": "“I’m sorry I’m late. Let’s sort the kids, then talk.”",
+              "correct": true,
+              "why": "Short, calm and practical, it eases the moment and plans the bigger talk."
+            },
+            {
+              "text": "“Can everyone just stop shouting at me?!”",
+              "why": "Raising your voice adds to the noise rather than calming it."
+            }
+          ]
+        },
+        {
+          "kind": "order",
+          "prompt": "Order these steps for a calmer reply.",
+          "items": [
+            "Breathe out slowly",
+            "Say one short sentence",
+            "Pause for their reply",
+            "Then add detail if needed"
+          ],
+          "why": "Breathing out first slows you down. One short sentence and a pause let the other person keep up before you add more."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When the pressure’s on, what do your words tend to do?",
+          "options": [
+            "Pour out",
+            "Get sharp",
+            "Dry up",
+            "Stay steady"
+          ],
+          "reply": "Whatever your pattern, short and slow sentences give you a steadier way through."
+        },
+        {
+          "kind": "try",
+          "body": "In your next tense conversation, say your main point in under ten words, then pause."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-9-3",
+      "level": 9,
+      "title": "Buy a Little Time",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "It’s okay to say “Let me think and come back to you.”",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "You don’t have to answer now",
+          "body": "Pressure makes us feel we must reply instantly. But big questions deserve thought. Asking for time is respectful, as long as you say when you’ll come back.",
+          "mood": "neutral"
+        },
+        {
+          "kind": "blank",
+          "prompt": "Ask for time, kindly.",
+          "before": "That’s a big question. Can I",
+          "after": "and get back to you tonight?",
+          "words": [
+            "think it over",
+            "ignore it",
+            "avoid you"
+          ],
+          "answer": "think it over",
+          "why": "It shows you’re taking the question seriously, and “tonight” gives them a clear time to expect your answer."
+        },
+        {
+          "kind": "scene",
+          "title": "A big ask on the spot",
+          "them": "Your brother",
+          "lines": [
+            {
+              "from": "them",
+              "text": "Can I stay with you for a month while I find a flat? Need to know today 🙏"
+            },
+            {
+              "from": "them",
+              "text": "My lease ends sooner than I thought 😬"
+            }
+          ],
+          "prompt": "You’re not sure. What do you say?",
+          "options": [
+            {
+              "text": "Let me check with my housemate and I’ll call you by 6.",
+              "correct": true,
+              "reaction": "Fair enough, thanks! Speak at 6.",
+              "why": "You bought time honestly and gave a clear time to expect an answer."
+            },
+            {
+              "text": "Sure, of course! (and worry about it later)",
+              "reaction": "Amazing, thank you!!",
+              "why": "Saying yes under pressure may lead to a promise you can’t keep."
+            },
+            {
+              "text": "Why do you always ask me last minute?",
+              "reaction": "Wow, okay. Forget it.",
+              "why": "Turning it into blame hides your real answer and hurts him."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "When do you feel most pushed for a quick answer?",
+          "options": [
+            "Family requests",
+            "Work requests",
+            "Plans with friends",
+            "Money questions"
+          ],
+          "reply": "Good to know. That’s exactly where “Let me get back to you by…” can help."
+        },
+        {
+          "kind": "try",
+          "body": "If someone pushes for a quick answer this week, ask for time and name exactly when you’ll get back to them."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-10",
+      "level": 10,
+      "title": "How Are You, Really?",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "A better question gets a real answer instead of “fine”.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Beyond “fine, thanks”",
+          "body": "“How are you?” usually gets “fine”. Questions like “What was the best bit of your day?” or “What’s on your mind this week?” invite real answers.",
+          "mood": "happy"
+        },
+        {
+          "kind": "sort",
+          "prompt": "Gets a real answer, or a quick “fine”?",
+          "left": "Real answer",
+          "right": "Quick “fine”",
+          "cards": [
+            {
+              "text": "“Good day?”",
+              "side": "right"
+            },
+            {
+              "text": "“What made you laugh today?”",
+              "side": "left"
+            },
+            {
+              "text": "“You okay?”",
+              "side": "right"
+            },
+            {
+              "text": "“What’s been taking up your headspace?”",
+              "side": "left"
+            },
+            {
+              "text": "“What are you looking forward to?”",
+              "side": "left"
+            }
+          ],
+          "why": "Open, specific questions give people something to talk about. Yes-or-no questions are easy to brush off."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Make the check-in open.",
+          "before": "What was",
+          "after": "of your week?",
+          "words": [
+            "the best bit",
+            "okay",
+            "bad"
+          ],
+          "answer": "the best bit",
+          "why": "Asking about the best bit invites a story and starts the chat on a positive note."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Which question would you like to be asked more often?",
+          "options": [
+            "What made you smile?",
+            "What’s on your mind?",
+            "What do you need?",
+            "What are you proud of?"
+          ],
+          "reply": "Try asking someone else that question. Often it’s the one we most want to hear."
+        },
+        {
+          "kind": "try",
+          "body": "Swap one “How are you?” today for a more specific question, then really listen to the answer."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-10-2",
+      "level": 10,
+      "title": "The Weekly Catch-up",
+      "minutes": 4,
+      "focus": "communication",
+      "summary": "A regular, relaxed chat stops small things piling up.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Little and often",
+          "body": "A short weekly catch-up, over tea or a walk, gives small worries a home before they grow. It can be as simple as: what went well, what was hard, what’s coming up.",
+          "mood": "content"
+        },
+        {
+          "kind": "order",
+          "prompt": "Put a gentle weekly catch-up in order.",
+          "items": [
+            "Share what went well",
+            "Mention anything that was hard",
+            "Look at the week ahead",
+            "End with something to enjoy"
+          ],
+          "why": "Starting with good things sets a warm tone. Tackling the hard bit in the middle, then planning and ending on a treat, keeps it light."
+        },
+        {
+          "kind": "choice",
+          "prompt": "Your weekly catch-up keeps turning into a complaints session. What could help?",
+          "options": [
+            {
+              "text": "Stop doing catch-ups altogether.",
+              "why": "Dropping them means small issues pile up with nowhere to go."
+            },
+            {
+              "text": "Save every complaint for the catch-up.",
+              "why": "Storing everything up makes the session heavy and dreaded."
+            },
+            {
+              "text": "Start each one by sharing something you appreciated that week.",
+              "correct": true,
+              "why": "Opening with appreciation balances the tone and makes the hard bits easier."
+            }
+          ]
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Who would you like a regular catch-up with?",
+          "options": [
+            "My partner",
+            "A parent",
+            "A close friend",
+            "My team"
+          ],
+          "reply": "Lovely idea. Even fifteen minutes a week can make a real difference."
+        },
+        {
+          "kind": "try",
+          "body": "Suggest a short, relaxed catch-up this week with someone close: one good thing, one hard thing, one plan."
+        }
+      ]
+    },
+    {
+      "id": "rf-communication-10-3",
+      "level": 10,
+      "title": "Keep the Door Open",
+      "minutes": 3,
+      "focus": "communication",
+      "summary": "Let people know they can always come and talk to you.",
+      "steps": [
+        {
+          "kind": "read",
+          "title": "Say it out loud",
+          "body": "People don’t always know they can come to you. Saying “You can always talk to me about anything” makes it easier for them to speak up when something is wrong.",
+          "mood": "happy"
+        },
+        {
+          "kind": "match",
+          "prompt": "Match each moment to a door-opening line.",
+          "pairs": [
+            {
+              "a": "They seem quiet",
+              "b": "“I’m here if you want to chat.”"
+            },
+            {
+              "a": "After a big talk",
+              "b": "“We can always revisit this.”"
+            },
+            {
+              "a": "They’re starting something new",
+              "b": "“Tell me how it goes!”"
+            }
+          ],
+          "why": "Small invitations remind people you’re available. They make it easier to reach out when it really matters."
+        },
+        {
+          "kind": "blank",
+          "prompt": "Leave the door open.",
+          "before": "No pressure at all, but",
+          "after": "",
+          "words": [
+            "you owe me an explanation.",
+            "I’m around if you need me.",
+            "hurry up and tell me."
+          ],
+          "answer": "I’m around if you need me.",
+          "why": "It offers support without pushing, so they can come to you when they’re ready."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "What have you learned most from these communication lessons?",
+          "options": [
+            "Asking clearly",
+            "Saying sorry well",
+            "Sharing feelings",
+            "Staying calm"
+          ],
+          "reply": "Wonderful. Keep practising it in small moments, and it will become second nature."
+        },
+        {
+          "kind": "try",
+          "body": "Tell someone you care about, in your own words, that they can always come and talk to you."
+        }
+      ]
+    }
+  ]
+}
