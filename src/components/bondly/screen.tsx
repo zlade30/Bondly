@@ -114,6 +114,10 @@ export function ProgressBar({ value }: { value: number }) {
   );
 }
 
+/** How much of each Float's distance is used, and how much slower it moves. */
+const GENTLER = 0.4;
+const SLOWER = 1.4;
+
 /** Gently bobs its children up and down, like the mascots are breathing. */
 export function Float({
   children,
@@ -130,18 +134,20 @@ export function Float({
 }) {
   const t = useSharedValue(0);
   useEffect(() => {
+    // Kept small and slow on purpose: a soft breath, not a bounce.
+    const slow = duration * SLOWER;
     t.value = withDelay(
       delay,
       withRepeat(
         withSequence(
-          withTiming(1, { duration, easing: Easing.inOut(Easing.sin) }),
-          withTiming(0, { duration, easing: Easing.inOut(Easing.sin) })
+          withTiming(1, { duration: slow, easing: Easing.inOut(Easing.sin) }),
+          withTiming(0, { duration: slow, easing: Easing.inOut(Easing.sin) })
         ),
         -1
       )
     );
   }, [t, duration, delay]);
-  const animated = useAnimatedStyle(() => ({ transform: [{ translateY: -distance * t.value }] }));
+  const animated = useAnimatedStyle(() => ({ transform: [{ translateY: -distance * GENTLER * t.value }] }));
   return <Animated.View style={[style, animated]}>{children}</Animated.View>;
 }
 

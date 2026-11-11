@@ -7,14 +7,16 @@ import Svg, { Circle, Path } from 'react-native-svg';
 
 import { tapFeedback } from '@/components/bondly/buttons';
 import { Bondling } from '@/components/bondly/mascot';
+import type { BondlingColor } from '@/components/bondly/mascot';
 import { RadarChart } from '@/components/bondly/radar-chart';
+import { TopicIcon, type TopicIconName } from '@/components/bondly/topic-icons';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
-import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
+import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
 import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
-import { coursesFinished, lastSevenDays, minutesPractised, skillProgress } from '@/features/profile/stats';
+import { coursesFinished, thisWeek, minutesPractised, skillProgress } from '@/features/profile/stats';
 import { useActivity } from '@/features/profile/use-activity';
 import { useJournal } from '@/features/reflect/journal';
 
@@ -26,7 +28,7 @@ export default function ProfileScreen() {
 
   const skills = useMemo(() => skillProgress(answers, completedLessons), [answers, completedLessons]);
   const finished = useMemo(() => coursesFinished(completedLessons), [completedLessons]);
-  const week = lastSevenDays(activeDays);
+  const week = thisWeek(activeDays);
   const focus = FOCUS_AREAS.filter((f) => answers.focus.includes(f.id));
 
   const streakNote = streak.activeToday
@@ -72,9 +74,13 @@ export default function ProfileScreen() {
 
       {/* Streak */}
       <Animated.View entering={FadeInDown.delay(80).duration(400)}>
-        <LinearGradient colors={['#FFE9D6', '#FDE1EE']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.streak}>
+        <LinearGradient
+          colors={['#FFE9D6', '#FDE1EE']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.streak}>
           <View style={styles.streakHead}>
-            <BText style={styles.flame}>🔥</BText>
+            <TopicIcon name="flame" color="peach" size={56} noShadow />
             <View style={styles.streakText}>
               <BText variant="title" style={styles.streakNumber}>
                 {streak.current}-day streak
@@ -86,11 +92,13 @@ export default function ProfileScreen() {
           </View>
           <View style={styles.week}>
             {week.map((d) => (
-              <View key={d.key} style={styles.day}>
+              <View key={d.key} style={[styles.day, d.future && styles.dayFuture]}>
                 <View style={[styles.dayDot, d.active && styles.dayDotOn]}>
-                  {d.active && <BText style={styles.dayFlame}>🔥</BText>}
+                  {d.active && <TopicIcon name="flame" color="peach" size={26} noShadow />}
                 </View>
-                <BText variant="caption">{d.label}</BText>
+                <BText variant="caption" style={d.today && styles.dayToday}>
+                  {d.label}
+                </BText>
               </View>
             ))}
           </View>
@@ -104,30 +112,11 @@ export default function ProfileScreen() {
       <Animated.View entering={FadeInDown.delay(140).duration(400)} style={styles.mapCard}>
         <BText variant="heading">Your connection map</BText>
         <BText variant="caption" color={Palette.inkSoft}>
-          Grows as you finish lessons in each skill.
+          Grows as you finish lessons in journeys and skills.
         </BText>
-        <RadarChart size={170} axes={skills.map((s) => ({ label: s.label, value: s.value }))} />
-        <View style={styles.skills}>
-          {skills.map((s) => (
-            <View key={s.id} style={styles.skillRow}>
-              <BText variant="bodyBold" style={styles.skillName}>
-                {s.label}
-              </BText>
-              <View style={styles.skillTrack}>
-                {s.done > 0 && (
-                  <LinearGradient
-                    colors={Gradients.progress}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 0 }}
-                    style={[styles.skillFill, { width: `${(s.done / s.total) * 100}%` }]}
-                  />
-                )}
-              </View>
-              <BText variant="caption" style={styles.skillCount}>
-                {s.done}/{s.total}
-              </BText>
-            </View>
-          ))}
+        {/* A pentagon sits higher than its square box, so trim the spare room below it. */}
+        <View style={styles.mapChart}>
+          <RadarChart size={170} axes={skills.map((s) => ({ label: s.label, value: s.value }))} />
         </View>
       </Animated.View>
 
@@ -137,20 +126,56 @@ export default function ProfileScreen() {
       </BText>
       <View style={styles.stats}>
         {[
-          { value: completedLessons.length, label: 'Lessons done', emoji: '📚', colors: ['#FDDDEC', '#FFF1F7'] },
-          { value: minutesPractised(completedLessons), label: 'Minutes practised', emoji: '⏱️', colors: ['#DCE5FF', '#F1F4FF'] },
+          {
+            value: completedLessons.length,
+            label: 'Lessons done',
+            icon: 'books',
+            tone: 'pink',
+            colors: ['#FDDDEC', '#FFF1F7'],
+          },
+          {
+            value: minutesPractised(completedLessons),
+            label: 'Minutes practised',
+            icon: 'stopwatch',
+            tone: 'blue',
+            colors: ['#DCE5FF', '#F1F4FF'],
+          },
           {
             value: `${finished.done}/${finished.total}`,
             label: 'Courses finished',
-            emoji: '🏆',
+            icon: 'medal',
+            tone: 'yellow',
             colors: ['#FFEDC2', '#FFF8E6'],
           },
-          { value: Object.keys(checkIns).length, label: 'Check-ins', emoji: '🌤️', colors: ['#D4F3E5', '#EEFBF5'] },
-          { value: entries.length, label: 'Journal entries', emoji: '📝', colors: ['#E8DDFF', '#F6F1FF'] },
-          { value: activeDays.size, label: 'Days active', emoji: '🔥', colors: ['#FFDDD0', '#FFF2EC'] },
+          {
+            value: Object.keys(checkIns).length,
+            label: 'Check-ins',
+            icon: 'sunny',
+            tone: 'mint',
+            colors: ['#D4F3E5', '#EEFBF5'],
+          },
+          {
+            value: entries.length,
+            label: 'Journal entries',
+            icon: 'journal',
+            tone: 'lavender',
+            colors: ['#E8DDFF', '#F6F1FF'],
+          },
+          {
+            value: activeDays.size,
+            label: 'Days active',
+            icon: 'flame',
+            tone: 'peach',
+            colors: ['#FFDDD0', '#FFF2EC'],
+          },
         ].map((s, i) => (
           <Animated.View key={s.label} entering={FadeInDown.delay(200 + i * 50).duration(400)} style={styles.statCell}>
-            <Stat {...s} colors={s.colors as [string, string]} />
+            <Stat
+              {...s}
+              icon={s.icon as TopicIconName}
+              tone={s.tone as BondlingColor}
+              colors={s.colors as [string, string]}
+            />
           </Animated.View>
         ))}
       </View>
@@ -161,12 +186,15 @@ export default function ProfileScreen() {
 function Stat({
   value,
   label,
-  emoji,
+  icon,
+  tone,
   colors,
 }: {
   value: number | string;
   label: string;
-  emoji: string;
+  /** A little illustrated icon in the mascot style, coloured to match the tile. */
+  icon: TopicIconName;
+  tone: BondlingColor;
   colors: [string, string];
 }) {
   return (
@@ -175,12 +203,14 @@ function Stat({
       <View style={[styles.bubble, styles.bubbleLarge]} />
       <View style={[styles.bubble, styles.bubbleSmall]} />
 
-      <View style={styles.badge}>
-        <BText style={styles.badgeEmoji}>{emoji}</BText>
+      <View style={styles.statTop}>
+        <View style={styles.badge}>
+          <TopicIcon name={icon} color={tone} size={58} noShadow />
+        </View>
+        <BText variant="title" style={styles.statValue} numberOfLines={1} adjustsFontSizeToFit>
+          {value}
+        </BText>
       </View>
-      <BText variant="title" style={styles.statValue}>
-        {value}
-      </BText>
       <BText variant="caption" color={Palette.inkSoft} style={styles.statLabel}>
         {label}
       </BText>
@@ -230,11 +260,12 @@ const styles = StyleSheet.create({
   },
   streak: { borderRadius: Radius.xl, padding: Space.lg, gap: Space.md },
   streakHead: { flexDirection: 'row', alignItems: 'center', gap: Space.md },
-  flame: { fontSize: 40, lineHeight: 48 },
   streakText: { flex: 1 },
   streakNumber: { fontSize: 26, lineHeight: 32 },
   week: { flexDirection: 'row', justifyContent: 'space-between' },
   day: { alignItems: 'center', gap: 4 },
+  dayFuture: { opacity: 0.45 },
+  dayToday: { fontFamily: Font.bold, color: Palette.ink },
   dayDot: {
     width: 34,
     height: 34,
@@ -244,7 +275,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   dayDotOn: { backgroundColor: Palette.white, borderWidth: 2, borderColor: '#FFB36B' },
-  dayFlame: { fontSize: 16, lineHeight: 20 },
   streakNote: { fontSize: 15 },
   mapCard: {
     backgroundColor: Palette.white,
@@ -253,25 +283,12 @@ const styles = StyleSheet.create({
     gap: 2,
     ...Shadow.soft,
   },
-  skills: { gap: Space.sm, marginTop: Space.sm },
-  skillRow: { flexDirection: 'row', alignItems: 'center', gap: Space.md },
-  skillName: { width: 118, fontSize: 15 },
-  skillTrack: {
-    flex: 1,
-    height: 8,
-    borderRadius: Radius.pill,
-    backgroundColor: Palette.track,
-    overflow: 'hidden',
-  },
-  skillFill: { height: '100%', borderRadius: Radius.pill },
-  skillCount: { width: 32, textAlign: 'right' },
   statsTitle: { marginTop: Space.sm },
   stats: { flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: -Space.sm / 2, marginTop: -Space.xs },
   statCell: { width: '50%', padding: Space.sm / 2 },
   stat: {
     borderRadius: Radius.xl,
     padding: Space.lg,
-    minHeight: 140,
     overflow: 'hidden',
     borderWidth: 1.5,
     borderColor: 'rgba(255,255,255,0.9)',
@@ -279,17 +296,9 @@ const styles = StyleSheet.create({
   bubble: { position: 'absolute', borderRadius: 999, backgroundColor: 'rgba(255,255,255,0.45)' },
   bubbleLarge: { width: 96, height: 96, top: -28, right: -26 },
   bubbleSmall: { width: 34, height: 34, top: 58, right: 18, backgroundColor: 'rgba(255,255,255,0.35)' },
-  badge: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
-    backgroundColor: Palette.white,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: Space.md,
-    ...Shadow.soft,
-  },
-  badgeEmoji: { fontSize: 22, lineHeight: 28 },
-  statValue: { fontSize: 30, lineHeight: 34 },
+  mapChart: { marginBottom: -36 },
+  statTop: { flexDirection: 'row', alignItems: 'center', gap: Space.xs, marginLeft: -6, marginBottom: Space.sm },
+  badge: { width: 58, height: 58 },
+  statValue: { flex: 1, fontSize: 30, lineHeight: 34 },
   statLabel: { fontFamily: Font.bold, marginTop: 2 },
 });

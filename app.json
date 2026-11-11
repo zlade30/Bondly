@@ -39,7 +39,14 @@
       ],
       "@react-native-community/datetimepicker",
       "expo-notifications",
-      "expo-apple-authentication"
+      "expo-apple-authentication",
+      [
+        "expo-audio",
+        {
+          "enableBackgroundPlayback": false,
+          "microphonePermission": false
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

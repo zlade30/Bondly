@@ -21,6 +21,7 @@ import { BText } from '@/components/bondly/text';
 import { Palette, Radius, Shadow, Space } from '@/constants/bondly';
 
 import { Feedback, StepFrame, notify, type StepProps } from './steps';
+import { playSound } from '@/features/sound/sound';
 
 const GOOD = '#1F8A60';
 const GOOD_BG = '#DDF5EA';
@@ -216,8 +217,9 @@ export function SortStep({ step, onDone, tint }: StepProps<'sort'>) {
     notify(right);
     if (!right) setMistakes((m) => m + 1);
     setFlash(right ? 'good' : 'bad');
-    x.value = withSpring(0);
+    x.value = withSpring(0, { damping: 20, stiffness: 200, overshootClamping: true });
     setTimeout(() => {
+      playSound('swoosh');
       x.value = withTiming(side === 'left' ? -width : width, { duration: 220 });
       setTimeout(() => {
         setFlash(null);
@@ -238,7 +240,7 @@ export function SortStep({ step, onDone, tint }: StepProps<'sort'>) {
       if (Math.abs(e.translationX) > SWIPE_DISTANCE) {
         scheduleOnRN(decide, e.translationX < 0 ? 'left' : 'right');
       } else {
-        x.value = withSpring(0);
+        x.value = withSpring(0, { damping: 20, stiffness: 200, overshootClamping: true });
       }
     },
   });
@@ -254,7 +256,7 @@ export function SortStep({ step, onDone, tint }: StepProps<'sort'>) {
         footer={
           <Feedback correct why={step.why} onContinue={() => onDone({ firstTry: mistakes === 0 })} onRetry={() => {}} />
         }>
-        <Animated.View entering={ZoomIn.springify().damping(14)} style={styles.sortDone}>
+        <Animated.View entering={ZoomIn.duration(320)} style={styles.sortDone}>
           <BText variant="title" center>
             {right} of {cards.length} sorted right
           </BText>

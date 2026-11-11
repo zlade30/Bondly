@@ -66,7 +66,10 @@ export const MORE_TOPIC_ICONS = [
   'mountain',
 ] as const;
 
-export type MoreTopicIconName = (typeof MORE_TOPIC_ICONS)[number];
+/** Icons for the progress tiles on Profile, drawn in the same style. */
+export const STAT_ICONS = ['books', 'stopwatch', 'medal', 'sunny', 'journal', 'flame'] as const;
+
+export type MoreTopicIconName = (typeof MORE_TOPIC_ICONS)[number] | (typeof STAT_ICONS)[number];
 
 /** Everything an icon needs from the shared drawing kit. */
 export type IconKit = {
@@ -722,6 +725,85 @@ export function moreArt(k: IconKit): Record<MoreTopicIconName, ReactNode> {
         <Path d="M46 40 L55 55 L49 52 L43 57 L38 53 Z" fill={WHITE} opacity={0.9} />
         <Path d="M80 46 L87 58 L82 56 L77 59 L74 56 Z" fill={WHITE} opacity={0.9} />
         {face(58, 86, 0.65)}
+      </>
+    ),
+
+    // ---------- Profile progress tiles ----------
+    // Lessons done: a happy stack of books.
+    books: (
+      <>
+        {soft(rr(14, 80, 92, 24, 7))}
+        <Path d={rr(96, 84, 6, 16, 2)} fill={WHITE} opacity={0.8} />
+        {tinted(rr(22, 56, 80, 24, 7), pink)}
+        <Path d={rr(92, 60, 6, 16, 2)} fill={WHITE} opacity={0.8} />
+        {tinted(rr(18, 32, 82, 24, 7), sky)}
+        <Path d={rr(90, 36, 6, 16, 2)} fill={WHITE} opacity={0.8} />
+        <Path d="M30 32 L30 56 M34 56 L34 80 M26 80 L26 104" {...stroke(ink, 2.5, 0.18)} />
+        {face(60, 66, 0.5)}
+      </>
+    ),
+    // Minutes practised: a stopwatch.
+    stopwatch: (
+      <>
+        <Path d={rr(50, 6, 20, 12, 4)} fill={ink} opacity={0.5} />
+        <Path d={rr(56, 16, 8, 10, 2)} fill={ink} opacity={0.4} />
+        <G transform="rotate(40 92 34)">
+          <Path d={rr(86, 24, 12, 10, 3)} fill={ink} opacity={0.4} />
+        </G>
+        {soft(circ(60, 68, 42))}
+        <Circle cx={60} cy={68} r={32} fill={WHITE} opacity={0.88} />
+        <Path d="M60 68 L74 50" {...stroke(pink, 4.5)} />
+        <Circle cx={60} cy={68} r={4} fill={ink} />
+        <Path d="M60 40 L60 45 M88 68 L83 68 M32 68 L37 68" {...stroke(ink, 2.5, 0.35)} />
+        {face(60, 84, 0.42)}
+      </>
+    ),
+    // Courses finished: a medal on ribbons.
+    medal: (
+      <>
+        <Path d="M36 6 L56 50 L44 56 L24 12 Z" fill={pink} />
+        <Path d="M84 6 L64 50 L76 56 L96 12 Z" fill={sky} />
+        {soft(circ(60, 78, 34))}
+        <Circle cx={60} cy={78} r={24} fill={WHITE} opacity={0.35} />
+        <Path d="M60 52 L63 59 L70 59 L64.5 63 L67 70 L60 66 L53 70 L55.5 63 L50 59 L57 59 Z" fill={gold} />
+        {face(60, 84, 0.55)}
+      </>
+    ),
+    // Check-ins: a sun peeking out from a cloud.
+    sunny: (
+      <>
+        <Path d="M44 6 L44 14 M14 42 L22 42 M22 18 L28 24 M66 18 L60 24" {...stroke('#FFC24D', 4)} />
+        {tinted(circ(44, 44, 22), gold)}
+        {soft('M38 100 C 22 100, 20 78, 36 74 C 36 58, 58 50, 66 62 C 72 48, 98 50, 98 70 C 112 72, 114 98, 98 100 Z')}
+        {face(70, 84, 0.55)}
+      </>
+    ),
+    // Journal entries: a journal with a bookmark and a pencil.
+    journal: (
+      <>
+        <Path d="M74 8 L74 30 L80 24 L86 30 L86 8 Z" fill={pink} />
+        {soft(rr(22, 12, 66, 96, 10))}
+        <Path d={rr(22, 12, 14, 96, 7)} fill={ink} opacity={0.12} />
+        <Path d={heart(53, 32, 1.1)} fill={pink} />
+        {face(62, 72, 0.6)}
+        <G transform="rotate(25 100 70)">
+          <Path d={rr(94, 36, 12, 54, 4)} fill={gold} />
+          <Path d="M94 90 L106 90 L100 102 Z" fill="#F4D6B0" />
+        </G>
+      </>
+    ),
+    // Days active: a cheerful little flame.
+    flame: (
+      <>
+        {tinted(
+          'M60 6 C 72 28, 98 44, 98 74 C 98 98, 80 112, 60 112 C 40 112, 22 98, 22 74 C 22 56, 34 46, 40 30 C 44 46, 50 50, 54 50 C 52 34, 54 20, 60 6 Z',
+          gold
+        )}
+        {tinted(
+          'M60 48 C 70 62, 84 72, 84 88 C 84 102, 74 110, 60 110 C 46 110, 36 102, 36 88 C 36 76, 46 70, 50 58 C 54 66, 58 64, 60 48 Z',
+          pink
+        )}
+        {face(60, 88, 0.55)}
       </>
     ),
   };

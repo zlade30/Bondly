@@ -10,6 +10,7 @@ import { Float, SpeechBubble } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import type { LessonStep } from '@/features/learn/lessons';
+import { playSound } from '@/features/sound/sound';
 
 /** firstTry is set for steps with a right answer; note for a written answer. */
 export type StepResult = { firstTry?: boolean; note?: string };
@@ -22,6 +23,7 @@ export type StepProps<K extends LessonStep['kind']> = {
 };
 
 export function notify(success: boolean) {
+  playSound(success ? 'correct' : 'wrong');
   if (Platform.OS === 'web') return;
   Haptics.notificationAsync(
     success ? Haptics.NotificationFeedbackType.Success : Haptics.NotificationFeedbackType.Error
@@ -77,7 +79,7 @@ export function Feedback({
 }) {
   return (
     <Animated.View
-      entering={FadeInUp.springify().damping(16)}
+      entering={FadeInUp.duration(320)}
       style={[styles.feedback, correct ? styles.feedbackGood : styles.feedbackBad]}>
       <BText variant="heading" color={correct ? '#1F8A60' : '#D2455A'}>
         {correct ? 'Nice one! 🎉' : 'Not quite'}

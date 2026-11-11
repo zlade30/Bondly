@@ -33,7 +33,7 @@ export function ScaleSlider({ value, onChange, leftLabel, rightLabel }: Props) {
 
   useEffect(() => {
     if (width > 0) {
-      x.value = withSpring((position / (STEPS - 1)) * (width - THUMB), { damping: 18, stiffness: 220 });
+      x.value = withSpring((position / (STEPS - 1)) * (width - THUMB), { damping: 22, stiffness: 220, overshootClamping: true });
     }
   }, [position, width, x]);
 

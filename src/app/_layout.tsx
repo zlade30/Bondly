@@ -22,6 +22,7 @@ import { TrialReminderSync } from '@/features/premium/trial-reminder';
 import { JournalProvider, useJournal } from '@/features/reflect/journal';
 import { ReminderSync } from '@/features/reminders/reminder-sync';
 import { RemindersProvider, useReminders } from '@/features/reminders/reminders';
+import { preloadSounds } from '@/features/sound/sound';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,6 +36,7 @@ const theme = {
 };
 
 export default function RootLayout() {
+  useEffect(preloadSounds, []);
   return (
     <GestureHandlerRootView style={styles.root}>
       <ThemeProvider value={theme}>
@@ -102,6 +104,7 @@ function RootStack() {
           <Stack.Screen name="course/[courseId]" />
           <Stack.Screen name="lesson/[lessonId]" />
           <Stack.Screen name="journal/[entryId]" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="check-in" options={{ presentation: 'fullScreenModal', gestureEnabled: false, animation: 'fade' }} />
         </Stack.Protected>
         {/* Settings stays reachable from the paywall, for restoring, signing in or deleting an account. */}
         <Stack.Protected guard={completed} redirectTo={home}>

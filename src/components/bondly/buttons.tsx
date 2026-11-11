@@ -7,8 +7,10 @@ import Svg, { Path } from 'react-native-svg';
 import { Gradients, Palette, Radius, Shadow } from '@/constants/bondly';
 
 import { BText } from './text';
+import { playSound } from '@/features/sound/sound';
 
 export function tapFeedback() {
+  playSound('tap');
   if (Platform.OS !== 'web') {
     Haptics.selectionAsync().catch(() => {});
   }

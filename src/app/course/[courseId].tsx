@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useLocalSearchParams, type Href } from 'expo-router';
@@ -16,6 +17,7 @@ import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { courseProgress, findCourse, type Course, type LevelInfo } from '@/features/learn/content';
 import { useProgress } from '@/features/learn/progress';
 import { bestXp, courseLevels, courseXp, journeyLevel } from '@/features/learn/xp';
+import { playSoundAfter } from '@/features/sound/sound';
 
 const STOP = 78;
 const ROW = 185;
@@ -61,6 +63,8 @@ export default function CourseScreen() {
 
 function Journey({ course, back }: { course: Course; back: () => void }) {
   const insets = useSafeAreaInsets();
+  // One soft pop as the lesson stops zoom in (one per stop would be too busy).
+  useEffect(() => playSoundAfter('pop', 180), []);
   const { width } = useWindowDimensions();
   const { completedLessons, lessonXp } = useProgress();
   const { done, total, ratio } = courseProgress(course, completedLessons);
@@ -370,7 +374,7 @@ function Stop({
   return (
     <>
       <Animated.View
-        entering={ZoomIn.delay(150 + index * 80).springify().damping(14)}
+        entering={ZoomIn.delay(150 + index * 80).duration(320)}
         style={[styles.stopWrap, { left: x - STOP / 2, top: y - STOP / 2 }]}>
         {state === 'next' && (
           <View style={styles.bubble} pointerEvents="none">

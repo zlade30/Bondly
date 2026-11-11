@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
 
@@ -10,8 +10,11 @@ import { Palette, Radius, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
 import { FOCUS_AREAS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
+import { playSoundAfter } from '@/features/sound/sound';
 
 export default function ReadyScreen() {
+  // A soft pop as the mascot zooms in.
+  useEffect(() => playSoundAfter('pop', 60), []);
   const { answers, complete } = useOnboarding();
   const { checkIn } = useProgress();
   const [saving, setSaving] = useState(false);
@@ -28,7 +31,7 @@ export default function ReadyScreen() {
   return (
     <Screen footer={<PrimaryButton label="Start my journey" onPress={start} disabled={saving} />}>
       <View style={styles.center}>
-        <Animated.View entering={ZoomIn.springify().damping(12)} style={styles.art}>
+        <Animated.View entering={ZoomIn.duration(320)} style={styles.art}>
           <Float distance={10}>
             <View style={styles.pair}>
               <Bondling size={130} color="pink" mood="happy" />

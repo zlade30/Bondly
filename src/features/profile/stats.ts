@@ -45,11 +45,24 @@ export function computeStreak(activeDays: Set<string>, now = new Date()): Streak
   return { current, longest: Math.max(longest, current), activeToday };
 }
 
-/** The last 7 days, oldest first, for the streak strip. */
-export function lastSevenDays(activeDays: Set<string>, now = new Date()) {
+/**
+ * This week, Monday to Sunday, for the streak strip. Days still to come are
+ * marked so they can be shown faded.
+ */
+export function thisWeek(activeDays: Set<string>, now = new Date()) {
+  // getDay(): Sunday is 0, so Monday-based index is (day + 6) % 7.
+  const monday = addDays(now, -((now.getDay() + 6) % 7));
+  const today = todayKey(now);
   return Array.from({ length: 7 }, (_, i) => {
-    const d = addDays(now, i - 6);
-    return { key: todayKey(d), label: d.toLocaleDateString(undefined, { weekday: 'narrow' }), active: activeDays.has(todayKey(d)) };
+    const d = addDays(monday, i);
+    const key = todayKey(d);
+    return {
+      key,
+      label: d.toLocaleDateString(undefined, { weekday: 'narrow' }),
+      active: activeDays.has(key),
+      today: key === today,
+      future: key > today,
+    };
   });
 }
 

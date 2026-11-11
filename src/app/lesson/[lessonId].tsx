@@ -25,6 +25,7 @@ import { LESSON_STEPS, isPlayable, type LessonStep } from '@/features/learn/less
 import { useProgress } from '@/features/learn/progress';
 import { finishesLevel, journeyLevel, lessonXp, levelOfLesson, maxLessonXp } from '@/features/learn/xp';
 import { useJournal } from '@/features/reflect/journal';
+import { playSound } from '@/features/sound/sound';
 
 type Phase = 'intro' | 'play' | 'done';
 
@@ -101,6 +102,7 @@ function LessonPlayer({
       const firstTime = !completedLessons.includes(lesson.id);
       setResult({ xp, maxXp: maxLessonXp(steps), firstTime, newBest: !firstTime && xp > (bestXp[lesson.id] ?? 0) });
       completeLesson(lesson.id, xp);
+      playSound('celebrate');
       if (Platform.OS !== 'web') {
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
       }
@@ -308,7 +310,7 @@ function Celebration({
 
   return (
     <View style={styles.center}>
-      <Animated.View entering={ZoomIn.springify().damping(20)} style={styles.party}>
+      <Animated.View entering={ZoomIn.duration(320)} style={styles.party}>
         {badge && (
           <View style={styles.badge}>
             <BText variant="overline" color={Palette.white}>

@@ -84,6 +84,15 @@ export const MOODS: { id: Mood; label: string; color: BondlingColor; mood: Bondl
   { id: 'tense', label: 'Tense', color: 'lavender', mood: 'upset' },
 ];
 
+/** What Bondly says back after a daily check-in. */
+export const CHECK_IN_REPLIES: Record<Mood, string> = {
+  great: 'Love that! Keep the good stuff growing.',
+  calm: 'Steady days are great for learning.',
+  okay: 'Okay is honest. One small step today?',
+  low: 'Thanks for sharing. Go gently with yourself today.',
+  tense: 'That’s hard. Today’s lesson can help calm things down.',
+};
+
 export type SkillId = 'communication' | 'trust' | 'boundaries' | 'conflict' | 'connection';
 
 export const SKILLS: { id: SkillId; label: string }[] = [

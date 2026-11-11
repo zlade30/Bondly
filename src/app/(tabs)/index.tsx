@@ -1,8 +1,8 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { router, type Href } from 'expo-router';
-import { useMemo } from 'react';
-import { Alert, Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
-import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import { router, useIsFocused, type Href } from 'expo-router';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Alert, AppState, Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { tapFeedback } from '@/components/bondly/buttons';
@@ -12,30 +12,23 @@ import { Bondling, HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float } from '@/components/bondly/screen';
 import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
-import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { courseProgress, journeyFor, orderedCourses, todaysLesson, type Course } from '@/features/learn/content';
-import { useProgress } from '@/features/learn/progress';
+import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
+import { courseProgress, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
+import { todayKey, useProgress } from '@/features/learn/progress';
 import { journeyLevel } from '@/features/learn/xp';
-import { MOODS, type Mood } from '@/features/onboarding/content';
+import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
 import { useActivity } from '@/features/profile/use-activity';
 import { formatTime, useReminders } from '@/features/reminders/reminders';
-
-const CHECK_IN_REPLIES: Record<Mood, string> = {
-  great: 'Love that! Keep the good stuff growing.',
-  calm: 'Steady days are great for learning.',
-  okay: 'Okay is honest. One small step today?',
-  low: 'Thanks for sharing. Go gently with yourself today.',
-  tense: 'That’s hard. Today’s lesson can help calm things down.',
-};
 
 export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { answers } = useOnboarding();
-  const { completedLessons, todayCheckIn, checkIn } = useProgress();
+  const { completedLessons, todayCheckIn, ready } = useProgress();
   const { streak } = useActivity();
   const reminders = useReminders();
+  useDailyCheckIn(ready, !!todayCheckIn);
 
   const openReminders = () => {
     tapFeedback();
@@ -58,12 +51,12 @@ export default function HomeScreen() {
     () => todaysLesson(answers.focus, completedLessons, answers.goal),
     [answers.focus, completedLessons, answers.goal]
   );
-  // Your relationship journey first, then the skill courses.
+  // Journeys only: yours first, then the other relationships. Skill refreshers live on the Learn tab.
   const courses = useMemo(() => {
     const journey = journeyFor(answers.goal);
-    const skills = orderedCourses(answers.focus);
-    return journey ? [journey, ...skills] : skills;
-  }, [answers.focus, answers.goal]);
+    const others = otherJourneys(answers.goal);
+    return journey ? [journey, ...others] : others;
+  }, [answers.goal]);
   const heroArt = Math.min(width * 0.62, 280);
 
   const openLesson = () => {
@@ -192,49 +185,82 @@ export default function HomeScreen() {
           ))}
         </ScrollView>
 
-        {/* Daily check-in */}
+        {/* Today's check-in. The question itself opens on its own once a day. */}
         <View style={styles.padded}>
           <BText variant="title" style={styles.sectionTitle}>
             Daily Check-In
           </BText>
-          <BText variant="body" style={styles.checkInSub}>
-            How are you feeling in your relationships today?
-          </BText>
-          <View style={styles.moods}>
-            {MOODS.map((m) => {
-              const on = todayCheckIn === m.id;
-              return (
-                <Pressable
-                  key={m.id}
-                  accessibilityRole="radio"
-                  accessibilityState={{ selected: on }}
-                  accessibilityLabel={m.label}
-                  onPress={() => {
-                    tapFeedback();
-                    checkIn(m.id);
-                  }}
-                  style={({ pressed }) => [
-                    styles.mood,
-                    on && styles.moodOn,
-                    todayCheckIn && !on && styles.moodDim,
-                    pressed && { transform: [{ scale: 0.93 }] },
-                  ]}>
-                  <Bondling size={54} color={m.color} mood={m.mood} noShadow />
-                </Pressable>
-              );
-            })}
-          </View>
-          {todayCheckIn && (
-            <Animated.View key={todayCheckIn} entering={FadeIn.duration(300)} style={styles.reply}>
-              <BText variant="bodyBold" center>
-                {CHECK_IN_REPLIES[todayCheckIn]}
-              </BText>
-            </Animated.View>
-          )}
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel={todayCheckIn ? 'Change today’s check-in' : 'Check in for today'}
+            onPress={() => {
+              tapFeedback();
+              router.push((todayCheckIn ? '/check-in?step=mood' : '/check-in') as Href);
+            }}
+            style={({ pressed }) => [styles.checkInCard, pressed && { transform: [{ scale: 0.98 }] }]}>
+            {todayCheckIn ? (
+              <>
+                <Bondling
+                  size={60}
+                  color={MOODS.find((m) => m.id === todayCheckIn)!.color}
+                  mood={MOODS.find((m) => m.id === todayCheckIn)!.mood}
+                  noShadow
+                />
+                <View style={styles.checkInText}>
+                  <BText variant="bodyBold">Feeling {MOODS.find((m) => m.id === todayCheckIn)!.label.toLowerCase()} today</BText>
+                  <BText variant="caption" color={Palette.inkSoft}>
+                    {CHECK_IN_REPLIES[todayCheckIn]}
+                  </BText>
+                </View>
+                <BText variant="caption" color={Palette.primaryDeep} style={styles.checkInChange}>
+                  Change
+                </BText>
+              </>
+            ) : (
+              <>
+                <Bondling size={60} color="pink" mood="happy" noShadow />
+                <View style={styles.checkInText}>
+                  <BText variant="bodyBold">How are you feeling today?</BText>
+                  <BText variant="caption" color={Palette.inkSoft}>
+                    Tap to check in and keep your streak going.
+                  </BText>
+                </View>
+                <ChevronRightIcon />
+              </>
+            )}
+          </Pressable>
         </View>
       </ScrollView>
     </View>
   );
+}
+
+/**
+ * Opens the daily check-in the first time Home is shown each day. It checks
+ * again when the app comes back to the front, so it still appears the next
+ * morning if the app was left open overnight.
+ */
+function useDailyCheckIn(ready: boolean, checkedIn: boolean) {
+  const focused = useIsFocused();
+  const [day, setDay] = useState(todayKey);
+  const shownFor = useRef<string | null>(null);
+
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (s) => {
+      if (s === 'active') setDay(todayKey());
+    });
+    return () => sub.remove();
+  }, []);
+
+  useEffect(() => {
+    if (!focused || !ready || checkedIn || shownFor.current === day) return;
+    // A short pause lets Home settle in before the check-in slides over it.
+    const t = setTimeout(() => {
+      shownFor.current = day;
+      router.push('/check-in' as Href);
+    }, 450);
+    return () => clearTimeout(t);
+  }, [focused, ready, checkedIn, day]);
 }
 
 function JourneyCard({ course, completed }: { course: Course; completed: string[] }) {
@@ -379,26 +405,16 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   cardFill: { height: '100%', borderRadius: Radius.pill },
-  checkInSub: { marginTop: Space.xs },
-  moods: { flexDirection: 'row', justifyContent: 'space-between', marginTop: Space.lg },
-  mood: {
-    width: 62,
-    height: 62,
-    borderRadius: 31,
+  checkInCard: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(255,255,255,0.75)',
-    borderWidth: 2,
-    borderColor: 'transparent',
-  },
-  moodOn: { borderColor: Palette.primary, backgroundColor: Palette.white },
-  moodDim: { opacity: 0.5 },
-  reply: {
-    marginTop: Space.lg,
+    gap: Space.md,
+    marginTop: Space.md,
     backgroundColor: Palette.white,
     borderRadius: Radius.lg,
-    paddingVertical: Space.md,
-    paddingHorizontal: Space.lg,
+    padding: Space.md,
     ...Shadow.soft,
   },
+  checkInText: { flex: 1, gap: 2 },
+  checkInChange: { fontFamily: Font.bold },
 });

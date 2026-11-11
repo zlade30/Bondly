@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown, ZoomIn } from 'react-native-reanimated';
@@ -8,15 +9,18 @@ import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useOnboardingFlow } from '@/features/onboarding/flow';
+import { playSoundAfter } from '@/features/sound/sound';
 
 /** A breather between quiz questions, with one small, useful idea. */
 export default function TipScreen() {
+  // A soft pop as the mascot zooms in.
+  useEffect(() => playSoundAfter('pop', 60), []);
   const { next, back, progress } = useOnboardingFlow();
 
   return (
     <Screen onBack={back} progress={progress} footer={<PrimaryButton label="Got it" onPress={next} />}>
       <View style={styles.center}>
-        <Animated.View entering={ZoomIn.springify().damping(14)} style={styles.art}>
+        <Animated.View entering={ZoomIn.duration(320)} style={styles.art}>
           <Float distance={8}>
             <Bondling size={170} color="yellow" mood="content" prop="heart" />
           </Float>

@@ -8,6 +8,7 @@ import { Screen } from '@/components/bondly/screen';
 import { ReminderSettings } from '@/components/reminders/reminder-settings';
 import { AboutSection } from '@/components/settings/about-section';
 import { AccountCard } from '@/components/settings/account-card';
+import { SoundSettings } from '@/components/settings/sound-settings';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useAccount } from '@/features/account/account';
@@ -120,6 +121,11 @@ export default function SettingsScreen() {
           Reminders
         </BText>
         <ReminderSettings />
+
+        <BText variant="bodyBold" style={styles.label}>
+          Sound
+        </BText>
+        <SoundSettings />
 
         <BText variant="bodyBold" style={styles.label}>
           Focus areas
