@@ -78,7 +78,7 @@ export const DAILY_OPTIONS: { minutes: DailyMinutes; label: string; note: string
 
 export const MOODS: { id: Mood; label: string; color: BondlingColor; mood: BondlingMood }[] = [
   { id: 'great', label: 'Great', color: 'pink', mood: 'happy' },
-  { id: 'calm', label: 'Calm', color: 'blue', mood: 'content' },
+  { id: 'calm', label: 'Calm', color: 'mint', mood: 'content' },
   { id: 'okay', label: 'Okay', color: 'yellow', mood: 'neutral' },
   { id: 'low', label: 'Low', color: 'purple', mood: 'sad' },
   { id: 'tense', label: 'Tense', color: 'lavender', mood: 'upset' },

@@ -17,6 +17,7 @@ import Animated, {
 } from 'react-native-reanimated';
 
 import { PrimaryButton } from '@/components/bondly/buttons';
+import { Confetti } from '@/components/bondly/confetti';
 import { Bondling } from '@/components/bondly/mascot';
 import { Float, Screen } from '@/components/bondly/screen';
 import { BText } from '@/components/bondly/text';
@@ -24,6 +25,7 @@ import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { useProgress } from '@/features/learn/progress';
 import { CHECK_IN_REPLIES, MOODS, type Mood } from '@/features/onboarding/content';
+import { celebratedToday, markCelebrated, milestoneFor } from '@/features/profile/milestones';
 import { useActivity } from '@/features/profile/use-activity';
 import { playSound, playSoundAfter } from '@/features/sound/sound';
 
@@ -31,6 +33,10 @@ import { playSound, playSoundAfter } from '@/features/sound/sound';
  * The once-a-day check-in. It opens from Home on the first visit of the day:
  * first the streak ticks up by one, then it asks how you're feeling, then it
  * heads back to Home on its own. Picking a feeling is what counts the day.
+ *
+ * On a milestone day (7, 30, 100 or 365 days) the streak step becomes a
+ * celebration with confetti. If a lesson already counted the day, the streak
+ * doesn't tick up here, but the milestone is still celebrated once.
  *
  * `?step=mood` skips straight to the question, for changing today's answer.
  */
@@ -46,6 +52,19 @@ export default function CheckInScreen() {
     return { before, after: streak.activeToday ? before : before + 1, grows: !streak.activeToday };
   });
   const [phase, setPhase] = useState<'streak' | 'mood'>(step === 'mood' || !start.grows ? 'mood' : 'streak');
+
+  // A milestone reached earlier today (say, by a lesson) still gets its moment,
+  // unless it's already been celebrated.
+  useEffect(() => {
+    if (step === 'mood' || start.grows || !milestoneFor(start.after)) return;
+    let live = true;
+    celebratedToday().then((already) => {
+      if (live && !already) setPhase('streak');
+    });
+    return () => {
+      live = false;
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const [picked, setPicked] = useState<Mood | null>(null);
   const leaving = useRef(false);
 
@@ -151,6 +170,9 @@ export default function CheckInScreen() {
  */
 function StreakStep({ before, after, onNext }: { before: number; after: number; onNext: () => void }) {
   const reduceMotion = useReducedMotion();
+  const milestone = milestoneFor(after);
+  // Without a change (the day was already counted), there's nothing to roll.
+  const grows = after !== before;
   const roll = useSharedValue(0);
   const plus = useSharedValue(0);
   const moved = useRef(false);
@@ -163,21 +185,29 @@ function StreakStep({ before, after, onNext }: { before: number; after: number; 
 
   useEffect(() => {
     const ease = { duration: 420, easing: Easing.out(Easing.cubic) };
-    roll.value = withDelay(reduceMotion ? 0 : 700, withTiming(1, reduceMotion ? { duration: 0 } : ease));
-    plus.value = withDelay(
-      700,
-      withSequence(withTiming(1, { duration: 200 }), withTiming(2, { duration: 1100, easing: Easing.out(Easing.quad) }))
-    );
+    if (grows) {
+      roll.value = withDelay(reduceMotion ? 0 : 700, withTiming(1, reduceMotion ? { duration: 0 } : ease));
+      plus.value = withDelay(
+        700,
+        withSequence(withTiming(1, { duration: 200 }), withTiming(2, { duration: 1100, easing: Easing.out(Easing.quad) }))
+      );
+    } else {
+      roll.value = 1;
+    }
+    if (milestone) markCelebrated();
     const buzz = setTimeout(
       () => Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {}),
       700
     );
-    const auto = setTimeout(next, 3200);
-    // The flame pops in, then the sparkle lands with the “+1”.
+    // Milestones linger a little longer, so there's time to enjoy them.
+    const auto = setTimeout(next, milestone ? 4800 : 3200);
+    // The flame pops in, the sparkle lands with the “+1”, and a milestone gets a fanfare.
     playSound('pop');
-    const sparkle = playSoundAfter('streak', 700);
+    const sparkle = grows ? playSoundAfter('streak', 700) : () => {};
+    const fanfare = milestone ? playSoundAfter('celebrate', grows ? 1200 : 500) : () => {};
     return () => {
       sparkle();
+      fanfare();
       clearTimeout(buzz);
       clearTimeout(auto);
     };
@@ -198,51 +228,84 @@ function StreakStep({ before, after, onNext }: { before: number; after: number; 
   }));
 
   return (
-    <Screen
-      footer={
-        <Animated.View entering={FadeIn.delay(1500).duration(400)}>
-          <PrimaryButton label="Continue" onPress={next} />
-        </Animated.View>
-      }>
-      <Pressable accessibilityRole="button" accessibilityLabel={`Streak now ${after} days. Continue`} onPress={next} style={styles.center}>
-        <Animated.View entering={ZoomIn.duration(320)} style={styles.flame}>
-          <Float distance={4} duration={2200}>
-            <TopicIcon name="flame" color="peach" size={170} />
-          </Float>
-        </Animated.View>
-
-        <View style={styles.counter}>
-          <View style={styles.numberBox}>
-            <Animated.View style={[styles.numberLayer, oldStyle]}>
-              <BText style={styles.number}>{before}</BText>
+    <View style={styles.fill}>
+      <Screen
+        footer={
+          <Animated.View entering={FadeIn.delay(1500).duration(400)}>
+            <PrimaryButton label="Continue" onPress={next} />
+          </Animated.View>
+        }>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={`${milestone ? `${milestone.title} ` : ''}Streak now ${after} days. Continue`}
+          onPress={next}
+          style={styles.center}>
+          {milestone && (
+            <Animated.View entering={ZoomIn.delay(grows ? 1100 : 400).duration(320)} style={styles.badge}>
+              <BText style={styles.badgeText}>🏆 {milestone.badge}</BText>
             </Animated.View>
-            <Animated.View style={[styles.numberLayer, newStyle]}>
-              <BText style={styles.number}>{after}</BText>
+          )}
+          <Animated.View entering={ZoomIn.duration(320)} style={styles.flame}>
+            <Float distance={4} duration={2200}>
+              <TopicIcon name="flame" color="peach" size={170} />
+            </Float>
+          </Animated.View>
+
+          <View style={styles.counter}>
+            <View style={styles.numberBox}>
+              <Animated.View style={[styles.numberLayer, oldStyle]}>
+                <BText style={styles.number}>{before}</BText>
+              </Animated.View>
+              <Animated.View style={[styles.numberLayer, newStyle]}>
+                <BText style={styles.number}>{after}</BText>
+              </Animated.View>
+            </View>
+            <Animated.View style={[styles.plus, plusStyle]}>
+              <BText style={styles.plusText}>+1</BText>
             </Animated.View>
           </View>
-          <Animated.View style={[styles.plus, plusStyle]}>
-            <BText style={styles.plusText}>+1</BText>
-          </Animated.View>
-        </View>
 
-        <Animated.View entering={FadeInDown.delay(900).duration(450)} style={styles.copy}>
-          <BText variant="title" center>
-            {after === 1 ? 'Day 1. A fresh start!' : `${after}-day streak!`}
-          </BText>
-          <BText variant="body" center>
-            {after === 1
-              ? 'Every streak starts with one day. Let’s check in.'
-              : 'You keep showing up. Let’s check in on today.'}
-          </BText>
-        </Animated.View>
-      </Pressable>
-    </Screen>
+          <Animated.View entering={FadeInDown.delay(900).duration(450)} style={styles.copy}>
+            <BText variant="title" center>
+              {milestone ? milestone.title : after === 1 ? 'Day 1. A fresh start!' : `${after}-day streak!`}
+            </BText>
+            <BText variant="body" center>
+              {milestone
+                ? milestone.body
+                : after === 1
+                  ? 'Every streak starts with one day. Let’s check in.'
+                  : 'You keep showing up. Let’s check in on today.'}
+            </BText>
+          </Animated.View>
+        </Pressable>
+      </Screen>
+      {milestone && <ConfettiAfter delay={grows ? 1100 : 400} />}
+    </View>
   );
+}
+
+/** Confetti that bursts once the new number has landed. */
+function ConfettiAfter({ delay }: { delay: number }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+  return show ? <Confetti /> : null;
 }
 
 const NUMBER_SIZE = 84;
 
 const styles = StyleSheet.create({
+  fill: { flex: 1 },
+  badge: {
+    paddingHorizontal: Space.lg,
+    paddingVertical: Space.xs,
+    borderRadius: Radius.pill,
+    backgroundColor: Palette.primary,
+    ...Shadow.soft,
+  },
+  badgeText: { fontFamily: Font.extrabold, fontSize: 15, color: Palette.white, letterSpacing: 0.5 },
   center: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: Space.lg },
   flame: { alignItems: 'center' },
   counter: { alignItems: 'center', justifyContent: 'center', marginTop: -Space.md },
