@@ -5,7 +5,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 
 import { tapFeedback } from '@/components/bondly/buttons';
 import { ChevronRightIcon } from '@/components/bondly/icons';
-import { Bondling } from '@/components/bondly/mascot';
+import { TopicIcon } from '@/components/bondly/topic-icons';
 import { TabScreen } from '@/components/bondly/tab-screen';
 import { BText } from '@/components/bondly/text';
 import { Gradients, Palette, Radius, Space } from '@/constants/bondly';
@@ -92,7 +92,7 @@ function CourseRow({
           { backgroundColor: course.tint },
           pressed && { transform: [{ scale: 0.98 }] },
         ]}>
-        <Bondling size={72} color={course.mascot.color} mood={course.mascot.mood} prop={course.mascot.prop} />
+        <TopicIcon name={course.icon} color={course.mascot.color} size={72} />
         <View style={styles.info}>
           {label && (
             <BText variant="overline" color={Palette.primaryDeep}>

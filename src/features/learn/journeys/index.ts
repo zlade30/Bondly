@@ -1,4 +1,5 @@
 import type { BondlingColor, BondlingMood, BondlingProp } from '@/components/bondly/mascot';
+import type { TopicIconName } from '@/components/bondly/topic-icons';
 import type { FocusArea, RelationshipGoal } from '@/features/onboarding/content';
 
 import type { Course, LevelInfo } from '../content';
@@ -45,18 +46,23 @@ const FILES = [partner, dating, family, friends, work, self] as JourneyFile[];
 /** Look and feel for each relationship's journey. */
 const STYLE: Record<
   RelationshipGoal,
-  { tint: string; background?: number; mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp } }
+  {
+    tint: string;
+    background?: number;
+    mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp };
+    icon: TopicIconName;
+  }
 > = {
-  partner: { tint: '#FDE6F1', mascot: { color: 'pink', mood: 'happy', prop: 'heart' } },
-  dating: { tint: '#FFE9E2', mascot: { color: 'peach', mood: 'wink', prop: 'sparkles' } },
-  family: { tint: '#FFF4D6', mascot: { color: 'yellow', mood: 'content', prop: 'heart' } },
+  partner: { tint: '#FDE6F1', mascot: { color: 'pink', mood: 'happy', prop: 'heart' }, icon: 'hearts' },
+  dating: { tint: '#FFE9E2', mascot: { color: 'peach', mood: 'wink', prop: 'sparkles' }, icon: 'tulip' },
+  family: { tint: '#FFF4D6', mascot: { color: 'yellow', mood: 'content', prop: 'heart' }, icon: 'trio' },
   friends: {
     tint: '#DDF5EA',
     background: require('@/assets/images/journeys/friends.webp'),
-    mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' },
+    mascot: { color: 'mint', mood: 'happy', prop: 'sparkles' }, icon: 'bracelet',
   },
-  work: { tint: '#E4E9FF', mascot: { color: 'blue', mood: 'curious', prop: 'flag' } },
-  self: { tint: '#EFE7FF', mascot: { color: 'lavender', mood: 'content', prop: 'shield' } },
+  work: { tint: '#E4E9FF', mascot: { color: 'blue', mood: 'curious', prop: 'flag' }, icon: 'briefcase' },
+  self: { tint: '#EFE7FF', mascot: { color: 'lavender', mood: 'content', prop: 'shield' }, icon: 'star' },
 };
 
 function toSteps(steps: JourneyFile['lessons'][number]['steps']): LessonStep[] {

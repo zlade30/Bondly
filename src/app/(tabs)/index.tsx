@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useIsFocused, type Href } from 'expo-router';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { Alert, AppState, Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { useEffect, useMemo, useRef } from 'react';
+import { Alert, Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -12,9 +12,10 @@ import { Bondling, HeartIcon, HuggingPair } from '@/components/bondly/mascot';
 import { Float } from '@/components/bondly/screen';
 import { TrialCard } from '@/components/premium/trial-card';
 import { BText } from '@/components/bondly/text';
+import { TopicIcon } from '@/components/bondly/topic-icons';
 import { Font, Gradients, Palette, Radius, Shadow, Space } from '@/constants/bondly';
 import { courseProgress, journeyFor, otherJourneys, todaysLesson, type Course } from '@/features/learn/content';
-import { todayKey, useProgress } from '@/features/learn/progress';
+import { useProgress } from '@/features/learn/progress';
 import { journeyLevel } from '@/features/learn/xp';
 import { CHECK_IN_REPLIES, MOODS } from '@/features/onboarding/content';
 import { useOnboarding } from '@/features/onboarding/store';
@@ -25,10 +26,10 @@ export default function HomeScreen() {
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
   const { answers } = useOnboarding();
-  const { completedLessons, todayCheckIn, ready } = useProgress();
+  const { completedLessons, todayCheckIn, ready, today: day } = useProgress();
   const { streak } = useActivity();
   const reminders = useReminders();
-  useDailyCheckIn(ready, !!todayCheckIn);
+  useDailyCheckIn(ready, !!todayCheckIn, day);
 
   const openReminders = () => {
     tapFeedback();
@@ -86,7 +87,9 @@ export default function HomeScreen() {
                 !streak.activeToday && styles.streakIdle,
                 pressed && { opacity: 0.7 },
               ]}>
-              <BText style={[styles.streakFlame, !streak.activeToday && { opacity: 0.45 }]}>🔥</BText>
+              <View style={[styles.streakFlame, !streak.activeToday && { opacity: 0.45 }]}>
+                <TopicIcon name="flame" color="peach" size={30} noShadow />
+              </View>
               <BText variant="bodyBold">{streak.current}</BText>
             </Pressable>
             <Pressable
@@ -236,21 +239,13 @@ export default function HomeScreen() {
 }
 
 /**
- * Opens the daily check-in the first time Home is shown each day. It checks
- * again when the app comes back to the front, so it still appears the next
- * morning if the app was left open overnight.
+ * Opens the daily check-in the first time Home is shown each day. `day` comes
+ * from the progress store and moves on at midnight and on app resume, so it
+ * still appears the next morning if the app was left open overnight.
  */
-function useDailyCheckIn(ready: boolean, checkedIn: boolean) {
+function useDailyCheckIn(ready: boolean, checkedIn: boolean, day: string) {
   const focused = useIsFocused();
-  const [day, setDay] = useState(todayKey);
   const shownFor = useRef<string | null>(null);
-
-  useEffect(() => {
-    const sub = AppState.addEventListener('change', (s) => {
-      if (s === 'active') setDay(todayKey());
-    });
-    return () => sub.remove();
-  }, []);
 
   useEffect(() => {
     if (!focused || !ready || checkedIn || shownFor.current === day) return;
@@ -282,7 +277,7 @@ function JourneyCard({ course, completed }: { course: Course; completed: string[
         pressed && { transform: [{ scale: 0.97 }] },
       ]}>
       <View style={styles.cardArt}>
-        <Bondling size={92} color={course.mascot.color} mood={course.mascot.mood} prop={course.mascot.prop} />
+        <TopicIcon name={course.icon} color={course.mascot.color} size={96} />
       </View>
       {isJourney && (
         <BText variant="overline" color={Palette.primaryDeep} style={styles.cardLevel}>
@@ -337,7 +332,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFE9D6',
   },
   streakIdle: { backgroundColor: Palette.white },
-  streakFlame: { fontSize: 18, lineHeight: 22 },
+  streakFlame: { width: 30, height: 30, marginLeft: -6 },
   bell: {
     width: 52,
     height: 52,

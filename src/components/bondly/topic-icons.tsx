@@ -2,6 +2,7 @@ import { useId, type ReactNode } from 'react';
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from 'react-native-svg';
 
 import { INK, TONES, type BondlingColor } from './mascot';
+import { courseArt, type CourseIconName } from './topic-icons-courses';
 import { MORE_TOPIC_ICONS, moreArt, type MoreTopicIconName } from './topic-icons-more';
 
 /**
@@ -14,7 +15,7 @@ type FriendsIconName =
   'envelope' | 'ear' | 'speech' | 'shield' | 'calendar' | 'scales' | 'bandage' | 'sprout' | 'hug' | 'party';
 
 /** Every topic icon: the friends journey's ten, then one per level for the other journeys. */
-export type TopicIconName = FriendsIconName | MoreTopicIconName;
+export type TopicIconName = FriendsIconName | MoreTopicIconName | CourseIconName;
 
 export const TOPIC_ICONS: TopicIconName[] = [
   'envelope',
@@ -102,21 +103,24 @@ export function TopicIcon({
   const PINK = { top: '#FFC1D6', bottom: '#FF6FA5' };
   const GREEN = { top: '#B8F0D8', bottom: '#3DBE8B' };
 
+  const kit = {
+    soft,
+    tinted,
+    face,
+    body,
+    pink: `url(#pink${uid})`,
+    green: `url(#green${uid})`,
+    gold: `url(#gold${uid})`,
+    sky: `url(#sky${uid})`,
+    ink: INK,
+    cheek: tone.cheek,
+    rr,
+    heart,
+  };
+
   const art: Record<TopicIconName, ReactNode> = {
-    ...moreArt({
-      soft,
-      tinted,
-      face,
-      body,
-      pink: `url(#pink${uid})`,
-      green: `url(#green${uid})`,
-      gold: `url(#gold${uid})`,
-      sky: `url(#sky${uid})`,
-      ink: INK,
-      cheek: tone.cheek,
-      rr,
-      heart,
-    }),
+    ...courseArt(kit),
+    ...moreArt(kit),
     // Reaching out: a happy letter on its way, with a little heart.
     envelope: (
       <>

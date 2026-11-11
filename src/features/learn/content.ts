@@ -38,6 +38,8 @@ export type Course = {
   /** Optional full-screen scene behind the journey path (a bundled image, from require()). */
   background?: number;
   mascot: { color: BondlingColor; mood: BondlingMood; prop: BondlingProp };
+  /** The figure on its card and map, coloured with the mascot colour. */
+  icon: TopicIconName;
   lessons: Lesson[];
 };
 
@@ -51,6 +53,7 @@ export const COURSES: Course[] = [
     title: 'Communicate with Care',
     tint: '#FDE6F1',
     mascot: { color: 'pink', mood: 'happy', prop: 'none' },
+    icon: 'chat',
     lessons: [
       { id: 'comm-1', title: 'Say What You Feel', minutes: 3, summary: 'Swap blame for “I feel…” and watch defences drop.' },
       { id: 'comm-2', title: 'Ask, Don’t Assume', minutes: 4, summary: 'Curious questions beat mind-reading every time.' },
@@ -64,6 +67,7 @@ export const COURSES: Course[] = [
     title: 'Build Trust',
     tint: '#DDF5EA',
     mascot: { color: 'mint', mood: 'content', prop: 'shield' },
+    icon: 'padlock',
     lessons: [
       { id: 'trust-1', title: 'Small Promises, Kept', minutes: 3, summary: 'Trust is built in tiny, reliable moments.' },
       { id: 'trust-2', title: 'Owning Mistakes', minutes: 4, summary: 'A real apology has three parts.' },
@@ -76,6 +80,7 @@ export const COURSES: Course[] = [
     title: 'Set Boundaries',
     tint: '#E4E9FF',
     mascot: { color: 'blue', mood: 'wink', prop: 'flag' },
+    icon: 'fence',
     lessons: [
       { id: 'bound-1', title: 'Know Your Limits', minutes: 3, summary: 'Notice the signs you’ve hit a limit.' },
       { id: 'bound-2', title: 'A Kind, Clear No', minutes: 4, summary: 'Saying no without the guilt spiral.' },
@@ -88,6 +93,7 @@ export const COURSES: Course[] = [
     title: 'Resolve Conflict',
     tint: '#FFF4D6',
     mascot: { color: 'yellow', mood: 'neutral', prop: 'none' },
+    icon: 'thermometer',
     lessons: [
       { id: 'conf-1', title: 'Pause Before You React', minutes: 3, summary: 'A ten-second pause changes the whole fight.' },
       { id: 'conf-2', title: 'Same Team, Shared Problem', minutes: 4, summary: 'It’s you two versus the issue.' },
@@ -100,6 +106,7 @@ export const COURSES: Course[] = [
     title: 'Deepen Connection',
     tint: '#EFE7FF',
     mascot: { color: 'lavender', mood: 'content', prop: 'heart' },
+    icon: 'links',
     lessons: [
       { id: 'conn-1', title: 'Turn Toward Bids', minutes: 3, summary: 'Notice the small reaches for connection.' },
       { id: 'conn-2', title: 'Questions That Go Deeper', minutes: 4, summary: 'Move past “how was your day?”.' },
@@ -112,6 +119,7 @@ export const COURSES: Course[] = [
     title: 'Listen to Understand',
     tint: '#FFE9E2',
     mascot: { color: 'peach', mood: 'curious', prop: 'none' },
+    icon: 'shell',
     lessons: [
       { id: 'list-1', title: 'Full Attention', minutes: 3, summary: 'Put the phone down and tune in.' },
       { id: 'list-2', title: 'Reflect It Back', minutes: 4, summary: '“So what I’m hearing is…”' },

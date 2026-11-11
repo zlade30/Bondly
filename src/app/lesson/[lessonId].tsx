@@ -286,7 +286,7 @@ function Celebration({
 
   const title = isJourney
     ? finished && leveledUp
-      ? `You finished ${course.title}!`
+      ? `You finished the ${course.title} journey!`
       : leveledUp
         ? `Level ${levelNumber} complete!`
         : 'Lesson complete!'

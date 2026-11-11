@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, type Href } from 'expo-router';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
@@ -18,10 +18,31 @@ import { buildInsights } from '@/features/reflect/insights';
 import { WHO, formatEntryDate, useJournal, type JournalEntry } from '@/features/reflect/journal';
 
 export default function ReflectScreen() {
-  const { checkIns } = useProgress();
+  const { checkIns, today } = useProgress();
   const { entries } = useJournal();
+  // The journal shows one day at a time: today, or a day picked on the calendar.
+  // When the date rolls over, it moves on to the new today.
+  const [picked, setPicked] = useState<string | null>(null);
+  const [pickedOn, setPickedOn] = useState(today);
+  if (pickedOn !== today) {
+    setPickedOn(today);
+    setPicked(null);
+  }
+  const selected = picked ?? today;
+  const isToday = selected === today;
 
   const entryDays = useMemo(() => new Set(entries.map((e) => todayKey(new Date(e.createdAt)))), [entries]);
+  const shown = useMemo(
+    () => entries.filter((e) => todayKey(new Date(e.createdAt)) === selected),
+    [entries, selected]
+  );
+  const selectedMood = MOODS.find((m) => m.id === checkIns[selected]);
+  const selectedDate = new Date(`${selected}T12:00:00`).toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+  });
+  const selectedLabel = isToday ? 'Today' : selectedDate;
   const insights = useMemo(() => buildInsights(checkIns, entries), [checkIns, entries]);
 
   const newEntry = () => router.push('/journal/new' as Href);
@@ -46,7 +67,7 @@ export default function ReflectScreen() {
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(80).duration(400)}>
-        <MonthCalendar checkIns={checkIns} entryDays={entryDays} />
+        <MonthCalendar checkIns={checkIns} entryDays={entryDays} selected={selected} onSelect={setPicked} />
       </Animated.View>
 
       {insights.length > 0 && (
@@ -66,17 +87,35 @@ export default function ReflectScreen() {
       )}
 
       <View style={styles.sectionHead}>
-        <BText variant="title" style={styles.sectionTitle}>
-          Journal
-        </BText>
-        {entries.length > 0 && (
-          <BText variant="caption">
-            {entries.length} {entries.length === 1 ? 'entry' : 'entries'}
+        <View style={styles.sectionTitleWrap}>
+          <BText variant="title" style={styles.sectionTitle}>
+            Journal
           </BText>
-        )}
+          <BText variant="caption" color={Palette.primaryDeep} style={styles.filterLabel}>
+            {selectedLabel} · {shown.length} {shown.length === 1 ? 'entry' : 'entries'}
+          </BText>
+        </View>
       </View>
 
-      {entries.length === 0 ? (
+      {shown.length === 0 && entries.length > 0 ? (
+        <View style={styles.empty}>
+          {selectedMood ? (
+            <Bondling size={80} color={selectedMood.color} mood={selectedMood.mood} />
+          ) : (
+            <Bondling size={80} color="lavender" mood="curious" />
+          )}
+          <BText variant="bodyBold" center>
+            {isToday ? 'Nothing written today yet' : `Nothing written on ${selectedDate}`}
+          </BText>
+          <BText variant="body" center>
+            {selectedMood
+              ? `You checked in feeling ${selectedMood.label.toLowerCase()} ${isToday ? 'today' : 'that day'}.`
+              : isToday
+                ? 'Tap New entry to write about today.'
+                : 'Pick another day on the calendar to see its entries.'}
+          </BText>
+        </View>
+      ) : entries.length === 0 ? (
         <View style={styles.empty}>
           <Bondling size={96} color="lavender" mood="curious" prop="sparkles" />
           <BText variant="bodyBold" center>
@@ -87,7 +126,7 @@ export default function ReflectScreen() {
           </BText>
         </View>
       ) : (
-        entries.map((entry, i) => <EntryCard key={entry.id} entry={entry} index={i} />)
+        shown.map((entry, i) => <EntryCard key={entry.id} entry={entry} index={i} />)
       )}
     </TabScreen>
   );
@@ -159,11 +198,13 @@ const styles = StyleSheet.create({
   insightText: { flex: 1 },
   sectionHead: {
     flexDirection: 'row',
-    alignItems: 'baseline',
+    alignItems: 'flex-end',
     justifyContent: 'space-between',
     marginTop: Space.lg,
   },
+  sectionTitleWrap: { flex: 1, gap: 2 },
   sectionTitle: { fontSize: 24, lineHeight: 30 },
+  filterLabel: { fontFamily: Font.bold },
   empty: { alignItems: 'center', gap: Space.sm, paddingVertical: Space.xl, paddingHorizontal: Space.md },
   entry: {
     backgroundColor: Palette.white,

@@ -1,28 +1,45 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
+import { tapFeedback } from '@/components/bondly/buttons';
 import { ChevronRightIcon } from '@/components/bondly/icons';
 import { Bondling } from '@/components/bondly/mascot';
 import { BText } from '@/components/bondly/text';
 import { Font, Palette, Radius, Shadow, Space } from '@/constants/bondly';
-import { todayKey } from '@/features/learn/progress';
+import { todayKey, useProgress } from '@/features/learn/progress';
 import { MOODS, type Mood } from '@/features/onboarding/content';
 
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
-/** A month of daily check-ins: each checked-in day shows its mood mascot. */
+/**
+ * A month of daily check-ins: each checked-in day shows its mood mascot.
+ * Today sits on a tinted tile. Tapping a day up to today selects it, so the
+ * journal below shows just that day.
+ */
 export function MonthCalendar({
   checkIns,
   entryDays,
+  selected,
+  onSelect,
 }: {
   checkIns: Record<string, Mood>;
   /** Days (YYYY-MM-DD) with at least one journal entry. */
   entryDays: Set<string>;
+  /** The selected day (YYYY-MM-DD). */
+  selected: string;
+  onSelect: (day: string) => void;
 }) {
-  const now = new Date();
-  const [month, setMonth] = useState(() => new Date(now.getFullYear(), now.getMonth(), 1));
-  const isCurrentMonth = month.getFullYear() === now.getFullYear() && month.getMonth() === now.getMonth();
-  const today = todayKey(now);
+  // Comes from the progress store, so the ring moves to the new day at midnight
+  // even if Reflect stays open.
+  const { today } = useProgress();
+  const [month, setMonth] = useState(() => monthStart(today));
+  // When the day rolls over, jump back to the month it's now in.
+  const [shownFor, setShownFor] = useState(today);
+  if (shownFor !== today) {
+    setShownFor(today);
+    setMonth(monthStart(today));
+  }
+  const isCurrentMonth = todayKey(month).slice(0, 7) === today.slice(0, 7);
 
   const daysInMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
   const leading = month.getDay();
@@ -79,22 +96,38 @@ export function MonthCalendar({
           const key = todayKey(d);
           const mood = MOODS.find((m) => m.id === checkIns[key]);
           const isToday = key === today;
+          const future = key > today;
+          const isSelected = key === selected;
+          const label = d.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
           return (
-            <View key={i} style={styles.cell} accessibilityLabel={`${d.getDate()}${mood ? `, ${mood.label}` : ''}`}>
-              {mood ? (
-                <Bondling size={34} color={mood.color} mood={mood.mood} noShadow />
-              ) : (
-                <View style={[styles.day, isToday && styles.today]}>
+            <Pressable
+              key={i}
+              disabled={future}
+              accessibilityRole="button"
+              accessibilityState={{ selected: isSelected, disabled: future }}
+              accessibilityLabel={`${isToday ? 'Today, ' : ''}${label}${mood ? `, ${mood.label}` : ''}${
+                entryDays.has(key) ? ', has journal entries' : ''
+              }`}
+              onPress={() => {
+                if (isSelected) return;
+                tapFeedback();
+                onSelect(key);
+              }}
+              style={styles.cell}>
+              <View style={[styles.tile, isToday && styles.tileToday, isSelected && styles.tileSelected]}>
+                {mood ? (
+                  <Bondling size={32} color={mood.color} mood={mood.mood} noShadow />
+                ) : (
                   <BText
                     variant="caption"
-                    color={d > now ? Palette.border : isToday ? Palette.primaryDeep : Palette.inkSoft}
-                    style={isToday && { fontFamily: Font.extrabold }}>
+                    color={future ? Palette.border : isToday ? Palette.primaryDeep : Palette.inkSoft}
+                    style={(isToday || isSelected) && { fontFamily: Font.extrabold }}>
                     {d.getDate()}
                   </BText>
-                </View>
-              )}
-              {entryDays.has(key) && <View style={styles.dot} />}
-            </View>
+                )}
+                {entryDays.has(key) && <View style={styles.dot} />}
+              </View>
+            </Pressable>
           );
         })}
       </View>
@@ -115,9 +148,20 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row', marginBottom: Space.xs },
   grid: { flexDirection: 'row', flexWrap: 'wrap' },
   weekday: { width: `${100 / 7}%` },
-  cell: { width: `${100 / 7}%`, height: 46, alignItems: 'center', justifyContent: 'center' },
-  day: { width: 32, height: 32, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
-  today: { borderWidth: 2, borderColor: Palette.primary },
+  cell: { width: `${100 / 7}%`, height: 48, alignItems: 'center', justifyContent: 'center' },
+  tile: {
+    width: 42,
+    height: 44,
+    borderRadius: Radius.sm,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: 'transparent',
+    // Leaves room under the mascot for the journal dot.
+    paddingBottom: 5,
+  },
+  tileToday: { backgroundColor: Palette.lilac },
+  tileSelected: { borderColor: Palette.primary },
   dot: {
     position: 'absolute',
     bottom: 2,
@@ -127,3 +171,9 @@ const styles = StyleSheet.create({
     backgroundColor: Palette.pink,
   },
 });
+
+/** The first day of the month that a YYYY-MM-DD key falls in. */
+function monthStart(key: string) {
+  const [y, m] = key.split('-').map(Number);
+  return new Date(y, m - 1, 1);
+}

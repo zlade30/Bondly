@@ -173,12 +173,7 @@ function Journey({ course, back }: { course: Course; back: () => void }) {
             </View>
           </View>
           <Float distance={6}>
-            <Bondling
-              size={96}
-              color={course.mascot.color}
-              mood={done === total ? 'happy' : course.mascot.mood}
-              prop={done === total ? 'sparkles' : course.mascot.prop}
-            />
+            <TopicIcon name={course.icon} color={course.mascot.color} size={100} sparkles={done === total} />
           </Float>
         </Animated.View>
 

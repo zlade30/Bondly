@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AppState } from 'react-native';
 import {
   createContext,
   use,
@@ -31,6 +32,12 @@ type ProgressContextValue = ProgressState & {
   completeLesson: (lessonId: string, xp?: number) => void;
   checkIn: (mood: Mood) => void;
   todayCheckIn: Mood | undefined;
+  /**
+   * Today's local date (YYYY-MM-DD). It moves on at midnight and when the app
+   * comes back to the front, so screens left open overnight redraw for the
+   * new day.
+   */
+  today: string;
   /** The whole state, as saved and synced. */
   snapshot: ProgressState;
   /** Replace everything with a merged copy (used by sync). */
@@ -47,9 +54,37 @@ export function todayKey(date = new Date()) {
   return `${y}-${m}-${d}`;
 }
 
+/** Milliseconds until just after the next local midnight. */
+function untilMidnight(now = new Date()) {
+  const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 1);
+  return next.getTime() - now.getTime();
+}
+
+/** Today's date key, kept current across midnight and app resumes. */
+function useCurrentDay() {
+  const [day, setDay] = useState(() => todayKey());
+  useEffect(() => {
+    const refresh = () => setDay(todayKey());
+    let timer = setTimeout(function tick() {
+      refresh();
+      timer = setTimeout(tick, untilMidnight());
+    }, untilMidnight());
+    // Timers pause while the app is in the background, so check again on return.
+    const sub = AppState.addEventListener('change', (s) => {
+      if (s === 'active') refresh();
+    });
+    return () => {
+      clearTimeout(timer);
+      sub.remove();
+    };
+  }, []);
+  return day;
+}
+
 export function ProgressProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [state, setState] = useState<ProgressState>(EMPTY);
+  const today = useCurrentDay();
 
   useEffect(() => {
     let cancelled = false;
@@ -96,11 +131,11 @@ export function ProgressProvider({ children }: { children: ReactNode }) {
     setState({ ...EMPTY, ...next });
   }, []);
 
-  const todayCheckIn = state.checkIns[todayKey()];
+  const todayCheckIn = state.checkIns[today];
 
   const value = useMemo(
-    () => ({ ...state, snapshot: state, ready, completeLesson, checkIn, todayCheckIn, restore, reset }),
-    [state, ready, completeLesson, checkIn, todayCheckIn, restore, reset]
+    () => ({ ...state, snapshot: state, ready, completeLesson, checkIn, todayCheckIn, today, restore, reset }),
+    [state, ready, completeLesson, checkIn, todayCheckIn, today, restore, reset]
   );
 
   return <ProgressContext value={value}>{children}</ProgressContext>;
