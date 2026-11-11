@@ -149,7 +149,7 @@ export default function HomeScreen() {
             onPress={openLesson}
             style={({ pressed }) => [pressed && { transform: [{ scale: 0.985 }] }]}>
             <LinearGradient
-              colors={['#FCDDEC', '#F9E4F3', '#F6E9FA']}
+              colors={[today.course.tint, towardWhite(today.course.tint, 0.4), towardWhite(today.course.tint, 0.7)]}
               start={{ x: 0, y: 0 }}
               end={{ x: 1, y: 1 }}
               style={styles.lesson}>
@@ -269,6 +269,14 @@ function useDailyCheckIn(ready: boolean, checkedIn: boolean, day: string) {
     }, 450);
     return () => clearTimeout(t);
   }, [focused, ready, checkedIn, day]);
+}
+
+/** Mixes a #RRGGBB colour towards white by `amount` (0–1), for soft gradients. */
+function towardWhite(hex: string, amount: number) {
+  const n = parseInt(hex.slice(1), 16);
+  const mix = (c: number) => Math.round(c + (255 - c) * amount);
+  const [r, g, b] = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(mix);
+  return `#${((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1)}`;
 }
 
 function JourneyCard({ course, completed }: { course: Course; completed: string[] }) {

@@ -87,36 +87,56 @@ export type SkillProgress = {
 };
 
 /**
- * Starts from the onboarding estimate and grows with every finished lesson
- * that practises each skill, journeys and skill refreshers alike, so the map
- * fills out as the person practises.
+ * Starts from the onboarding estimate and grows towards full as lessons that
+ * practise each skill are finished.
  *
- * Totals cover the person's own journey and the skill refreshers, plus any
- * other lessons they've chosen to do, so the bars measure the path they're on
- * rather than every journey in the app.
+ * Each skill has two equal halves, so neither drowns out the other:
+ * - your journey's lessons for that skill (plus any lessons you've finished
+ *   in other journeys, which count towards both done and total), and
+ * - the skill refresher for it. Connection has two refreshers, Deepen
+ *   Connection and Listen to Understand, so that half is their average.
+ * Finishing both halves fills the skill to the edge of the map.
  */
 export function skillProgress(answers: OnboardingAnswers, completed: string[]): SkillProgress[] {
   const base = scoreSkills(answers);
   const own = journeyFor(answers.goal);
-  const done: Record<string, number> = {};
-  const total: Record<string, number> = {};
+  const done = new Set(completed);
+
+  // Journey half: lessons on your own journey, plus finished ones from others.
+  const journey: Record<string, { done: number; total: number }> = {};
+  // Refresher half: each refresher's own progress, grouped by the skill it builds.
+  const refreshers: Record<string, { done: number; total: number }[]> = {};
+
   for (const course of ALL_COURSES) {
-    const onPath = course.kind !== 'journey' || course.id === own?.id;
-    for (const lesson of course.lessons) {
-      const skill = skillOf(course, lesson);
+    if (course.kind === 'journey') {
+      const onPath = course.id === own?.id;
+      for (const lesson of course.lessons) {
+        const skill = skillOf(course, lesson);
+        if (!skill || (!onPath && !done.has(lesson.id))) continue;
+        const j = (journey[skill] ??= { done: 0, total: 0 });
+        j.total++;
+        if (done.has(lesson.id)) j.done++;
+      }
+    } else {
+      const skill = skillOf(course, course.lessons[0]);
       if (!skill) continue;
-      const finished = completed.includes(lesson.id);
-      if (!onPath && !finished) continue;
-      total[skill] = (total[skill] ?? 0) + 1;
-      if (finished) done[skill] = (done[skill] ?? 0) + 1;
+      const finished = course.lessons.filter((l) => done.has(l.id)).length;
+      (refreshers[skill] ??= []).push({ done: finished, total: course.lessons.length });
     }
   }
+
   return SKILLS.map((s) => {
-    const d = done[s.id] ?? 0;
-    const t = total[s.id] ?? 0;
-    const ratio = t ? d / t : 0;
-    const value = Math.min(1, base[s.id] + (1 - base[s.id]) * ratio * 0.9);
-    return { id: s.id, label: s.label, value, done: d, total: t };
+    const j = journey[s.id];
+    const r = refreshers[s.id] ?? [];
+    const halves = [
+      ...(j?.total ? [j.done / j.total] : []),
+      ...(r.length ? [r.reduce((sum, x) => sum + x.done / x.total, 0) / r.length] : []),
+    ];
+    const ratio = halves.length ? halves.reduce((a, b) => a + b, 0) / halves.length : 0;
+    const value = Math.min(1, base[s.id] + (1 - base[s.id]) * ratio);
+    const d = (j?.done ?? 0) + r.reduce((sum, x) => sum + x.done, 0);
+    const total = (j?.total ?? 0) + r.reduce((sum, x) => sum + x.total, 0);
+    return { id: s.id, label: s.label, value, done: d, total };
   });
 }
 
